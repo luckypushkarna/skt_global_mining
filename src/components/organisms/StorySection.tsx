@@ -173,8 +173,8 @@ export function StorySection(): JSX.Element {
       className="relative bg-neutral-50"
       style={{ minHeight: "100vh" }}
     >
-      {/* ─── Section Header ──────────────────────────────────────────────── */}
-      <div className="max-w-screen-xl mx-auto px-6 lg:px-12 pt-24 pb-16">
+      {/* ─── Section Header (Mobile Only) ────────────────────────────────── */}
+      <div className="lg:hidden max-w-screen-xl mx-auto px-6 lg:px-12 pt-24 pb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -187,90 +187,117 @@ export function StorySection(): JSX.Element {
         </motion.div>
 
         <motion.h2
-          id="story-heading"
+          id="story-heading-mobile"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-display-lg font-black text-neutral-900 tracking-tight leading-none"
+          className="text-4xl font-black text-neutral-900 tracking-tight leading-none"
         >
           What Makes Us
           <br />
           <span className="text-neutral-300">Different</span>
         </motion.h2>
-
-
       </div>
 
       {/* ─── Sticky Two-Column Layout ────────────────────────────────────── */}
-      <div className="relative max-w-screen-xl mx-auto px-6 lg:px-12">
+      <div className="relative max-w-screen-xl mx-auto px-6 lg:px-12 pt-0 lg:pt-24">
         <div className="flex gap-8 lg:gap-16 items-start">
 
-          {/* ── LEFT: Sticky Image Panel ──────────────────────────────────── */}
+          {/* ── LEFT: Sticky Column (Header + Image Panel) ────────────────── */}
           <div
             ref={stickyRef}
-            className="hidden lg:block w-[38%] flex-shrink-0"
-            style={{ position: "sticky", top: "15vh", height: "520px" }}
+            className="hidden lg:flex flex-col justify-between w-[38%] flex-shrink-0"
+            style={{ position: "sticky", top: "12vh", height: "76vh" }}
           >
-            {/* Progress line - left edge */}
-            <div
-              className="absolute -left-8 top-0 bottom-0 flex flex-col items-center gap-0"
-              style={{ zIndex: 10 }}
-            >
-              {/* Track */}
-              <div
-                className="relative w-px flex-1 bg-neutral-200"
-                style={{ overflow: "visible" }}
+            {/* Sticky Header Portion */}
+            <div className="mb-6 flex-shrink-0">
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
               >
-                {/* Active fill */}
-                <div
-                  ref={progressLineRef}
-                  className="absolute top-0 left-0 right-0 bg-neutral-900 origin-top"
-                  style={{ bottom: 0, transform: "scaleY(0)" }}
-                />
-                {/* Active indicator dot */}
-                <div
-                  className="absolute left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-neutral-900 border-2 border-neutral-50 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
-                  style={{
-                    top: `calc(${(activeIndex / (SAFETY_PILLARS.length - 1)) * 100}% - 5px)`,
-                  }}
-                />
-              </div>
+                <Badge variant="dot" className="mb-4">
+                  Our Pillars
+                </Badge>
+              </motion.div>
+
+              <motion.h2
+                id="story-heading"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="text-display-md font-black text-neutral-900 tracking-tight leading-none"
+              >
+                What Makes Us
+                <br />
+                <span className="text-neutral-300">Different</span>
+              </motion.h2>
             </div>
 
-            {/* Pillar step dots */}
-            <div
-              className="absolute -left-14 top-0 bottom-0 flex flex-col justify-between py-2"
-              style={{ zIndex: 10 }}
-            >
-              {SAFETY_PILLARS.map((p, i) => (
-                <button
-                  key={p.id}
-                  onClick={() => {
-                    cardRefs.current[i]?.scrollIntoView({ behavior: "smooth", block: "center" });
-                  }}
-                  className="flex items-center gap-2 group"
-                  aria-label={`Go to ${p.title}`}
+            {/* Sticky Image Panel (takes the rest of the height) */}
+            <div className="relative flex-grow h-0 w-full">
+              {/* Progress line - left edge */}
+              <div
+                className="absolute -left-8 top-0 bottom-0 flex flex-col items-center gap-0"
+                style={{ zIndex: 10 }}
+              >
+                {/* Track */}
+                <div
+                  className="relative w-px flex-1 bg-neutral-200"
+                  style={{ overflow: "visible" }}
                 >
-                  <span
-                    className={`text-[10px] font-bold tracking-widest transition-colors duration-300 ${
-                      activeIndex === i ? "text-neutral-900" : "text-neutral-300"
-                    }`}
-                  >
-                    {p.number}
-                  </span>
-                </button>
-              ))}
-            </div>
+                  {/* Active fill */}
+                  <div
+                    ref={progressLineRef}
+                    className="absolute top-0 left-0 right-0 bg-neutral-900 origin-top"
+                    style={{ bottom: 0, transform: "scaleY(0)" }}
+                  />
+                  {/* Active indicator dot */}
+                  <div
+                    className="absolute left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-neutral-900 border-2 border-neutral-50 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                    style={{
+                      top: `calc(${(activeIndex / (SAFETY_PILLARS.length - 1)) * 100}% - 5px)`,
+                    }}
+                  />
+                </div>
+              </div>
 
-            {/* Image container */}
-            <div
-              ref={imageRef}
-              className="relative w-full h-full rounded-2xl overflow-hidden bg-neutral-100"
-              style={{
-                boxShadow: "0 32px 80px rgba(0,0,0,0.12)",
-              }}
-            >
+              {/* Pillar step dots */}
+              <div
+                className="absolute -left-14 top-0 bottom-0 flex flex-col justify-between py-2"
+                style={{ zIndex: 10 }}
+              >
+                {SAFETY_PILLARS.map((p, i) => (
+                  <button
+                    key={p.id}
+                    onClick={() => {
+                      cardRefs.current[i]?.scrollIntoView({ behavior: "smooth", block: "center" });
+                    }}
+                    className="flex items-center gap-2 group"
+                    aria-label={`Go to ${p.title}`}
+                  >
+                    <span
+                      className={`text-[10px] font-bold tracking-widest transition-colors duration-300 ${
+                        activeIndex === i ? "text-neutral-900" : "text-neutral-300"
+                      }`}
+                    >
+                      {p.number}
+                    </span>
+                  </button>
+                ))}
+              </div>
+
+              {/* Image container */}
+              <div
+                ref={imageRef}
+                className="relative w-full h-full rounded-2xl overflow-hidden bg-neutral-100"
+                style={{
+                  boxShadow: "0 32px 80px rgba(0,0,0,0.12)",
+                }}
+              >
               {/* Images — all stacked, active one on top */}
               {SAFETY_PILLARS.map((pillar, i) => (
                 <div
@@ -369,6 +396,7 @@ export function StorySection(): JSX.Element {
               </div>
             </div>
           </div>
+        </div>
 
           {/* ── RIGHT: Scrolling Cards ────────────────────────────────────── */}
           <div className="flex-1 space-y-0 pb-32 pt-4">
@@ -509,16 +537,7 @@ const SafetyCard = forwardRef<HTMLDivElement, SafetyCardProps>(
             </div>
           </div>
 
-          {/* Bottom read indicator */}
-          <div
-            className="flex items-center gap-2 mt-6 transition-opacity duration-500"
-            style={{ opacity: isActive ? 0.5 : 0 }}
-          >
-            <div className="h-px w-6 bg-neutral-400" />
-            <span className="text-[9px] font-bold tracking-[0.3em] uppercase text-neutral-400">
-              Continue scrolling
-            </span>
-          </div>
+
         </div>
       </div>
     );
