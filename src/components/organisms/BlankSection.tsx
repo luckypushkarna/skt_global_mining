@@ -72,11 +72,6 @@ export function BlankSection(): JSX.Element {
             defaults: { ease: "none" }, // linear by default; eases specified per tween
           });
 
-          // Set initial clipPath for Layer 3 portal reveal
-          gsap.set(revealRef.current, {
-            clipPath: "circle(20px at 68.5% 63%)",
-          });
-
           // ── 0 → 0.8  : Section slides up and fades in (does not fade out)
           tl.fromTo([contentRef.current, portalContainerRef.current],
             { opacity: 0, y: 40 },
@@ -113,27 +108,20 @@ export function BlankSection(): JSX.Element {
             0.8,
           );
 
-          // ── 4.5 → 10  : COLOR: light purple → premium slate grey ───────────
+          // ── 4.5 → 10  : COLOR: light purple → deep dark blue ─────────────
           tl.to(circleRef.current,
             {
-              backgroundColor: "#2D3748",
+              backgroundColor: "#0B0F19",
               duration: 3,
             },
             2.6,
           );
 
-          // ── 1.5 → 10 : Layer 3 clipPath expands (sync with circle scale) ─────
+          // ── 7 → 10   : Reveal content rises in (down to up) ──────────────
           tl.fromTo(revealRef.current,
-            { clipPath: "circle(20px at 68.5% 63%)" },
-            { clipPath: "circle(150% at 68.5% 63%)", duration: 5, ease: "power3.out" },
-            0.8,
-          );
-
-          // ── 1.5 → 4.5 : Layer 3 fades in smoothly (opacity 0 → 1) ───────────
-          tl.fromTo(revealRef.current,
-            { opacity: 0 },
-            { opacity: 1, duration: 2.5, ease: "power2.out" },
-            0.8,
+            { opacity: 0, y: 40 },
+            { opacity: 1, y: 0, duration: 1.5, ease: "power3.out" },
+            4.2,
           );
 
           return () => tl.scrollTrigger?.kill();
@@ -142,7 +130,7 @@ export function BlankSection(): JSX.Element {
         // ── Reduced motion: show static content, skip animation ─────────────
         mm.add("(prefers-reduced-motion: reduce)", () => {
           gsap.set(contentRef.current, { opacity: 1 });
-          gsap.set(revealRef.current, { opacity: 1, clipPath: "none" });
+          gsap.set(revealRef.current, { opacity: 0 });
           gsap.set(circleRef.current, { opacity: 0 });
           gsap.set(portalContainerRef.current, { opacity: 1 });
         });
