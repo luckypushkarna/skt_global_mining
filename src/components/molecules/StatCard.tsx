@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, JSX } from "react";
 import { motion, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 import type { Stat } from "@/types";

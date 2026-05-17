@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { type ButtonHTMLAttributes, type ReactNode, forwardRef } from "react";
+import { type ButtonHTMLAttributes, type ReactNode, forwardRef, JSX } from "react";
 import { cn } from "@/lib/utils";
 import { buttonHover } from "@/lib/animations";
 
@@ -78,7 +78,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           className
         )}
         disabled={disabled ?? isLoading}
-        {...props}
+        {...(props as any)}
       >
         {isLoading ? (
           <span className="flex items-center gap-2">

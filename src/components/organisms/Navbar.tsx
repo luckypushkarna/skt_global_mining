@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { JSX, useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 
 export function Navbar(): JSX.Element {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const { scrollY, isAtTop } = useScrollProgress();
+  const { scrollY } = useScrollProgress();
 
   // Close mobile menu on route change / resize
   useEffect(() => {

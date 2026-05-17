@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { MARQUEE_ITEMS } from "@/lib/constants";
+import { JSX } from "react";
 
 export function MarqueeSection(): JSX.Element {
   const duplicated = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS];

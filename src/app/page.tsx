@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import type { JSX } from "react";
 import { HeroSection } from "@/components/organisms/HeroSection";
 import { AboutSection } from "@/components/organisms/AboutSection";
 import { BlankSection } from "@/components/organisms/BlankSection";
@@ -11,7 +12,6 @@ import { MarqueeSection } from "@/components/organisms/MarqueeSection";
 import { generateMetadata } from "@/lib/seo";
 
 export const metadata = generateMetadata({
-  title: undefined, // Uses default
   description:
     "SKT Global Mining & Services Limited — Engineering excellence in mining and industrial services across 8+ countries. 18+ years. 4,200+ workforce. Zero harm.",
 });

@@ -9,7 +9,7 @@ interface UseInViewOptions {
 }
 
 interface UseInViewReturn<T extends HTMLElement> {
-  readonly ref: RefObject<T>;
+  readonly ref: RefObject<T | null>;
   readonly isInView: boolean;
   readonly entry: IntersectionObserverEntry | null;
 }

@@ -2,7 +2,6 @@ import { type NextRequest, NextResponse } from "next/server";
 import { contactFormSchema } from "@/lib/validations";
 import type { ApiResponse, ContactApiResponse } from "@/types/api";
 import { sanitizeInput } from "@/lib/validations";
-
 // In-memory rate limiting (use Redis in production)
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 
@@ -36,14 +35,14 @@ function checkRateLimit(ip: string): boolean {
   return false;
 }
 
-function buildErrorResponse(
+function buildErrorResponse<T = unknown>(
   message: string,
   status: number
-): NextResponse<ApiResponse> {
+): NextResponse<ApiResponse<T>> {
   return NextResponse.json(
     { success: false, error: message, statusCode: status },
     { status }
-  );
+  ) as unknown as NextResponse<ApiResponse<T>>;
 }
 
 export async function POST(
@@ -105,14 +104,22 @@ export async function POST(
   }
 
   // Sanitize
-  const sanitizedData = {
+  const sanitizedData: {
+    name: string;
+    email: string;
+    company?: string;
+    phone?: string;
+    subject: string;
+    message: string;
+  } = {
     name: sanitizeInput(name),
     email: sanitizeInput(email),
-    company: company ? sanitizeInput(company) : undefined,
-    phone: phone ? sanitizeInput(phone) : undefined,
     subject: sanitizeInput(subject),
     message: sanitizeInput(message),
   };
+
+  if (company) sanitizedData.company = sanitizeInput(company);
+  if (phone) sanitizedData.phone = sanitizeInput(phone);
 
   // Send email (lazy import to keep serverless bundle small)
   try {

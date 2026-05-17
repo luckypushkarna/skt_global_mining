@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import type { ReactNode } from "react";
+import type { JSX, ReactNode } from "react";
 
 type BadgeVariant = "default" | "outline" | "muted" | "dot";
 

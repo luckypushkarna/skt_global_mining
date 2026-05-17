@@ -1,5 +1,6 @@
 "use client";
 
+import { JSX } from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Badge } from "@/components/atoms/Badge";

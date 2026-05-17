@@ -1,6 +1,6 @@
 "use client";
 
-import { type ReactNode } from "react";
+import { type ReactNode, JSX } from "react";
 
 interface ThemeProviderProps {
   readonly children: ReactNode;

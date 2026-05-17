@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, JSX } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -13,7 +13,7 @@ type FormStatus = "idle" | "loading" | "success" | "error";
 
 interface InputFieldProps {
   readonly label: string;
-  readonly error?: string;
+  readonly error?: string | undefined;
   readonly required?: boolean;
   readonly children: React.ReactNode;
 }

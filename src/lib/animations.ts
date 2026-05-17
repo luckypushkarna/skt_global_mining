@@ -1,4 +1,4 @@
-import type { Variants, Transition } from "framer-motion";
+import type { Variants } from "framer-motion";
 
 // ─── Easing Curves ────────────────────────────────────────────────────────────
 export const EASINGS = {
@@ -10,7 +10,7 @@ export const EASINGS = {
 } as const;
 
 // ─── Transitions ─────────────────────────────────────────────────────────────
-export const TRANSITIONS: Record<string, Transition> = {
+export const TRANSITIONS: Record<string, any> = {
   default: { duration: 0.6, ease: EASINGS.expoOut },
   slow: { duration: 1.2, ease: EASINGS.expoOut },
   fast: { duration: 0.3, ease: EASINGS.smooth },
@@ -154,7 +154,7 @@ export const countVariants: Variants = {
 };
 
 // ─── Hover Interactions ───────────────────────────────────────────────────────
-export const cardHover = {
+export const cardHover: Variants = {
   rest: {
     scale: 1,
     y: 0,
@@ -164,28 +164,28 @@ export const cardHover = {
     scale: 1.02,
     y: -4,
     boxShadow: "0px 20px 60px rgba(0,0,0,0.08)",
-    transition: TRANSITIONS.spring,
+    transition: TRANSITIONS.spring as any,
   },
 };
 
-export const buttonHover = {
+export const buttonHover: Variants = {
   rest: { scale: 1 },
   hover: {
     scale: 1.02,
-    transition: TRANSITIONS.spring,
+    transition: TRANSITIONS.spring as any,
   },
   tap: {
     scale: 0.98,
-    transition: { duration: 0.1 },
+    transition: { duration: 0.1 } as any,
   },
 };
 
-export const iconHover = {
+export const iconHover: Variants = {
   rest: { rotate: 0, scale: 1 },
   hover: {
     rotate: 5,
     scale: 1.1,
-    transition: TRANSITIONS.spring,
+    transition: TRANSITIONS.spring as any,
   },
 };
 

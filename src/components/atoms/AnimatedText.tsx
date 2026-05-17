@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, type ReactNode, useState, useEffect } from "react";
+import { useRef, type ReactNode, useState, useEffect, JSX } from "react";
 import { cn } from "@/lib/utils";
 
 interface AnimatedTextProps {

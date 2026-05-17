@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Linkedin, Twitter, Youtube, ArrowUpRight } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
+import { JSX } from "react";
 
 const FOOTER_SECTIONS = [
   {
