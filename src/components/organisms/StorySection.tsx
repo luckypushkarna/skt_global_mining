@@ -280,9 +280,8 @@ export function StorySection(): JSX.Element {
                     aria-label={`Go to ${p.title}`}
                   >
                     <span
-                      className={`text-[10px] font-bold tracking-widest transition-colors duration-300 ${
-                        activeIndex === i ? "text-neutral-900" : "text-neutral-300"
-                      }`}
+                      className={`text-[10px] font-bold tracking-widest transition-colors duration-300 ${activeIndex === i ? "text-neutral-900" : "text-neutral-300"
+                        }`}
                     >
                       {p.number}
                     </span>
@@ -298,108 +297,108 @@ export function StorySection(): JSX.Element {
                   boxShadow: "0 32px 80px rgba(0,0,0,0.12)",
                 }}
               >
-              {/* Images — all stacked, active one on top */}
-              {SAFETY_PILLARS.map((pillar, i) => (
-                <div
-                  key={pillar.id}
-                  className="absolute inset-0 transition-all duration-1000"
-                  style={{
-                    opacity: activeIndex === i ? 1 : 0,
-                    transform: activeIndex === i ? "scale(1.02)" : "scale(1.06)",
-                    transition: "opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 1.4s cubic-bezier(0.16,1,0.3,1)",
-                  }}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={pillar.image}
-                    alt={pillar.imageAlt}
-                    className="w-full h-full object-cover"
-                    loading={i === 0 ? "eager" : "lazy"}
-                  />
-                  {/* Cinematic gradient overlay */}
+                {/* Images — all stacked, active one on top */}
+                {SAFETY_PILLARS.map((pillar, i) => (
                   <div
-                    className="absolute inset-0"
+                    key={pillar.id}
+                    className="absolute inset-0 transition-all duration-1000"
                     style={{
-                      background:
-                        "linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%)",
+                      opacity: activeIndex === i ? 1 : 0,
+                      transform: activeIndex === i ? "scale(1.02)" : "scale(1.06)",
+                      transition: "opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 1.4s cubic-bezier(0.16,1,0.3,1)",
                     }}
-                  />
-                </div>
-              ))}
-
-              {/* Floating info card at bottom of image */}
-              <div
-                className="absolute bottom-0 left-0 right-0 p-6"
-                style={{ zIndex: 10 }}
-              >
-                {/* Active pillar badge */}
-                <div
-                  className="inline-flex items-center gap-2 mb-3"
-                  style={{
-                    opacity: 1,
-                    transition: "opacity 0.4s ease",
-                  }}
-                >
-                  <span
-                    className="text-[9px] font-bold tracking-[0.3em] uppercase text-white/60"
                   >
-                    {activePillar.accent}
-                  </span>
-                  <span className="w-1 h-1 rounded-full bg-white/40" />
-                  <span
-                    className="text-[9px] font-bold tracking-[0.3em] uppercase text-white/60"
-                  >
-                    {activePillar.tag}
-                  </span>
-                </div>
-
-                {/* Metric display */}
-                <div className="flex items-end gap-3">
-                  <div>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={pillar.image}
+                      alt={pillar.imageAlt}
+                      className="w-full h-full object-cover"
+                      loading={i === 0 ? "eager" : "lazy"}
+                    />
+                    {/* Cinematic gradient overlay */}
                     <div
-                      className="text-4xl font-black text-white leading-none tracking-tight"
-                      style={{ textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}
+                      className="absolute inset-0"
+                      style={{
+                        background:
+                          "linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%)",
+                      }}
+                    />
+                  </div>
+                ))}
+
+                {/* Floating info card at bottom of image */}
+                <div
+                  className="absolute bottom-0 left-0 right-0 p-6"
+                  style={{ zIndex: 10 }}
+                >
+                  {/* Active pillar badge */}
+                  <div
+                    className="inline-flex items-center gap-2 mb-3"
+                    style={{
+                      opacity: 1,
+                      transition: "opacity 0.4s ease",
+                    }}
+                  >
+                    <span
+                      className="text-[9px] font-bold tracking-[0.3em] uppercase text-white/60"
                     >
-                      <AnimatedMetric
-                        value={activePillar.metric}
-                        isActive={true}
-                        key={activePillar.id}
-                      />
-                    </div>
-                    <div className="text-[10px] font-medium text-white/50 mt-1 tracking-wide uppercase">
-                      {activePillar.metricLabel}
-                    </div>
+                      {activePillar.accent}
+                    </span>
+                    <span className="w-1 h-1 rounded-full bg-white/40" />
+                    <span
+                      className="text-[9px] font-bold tracking-[0.3em] uppercase text-white/60"
+                    >
+                      {activePillar.tag}
+                    </span>
                   </div>
 
-                  {/* Pulse indicator for zero harm */}
-                  {activeIndex === 0 && (
-                    <div className="mb-1 ml-2 relative flex items-center justify-center">
-                      <div className="w-3 h-3 rounded-full bg-white/80" />
+                  {/* Metric display */}
+                  <div className="flex items-end gap-3">
+                    <div>
                       <div
-                        className="absolute w-6 h-6 rounded-full border border-white/40 animate-ping"
-                        style={{ animationDuration: "2s" }}
-                      />
+                        className="text-4xl font-black text-white leading-none tracking-tight"
+                        style={{ textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}
+                      >
+                        <AnimatedMetric
+                          value={activePillar.metric}
+                          isActive={true}
+                          key={activePillar.id}
+                        />
+                      </div>
+                      <div className="text-[10px] font-medium text-white/50 mt-1 tracking-wide uppercase">
+                        {activePillar.metricLabel}
+                      </div>
                     </div>
-                  )}
-                </div>
-              </div>
 
-              {/* Corner accent — industrial detail */}
-              <div
-                className="absolute top-5 right-5 flex items-center gap-1.5"
-                style={{ zIndex: 10 }}
-              >
-                <div className="w-1.5 h-1.5 rounded-full bg-white/60" />
-                <span className="text-[9px] font-bold tracking-[0.3em] text-white/40 uppercase">
-                  {activePillar.number} / {SAFETY_PILLARS.length.toString().padStart(2, "0")}
-                </span>
+                    {/* Pulse indicator for zero harm */}
+                    {activeIndex === 0 && (
+                      <div className="mb-1 ml-2 relative flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-white/80" />
+                        <div
+                          className="absolute w-6 h-6 rounded-full border border-white/40 animate-ping"
+                          style={{ animationDuration: "2s" }}
+                        />
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Corner accent — industrial detail */}
+                <div
+                  className="absolute top-5 right-5 flex items-center gap-1.5"
+                  style={{ zIndex: 10 }}
+                >
+                  <div className="w-1.5 h-1.5 rounded-full bg-white/60" />
+                  <span className="text-[9px] font-bold tracking-[0.3em] text-white/40 uppercase">
+                    {activePillar.number} / {SAFETY_PILLARS.length.toString().padStart(2, "0")}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
           {/* ── RIGHT: Scrolling Cards ────────────────────────────────────── */}
-          <div className="flex-1 space-y-0 pb-32 pt-4">
+          <div className="flex-1 space-y-0 pb-20 lg:pb-[45vh] pt-4 lg:pt-[160px]">
             {SAFETY_PILLARS.map((pillar, index) => (
               <SafetyCard
                 key={pillar.id}
@@ -461,6 +460,7 @@ const SafetyCard = forwardRef<HTMLDivElement, SafetyCardProps>(
           className="relative transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
           style={{
             opacity: isActive ? 1 : 0.45,
+            transform: isActive ? "translateX(0)" : "translateX(-6px)",
           }}
         >
           {/* Active state top bar */}
