@@ -461,7 +461,6 @@ const SafetyCard = forwardRef<HTMLDivElement, SafetyCardProps>(
           className="relative transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
           style={{
             opacity: isActive ? 1 : 0.45,
-            transform: isActive ? "translateX(0)" : "translateX(-6px)",
           }}
         >
           {/* Active state top bar */}
