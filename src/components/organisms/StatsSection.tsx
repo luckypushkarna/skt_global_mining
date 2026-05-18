@@ -377,9 +377,14 @@ export function StatsSection(): JSX.Element {
           className="mt-28 pt-12 border-t border-neutral-200"
         >
           <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-8 lg:gap-16 items-center">
-            {/* SK brand monogram */}
-            <div className="flex-shrink-0 w-14 h-14 border border-neutral-300 flex items-center justify-center rounded-sm bg-white shadow-sm">
-              <span className="text-sm font-black text-neutral-900 tracking-tighter">SK</span>
+            {/* Chairman's premium executive portrait */}
+            <div className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-white shadow-lg bg-neutral-100">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&auto=format&fit=crop&q=85"
+                alt="S.K. Thakur, Chairman"
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+              />
             </div>
 
             {/* Quote text */}
