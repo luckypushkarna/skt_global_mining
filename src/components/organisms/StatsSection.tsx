@@ -206,7 +206,7 @@ export function StatsSection(): JSX.Element {
                   <button
                     key={p.num}
                     onClick={() => handlePillarClick(i)}
-                    className={`relative w-full text-left group flex gap-5 items-start py-5 pl-6 border-b border-neutral-200 last:border-0 transition-colors duration-300 ${
+                    className={`relative w-full text-left group flex gap-5 items-start pt-5 pb-6 pl-6 border-b border-neutral-200 last:border-0 transition-colors duration-300 ${
                       isActive ? "bg-white shadow-sm" : "bg-transparent hover:bg-white/40"
                     }`}
                   >
@@ -256,38 +256,26 @@ export function StatsSection(): JSX.Element {
                         {p.tag}
                       </motion.span>
                     )}
+
+                    {/* Dynamic Horizontal Autoplay Progress Line (Under Each Individual Point) */}
+                    <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-neutral-200">
+                      {isActive && (
+                        <motion.div
+                          key={`${active}-${paused}`}
+                          initial={{ scaleX: 0 }}
+                          animate={paused ? { scaleX: 0 } : { scaleX: 1 }}
+                          transition={{
+                            duration: 3, // exactly 3 seconds
+                            ease: "linear",
+                          }}
+                          className="absolute inset-y-0 left-0 w-full bg-neutral-950 origin-left"
+                        />
+                      )}
+                    </div>
                   </button>
                 );
               })}
             </div>
-
-            {/* Dynamic horizontal autoplay loading/progress bar */}
-            <div className="pt-6 border-t border-neutral-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 select-none">
-              <span className="text-[10px] font-bold tracking-widest text-neutral-400 uppercase flex items-center gap-2">
-                <span className="relative flex h-2 w-2">
-                  {!paused && (
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neutral-900 opacity-75"></span>
-                  )}
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-neutral-950"></span>
-                </span>
-                {paused ? "Autoplay Paused" : "Next safety focus"}
-              </span>
-
-              {/* Progress bar track */}
-              <div className="flex-1 max-w-[280px] h-[3px] bg-neutral-200 rounded-full overflow-hidden relative">
-                <motion.div
-                  key={`${active}-${paused}`}
-                  initial={{ scaleX: 0 }}
-                  animate={paused ? { scaleX: 0 } : { scaleX: 1 }}
-                  transition={{
-                    duration: 3, // exactly 3 seconds
-                    ease: "linear",
-                  }}
-                  className="absolute inset-y-0 left-0 w-full bg-neutral-950 origin-left"
-                />
-              </div>
-            </div>
-
           </div>
 
           {/* RIGHT — Premium stacked image cards (Symmetric Centered Height) */}
