@@ -128,9 +128,9 @@ export function StatsSection(): JSX.Element {
           gsap.to(highlightEl, {
             scrollTrigger: {
               trigger: highlightEl,
-              start: "top 85%",
-              end: "top 60%",
-              scrub: true,
+              start: "top 92%", // Starts when quote enters the bottom of the viewport
+              end: "bottom 75%", // Fully solid black once it is comfortably in view
+              scrub: 0.5, // Ultra-smooth liquid scroll catch-up
             },
             color: "#171717", // Solid premium black (neutral-900)
             ease: "none",
@@ -406,7 +406,7 @@ export function StatsSection(): JSX.Element {
             <blockquote>
               <p className="text-xl md:text-2xl lg:text-3xl font-black text-neutral-900 leading-[1.15] tracking-tight mb-5">
                 &ldquo;We do not simply extract minerals from the earth. We extract{" "}
-                <span className="quote-highlight text-neutral-300 transition-colors duration-500">
+                <span className="quote-highlight text-neutral-300">
                   the promise of a safer tomorrow from the dedication of our people.&rdquo;
                 </span>
               </p>
