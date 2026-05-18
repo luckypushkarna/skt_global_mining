@@ -2,7 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Wrench, Package, Truck, Shield, Network, Monitor, Users, Settings, TrendingUp, ShieldCheck, Building2, Globe } from "lucide-react";
+import { Wrench, Package, Truck, Shield, Network, Monitor, Users, Settings, TrendingUp, ShieldCheck, Building2, Globe } from "lucide-react";
 import Link from "next/link";
 import { JSX } from "react";
 
@@ -416,8 +416,7 @@ export function ServicesSection(): JSX.Element {
               href="/services"
               className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-900 border border-neutral-200 rounded-full px-6 py-3 hover:bg-neutral-900 hover:text-white hover:border-neutral-900 transition-all duration-300"
             >
-              View All Services
-              <ArrowRight size={14} />
+              View Systems →
             </Link>
           </motion.div>
         </div>
@@ -469,8 +468,7 @@ export function ServicesSection(): JSX.Element {
             href="/contact"
             className="flex-shrink-0 inline-flex items-center gap-2 text-sm font-bold text-white bg-neutral-900 rounded-full px-7 py-3.5 hover:bg-neutral-700 transition-colors duration-300"
           >
-            Discuss Your Project
-            <ArrowRight size={15} />
+            Explore Operations →
           </Link>
         </div>
       </motion.div>

@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import { JSX } from "react";
-import { Layers, MapPin, Compass, Download } from "lucide-react";
+import { Layers, MapPin, Compass } from "lucide-react";
 
 /**
  * Cinematic GSAP scroll-driven expanding circle transition.
@@ -17,14 +17,14 @@ import { Layers, MapPin, Compass, Download } from "lucide-react";
  */
 export function BlankSection(): JSX.Element {
   // ─── States ──────────────────────────────────────────────────────────────────
-  const [activeCategory, setActiveCategory] = useState("copperbelt");
+  const [activeCategory, setActiveCategory] = useState("operations");
 
   const categories = [
-    { id: "copperbelt", title: "Copperbelt Hub", subtitle: "Active Mine" },
-    { id: "kitwe", title: "Kitwe Refinery", subtitle: "Smelter & Tech" },
-    { id: "ndola", title: "Ndola Logistics", subtitle: "Warehouse & Fleet" },
-    { id: "lusaka", title: "Lusaka HQ", subtitle: "Corporate Command" },
-    { id: "expansion", title: "Regional Exploration", subtitle: "Future Sites" },
+    { id: "operations", title: "Underground Operations", subtitle: "Continuous Mechanised Mining" },
+    { id: "infrastructure", title: "Infrastructure Systems", subtitle: "Engineering & Asset Support" },
+    { id: "logistics", title: "Logistics Network", subtitle: "US$3M+ Parts Inventory" },
+    { id: "support", title: "Operational Support", subtitle: "Workforce Housing & Welfare" },
+    { id: "expansion", title: "Expansion Zones", subtitle: "Regional Growth Projects" },
   ];
 
   // ─── Refs ────────────────────────────────────────────────────────────────────
@@ -172,16 +172,14 @@ export function BlankSection(): JSX.Element {
               {/* Left: Copy */}
               <div>
                 <h3 className="text-sm font-bold tracking-[0.25em] text-neutral-400 uppercase mb-5">
-                  Operational Presence
+                  Underground Operations
                 </h3>
                 <h2 className="text-4xl md:text-6xl font-black text-neutral-900 tracking-tight leading-[1.05] mb-8">
                   Zambia <br />
-                  <span className="text-neutral-300">Operations.</span>
+                  <span className="text-neutral-300">Mining Ecosystem</span>
                 </h2>
                 <p className="text-neutral-500 max-w-lg text-base leading-relaxed">
-                  Our strategic operations in Zambia are built on a foundation of
-                  technical precision and engineering excellence, driving regional
-                  growth and industrial stability.
+                  SKT Global’s operations in Zambia are built around underground mechanisation, operational infrastructure, workforce development, and long-term mining sustainability.
                 </p>
               </div>
 
@@ -274,7 +272,7 @@ export function BlankSection(): JSX.Element {
             <div className="flex items-center justify-between border-b border-white/10 pb-6 w-full select-none">
               <div>
                 <span className="text-[10px] font-extrabold tracking-[0.4em] uppercase text-white/50">
-                  Operational Presence
+                  UNDERGROUND ECOSYSTEM
                 </span>
                 <h2 className="text-2xl font-black tracking-tight text-white mt-1">
                   SKT GLOBAL MINING HUB
@@ -290,7 +288,7 @@ export function BlankSection(): JSX.Element {
               <div className="lg:col-span-4 flex flex-col gap-3 bg-black/25 backdrop-blur-md p-6 rounded-2xl border border-white/5 w-full">
                 <div className="flex items-center gap-2 text-xs font-bold text-white/50 uppercase tracking-widest mb-2 select-none">
                   <Layers size={14} className="text-rose-500" />
-                  <span>Select Mining Hub</span>
+                  <span>OPERATIONAL SYSTEMS</span>
                 </div>
                 
                 {categories.map((cat) => {
@@ -386,11 +384,11 @@ export function BlankSection(): JSX.Element {
 
                   {/* Operational Nodes */}
                   {[
-                    { id: "copperbelt", cx: 280, cy: 140, label: "Copperbelt" },
-                    { id: "kitwe", cx: 350, cy: 180, label: "Kitwe Refinery" },
-                    { id: "ndola", cx: 420, cy: 200, label: "Ndola Logistics" },
-                    { id: "lusaka", cx: 460, cy: 330, label: "Lusaka HQ" },
-                    { id: "expansion", cx: 580, cy: 240, label: "Exploration" },
+                    { id: "operations", cx: 280, cy: 140, label: "Operations" },
+                    { id: "infrastructure", cx: 380, cy: 180, label: "Infrastructure" },
+                    { id: "logistics", cx: 460, cy: 200, label: "Logistics" },
+                    { id: "support", cx: 520, cy: 310, label: "Support" },
+                    { id: "expansion", cx: 620, cy: 260, label: "Expansion" },
                   ].map((node) => {
                     const isNodeActive = activeCategory === node.id;
                     return (
@@ -441,11 +439,11 @@ export function BlankSection(): JSX.Element {
                     {categories.find(c => c.id === activeCategory)?.title}
                   </h4>
                   <p className="text-[11px] text-white/50 leading-relaxed">
-                    {activeCategory === "copperbelt" && "Core operational site coordinating direct-drilling, mechanical extraction, and primary sorting of structural copper ore bodies."}
-                    {activeCategory === "kitwe" && "Advanced purification plant implementing metallurgical sorting, refining processes, and environmental safety protocols."}
-                    {activeCategory === "ndola" && "Central transport dispatch depot hosting the heavy mechanised fleet, spare parts inventory, and maintenance workshops."}
-                    {activeCategory === "lusaka" && "Corporate command infrastructure housing operational engineering directors, financial controllers, and regional administrators."}
-                    {activeCategory === "expansion" && "Active geodetic testing sites investigating additional structural copper reserves across surrounding regions."}
+                    {activeCategory === "operations" && "Large-scale mechanised underground mining systems supporting continuous operational development."}
+                    {activeCategory === "infrastructure" && "Dedicated underground engineering systems, asset maintenance, and technical support frameworks."}
+                    {activeCategory === "logistics" && "Robust supply chain network with strategic spare parts inventory valued at over US$3 million."}
+                    {activeCategory === "support" && "Comprehensive workforce logistics, onsite housing, and 24-hour catering support systems."}
+                    {activeCategory === "expansion" && "Long-term regional expansion and future resource exploration zones."}
                   </p>
                 </div>
               </div>
@@ -455,15 +453,15 @@ export function BlankSection(): JSX.Element {
             <div className="flex flex-col sm:flex-row items-center justify-between border-t border-white/10 pt-6 gap-4 w-full select-none">
               {/* Slider representation */}
               <div className="flex items-center gap-4">
-                <span className="text-[9px] font-bold tracking-widest text-white/40 uppercase">Range Scale</span>
+                <span className="text-[9px] font-bold tracking-widest text-white/40 uppercase">Operational Network</span>
                 <div className="w-48 h-1.5 bg-white/10 rounded-full overflow-hidden relative">
                   <div
                     className="absolute left-0 top-0 bottom-0 bg-rose-500 rounded-full transition-all duration-500"
                     style={{
-                      width: activeCategory === "copperbelt" ? "20%" :
-                             activeCategory === "kitwe" ? "40%" :
-                             activeCategory === "ndola" ? "60%" :
-                             activeCategory === "lusaka" ? "80%" : "100%"
+                      width: activeCategory === "operations" ? "20%" :
+                             activeCategory === "infrastructure" ? "40%" :
+                             activeCategory === "logistics" ? "60%" :
+                             activeCategory === "support" ? "80%" : "100%"
                     }}
                   />
                 </div>
@@ -475,8 +473,7 @@ export function BlankSection(): JSX.Element {
                 onClick={(e) => e.preventDefault()}
                 className="flex items-center gap-2 bg-white/10 border border-white/20 text-white rounded-full px-6 py-2.5 text-xs font-bold hover:bg-rose-600 hover:border-rose-600 hover:text-white transition-all duration-300 cursor-pointer shadow-lg hover:shadow-rose-600/20"
               >
-                <span>Download Report</span>
-                <Download size={13} />
+                <span>Discover Infrastructure →</span>
               </a>
             </div>
 
@@ -492,7 +489,7 @@ export function BlankSection(): JSX.Element {
           style={{ zIndex: 60 }}
         >
           <span className="text-[10px] font-bold tracking-[0.45em] text-neutral-400 uppercase">
-            Scroll to Enter
+            Explore Operations ↓
           </span>
           <div
             className="w-px h-10"

@@ -17,12 +17,12 @@ export const SITE_CONFIG = {
 
 export const NAV_ITEMS: ReadonlyArray<NavItem> = [
   { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Projects", href: "/projects" },
+  { label: "Operations", href: "/services" },
+  { label: "Infrastructure", href: "/projects" },
   { label: "Safety", href: "/safety" },
-  { label: "Sustainability", href: "/sustainability" },
+  { label: "Communities", href: "/sustainability" },
   { label: "Careers", href: "/careers" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact Us", href: "/contact" },
 ] as const;
 
 export const SERVICES: ReadonlyArray<Service> = [
@@ -114,41 +114,46 @@ export const SERVICES: ReadonlyArray<Service> = [
 
 export const STATS: ReadonlyArray<Stat> = [
   {
-    value: "18",
+    value: "225",
     suffix: "+",
-    label: "Years of Excellence",
-    description: "Delivering world-class mining operations since 2005",
-  },
-  {
-    value: "47",
-    suffix: "M",
     prefix: "",
-    label: "Tonnes Processed",
-    description: "Total ore processed across all operations",
+    label: "Underground Machines",
+    description: "Mechanised fleet supporting continuous underground operations.",
   },
   {
-    value: "12",
+    value: "1500",
     suffix: "+",
-    label: "Active Projects",
-    description: "Simultaneous operations across multiple geographies",
+    prefix: "",
+    label: "Zambian Workforce",
+    description: "Skilled operational teams across mining systems.",
   },
   {
-    value: "8",
-    suffix: "+",
-    label: "Countries Operated",
-    description: "Global presence from Asia to Africa",
+    value: "50",
+    suffix: "M+",
+    prefix: "US$",
+    label: "Initial Investment",
+    description: "Strategic infrastructure and operational deployment.",
   },
   {
-    value: "4200",
-    suffix: "+",
-    label: "Workforce Strong",
-    description: "Skilled professionals across all disciplines",
+    value: "50",
+    suffix: "%",
+    prefix: "",
+    label: "Mopani Targets",
+    description: "Development and production targets achieved at Mopani operations.",
   },
   {
-    value: "Zero",
+    value: "24/7",
     suffix: "",
-    label: "Fatal Incidents",
-    description: "Sustained zero-fatality record since 2018",
+    prefix: "",
+    label: "Operations Support",
+    description: "Continuous underground mining support infrastructure.",
+  },
+  {
+    value: "3",
+    suffix: "M+",
+    prefix: "US$",
+    label: "Spare Parts Inventory",
+    description: "Strategic warehousing and operational readiness systems.",
   },
 ] as const;
 
@@ -156,7 +161,7 @@ export const TEAM_MEMBERS: ReadonlyArray<TeamMember> = [
   {
     id: "sk-thakur",
     name: "S.K. Thakur",
-    role: "Chairman & Managing Director",
+    role: "Chairman & Managing Director, SKT Global Mining & Services Limited",
     bio: "Visionary leader with 35+ years in global mining and resource development. Former advisor to multiple national mining regulatory bodies.",
   },
   {
@@ -181,50 +186,54 @@ export const TEAM_MEMBERS: ReadonlyArray<TeamMember> = [
 
 export const MILESTONES: ReadonlyArray<Milestone> = [
   {
-    year: "2005",
-    title: "Foundation",
-    description:
-      "SKT Global incorporated in Mumbai with first coal mining contract in Jharkhand, India.",
+    year: "2024",
+    title: "Establishment",
+    description: "SKT Global Mining & Services Limited begins operations in Zambia as part of TTIPL’s strategic mining expansion.",
   },
   {
-    year: "2009",
-    title: "First International Project",
-    description:
-      "Secured landmark contract in Mozambique, marking the beginning of Africa expansion.",
+    year: "6 Months",
+    title: "Rapid Mobilisation",
+    description: "225 underground mining machines mobilised through an investment exceeding US$50 million.",
   },
   {
-    year: "2013",
-    title: "ISO Certification",
-    description:
-      "Achieved ISO 9001, ISO 14001, and OHSAS 18001 triple certification across all operations.",
+    year: "Workforce",
+    title: "Workforce Development",
+    description: "More than 1,500 Zambian employees recruited and supported by skilled international mining professionals.",
   },
   {
-    year: "2016",
-    title: "50 Million Tonnes",
-    description:
-      "Crossed the landmark 50 million tonne cumulative production milestone.",
+    year: "Infrastructure",
+    title: "Infrastructure Expansion",
+    description: "Operational warehouses, accommodation facilities, workshops, transportation systems, and 24-hour catering infrastructure established.",
   },
   {
-    year: "2019",
-    title: "Technology Transformation",
-    description:
-      "Launched AI-powered fleet management and real-time geological modeling platform.",
+    year: "Mopani",
+    title: "Mopani Operations",
+    description: "Approximately 50% of Mopani Copper Mines development and production targets achieved within the first ten months.",
   },
   {
-    year: "2023",
-    title: "Net Zero Commitment",
-    description:
-      "Pledged net-zero Scope 1 & 2 emissions by 2040 with comprehensive decarbonization roadmap.",
+    year: "Future",
+    title: "Future Expansion",
+    description: "Strategic expansion planned across Zambia, India, South Africa, and the Democratic Republic of Congo.",
   },
 ] as const;
 
 export const MARQUEE_ITEMS = [
-  "Engineering Excellence",
-  "Zero Harm Philosophy",
-  "Global Operations",
-  "Sustainable Mining",
-  "Workforce of 4200+",
-  "ISO Certified",
-  "18 Years Strong",
-  "Built to Last",
+  "Underground Mining Ecosystem",
+  "Mechanised Operations",
+  "225+ Underground Machines",
+  "1500+ Workforce",
+  "US$50M+ Strategic Investment",
+  "Operational Excellence",
+  "Workforce Development",
+  "Engineering Precision",
+  "24/7 Mining Infrastructure",
+  "Strategic Warehousing",
+  "Safety First Operations",
+  "Underground Mechanisation",
+  "Mining Infrastructure Systems",
+  "Zambia Mining Operations",
+  "Built For Scale",
+  "Infrastructure Beyond Mining",
+  "Continuous Operations",
+  "Future Mining Systems",
 ] as const;

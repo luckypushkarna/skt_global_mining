@@ -50,7 +50,7 @@ export function ContactSection(): JSX.Element {
             viewport={{ once: true }}
           >
             <Badge variant="dot" className="mb-6">
-              Get in Touch
+              Get In Touch
             </Badge>
           </motion.div>
 

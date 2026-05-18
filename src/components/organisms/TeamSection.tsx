@@ -46,9 +46,7 @@ export function TeamSection(): JSX.Element {
             transition={{ duration: 0.8, delay: 0.1 }}
           >
             <p className="text-lg text-neutral-500 leading-relaxed max-w-xl">
-              Our team is a blend of visionaries, engineers, and strategists dedicated to
-              responsible mining. We come together with one shared goal: to guide our 
-              global operations while ensuring every detail exceeds expectations.
+              Our success is driven by a highly capable team of professionals across Human Resources, Finance, Commercial, Engineering, and Mining, advancing our vision of sustainable, profitable, and safe mining operations.
             </p>
           </motion.div>
         </div>

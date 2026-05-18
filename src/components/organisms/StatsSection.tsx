@@ -72,7 +72,7 @@ export function StatsSection(): JSX.Element {
             transition={{ duration: 0.6 }}
           >
             <Badge variant="dot" className="mb-6">
-              By the Numbers
+              OPERATIONAL SCALE
             </Badge>
           </motion.div>
 
@@ -97,9 +97,9 @@ export function StatsSection(): JSX.Element {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base text-neutral-500 leading-relaxed self-end max-w-lg"
             >
-              Behind every metric is a team of dedicated professionals, a
-              commitment to safety, and an unwavering focus on delivering
-              results that matter to our clients and the communities we serve.
+              Behind every metric is our dedicated team of professionals, an unwavering
+              commitment to safe operations, and strategic alignment with IRH to accelerate
+              development and increase production at Mopani Copper Mines.
             </motion.p>
           </div>
         </div>
@@ -171,7 +171,7 @@ export function StatsSection(): JSX.Element {
                     S.K. Thakur
                   </cite>
                   <p className="text-xs md:text-sm text-neutral-400 font-medium tracking-wide uppercase">
-                    Chairman & Managing Director, SKT Global
+                    Chairman & Managing Director, SKT Global Mining & Services Limited
                   </p>
                 </div>
               </footer>

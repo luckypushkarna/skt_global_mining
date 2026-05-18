@@ -23,7 +23,7 @@ const FOOTER_SECTIONS = [
     ],
   },
   {
-    title: "Sustainability",
+    title: "COMMUNITY IMPACT",
     links: [
       { label: "Safety Philosophy", href: "/safety" },
       { label: "Environmental Policy", href: "/sustainability" },

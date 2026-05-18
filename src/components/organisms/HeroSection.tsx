@@ -2,19 +2,24 @@
 
 import { useRef, useEffect, useState, useMemo, JSX } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/atoms/Button";
 import { Badge } from "@/components/atoms/Badge";
-import { SITE_CONFIG } from "@/lib/constants";
 import { useHeroAnimation } from "@/hooks/useHeroAnimation";
 
 function MetricCounter({ value, label, delay = 0 }: { value: string; label: string; delay?: number }) {
   const [count, setCount] = useState(0);
-  const target = parseInt(value.replace(/[^0-9]/g, ""));
-  const suffix = value.replace(/[0-9]/g, "");
+  
+  const isStatic = value.includes("/");
+  const hasPrefix = value.startsWith("US$");
+  const prefix = hasPrefix ? "US$" : "";
+  const numericPart = value.replace(/[^0-9]/g, "");
+  const target = isStatic ? 0 : parseInt(numericPart) || 0;
+  const suffix = isStatic ? "" : value.replace(prefix, "").replace(/[0-9]/g, "");
 
   useEffect(() => {
+    if (isStatic) return;
     let startTime: number;
     let animationFrame: number;
 
@@ -42,7 +47,7 @@ function MetricCounter({ value, label, delay = 0 }: { value: string; label: stri
 
     animationFrame = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationFrame);
-  }, [target, delay]);
+  }, [target, delay, isStatic]);
 
   return (
     <motion.div
@@ -51,8 +56,7 @@ function MetricCounter({ value, label, delay = 0 }: { value: string; label: stri
     >
       <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none mix-blend-overlay" />
       <span className="text-2xl md:text-3xl font-black text-white tracking-tight leading-none mb-1">
-        {count}
-        {suffix}
+        {isStatic ? value : `${prefix}${count}${suffix}`}
       </span>
       <span className="text-[10px] font-semibold tracking-[0.2em] text-white/40 uppercase">
         {label}
@@ -121,7 +125,7 @@ export function HeroSection(): JSX.Element {
           playsInline
           className="w-full h-full object-cover opacity-50 mix-blend-luminosity"
         >
-          <source src="/videos/hero-background.mp4" type="video/mp4" />
+          <source src="/videos/SKT Global FF Hero Video.mp4" type="video/mp4" />
         </video>
         {/* Dynamic vignette */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_#050505_100%)] opacity-80" />
@@ -160,7 +164,7 @@ export function HeroSection(): JSX.Element {
           className="mb-8 inline-block"
         >
           <Badge variant="outline" className="text-white/80 border-white/20 backdrop-blur-md px-4 py-1.5 shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-            Est. {SITE_CONFIG.founded} · {SITE_CONFIG.headquarters}
+            STRATEGIC MINING OPERATIONS · ZAMBIA
           </Badge>
         </motion.div>
 
@@ -184,15 +188,10 @@ export function HeroSection(): JSX.Element {
               className="text-display-lg font-black text-white leading-[0.9] tracking-tighter"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 120%, 0 120%)" }}
             >
-              the Future
+              The Future
             </h1>
             
-            <div ref={ofMiningRef} className="hidden md:flex items-center gap-4 mb-4 ml-2">
-              <div ref={ofMiningLineRef} className="w-16 h-[2px] bg-white/40 shadow-[0_0_8px_rgba(255,255,255,0.3)] origin-left" />
-              <span ref={ofMiningTextRef} className="text-xs font-bold tracking-[0.15em] text-white/60 uppercase">
-                of Mining
-              </span>
-            </div>
+            <div ref={ofMiningRef} className="hidden" />
           </div>
           
           {/* Line 3 */}
@@ -202,7 +201,7 @@ export function HeroSection(): JSX.Element {
               className="text-display-lg font-black text-white/30 leading-[0.9] tracking-tighter mix-blend-plus-lighter"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 120%, 0 120%)" }}
             >
-              & Services
+              Underground
             </h1>
           </div>
         </div>
@@ -214,9 +213,7 @@ export function HeroSection(): JSX.Element {
             className="text-sm md:text-base text-white/70 leading-relaxed max-w-lg font-medium"
             style={{ clipPath: "polygon(0 0, 100% 0, 100% 120%, 0 120%)" }}
           >
-            SKT Global delivers world-class mining and industrial services
-            across 8+ countries. Built on engineering excellence, driven by
-            zero-harm philosophy, and powered by 4,200+ skilled professionals.
+            Transforming underground mining through mechanisation, operational scale, and engineering precision across Zambia.
           </p>
 
           <div 
@@ -230,15 +227,7 @@ export function HeroSection(): JSX.Element {
                 className="group relative overflow-hidden bg-white text-black hover:bg-neutral-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.15)]"
               >
                 <Link href="/services" className="flex items-center gap-2 relative z-10">
-                  Explore Services
-                  <motion.span 
-                    className="inline-block"
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 4 }}
-                    transition={{ ease: "easeOut", duration: 0.3 }}
-                  >
-                    <ArrowRight size={16} />
-                  </motion.span>
+                  Explore Operations →
                 </Link>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/5 to-transparent -translate-x-full group-hover:animate-shimmer" />
               </Button>
@@ -250,7 +239,7 @@ export function HeroSection(): JSX.Element {
                 size="lg" 
                 className="group text-white border-white/20 hover:border-white/50 hover:bg-white/5 backdrop-blur-sm transition-all"
               >
-                <Link href="/about">Our Story</Link>
+                <Link href="/about">Discover SKT →</Link>
               </Button>
             </motion.div>
           </div>
@@ -262,10 +251,10 @@ export function HeroSection(): JSX.Element {
           className="mt-24 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-4"
         >
           {[
-            { value: "18+", label: "Years", delay: 1.4 },
-            { value: "47M+", label: "Tonnes", delay: 1.5 },
-            { value: "4200+", label: "Workforce", delay: 1.6 },
-            { value: "8+", label: "Countries", delay: 1.7 },
+            { value: "225+", label: "Underground Machines", delay: 1.4 },
+            { value: "1500+", label: "Workforce", delay: 1.5 },
+            { value: "US$50M+", label: "Initial Investment", delay: 1.6 },
+            { value: "24/7", label: "Operations", delay: 1.7 },
           ].map((item, i) => (
             <MetricCounter key={i} value={item.value} label={item.label} delay={item.delay} />
           ))}

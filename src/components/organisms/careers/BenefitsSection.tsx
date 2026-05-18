@@ -3,53 +3,38 @@
 import { JSX, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Badge } from "@/components/atoms/Badge";
-import { Target, Gem, Bus, Home, Utensils, HeartPulse, GraduationCap, Users2, Trophy } from "lucide-react";
+import { Target, Gem, Bus, Home, Utensils, Users2 } from "lucide-react";
 
 const BENEFITS = [
   {
     icon: Target,
     title: "Attendance Incentive",
-    description: "Rewarding consistent commitment and shift punctuality with standard monthly operational bonuses.",
+    description: "Operators and Artisans receive up to ZMW 600/month, and general workers ZMW 400/month for excellent attendance.",
   },
   {
     icon: Gem,
-    title: "Retention Bonus Scheme",
-    description: "Compounding financial growth increments aligned with career milestones and service tenure.",
+    title: "Ukukonka Retention Scheme",
+    description: "Rewards long-service loyalty with milestones from kitchen appliances (Year 1) to a full motor vehicle (Year 5).",
+  },
+  {
+    icon: Users2,
+    title: "Ubuntu Mentorship Program",
+    description: "A localization scheme where expatriates mentor at least two Zambian professionals for skills transfer.",
   },
   {
     icon: Bus,
     title: "Dedicated Shuttle Transport",
-    description: "Daily transportation logistics networks connecting primary operations to major regional centers.",
-  },
-  {
-    icon: Home,
-    title: "Modern Site Accommodation",
-    description: "High-spec modern accommodations built to premium safety standards for onsite shifts.",
+    description: "Safe, daily employee shuttle logistics networks connecting primary operations to major regional residential hubs.",
   },
   {
     icon: Utensils,
-    title: "Premium Catered Dining",
-    description: "Nutrient-balanced meal provisions managed daily by professional catering teams.",
+    title: "24-Hour Catering Services",
+    description: "Operational 24-hour catering facilities providing high-quality, balanced nutrition to our onsite workforce.",
   },
   {
-    icon: HeartPulse,
-    title: "Full Medical & Wellness Coverage",
-    description: "Rigorous healthcare infrastructure including emergency evacuation and operational clinical support.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Educational Bursaries",
-    description: "Financial sponsorships for advanced certifications, geological degrees, and global skill courses.",
-  },
-  {
-    icon: Users2,
-    title: "Family Wellbeing Support",
-    description: "Extending medical benefits and community training programs to support your direct dependents.",
-  },
-  {
-    icon: Trophy,
-    title: "Performance Recognitions",
-    description: "Regular honors for teams demonstrating exceptional safety compliance and quality metrics.",
+    icon: Home,
+    title: "Modern Site Infrastructure",
+    description: "State-of-the-art residential staff housing, modern warehouses, and a fully equipped engineering workshop.",
   },
 ] as const;
 

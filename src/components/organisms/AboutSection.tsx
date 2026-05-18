@@ -8,7 +8,6 @@ import {
   useInView,
   type MotionValue,
 } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/atoms/Badge";
@@ -99,7 +98,7 @@ export function AboutSection(): JSX.Element {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <Badge variant="dot" className="mb-6">
-              Our Foundation
+              THE FOUNDATION
             </Badge>
             <h2
               id="about-heading"
@@ -119,23 +118,15 @@ export function AboutSection(): JSX.Element {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col justify-end"
           >
-            <p className="text-base text-neutral-500 leading-relaxed mb-4">
-              Since 2005, SKT Global Mining & Services Limited has grown from a
-              single coal mining contract in Jharkhand to a multinational
-              industrial powerhouse operating across 8 countries.
-            </p>
             <p className="text-base text-neutral-500 leading-relaxed mb-8">
-              Our journey is defined not just by tonnes extracted, but by
-              communities strengthened, environments protected, and engineering
-              standards elevated across every operation we undertake.
+              SKT Global Mining & Services Limited was established as part of Tyre Technocrats India Private Limited’s long-term strategic investment into Zambia’s mining sector. From inception, the company’s growth has been defined by speed, operational discipline, infrastructure development, and underground mining excellence.
             </p>
             <Button
               variant="ghost"
               size="md"
-              rightIcon={<ArrowRight size={14} />}
               className="self-start"
             >
-              <Link href="/about">Read Our Full Story</Link>
+              <Link href="/about">Discover SKT →</Link>
             </Button>
           </motion.div>
         </div>

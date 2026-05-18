@@ -107,7 +107,7 @@ export function Navbar(): JSX.Element {
                 variant={isScrolled ? "outline" : "secondary"} 
                 size="sm"
               >
-                <Link href="/contact">Get in Touch</Link>
+                <Link href="/contact">Get In Touch</Link>
               </Button>
             </div>
 
@@ -207,7 +207,7 @@ export function Navbar(): JSX.Element {
             <div className="px-6 pb-8 pt-4">
               <Button variant="primary" size="lg" fullWidth>
                 <Link href="/contact" onClick={() => setIsMobileOpen(false)}>
-                  Get in Touch
+                  Get In Touch
                 </Link>
               </Button>
             </div>
