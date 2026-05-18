@@ -15,6 +15,7 @@ const CARDS = [
     title: "Underground Workshop",
     desc: "A fully integrated underground maintenance ecosystem engineered to support uninterrupted mining operations, with 24/7 repair systems and rapid-response servicing.",
     tags: ["24/7 Repair", "Technical Support", "Rapid Response"],
+    bgImage: "/Underground Workshop.png",
   },
   {
     num: "02",
@@ -102,57 +103,131 @@ const ROW_A = [...CARDS, ...CARDS];
 
 function SliderCard({ card, verticalOffset = 0 }: { card: typeof CARDS[0]; verticalOffset?: number }) {
   const Icon = card.icon;
+  const hasBg = !!card.bgImage;
+
   return (
     <div
-      className="group relative flex-shrink-0 w-[340px] mx-3 bg-white rounded-2xl p-7 cursor-default select-none overflow-hidden"
+      className={`group relative flex-shrink-0 w-[420px] h-[642px] mx-3 rounded-[32px] p-9 cursor-default select-none overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        hasBg 
+          ? "text-white bg-neutral-950 border border-white/10" 
+          : "bg-white text-neutral-900 border border-neutral-100/70"
+      }`}
       style={{
         transform: `translateY(${verticalOffset}px)`,
-        border: "1px solid rgba(0,0,0,0.07)",
-        boxShadow: "0 2px 20px rgba(0,0,0,0.04)",
-        transition: "transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s cubic-bezier(0.16,1,0.3,1), border-color 0.3s ease",
+        boxShadow: hasBg ? "0 10px 40px rgba(0,0,0,0.3)" : "0 4px 24px rgba(0,0,0,0.03)",
         willChange: "transform",
       }}
       onMouseEnter={(e) => {
-        (e.currentTarget as HTMLDivElement).style.transform = `translateY(${verticalOffset - 6}px)`;
-        (e.currentTarget as HTMLDivElement).style.boxShadow = "0 16px 48px rgba(0,0,0,0.10)";
-        (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(0,0,0,0.14)";
+        (e.currentTarget as HTMLDivElement).style.transform = `translateY(${verticalOffset - 8}px)`;
+        (e.currentTarget as HTMLDivElement).style.boxShadow = hasBg 
+          ? "0 30px 60px rgba(0,0,0,0.5)" 
+          : "0 20px 48px rgba(0,0,0,0.08)";
+        if (!hasBg) {
+          (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(0,0,0,0.12)";
+        } else {
+          (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.2)";
+        }
       }}
       onMouseLeave={(e) => {
         (e.currentTarget as HTMLDivElement).style.transform = `translateY(${verticalOffset}px)`;
-        (e.currentTarget as HTMLDivElement).style.boxShadow = "0 2px 20px rgba(0,0,0,0.04)";
-        (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(0,0,0,0.07)";
+        (e.currentTarget as HTMLDivElement).style.boxShadow = hasBg 
+          ? "0 10px 40px rgba(0,0,0,0.3)" 
+          : "0 4px 24px rgba(0,0,0,0.03)";
+        if (!hasBg) {
+          (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(0,0,0,0.07)";
+        } else {
+          (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.1)";
+        }
       }}
     >
-      {/* Ghost number */}
-      <span className="absolute top-5 right-6 text-5xl font-black text-neutral-100 select-none pointer-events-none">
-        {card.num}
-      </span>
+      {/* Background Image & Overlay */}
+      {hasBg && (
+        <>
+          {/* Full Cover Image */}
+          <div
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
+            style={{ backgroundImage: `url("${encodeURI(card.bgImage)}")` }}
+          />
+          {/* Full Dark Overlay Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60" />
+          {/* Frosted Glass Overlay for Text Area */}
+          <div className="absolute inset-x-0 bottom-0 h-[65%] bg-gradient-to-t from-neutral-950 via-neutral-950/85 to-transparent backdrop-blur-md transition-opacity duration-300" />
+        </>
+      )}
 
-      {/* Icon */}
-      <div className="w-10 h-10 flex items-center justify-center rounded-xl mb-5 bg-neutral-50 border border-neutral-100 group-hover:bg-neutral-100 transition-colors duration-300">
-        <Icon size={18} className="text-neutral-600 group-hover:text-neutral-900 transition-colors duration-300" strokeWidth={1.5} />
+      {/* Ghost Number / Top Right Layout */}
+      {!hasBg && (
+        <span className="absolute top-8 right-9 text-7xl font-black text-neutral-100/60 select-none pointer-events-none transition-colors duration-300">
+          {card.num}
+        </span>
+      )}
+
+      {/* Top Left Layout - Large elegant Icon container for Light Cards */}
+      {!hasBg && (
+        <div className="absolute top-8 left-9 w-14 h-14 flex items-center justify-center rounded-2xl bg-neutral-50 border border-neutral-100 text-neutral-800 transition-all duration-300 group-hover:scale-105">
+          <Icon size={24} strokeWidth={1.5} />
+        </div>
+      )}
+
+      {/* Align Content to the bottom */}
+      <div className="relative z-10 flex flex-col justify-end h-full">
+        {/* Dynamic Icon above Title for Dark Cards */}
+        {hasBg && (
+          <div className="w-12 h-12 flex items-center justify-center rounded-2xl mb-4 bg-white/10 border border-white/10 text-white backdrop-blur-sm transition-all duration-300 group-hover:scale-105">
+            <Icon size={20} className="text-white" strokeWidth={1.5} />
+          </div>
+        )}
+
+        {/* Text Area */}
+        <h3 
+          className={`text-2xl md:text-3xl font-bold tracking-tight mb-3 transition-colors duration-300 ${
+            hasBg ? "text-white" : "text-neutral-900"
+          }`}
+        >
+          {card.title}
+        </h3>
+        <p 
+          className={`text-sm leading-relaxed mb-6 max-w-[340px] transition-colors duration-300 ${
+            hasBg ? "text-neutral-200/90" : "text-neutral-500"
+          }`}
+        >
+          {card.desc}
+        </p>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 mb-8">
+          {card.tags.map((tag) => (
+            <span
+              key={tag}
+              className={`text-[11px] font-semibold tracking-wider px-3.5 py-1.5 rounded-full uppercase transition-all duration-300 ${
+                hasBg
+                  ? "text-neutral-200 bg-white/10 border border-white/5 backdrop-blur-sm group-hover:bg-white/15"
+                  : "text-neutral-500 bg-neutral-50 border border-neutral-100"
+              }`}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* Action Button matching Santorini/Swiss Chalet style */}
+        <button 
+          className={`w-full font-bold py-4 rounded-full transition-all duration-300 text-sm uppercase tracking-wider ${
+            hasBg 
+              ? "bg-white hover:bg-neutral-100 text-neutral-950 shadow-lg" 
+              : "border border-neutral-200 hover:bg-neutral-900 hover:text-white hover:border-neutral-900 text-neutral-900"
+          }`}
+        >
+          {hasBg ? "Explore Workshop" : "Learn More"}
+        </button>
       </div>
 
-      {/* Text */}
-      <h3 className="text-base font-bold text-neutral-900 mb-2 tracking-tight">{card.title}</h3>
-      <p className="text-sm text-neutral-500 leading-relaxed mb-5" style={{ maxWidth: "260px" }}>{card.desc}</p>
-
-      {/* Tags */}
-      <div className="flex flex-wrap gap-2">
-        {card.tags.map((tag) => (
-          <span
-            key={tag}
-            className="text-[10px] font-semibold tracking-wide text-neutral-400 bg-neutral-50 border border-neutral-100 px-2.5 py-1 rounded-full uppercase"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
-
-      {/* Bottom accent line — appears on hover */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-[2px] bg-neutral-900 rounded-b-2xl origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"
-      />
+      {/* Bottom accent line — appears on hover for light cards */}
+      {!hasBg && (
+        <div
+          className="absolute bottom-0 left-0 right-0 h-[3px] bg-neutral-900 rounded-b-2xl origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"
+        />
+      )}
     </div>
   );
 }
