@@ -17,6 +17,15 @@ const PARTNERS = [
     action: "Operational Alignment",
   },
   {
+    id: "ttipl",
+    name: "Ravi Sharma",
+    role: "COO of International Resources Holding (IRH)",
+    image: "/ttipl-partner-new.jpeg",
+    overlayTitle: "Focusing on Technical Infrastructure",
+    bio: "TTIPL Group provides core engineering solutions, high-capacity machinery, tensioning systems, and industrial infrastructure to accelerate large-scale mining operations.",
+    action: "Technical & Machinery Support",
+  },
+  {
     id: "irh",
     name: "Charles Sakanya",
     role: "CEO of Mopani Copper Mines(MCM)",
@@ -24,15 +33,6 @@ const PARTNERS = [
     overlayTitle: "Focusing on Growth & Capital",
     bio: "International Resources Holding (IRH) drives strategic investments in key mineral resources globally, accelerating technological modernization and infrastructure expansion.",
     action: "Capital & Technology Integration",
-  },
-  {
-    id: "ttipl",
-    name: "Ravi Sharma",
-    role: "CEO Of MCM And IRH ",
-    image: "/ttipl-partner-new.jpeg",
-    overlayTitle: "Focusing on Technical Infrastructure",
-    bio: "TTIPL Group provides core engineering solutions, high-capacity machinery, tensioning systems, and industrial infrastructure to accelerate large-scale mining operations.",
-    action: "Technical & Machinery Support",
   },
 ];
 
@@ -53,7 +53,7 @@ export function PartnersSection(): JSX.Element {
               viewport={{ once: true }}
               className="mb-6"
             >
-              <Badge variant="dot">Strategic Alignment</Badge>
+              <Badge variant="dot">Our Partners</Badge>
             </motion.div>
             <motion.h2
               id="partners-heading"
@@ -75,7 +75,7 @@ export function PartnersSection(): JSX.Element {
             transition={{ duration: 0.8, delay: 0.1 }}
           >
             <p className="text-lg text-neutral-500 leading-relaxed max-w-xl">
-              SKT Global operates as a key mining contractor supporting International Resources Holding (IRH) and Mopani Copper Mines through underground mechanisation, operational infrastructure, and production support systems.
+              SKT Global operates as a key mining contractor supporting International Resources Holding (IRH) and Mopani Copper Mines through underground mechanisation, operational infrastructure, and production support systems. Through continuous operational expansion, infrastructure development, and workforce scaling, SKT Global intends to support up to 90% of future IRH/MCM mining operations.
               <br />
               <br />
               IRH currently holds a 51% stake in Mopani Copper Mines.

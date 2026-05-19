@@ -160,51 +160,63 @@ export const STATS: ReadonlyArray<Stat> = [
 export const TEAM_MEMBERS: ReadonlyArray<TeamMember> = [
   {
     id: "sahil-talreja",
-    name: "Sahil Talreja",
-    role: "Managing Director TTIPL",
+    name: "Mr. Sahil Talreja",
+    role: "Managing Director at SKT Global",
     bio: "Strategic leadership architect directing TTIPL Group's global expansion, engineering resources, and industrial support networks.",
   },
   {
-    id: "anand",
-    name: "Anand",
-    role: "Director",
+    id: "anand-kolappa-pillai",
+    name: "Mr. Anand Kolappa Pillai",
+    role: "Director at SKT Global",
     bio: "Corporate strategist overseeing international infrastructure projects, technology transfers, and strategic capital ventures.",
   },
   {
-    id: "sanjay-sharma",
-    name: "Sanjay Sharma",
-    role: "CEO of SKT Global",
+    id: "sanjay-kumar-sharma",
+    name: "Mr. Sanjay Kumar sharma",
+    role: "CEO at SKT Global",
     bio: "Distinguished operations leader with deep experience in heavy machinery deployment, underground mining methods, and regional scaling.",
   },
   {
-    id: "kiran-reddy",
-    name: "Kiran Reddy",
-    role: "Project Head SOB Mine",
-    bio: "Leading day-to-day mechanized mining, ventilation systems, and production targets at the high-capacity SOB underground mine site.",
-  },
-  {
-    id: "toms",
-    name: "Toms",
-    role: "XYZ",
-    bio: "Directing international supply chain integration, key client relationships, and business development initiatives globally.",
-  },
-  {
-    id: "suresh-babu",
-    name: "Suresh Babu",
-    role: "Head Plant and Machinery",
-    bio: "Managing procurement, preventive maintenance, and mobilization of our 225+ underground mechanised mining vehicle fleet.",
-  },
-  {
-    id: "srinivasan",
-    name: "Srinivasan",
-    role: "CFO of SKT Global",
+    id: "srinivasulu-jonnalagadda",
+    name: "Mr. Srinivasulu Jonnalagadda",
+    role: "CFO at SKT Global",
     bio: "Chartered finance executive managing multinational balance sheets, risk frameworks, and large-scale mining capital projects.",
   },
   {
-    id: "kamanga",
-    name: "Kamanga",
-    role: "Safety and Disciplinary Executive",
-    bio: "Enforcing zero-harm policies, comprehensive safety training, regulatory audits, and operational standards across all shafts.",
+    id: "kiran-kumar-reddy",
+    name: "Mr. Kiran Kumar Reddy",
+    role: "Mine manager at SOB",
+    bio: "Leading day-to-day mechanized mining, ventilation systems, and production targets at the high-capacity SOB underground mine site.",
+  },
+  {
+    id: "suresh-babu-deshamalla",
+    name: "Mr. Suresh Babu Deshamalla",
+    role: "Head of Maintenance at SKT Global",
+    bio: "Managing procurement, preventive maintenance, and mobilization of our 225+ underground mechanised mining vehicle fleet.",
+  },
+  {
+    id: "kuldeep-kulshrestha",
+    name: "Mr. Kuldeep Kulshrestha",
+    role: "Commercial manager at SKT Global",
+    bio: "Directing international supply chain integration, key commercial relationships, and business development initiatives.",
+  },
+  {
+    id: "mulenga-mutati",
+    name: "Mr. Mulenga Mutati",
+    role: "HR manger at SKT Global",
+    bio: "Directing human resource strategies, workforce development, talent acquisition, and employee relations across mining operations.",
+  },
+  {
+    id: "safeli-maxim-chipulu",
+    name: "Mr. Safeli maxim chipulu",
+    role: "Site Manager at Mufulira",
+    bio: "Directing day-to-day mechanized mining, site safety, and production targets at the Mufulira underground mine site.",
+  },
+  {
+    id: "toms-joseph",
+    name: "Mr Toms Joseph",
+    role: "Mine manager at Mufulira",
+    bio: "Directing day-to-day mechanized mining, site safety, and production targets at the Mufulira underground mine site.",
   },
 ] as const;
 
@@ -227,7 +239,7 @@ export const MILESTONES: ReadonlyArray<Milestone> = [
   {
     year: "Infrastructure",
     title: "Infrastructure Expansion",
-    description: "Operational warehouses, accommodation facilities, workshops, transportation systems, and 24-hour catering infrastructure established.",
+    description: "Comprehensive operational infrastructure established including workshops, warehousing systems, accommodation facilities, transportation networks, and dedicated support services for expatriate experts and operational teams.",
   },
   {
     year: "Mopani",
@@ -237,7 +249,7 @@ export const MILESTONES: ReadonlyArray<Milestone> = [
   {
     year: "Future",
     title: "Building Long-Term Mining Capacity",
-    description: "SKT Global continues to expand underground infrastructure, mechanised operations, technical systems, and workforce capacity in support of Mopani Copper Mines’ long-term production objectives. Focused on uninterrupted mining operations, operational modernisation, and sustainable production growth",
+    description: "SKT Global continues to expand underground infrastructure, mechanised operations, technical systems, and workforce capacity in support of Mopani Copper Mines’ long-term production objectives. Focused on uninterrupted mining operations, operational modernisation, and sustainable production growth, the company is strategically positioning itself to support up to 90% of future MCM mining activities.",
   },
 ] as const;
 

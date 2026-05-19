@@ -256,7 +256,7 @@ export function ServicesSection(): JSX.Element {
     const stage = stageRef.current;
     if (!rowA || !stage) return;
 
-    const SPEED = 0.55;          // base auto-scroll px/frame
+    const SPEED = 0.4125;          // base auto-scroll px/frame
     const DRAG_FACTOR = 1.2;       // how sensitive drag feels
     const INERTIA = 0.88;          // drag inertia after release (0 = stop, 1 = never stop)
     const RESUME_EASE = 0.06;      // how quickly speed recovers on resume

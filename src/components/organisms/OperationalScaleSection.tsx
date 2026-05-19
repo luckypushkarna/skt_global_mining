@@ -156,7 +156,7 @@ export function OperationalScaleSection(): JSX.Element {
           <div className="relative aspect-[4/5] lg:aspect-[0.85/1] overflow-hidden rounded-2xl bg-neutral-50 shadow-2xl">
             <Image
               alt="Raj Talreja - Chairman & Managing Director"
-              src="/raj-portrait.jpeg"
+              src="/Raj Sir Photo.png"
               fill
               className="object-cover object-top"
               sizes="(max-w-1024px) 100vw, 40vw"
@@ -171,19 +171,19 @@ export function OperationalScaleSection(): JSX.Element {
             </span>
             <blockquote className="relative z-10">
               <p className="text-3xl md:text-4xl lg:text-5xl font-black text-neutral-900 leading-[1.1] tracking-tight mb-12">
-                “We don’t just extract minerals.{" "}
+                “ We don’t just extract minerals.{" "}
                 <span ref={quoteHighlightRef} className="quote-highlight text-neutral-200">
                   We extract potential from the earth, and from our people.
                 </span>
-                ”
+                {" "}”
               </p>
               <footer className="flex items-center gap-6">
                 <div>
                   <cite className="not-italic text-lg font-bold text-neutral-900 block mb-0.5">
-                  Raj Talreja
+                    Raj Talreja
                   </cite>
                   <p className="text-xs md:text-sm text-neutral-400 font-medium tracking-wide uppercase">
-                    Chairman &amp; SKT Global Mining &amp; Services Limited
+                    Chairman at SKT Global Mining &amp; Services Limited
                   </p>
                 </div>
               </footer>

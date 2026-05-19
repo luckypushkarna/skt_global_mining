@@ -1,11 +1,10 @@
 "use client";
 
-import { useRef, JSX, useState, useEffect } from "react";
+import { useRef, JSX, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   motion,
-  useScroll,
   useInView,
 } from "framer-motion";
 import Image from "next/image";
@@ -33,23 +32,6 @@ export function AboutSection(): JSX.Element {
   const sectionRef = useRef<HTMLElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
   const isTimelineInView = useInView(timelineRef, { once: true, margin: "-10%" });
-
-  const { scrollYProgress } = useScroll({
-    target: timelineRef,
-    offset: ["start 80%", "end 20%"],
-  });
-
-  const [collectedCount, setCollectedCount] = useState(0);
-
-  useEffect(() => {
-    return scrollYProgress.onChange((latest) => {
-      const count = MILESTONES.filter((_, index) => {
-        const dotProgress = index / (MILESTONES.length - 1);
-        return latest >= dotProgress - 0.02;
-      }).length;
-      setCollectedCount(count);
-    });
-  }, [scrollYProgress]);
 
   // Master GSAP Timeline for Vehicle AND Stones
   useEffect(() => {
@@ -93,7 +75,6 @@ export function AboutSection(): JSX.Element {
 
         const cRect = container.getBoundingClientRect();
         const containerHeight = cRect.height;
-        const pRect = pileTarget.getBoundingClientRect();
 
         stones.forEach((stone) => {
           const sRect = stone.getBoundingClientRect();
@@ -164,7 +145,7 @@ export function AboutSection(): JSX.Element {
     <section
       ref={sectionRef}
       id="about"
-      className="relative pt-24 pb-64 bg-white overflow-hidden"
+      className="relative pt-24 pb-48 bg-white overflow-hidden"
       aria-labelledby="about-heading"
     >
       <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
@@ -255,8 +236,6 @@ export function AboutSection(): JSX.Element {
           >
             {MILESTONES.map((milestone, index) => {
               const isEven = index % 2 === 0;
-              // Each dot's fraction along the track: evenly spaced 0 → 1
-              const dotProgress = index / (MILESTONES.length - 1);
 
               return (
                 <motion.div

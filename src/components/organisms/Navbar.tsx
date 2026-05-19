@@ -1,7 +1,8 @@
 "use client";
 
-import { JSX, useEffect, useState } from "react";
+import { type JSX, useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { NAV_ITEMS, SITE_CONFIG } from "@/lib/constants";
@@ -56,33 +57,20 @@ export function Navbar(): JSX.Element {
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2"
+              className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2"
               aria-label={`${SITE_CONFIG.name} - Home`}
             >
-              <div className="flex flex-col">
-                <span className={cn(
-                  "text-xl font-black tracking-tight leading-none transition-colors duration-500",
-                  isScrolled ? "text-neutral-900" : "text-white"
-                )}>
-                  SKT
-                </span>
-                <span className={cn(
-                  "text-[9px] font-semibold tracking-[0.2em] uppercase leading-none transition-colors duration-500",
-                  isScrolled ? "text-neutral-500" : "text-white/60"
-                )}>
-                  Global Mining
-                </span>
-              </div>
-              <div className={cn(
-                "w-px h-8 hidden sm:block transition-colors duration-500",
-                isScrolled ? "bg-neutral-300" : "bg-white/20"
-              )} />
-              <span className={cn(
-                "text-[9px] font-medium tracking-[0.15em] uppercase hidden sm:block leading-tight max-w-[120px] transition-colors duration-500",
-                isScrolled ? "text-neutral-400" : "text-white/40"
-              )}>
-                & Services Limited
-              </span>
+              <Image
+                src="/SKT Full logo (White).png"
+                alt={`${SITE_CONFIG.name} Logo`}
+                width={200}
+                height={50}
+                className={cn(
+                  "h-11 w-auto object-contain transition-all duration-500",
+                  isScrolled ? "brightness-0" : ""
+                )}
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation */}
@@ -101,22 +89,14 @@ export function Navbar(): JSX.Element {
               ))}
             </nav>
 
-            {/* Desktop CTA replaced by TTIPL Logo */}
-            <div className="hidden lg:flex items-center gap-3">
-              <div className="flex flex-col">
-                <span className={cn(
-                  "text-xl font-black tracking-tight leading-none transition-colors duration-500",
-                  isScrolled ? "text-neutral-900" : "text-white"
-                )}>
-                  TTIPL
-                </span>
-                <span className={cn(
-                  "text-[9px] font-semibold tracking-[0.2em] uppercase leading-none transition-colors duration-500",
-                  isScrolled ? "text-neutral-500" : "text-white/60"
-                )}>
-                  TYRE TECHNOCRATS
-                </span>
-              </div>
+            {/* Desktop CTA */}
+            <div className="hidden lg:flex items-center gap-4">
+              <Button 
+                variant={isScrolled ? "outline" : "secondary"} 
+                size="sm"
+              >
+                <Link href="/contact">Get in Touch</Link>
+              </Button>
             </div>
 
             {/* Mobile Menu Toggle */}

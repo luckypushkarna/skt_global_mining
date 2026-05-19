@@ -3,8 +3,6 @@
 import { useRef, useEffect, useState, useMemo, JSX } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown } from "lucide-react";
-import Link from "next/link";
-import { Button } from "@/components/atoms/Button";
 import { Badge } from "@/components/atoms/Badge";
 import { useHeroAnimation } from "@/hooks/useHeroAnimation";
 
@@ -127,7 +125,7 @@ export function HeroSection(): JSX.Element {
           playsInline
           className="w-full h-full object-cover opacity-50 mix-blend-luminosity"
         >
-          <source src="/videos/SKT Global FF Hero Video.mp4" type="video/mp4" />
+          <source src="/videos/FF Hero Video.mp4" type="video/mp4" />
         </video>
         {/* Dynamic vignette */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_#050505_100%)] opacity-80" />
@@ -233,17 +231,17 @@ export function HeroSection(): JSX.Element {
             >
               Supporting large-scale underground mining operations at Mopani Copper Mines through mechanisation, infrastructure, workforce development, and operational excellence.
             </p>
-            <div ref={logosRef} className="flex items-center gap-6 mt-2">
+            <div ref={logosRef} className="flex items-center gap-5 mt-2">
               <img 
                 src="/mopani-logo.png" 
                 alt="Mopani Copper Mines Logo" 
-                className="h-10 w-auto object-contain brightness-0 invert opacity-60 hover:opacity-90 transition-opacity duration-300"
+                className="h-8 w-auto object-contain brightness-0 invert opacity-60 hover:opacity-90 transition-opacity duration-300"
               />
-              <div className="h-6 w-px bg-white/10" />
+              <div className="h-5 w-px bg-white/10" />
               <img 
                 src="/irh-logo.png" 
                 alt="IRH Logo" 
-                className="h-10 w-auto object-contain brightness-0 invert opacity-60 hover:opacity-90 transition-opacity duration-300"
+                className="h-8 w-auto object-contain brightness-0 invert opacity-60 hover:opacity-90 transition-opacity duration-300"
               />
             </div>
           </div>

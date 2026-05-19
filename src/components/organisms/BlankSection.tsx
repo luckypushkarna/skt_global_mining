@@ -28,11 +28,11 @@ export function BlankSection(): JSX.Element {
   const contentRef = useRef<HTMLDivElement>(null);
   const copyRef = useRef<HTMLDivElement>(null);
   const mapPathRef = useRef<SVGGElement>(null);
-  
+
   // Using SVG elements for mathematical precision scaling
   const circleRef = useRef<SVGCircleElement>(null);
   const coreRef = useRef<SVGGElement>(null);
-  
+
   const revealRef = useRef<HTMLDivElement>(null);
   const hintRef = useRef<HTMLDivElement>(null);
 
@@ -50,12 +50,33 @@ export function BlankSection(): JSX.Element {
 
         // ── Full desktop animation (min-width: 1024px) ───────────────────
         mm.add("(min-width: 1024px) and (prefers-reduced-motion: no-preference)", () => {
+          let isAnimating = false;
+
           const tl = gsap.timeline({
             scrollTrigger: {
               trigger: containerRef.current,
               start: "top 30%",     // Starts when the top of section is 30% from the viewport top
               end: "bottom bottom",
               scrub: 0.1,           // Instant, lag-free scrub response
+              onUpdate: (self) => {
+                if (isAnimating) return;
+                const progress = self.progress;
+                if (progress > 0.01 && progress < 0.99) {
+                  isAnimating = true;
+                  const targetY = self.direction === 1 ? self.end : self.start;
+                  const scrollObj = { y: window.scrollY };
+                  
+                  gsap.to(scrollObj, {
+                    y: targetY,
+                    duration: 1.0,
+                    ease: "power2.inOut",
+                    onUpdate: () => window.scrollTo(0, scrollObj.y),
+                    onComplete: () => {
+                      isAnimating = false;
+                    }
+                  });
+                }
+              }
             },
             defaults: { ease: "none" },
           });
@@ -174,7 +195,7 @@ export function BlankSection(): JSX.Element {
                       preserveAspectRatio="xMidYMid contain"
                     />
                   </g>
-                  
+
                   {/* LAYER 2 — The expanding circle portal (starts small, hidden behind dot) */}
                   <circle
                     ref={circleRef}
@@ -183,7 +204,7 @@ export function BlankSection(): JSX.Element {
                     r="0"
                     fill="#E11D48" // Crimson
                   />
-                  
+
                   {/* The interactive dot/pin placed precisely in the SVG */}
                   <g ref={coreRef} className="map-pin" transform="translate(440, 240)" style={{ cursor: "pointer" }}>
                     {/* Pulsing Outer Ring */}
@@ -202,11 +223,11 @@ export function BlankSection(): JSX.Element {
         ══════════════════════════════════════════════════════════════════ */}
         <div
           ref={revealRef}
-          className="relative lg:absolute inset-0 flex flex-col items-center justify-center lg:opacity-0 bg-[#0B0F19] lg:bg-transparent py-16 lg:py-0"
+          className="relative lg:absolute inset-0 flex flex-col items-center justify-center lg:opacity-0 bg-[#0B0F19] lg:bg-transparent py-16 lg:py-0 lg:pt-24"
           style={{ zIndex: 50 }}
         >
-          <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 flex flex-col justify-between lg:h-[85vh] text-white gap-8 lg:gap-0">
-            
+          <div className="w-full max-w-6xl mx-auto px-6 lg:px-12 flex flex-col justify-between lg:h-[78vh] text-white gap-8 lg:gap-0">
+
             {/* Header */}
             <div className="flex items-center justify-between border-b border-white/10 pb-6 w-full select-none">
               <div>
@@ -221,31 +242,30 @@ export function BlankSection(): JSX.Element {
 
             {/* Main Interactive Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center lg:my-auto w-full">
-              
+
               {/* Left Menu - 4 Cols */}
               <div className="lg:col-span-4 flex flex-col gap-3 bg-black/25 backdrop-blur-md p-6 rounded-2xl border border-white/5 w-full">
                 <div className="flex items-center gap-2 text-xs font-bold text-white/50 uppercase tracking-widest mb-2 select-none">
                   <Layers size={14} className="text-rose-500" />
                   <span>OPERATIONAL SYSTEMS</span>
                 </div>
-                
+
                 {categories.map((cat) => {
                   const isActive = activeCategory === cat.id;
                   return (
                     <button
                       key={cat.id}
                       onClick={() => setActiveCategory(cat.id)}
-                      className={`relative flex items-center justify-between p-4 rounded-xl text-left transition-all duration-300 group ${
-                        isActive
-                          ? "bg-white/10 border-white/20 shadow-lg"
-                          : "bg-white/0 border-transparent hover:bg-white/5"
-                      } border w-full`}
+                      className={`relative flex items-center justify-between p-4 rounded-xl text-left transition-all duration-300 group ${isActive
+                        ? "bg-white/10 border-white/20 shadow-lg"
+                        : "bg-white/0 border-transparent hover:bg-white/5"
+                        } border w-full`}
                     >
                       {/* Active vertical red bar indicator */}
                       {isActive && (
                         <div className="absolute left-0 top-1/3 bottom-1/3 w-1 bg-rose-600 rounded-r" />
                       )}
-                      
+
                       <div className="pl-3">
                         <div className={`text-sm font-bold tracking-tight transition-colors duration-300 ${isActive ? 'text-white' : 'text-white/70 group-hover:text-white'}`}>
                           {cat.title}
@@ -254,7 +274,7 @@ export function BlankSection(): JSX.Element {
                           {cat.subtitle}
                         </div>
                       </div>
-                      
+
                       <MapPin size={14} className={`transition-all duration-300 ${isActive ? 'text-rose-500 scale-110' : 'text-white/20 group-hover:text-white/40'}`} />
                     </button>
                   );
@@ -265,7 +285,7 @@ export function BlankSection(): JSX.Element {
               <div className="lg:col-span-8 relative flex items-center justify-center p-4 bg-black/10 rounded-3xl border border-white/5 h-[400px] lg:h-[50vh] overflow-hidden w-full">
                 {/* Subtle tech background grid pattern */}
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.03)_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
-                
+
                 <svg
                   viewBox="0 0 800 500"
                   className="w-full h-full object-contain drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
@@ -397,9 +417,9 @@ export function BlankSection(): JSX.Element {
                     className="absolute left-0 top-0 bottom-0 bg-rose-500 rounded-full transition-all duration-500"
                     style={{
                       width: activeCategory === "operations" ? "20%" :
-                             activeCategory === "infrastructure" ? "40%" :
-                             activeCategory === "logistics" ? "60%" :
-                             activeCategory === "support" ? "80%" : "100%"
+                        activeCategory === "infrastructure" ? "40%" :
+                          activeCategory === "logistics" ? "60%" :
+                            activeCategory === "support" ? "80%" : "100%"
                     }}
                   />
                 </div>
