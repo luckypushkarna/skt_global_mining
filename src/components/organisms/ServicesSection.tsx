@@ -118,6 +118,7 @@ export function ServicesSection(): JSX.Element {
 
     const SPEED = 0.4125;
     const DRAG_FACTOR = 1.2;
+    const WHEEL_FACTOR = 0.85;
     const INERTIA = 0.88;
     const RESUME_EASE = 0.06;
 
@@ -127,6 +128,7 @@ export function ServicesSection(): JSX.Element {
     let dragStartX = 0;
     let velA = 0;
     let currentSpeedA = SPEED;
+    let wheelResumeTimer: number | null = null;
 
     const halfA = rowA.scrollWidth / 2;
 
@@ -188,6 +190,28 @@ export function ServicesSection(): JSX.Element {
       stage!.style.cursor = paused ? 'grab' : '';
     }
 
+    function onWheel(e: WheelEvent) {
+      const dominantDelta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+      if (Math.abs(dominantDelta) < 1) return;
+
+      const modeMultiplier = e.deltaMode === WheelEvent.DOM_DELTA_LINE ? 16 : e.deltaMode === WheelEvent.DOM_DELTA_PAGE ? stage!.clientWidth : 1;
+      velA = -dominantDelta * modeMultiplier * WHEEL_FACTOR;
+      paused = true;
+      currentSpeedA = 0;
+      e.preventDefault();
+
+      if (wheelResumeTimer) {
+        window.clearTimeout(wheelResumeTimer);
+      }
+
+      wheelResumeTimer = window.setTimeout(() => {
+        if (!dragging) {
+          paused = false;
+          currentSpeedA = 0;
+        }
+      }, 420);
+    }
+
     let touchStartX = 0;
     function onTouchStart(e: TouchEvent) {
       const touch = e.touches[0];
@@ -214,6 +238,7 @@ export function ServicesSection(): JSX.Element {
     stage.addEventListener('mouseenter', onEnter);
     stage.addEventListener('mouseleave', onLeave);
     stage.addEventListener('mousedown', onMouseDown);
+    stage.addEventListener('wheel', onWheel, { passive: false });
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mouseup', onMouseUp);
     stage.addEventListener('touchstart', onTouchStart, { passive: true });
@@ -222,9 +247,13 @@ export function ServicesSection(): JSX.Element {
 
     return () => {
       cancelAnimationFrame(rafRef.current);
+      if (wheelResumeTimer) {
+        window.clearTimeout(wheelResumeTimer);
+      }
       stage.removeEventListener('mouseenter', onEnter);
       stage.removeEventListener('mouseleave', onLeave);
       stage.removeEventListener('mousedown', onMouseDown);
+      stage.removeEventListener('wheel', onWheel);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);
       stage.removeEventListener('touchstart', onTouchStart);

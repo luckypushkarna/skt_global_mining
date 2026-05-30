@@ -1,68 +1,11 @@
 "use client";
 
-import { useRef, useEffect, useState, useMemo, JSX } from "react";
+import { useRef, useMemo, JSX } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
 import { Badge } from "@/components/atoms/Badge";
 import { useHeroAnimation } from "@/hooks/useHeroAnimation";
-
-function MetricCounter({ value, label, delay = 0 }: { value: string; label: string; delay?: number }) {
-  const [count, setCount] = useState(0);
-
-  const isStatic = value.includes("/");
-  const hasPrefix = value.startsWith("US$");
-  const prefix = hasPrefix ? "US$" : "";
-  const numericPart = value.replace(/[^0-9]/g, "");
-  const target = isStatic ? 0 : parseInt(numericPart) || 0;
-  const suffix = isStatic ? "" : value.replace(prefix, "").replace(/[0-9]/g, "");
-
-  useEffect(() => {
-    if (isStatic) return;
-    let startTime: number;
-    let animationFrame: number;
-
-    const animate = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = timestamp - startTime;
-
-      if (progress < delay * 1000) {
-        animationFrame = requestAnimationFrame(animate);
-        return;
-      }
-
-      const duration = 2000;
-      const elapsed = progress - delay * 1000;
-
-      if (elapsed < duration) {
-        // easeOutExpo
-        const currentCount = target === 0 ? 0 : target * (1 - Math.pow(2, -10 * elapsed / duration));
-        setCount(Math.min(Math.ceil(currentCount), target));
-        animationFrame = requestAnimationFrame(animate);
-      } else {
-        setCount(target);
-      }
-    };
-
-    animationFrame = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationFrame);
-  }, [target, delay, isStatic]);
-
-  return (
-    <motion.div
-      className="flex flex-col group relative p-4 rounded-xl transition-all duration-500 hover:bg-white/5 border border-transparent hover:border-white/10 hover:shadow-[0_8px_32px_rgba(255,255,255,0.05)] overflow-hidden"
-      whileHover={{ y: -5 }}
-    >
-      <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none mix-blend-overlay" />
-      <span className="text-2xl md:text-3xl font-black text-white tracking-tight leading-none mb-1">
-        {isStatic ? value : `${prefix}${count}${suffix}`}
-      </span>
-      <span className="text-[10px] font-semibold tracking-[0.2em] text-white/40 uppercase">
-        {label}
-      </span>
-    </motion.div>
-  );
-}
 
 export function HeroSection(): JSX.Element {
   const containerRef = useRef<HTMLElement>(null);
@@ -237,56 +180,31 @@ export function HeroSection(): JSX.Element {
               Supporting large-scale underground mining operations at Mopani Copper Mines through mechanisation, infrastructure, workforce development, and operational excellence.
             </p>
             <div ref={logosRef} className="flex items-center gap-5 mt-2">
-              <a
-                href="https://mopani.com.zm/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cursor-pointer inline-block relative h-8 w-32"
-              >
+              <div className="inline-block relative h-8 w-32">
                 <Image 
                   src="/mopani-logo.webp" 
                   alt="Mopani Copper Mines Logo" 
                   fill
                   sizes="(max-width: 768px) 128px, 128px"
-                  className="object-contain brightness-0 invert opacity-60 hover:opacity-90 transition-opacity duration-300"
+                  className="object-contain"
                   priority
                 />
-              </a>
+              </div>
               <div className="h-5 w-px bg-white/10" />
-              <a
-                href="https://www.irh.ae/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cursor-pointer inline-block relative h-8 w-20"
-              >
+              <div className="inline-block relative h-8 w-20">
                 <Image 
                   src="/irh-logo.webp" 
                   alt="IRH Logo" 
                   fill
                   sizes="(max-width: 768px) 80px, 80px"
-                  className="object-contain brightness-0 invert opacity-60 hover:opacity-90 transition-opacity duration-300"
+                  className="object-contain"
                   priority
                 />
-              </a>
+              </div>
             </div>
           </div>
 
           <div ref={buttonsRef} className="hidden" />
-        </div>
-
-        {/* Bottom stats strip */}
-        <div
-          ref={metricsRef}
-          className="mt-24 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-4"
-        >
-          {[
-            { value: "225+", label: "Underground Machines", delay: 1.4 },
-            { value: "1500+", label: "Workforce", delay: 1.5 },
-            { value: "US$50M+", label: "Initial Investment", delay: 1.6 },
-            { value: "24/7", label: "Operations", delay: 1.7 },
-          ].map((item, i) => (
-            <MetricCounter key={i} value={item.value} label={item.label} delay={item.delay} />
-          ))}
         </div>
       </motion.div>
 

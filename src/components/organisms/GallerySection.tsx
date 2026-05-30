@@ -151,6 +151,7 @@ function GalleryCard({
 
   // Viewport checking: triggers when even 10% of the card is visible
   const isInView = useInView(containerRef, { once: false, amount: 0.1 });
+  const shouldLoadVideo = item.type === "video" && (isInView || hovered || lightboxOpen);
 
   // Play/pause based on viewport intersection
   useEffect(() => {
@@ -212,14 +213,14 @@ function GalleryCard({
         {item.type === "video" ? (
           <video
             ref={videoRef}
-            src={item.previewUrl || item.url}
+            src={shouldLoadVideo ? item.previewUrl || item.url : undefined}
             poster={item.thumbUrl}
             className="absolute inset-0 w-full h-full object-cover"
             muted
             loop
             playsInline
             autoPlay
-            preload="metadata"
+            preload="none"
             style={{
               transition: "transform 0.75s cubic-bezier(0.16,1,0.3,1)",
               transform: hovered ? "scale(1.04)" : "scale(1)",
@@ -235,7 +236,6 @@ function GalleryCard({
             style={{
               transform: hovered ? "scale(1.04)" : "scale(1)",
             }}
-            priority={index < 2}
           />
         )}
 
