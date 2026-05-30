@@ -2,123 +2,23 @@
 
 import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Wrench, Package, Truck, Shield, Network, Monitor, Users, Settings, TrendingUp, ShieldCheck, Building2, Globe } from "lucide-react";
 import Link from "next/link";
 import { JSX } from "react";
 import { OperationalScaleSection } from "./OperationalScaleSection";
-
-// ─── Card data ────────────────────────────────────────────────────────────────
-
-const CARDS = [
-  {
-    num: "01",
-    icon: Wrench,
-    title: "Underground Workshop",
-    desc: "A fully integrated underground maintenance ecosystem engineered to support uninterrupted mining operations, with 24/7 repair systems and rapid-response servicing.",
-    tags: ["24/7 Repair", "Technical Support", "Rapid Response"],
-    bgImage: "/Underground Workshop.png",
-  },
-  {
-    num: "02",
-    icon: Package,
-    title: "Strategic Warehousing",
-    desc: "Centralised warehousing and inventory systems designed to maintain continuous operational readiness backed by a spare parts inventory valued at over US$3M.",
-    tags: ["US$3M+ Inventory", "Spare Parts", "minimum downtime"],
-    bgImage: "/Strategic Warehousing.png",
-  },
-  {
-    num: "03",
-    icon: Truck,
-    title: "Mechanised Fleet",
-    desc: "A world-class mechanised underground mining fleet including loaders, mine trucks, drill rigs, boomers, bolters, and advanced support equipment.",
-    tags: ["Drill Rigs", "Mine Trucks", "Loaders & Bolters"],
-    bgImage: "/Mechanised Fleet.png",
-  },
-  {
-    num: "04",
-    icon: Shield,
-    title: "Rescue Systems",
-    desc: "Advanced underground safety and emergency response infrastructure with integrated rescue chambers, monitoring systems, and preparedness protocols.",
-    tags: ["Rescue Chambers", "Emergency Protocol", "Live Monitoring"],
-    bgImage: "/Rescue Systems.png",
-  },
-  {
-    num: "05",
-    icon: Network,
-    title: "Logistics Network",
-    desc: "An interconnected logistics ecosystem enabling continuous workforce mobility, equipment deployment, material handling, and uninterrupted production flow.",
-    tags: ["Material Handling", "Fleet Dispatch", "Workforce Mobility"],
-    bgImage: "/Logistics Network.png",
-  },
-  {
-    num: "06",
-    icon: Monitor,
-    title: "Operational Command",
-    desc: "A unified operational management system integrating engineering, mining, maintenance, logistics, and oversight into one coordinated command infrastructure.",
-    tags: ["Unified Control", "Production Planning", "Workforce Allocation"],
-    bgImage: "/Operational Command.png",
-  },
-  {
-    num: "07",
-    icon: Users,
-    title: "Workforce Facilities",
-    desc: "Purpose-built workforce infrastructure for local and international teams, including accommodation, transportation, welfare support, and 24-hour catering.",
-    tags: ["Accommodation", "Catering 24/7", "Welfare Support"],
-    bgImage: "/Workforce Facilities.png",
-  },
-  {
-    num: "08",
-    icon: Settings,
-    title: "Engineering & Maintenance",
-    desc: "Dedicated engineering systems ensuring equipment reliability and continuous underground performance through preventive maintenance and rapid intervention.",
-    tags: ["Preventive Maint.", "Max Availability", "Specialised Teams"],
-    bgImage: "/Engineering & Maintenance.png",
-  },
-  {
-    num: "09",
-    icon: TrendingUp,
-    title: "Production Development",
-    desc: "Accelerated underground mine development focused on long-term production growth and sustainability through mechanisation and modern mining methodologies.",
-    tags: ["Mechanisation", "Growth Strategy", "Sustainability"],
-    bgImage: "/Production Development.png",
-  },
-  {
-    num: "10",
-    icon: ShieldCheck,
-    title: "Safety & Compliance",
-    desc: "A safety-first operational framework embedded across every aspect of underground mining with rigorous compliance, training, and workforce protection protocols.",
-    tags: ["Zero Harm", "Compliance Systems", "Continuous Training"],
-    bgImage: "/Safety & Compliance.png",
-  },
-  {
-    num: "11",
-    icon: Building2,
-    title: "Infrastructure Systems",
-    desc: "A large-scale operational ecosystem including workshops, offices, warehousing, utility systems, transportation networks, and integrated support infrastructure.",
-    tags: ["Utility Systems", "Workshops", "Support Infra"],
-    bgImage: "/Infrastructure Systems.png",
-  },
-  {
-    num: "12",
-    icon: Globe,
-    title: "Future Expansion",
-    desc: "SKT Global is positioning for regional expansion through modernisation, operational scale, and strategic investment across multiple mining regions in Africa.",
-    tags: ["Africa Expansion", "Scale-Up", "New Regions"],
-    bgImage: "/Future Expansion.png",
-  },
-];
+import { CAPABILITIES } from "@/data/capabilities";
 
 // Duplicate for seamless infinite loop
-const ROW_A = [...CARDS, ...CARDS];
+const ROW_A = [...CAPABILITIES, ...CAPABILITIES];
 
-// ─── Single Card (REDESIGNED) ────────────────────────────────────────────────
+// ─── Single Card ─────────────────────────────────────────────────────────────
 
-function SliderCard({ card }: { card: typeof CARDS[0] }) {
+function SliderCard({ card }: { card: typeof CAPABILITIES[0] }) {
   const Icon = card.icon;
 
   return (
-    <div
-      className="group relative flex-shrink-0 w-[340px] h-[480px] mx-3 rounded-2xl cursor-default select-none overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:shadow-2xl"
+    <Link
+      href={`/capabilities/${card.slug}`}
+      className="group relative flex-shrink-0 w-[340px] h-[480px] mx-3 rounded-2xl cursor-pointer select-none overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:shadow-2xl block"
       style={{
         boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
         willChange: "transform",
@@ -136,7 +36,7 @@ function SliderCard({ card }: { card: typeof CARDS[0] }) {
       {/* ── Bottom gradient (default state - title visible) ── */}
       <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-black via-black/70 to-transparent pointer-events-none transition-all duration-700 group-hover:h-[75%] group-hover:from-black group-hover:via-black/90" />
 
-      {/* ── Top Section: Number Badge ── */}
+      {/* ── Top Section: Icon + Number Badge ── */}
       <div className="absolute top-5 left-5 right-5 flex items-start justify-between z-10">
         {/* Icon Badge */}
         <div className="w-11 h-11 flex items-center justify-center rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-white transition-all duration-500 group-hover:bg-white group-hover:text-neutral-900 group-hover:scale-110">
@@ -181,10 +81,16 @@ function SliderCard({ card }: { card: typeof CARDS[0] }) {
             {/* Subtle Divider Line */}
             <div className="h-px w-full bg-gradient-to-r from-white/30 via-white/10 to-transparent" />
 
-            {/* CTA Hint */}
-            <div className="flex items-center gap-2 pt-3 text-[10px] font-medium tracking-[0.2em] uppercase text-white/60">
+            {/* CTA Link */}
+            <div className="flex items-center gap-2 pt-3 text-[10px] font-medium tracking-[0.2em] uppercase text-white/60 group-hover:text-white transition-colors">
               <span>Explore</span>
-              <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
+              <svg 
+                width="14" 
+                height="8" 
+                viewBox="0 0 14 8" 
+                fill="none"
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              >
                 <path d="M1 4H13M13 4L10 1M13 4L10 7" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
               </svg>
             </div>
@@ -194,7 +100,7 @@ function SliderCard({ card }: { card: typeof CARDS[0] }) {
 
       {/* ── Border highlight on hover ── */}
       <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-white/10 transition-colors duration-500 pointer-events-none" />
-    </div>
+    </Link>
   );
 }
 
