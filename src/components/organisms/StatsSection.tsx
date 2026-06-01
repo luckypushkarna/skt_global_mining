@@ -123,25 +123,6 @@ export function StatsSection(): JSX.Element {
       gsap.registerPlugin(ScrollTrigger);
 
       ctx = gsap.context(() => {
-        // Word-by-word headline reveal
-        const wordEls = sectionRef.current?.querySelectorAll<HTMLSpanElement>(".safety-word");
-        if (wordEls && wordEls.length > 0) {
-          gsap.to(wordEls, {
-            scrollTrigger: {
-              trigger: headlineRef.current || sectionRef.current,
-              start: "top 80%",
-              end: "top 30%",
-              scrub: 0.6,
-            },
-            opacity: 1,
-            y: 0,
-            rotate: 0,
-            filter: "blur(0px)",
-            stagger: 0.07,
-            ease: "power3.out",
-          });
-        }
-
         // ScrollTrigger typography highlight reveal (Word-by-Word Scroll Synchronization)
         const highlightEl = sectionRef.current?.querySelector<HTMLSpanElement>(".quote-highlight");
         if (highlightEl) {
@@ -223,18 +204,7 @@ export function StatsSection(): JSX.Element {
             id="safety-heading"
             className="text-display-md md:text-display-lg font-black text-neutral-900 leading-none tracking-tight"
           >
-            {"Every Worker Returns Home Safe.".split(" ").map((w, index) => (
-              <span
-                key={index}
-                className="safety-word inline-block mr-[0.25em] opacity-0"
-                style={{
-                  transform: "translateY(40px) rotate(-2deg)",
-                  filter: "blur(6px)",
-                }}
-              >
-                {w}
-              </span>
-            ))}
+            Every Worker Returns Home Safe.
           </h2>
 
           {/* Sub-copy */}

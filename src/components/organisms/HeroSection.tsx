@@ -2,9 +2,7 @@
 
 import { useRef, useMemo, JSX } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown } from "lucide-react";
 import Image from "next/image";
-import { Badge } from "@/components/atoms/Badge";
 import { useHeroAnimation } from "@/hooks/useHeroAnimation";
 
 export function HeroSection(): JSX.Element {
@@ -17,10 +15,8 @@ export function HeroSection(): JSX.Element {
   const ofMiningRef = useRef<HTMLDivElement>(null);
   const ofMiningLineRef = useRef<HTMLDivElement>(null);
   const ofMiningTextRef = useRef<HTMLSpanElement>(null);
-  const paragraphRef = useRef<HTMLParagraphElement>(null);
   const buttonsRef = useRef<HTMLDivElement>(null);
   const metricsRef = useRef<HTMLDivElement>(null);
-  const logosRef = useRef<HTMLDivElement>(null);
 
   const animationRefs = useMemo(() => ({
     headline1Ref,
@@ -29,10 +25,8 @@ export function HeroSection(): JSX.Element {
     ofMiningRef,
     ofMiningLineRef,
     ofMiningTextRef,
-    paragraphRef,
     buttonsRef,
     metricsRef,
-    logosRef,
   }), []);
 
   useHeroAnimation(animationRefs);
@@ -42,8 +36,8 @@ export function HeroSection(): JSX.Element {
     offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, 250]); // slightly slower than background
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 350]); // translate further down to sink to the bottom
+  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]); // fade away in sync with first fold scroll
   const videoY = useTransform(scrollYProgress, [0, 1], [0, 120]);
 
   // Ambient mouse light effect
@@ -62,7 +56,7 @@ export function HeroSection(): JSX.Element {
     <section
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#050505]"
+      className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-[#050505]"
       aria-label="Hero section"
     >
       {/* Background Video with Parallax & Interaction Overlays */}
@@ -104,17 +98,7 @@ export function HeroSection(): JSX.Element {
         style={{ y, opacity }}
         className="relative z-10 max-w-screen-xl mx-auto px-6 lg:px-12 pt-32 pb-20 w-full"
       >
-        {/* Label */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="mb-8 inline-block"
-        >
-          <Badge variant="outline" className="text-white/80 border-white/20 backdrop-blur-md px-4 py-1.5 shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-            MINING OPERATIONS · ZAMBIA
-          </Badge>
-        </motion.div>
+
 
         {/* Cinematic Typography System */}
         <div className="flex flex-col mb-12">
@@ -172,18 +156,11 @@ export function HeroSection(): JSX.Element {
         {/* Description & CTAs */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mt-4">
           <div className="flex flex-col gap-6">
-            <p
-              ref={paragraphRef}
-              className="text-sm md:text-base text-white/70 leading-relaxed max-w-lg font-medium"
-              style={{ clipPath: "polygon(0 0, 100% 0, 100% 120%, 0 120%)" }}
-            >
-              Supporting large-scale underground mining operations at Mopani Copper Mines through mechanisation, infrastructure, workforce development, and operational excellence.
-            </p>
-            <div ref={logosRef} className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 mt-2">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 mt-2">
               <div className="inline-block relative h-8 w-32">
-                <Image 
-                  src="/mopani-logo.webp" 
-                  alt="Mopani Copper Mines Logo" 
+                <Image
+                  src="/mopani-logo.webp"
+                  alt="Mopani Copper Mines Logo"
                   fill
                   sizes="(max-width: 768px) 128px, 128px"
                   className="object-contain"
@@ -192,9 +169,9 @@ export function HeroSection(): JSX.Element {
               </div>
               <div className="hidden sm:block h-5 w-px bg-white/10" />
               <div className="inline-block relative h-8 w-20">
-                <Image 
-                  src="/irh-logo.webp" 
-                  alt="IRH Logo" 
+                <Image
+                  src="/irh-logo.webp"
+                  alt="IRH Logo"
                   fill
                   sizes="(max-width: 768px) 80px, 80px"
                   className="object-contain"
@@ -208,24 +185,7 @@ export function HeroSection(): JSX.Element {
         </div>
       </motion.div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.2, duration: 1 }}
-        className="hidden lg:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 mix-blend-screen"
-        aria-hidden="true"
-      >
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ArrowDown size={14} className="text-white/50" />
-        </motion.div>
-        <span className="text-[9px] tracking-[0.3em] text-white/40 uppercase font-bold">
-          Scroll
-        </span>
-      </motion.div>
+
 
       {/* Cinematic Top/Bottom Gradients for deep black fade */}
       <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#050505] to-transparent z-0 opacity-80" />

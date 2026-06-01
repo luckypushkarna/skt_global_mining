@@ -369,21 +369,23 @@ nextjs-portal,
 /* ─── Mobile Safe Area & PWA Support ─── */
 @supports (padding: max(0px)) {
   body {
-    padding-left:  env(safe-area-inset-left);
+    padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
   }
-  
+
   .nav-fixed {
     padding-top: env(safe-area-inset-top);
   }
-  
+
   .footer {
     padding-bottom: env(safe-area-inset-bottom);
   }
 }
 
 /* Prevent iOS input zoom */
-input, textarea, select {
+input,
+textarea,
+select {
   font-size: 16px !important;
 }
 

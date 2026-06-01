@@ -88,12 +88,12 @@ const ImmersiveScrollGallery: React.FC<iImmersiveScrollGalleryProps> = ({
     offset: ["start start", "end end"],
   });
 
-  // Transform values
-  const scale4 = useTransform(scrollYProgress, [0, 1], [1, 4]);
-  const scale5 = useTransform(scrollYProgress, [0, 1], [1, 5]);
-  const scale6 = useTransform(scrollYProgress, [0, 1], [1, 6]);
-  const scale8 = useTransform(scrollYProgress, [0, 1], [1, 8]);
-  const scale9 = useTransform(scrollYProgress, [0, 1], [1, 9]);
+  // Transform values (Optimized capped scales to prevent giant bitmap repaints and maximize GPU rendering FPS)
+  const scale4 = useTransform(scrollYProgress, [0, 1], [1, 3]);
+  const scale5 = useTransform(scrollYProgress, [0, 1], [1, 3.5]);
+  const scale6 = useTransform(scrollYProgress, [0, 1], [1, 4]);
+  const scale8 = useTransform(scrollYProgress, [0, 1], [1, 4.2]);
+  const scale9 = useTransform(scrollYProgress, [0, 1], [1, 4.5]);
   const opacityOther = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   // Assign scales and opacities to images
@@ -126,10 +126,23 @@ const ImmersiveScrollGallery: React.FC<iImmersiveScrollGalleryProps> = ({
           return (
             <motion.div
               key={index}
-              style={{ scale, opacity, willChange: "transform, opacity" }}
+              style={{ 
+                scale, 
+                opacity, 
+                translateZ: 0,
+                willChange: "transform, opacity",
+              }}
               className="absolute flex items-center justify-center w-full h-full top-0"
             >
-              <div className={`relative ${IMAGE_STYLES[index]}`}>
+              <div 
+                className={`relative ${IMAGE_STYLES[index]} overflow-hidden rounded-xl border border-neutral-200/10 shadow-2xl`}
+                style={{
+                  transform: "translate3d(0, 0, 0)",
+                  willChange: "transform",
+                  backfaceVisibility: "hidden",
+                  WebkitBackfaceVisibility: "hidden"
+                }}
+              >
                 {type === "video" ? (
                   <video
                     src={src}
@@ -139,6 +152,12 @@ const ImmersiveScrollGallery: React.FC<iImmersiveScrollGalleryProps> = ({
                     playsInline
                     preload="auto"
                     className="object-cover w-full h-full"
+                    style={{
+                      transform: "translate3d(0, 0, 0)",
+                      willChange: "transform",
+                      backfaceVisibility: "hidden",
+                      WebkitBackfaceVisibility: "hidden"
+                    }}
                   />
                 ) : (
                   <Image
@@ -149,6 +168,12 @@ const ImmersiveScrollGallery: React.FC<iImmersiveScrollGalleryProps> = ({
                     className="object-cover"
                     loading={index < 3 ? undefined : "lazy"}
                     priority={index < 3}
+                    style={{
+                      transform: "translate3d(0, 0, 0)",
+                      willChange: "transform",
+                      backfaceVisibility: "hidden",
+                      WebkitBackfaceVisibility: "hidden"
+                    }}
                   />
                 )}
               </div>

@@ -156,7 +156,7 @@ export function TeamSection(): JSX.Element {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-5%" }}
-          className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
         >
           {TEAM_MEMBERS.map((member) => (
             <TeamMemberCard key={member.id} member={member} />
