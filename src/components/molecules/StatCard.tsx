@@ -125,21 +125,21 @@ export const StatCard = memo(function StatCard({ stat, index, className }: StatC
         ease: [0.16, 1, 0.3, 1],
       }}
       className={cn(
-        "group p-8 border-t border-neutral-200",
+        "group p-10 lg:p-8 border-t border-neutral-200 text-center lg:text-left flex flex-col items-center lg:items-start",
         "hover:border-neutral-900 transition-colors duration-300",
         className
       )}
     >
       {/* ── Value row ─────────────────────────────── */}
-      <div className="flex items-baseline gap-1 mb-2">
+      <div className="flex items-baseline gap-1 mb-2 justify-center lg:justify-start">
         {stat.prefix && (
-          <span className="text-2xl font-medium text-neutral-400">
+          <span className="text-xl md:text-2xl font-medium text-neutral-400">
             {stat.prefix}
           </span>
         )}
 
         <motion.span
-          className="text-5xl md:text-6xl font-black text-neutral-900 tracking-tight leading-none"
+          className="text-[40px] md:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tight leading-none"
           initial={{ opacity: 0, scale: 0.92 }}
           animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.92 }}
           transition={{
@@ -175,20 +175,20 @@ export const StatCard = memo(function StatCard({ stat, index, className }: StatC
         </motion.span>
 
         {stat.suffix && (
-          <span className="text-2xl font-bold text-neutral-400">
+          <span className="text-xl md:text-2xl font-bold text-neutral-400">
             {stat.suffix}
           </span>
         )}
       </div>
 
       {/* ── Label ─────────────────────────────────── */}
-      <h3 className="text-sm font-semibold text-neutral-900 tracking-widest uppercase mb-1">
+      <h3 className="text-sm font-semibold text-neutral-900 tracking-widest uppercase mb-2 text-center lg:text-left">
         {stat.label}
       </h3>
 
       {/* ── Description ───────────────────────────── */}
       {stat.description && (
-        <p className="text-xs text-neutral-400 leading-relaxed">
+        <p className="text-xs text-neutral-400 leading-relaxed text-center lg:text-left">
           {stat.description}
         </p>
       )}

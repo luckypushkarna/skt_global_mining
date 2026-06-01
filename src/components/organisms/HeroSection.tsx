@@ -72,7 +72,7 @@ export function HeroSection(): JSX.Element {
           muted
           loop
           playsInline
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover object-center opacity-60"
         >
           <source src="/videos/hero-background-optimized.mp4" type="video/mp4" />
         </video>
@@ -122,7 +122,7 @@ export function HeroSection(): JSX.Element {
           <div className="overflow-hidden pb-2 -mb-2">
             <h1
               ref={headline1Ref}
-              className="text-display-lg font-black text-white leading-[0.9] tracking-tighter"
+              className="text-[clamp(38px,10vw,56px)] lg:text-display-lg font-black text-white leading-[0.9] tracking-tighter"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 120%, 0 120%)" }}
             >
               Engineering
@@ -133,7 +133,7 @@ export function HeroSection(): JSX.Element {
           <div className="flex items-end gap-6 flex-wrap overflow-hidden pb-2 -mb-2 mt-1">
             <h1
               ref={headline2Ref}
-              className="text-display-lg font-black text-white leading-[0.9] tracking-tighter"
+              className="text-[clamp(38px,10vw,56px)] lg:text-display-lg font-black text-white leading-[0.9] tracking-tighter"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 120%, 0 120%)" }}
             >
               The Future
@@ -161,7 +161,7 @@ export function HeroSection(): JSX.Element {
           <div className="overflow-hidden pb-2 -mb-2 mt-1">
             <h1
               ref={headline3Ref}
-              className="text-display-lg font-black text-white/30 leading-[0.9] tracking-tighter mix-blend-plus-lighter"
+              className="text-[clamp(38px,10vw,56px)] lg:text-display-lg font-black text-white/30 leading-[0.9] tracking-tighter mix-blend-plus-lighter"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 120%, 0 120%)" }}
             >
               Underground
@@ -179,7 +179,7 @@ export function HeroSection(): JSX.Element {
             >
               Supporting large-scale underground mining operations at Mopani Copper Mines through mechanisation, infrastructure, workforce development, and operational excellence.
             </p>
-            <div ref={logosRef} className="flex items-center gap-5 mt-2">
+            <div ref={logosRef} className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 mt-2">
               <div className="inline-block relative h-8 w-32">
                 <Image 
                   src="/mopani-logo.webp" 
@@ -190,7 +190,7 @@ export function HeroSection(): JSX.Element {
                   priority
                 />
               </div>
-              <div className="h-5 w-px bg-white/10" />
+              <div className="hidden sm:block h-5 w-px bg-white/10" />
               <div className="inline-block relative h-8 w-20">
                 <Image 
                   src="/irh-logo.webp" 
@@ -213,7 +213,7 @@ export function HeroSection(): JSX.Element {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 mix-blend-screen"
+        className="hidden lg:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 mix-blend-screen"
         aria-hidden="true"
       >
         <motion.div

@@ -6,6 +6,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   motion,
   useInView,
+  useScroll,
+  useTransform,
 } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,13 +19,16 @@ import { containerVariants, itemVariants } from "@/lib/animations";
 function MilestoneDot({ index }: { index: number }) {
   return (
     <div className="stone-marker-gsap w-12 h-12 flex items-center justify-center select-none" data-index={index}>
-      <Image
-        src="/stone-marker-v2.webp"
-        alt="Stone Marker"
-        width={44}
-        height={44}
-        className="object-contain filter drop-shadow-[0_4px_6px_rgba(0,0,0,0.15)]"
-      />
+      {/* Stone Marker WebP */}
+      <div className="relative w-11 h-11">
+        <Image
+          src="/stone-marker-v2.webp"
+          alt="Stone Marker"
+          fill
+          sizes="44px"
+          className="object-contain filter drop-shadow-[0_4px_6px_rgba(0,0,0,0.15)]"
+        />
+      </div>
     </div>
   );
 }
@@ -32,6 +37,19 @@ export function AboutSection(): JSX.Element {
   const sectionRef = useRef<HTMLElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
   const isTimelineInView = useInView(timelineRef, { once: true, margin: "-10%" });
+
+  // Scroll animations for Header (matching the Chairman Image style)
+  const headerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: headerScrollY } = useScroll({
+    target: headerRef,
+    offset: ["start 90%", "end 45%"],
+  });
+
+  const leftX = useTransform(headerScrollY, [0, 0.65], ["-120px", "0px"]);
+  const leftOpacity = useTransform(headerScrollY, [0, 0.5], [0, 1]);
+
+  const rightX = useTransform(headerScrollY, [0, 0.65], ["120px", "0px"]);
+  const rightOpacity = useTransform(headerScrollY, [0, 0.5], [0, 1]);
 
   // Master GSAP Timeline for Vehicle AND Stones
   useEffect(() => {
@@ -68,7 +86,7 @@ export function AboutSection(): JSX.Element {
 
         // 2. Animate the vehicle! (This guarantees stones and vehicle use identical timelines)
         tl.to({}, { duration: 1 }); // Force duration to exactly 1.0
-        tl.fromTo(excavator, { top: "0%" }, { top: "100%", ease: "none", duration: 1 }, 0);
+        tl.fromTo(excavator, { top: "0%" }, { top: "90%", ease: "none", duration: 0.90 }, 0);
         tl.fromTo(excavator, { opacity: 0 }, { opacity: 1, duration: 0.06, ease: "none" }, 0);
         tl.to(excavator, { opacity: 0, ease: "none", duration: 0.1 }, 0.90);
 
@@ -85,33 +103,32 @@ export function AboutSection(): JSX.Element {
           // We use -40 to position the stone squarely in front of the bottom blade of the vehicle graphic
           const rawHitProgress = (stoneCenterY - 160) / containerHeight;
 
-          if (rawHitProgress < 0.95) {
+          if (rawHitProgress < 0.90) {
             let startY = 0;
             let insertTime = rawHitProgress;
-            let durationDown = 0.95 - rawHitProgress;
-            let y95 = durationDown * containerHeight;
+            let durationDown = 0.90 - rawHitProgress;
+            let y90 = durationDown * containerHeight;
 
             // If mathematically the vehicle's offset is already past this stone at timeline 0,
             // we calculate the exact missed distance and pre-apply it so it syncs perfectly.
             if (rawHitProgress < 0) {
               startY = -rawHitProgress * containerHeight;
               insertTime = 0;
-              durationDown = 0.95;
-              y95 = startY + (0.95 * containerHeight);
+              durationDown = 0.90;
+              y90 = startY + (0.90 * containerHeight);
             }
 
             // Stay stationary before hitProgress, then lock onto vehicle
             tl.fromTo(stone,
               { y: startY, x: 0, rotation: 0 },
-              { y: y95, ease: "none", duration: durationDown },
+              { y: y90, ease: "none", duration: durationDown },
               insertTime
             );
 
-            // Final Scatter Asymmetrical Drop (last 5% of timeline)
-            const durationDrop = 1.0 - 0.95;
-            const finalY = (1.0 - rawHitProgress) * containerHeight + gsap.utils.random(-15, 15);
+            // Final Scatter Asymmetrical Drop (runs from 0.90 to 0.95 of timeline)
             const dropX = gsap.utils.random(-35, 35);
             const dropRot = gsap.utils.random(-60, 60);
+            const finalY = (0.95 - rawHitProgress) * containerHeight + gsap.utils.random(-15, 15);
 
             tl.to(stone, {
               y: finalY,
@@ -119,15 +136,15 @@ export function AboutSection(): JSX.Element {
               rotation: dropRot,
               scale: 0.8,
               ease: "power2.out",
-              duration: durationDrop,
-            }, 0.95);
+              duration: 0.05,
+            }, 0.90);
 
-            // Fade out the stone *after* the drop finishes (from 1.0 to 1.1)
+            // Fade out the stone smoothly (runs from 0.90 to 1.0)
             tl.to(stone, {
               opacity: 0,
               ease: "none",
               duration: 0.1,
-            }, 1.0);
+            }, 0.90);
           }
         });
       };
@@ -144,18 +161,15 @@ export function AboutSection(): JSX.Element {
     <section
       ref={sectionRef}
       id="about"
-      className="relative pt-24 pb-48 bg-white overflow-hidden"
+      className="relative pt-24 pb-16 bg-white overflow-hidden"
       aria-labelledby="about-heading"
     >
       <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
         {/* Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
-          {/* Left */}
+        <div ref={headerRef} className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+          {/* Left (Comes from Left) */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-10%" }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            style={{ x: leftX, opacity: leftOpacity }}
           >
             <Badge variant="dot" className="mb-6">
               THE FOUNDATION
@@ -170,12 +184,9 @@ export function AboutSection(): JSX.Element {
             </h2>
           </motion.div>
 
-          {/* Right */}
+          {/* Right (Comes from Right) */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-10%" }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            style={{ x: rightX, opacity: rightOpacity }}
             className="flex flex-col justify-end"
           >
             <p className="text-base text-neutral-500 leading-relaxed mb-8">
@@ -196,11 +207,11 @@ export function AboutSection(): JSX.Element {
           {/* Sticky Counter Badge */}
 
           {/* Vertical track — faint guide line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-neutral-100 -translate-x-px md:-translate-x-1/2" />
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-neutral-100 -translate-x-px md:-translate-x-1/2" />
 
           {/* JCB vehicle — controlled entirely by GSAP now */}
           <div
-            className="excavator-vehicle absolute left-0 md:left-1/2 top-0 z-10"
+            className="excavator-vehicle absolute left-4 md:left-1/2 top-0 z-10"
             style={{
               marginTop: "-28px", // Vertical alignment adjustment
             }}
@@ -249,7 +260,7 @@ export function AboutSection(): JSX.Element {
                     className={`${isEven
                       ? "md:pr-16 md:text-right"
                       : "md:col-start-2 md:pl-16"
-                      } pl-8 md:pl-0`}
+                      } pl-12 md:pl-0`}
                   >
                     <span className="text-xs font-bold tracking-widest text-neutral-400 uppercase block mb-2">
                       {milestone.year}
@@ -263,7 +274,7 @@ export function AboutSection(): JSX.Element {
                   </div>
 
                   {/* Center dot — explicitly brought to z-50 to ensure it is in FRONT of the bucket */}
-                  <div className="absolute left-0 md:left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
+                  <div className="absolute left-4 md:left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
                     <MilestoneDot index={index} />
                   </div>
                 </motion.div>
@@ -272,7 +283,7 @@ export function AboutSection(): JSX.Element {
           </motion.div>
 
           {/* GSAP Target Coordinate Pile */}
-          <div className="rock-pile-target absolute bottom-0 left-1/2 -translate-x-1/2 w-10 h-10 -mb-8 z-0" />
+          <div className="rock-pile-target absolute bottom-0 left-4 md:left-1/2 -translate-x-1/2 w-10 h-10 -mb-8 z-0" />
         </div>
       </div>
     </section>

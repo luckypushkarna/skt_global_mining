@@ -130,7 +130,7 @@ export const STATS: ReadonlyArray<Stat> = [
   {
     value: "50",
     suffix: "M+",
-    prefix: "US$",
+    prefix: "$",
     label: "Initial Investment",
     description: "Strategic infrastructure and operational deployment.",
   },
@@ -151,7 +151,7 @@ export const STATS: ReadonlyArray<Stat> = [
   {
     value: "3",
     suffix: "M+",
-    prefix: "US$",
+    prefix: "$",
     label: "Spare Parts Inventory",
     description: "Strategic warehousing and operational readiness systems.",
   },

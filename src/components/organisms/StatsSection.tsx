@@ -256,19 +256,27 @@ export function StatsSection(): JSX.Element {
         ══════════════════════════════════════════════════════════════ */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
 
-          {/* LEFT — Clickable pillars (Symmetrical, Stable Heights) */}
+          {/* LEFT — Clickable pillars (Symmetrical, Stable Heights on Desktop, Responsive Accordions on Mobile) */}
           <div className="lg:col-span-6">
             <div ref={pillarsRef} className="space-y-0 border-t border-neutral-200">
               {PILLARS.map((p, i) => {
                 const isActive = active === i;
                 return (
-                  <button
+                  <div
                     key={p.num}
+                    role="button"
+                    tabIndex={0}
                     onClick={() => handlePillarClick(i)}
-                    className={`relative w-full text-left group flex gap-5 items-start pt-5 pb-6 pl-6 border-b border-neutral-200 last:border-0 transition-colors duration-300 ${isActive ? "bg-white shadow-sm" : "bg-transparent hover:bg-white/40"
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        handlePillarClick(i);
+                      }
+                    }}
+                    className={`relative w-full text-left group flex gap-5 items-start pt-5 pb-6 pl-6 border-b border-neutral-200 last:border-0 transition-colors duration-300 focus:outline-none cursor-pointer ${isActive ? "bg-white shadow-sm" : "bg-transparent hover:bg-white/40"
                       }`}
                   >
-                    {/* Active Accent Left Border Indicator (Absolute to maintain stable height) */}
+                    {/* Active Accent Left Border Indicator */}
                     {isActive && (
                       <motion.div
                         layoutId="active-pillar-indicator"
@@ -297,17 +305,57 @@ export function StatsSection(): JSX.Element {
                       >
                         {p.title}
                       </h3>
-                      <p className="text-xs text-neutral-500 leading-relaxed mt-1">
+                      
+                      {/* Desktop Description: Always visible */}
+                      <p className="text-xs text-neutral-500 leading-relaxed mt-1 hidden lg:block">
                         {p.body}
                       </p>
+
+                      {/* Mobile Accordion Container: Animated fold-out */}
+                      <div className="block lg:hidden">
+                        <AnimatePresence initial={false}>
+                          {isActive && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                              animate={{ height: "auto", opacity: 1, marginTop: 8 }}
+                              exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                              className="overflow-hidden"
+                            >
+                              <p className="text-xs text-neutral-500 leading-relaxed mb-4">
+                                {p.body}
+                              </p>
+
+                              {/* Responsive Mobile Inline Image */}
+                              <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden shadow-md">
+                                <Image
+                                  src={p.img}
+                                  alt={p.tag}
+                                  fill
+                                  sizes="(max-width: 1024px) 100vw, 30vw"
+                                  className="object-cover"
+                                  priority
+                                />
+                                {/* Bottom gradient overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-neutral-950/20 to-transparent" />
+                                
+                                {/* Tag badge overlay */}
+                                <span className="absolute top-3 right-3 text-[9px] font-bold tracking-widest text-neutral-400 uppercase border border-neutral-200 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-sm">
+                                  {p.tag}
+                                </span>
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
                     </div>
 
-                    {/* Tag badge */}
+                    {/* Tag badge (Desktop-only next to title/body) */}
                     {isActive && (
                       <motion.span
                         initial={{ opacity: 0, scale: 0.85 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="flex-shrink-0 self-start mt-0.5 text-[9px] font-bold tracking-widest text-neutral-400 uppercase border border-neutral-200 bg-white px-2 py-1 rounded-sm hidden sm:block mr-4"
+                        className="flex-shrink-0 self-start mt-0.5 text-[9px] font-bold tracking-widest text-neutral-400 uppercase border border-neutral-200 bg-white px-2 py-1 rounded-sm hidden lg:block mr-4"
                       >
                         {p.tag}
                       </motion.span>
@@ -328,7 +376,7 @@ export function StatsSection(): JSX.Element {
                         />
                       )}
                     </div>
-                  </button>
+                  </div>
                 );
               })}
             </div>
@@ -337,7 +385,7 @@ export function StatsSection(): JSX.Element {
           {/* RIGHT — Premium stacked image cards (Symmetric Centered Height) */}
           <motion.div
             ref={cardsBlockRef}
-            className="lg:col-span-6 relative flex items-center justify-center w-full"
+            className="lg:col-span-6 relative lg:flex hidden items-center justify-center w-full"
             style={{ height: "480px", x: cardsX, opacity: cardsOpacity }}
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => { setPaused(false); startAuto(); }}

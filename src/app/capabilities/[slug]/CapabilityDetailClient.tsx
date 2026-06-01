@@ -22,7 +22,7 @@ export function CapabilityDetailClient({ slug }: CapabilityDetailClientProps) {
     <main className="min-h-screen bg-white">
 
       {/* ── HERO SECTION ───────────────────────────────────── */}
-      <section className="relative w-full h-[55vh] min-h-[420px] overflow-hidden">
+      <section className="relative w-full h-[40vh] lg:h-[55vh] min-h-[340px] lg:min-h-[420px] overflow-hidden">
 
         {/* Background Image */}
         <Image
@@ -38,21 +38,21 @@ export function CapabilityDetailClient({ slug }: CapabilityDetailClientProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" style={{ zIndex: 1 }} />
 
         {/* Content */}
-        <div className="relative z-10 h-full max-w-screen-xl mx-auto px-6 lg:px-12 flex flex-col justify-end pb-12">
+        <div className="relative z-10 h-full max-w-screen-xl mx-auto px-5 md:px-8 lg:px-12 flex flex-col justify-end pb-8 lg:pb-12">
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center gap-4 mb-4"
+            className="flex items-center gap-3 lg:gap-4 mb-3 lg:mb-4"
           >
             {/* Icon Badge */}
-            <div className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 border border-white/20 backdrop-blur-md">
-              <Icon size={20} className="text-white" strokeWidth={1.75} />
+            <div className="w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center rounded-full bg-white/10 border border-white/20 backdrop-blur-md">
+              <Icon size={18} className="text-white" strokeWidth={1.75} />
             </div>
 
             {/* Number */}
-            <span className="text-xs font-semibold tracking-[0.3em] text-white/77 uppercase">
+            <span className="text-[10px] lg:text-xs font-semibold tracking-[0.3em] text-white/77 uppercase">
               Capability {capability.num} / 12
             </span>
           </motion.div>
@@ -61,7 +61,7 @@ export function CapabilityDetailClient({ slug }: CapabilityDetailClientProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl md:text-7xl font-black text-white tracking-tight leading-[1.05] mb-4"
+            className="text-[36px] md:text-5xl lg:text-7xl font-black text-white tracking-tight leading-[1.05] mb-3 lg:mb-4"
           >
             {capability.title}
           </motion.h1>
@@ -70,7 +70,7 @@ export function CapabilityDetailClient({ slug }: CapabilityDetailClientProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="text-base md:text-lg text-white/85 max-w-2xl font-light"
+            className="text-sm md:text-base lg:text-lg text-white/85 max-w-2xl font-light"
           >
             {capability.tagline}
           </motion.p>
@@ -194,8 +194,58 @@ export function CapabilityDetailClient({ slug }: CapabilityDetailClientProps) {
 
       {/* ── NAVIGATION FOOTER ──────────────────────────────── */}
       <section className="border-t border-neutral-200">
-        <div className="max-w-screen-xl mx-auto px-6 lg:px-12 py-10">
-          <div className="grid grid-cols-3 items-center gap-6">
+        <div className="max-w-screen-xl mx-auto px-5 md:px-8 lg:px-12 py-10">
+          
+          {/* Mobile Stacking Navigation (Hidden on Tablet and Desktop) */}
+          <div className="flex flex-col gap-4 sm:hidden select-none">
+            {prev && (
+              <Link
+                href={`/capabilities/${prev.slug}`}
+                className="group flex items-center justify-between p-4 min-h-[56px] border border-neutral-200 rounded-xl bg-neutral-50/40 active:bg-neutral-100 transition-colors"
+              >
+                <div className="flex items-center gap-3">
+                  <ArrowLeft size={16} className="text-neutral-500 group-active:-translate-x-1 transition-transform" />
+                  <div className="text-left">
+                    <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-neutral-400">
+                      Previous
+                    </p>
+                    <p className="text-xs font-bold text-neutral-800">
+                      {prev.title}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            )}
+
+            <Link
+              href="/#services"
+              className="flex items-center justify-center min-h-[56px] border border-neutral-200 rounded-xl text-xs font-bold tracking-[0.25em] uppercase text-neutral-500 active:text-neutral-900 active:bg-neutral-50 transition-colors"
+            >
+              All Capabilities
+            </Link>
+
+            {next && (
+              <Link
+                href={`/capabilities/${next.slug}`}
+                className="group flex items-center justify-between p-4 min-h-[56px] border border-neutral-200 rounded-xl bg-neutral-50/40 active:bg-neutral-100 transition-colors"
+              >
+                <div className="flex items-center gap-3 justify-end w-full">
+                  <div className="text-right">
+                    <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-neutral-400">
+                      Next
+                    </p>
+                    <p className="text-xs font-bold text-neutral-800">
+                      {next.title}
+                    </p>
+                  </div>
+                  <ArrowRight size={16} className="text-neutral-500 group-active:translate-x-1 transition-transform" />
+                </div>
+              </Link>
+            )}
+          </div>
+
+          {/* Desktop/Tablet Horizontal Grid Navigation (Hidden on Mobile) */}
+          <div className="hidden sm:grid sm:grid-cols-3 items-center gap-6">
 
             {/* Previous */}
             {prev ? (

@@ -44,6 +44,8 @@ export const viewport: Viewport = {
   ],
 };
 
+import { ClickSpark } from "@/components/ui/ClickSpark";
+
 // ─── Root Layout ──────────────────────────────────────────────────────────────
 export default function RootLayout({
   children,
@@ -76,9 +78,17 @@ export default function RootLayout({
 
             <Navbar />
 
-            <main id="main-content" tabIndex={-1}>
-              {children}
-            </main>
+            <ClickSpark
+              sparkColor="#E11D48" // Crimson Brand Color
+              sparkSize={12}
+              sparkRadius={20}
+              sparkCount={8}
+              duration={500}
+            >
+              <main id="main-content" tabIndex={-1}>
+                {children}
+              </main>
+            </ClickSpark>
 
             <Footer />
           </ThemeProvider>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, memo } from "react";
+import { useRef, useEffect, useState, memo } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { JSX } from "react";
@@ -117,8 +117,19 @@ export function ServicesSection(): JSX.Element {
   const rowARef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number>(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  const handleMobileScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const target = e.currentTarget;
+    if (target.scrollWidth === target.clientWidth) return;
+    const progress = target.scrollLeft / (target.scrollWidth - target.clientWidth);
+    setScrollProgress(progress);
+  };
 
   useEffect(() => {
+    // Mobile optimization guard: disable heavy JS slider loop and requestAnimationFrame on mobile/tablet screens
+    if (window.innerWidth < 1024) return;
+
     const rowA = rowARef.current;
     const stage = stageRef.current;
     if (!rowA || !stage) return;
@@ -273,20 +284,18 @@ export function ServicesSection(): JSX.Element {
     <>
       <section
         id="services"
-        className="bg-white overflow-hidden"
-        aria-labelledby="services-heading"
-        style={{ paddingTop: "96px", paddingBottom: "96px" }}
+        className="bg-white overflow-hidden py-16 lg:py-24"
       >
         {/* ── Header ── */}
-        <div className="max-w-screen-xl mx-auto px-6 lg:px-12 mb-16">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+        <div className="max-w-screen-xl mx-auto px-5 md:px-8 lg:px-12 mb-12 lg:mb-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8">
             <div>
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="text-xs font-bold tracking-[0.28em] text-neutral-400 uppercase mb-5"
+                className="text-xs font-bold tracking-[0.28em] text-neutral-400 uppercase mb-4 md:mb-5"
               >
                 What We Do
               </motion.p>
@@ -297,7 +306,7 @@ export function ServicesSection(): JSX.Element {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="text-5xl md:text-6xl font-black text-neutral-900 tracking-tight leading-none"
+                className="text-4xl md:text-6xl font-black text-neutral-900 tracking-tight leading-none"
               >
                 Core
                 <br />
@@ -313,7 +322,7 @@ export function ServicesSection(): JSX.Element {
             >
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-900 border border-neutral-200 rounded-full px-6 py-3 hover:bg-neutral-900 hover:text-white hover:border-neutral-900 transition-all duration-300"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-900 border border-neutral-200 rounded-full px-6 py-3.5 hover:bg-neutral-900 hover:text-white hover:border-neutral-900 transition-all duration-300 active:scale-95"
               >
                 View Systems →
               </Link>
@@ -321,10 +330,91 @@ export function ServicesSection(): JSX.Element {
           </div>
         </div>
 
-        {/* ── Slider Stage ── */}
+        {/* ── Mobile Horizontal Native Scroll Container (Snap enabled, 1.2 cards visible, energy saver) ── */}
+        <div 
+          onScroll={handleMobileScroll}
+          className="block lg:hidden overflow-x-auto snap-x snap-mandatory scrollbar-none touch-pan-x px-5 pb-6"
+        >
+          <div className="flex gap-4">
+            {CAPABILITIES.map((card, i) => {
+              const Icon = card.icon;
+              return (
+                <div
+                  key={`mobile-${card.slug}-${i}`}
+                  className="snap-start shrink-0 w-[280px] h-[420px] relative rounded-2xl overflow-hidden shadow-md flex flex-col justify-end p-5 bg-neutral-900 border border-white/5 active:scale-[0.98] transition-transform duration-300"
+                >
+                  <Link href={`/capabilities/${card.slug}`} className="absolute inset-0 z-0">
+                    <Image
+                      src={card.bgImage}
+                      alt={card.title}
+                      fill
+                      sizes="280px"
+                      className="object-cover opacity-60"
+                      loading="lazy"
+                    />
+                  </Link>
+
+                  {/* Gradient overlays */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none z-0" />
+                  
+                  {/* Top section */}
+                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10 pointer-events-none">
+                    <div className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-white">
+                      <Icon size={16} />
+                    </div>
+                    <span className="text-[10px] font-bold tracking-[0.2em] text-white/60">
+                      {card.num}
+                    </span>
+                  </div>
+
+                  {/* Content */}
+                  <div className="relative z-10 flex flex-col pointer-events-none">
+                    <h3 className="text-lg font-bold text-white mb-2 leading-tight">
+                      {card.title}
+                    </h3>
+                    <p className="text-[11px] leading-relaxed text-white/70 mb-3 line-clamp-2">
+                      {card.desc}
+                    </p>
+                    
+                    {/* Tags with larger touch targets (min 32px height) */}
+                    <div className="flex flex-wrap gap-1.5 mb-4 pointer-events-auto">
+                      {card.tags.slice(0, 2).map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-[9px] font-bold tracking-[0.1em] uppercase px-3 py-1.5 rounded-full text-white/90 bg-white/10 border border-white/15 min-h-[32px] flex items-center justify-center"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <Link
+                      href={`/capabilities/${card.slug}`}
+                      className="pointer-events-auto inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-white/60 active:text-white"
+                    >
+                      Explore →
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Mobile Scroll Progress Indicator */}
+        <div className="lg:hidden flex justify-center items-center mt-2 mb-4">
+          <div className="w-24 h-[2px] bg-neutral-200 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-neutral-900 transition-all duration-75"
+              style={{ width: `${scrollProgress * 100}%` }}
+            />
+          </div>
+        </div>
+
+        {/* ── Desktop Slider Stage (Hidden on Mobile) ── */}
         <div
           ref={stageRef}
-          className="relative"
+          className="hidden lg:block relative"
           style={{
             userSelect: "none",
           }}

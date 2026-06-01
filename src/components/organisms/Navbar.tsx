@@ -147,59 +147,74 @@ export function Navbar(): JSX.Element {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileOpen && (
-          <motion.div
-            id="mobile-menu"
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: "0%" }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-white flex flex-col lg:hidden"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Mobile navigation"
-          >
-            <div className="h-20 flex items-center justify-between px-6 border-b border-neutral-100">
-              <span className="text-xl font-black tracking-tight">SKT</span>
-              <button
-                onClick={() => setIsMobileOpen(false)}
-                aria-label="Close menu"
-                className="w-10 h-10 flex items-center justify-center"
-              >
-                <X size={20} />
-              </button>
-            </div>
+          <>
+            {/* Backdrop overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => setIsMobileOpen(false)}
+              className="fixed inset-0 z-40 bg-neutral-950/50 backdrop-blur-sm lg:hidden"
+              aria-hidden="true"
+            />
 
-            <nav className="flex-1 overflow-y-auto px-6 py-8 space-y-1">
-              {NAV_ITEMS.map((item, i) => (
-                <motion.div
-                  key={item.href}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05, duration: 0.4 }}
+            {/* Slide-in drawer from right */}
+            <motion.div
+              id="mobile-menu"
+              initial={{ x: "100%" }}
+              animate={{ x: "0%" }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="fixed top-0 right-0 bottom-0 z-50 w-[80vw] sm:w-[320px] max-w-full bg-white shadow-2xl flex flex-col lg:hidden border-l border-neutral-100"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Mobile navigation"
+            >
+              <div className="h-20 flex items-center justify-between px-6 border-b border-neutral-100">
+                <span className="text-xl font-black tracking-tight text-neutral-900">SKT Global</span>
+                <button
+                  onClick={() => setIsMobileOpen(false)}
+                  aria-label="Close menu"
+                  className="w-10 h-10 flex items-center justify-center text-neutral-700 hover:text-neutral-900 focus-visible:outline-none"
                 >
-                  <Link
-                    href={item.href}
-                    onClick={() => setIsMobileOpen(false)}
-                    className="flex items-center justify-between py-4 text-xl font-semibold text-neutral-900 border-b border-neutral-100"
-                  >
-                    {item.label}
-                    <ChevronDown
-                      size={16}
-                      className="text-neutral-400 -rotate-90"
-                    />
-                  </Link>
-                </motion.div>
-              ))}
-            </nav>
+                  <X size={22} />
+                </button>
+              </div>
 
-            <div className="px-6 pb-8 pt-4">
-              <Button variant="primary" size="lg" fullWidth>
-                <Link href="/contact" onClick={() => setIsMobileOpen(false)}>
-                  Get In Touch
-                </Link>
-              </Button>
-            </div>
-          </motion.div>
+              <nav className="flex-1 overflow-y-auto px-6 py-6 space-y-1">
+                {NAV_ITEMS.map((item, i) => (
+                  <motion.div
+                    key={item.href}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.04, duration: 0.3 }}
+                  >
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsMobileOpen(false)}
+                      className="flex items-center justify-between py-4 text-lg font-bold text-neutral-800 border-b border-neutral-100 min-h-[48px] active:bg-neutral-50 px-2 rounded-md transition-colors"
+                    >
+                      {item.label}
+                      <ChevronDown
+                        size={16}
+                        className="text-neutral-400 -rotate-90"
+                      />
+                    </Link>
+                  </motion.div>
+                ))}
+              </nav>
+
+              {/* Get in Touch Button (moves into bottom of drawer with safe-area padding) */}
+              <div className="px-6 pb-[calc(24px+env(safe-area-inset-bottom))] pt-4 border-t border-neutral-100 bg-neutral-50/50">
+                <Button variant="primary" size="lg" fullWidth>
+                  <Link href="/contact" onClick={() => setIsMobileOpen(false)} className="w-full text-center">
+                    Get In Touch
+                  </Link>
+                </Button>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>
