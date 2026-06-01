@@ -85,7 +85,7 @@ export default function RootLayout({
               sparkCount={8}
               duration={500}
             >
-              <main id="main-content" tabIndex={-1}>
+              <main id="main-content" tabIndex={-1} className="relative">
                 {children}
               </main>
             </ClickSpark>

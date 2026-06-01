@@ -4,6 +4,7 @@ import { JSX, useEffect, useRef, useState } from "react";
 import { motion, useInView, animate, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { STATS } from "@/lib/constants";
+import { MagicText } from "@/components/ui/magic-text";
 
 // ─── Animated Number Counter ─────────────────────────────────────────────────
 
@@ -130,82 +131,7 @@ function StatCard({
   );
 }
 
-// ─── Scroll-based text animation ─────────────────────────────────────────────
 
-interface ScrollAnimatedWordProps {
-  readonly word: { text: string; suffix: string; hasBr?: boolean };
-  readonly index: number;
-  readonly total: number;
-  readonly scrollYProgress: any;
-}
-
-function ScrollAnimatedWord({
-  word,
-  index,
-  total,
-  scrollYProgress,
-}: ScrollAnimatedWordProps) {
-  const start = index / total;
-  const end = (index + 1.2) / total;
-  const color = useTransform(
-    scrollYProgress,
-    [start, Math.min(end, 1)],
-    ["#a3a3a3", "#1a1a1a"]
-  );
-
-  return (
-    <span className="inline">
-      <motion.span
-        style={{ color }}
-        className="inline"
-      >
-        {word.text}
-      </motion.span>
-      {word.suffix}
-      {word.hasBr && <br className="hidden md:inline" />}
-    </span>
-  );
-}
-
-function ScrollAnimatedQuote() {
-  const containerRef = useRef<HTMLSpanElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start 85%", "end 55%"],
-  });
-
-  const animWords = [
-    { text: "We", suffix: " " },
-    { text: "don't", suffix: " " },
-    { text: "just", suffix: " " },
-    { text: "extract", suffix: " " },
-    { text: "minerals.", suffix: " ", hasBr: true },
-    { text: "We", suffix: " " },
-    { text: "extract", suffix: " " },
-    { text: "potential", suffix: " " },
-    { text: "from", suffix: " " },
-    { text: "the", suffix: " " },
-    { text: "earth,", suffix: " " },
-    { text: "and", suffix: " " },
-    { text: "from", suffix: " " },
-    { text: "our", suffix: " " },
-    { text: "people.", suffix: "" },
-  ];
-
-  return (
-    <span ref={containerRef} className="inline">
-      {animWords.map((word, i) => (
-        <ScrollAnimatedWord
-          key={i}
-          word={word}
-          index={i}
-          total={animWords.length}
-          scrollYProgress={scrollYProgress}
-        />
-      ))}
-    </span>
-  );
-}
 
 // ─── Section ─────────────────────────────────────────────────────────────────
 
@@ -375,7 +301,10 @@ export function OperationalScaleSection(): JSX.Element {
 
               {/* Quote text — Playfair, weight 300, elegant */}
               <blockquote>
-                <p
+                <MagicText
+                  text="We don't just extract minerals. We extract potential from the earth, and from our people."
+                  className="flex flex-wrap leading-[1.35] p-0 m-0"
+                  wordClassName="relative inline-block mr-[0.22em] text-[clamp(22px,3vw,38px)] font-light"
                   style={{
                     fontFamily: "var(--font-playfair), 'Playfair Display', Georgia, serif",
                     fontSize: "clamp(22px, 3vw, 38px)",
@@ -386,9 +315,7 @@ export function OperationalScaleSection(): JSX.Element {
                     maxWidth: "100%",
                     marginBottom: "32px",
                   }}
-                >
-                  <ScrollAnimatedQuote />
-                </p>
+                />
 
                 {/* Signature block */}
                 <footer

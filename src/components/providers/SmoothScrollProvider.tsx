@@ -28,13 +28,14 @@ export function SmoothScrollProvider({
       gsapInstance = gsap;
 
       lenis = new Lenis({
-        duration: 1.2, // Fast, modern, responsive feel
+        duration: 1.0,           // Faster, more responsive
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         orientation: "vertical",
         gestureOrientation: "vertical",
         smoothWheel: true,
-        wheelMultiplier: 1.0,
+        wheelMultiplier: 1.2,    // Increased scroll speed
         touchMultiplier: 1.5,
+        lerp: 0.1,               // Smooth interpolation
         infinite: false,
       });
 

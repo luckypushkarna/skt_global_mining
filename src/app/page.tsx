@@ -5,13 +5,12 @@ import { AboutSection } from "@/components/organisms/AboutSection";
 import { BlankSection } from "@/components/organisms/BlankSection";
 import { ServicesSection } from "@/components/organisms/ServicesSection";
 import { StatsSection } from "@/components/organisms/StatsSection";
-
 import { TeamSection } from "@/components/organisms/TeamSection";
 import { GallerySection } from "@/components/organisms/GallerySection";
 import { ContactSection } from "@/components/organisms/ContactSection";
 import { MarqueeSection } from "@/components/organisms/MarqueeSection";
-import { generateMetadata } from "@/lib/seo";
 import { PartnersSection } from "@/components/organisms/PartnersSection";
+import { generateMetadata } from "@/lib/seo";
 
 export const metadata = generateMetadata({
   description:
@@ -32,7 +31,7 @@ export default function HomePage(): JSX.Element {
         <AboutSection />
       </Suspense>
 
-      {/* Spacing Section */}
+      {/* Map / Blank section */}
       <Suspense fallback={<SectionSkeleton />}>
         <BlankSection />
       </Suspense>
@@ -48,20 +47,19 @@ export default function HomePage(): JSX.Element {
       </Suspense>
 
       {/* Gallery */}
-      <Suspense fallback={<SectionSkeleton />}>
-        <GallerySection />
-      </Suspense>
+      <GallerySection />
 
       {/* Team */}
-      <Suspense fallback={<SectionSkeleton />}>
-        <TeamSection />
-      </Suspense>
+      <div className="relative z-10 bg-white">
+        <Suspense fallback={<SectionSkeleton />}>
+          <TeamSection />
+        </Suspense>
+      </div>
 
       {/* Partners */}
       <Suspense fallback={<SectionSkeleton />}>
         <PartnersSection />
       </Suspense>
-
 
       {/* Contact */}
       <Suspense fallback={<SectionSkeleton />}>

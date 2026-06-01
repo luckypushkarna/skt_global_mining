@@ -60,33 +60,33 @@ function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
         />
 
         {/* ── HOVER OVERLAY: Slides up from the bottom (Reference Match) ── */}
-        <div className="absolute inset-0 bg-neutral-950/95 backdrop-blur-sm flex flex-col justify-between p-6 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10">
+        <div className="absolute inset-0 bg-neutral-950/95 backdrop-blur-sm flex flex-col justify-between p-3 sm:p-4 md:p-6 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10">
           
           {/* Top: Header & Bio */}
-          <div className="space-y-3">
-            <h4 className="text-lg md:text-xl font-bold text-white tracking-tight leading-snug">
+          <div className="space-y-1.5 sm:space-y-3">
+            <h4 className="text-xs sm:text-sm md:text-lg lg:text-xl font-bold text-white tracking-tight leading-snug">
               {details.title}
             </h4>
-            <p className="text-xs text-white/80 leading-relaxed font-medium">
+            <p className="text-[10px] sm:text-xs text-white/80 leading-relaxed font-medium">
               {member.bio}
             </p>
           </div>
 
           {/* Bottom: Interactive Gray Action Bar */}
-          <div className="flex items-center justify-between mt-auto pt-4">
-            <div className="flex items-center gap-3">
+          <div className="flex items-center justify-between mt-auto pt-2 sm:pt-4">
+            <div className="flex items-center gap-2 sm:gap-3">
               {/* Gray square button with arrow */}
-              <div className="w-8 h-8 bg-neutral-200 text-neutral-900 flex items-center justify-center rounded-[6px] shadow-sm select-none">
-                <span className="text-base font-bold">→</span>
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-neutral-200 text-neutral-900 flex items-center justify-center rounded-[6px] shadow-sm select-none">
+                <span className="text-xs sm:text-base font-bold">→</span>
               </div>
-              <span className="text-xs font-bold tracking-tight text-white">
+              <span className="text-[9px] sm:text-xs font-bold tracking-tight text-white">
                 {details.action}
               </span>
             </div>
             
             {/* Gray square button with minus */}
-            <div className="w-8 h-8 bg-neutral-200 text-neutral-900 flex items-center justify-center rounded-[6px] shadow-sm select-none">
-              <span className="text-base font-bold">—</span>
+            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-neutral-200 text-neutral-900 flex items-center justify-center rounded-[6px] shadow-sm select-none">
+              <span className="text-xs sm:text-base font-bold">—</span>
             </div>
           </div>
 
