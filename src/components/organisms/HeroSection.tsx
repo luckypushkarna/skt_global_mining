@@ -192,12 +192,12 @@ export function HeroSection(): JSX.Element {
                 />
               </div>
               <div className="hidden sm:block h-5 w-px bg-white/10" />
-              <div className="inline-block relative h-8 w-20">
-                <Image
-                  src="/irh-logo.webp"
+              <div className="inline-block relative h-12 w-28">
+                <Image 
+                  src="/irh-logo.webp" 
                   alt="IRH Logo"
                   fill
-                  sizes="(max-width: 768px) 80px, 80px"
+                  sizes="(max-width: 768px) 112px, 112px"
                   className="object-contain"
                   priority
                 />
