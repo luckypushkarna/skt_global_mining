@@ -54,44 +54,50 @@ export function AboutSection(): JSX.Element {
   // Master GSAP Timeline for Vehicle AND Stones
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    let tl: gsap.core.Timeline;
+    
+    // Configure ScrollTrigger globally for mobile optimizations
+    ScrollTrigger.config({
+      ignoreMobileResize: true,
+      syncInterval: 40,
+    });
 
     const ctx = gsap.context(() => {
       const stones = gsap.utils.toArray<HTMLElement>(".stone-marker-gsap");
       const container = timelineRef.current;
-      const excavator = document.querySelector(".excavator-vehicle");
-      const pileTarget = document.querySelector(".rock-pile-target");
+      const excavator = document.querySelector(".excavator-vehicle") as HTMLElement;
 
-      if (!container || !excavator || !pileTarget || stones.length === 0) return;
+      if (!container || !excavator || stones.length === 0) return;
 
-      const buildTimeline = () => {
-        if (tl) tl.kill();
+      const mm = gsap.matchMedia();
+      let activeTimeline: gsap.core.Timeline | null = null;
+      let isDesktopMedia = false;
 
-        // 1. Reset everything to native coordinates
+      const runAnimations = (isDesktop: boolean) => {
+        const cRect = container.getBoundingClientRect();
+        const containerHeight = cRect.height;
+
+        // Reset elements to base state
         gsap.set(stones, { clearProps: "all" });
         gsap.set(excavator, { clearProps: "all" });
+        gsap.set(excavator, { xPercent: -50, y: 0 });
 
-        // 1.5 Re-establish the horizontal centering specifically through GSAP 
-        // so it doesn't get overridden by scale tweens!
-        gsap.set(excavator, { xPercent: -50 });
-
-        tl = gsap.timeline({
+        const tl = gsap.timeline({
           scrollTrigger: {
             trigger: container,
-            start: "top 80%", // FIXED syntax: top edge of trigger hits 80% of viewport
-            end: "bottom 20%",
-            scrub: true,
+            start: isDesktop ? "top 80%" : "top 85%",
+            end: isDesktop ? "bottom 20%" : "bottom 15%",
+            scrub: isDesktop ? 1 : 2.0, // Smoother scrub on mobile (higher = smoother)
+            anticipatePin: isDesktop ? 1 : 0,
+            fastScrollEnd: true,
+            invalidateOnRefresh: true,
           },
         });
 
-        // 2. Animate the vehicle! (This guarantees stones and vehicle use identical timelines)
+        // 2. Animate the vehicle using GPU-accelerated y transform instead of top!
         tl.to({}, { duration: 1 }); // Force duration to exactly 1.0
-        tl.fromTo(excavator, { top: "0%" }, { top: "90%", ease: "none", duration: 0.90 }, 0);
+        tl.fromTo(excavator, { y: 0 }, { y: containerHeight * 0.90, ease: "none", duration: 0.90 }, 0);
         tl.fromTo(excavator, { opacity: 0 }, { opacity: 1, duration: 0.06, ease: "none" }, 0);
         tl.to(excavator, { opacity: 0, ease: "none", duration: 0.1 }, 0.90);
-
-        const cRect = container.getBoundingClientRect();
-        const containerHeight = cRect.height;
 
         stones.forEach((stone) => {
           const sRect = stone.getBoundingClientRect();
@@ -100,7 +106,6 @@ export function AboutSection(): JSX.Element {
           const stoneCenterY = (sRect.top + sRect.height / 2) - cRect.top;
 
           // 3. Contact & Collect: Offset calibrated exactly to the front loader bucket bounds!
-          // We use -40 to position the stone squarely in front of the bottom blade of the vehicle graphic
           const rawHitProgress = (stoneCenterY - 160) / containerHeight;
 
           if (rawHitProgress < 0.90) {
@@ -118,7 +123,7 @@ export function AboutSection(): JSX.Element {
               y90 = startY + (0.90 * containerHeight);
             }
 
-            // Stay stationary before hitProgress, then lock onto vehicle
+            // Stay stationary before hitProgress, then lock onto vehicle via GPU y transform
             tl.fromTo(stone,
               { y: startY, x: 0, rotation: 0 },
               { y: y90, ease: "none", duration: durationDown },
@@ -134,7 +139,7 @@ export function AboutSection(): JSX.Element {
               y: finalY,
               x: dropX,
               rotation: dropRot,
-              scale: 0.8,
+              scale: isDesktop ? 0.8 : 0.7, // slightly smaller on mobile to preserve memory/layout
               ease: "power2.out",
               duration: 0.05,
             }, 0.90);
@@ -147,11 +152,37 @@ export function AboutSection(): JSX.Element {
             }, 0.90);
           }
         });
+
+        return tl;
       };
 
-      buildTimeline();
-      ScrollTrigger.addEventListener("refresh", buildTimeline);
-      return () => ScrollTrigger.removeEventListener("refresh", buildTimeline);
+      const buildTimeline = () => {
+        if (activeTimeline) activeTimeline.kill();
+        activeTimeline = runAnimations(isDesktopMedia);
+      };
+
+      // ── DESKTOP ─────────────────────────────────
+      mm.add("(min-width: 1024px)", () => {
+        isDesktopMedia = true;
+        buildTimeline();
+        ScrollTrigger.addEventListener("refresh", buildTimeline);
+        return () => {
+          ScrollTrigger.removeEventListener("refresh", buildTimeline);
+          if (activeTimeline) activeTimeline.kill();
+        };
+      });
+
+      // ── MOBILE ──────────────────────────────────
+      mm.add("(max-width: 1023px)", () => {
+        isDesktopMedia = false;
+        buildTimeline();
+        ScrollTrigger.addEventListener("refresh", buildTimeline);
+        return () => {
+          ScrollTrigger.removeEventListener("refresh", buildTimeline);
+          if (activeTimeline) activeTimeline.kill();
+        };
+      });
+
     }, timelineRef);
 
     return () => ctx.revert();
@@ -164,6 +195,7 @@ export function AboutSection(): JSX.Element {
       className="relative pt-24 pb-16 bg-white overflow-hidden"
       aria-labelledby="about-heading"
     >
+      <div id="certifications" className="absolute top-0 left-0" />
       <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <div ref={headerRef} className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
@@ -203,7 +235,7 @@ export function AboutSection(): JSX.Element {
         </div>
 
         {/* Timeline */}
-        <div ref={timelineRef} className="relative">
+        <div ref={timelineRef} id="history" className="relative">
           {/* Sticky Counter Badge */}
 
           {/* Vertical track — faint guide line */}

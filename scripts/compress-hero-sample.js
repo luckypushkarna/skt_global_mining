@@ -1,4 +1,4 @@
-/**
+<div class="flex items-baseline gap-1 mb-4 select-none" bis_skin_checked="1"><span class="relative text-4xl sm:text-5xl md:text-6xl font-black text-neutral-900 tracking-tight leading-none tabular-nums group-hover:scale-[1.02] transition-transform duration-300 origin-left inline-block stats-number-container"><span class="opacity-0 select-none pointer-events-none" aria-hidden="true">1500</span><span class="absolute inset-0 pointer-events-none"><span>1,500</span></span></span><span class="text-xl sm:text-2xl font-bold text-neutral-400 group-hover:text-rose-600 transition-colors duration-300 leading-none">+</span></div>/**
  * compress-hero-sample.js
  *
  * Compresses the heavy FF Hero Video sample.mp4 (~48MB)

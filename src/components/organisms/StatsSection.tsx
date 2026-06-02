@@ -11,35 +11,35 @@ const PILLARS = [
     title: "Hazard Elimination",
     body: "Every task begins with a structured risk assessment and live environmental monitoring to eliminate hazards before they form.",
     tag: "Risk Assessment",
-    img: "/Hazard Elimination.png",
+    img: "/Hazard Elimination.webp",
   },
   {
     num: "02",
     title: "Worker Protection Systems",
     body: "State-of-the-art PPE, atmospheric sensors, and automated ventilation guard every underground crew, 24 hours a day.",
     tag: "PPE & Monitoring",
-    img: "/Worker Protection Systems.png",
+    img: "/Worker Protection Systems.webp",
   },
   {
     num: "03",
     title: "Continuous Training",
     body: "Over 5,000 hours of structured safety education per year ensure every SKT professional knows exactly what to do.",
     tag: "Safety Training",
-    img: "/Continuous Training.png",
+    img: "/Continuous Training.webp",
   },
   {
     num: "04",
     title: "Emergency Readiness",
     body: "Dedicated rescue teams, sub-5-minute response protocols, and on-site medical infrastructure keep our people covered.",
     tag: "Emergency Response",
-    img: "/Emergency Readiness.png",
+    img: "/Emergency Readiness.webp",
   },
   {
     num: "05",
     title: "Community Safety Culture",
     body: "Beyond the mine, SKT Global extends its safety philosophy into surrounding communities through education, awareness, and active partnership programs.",
     tag: "Community Programs",
-    img: "/Community Safety Culture.png",
+    img: "/Community Safety Culture.webp",
   },
 ] as const;
 
@@ -60,6 +60,16 @@ export function StatsSection(): JSX.Element {
   const [paused, setPaused] = useState(false);
   const autoRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const autoplayDuration = isMobile ? 6 : 3.5;
+
   const cardsBlockRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: cardsBlockRef,
@@ -71,15 +81,15 @@ export function StatsSection(): JSX.Element {
 
   const sectionInView = useInView(sectionRef, { once: false, amount: 0.15 });
 
-  // ── Auto-cycle (Runs dynamically every 3 seconds) ─────────────────────────
+  // ── Auto-cycle (Runs dynamically with longer transition on mobile to improve readability) ─────────────────────────
   const startAuto = useCallback(() => {
     if (autoRef.current) clearInterval(autoRef.current);
     autoRef.current = setInterval(() => {
       if (!paused) {
         setActive((p) => (p + 1) % PILLARS.length);
       }
-    }, 3000); // 3 seconds transition
-  }, [paused]);
+    }, autoplayDuration * 1000);
+  }, [paused, autoplayDuration]);
 
   // 1. Reset to 1st point only when the section FIRST scroll-triggers into view
   useEffect(() => {
@@ -98,7 +108,7 @@ export function StatsSection(): JSX.Element {
     return () => { if (autoRef.current) clearInterval(autoRef.current); };
   }, [sectionInView, startAuto]);
 
-  // ── Manual Click Handler (Resets the 3s interval gracefully) ──────────────
+  // ── Manual Click Handler (Resets the dynamic interval gracefully) ──────────────
   const handlePillarClick = (index: number) => {
     setActive(index);
     if (autoRef.current) clearInterval(autoRef.current);
@@ -106,7 +116,7 @@ export function StatsSection(): JSX.Element {
       if (!paused) {
         setActive((p) => (p + 1) % PILLARS.length);
       }
-    }, 3000);
+    }, autoplayDuration * 1000);
   };
 
   // ── GSAP: Headline word-reveal ─────────────────────────────────────────────
@@ -249,7 +259,7 @@ export function StatsSection(): JSX.Element {
                     {/* Active Accent Left Border Indicator */}
                     {isActive && (
                       <motion.div
-                        layoutId="active-pillar-indicator"
+                        {...(isMobile ? {} : { layoutId: "active-pillar-indicator" })}
                         className="absolute left-0 top-0 bottom-0 w-1 bg-neutral-900"
                         transition={{ type: "spring", stiffness: 380, damping: 30 }}
                       />
@@ -289,8 +299,8 @@ export function StatsSection(): JSX.Element {
                               initial={{ height: 0, opacity: 0, marginTop: 0 }}
                               animate={{ height: "auto", opacity: 1, marginTop: 8 }}
                               exit={{ height: 0, opacity: 0, marginTop: 0 }}
-                              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                              className="overflow-hidden"
+                              transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+                              className="overflow-hidden will-change-[height,opacity]"
                             >
                               <p className="text-xs text-neutral-500 leading-relaxed mb-4">
                                 {p.body}
@@ -339,7 +349,7 @@ export function StatsSection(): JSX.Element {
                           initial={{ scaleX: 0 }}
                           animate={paused ? { scaleX: 0 } : { scaleX: 1 }}
                           transition={{
-                            duration: 3, // exactly 3 seconds
+                            duration: autoplayDuration,
                             ease: "linear",
                           }}
                           className="absolute inset-y-0 left-0 w-full bg-neutral-950 origin-left"

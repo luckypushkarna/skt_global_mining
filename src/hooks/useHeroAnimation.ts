@@ -44,8 +44,8 @@ export const useHeroAnimation = (refs: HeroAnimationRefs) => {
     gsap.set(refs.ofMiningLineRef.current, { scaleX: 0, transformOrigin: 'left center' });
     gsap.set(refs.ofMiningTextRef.current, { opacity: 0, x: -10 });
     gsap.set(refs.buttonsRef.current, { opacity: 0, y: 30 });
-    
-    
+
+
     // Setup metrics initial state
     const metricItems = refs.metricsRef.current?.children;
     if (metricItems) {
@@ -69,24 +69,24 @@ export const useHeroAnimation = (refs: HeroAnimationRefs) => {
       ease: ANIMATION_EASINGS.organic,
       boxShadow: "0px 0px 8px rgba(255, 120, 80, 0.4)", // Copper glow shimmer effect
     }, ANIMATION_DELAYS.initial)
-    
-
-    .to(refs.ofMiningTextRef.current, {
-      opacity: 1,
-      x: 0,
-      duration: 0.8,
-      letterSpacing: "0.25em", // slight letter spacing expansion
-    }, "-=0.6")
 
 
+      .to(refs.ofMiningTextRef.current, {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        letterSpacing: "0.25em", // slight letter spacing expansion
+      }, "-=0.6")
 
-    // Buttons reveal
-    .to(refs.buttonsRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: ANIMATION_EASINGS.premium,
-    }, "-=0.8");
+
+
+      // Buttons reveal
+      .to(refs.buttonsRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: ANIMATION_EASINGS.premium,
+      }, "-=0.8");
 
 
     // Metrics stagger reveal

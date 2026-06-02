@@ -1,4 +1,4 @@
-import { AboutSection } from "@/components/organisms/AboutSection";
+import AboutUsSection from "@/components/ui/about-us-section";
 import { TeamSection } from "@/components/organisms/TeamSection";
 import { generateMetadata } from "@/lib/seo";
 
@@ -11,7 +11,7 @@ export const metadata = generateMetadata({
 export default function AboutPage() {
   return (
     <div className="pt-20">
-      <AboutSection />
+      <AboutUsSection />
       <TeamSection />
     </div>
   );

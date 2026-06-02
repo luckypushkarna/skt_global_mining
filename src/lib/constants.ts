@@ -6,7 +6,7 @@ export const SITE_CONFIG = {
   description:
     "A world-class mining and industrial services company delivering engineering excellence, safety leadership, and sustainable resource development across global operations.",
   url: process.env.NEXT_PUBLIC_APP_URL ?? "https://sktglobal.com",
-  ogImage: "/og-image.jpg",
+  ogImage: "/og-image.webp",
   twitterHandle: "@sktglobal",
   founded: "2005",
   headquarters: "Mumbai, India",
@@ -19,8 +19,8 @@ export const NAV_ITEMS: ReadonlyArray<NavItem> = [
   { label: "About", href: "/about" },
   { label: "Operations", href: "/services" },
   { label: "Infrastructure", href: "/projects" },
-  { label: "Safety", href: "/safety" },
-  { label: "Communities", href: "/sustainability" },
+  { label: "Safety", href: "/#impact" },
+  { label: "Communities", href: "/#operations-map" },
   { label: "Careers", href: "/careers" },
   { label: "Contact Us", href: "/contact" },
 ] as const;

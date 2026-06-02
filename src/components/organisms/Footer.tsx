@@ -25,10 +25,10 @@ const FOOTER_SECTIONS = [
   {
     title: "COMMUNITY IMPACT",
     links: [
-      { label: "Safety Philosophy", href: "/safety" },
-      { label: "Environmental Policy", href: "/sustainability" },
-      { label: "Community Impact", href: "/sustainability#community" },
-      { label: "Net Zero Roadmap", href: "/sustainability#net-zero" },
+      { label: "Safety Philosophy", href: "/#impact" },
+      { label: "Environmental Policy", href: "/#operations-map" },
+      { label: "Community Impact", href: "/#operations-map" },
+      { label: "Net Zero Roadmap", href: "/#operations-map" },
     ],
   },
   {

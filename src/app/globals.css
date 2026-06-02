@@ -399,3 +399,28 @@ body {
   overflow-x: clip;
   width: 100%;
 }
+
+/* GPU Acceleration & Performance Optimizations for Scrollytelling Section */
+.excavator-vehicle,
+.stone-marker-gsap {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  transform-style: preserve-3d;
+  image-rendering: -webkit-optimize-contrast;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Fix scale/hover stuttering on numbers */
+.stats-number-container {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}

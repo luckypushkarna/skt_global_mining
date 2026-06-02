@@ -94,10 +94,10 @@ export function generateMetadata(
     icons: {
       icon: [
         { url: "/favicon.ico" },
-        { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-        { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+        { url: "/favicon-16x16.webp", sizes: "16x16", type: "image/png" },
+        { url: "/favicon-32x32.webp", sizes: "32x32", type: "image/png" },
       ],
-      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+      apple: [{ url: "/apple-touch-icon.webp", sizes: "180x180" }],
     },
     manifest: "/manifest.json",
     verification: {
@@ -112,7 +112,7 @@ export const jsonLd = {
     "@type": "Organization",
     name: SITE_CONFIG.name,
     url: SITE_CONFIG.url,
-    logo: `${SITE_CONFIG.url}/logo.png`,
+    logo: `${SITE_CONFIG.url}/logo.webp`,
     description: SITE_CONFIG.description,
     foundingDate: SITE_CONFIG.founded,
     headquarters: {
