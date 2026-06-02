@@ -2,7 +2,6 @@ import { Suspense } from "react";
 import type { JSX } from "react";
 import { HeroSection } from "@/components/organisms/HeroSection";
 import { AboutSection } from "@/components/organisms/AboutSection";
-import { BlankSection } from "@/components/organisms/BlankSection";
 import { ServicesSection } from "@/components/organisms/ServicesSection";
 import { StatsSection } from "@/components/organisms/StatsSection";
 import { TeamSection } from "@/components/organisms/TeamSection";
@@ -11,6 +10,7 @@ import { ContactSection } from "@/components/organisms/ContactSection";
 import { MarqueeSection } from "@/components/organisms/MarqueeSection";
 import { PartnersSection } from "@/components/organisms/PartnersSection";
 import { generateMetadata } from "@/lib/seo";
+import { BlankSection } from "@/components/organisms/BlankSection";
 
 export const metadata = generateMetadata({
   description:
@@ -31,7 +31,7 @@ export default function HomePage(): JSX.Element {
         <AboutSection />
       </Suspense>
 
-      {/* Map / Blank section */}
+      {/* Map Zoom Intro (GSAP scroll portal zoom revealing the Interactive Zambia Operations Map) */}
       <Suspense fallback={<SectionSkeleton />}>
         <BlankSection />
       </Suspense>

@@ -1,12 +1,22 @@
 "use client";
 
-import { useRef, useMemo, JSX } from "react";
+import { useRef, useMemo, JSX, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useHeroAnimation } from "@/hooks/useHeroAnimation";
 
 export function HeroSection(): JSX.Element {
   const containerRef = useRef<HTMLElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Refs for GSAP
   const headline1Ref = useRef<HTMLHeadingElement>(null);
@@ -40,17 +50,32 @@ export function HeroSection(): JSX.Element {
   const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]); // fade away in sync with first fold scroll
   const videoY = useTransform(scrollYProgress, [0, 1], [0, 120]);
 
-  // Ambient mouse light effect
+  // Ambient mouse light effect optimized with RAF
   const glowRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number | null>(null);
+
   const handleMouseMove = (e: React.MouseEvent) => {
+    if (isMobile) return;
     const glow = glowRef.current;
     if (!glow) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    glow.style.setProperty("--mouse-x", `${x}px`);
-    glow.style.setProperty("--mouse-y", `${y}px`);
+
+    if (rafRef.current) {
+      cancelAnimationFrame(rafRef.current);
+    }
+    rafRef.current = requestAnimationFrame(() => {
+      glow.style.setProperty("--mouse-x", `${x}px`);
+      glow.style.setProperty("--mouse-y", `${y}px`);
+    });
   };
+
+  useEffect(() => {
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
 
   return (
     <section
@@ -60,7 +85,7 @@ export function HeroSection(): JSX.Element {
       aria-label="Hero section"
     >
       {/* Background Video with Parallax & Interaction Overlays */}
-      <motion.div style={{ y: videoY }} className="absolute inset-0 z-0 origin-top will-change-transform">
+      <motion.div style={isMobile ? {} : { y: videoY }} className="absolute inset-0 z-0 origin-top will-change-transform">
         <video
           autoPlay
           muted
@@ -75,13 +100,15 @@ export function HeroSection(): JSX.Element {
       </motion.div>
 
       {/* Mouse reactive ambient glow */}
-      <div
-        ref={glowRef}
-        className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-300 opacity-30"
-        style={{
-          background: `radial-gradient(800px circle at var(--mouse-x, -1000px) var(--mouse-y, -1000px), rgba(255,255,255,0.06), transparent 40%)`
-        }}
-      />
+      {!isMobile && (
+        <div
+          ref={glowRef}
+          className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-300 opacity-30"
+          style={{
+            background: `radial-gradient(800px circle at var(--mouse-x, -1000px) var(--mouse-y, -1000px), rgba(255,255,255,0.06), transparent 40%)`
+          }}
+        />
+      )}
 
       {/* Left accent line */}
       <motion.div
@@ -95,7 +122,7 @@ export function HeroSection(): JSX.Element {
 
       {/* Main content */}
       <motion.div
-        style={{ y, opacity }}
+        style={isMobile ? {} : { y, opacity }}
         className="relative z-10 max-w-screen-xl mx-auto px-6 lg:px-12 pt-32 pb-20 w-full"
       >
 

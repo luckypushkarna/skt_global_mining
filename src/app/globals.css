@@ -424,3 +424,41 @@ body {
   -webkit-backface-visibility: hidden;
   transform-style: preserve-3d;
 }
+
+/* ─── Maplibre GL Custom Styles ────────────────────────────────────────────── */
+
+/* Strip default popup styling — the component renders its own premium card */
+.maplibregl-popup-content {
+  padding: 0 !important;
+  background: transparent !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  border: none !important;
+  overflow: visible !important;
+}
+
+.maplibregl-popup-tip {
+  border-top-color: white !important;
+}
+
+.maplibregl-popup-close-button {
+  display: none !important;
+}
+
+/* Zoom / navigation controls */
+.maplibregl-ctrl-group {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Attribution */
+.maplibregl-ctrl-attrib {
+  background: rgba(255, 255, 255, 0.8) !important;
+  font-size: 10px !important;
+  border-radius: 4px;
+}
+
+/* Remove default marker styles from the portal container */
+.maplibregl-marker {
+  cursor: pointer;
+}

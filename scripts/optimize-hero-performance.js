@@ -31,15 +31,14 @@ const initialSize = fs.statSync(SRC_PATH).size;
 const initialMB = (initialSize / (1024 * 1024)).toFixed(2);
 console.log(`📹  Processing: FF Hero Video sample.mp4 (${initialMB} MB)`);
 console.log(`⚡  Tuning parameters: Default speed (1.0x), CRF 21.5 (visually identical to 17 but lightweight), slow preset...`);
-
 const args = [
   '-y',
   '-i', SRC_PATH,
-  '-filter_complex', "[0:v]scale='min(1920,iw)':-2[v]", // Keep original speed, scale to max 1080p
+  '-filter_complex', "[0:v]scale='min(1280,iw)':-2[v]", // Keep original speed, scale to max 720p for fast decoding
   '-map', '[v]',
   '-vcodec', 'libx264',
   '-preset', 'slow',
-  '-crf', '21.5', // Optimal performance-to-quality balance (visually pristine, lightweight)
+  '-crf', '28', // Lower bitrate for smooth mobile/PC playback
   '-movflags', '+faststart',
   '-pix_fmt', 'yuv420p',
   '-an', // Strip audio

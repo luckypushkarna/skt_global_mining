@@ -86,21 +86,21 @@ function StatCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
-      className="bg-white p-6 sm:p-8 hover:bg-neutral-50/50 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden"
+      className="bg-white p-4 sm:p-8 hover:bg-neutral-50/50 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden"
     >
       {/* Top Accent Hover Line */}
       <div className="absolute top-0 left-0 w-full h-[2px] bg-rose-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-      
+
       <div>
         {/* Stat Value Container */}
-        <div className="flex items-baseline gap-1 mb-4 select-none">
+        <div className="flex flex-wrap items-baseline gap-0.5 sm:gap-1 mb-3 sm:mb-4 select-none">
           {stat.prefix && (
-            <span className="text-xl sm:text-2xl font-bold text-neutral-400 group-hover:text-rose-600 transition-colors duration-300 leading-none">
+            <span className="text-lg sm:text-2xl font-bold text-neutral-400 group-hover:text-rose-600 transition-colors duration-300 leading-none">
               {stat.prefix}
             </span>
           )}
-          
-          <span className="relative text-4xl sm:text-5xl md:text-6xl font-black text-neutral-900 tracking-tight leading-none tabular-nums group-hover:scale-[1.02] transition-transform duration-300 origin-left inline-block stats-number-container">
+
+          <span className="relative text-2xl sm:text-5xl md:text-6xl font-black text-neutral-900 tracking-tight leading-none tabular-nums group-hover:scale-[1.02] transition-transform duration-300 origin-left inline-block stats-number-container">
             {/* Stable Layout Container: Reserves the maximum width of the final string to prevent jitter */}
             <span className="opacity-0 select-none pointer-events-none" aria-hidden="true">
               {isNumeric ? numericValue.toLocaleString() : stat.value}
@@ -114,22 +114,22 @@ function StatCard({
               )}
             </span>
           </span>
-          
+
           {stat.suffix && (
-            <span className="text-xl sm:text-2xl font-bold text-neutral-400 group-hover:text-rose-600 transition-colors duration-300 leading-none">
+            <span className="text-lg sm:text-2xl font-bold text-neutral-400 group-hover:text-rose-600 transition-colors duration-300 leading-none">
               {stat.suffix}
             </span>
           )}
         </div>
 
         {/* Title Label */}
-        <h3 className="text-[11px] sm:text-xs font-bold text-neutral-800 tracking-[0.2em] uppercase mb-2">
+        <h3 className="text-[10px] sm:text-xs font-bold text-neutral-800 tracking-[0.2em] uppercase mb-1.5 sm:mb-2">
           {stat.label}
         </h3>
       </div>
 
       {/* Description */}
-      <p className="text-xs sm:text-[13px] text-neutral-500 leading-relaxed font-normal mt-1 max-w-[260px] group-hover:text-neutral-700 transition-colors duration-300">
+      <p className="text-[11px] sm:text-[13px] text-neutral-500 leading-relaxed font-normal mt-1 max-w-[260px] group-hover:text-neutral-700 transition-colors duration-300">
         {stat.description}
       </p>
     </motion.div>
@@ -266,16 +266,10 @@ export function OperationalScaleSection(): JSX.Element {
                     alt="Raj Talreja — Chairman & Managing Director"
                     src="/Raj Sir Photo.webp"
                     fill
-                    className="object-cover object-top transition-all duration-700"
-                    style={{ filter: "grayscale(18%)" }}
+                    quality={100}
+                    className="object-cover object-top"
                     sizes="(max-width:1024px) 100vw, 40vw"
                     priority
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLImageElement).style.filter = "grayscale(0%)";
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLImageElement).style.filter = "grayscale(18%)";
-                    }}
                   />
                 </div>
               </div>
