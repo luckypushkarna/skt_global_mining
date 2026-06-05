@@ -93,9 +93,9 @@ export function generateMetadata(
     },
     icons: {
       icon: [
-        { url: "/SKT Favicon.png", type: "image/png" },
+        { url: "/favicon.png", type: "image/png" },
       ],
-      apple: [{ url: "/SKT Favicon.png" }],
+      apple: [{ url: "/favicon.png" }],
     },
     manifest: "/manifest.json",
     verification: {
