@@ -102,6 +102,11 @@ export function SmoothScrollProvider({
             lenisRef.current.scrollTo(target, { immediate: true });
           }
         }, 150);
+      } else {
+        // Reset scroll position to top when changing pages without a hash
+        if (lenisRef.current) {
+          lenisRef.current.scrollTo(0, { immediate: true });
+        }
       }
     };
 

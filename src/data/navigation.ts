@@ -80,13 +80,13 @@ export const operationsSection: NavSection = {
   featured: [
     {
       title: "Underground Mining",
-      href: "/services",
+      href: "/operations/underground-mining",
       description: "Deep shaft mechanised mining operations at Mopani",
       icon: Mountain,
     },
     {
       title: "Mechanised Fleet",
-      href: "/services",
+      href: "/operations/mechanised-fleet",
       description: "225+ heavy machines deployed across active sites",
       icon: Truck,
     },
@@ -94,17 +94,17 @@ export const operationsSection: NavSection = {
   links: [
     {
       title: "Engineering Services",
-      href: "/services",
+      href: "/operations/engineering-services",
       icon: Wrench,
     },
     {
       title: "Logistics Network",
-      href: "/services",
+      href: "/operations/logistics-network",
       icon: Network,
     },
     {
       title: "All Capabilities",
-      href: "/services",
+      href: "/operations/all-capabilities",
       icon: Globe,
     },
   ],
@@ -120,13 +120,13 @@ export const sustainabilitySection: NavSection = {
   featured: [
     {
       title: "ESG Overview",
-      href: "/#impact",
+      href: "/sustainability/esg-overview",
       description: "Environmental, Social & Governance commitments",
       icon: Leaf,
     },
     {
       title: "Safety First",
-      href: "/services",
+      href: "/sustainability/safety-first",
       description: "Zero harm philosophy and safety protocols",
       icon: Shield,
     },
@@ -134,17 +134,17 @@ export const sustainabilitySection: NavSection = {
   links: [
     {
       title: "Community Impact",
-      href: "/#operations-map",
+      href: "/sustainability/community-impact",
       icon: Heart,
     },
     {
       title: "Local Workforce",
-      href: "/#impact",
+      href: "/sustainability/local-workforce",
       icon: HardHat,
     },
     {
       title: "Environmental Care",
-      href: "/services",
+      href: "/sustainability/environmental-care",
       icon: Leaf,
     },
   ],
@@ -160,7 +160,7 @@ export const mediaSection: NavSection = {
   featured: [
     {
       title: "Newsroom",
-      href: "/contact",
+      href: "/media/newsroom",
       description: "Latest press releases and company updates",
       icon: Newspaper,
     },
@@ -168,12 +168,12 @@ export const mediaSection: NavSection = {
   links: [
     {
       title: "Contact Us",
-      href: "/contact",
+      href: "/media/contact-us",
       icon: Mail,
     },
     {
       title: "Privacy Policy",
-      href: "/privacy",
+      href: "/media/privacy-policy",
       icon: FileText,
     },
   ],

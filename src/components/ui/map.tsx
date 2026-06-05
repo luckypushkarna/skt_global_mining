@@ -282,12 +282,13 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
       pitch: viewport.pitch ?? current.pitch,
     };
 
+    const isClose = (a: number, b: number, epsilon = 0.00001) => Math.abs(a - b) < epsilon;
     if (
-      next.center[0] === current.center[0] &&
-      next.center[1] === current.center[1] &&
-      next.zoom === current.zoom &&
-      next.bearing === current.bearing &&
-      next.pitch === current.pitch
+      isClose(next.center[0], current.center[0]) &&
+      isClose(next.center[1], current.center[1]) &&
+      isClose(next.zoom, current.zoom, 0.001) &&
+      isClose(next.bearing, current.bearing, 0.001) &&
+      isClose(next.pitch, current.pitch, 0.001)
     ) {
       return;
     }
