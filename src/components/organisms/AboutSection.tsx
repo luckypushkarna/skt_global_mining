@@ -148,12 +148,13 @@ export function AboutSection(): JSX.Element {
           }
           stoneCenterY += stone.offsetHeight / 2;
 
-          // 3. Contact & Collect: Calculated exactly to trigger when the bucket touches the stone
-          const rawHitProgress = 0.90 * (stoneCenterY / totalDistance);
+          // 3. Contact & Collect: Offset by 24px so the rock goes inside the bucket (frunk)
+          const bucketOffset = 24;
+          const rawHitProgress = 0.90 * ((stoneCenterY + bucketOffset) / totalDistance);
 
           if (rawHitProgress < 0.90) {
             const durationDown = 0.90 - rawHitProgress;
-            const y90 = totalDistance - stoneCenterY;
+            const y90 = totalDistance - stoneCenterY - bucketOffset;
 
             // Lock onto vehicle via GPU y transform at the exact hit moment
             tl.fromTo(stone,

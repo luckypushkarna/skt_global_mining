@@ -4,6 +4,7 @@ import { useRef, useMemo, JSX, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useHeroAnimation } from "@/hooks/useHeroAnimation";
+import { MarqueeSection } from "@/components/organisms/MarqueeSection";
 
 export function HeroSection(): JSX.Element {
   const containerRef = useRef<HTMLElement>(null);
@@ -213,6 +214,11 @@ export function HeroSection(): JSX.Element {
 
       {/* Cinematic Bottom Gradient for deep black fade */}
       <div className="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-[#050505] to-transparent z-0 opacity-90" />
+      
+      {/* Marquee at the bottom of the first fold */}
+      <div className="absolute bottom-0 inset-x-0 z-20">
+        <MarqueeSection />
+      </div>
     </section>
   );
 }
