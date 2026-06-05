@@ -93,11 +93,9 @@ export function generateMetadata(
     },
     icons: {
       icon: [
-        { url: "/favicon.ico" },
-        { url: "/favicon-16x16.webp", sizes: "16x16", type: "image/png" },
-        { url: "/favicon-32x32.webp", sizes: "32x32", type: "image/png" },
+        { url: "/favicon.png", type: "image/png" },
       ],
-      apple: [{ url: "/apple-touch-icon.webp", sizes: "180x180" }],
+      apple: [{ url: "/favicon.png" }],
     },
     manifest: "/manifest.json",
     verification: {

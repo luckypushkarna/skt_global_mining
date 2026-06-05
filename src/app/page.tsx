@@ -7,7 +7,7 @@ import { StatsSection } from "@/components/organisms/StatsSection";
 import { TeamSection } from "@/components/organisms/TeamSection";
 import { GallerySection } from "@/components/organisms/GallerySection";
 import { ContactSection } from "@/components/organisms/ContactSection";
-import { MarqueeSection } from "@/components/organisms/MarqueeSection";
+
 import { PartnersSection } from "@/components/organisms/PartnersSection";
 import { generateMetadata } from "@/lib/seo";
 import { BlankSection } from "@/components/organisms/BlankSection";
@@ -28,8 +28,7 @@ export default function HomePage(): JSX.Element {
       {/* Hero */}
       <HeroSection />
 
-      {/* Marquee ticker */}
-      <MarqueeSection />
+
 
       {/* About + Timeline */}
       <Suspense fallback={<SectionSkeleton />}>

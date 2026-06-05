@@ -9,15 +9,15 @@ export function MarqueeSection(): JSX.Element {
 
   return (
     <div
-      className="py-6 bg-skt-blue overflow-hidden"
+      className="py-3 bg-skt-blue overflow-hidden"
       aria-hidden="true"
       role="presentation"
     >
       <motion.div
-        className="flex whitespace-nowrap"
+        className="flex w-max whitespace-nowrap"
         animate={{ x: ["0%", "-50%"] }}
         transition={{
-          duration: 30,
+          duration: 100,
           ease: "linear",
           repeat: Infinity,
         }}
