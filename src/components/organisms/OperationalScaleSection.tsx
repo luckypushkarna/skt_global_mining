@@ -1,84 +1,23 @@
 "use client";
 
 import { JSX, useEffect, useRef, useState } from "react";
-import { motion, useInView, animate, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { STATS } from "@/lib/constants";
 import { MagicText } from "@/components/ui/magic-text";
-
-// ─── Animated Number Counter ─────────────────────────────────────────────────
-
-function CountUp({
-  target,
-  duration = 1.8,
-  started,
-}: {
-  target: number;
-  duration?: number;
-  started: boolean;
-}) {
-  const spanRef = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    if (!started || !spanRef.current) return;
-    const node = spanRef.current;
-    const controls = animate(0, target, {
-      duration,
-      ease: [0.16, 1, 0.3, 1],
-      onUpdate: (v) => {
-        node.textContent = Math.round(v).toLocaleString();
-      },
-    });
-    return () => controls.stop();
-  }, [started, target, duration]);
-
-  return <span ref={spanRef}>0</span>;
-}
-
-// ─── Typewriter for text values (e.g. 24/7) ──────────────────────────────────
-
-function Typewriter({ text, started }: { text: string; started: boolean }) {
-  const spanRef = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    if (!started || !spanRef.current) return;
-    const node = spanRef.current;
-    node.innerHTML = "";
-    let i = 0;
-    const chars = text.split("");
-    const interval = setInterval(() => {
-      const currentText = chars.slice(0, i + 1).join("");
-      const cursor = currentText.length < text.length ? '<span class="animate-pulse opacity-50">|</span>' : '';
-      node.innerHTML = `${currentText}${cursor}`;
-      i++;
-      if (i >= chars.length) clearInterval(interval);
-    }, 90);
-    return () => clearInterval(interval);
-  }, [started, text]);
-
-  return <span ref={spanRef} />;
-}
 
 // ─── Single stat card ─────────────────────────────────────────────────────────
 
 function StatCard({
   stat,
   index,
-  sectionStarted,
 }: {
   stat: (typeof STATS)[number];
   index: number;
-  sectionStarted: boolean;
 }) {
   const isNumeric = /^\d+$/.test(stat.value);
   const numericValue = isNumeric ? parseInt(stat.value, 10) : 0;
-
-  const [started, setStarted] = useState(false);
-  useEffect(() => {
-    if (!sectionStarted) return;
-    const t = setTimeout(() => setStarted(true), index * 100);
-    return () => clearTimeout(t);
-  }, [sectionStarted, index]);
+  const displayValue = isNumeric ? numericValue.toLocaleString() : stat.value;
 
   return (
     <motion.div
@@ -100,19 +39,8 @@ function StatCard({
             </span>
           )}
 
-          <span className="relative text-stat text-2xl sm:text-4xl md:text-5xl tracking-tight leading-none group-hover:scale-[1.02] transition-transform duration-300 origin-left inline-block stats-number-container">
-            {/* Stable Layout Container: Reserves the maximum width of the final string to prevent jitter */}
-            <span className="opacity-0 select-none pointer-events-none" aria-hidden="true">
-              {isNumeric ? numericValue.toLocaleString() : stat.value}
-            </span>
-            {/* Absolute overlay containing the active animated value */}
-            <span className="absolute inset-0 pointer-events-none">
-              {isNumeric ? (
-                <CountUp target={numericValue} started={started} />
-              ) : (
-                <Typewriter text={stat.value} started={started} />
-              )}
-            </span>
+          <span className="text-stat text-2xl sm:text-4xl md:text-5xl tracking-tight leading-none group-hover:scale-[1.02] transition-transform duration-300 origin-left inline-block stats-number-container">
+            {displayValue}
           </span>
 
           {stat.suffix && (
@@ -143,7 +71,6 @@ function StatCard({
 export function OperationalScaleSection(): JSX.Element {
   const sectionRef = useRef<HTMLElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
-  const statsInView = useInView(statsRef, { once: true, margin: "-80px" });
 
   const quoteBlockRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -224,7 +151,6 @@ export function OperationalScaleSection(): JSX.Element {
               key={stat.label}
               stat={stat}
               index={index}
-              sectionStarted={statsInView}
             />
           ))}
         </div>
