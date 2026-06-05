@@ -41,7 +41,6 @@ async function processImage(filePath) {
     } else if (
       lowerName.includes('srinivasulu') ||
       lowerName.includes('suresh') ||
-      lowerName.includes('raj sir') ||
       lowerName.includes('kuldeep') ||
       lowerName.includes('safeli') ||
       lowerName.includes('sanjay') ||

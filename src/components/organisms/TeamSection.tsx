@@ -54,7 +54,11 @@ function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
           src={imgSrc}
           alt={member.name}
           fill
-          className="object-cover transition-transform duration-700 ease-out scale-100 group-hover:scale-[1.03]"
+          className={`object-cover transition-transform duration-700 ease-out scale-100 group-hover:scale-[1.03] ${
+            ["sahil-talreja", "anand-kolappa-pillai"].includes(member.id) 
+              ? "mix-blend-multiply" 
+              : ""
+          }`}
           sizes="(max-w-768px) 100vw, 25vw"
           skeletonClassName="rounded-xl"
         />

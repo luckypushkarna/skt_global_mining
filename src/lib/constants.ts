@@ -10,9 +10,9 @@ export const SITE_CONFIG = {
   twitterHandle: "@sktglobal",
   founded: "2005",
   headquarters: "Mumbai, India",
-  email: "contact@sktglobal.com",
-  phone: "+91 22 4000 0000",
-  address: "SKT Tower, BKC, Mumbai 400 051, India",
+  email: "director@sktglobalminings.com",
+  phone: "+260 762 620 036",
+  address: "CHIM/254/A, Copperbelt Province Opposite Mindolo Police Station, Between Rubies & Meru Filling Station Kitwe, Zambia",
 } as const;
 
 export const NAV_ITEMS: ReadonlyArray<NavItem> = [

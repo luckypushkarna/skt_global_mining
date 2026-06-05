@@ -2,7 +2,7 @@
 
 import { JSX } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { Badge } from "@/components/atoms/Badge";
 import { ContactForm } from "@/components/molecules/ContactForm";
 import { SITE_CONFIG } from "@/lib/constants";
@@ -25,12 +25,6 @@ const CONTACT_INFO = [
     label: "Headquarters",
     value: SITE_CONFIG.address,
     href: "https://maps.google.com",
-  },
-  {
-    icon: Clock,
-    label: "Business Hours",
-    value: "Mon–Fri: 9:00 AM – 6:00 PM IST",
-    href: null,
   },
 ] as const;
 
@@ -131,25 +125,22 @@ export function ContactSection(): JSX.Element {
 
             {/* Countries */}
             <div className="pt-8 border-t border-neutral-200">
-              <p className="text-[10px] font-semibold tracking-[0.15em] text-neutral-500 uppercase mb-4">
-                Operating Countries
+              <p className="text-[10px] font-bold tracking-widest text-neutral-400 uppercase mb-4">
+                Our Presence
               </p>
               <div className="flex flex-wrap gap-2">
                 {[
-                  "India",
-                  "Mozambique",
-                  "Ghana",
-                  "Tanzania",
-                  "Indonesia",
-                  "Australia",
-                  "UAE",
-                  "South Africa",
-                ].map((country) => (
+                  "Kitwe",
+                  "Mufulira",
+                  "Chingola",
+                  "Konkola",
+                  "Solwezi",
+                ].map((location) => (
                   <span
-                    key={country}
-                    className="px-3 py-1 text-xs border border-neutral-200 text-neutral-600 rounded-full bg-white"
+                    key={location}
+                    className="px-3 py-1 text-xs border border-neutral-200 text-neutral-500 rounded-full bg-white"
                   >
-                    {country}
+                    {location}
                   </span>
                 ))}
               </div>
