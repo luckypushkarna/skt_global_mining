@@ -263,7 +263,7 @@ export function OperationalScaleSection(): JSX.Element {
                 <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-neutral-100 w-full max-h-[400px] lg:max-h-none">
                   <Image
                     alt="Raj Talreja — Chairman & Managing Director"
-                    src="/Raj Sir Photo.webp"
+                    src="/Raj Sir Photo.jpg"
                     fill
                     quality={100}
                     className="object-cover object-top"

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Poppins, JetBrains_Mono } from "next/font/google";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { Navigation } from "@/components/organisms/Navigation";
@@ -10,7 +10,7 @@ import { CookieConsentBanner } from "@/components/organisms/CookieConsentBanner"
 import "@/app/globals.css";
 
 // ─── Fonts ────────────────────────────────────────────────────────────────────
-const inter = Inter({
+const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sans",
@@ -50,7 +50,7 @@ export default function RootLayout({
     <html
       lang="en"
       dir="ltr"
-      className={`${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${poppins.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
       <head>

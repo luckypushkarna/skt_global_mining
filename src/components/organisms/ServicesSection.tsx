@@ -23,6 +23,8 @@ const SliderCard = memo(function SliderCard({ card }: { card: typeof CAPABILITIE
       style={{
         boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
         willChange: "transform",
+        transform: "translateZ(0)",
+        WebkitMaskImage: "-webkit-radial-gradient(white, black)",
       }}
     >
       {/* ── Image Layer (Always Visible) ── */}

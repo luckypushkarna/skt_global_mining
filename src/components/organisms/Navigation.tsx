@@ -52,10 +52,8 @@ export function Navigation() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300",
-          scrolled
-            ? "bg-white/95 backdrop-blur-md border-b border-slate-200/80"
-            : "bg-white/60 backdrop-blur-sm"
+          "fixed top-0 left-0 right-0 z-50 bg-white transition-[background-color,border-color,backdrop-filter] duration-300",
+          scrolled ? "border-b border-slate-200/80 shadow-sm" : "border-b border-transparent"
         )}
       >
         <div className="max-w-7xl mx-auto px-5 lg:px-12">
@@ -67,11 +65,11 @@ export function Navigation() {
               aria-label="SKT Global Mining — Home"
             >
               <Image
-                src="/SKT Full logo (White).webp"
+                src="/SKT Full logo (Color).png"
                 alt="SKT Global Mining"
                 width={150}
                 height={38}
-                className="h-8 w-auto object-contain transition-transform group-hover:scale-102 brightness-0"
+                className="h-8 w-auto object-contain transition-transform group-hover:scale-102"
                 priority
               />
             </Link>
@@ -103,8 +101,7 @@ export function Navigation() {
         </div>
       </header>
 
-      {/* Spacer for fixed nav */}
-      <div className="h-16" aria-hidden="true" />
+
 
       {/* ─── MOBILE DRAWER ─── */}
       <MobileNav open={mobileOpen} onClose={() => setMobileOpen(false)} />
@@ -277,11 +274,11 @@ function MobileNav({
             {/* Header */}
             <div className="flex items-center justify-between p-5 border-b border-slate-100">
               <Image
-                src="/SKT Full logo (White).webp"
+                src="/SKT Full logo (Color).png"
                 alt="SKT Global Mining"
                 width={120}
                 height={30}
-                className="h-6 w-auto object-contain brightness-0"
+                className="h-6 w-auto object-contain"
               />
               <button
                 onClick={onClose}
