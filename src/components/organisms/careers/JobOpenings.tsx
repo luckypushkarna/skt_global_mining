@@ -128,7 +128,7 @@ export function JobOpenings(): JSX.Element {
                   onClick={() => setSelectedDept(dept)}
                   className={`px-4 py-2 text-xs font-semibold rounded-lg border transition-all ${
                     selectedDept === dept
-                      ? "bg-neutral-900 border-neutral-900 text-white shadow-sm"
+                      ? "bg-skt-navy border-neutral-900 text-white shadow-sm"
                       : "bg-neutral-50 border-neutral-200 text-neutral-500 hover:border-neutral-300 hover:text-neutral-800"
                   }`}
                 >
@@ -150,7 +150,7 @@ export function JobOpenings(): JSX.Element {
                   onClick={() => setSelectedLoc(loc)}
                   className={`px-4 py-2 text-xs font-semibold rounded-lg border transition-all ${
                     selectedLoc === loc
-                      ? "bg-neutral-900 border-neutral-900 text-white shadow-sm"
+                      ? "bg-skt-navy border-neutral-900 text-white shadow-sm"
                       : "bg-neutral-50 border-neutral-200 text-neutral-500 hover:border-neutral-300 hover:text-neutral-800"
                   }`}
                 >
@@ -178,7 +178,7 @@ export function JobOpenings(): JSX.Element {
                   {/* Card Tags Header */}
                   <div className="flex flex-wrap gap-2 mb-6">
                     {job.urgent && (
-                      <span className="px-2.5 py-0.5 text-[9px] font-bold tracking-wide bg-neutral-900 text-white uppercase rounded">
+                      <span className="px-2.5 py-0.5 text-[9px] font-bold tracking-wide bg-skt-navy text-white uppercase rounded">
                         Urgent Hiring
                       </span>
                     )}
@@ -256,7 +256,7 @@ export function JobOpenings(): JSX.Element {
                     setSelectedDept("All");
                     setSelectedLoc("All");
                   }}
-                  className="mt-4 px-4 py-2 text-[10px] font-bold tracking-widest text-neutral-900 border border-neutral-900 uppercase hover:bg-neutral-900 hover:text-white transition-all"
+                  className="mt-4 px-4 py-2 text-[10px] font-bold tracking-widest text-neutral-900 border border-neutral-900 uppercase hover:bg-skt-navy hover:text-white transition-all"
                 >
                   Clear Filters
                 </button>

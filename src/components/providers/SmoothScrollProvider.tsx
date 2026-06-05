@@ -43,6 +43,9 @@ export function SmoothScrollProvider({
       });
 
       lenisRef.current = lenis;
+      if (typeof window !== "undefined") {
+        (window as any).lenis = lenis;
+      }
 
       // Sync ScrollTrigger's internal position tracker on Lenis scroll event
       lenis.on("scroll", () => {
@@ -73,6 +76,9 @@ export function SmoothScrollProvider({
     return () => {
       mounted = false;
       if (lenisRef.current) {
+        if (typeof window !== "undefined") {
+          delete (window as any).lenis;
+        }
         lenisRef.current.destroy();
         lenisRef.current = null;
       }

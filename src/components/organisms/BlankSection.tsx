@@ -159,23 +159,23 @@ export function BlankSection(): JSX.Element {
           className="absolute inset-0 flex items-center py-4 lg:py-0"
           style={{ zIndex: 10 }}
         >
-          <div className="max-w-screen-xl mx-auto px-6 lg:px-12 w-full">
+          <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-16 items-center w-full">
 
               {/* Left: Copy */}
               <div className="flex flex-col justify-center">
                 <div ref={copyTitleRef}>
-                  <h3 className="text-xs sm:text-sm font-bold tracking-[0.25em] text-neutral-400 uppercase mb-2 lg:mb-5">
+                  <h3 className="text-xs font-semibold tracking-[0.2em] text-neutral-500 uppercase mb-2 lg:mb-5">
                     Underground Operations
                   </h3>
-                  <h2 className="text-2xl sm:text-3xl md:text-6xl font-black text-neutral-900 tracking-tight leading-[1.05] mb-3 lg:mb-8">
+                  <h2 className="text-3xl md:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.1] mb-3 lg:mb-8">
                     Zambia <br />
                     <span className="text-neutral-300">Mining Ecosystem</span>
                   </h2>
                 </div>
                 <p
                   ref={copyParaRef}
-                  className="text-neutral-500 max-w-lg text-xs sm:text-sm lg:text-base leading-relaxed"
+                  className="text-neutral-600 max-w-lg text-[15px] md:text-base font-light leading-relaxed"
                 >
                   SKT Global&apos;s operations in Zambia are built around underground
                   mechanisation, operational infrastructure, workforce

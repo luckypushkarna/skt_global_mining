@@ -117,10 +117,10 @@ export const CARDS: ServiceCard[] = [
     iconName: "ShieldCheck",
     slug: "safety",
     title: "Safety",
-    desc: "Zero-harm culture. Rigorous training, compliance, and protection.",
+    desc: "Zero-harm commitment. Rigorous training, compliance, and protection.",
     detail:
-      "A zero-harm safety philosophy embedded at every level of operation. Mandatory induction, task-based risk assessments, and monthly safety audits are supplemented by a proactive near-miss reporting culture. All personnel are trained to stop any task they judge to be unsafe without consequence.",
-    tags: ["Zero Harm", "Compliance"],
+      "A safety-first commitment to a zero-harm philosophy embedded at every level of operation. Mandatory induction, task-based risk assessments, and monthly safety audits are supplemented by a proactive near-miss reporting culture. All personnel are trained to stop any task they judge to be unsafe without consequence.",
+    tags: ["Zero Harm Commitment", "Compliance"],
     bgImage: "/Safety & Compliance.webp",
   },
   {

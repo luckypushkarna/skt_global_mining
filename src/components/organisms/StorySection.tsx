@@ -181,7 +181,7 @@ export function StorySection(): JSX.Element {
       style={{ minHeight: "100vh" }}
     >
       {/* ─── Section Header (Mobile Only) ────────────────────────────────── */}
-      <div className="lg:hidden max-w-screen-xl mx-auto px-6 lg:px-12 pt-24 pb-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 pt-24 pb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -199,7 +199,7 @@ export function StorySection(): JSX.Element {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl font-black text-neutral-900 tracking-tight leading-none"
+          className="text-3xl font-semibold text-neutral-900 tracking-tight leading-[1.1]"
         >
           What Makes Us
           <br />
@@ -208,7 +208,7 @@ export function StorySection(): JSX.Element {
       </div>
 
       {/* ─── Sticky Two-Column Layout ────────────────────────────────────── */}
-      <div className="relative max-w-screen-xl mx-auto px-6 lg:px-12 pt-0 lg:pt-24">
+      <div className="relative max-w-7xl mx-auto px-6 md:px-10 lg:px-16 pt-0 lg:pt-24">
         <div className="flex gap-8 lg:gap-16 items-start">
 
           {/* ── LEFT: Sticky Column (Header + Image Panel) ────────────────── */}
@@ -236,7 +236,7 @@ export function StorySection(): JSX.Element {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="text-display-md font-black text-neutral-900 tracking-tight leading-none"
+                className="text-display-md font-semibold text-neutral-900 tracking-tight leading-tight"
               >
                 What Makes Us
                 <br />
@@ -259,12 +259,12 @@ export function StorySection(): JSX.Element {
                   {/* Active fill */}
                   <div
                     ref={progressLineRef}
-                    className="absolute top-0 left-0 right-0 bg-neutral-900 origin-top"
+                    className="absolute top-0 left-0 right-0 bg-skt-navy origin-top"
                     style={{ bottom: 0, transform: "scaleY(0)" }}
                   />
                   {/* Active indicator dot */}
                   <div
-                    className="absolute left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-neutral-900 border-2 border-neutral-50 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                    className="absolute left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-skt-navy border-2 border-neutral-50 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                     style={{
                       top: `calc(${(activeIndex / (SAFETY_PILLARS.length - 1)) * 100}% - 5px)`,
                     }}
@@ -364,7 +364,7 @@ export function StorySection(): JSX.Element {
                   <div className="flex items-end gap-3">
                     <div>
                       <div
-                        className="text-4xl font-black text-white leading-none tracking-tight"
+                        className="text-4xl font-semibold text-white leading-none tracking-tight"
                         style={{ textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}
                       >
                         <AnimatedMetric
@@ -474,7 +474,7 @@ const SafetyCard = forwardRef<HTMLDivElement, SafetyCardProps>(
         >
           {/* Active state top bar */}
           <div
-            className="absolute -left-6 top-0 bottom-0 w-[2px] bg-neutral-900 transition-all duration-500 origin-top"
+            className="absolute -left-6 top-0 bottom-0 w-[2px] bg-skt-navy transition-all duration-500 origin-top"
             style={{
               transform: isActive ? "scaleY(1)" : "scaleY(0)",
               opacity: isActive ? 1 : 0,
@@ -503,7 +503,7 @@ const SafetyCard = forwardRef<HTMLDivElement, SafetyCardProps>(
 
           {/* Title */}
           <h3
-            className="text-3xl md:text-4xl font-black tracking-tight leading-tight mb-3 transition-colors duration-500"
+            className="text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-3 transition-colors duration-500"
             style={{ color: isActive ? "#0a0a0a" : "#a3a3a3" }}
           >
             {pillar.title}
@@ -525,7 +525,7 @@ const SafetyCard = forwardRef<HTMLDivElement, SafetyCardProps>(
               opacity: isActive ? 1 : 0,
             }}
           >
-            <p className="text-sm text-neutral-500 leading-[1.85] max-w-lg pb-8">
+            <p className="text-[15px] md:text-base text-neutral-600 font-light leading-relaxed max-w-lg pb-8">
               {pillar.description}
             </p>
           </div>
@@ -536,7 +536,7 @@ const SafetyCard = forwardRef<HTMLDivElement, SafetyCardProps>(
             style={{ opacity: isActive ? 1 : 0.4 }}
           >
             <div>
-              <div className="text-3xl font-black text-neutral-900 leading-none">
+              <div className="text-3xl font-semibold text-neutral-900 leading-none">
                 {pillar.metric}
               </div>
               <div className="text-[10px] text-neutral-400 tracking-wide mt-1 uppercase">

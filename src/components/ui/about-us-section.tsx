@@ -40,7 +40,7 @@ export default function AboutUsSection() {
 
 
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 1 },
     visible: {
       opacity: 1,
       transition: {
@@ -51,7 +51,7 @@ export default function AboutUsSection() {
   }
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 20, opacity: 1 },
     visible: {
       y: 0,
       opacity: 1,
@@ -167,7 +167,7 @@ export default function AboutUsSection() {
         <motion.div className="flex flex-col items-center mb-6" variants={itemVariants}>
           <motion.span
             className="text-neutral-500 font-medium mb-2 flex items-center gap-2 tracking-[0.2em] text-xs uppercase"
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 1, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
@@ -176,7 +176,7 @@ export default function AboutUsSection() {
           </motion.span>
           <h2 className="text-4xl md:text-5xl font-black text-neutral-900 tracking-tight leading-none mb-4 text-center">About Us</h2>
           <motion.div
-            className="w-24 h-1 bg-neutral-900"
+            className="w-24 h-1 bg-skt-navy"
             initial={{ width: 0 }}
             animate={{ width: 96 }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -210,8 +210,8 @@ export default function AboutUsSection() {
           <div className="flex justify-center items-center order-first md:order-none mb-8 md:mb-0">
             <motion.div className="relative w-full max-w-xs" variants={itemVariants}>
               <motion.div
-                className="rounded-xl overflow-hidden shadow-xl aspect-[0.7/1] relative bg-neutral-900"
-                initial={{ scale: 0.9, opacity: 0 }}
+                className="rounded-xl overflow-hidden shadow-xl aspect-[0.7/1] relative bg-skt-navy"
+                initial={{ scale: 0.9, opacity: 1 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
@@ -226,7 +226,7 @@ export default function AboutUsSection() {
                 />
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 to-transparent flex items-end justify-center p-4"
-                  initial={{ opacity: 0 }}
+                  initial={{ opacity: 1 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.9 }}
                 >
@@ -243,7 +243,7 @@ export default function AboutUsSection() {
               </motion.div>
               <motion.div
                 className="absolute inset-0 border-4 border-neutral-300 rounded-xl -m-3 z-[-1]"
-                initial={{ opacity: 0, scale: 1.1 }}
+                initial={{ opacity: 1, scale: 1.1 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               ></motion.div>
@@ -251,14 +251,14 @@ export default function AboutUsSection() {
               {/* Floating accent elements */}
               <motion.div
                 className="absolute -top-4 -right-8 w-16 h-16 rounded-full bg-neutral-200/50"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.9 }}
                 style={{ y: y1 }}
               ></motion.div>
               <motion.div
                 className="absolute -bottom-6 -left-10 w-20 h-20 rounded-full bg-neutral-100"
-                initial={{ opacity: 0, y: -20 }}
+                initial={{ opacity: 1, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 1.1 }}
                 style={{ y: y2 }}
@@ -334,9 +334,9 @@ export default function AboutUsSection() {
 
         {/* CTA Section */}
         <motion.div
-          className="mt-20 bg-neutral-900 text-white p-8 rounded-xl flex flex-col md:flex-row items-center justify-between gap-6"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isStatsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          className="mt-20 bg-skt-navy text-white p-8 rounded-xl flex flex-col md:flex-row items-center justify-between gap-6"
+          initial={{ opacity: 1, y: 30 }}
+          animate={isStatsInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 30 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <div className="flex-1">
@@ -381,7 +381,7 @@ function ServiceItem({ icon, secondaryIcon, title, description, variants, delay,
     >
       <motion.div
         className="flex items-center gap-3 mb-3"
-        initial={{ x: direction === "left" ? -20 : 20, opacity: 0 }}
+        initial={{ x: direction === "left" ? -20 : 20, opacity: 1 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: delay + 0.2 }}
       >
@@ -398,7 +398,7 @@ function ServiceItem({ icon, secondaryIcon, title, description, variants, delay,
       </motion.div>
       <motion.p
         className="text-sm text-neutral-500 leading-relaxed pl-12"
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: delay + 0.4 }}
       >
@@ -451,7 +451,7 @@ function StatCounter({ icon, value, label, suffix, delay }: StatCounterProps) {
     <motion.div
       className="bg-neutral-50/50 backdrop-blur-sm p-6 rounded-xl flex flex-col items-center text-center group hover:bg-neutral-100/50 border border-neutral-200/50 transition-colors duration-300"
       variants={{
-        hidden: { opacity: 0, y: 20 },
+        hidden: { opacity: 1, y: 20 },
         visible: {
           opacity: 1,
           y: 0,
@@ -471,7 +471,7 @@ function StatCounter({ icon, value, label, suffix, delay }: StatCounterProps) {
         <span>{suffix}</span>
       </motion.div>
       <p className="text-neutral-500 text-sm mt-1">{label}</p>
-      <motion.div className="w-10 h-0.5 bg-neutral-900 mt-3 group-hover:w-16 transition-all duration-300" />
+      <motion.div className="w-10 h-0.5 bg-skt-navy mt-3 group-hover:w-16 transition-all duration-300" />
     </motion.div>
   )
 }

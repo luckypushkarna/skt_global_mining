@@ -225,31 +225,37 @@ export const MILESTONES: ReadonlyArray<Milestone> = [
     year: "2024",
     title: "Establishment",
     description: "SKT Global Mining & Services Limited begins operations in Zambia as part of TTIPL’s strategic mining expansion.",
+    logo: "/establishment-icon-v3.webp",
   },
   {
     year: "6 Months",
     title: "Rapid Mobilisation",
     description: "225 underground mining machines mobilised through an investment exceeding US$50 million.",
+    logo: "/mining-icon.webp",
   },
   {
     year: "Workforce",
     title: "Workforce Development",
     description: "More than 1,500 Zambian employees recruited and supported by skilled international mining professionals.",
+    logo: "/miner-icon.webp",
   },
   {
     year: "Infrastructure",
     title: "Infrastructure Expansion",
     description: "Comprehensive operational infrastructure established including workshops, warehousing systems, accommodation facilities, transportation networks, and dedicated support services for expatriate experts and operational teams.",
+    logo: "/infrastructure-icon.webp",
   },
   {
     year: "Mopani",
     title: "Mopani Operations",
     description: "Approximately 50% of Mopani Copper Mines development and production targets achieved within the first ten months.",
+    logo: "/logo2025-icon.webp",
   },
   {
     year: "Future",
     title: "Building Long-Term Mining Capacity",
     description: "SKT Global continues to expand underground infrastructure, mechanised operations, technical systems, and workforce capacity in support of Mopani Copper Mines’ long-term production objectives. Focused on uninterrupted mining operations, operational modernisation, and sustainable production growth, the company is strategically positioning itself to support up to 90% of future MCM mining activities.",
+    logo: "/forecasting-icon.webp",
   },
 ] as const;
 

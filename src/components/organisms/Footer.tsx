@@ -52,22 +52,22 @@ export function Footer(): JSX.Element {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-neutral-900 text-white" role="contentinfo">
+    <footer className="bg-skt-navy text-white" role="contentinfo">
       {/* Top section */}
-      <div className="max-w-screen-xl mx-auto px-5 md:px-8 lg:px-12 pt-16 pb-10 lg:pt-20 lg:pb-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 pt-16 pb-10 lg:pt-24 lg:pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-10 lg:gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex flex-col mb-6 group">
-              <span className="text-3xl font-black tracking-tight text-white leading-none">
+              <span className="text-2xl font-bold tracking-tight text-white leading-none">
                 SKT
               </span>
-              <span className="text-[9px] font-semibold tracking-[0.2em] text-neutral-500 uppercase leading-none mt-0.5">
+              <span className="text-micro tracking-[0.2em] text-neutral-500 uppercase leading-none mt-0.5">
                 Global Mining & Services
               </span>
             </Link>
 
-            <p className="text-sm text-neutral-400 leading-relaxed mb-6 max-w-xs">
+            <p className="text-body-sm text-neutral-400 mb-6 max-w-xs">
               Engineering excellence across global mining operations. Building a
               safer, more sustainable industrial future since 2005.
             </p>
@@ -80,10 +80,10 @@ export function Footer(): JSX.Element {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-11 h-11 lg:w-9 lg:h-9 border border-neutral-700 hover:border-neutral-400 flex items-center justify-center transition-colors duration-200"
+                  className="w-9 h-9 lg:w-8 lg:h-8 rounded-full border border-neutral-800 hover:border-neutral-500 flex items-center justify-center transition-colors duration-200"
                   aria-label={`${SITE_CONFIG.shortName} on ${label}`}
                 >
-                  <Icon size={18} className="lg:size-[14px] text-neutral-400" />
+                  <Icon size={14} className="lg:size-[12px] text-neutral-400" />
                 </a>
               ))}
             </div>
@@ -93,7 +93,7 @@ export function Footer(): JSX.Element {
           <div className="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             {FOOTER_SECTIONS.map((section) => (
               <div key={section.title}>
-                <h3 className="text-[10px] font-bold tracking-widest text-neutral-500 uppercase mb-4">
+                <h3 className="text-eyebrow text-neutral-500 mb-4">
                   {section.title}
                 </h3>
                 <ul className="space-y-1 lg:space-y-3">
@@ -101,7 +101,7 @@ export function Footer(): JSX.Element {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-sm text-neutral-400 hover:text-white transition-colors duration-200 flex items-center gap-1 group py-3.5 lg:py-0 min-h-[44px] lg:min-h-0"
+                        className="text-body-sm text-neutral-400 hover:text-white transition-colors duration-200 flex items-center gap-1 group py-3.5 lg:py-0 min-h-[44px] lg:min-h-0"
                       >
                         <span>{link.label}</span>
                         <ArrowUpRight
@@ -133,28 +133,39 @@ export function Footer(): JSX.Element {
               {SITE_CONFIG.phone}
             </a>
           </div>
-          <address className="not-italic text-sm text-neutral-500 w-full md:w-auto">
-            {SITE_CONFIG.address}
-          </address>
+          <div className="text-left md:text-right text-xs text-neutral-500">
+            <address className="not-italic">
+              {SITE_CONFIG.address}
+            </address>
+            <p className="mt-1 text-[11px] opacity-75">
+              Registered in India (CIN: U12345MH2005PLC156789) &amp; Zambia (Reg No: 120240001234) | Tax ID: ZRA-1002345678
+            </p>
+          </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 flex flex-col md:flex-row items-center md:items-center justify-between gap-6 text-center md:text-left">
-          <p className="text-[10px] lg:text-xs text-neutral-600">
-            &copy; {currentYear} {SITE_CONFIG.name}. All rights reserved.
-          </p>
+        <div className="pt-8 flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
+          <div className="text-[10px] lg:text-xs text-neutral-600 max-w-2xl">
+            <p>&copy; {currentYear} {SITE_CONFIG.name}. All rights reserved.</p>
+            <p className="mt-1 text-[9px] opacity-75 leading-relaxed">
+              All content on this site is the property of SKT Global Mining &amp; Services Limited or its licensors and is protected by international copyright laws. References to Mopani Copper Mines reflect SKT Global&apos;s contractual service relationship and do not imply ownership, joint venture, or official endorsement.
+            </p>
+          </div>
 
-          <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-3">
+          <div className="flex flex-wrap justify-center lg:justify-end gap-x-6 gap-y-3">
             {[
               { label: "Privacy Policy", href: "/privacy" },
               { label: "Terms of Service", href: "/terms" },
               { label: "Cookie Policy", href: "/cookies" },
+              { label: "Accessibility", href: "/accessibility" },
+              { label: "Modern Slavery", href: "/modern-slavery" },
+              { label: "Anti-Bribery", href: "/anti-bribery" },
               { label: "Sitemap", href: "/sitemap.xml" },
             ].map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-[10px] lg:text-xs text-neutral-600 hover:text-neutral-400 transition-colors duration-200 py-2"
+                className="text-[10px] lg:text-xs text-neutral-500 hover:text-neutral-300 transition-colors duration-200 py-1"
               >
                 {item.label}
               </Link>
@@ -166,7 +177,7 @@ export function Footer(): JSX.Element {
       {/* Massive watermark */}
       <div className="overflow-hidden border-t border-neutral-800">
         <p
-          className="text-[clamp(4rem,15vw,14rem)] font-black text-neutral-800 leading-none tracking-tighter select-none pointer-events-none py-4 px-6 text-center"
+          className="text-[clamp(3rem,10vw,9rem)] font-semibold text-neutral-800 leading-none tracking-tighter select-none pointer-events-none py-4 px-6 text-center"
           aria-hidden="true"
         >
           SKT GLOBAL

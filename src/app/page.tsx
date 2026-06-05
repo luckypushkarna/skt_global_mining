@@ -11,15 +11,20 @@ import { MarqueeSection } from "@/components/organisms/MarqueeSection";
 import { PartnersSection } from "@/components/organisms/PartnersSection";
 import { generateMetadata } from "@/lib/seo";
 import { BlankSection } from "@/components/organisms/BlankSection";
+import { PagePreloader } from "@/components/PagePreloader";
+import { SectionHeaderSkeleton, TextBlockSkeleton } from "@/components/ui/skeleton";
 
 export const metadata = generateMetadata({
   description:
-    "SKT Global Mining & Services Limited — Engineering excellence in mining and industrial services across 8+ countries. 18+ years. 4,200+ workforce. Zero harm.",
+    "SKT Global Mining & Services Limited — Engineering excellence in mining and industrial services across 8+ countries. 18+ years. 4,200+ workforce. Committed to Zero Harm.",
 });
 
 export default function HomePage(): JSX.Element {
   return (
     <>
+      {/* Smart image and resource preloader */}
+      <PagePreloader />
+
       {/* Hero */}
       <HeroSection />
 
@@ -50,7 +55,7 @@ export default function HomePage(): JSX.Element {
       <GallerySection />
 
       {/* Team */}
-      <div className="relative z-10 bg-white">
+      <div className="relative z-10 bg-bg-tint">
         <Suspense fallback={<SectionSkeleton />}>
           <TeamSection />
         </Suspense>
@@ -72,14 +77,13 @@ export default function HomePage(): JSX.Element {
 function SectionSkeleton(): JSX.Element {
   return (
     <div
-      className="py-section animate-pulse"
+      className="py-16 md:py-24 lg:py-32"
       role="status"
       aria-label="Loading section"
     >
-      <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
-        <div className="h-8 bg-neutral-100 w-32 mb-8" />
-        <div className="h-24 bg-neutral-100 w-2/3 mb-4" />
-        <div className="h-4 bg-neutral-100 w-1/2" />
+      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
+        <SectionHeaderSkeleton />
+        <TextBlockSkeleton lines={3} />
       </div>
     </div>
   );

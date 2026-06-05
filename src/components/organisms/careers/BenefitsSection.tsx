@@ -100,7 +100,7 @@ export function BenefitsSection(): JSX.Element {
                 </p>
 
                 {/* Highlight line */}
-                <div className="absolute bottom-0 left-8 right-8 h-px bg-transparent group-hover:bg-neutral-900 transition-colors duration-300" />
+                <div className="absolute bottom-0 left-8 right-8 h-px bg-transparent group-hover:bg-skt-navy transition-colors duration-300" />
               </motion.div>
             );
           })}

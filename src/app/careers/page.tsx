@@ -15,7 +15,7 @@ export const metadata = generateMetadata({
 
 export default function CareersPage(): JSX.Element {
   return (
-    <div className="pt-20 bg-neutral-950 min-h-screen text-white">
+    <div className="pt-20 bg-skt-navy min-h-screen text-white">
       {/* Cinematic Hero Portal */}
       <CareersHero />
 

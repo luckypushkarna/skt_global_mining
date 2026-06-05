@@ -9,7 +9,7 @@ const VALUES = [
   {
     icon: Shield,
     title: "Safety-First Culture",
-    description: "Zero harm is not a target—it's a non-negotiable covenant. Every shift starts and ends with rigorous protective oversight.",
+    description: "Our commitment to zero harm is not just a target—it's a non-negotiable covenant. Every shift starts and ends with rigorous protective oversight.",
     stat: "Zero",
     statLabel: "Fatalities since 2018",
   },

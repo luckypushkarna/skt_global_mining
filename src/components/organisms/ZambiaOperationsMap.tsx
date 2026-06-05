@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import { JSX, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
@@ -70,6 +71,7 @@ const LOCATIONS = [
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX.Element {
+  const [activeLocationId, setActiveLocationId] = useState<number | null>(null);
   const [viewport, setViewport] = useState<{
     center: [number, number];
     zoom: number;
@@ -111,40 +113,41 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
 
     return () => clearInterval(interval);
   }, []);
+
   return (
     <section
       id="operations-map"
       className={
         clean
           ? "bg-[#0B0F19] w-full h-screen relative overflow-hidden p-0 m-0"
-          : "bg-[#0B0F19] py-20 lg:py-32 relative overflow-hidden"
+          : "bg-[#0B0F19] py-16 md:py-24 lg:py-32 relative overflow-hidden"
       }
       aria-labelledby="operations-map-heading"
     >
       {/* ── Header ── */}
       {!clean && (
-        <div className="max-w-screen-xl mx-auto px-6 lg:px-12 mb-12 lg:mb-16">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-xs font-bold tracking-[0.28em] uppercase text-white/40 mb-5 flex items-center gap-2">
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/40 mb-4 flex items-center gap-2">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#E63027] animate-pulse" />
               Operational Footprint
             </p>
 
             <h2
               id="operations-map-heading"
-              className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[0.95] mb-5"
+              className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-[1.1] mb-5"
             >
               Where We
               <br />
               <span className="text-white/20">Operate</span>
             </h2>
 
-            <p className="text-white/50 max-w-xl text-sm md:text-base leading-relaxed mb-8">
+            <p className="text-white/60 font-light max-w-xl text-[15px] md:text-base leading-relaxed mb-8">
               Five active operational sites across Zambia&apos;s Copperbelt and North-Western
               regions — supporting the Mopani Copper Mines ecosystem with
               mechanised underground mining services.
@@ -153,14 +156,14 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
             {/* Inline stats */}
             <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-[10px] sm:text-xs font-semibold tracking-widest uppercase text-white/40">
               <span className="flex items-center gap-1.5">
-                <span className="text-lg font-black text-white">5</span>
+                <span className="text-lg font-semibold text-white">5</span>
                 Active Sites
               </span>
               <span className="text-white/20">·</span>
               <span>Copperbelt & North-Western Provinces</span>
               <span className="text-white/20">·</span>
               <span className="flex items-center gap-1.5">
-                <span className="text-lg font-black text-white">
+                <span className="text-lg font-semibold text-white">
                   1,500+
                 </span>
                 Workforce
@@ -176,7 +179,7 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
         whileInView={clean ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={clean ? { duration: 0 } : { duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className={clean ? "w-full h-full p-0 m-0" : "max-w-7xl mx-auto px-4 lg:px-12"}
+        className={clean ? "w-full h-full p-0 m-0" : "max-w-7xl mx-auto px-6 md:px-10 lg:px-16"}
       >
         <div
           className={
@@ -196,6 +199,7 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
             scrollZoom={false}
             dragRotate={false}
             pitchWithRotate={false}
+            cooperativeGestures={true}
           >
             {/* Zoom controls */}
             <MapControls
@@ -218,10 +222,20 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
                   key={location.id}
                   longitude={location.lng}
                   latitude={location.lat}
+                  onClick={() => {
+                    setActiveLocationId(location.id);
+                    setViewport({
+                      center: [location.lng, location.lat],
+                      zoom: 9.5,
+                    });
+                  }}
                 >
                   {/* Custom marker visual */}
                   <MarkerContent>
-                    <div className="relative group cursor-pointer flex items-center justify-center">
+                    <div
+                      id={`map-marker-${location.id}`}
+                      className="relative group cursor-pointer flex items-center justify-center animate-fade-in"
+                    >
                       {/* Pulsing ring — primary location only */}
                       {location.type === "primary" && (
                         <span className={`absolute w-8 h-8 rounded-full ${pulseBg} animate-ping`} />
@@ -229,23 +243,23 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
                       {/* Outer glow ring */}
                       <span
                         className={`absolute rounded-full ${glowBg} transition-transform duration-300 group-hover:scale-150 ${location.type === "primary"
-                            ? "w-10 h-10"
-                            : "w-7 h-7"
+                          ? "w-10 h-10"
+                          : "w-7 h-7"
                           }`}
                       />
                       {/* Dot */}
                       <div
                         style={{ backgroundColor: markerColor }}
                         className={`relative rounded-full border-2 border-white/90 shadow-lg ${shadowClass} transition-transform duration-300 group-hover:scale-125 ${location.type === "primary"
-                            ? "w-5 h-5"
-                            : "w-3.5 h-3.5"
+                          ? "w-5 h-5"
+                          : "w-3.5 h-3.5"
                           }`}
                       />
                     </div>
                   </MarkerContent>
 
                   {/* Tooltip on hover */}
-                  <MarkerTooltip className="!bg-[#1a1f2e] !text-white !rounded-lg !shadow-xl !border !border-white/10 !px-3 !py-1.5">
+                  <MarkerTooltip className="!bg-[#1a1f2e] !text-white !rounded-lg !shadow-xl !border !border-white/10 !px-3 !py-1.5 animate-fade-in">
                     <p className="text-xs font-semibold whitespace-nowrap text-white">
                       {location.name}
                     </p>
@@ -299,27 +313,78 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
             })}
           </Map>
 
-          {/* ── Legend overlay (bottom-left) ── */}
-          <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 bg-[#0B0F19]/90 backdrop-blur-md rounded-lg px-2 py-2 sm:px-3 sm:py-2.5 border border-white/10 shadow-lg pointer-events-none z-10">
-            <p className="text-[8px] sm:text-[9px] font-semibold tracking-[0.2em] uppercase text-white/40 mb-1.5 sm:mb-2">
-              Legend
+          {/* ── Interactive Locations Control Panel (left-center) ── */}
+          <div className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-[#0B0F19]/95 backdrop-blur-md rounded-xl p-3 sm:p-4 border border-white/10 shadow-2xl z-10 w-52 sm:w-60 pointer-events-auto">
+            <p className="text-[9px] font-bold tracking-[0.2em] uppercase text-white/40 mb-2 sm:mb-3">
+              Operational Sites
             </p>
-            <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-1.5">
-              <div className="relative flex items-center justify-center">
-                <span className="absolute w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#FFA000]/20" />
-                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#FFA000] border border-white/80 shadow" />
-              </div>
-              <span className="text-[10px] sm:text-[11px] text-white/70 font-medium">
-                Primary Hub
-              </span>
+            <div className="space-y-1 sm:space-y-1.5 pr-1">
+              {LOCATIONS.map((loc) => {
+                const isChingola = loc.name === "Chingola";
+                const isSelected = activeLocationId === loc.id;
+                const markerColorClass = isChingola ? "bg-[#FFA000]" : "bg-[#E63027]";
+
+                return (
+                  <button
+                    key={loc.id}
+                    onClick={() => {
+                      setActiveLocationId(loc.id);
+                      setViewport({
+                        center: [loc.lng, loc.lat],
+                        zoom: 9.5,
+                      });
+                      setTimeout(() => {
+                        const el = document.getElementById(`map-marker-${loc.id}`);
+                        if (el) el.click();
+                      }, 100);
+                    }}
+                    className={`w-full flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-left transition-all ${isSelected
+                      ? "bg-white/15 border border-white/20 shadow-md"
+                      : "hover:bg-white/5 border border-transparent"
+                      }`}
+                  >
+                    <span className={`w-2 h-2 rounded-full ${markerColorClass} shrink-0`} />
+                    <div className="min-w-0">
+                      <p className="text-[11px] sm:text-xs font-semibold text-white truncate">
+                        {loc.name}
+                      </p>
+                      <p className="text-[9px] text-white/40 truncate">
+                        {loc.role}
+                      </p>
+                    </div>
+                  </button>
+                );
+              })}
             </div>
-            <div className="flex items-center gap-1.5 sm:gap-2">
-              <div className="relative flex items-center justify-center w-3 sm:w-3.5">
-                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#E63027] border border-white/80 shadow" />
-              </div>
-              <span className="text-[10px] sm:text-[11px] text-white/70 font-medium">
-                Operational Site
-              </span>
+
+            {/* Reset View / Legend footer */}
+            <div className="mt-3 pt-2.5 border-t border-white/5 flex flex-col gap-2">
+              {activeLocationId ? (
+                <button
+                  onClick={() => {
+                    setActiveLocationId(null);
+                    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+                    setViewport({
+                      center: [27.31, -12.48],
+                      zoom: isMobile ? 6.3 : 7.8,
+                    });
+                  }}
+                  className="w-full text-center py-1.5 bg-white/10 hover:bg-white/15 border border-white/10 hover:border-white/20 text-[9px] font-bold tracking-wider text-white uppercase rounded-md transition-all duration-200"
+                >
+                  Reset Map View
+                </button>
+              ) : (
+                <div className="flex items-center justify-between text-[8px] text-white/40 font-semibold tracking-wider uppercase">
+                  <span className="flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#FFA000]" />
+                    Primary Hub
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#E63027]" />
+                    Active Site
+                  </span>
+                </div>
+              )}
             </div>
           </div>
 

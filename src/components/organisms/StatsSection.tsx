@@ -182,7 +182,7 @@ export function StatsSection(): JSX.Element {
     <section
       ref={sectionRef}
       id="impact"
-      className="relative py-24 md:py-32 bg-[#F5F5F3] overflow-hidden"
+      className="relative py-16 md:py-24 lg:py-32 bg-bg-steel overflow-hidden"
       aria-labelledby="safety-heading"
     >
       {/* ── Industrial background grid ─────────────────────────────────────── */}
@@ -190,7 +190,7 @@ export function StatsSection(): JSX.Element {
       <div className="absolute -top-40 -left-40 w-96 h-96 bg-neutral-200/30 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute top-1/2 -right-40 w-96 h-96 bg-neutral-200/20 rounded-full blur-[130px] pointer-events-none" />
 
-      <div className="max-w-screen-xl mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 relative z-10">
 
         {/* ══════════════════════════════════════════════════════════════
             TOP — Editorial Header Block
@@ -202,7 +202,7 @@ export function StatsSection(): JSX.Element {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-bold tracking-[0.25em] text-neutral-400 uppercase border border-neutral-300 bg-white"
+            className="inline-flex items-center gap-1.5 px-3 py-1 text-eyebrow border border-neutral-200 bg-white"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 animate-pulse" />
             Safety First · SKT Global
@@ -212,7 +212,7 @@ export function StatsSection(): JSX.Element {
           <h2
             ref={headlineRef}
             id="safety-heading"
-            className="text-display-md md:text-display-lg font-black text-neutral-900 leading-none tracking-tight"
+            className="text-headline"
           >
             Every Worker Returns Home Safe.
           </h2>
@@ -223,11 +223,11 @@ export function StatsSection(): JSX.Element {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-5%" }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="text-base text-neutral-500 leading-relaxed max-w-xl"
+            className="text-body-lg text-neutral-600 max-w-xl"
           >
             Safety is the prime motto of SKT Global Mining. Every decision,
             every shift, every system is designed around one non-negotiable
-            principle: zero harm to our people, our communities, and our environment.
+            principle: committed to zero harm to our people, our communities, and our environment.
           </motion.p>
         </div>
 
@@ -260,7 +260,7 @@ export function StatsSection(): JSX.Element {
                     {isActive && (
                       <motion.div
                         {...(isMobile ? {} : { layoutId: "active-pillar-indicator" })}
-                        className="absolute left-0 top-0 bottom-0 w-1 bg-neutral-900"
+                        className="absolute left-0 top-0 bottom-0 w-1 bg-skt-navy"
                         transition={{ type: "spring", stiffness: 380, damping: 30 }}
                       />
                     )}
@@ -268,9 +268,9 @@ export function StatsSection(): JSX.Element {
                     {/* Badge Container */}
                     <div className="flex-shrink-0 mt-0.5 flex flex-col items-center">
                       <span
-                        className={`w-8 h-8 rounded-sm border flex items-center justify-center text-[10px] font-black tracking-wider transition-all duration-300 ${isActive
-                          ? "border-neutral-900 bg-neutral-900 text-white"
-                          : "border-neutral-300 bg-white text-neutral-700 group-hover:border-neutral-700"
+                        className={`w-8 h-8 rounded-sm border flex items-center justify-center text-[10px] font-semibold tracking-wider transition-all duration-300 ${isActive
+                          ? "border-neutral-900 bg-skt-navy text-white"
+                          : "border-neutral-300 bg-white text-neutral-600 group-hover:border-neutral-700"
                           }`}
                       >
                         {p.num}
@@ -280,14 +280,14 @@ export function StatsSection(): JSX.Element {
                     {/* Content Box */}
                     <div className="flex-1 min-w-0">
                       <h3
-                        className={`text-sm font-bold tracking-wide transition-colors duration-300 ${isActive ? "text-neutral-900 font-extrabold" : "text-neutral-700"
+                        className={`text-sm font-semibold tracking-wide transition-colors duration-300 ${isActive ? "text-neutral-900" : "text-neutral-600"
                           }`}
                       >
                         {p.title}
                       </h3>
                       
                       {/* Desktop Description: Always visible */}
-                      <p className="text-xs text-neutral-500 leading-relaxed mt-1 hidden lg:block">
+                      <p className="text-body-sm mt-1 hidden lg:block">
                         {p.body}
                       </p>
 
@@ -302,7 +302,7 @@ export function StatsSection(): JSX.Element {
                               transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
                               className="overflow-hidden will-change-[height,opacity]"
                             >
-                              <p className="text-xs text-neutral-500 leading-relaxed mb-4">
+                              <p className="text-body-sm mb-4">
                                 {p.body}
                               </p>
 
@@ -314,13 +314,13 @@ export function StatsSection(): JSX.Element {
                                   fill
                                   sizes="(max-width: 1024px) 100vw, 30vw"
                                   className="object-cover"
-                                  priority
+                                  quality={65}
                                 />
                                 {/* Bottom gradient overlay */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-neutral-950/20 to-transparent" />
                                 
                                 {/* Tag badge overlay */}
-                                <span className="absolute top-3 right-3 text-[9px] font-bold tracking-widest text-neutral-400 uppercase border border-neutral-200 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-sm">
+                                <span className="absolute top-3 right-3 text-[9px] font-semibold tracking-widest text-neutral-500 uppercase border border-neutral-200 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-sm">
                                   {p.tag}
                                 </span>
                               </div>
@@ -335,7 +335,7 @@ export function StatsSection(): JSX.Element {
                       <motion.span
                         initial={{ opacity: 0, scale: 0.85 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="flex-shrink-0 self-start mt-0.5 text-[9px] font-bold tracking-widest text-neutral-400 uppercase border border-neutral-200 bg-white px-2 py-1 rounded-sm hidden lg:block mr-4"
+                        className="flex-shrink-0 self-start mt-0.5 text-[9px] font-semibold tracking-widest text-neutral-500 uppercase border border-neutral-200 bg-white px-2 py-1 rounded-sm hidden lg:block mr-4"
                       >
                         {p.tag}
                       </motion.span>
@@ -352,7 +352,7 @@ export function StatsSection(): JSX.Element {
                             duration: autoplayDuration,
                             ease: "linear",
                           }}
-                          className="absolute inset-y-0 left-0 w-full bg-neutral-950 origin-left"
+                          className="absolute inset-y-0 left-0 w-full bg-skt-navy origin-left"
                         />
                       )}
                     </div>
@@ -420,10 +420,10 @@ export function StatsSection(): JSX.Element {
                           transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
                           className="absolute bottom-0 left-0 right-0 p-7"
                         >
-                          <p className="text-[9px] font-extrabold tracking-[0.3em] text-white/50 uppercase mb-2">
+                          <p className="text-[9px] font-semibold tracking-[0.3em] text-white/50 uppercase mb-2">
                             {p.tag}
                           </p>
-                          <h4 className="text-xl font-black text-white tracking-tight leading-tight">
+                          <h4 className="text-lg font-semibold text-white tracking-tight leading-tight">
                             {p.title}
                           </h4>
                         </motion.div>
@@ -440,7 +440,7 @@ export function StatsSection(): JSX.Element {
                     key={i}
                     onClick={() => handlePillarClick(i)}
                     className={`rounded-full transition-all duration-400 ${active === i
-                      ? "w-6 h-1.5 bg-neutral-900"
+                      ? "w-6 h-1.5 bg-skt-navy"
                       : "w-1.5 h-1.5 bg-neutral-300 hover:bg-neutral-500"
                       }`}
                     aria-label={`Go to safety pillar ${i + 1}`}

@@ -84,7 +84,6 @@ export function HeroSection(): JSX.Element {
       className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-[#050505]"
       aria-label="Hero section"
     >
-      {/* Background Video with Parallax & Interaction Overlays */}
       <motion.div style={isMobile ? {} : { y: videoY }} className="absolute inset-0 z-0 origin-top will-change-transform">
         <video
           autoPlay
@@ -95,8 +94,6 @@ export function HeroSection(): JSX.Element {
         >
           <source src="/videos/hero-background-optimized.mp4" type="video/mp4" />
         </video>
-        {/* Dynamic vignette */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_#050505_100%)] opacity-80" />
       </motion.div>
 
       {/* Mouse reactive ambient glow */}
@@ -123,7 +120,7 @@ export function HeroSection(): JSX.Element {
       {/* Main content */}
       <motion.div
         style={isMobile ? {} : { y, opacity }}
-        className="relative z-10 max-w-screen-xl mx-auto px-6 lg:px-12 pt-32 pb-20 w-full"
+        className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 lg:px-16 pt-32 pb-20 w-full"
       >
 
 
@@ -133,7 +130,7 @@ export function HeroSection(): JSX.Element {
           <div className="overflow-hidden pb-2 -mb-2">
             <h1
               ref={headline1Ref}
-              className="text-[clamp(38px,10vw,56px)] lg:text-display-lg font-black text-white leading-[0.9] tracking-tighter"
+              className="text-3xl md:text-4xl lg:text-5xl text-white font-medium leading-tight tracking-tight"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 120%, 0 120%)" }}
             >
               Engineering
@@ -144,26 +141,26 @@ export function HeroSection(): JSX.Element {
           <div className="flex items-end gap-6 flex-wrap overflow-hidden pb-2 -mb-2 mt-1">
             <h1
               ref={headline2Ref}
-              className="text-[clamp(38px,10vw,56px)] lg:text-display-lg font-black text-white leading-[0.9] tracking-tighter"
+              className="text-3xl md:text-4xl lg:text-5xl text-white font-bold leading-tight tracking-tight"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 120%, 0 120%)" }}
             >
-              The Future
+              Underground
             </h1>
 
             <div
               ref={ofMiningRef}
-              className="hidden md:flex items-center gap-4 mb-4 ml-2"
+              className="hidden md:flex items-center gap-3 mb-2 ml-2"
             >
               <div
                 ref={ofMiningLineRef}
-                className="w-16 h-[2px] bg-white/40 shadow-[0_0_8px_rgba(255,255,255,0.3)] origin-left"
+                className="w-8 h-px bg-white/40 shadow-[0_0_6px_rgba(255,255,255,0.2)] origin-left"
                 style={{ transformOrigin: "0% 50%" }}
               />
               <span
                 ref={ofMiningTextRef}
-                className="text-xs font-bold tracking-[0.15em] text-white/60 uppercase"
+                className="text-eyebrow text-white/60"
               >
-                of Mining
+                Zambia
               </span>
             </div>
           </div>
@@ -172,10 +169,10 @@ export function HeroSection(): JSX.Element {
           <div className="overflow-hidden pb-2 -mb-2 mt-1">
             <h1
               ref={headline3Ref}
-              className="text-[clamp(38px,10vw,56px)] lg:text-display-lg font-black text-white/30 leading-[0.9] tracking-tighter mix-blend-plus-lighter"
+              className="text-3xl md:text-4xl lg:text-5xl text-white/30 font-light leading-tight tracking-tight mix-blend-plus-lighter"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 120%, 0 120%)" }}
             >
-              Underground
+              Operations
             </h1>
           </div>
         </div>
@@ -214,8 +211,7 @@ export function HeroSection(): JSX.Element {
 
 
 
-      {/* Cinematic Top/Bottom Gradients for deep black fade */}
-      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#050505] to-transparent z-0 opacity-80" />
+      {/* Cinematic Bottom Gradient for deep black fade */}
       <div className="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-[#050505] to-transparent z-0 opacity-90" />
     </section>
   );

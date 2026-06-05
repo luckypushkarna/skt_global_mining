@@ -27,7 +27,7 @@ const STORIES: Story[] = [
   },
   {
     category: "Safety Stewardship",
-    title: "Pioneering the Zero Harm Vision",
+    title: "Pioneering the Zero Harm Commitment",
     quote: "Every morning starts with a meticulous safety audit. The commitment to human life isn't just printed on wall signs here—it dictates our mechanical designs and operations at all levels.",
     author: "Prisca Banda",
     role: "Senior Safety Inspector (HSE)",
@@ -50,7 +50,7 @@ export function LifeAtSKT(): JSX.Element {
   const isInView = useInView(containerRef, { once: true, margin: "-10%" });
 
   return (
-    <section className="py-24 bg-neutral-900 text-white relative overflow-hidden">
+    <section className="py-24 bg-skt-navy text-white relative overflow-hidden">
       {/* Background patterns */}
       <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.015)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-neutral-800 rounded-full blur-[160px] opacity-40 pointer-events-none" />
@@ -87,7 +87,7 @@ export function LifeAtSKT(): JSX.Element {
               className="group flex flex-col bg-neutral-800/40 border border-neutral-800/80 rounded-2xl overflow-hidden hover:border-neutral-700 transition-all duration-300"
             >
               {/* Image Frame */}
-              <div className="relative aspect-[16/10] overflow-hidden bg-neutral-900 border-b border-neutral-800">
+              <div className="relative aspect-[16/10] overflow-hidden bg-skt-navy border-b border-neutral-800">
                 <Image
                   src={story.img}
                   alt={story.author}
@@ -98,7 +98,7 @@ export function LifeAtSKT(): JSX.Element {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/90 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-6">
-                  <span className="text-[9px] font-bold tracking-widest text-neutral-400 uppercase bg-neutral-950/80 px-2 py-0.5 border border-neutral-800">
+                  <span className="text-[9px] font-bold tracking-widest text-neutral-400 uppercase bg-skt-navy/80 px-2 py-0.5 border border-neutral-800">
                     {story.category}
                   </span>
                 </div>
@@ -139,7 +139,7 @@ export function LifeAtSKT(): JSX.Element {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="border border-neutral-800 bg-neutral-950/40 p-8 md:p-12 rounded-3xl"
+          className="border border-neutral-800 bg-skt-navy/40 p-8 md:p-12 rounded-3xl"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-6">
@@ -172,7 +172,7 @@ export function LifeAtSKT(): JSX.Element {
             </div>
 
             <div className="lg:col-span-5 grid grid-cols-2 gap-4">
-              <div className="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl text-center">
+              <div className="bg-skt-navy border border-neutral-800 p-6 rounded-2xl text-center">
                 <span className="block text-3xl font-black text-white leading-none">
                   150+
                 </span>
@@ -180,7 +180,7 @@ export function LifeAtSKT(): JSX.Element {
                   Graduates Enrolled
                 </span>
               </div>
-              <div className="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl text-center">
+              <div className="bg-skt-navy border border-neutral-800 p-6 rounded-2xl text-center">
                 <span className="block text-3xl font-black text-white leading-none">
                   89%
                 </span>
@@ -188,7 +188,7 @@ export function LifeAtSKT(): JSX.Element {
                   Tenure Leadership Rate
                 </span>
               </div>
-              <div className="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl text-center">
+              <div className="bg-skt-navy border border-neutral-800 p-6 rounded-2xl text-center">
                 <span className="block text-3xl font-black text-white leading-none">
                   5 Yrs
                 </span>
@@ -196,7 +196,7 @@ export function LifeAtSKT(): JSX.Element {
                   Operational Milestone
                 </span>
               </div>
-              <div className="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl text-center">
+              <div className="bg-skt-navy border border-neutral-800 p-6 rounded-2xl text-center">
                 <span className="block text-3xl font-black text-white leading-none">
                   98%
                 </span>

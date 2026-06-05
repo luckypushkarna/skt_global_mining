@@ -10,7 +10,7 @@ interface BadgeProps {
 }
 
 const variantStyles: Record<BadgeVariant, string> = {
-  default: "bg-neutral-900 text-white",
+  default: "bg-skt-navy text-white",
   outline: "border border-neutral-900 text-neutral-900 bg-transparent",
   muted: "bg-neutral-100 text-neutral-600",
   dot: "bg-transparent text-neutral-600 pl-0",
@@ -25,7 +25,7 @@ export const Badge = memo(function Badge({
     <span
       className={cn(
         "inline-flex items-center gap-1.5 px-3 py-1",
-        "text-xs font-semibold tracking-widest uppercase",
+        "text-xs font-semibold tracking-[0.2em] uppercase",
         variantStyles[variant],
         className
       )}

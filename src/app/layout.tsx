@@ -1,33 +1,27 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Playfair_Display, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
-import { Navbar } from "@/components/organisms/Navbar";
+import { Navigation } from "@/components/organisms/Navigation";
 import { Footer } from "@/components/organisms/Footer";
 import { generateMetadata as genMeta, jsonLd } from "@/lib/seo";
 import { MobileWarningOverlay } from "@/components/molecules/MobileWarningOverlay";
+import { CookieConsentBanner } from "@/components/organisms/CookieConsentBanner";
 import "@/app/globals.css";
 
 // ─── Fonts ────────────────────────────────────────────────────────────────────
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter",
   display: "swap",
-  preload: true,
-});
-
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  display: "swap",
-  preload: false,
+  variable: "--font-sans",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-jetbrains",
   display: "swap",
-  preload: false,
+  variable: "--font-mono",
+  weight: ["400", "500", "600"],
 });
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
@@ -56,7 +50,7 @@ export default function RootLayout({
     <html
       lang="en"
       dir="ltr"
-      className={`${inter.variable} ${playfairDisplay.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
       <head>
@@ -71,12 +65,12 @@ export default function RootLayout({
 
       </head>
 
-      <body className="font-sans" suppressHydrationWarning>
+      <body className="font-sans antialiased" suppressHydrationWarning>
         <SmoothScrollProvider>
           <ThemeProvider>
             <MobileWarningOverlay />
 
-            <Navbar />
+            <Navigation />
 
             <ClickSpark
               sparkColor="#E11D48" // Crimson Brand Color
@@ -91,6 +85,7 @@ export default function RootLayout({
             </ClickSpark>
 
             <Footer />
+            <CookieConsentBanner />
           </ThemeProvider>
         </SmoothScrollProvider>
       </body>

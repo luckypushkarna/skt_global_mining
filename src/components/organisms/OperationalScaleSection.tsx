@@ -86,7 +86,7 @@ function StatCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
-      className="bg-white p-4 sm:p-8 hover:bg-neutral-50/50 transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden"
+      className="bg-bg-pure p-4 sm:p-8 hover:bg-bg-tint transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden"
     >
       {/* Top Accent Hover Line */}
       <div className="absolute top-0 left-0 w-full h-[2px] bg-rose-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
@@ -95,12 +95,12 @@ function StatCard({
         {/* Stat Value Container */}
         <div className="flex flex-wrap items-baseline gap-0.5 sm:gap-1 mb-3 sm:mb-4 select-none">
           {stat.prefix && (
-            <span className="text-lg sm:text-2xl font-bold text-neutral-400 group-hover:text-rose-600 transition-colors duration-300 leading-none">
+            <span className="text-lg sm:text-2xl font-semibold text-neutral-400 group-hover:text-rose-600 transition-colors duration-300 leading-none">
               {stat.prefix}
             </span>
           )}
 
-          <span className="relative text-2xl sm:text-5xl md:text-6xl font-black text-neutral-900 tracking-tight leading-none tabular-nums group-hover:scale-[1.02] transition-transform duration-300 origin-left inline-block stats-number-container">
+          <span className="relative text-stat text-2xl sm:text-4xl md:text-5xl tracking-tight leading-none group-hover:scale-[1.02] transition-transform duration-300 origin-left inline-block stats-number-container">
             {/* Stable Layout Container: Reserves the maximum width of the final string to prevent jitter */}
             <span className="opacity-0 select-none pointer-events-none" aria-hidden="true">
               {isNumeric ? numericValue.toLocaleString() : stat.value}
@@ -116,20 +116,20 @@ function StatCard({
           </span>
 
           {stat.suffix && (
-            <span className="text-lg sm:text-2xl font-bold text-neutral-400 group-hover:text-rose-600 transition-colors duration-300 leading-none">
+            <span className="text-lg sm:text-2xl font-semibold text-neutral-400 group-hover:text-rose-600 transition-colors duration-300 leading-none">
               {stat.suffix}
             </span>
           )}
         </div>
 
         {/* Title Label */}
-        <h3 className="text-[10px] sm:text-xs font-bold text-neutral-800 tracking-[0.2em] uppercase mb-1.5 sm:mb-2">
+        <h3 className="text-data-label mb-1.5 sm:mb-2">
           {stat.label}
         </h3>
       </div>
 
       {/* Description */}
-      <p className="text-[11px] sm:text-[13px] text-neutral-500 leading-relaxed font-normal mt-1 max-w-[260px] group-hover:text-neutral-700 transition-colors duration-300">
+      <p className="text-body-sm text-neutral-600 mt-1 max-w-[260px] group-hover:text-neutral-700 transition-colors duration-300">
         {stat.description}
       </p>
     </motion.div>
@@ -166,10 +166,10 @@ export function OperationalScaleSection(): JSX.Element {
     <section
       ref={sectionRef}
       id="impact"
-      className="py-24 bg-white overflow-hidden"
+      className="py-16 md:py-24 lg:py-32 bg-bg-soft overflow-hidden"
       aria-labelledby="stats-heading"
     >
-      <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
 
         {/* ── Header ── */}
         <div className="mb-16">
@@ -179,7 +179,7 @@ export function OperationalScaleSection(): JSX.Element {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <span className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-widest uppercase text-neutral-600 mb-6">
+            <span className="inline-flex items-center gap-1.5 text-eyebrow mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 inline-block" />
               OPERATIONAL SCALE
             </span>
@@ -192,7 +192,7 @@ export function OperationalScaleSection(): JSX.Element {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl md:text-6xl font-black text-neutral-900 tracking-tight leading-none"
+              className="text-headline"
             >
               Scale That
               <br />
@@ -204,7 +204,7 @@ export function OperationalScaleSection(): JSX.Element {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-base text-neutral-500 leading-relaxed self-end max-w-lg"
+              className="text-body-lg text-neutral-600 self-end max-w-lg"
             >
               Behind every metric is our dedicated team of professionals, an
               unwavering commitment to safe operations, and strategic alignment
@@ -242,8 +242,7 @@ export function OperationalScaleSection(): JSX.Element {
           <div className="flex items-center gap-4 mb-10 lg:mb-16">
             <div className="w-10 h-px bg-neutral-300" />
             <span
-              style={{ fontSize: "11px", letterSpacing: "0.25em" }}
-              className="font-medium uppercase text-neutral-500"
+              className="text-eyebrow"
             >
               From the Chairman
             </span>
@@ -287,7 +286,7 @@ export function OperationalScaleSection(): JSX.Element {
               <div
                 aria-hidden="true"
                 style={{
-                  fontFamily: "var(--font-playfair), 'Playfair Display', Georgia, serif",
+                  fontFamily: "var(--font-sans), 'Inter', sans-serif",
                   fontSize: "clamp(40px, 8vw, 96px)",
                   lineHeight: 0.85,
                   color: "#d4d4d4",
@@ -298,14 +297,14 @@ export function OperationalScaleSection(): JSX.Element {
                 &ldquo;
               </div>
 
-              {/* Quote text — Playfair, weight 300, elegant */}
+              {/* Quote text — Inter, weight 300, elegant */}
               <blockquote>
                 <MagicText
                   text="We don't just extract minerals. We extract potential from the earth, and from our people."
                   className="flex flex-wrap leading-[1.35] p-0 m-0"
-                  wordClassName="relative inline-block mr-[0.22em] text-[clamp(22px,3vw,38px)] font-light"
+                  wordClassName="relative inline-block mr-[0.22em] text-[clamp(22px,3vw,38px)] font-light text-neutral-900"
                   style={{
-                    fontFamily: "var(--font-playfair), 'Playfair Display', Georgia, serif",
+                    fontFamily: "var(--font-sans), 'Inter', sans-serif",
                     fontSize: "clamp(22px, 3vw, 38px)",
                     fontWeight: 300,
                     lineHeight: 1.35,
@@ -328,25 +327,19 @@ export function OperationalScaleSection(): JSX.Element {
                     {/* Name + title */}
                     <div>
                       <cite
-                        className="not-italic block"
+                        className="not-italic block text-neutral-900"
                         style={{
+                          fontFamily: "var(--font-sans), 'Inter', sans-serif",
                           fontSize: "17px",
                           fontWeight: 500,
                           letterSpacing: "-0.01em",
-                          color: "#171717",
                           marginBottom: "5px",
                         }}
                       >
                         Raj Talreja
                       </cite>
                       <p
-                        style={{
-                          fontSize: "10px",
-                          fontWeight: 500,
-                          letterSpacing: "0.2em",
-                          textTransform: "uppercase",
-                          color: "#737373",
-                        }}
+                        className="text-eyebrow text-neutral-500"
                       >
                         Chairman · SKT Global Mining &amp; Services
                       </p>

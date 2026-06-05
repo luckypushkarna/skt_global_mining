@@ -4,7 +4,7 @@ import { useRef, useEffect, useState, memo } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { JSX } from "react";
-import Image from "next/image";
+import { ImageWithSkeleton } from "@/components/ui/image-with-skeleton";
 import { OperationalScaleSection } from "./OperationalScaleSection";
 import { CAPABILITIES } from "@/data/capabilities";
 
@@ -26,13 +26,13 @@ const SliderCard = memo(function SliderCard({ card }: { card: typeof CAPABILITIE
       }}
     >
       {/* ── Image Layer (Always Visible) ── */}
-      <Image
+      <ImageWithSkeleton
         src={card.bgImage}
         alt={card.title}
         fill
         sizes="340px"
         className="object-cover transition-transform duration-[1500ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
-        loading="lazy"
+        skeletonClassName="rounded-2xl"
       />
 
       {/* ── Subtle top gradient for number visibility ── */}
@@ -49,7 +49,7 @@ const SliderCard = memo(function SliderCard({ card }: { card: typeof CAPABILITIE
         </div>
 
         {/* Number */}
-        <span className="text-[11px] font-semibold tracking-[0.25em] text-white/70 uppercase pt-3">
+        <span className="text-micro tracking-[0.25em] text-white/70 uppercase pt-3">
           {card.num}
         </span>
       </div>
@@ -58,7 +58,7 @@ const SliderCard = memo(function SliderCard({ card }: { card: typeof CAPABILITIE
       <div className="absolute inset-x-0 bottom-0 p-6 z-10 flex flex-col">
 
         {/* Title (Always Visible) */}
-        <h3 className="text-xl md:text-[22px] font-semibold tracking-tight text-white leading-tight mb-2 transition-transform duration-500 group-hover:-translate-y-1">
+        <h3 className="text-subhead text-white mb-2 transition-transform duration-500 group-hover:-translate-y-1">
           {card.title}
         </h3>
 
@@ -67,7 +67,7 @@ const SliderCard = memo(function SliderCard({ card }: { card: typeof CAPABILITIE
           <div className="overflow-hidden">
 
             {/* Description */}
-            <p className="text-[12.5px] leading-relaxed text-white/75 mb-4 pt-1">
+            <p className="text-body-sm text-white/75 mb-4 pt-1">
               {card.desc}
             </p>
 
@@ -284,10 +284,10 @@ export function ServicesSection(): JSX.Element {
     <>
       <section
         id="services"
-        className="bg-white overflow-hidden py-16 lg:py-24"
+        className="bg-bg-tint overflow-hidden py-16 md:py-24 lg:py-32"
       >
         {/* ── Header ── */}
-        <div className="max-w-screen-xl mx-auto px-5 md:px-8 lg:px-12 mb-12 lg:mb-16">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 mb-12 md:mb-16 lg:mb-20">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8">
             <div>
               <motion.p
@@ -295,7 +295,7 @@ export function ServicesSection(): JSX.Element {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="text-xs font-bold tracking-[0.28em] text-neutral-400 uppercase mb-4 md:mb-5"
+                className="text-eyebrow mb-4"
               >
                 What We Do
               </motion.p>
@@ -306,7 +306,7 @@ export function ServicesSection(): JSX.Element {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="text-4xl md:text-6xl font-black text-neutral-900 tracking-tight leading-none"
+                className="text-headline"
               >
                 Core
                 <br />
@@ -322,7 +322,7 @@ export function ServicesSection(): JSX.Element {
             >
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-900 border border-neutral-200 rounded-full px-6 py-3.5 hover:bg-neutral-900 hover:text-white hover:border-neutral-900 transition-all duration-300 active:scale-95"
+                className="inline-flex items-center gap-2 text-sm font-medium text-neutral-900 border border-neutral-200 rounded-full px-5 py-2.5 hover:bg-skt-navy hover:text-white hover:border-neutral-900 transition-all duration-300 active:scale-95"
               >
                 View Systems →
               </Link>
@@ -331,7 +331,7 @@ export function ServicesSection(): JSX.Element {
         </div>
 
         {/* ── Mobile Horizontal Native Scroll Container (Snap enabled, 1.2 cards visible, energy saver) ── */}
-        <div 
+        <div
           onScroll={handleMobileScroll}
           className="block lg:hidden overflow-x-auto snap-x snap-mandatory scrollbar-none touch-pan-x px-5 pb-6"
         >
@@ -341,22 +341,22 @@ export function ServicesSection(): JSX.Element {
               return (
                 <div
                   key={`mobile-${card.slug}-${i}`}
-                  className="snap-start shrink-0 w-[280px] h-[420px] relative rounded-2xl overflow-hidden shadow-md flex flex-col justify-end p-5 bg-neutral-900 border border-white/5 active:scale-[0.98] transition-transform duration-300"
+                  className="snap-start shrink-0 w-[280px] h-[420px] relative rounded-2xl overflow-hidden shadow-md flex flex-col justify-end p-5 bg-skt-navy border border-white/5 active:scale-[0.98] transition-transform duration-300"
                 >
                   <Link href={`/capabilities/${card.slug}`} className="absolute inset-0 z-0">
-                    <Image
+                    <ImageWithSkeleton
                       src={card.bgImage}
                       alt={card.title}
                       fill
                       sizes="280px"
                       className="object-cover opacity-60"
-                      loading="lazy"
+                      skeletonClassName="rounded-2xl"
                     />
                   </Link>
 
                   {/* Gradient overlays */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none z-0" />
-                  
+
                   {/* Top section */}
                   <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10 pointer-events-none">
                     <div className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-white">
@@ -375,7 +375,7 @@ export function ServicesSection(): JSX.Element {
                     <p className="text-[11px] leading-relaxed text-white/70 mb-3 line-clamp-2">
                       {card.desc}
                     </p>
-                    
+
                     {/* Tags with larger touch targets (min 32px height) */}
                     <div className="flex flex-wrap gap-1.5 mb-4 pointer-events-auto">
                       {card.tags.slice(0, 2).map((tag) => (
@@ -405,7 +405,7 @@ export function ServicesSection(): JSX.Element {
         <div className="lg:hidden flex justify-center items-center mt-2 mb-4">
           <div className="w-24 h-[2px] bg-neutral-200 rounded-full overflow-hidden">
             <div
-              className="h-full bg-neutral-900 transition-all duration-75"
+              className="h-full bg-skt-navy transition-all duration-75"
               style={{ width: `${scrollProgress * 100}%` }}
             />
           </div>

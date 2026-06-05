@@ -8,9 +8,9 @@ import { FileUp, ArrowRight } from "lucide-react";
 
 export function CareersCTA(): JSX.Element {
   return (
-    <section className="relative py-28 bg-neutral-950 text-white overflow-hidden flex flex-col justify-center min-h-[75vh]">
+    <section className="relative py-28 bg-skt-navy text-white overflow-hidden flex flex-col justify-center min-h-[75vh]">
       {/* Immersive industrial mining overlay background */}
-      <div className="absolute inset-0 bg-neutral-900 pointer-events-none">
+      <div className="absolute inset-0 bg-skt-navy pointer-events-none">
         <Image
           src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&auto=format&fit=crop&q=80"
           alt="Underground Industrial Operations"
@@ -65,7 +65,7 @@ export function CareersCTA(): JSX.Element {
               onClick={() => {
                 window.location.href = "/contact?cv=upload";
               }}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-neutral-900 text-white font-bold hover:bg-neutral-850 border border-neutral-800 transition-colors rounded"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-skt-navy text-white font-bold hover:bg-neutral-850 border border-neutral-800 transition-colors rounded"
             >
               <FileUp size={16} />
               <span>Submit General CV</span>

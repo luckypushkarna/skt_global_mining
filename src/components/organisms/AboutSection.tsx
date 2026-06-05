@@ -33,6 +33,37 @@ function MilestoneDot({ index }: { index: number }) {
   );
 }
 
+function TimelineCard({ milestone }: { milestone: (typeof MILESTONES)[number] }) {
+  return (
+    <div className="w-full md:max-w-[92%] bg-white border border-neutral-200/60 rounded-2xl p-5 md:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.02)] text-left">
+      <div className="flex items-start justify-between gap-4">
+        <div className="space-y-1 flex-1">
+          <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-skt-blue block mb-1">
+            {milestone.year}
+          </span>
+          <h3 className="text-lg md:text-xl font-bold text-neutral-800 tracking-tight">
+            {milestone.title}
+          </h3>
+        </div>
+        {milestone.logo && (
+          <div className="relative w-12 h-12 flex-shrink-0 rounded-xl bg-white border border-neutral-200/50 p-2 flex items-center justify-center overflow-hidden shadow-[inset_0_1px_2px_rgba(0,0,0,0.02)]">
+            <Image
+              src={milestone.logo}
+              alt={`${milestone.title} logo`}
+              fill
+              sizes="48px"
+              className="object-contain p-1.5"
+            />
+          </div>
+        )}
+      </div>
+      <p className="text-sm md:text-[14.5px] text-neutral-500 leading-relaxed mt-3.5">
+        {milestone.description}
+      </p>
+    </div>
+  );
+}
+
 export function AboutSection(): JSX.Element {
   const sectionRef = useRef<HTMLElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
@@ -54,7 +85,7 @@ export function AboutSection(): JSX.Element {
   // Master GSAP Timeline for Vehicle AND Stones
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    
+
     // Configure ScrollTrigger globally for mobile optimizations
     ScrollTrigger.config({
       ignoreMobileResize: true,
@@ -73,13 +104,16 @@ export function AboutSection(): JSX.Element {
       let isDesktopMedia = false;
 
       const runAnimations = (isDesktop: boolean) => {
-        const cRect = container.getBoundingClientRect();
-        const containerHeight = cRect.height;
+        const containerHeight = container.offsetHeight;
 
         // Reset elements to base state
         gsap.set(stones, { clearProps: "all" });
         gsap.set(excavator, { clearProps: "all" });
         gsap.set(excavator, { xPercent: -50, y: 0 });
+
+        // Calibrate physical bucket offset and animation distance
+        const vehicleOffset = 160;
+        const totalDistance = containerHeight * 0.90 + vehicleOffset;
 
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -93,58 +127,56 @@ export function AboutSection(): JSX.Element {
           },
         });
 
-        // 2. Animate the vehicle using GPU-accelerated y transform instead of top!
+        // 2. Animate the vehicle starting from -vehicleOffset (above container) to containerHeight * 0.90
+        // This keeps the bucket's starting position above the first stone, eliminating starting layout jumps.
         tl.to({}, { duration: 1 }); // Force duration to exactly 1.0
-        tl.fromTo(excavator, { y: 0 }, { y: containerHeight * 0.90, ease: "none", duration: 0.90 }, 0);
+        tl.fromTo(excavator,
+          { y: -vehicleOffset },
+          { y: containerHeight * 0.90, ease: "none", duration: 0.90 },
+          0
+        );
         tl.fromTo(excavator, { opacity: 0 }, { opacity: 1, duration: 0.06, ease: "none" }, 0);
         tl.to(excavator, { opacity: 0, ease: "none", duration: 0.1 }, 0.90);
 
         stones.forEach((stone) => {
-          const sRect = stone.getBoundingClientRect();
+          // Calculate absolute vertical center coordinates of the stone
+          let stoneCenterY = 0;
+          let curr = stone as HTMLElement | null;
+          while (curr && curr !== container) {
+            stoneCenterY += curr.offsetTop || 0;
+            curr = curr.offsetParent as HTMLElement | null;
+          }
+          stoneCenterY += stone.offsetHeight / 2;
 
-          // Distance from top of container to center of the stone
-          const stoneCenterY = (sRect.top + sRect.height / 2) - cRect.top;
-
-          // 3. Contact & Collect: Offset calibrated exactly to the front loader bucket bounds!
-          const rawHitProgress = (stoneCenterY - 160) / containerHeight;
+          // 3. Contact & Collect: Calculated exactly to trigger when the bucket touches the stone
+          const rawHitProgress = 0.90 * (stoneCenterY / totalDistance);
 
           if (rawHitProgress < 0.90) {
-            let startY = 0;
-            let insertTime = rawHitProgress;
-            let durationDown = 0.90 - rawHitProgress;
-            let y90 = durationDown * containerHeight;
+            const durationDown = 0.90 - rawHitProgress;
+            const y90 = totalDistance - stoneCenterY;
 
-            // If mathematically the vehicle's offset is already past this stone at timeline 0,
-            // we calculate the exact missed distance and pre-apply it so it syncs perfectly.
-            if (rawHitProgress < 0) {
-              startY = -rawHitProgress * containerHeight;
-              insertTime = 0;
-              durationDown = 0.90;
-              y90 = startY + (0.90 * containerHeight);
-            }
-
-            // Stay stationary before hitProgress, then lock onto vehicle via GPU y transform
+            // Lock onto vehicle via GPU y transform at the exact hit moment
             tl.fromTo(stone,
-              { y: startY, x: 0, rotation: 0 },
+              { y: 0, x: 0, rotation: 0 },
               { y: y90, ease: "none", duration: durationDown },
-              insertTime
+              rawHitProgress
             );
 
-            // Final Scatter Asymmetrical Drop (runs from 0.90 to 0.95 of timeline)
+            // Final Scatter Asymmetrical Drop
             const dropX = gsap.utils.random(-35, 35);
             const dropRot = gsap.utils.random(-60, 60);
-            const finalY = (0.95 - rawHitProgress) * containerHeight + gsap.utils.random(-15, 15);
+            const finalY = y90 + (0.05 * totalDistance) + gsap.utils.random(-15, 15);
 
             tl.to(stone, {
               y: finalY,
               x: dropX,
               rotation: dropRot,
-              scale: isDesktop ? 0.8 : 0.7, // slightly smaller on mobile to preserve memory/layout
+              scale: isDesktop ? 0.8 : 0.7,
               ease: "power2.out",
               duration: 0.05,
             }, 0.90);
 
-            // Fade out the stone smoothly (runs from 0.90 to 1.0)
+            // Fade out the stone smoothly
             tl.to(stone, {
               opacity: 0,
               ease: "none",
@@ -192,23 +224,23 @@ export function AboutSection(): JSX.Element {
     <section
       ref={sectionRef}
       id="about"
-      className="relative pt-24 pb-16 bg-white overflow-hidden"
+      className="relative py-10 md:py-24 lg:py-32 bg-bg-soft overflow-hidden"
       aria-labelledby="about-heading"
     >
       <div id="certifications" className="absolute top-0 left-0" />
-      <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
         {/* Header */}
-        <div ref={headerRef} className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+        <div ref={headerRef} className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 mb-10 md:mb-16">
           {/* Left (Comes from Left) */}
           <motion.div
             style={{ x: leftX, opacity: leftOpacity }}
           >
-            <Badge variant="dot" className="mb-6">
+            <Badge variant="dot" className="mb-3 lg:mb-6 text-eyebrow">
               THE FOUNDATION
             </Badge>
             <h2
               id="about-heading"
-              className="text-display-lg font-black text-neutral-900 tracking-tight leading-none mb-8"
+              className="text-headline mb-4 lg:mb-8"
             >
               Built on Rock.
               <br />
@@ -221,8 +253,8 @@ export function AboutSection(): JSX.Element {
             style={{ x: rightX, opacity: rightOpacity }}
             className="flex flex-col justify-end"
           >
-            <p className="text-base text-neutral-500 leading-relaxed mb-8">
-              SKT Global Mining & Services Limited was established as part of Tyre Technocrats India Private Limited’s long-term strategic investment into Zambia’s mining sector. From inception, the company’s growth has been defined by speed, operational discipline, infrastructure development, and underground mining excellence.
+            <p className="text-body text-neutral-600 mb-4 lg:mb-8">
+              {"SKT Global Mining & Services Limited was established as part of Tyre Technocrats India Private Limited's long-term strategic investment into Zambia's mining sector. From inception, the company's growth has been defined by speed, operational discipline, infrastructure development, and underground mining excellence."}
             </p>
             <Button
               variant="ghost"
@@ -234,9 +266,8 @@ export function AboutSection(): JSX.Element {
           </motion.div>
         </div>
 
-        {/* Timeline */}
+        {/* ─── Timeline ─────────────────────────────────────────── */}
         <div ref={timelineRef} id="history" className="relative">
-          {/* Sticky Counter Badge */}
 
           {/* Vertical track — faint guide line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-neutral-100 -translate-x-px md:-translate-x-1/2" />
@@ -283,32 +314,36 @@ export function AboutSection(): JSX.Element {
                 <motion.div
                   key={milestone.year}
                   variants={itemVariants}
-                  // ADDED z-40 here so the row's stacking context is significantly higher than the z-10 vehicle
-                  className={`relative z-40 grid grid-cols-1 md:grid-cols-2 gap-8 py-12 ${isEven ? "" : "md:flex-row-reverse"
-                    }`}
+                  className="relative z-40 grid grid-cols-1 md:grid-cols-2 md:gap-20 py-5 md:py-6"
                 >
-                  {/* Content */}
-                  <div
-                    className={`${isEven
-                      ? "md:pr-16 md:text-right"
-                      : "md:col-start-2 md:pl-16"
-                      } pl-12 md:pl-0`}
-                  >
-                    <span className="text-xs font-bold tracking-widest text-neutral-400 uppercase block mb-2">
-                      {milestone.year}
-                    </span>
-                    <h3 className="text-xl font-bold text-neutral-900 mb-2">
-                      {milestone.title}
-                    </h3>
-                    <p className="text-sm text-neutral-500 leading-relaxed">
-                      {milestone.description}
-                    </p>
+                  <div className={`${isEven ? "flex md:justify-end" : "hidden md:block"} pl-12 md:pl-0`}>
+                    {isEven ? (
+                      <TimelineCard milestone={milestone} />
+                    ) : (
+                      <div />
+                    )}
                   </div>
 
-                  {/* Center dot — explicitly brought to z-50 to ensure it is in FRONT of the bucket */}
+                  {/* Center dot — absolutely positioned on timeline axis */}
                   <div className="absolute left-4 md:left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
                     <MilestoneDot index={index} />
                   </div>
+
+                  {/* ── RIGHT COLUMN ── */}
+                  <div className={`${!isEven ? "hidden md:flex md:justify-start" : "hidden md:block"} md:pl-0`}>
+                    {!isEven ? (
+                      <TimelineCard milestone={milestone} />
+                    ) : (
+                      <div />
+                    )}
+                  </div>
+
+                  {/* Mobile fallback: show card content for the hidden side on small screens */}
+                  {!isEven && (
+                    <div className="md:hidden pl-12">
+                      <TimelineCard milestone={milestone} />
+                    </div>
+                  )}
                 </motion.div>
               );
             })}

@@ -60,7 +60,7 @@ export default function ServiceDetailPage() {
   return (
     <main className="bg-white min-h-screen">
       {/* ── Hero ── */}
-      <section className="relative h-[70vh] min-h-[480px] overflow-hidden bg-neutral-950">
+      <section className="relative h-[70vh] min-h-[480px] overflow-hidden bg-skt-navy">
         {/* Parallax BG */}
         <Image
           src={card.bgImage}

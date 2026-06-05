@@ -89,7 +89,7 @@ export const StackedImageCard = memo(function StackedImageCard({
         
         {/* Content Overlay - Top Left Action */}
         <div className="relative z-40 p-6 flex justify-start">
-          <button className="flex items-center gap-2.5 bg-black/20 backdrop-blur-md border border-white/30 text-white px-4 py-2 rounded-full text-xs font-bold hover:bg-black/40 transition-colors cursor-pointer">
+          <button className="flex items-center gap-2.5 bg-skt-navy/20 backdrop-blur-md border border-white/30 text-white px-4 py-2 rounded-full text-xs font-bold hover:bg-skt-navy/40 transition-colors cursor-pointer">
             <div className="w-5 h-5 flex items-center justify-center bg-white text-neutral-900 rounded-full">
               <Play size={10} className="ml-0.5" fill="currentColor" />
             </div>

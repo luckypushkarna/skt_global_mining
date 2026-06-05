@@ -2,7 +2,7 @@
 
 import { type JSX } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { ImageWithSkeleton } from "@/components/ui/image-with-skeleton";
 import { Badge } from "@/components/atoms/Badge";
 import { TEAM_MEMBERS } from "@/lib/constants";
 import { containerVariants, itemVariants } from "@/lib/animations";
@@ -50,17 +50,17 @@ function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
     >
       {/* Portrait Area */}
       <div className="relative aspect-[0.95/1.1] overflow-hidden rounded-xl bg-neutral-50 mb-5 border border-neutral-100">
-        <Image
+        <ImageWithSkeleton
           src={imgSrc}
           alt={member.name}
           fill
           className="object-cover transition-transform duration-700 ease-out scale-100 group-hover:scale-[1.03]"
           sizes="(max-w-768px) 100vw, 25vw"
-          priority
+          skeletonClassName="rounded-xl"
         />
 
         {/* ── HOVER OVERLAY: Slides up from the bottom (Reference Match) ── */}
-        <div className="absolute inset-0 bg-neutral-950/95 backdrop-blur-sm flex flex-col justify-between p-3 sm:p-4 md:p-6 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10">
+        <div className="absolute inset-0 bg-skt-navy/95 backdrop-blur-sm flex flex-col justify-between p-3 sm:p-4 md:p-6 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10">
           
           {/* Top: Header & Bio */}
           <div className="space-y-1.5 sm:space-y-3">
@@ -95,10 +95,10 @@ function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
 
       {/* Info Area */}
       <div className="flex flex-col px-1">
-        <p className="text-[9px] font-extrabold tracking-[0.2em] text-neutral-400 uppercase mb-1.5 leading-relaxed">
+        <p className="text-[10px] font-semibold tracking-[0.15em] text-neutral-500 uppercase mb-1.5 leading-relaxed">
           {member.role}
         </p>
-        <h3 className="text-lg font-bold text-neutral-900 tracking-tight leading-none">
+        <h3 className="text-base font-semibold text-neutral-900 tracking-tight leading-none">
           {member.name}
         </h3>
       </div>
@@ -110,12 +110,12 @@ export function TeamSection(): JSX.Element {
   return (
     <section
       id="team"
-      className="py-24 bg-white"
+      className="py-16 md:py-24 lg:py-32 bg-bg-tint"
       aria-labelledby="team-heading"
     >
-      <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
         {/* Header: Refined Split Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1.8fr] gap-12 items-end mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1.8fr] gap-12 items-end mb-16">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -131,7 +131,7 @@ export function TeamSection(): JSX.Element {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl md:text-6xl font-black text-neutral-900 tracking-tight leading-[0.95]"
+              className="text-3xl md:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.1]"
             >
               The People Behind <br />
               <span className="text-neutral-300">the Mission</span>
@@ -144,7 +144,7 @@ export function TeamSection(): JSX.Element {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            <p className="text-lg text-neutral-500 leading-relaxed max-w-xl">
+            <p className="text-[15px] md:text-base text-neutral-600 font-light leading-relaxed max-w-xl">
               Our success is driven by a highly capable team of professionals across Human Resources, Finance, Commercial, Engineering, and Mining, advancing our vision of sustainable, profitable, and safe mining operations.
             </p>
           </motion.div>

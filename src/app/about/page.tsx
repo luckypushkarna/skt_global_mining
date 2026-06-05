@@ -1,6 +1,7 @@
 import AboutUsSection from "@/components/ui/about-us-section";
-import { TeamSection } from "@/components/organisms/TeamSection";
+import Demo from "@/components/ui/demo";
 import { generateMetadata } from "@/lib/seo";
+import { HorizontalSlideCards } from "@/components/ui/horizontal-slide-cards";
 
 export const metadata = generateMetadata({
   title: "About Us",
@@ -10,9 +11,10 @@ export const metadata = generateMetadata({
 
 export default function AboutPage() {
   return (
-    <div className="pt-20">
+    <div className="flex flex-col w-full bg-white pb-16 md:pb-24">
+      <Demo />
       <AboutUsSection />
-      <TeamSection />
+      <HorizontalSlideCards />
     </div>
   );
 }

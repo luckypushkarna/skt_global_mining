@@ -40,12 +40,12 @@ export function PartnersSection(): JSX.Element {
   return (
     <section
       id="partners"
-      className="py-24 bg-neutral-50 border-t border-neutral-100"
+      className="py-16 md:py-24 lg:py-32 bg-bg-soft border-t border-slate-200"
       aria-labelledby="partners-heading"
     >
-      <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
         {/* Header: Symmetrical Split Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1.8fr] gap-12 items-end mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1.8fr] gap-12 items-end mb-16">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -61,7 +61,7 @@ export function PartnersSection(): JSX.Element {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl md:text-6xl font-black text-neutral-900 tracking-tight leading-[0.95]"
+              className="text-3xl md:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.1]"
             >
               Strategic Partnership <br />
               <span className="text-neutral-300"> Ecosystem</span>
@@ -74,7 +74,7 @@ export function PartnersSection(): JSX.Element {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            <p className="text-lg text-neutral-500 leading-relaxed max-w-xl">
+            <p className="text-[15px] md:text-base text-neutral-600 font-light leading-relaxed max-w-xl">
               SKT Global operates as a key mining contractor supporting International Resources Holding (IRH) and Mopani Copper Mines through underground mechanisation, operational infrastructure, and production support systems. Through continuous operational expansion, infrastructure development, and workforce scaling, SKT Global intends to support up to 90% of future IRH/MCM mining operations.
               <br />
               <br />
@@ -110,7 +110,7 @@ export function PartnersSection(): JSX.Element {
                   />
 
                   {/* ── HOVER OVERLAY: Slides up from the bottom ── */}
-                  <div className="absolute inset-0 bg-neutral-950/95 backdrop-blur-sm flex flex-col justify-between p-6 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10">
+                  <div className="absolute inset-0 bg-skt-navy/95 backdrop-blur-sm flex flex-col justify-between p-6 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10">
 
                     {/* Top: Header & Bio */}
                     <div className="space-y-3">
@@ -145,10 +145,10 @@ export function PartnersSection(): JSX.Element {
 
                 {/* Info Area */}
                 <div className="flex flex-col px-1">
-                  <p className="text-[9px] font-extrabold tracking-[0.2em] text-neutral-400 uppercase mb-1.5 leading-relaxed">
+                  <p className="text-[10px] font-semibold tracking-[0.15em] text-neutral-500 uppercase mb-1.5 leading-relaxed">
                     {partner.role}
                   </p>
-                  <h3 className="text-lg font-bold text-neutral-900 tracking-tight leading-none">
+                  <h3 className="text-base font-semibold text-neutral-900 tracking-tight leading-none">
                     {partner.name}
                   </h3>
                 </div>

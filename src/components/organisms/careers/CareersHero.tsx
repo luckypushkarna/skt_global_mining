@@ -197,7 +197,7 @@ export function CareersHero(): JSX.Element {
                     onClick={() => {
                       document.getElementById("open-jobs")?.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 bg-neutral-900 hover:bg-neutral-800 text-white rounded-lg p-2.5 transition-colors shadow-sm"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 bg-skt-navy hover:bg-neutral-800 text-white rounded-lg p-2.5 transition-colors shadow-sm"
                   >
                     <Search size={16} />
                   </button>

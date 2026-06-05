@@ -101,7 +101,7 @@ export function ServiceCard({
 
       {/* Bottom border animation */}
       <motion.div
-        className="absolute bottom-0 left-0 h-0.5 bg-neutral-900"
+        className="absolute bottom-0 left-0 h-0.5 bg-skt-navy"
         initial={{ scaleX: 0, originX: 0 }}
         whileHover={{ scaleX: 1 }}
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}

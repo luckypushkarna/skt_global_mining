@@ -38,12 +38,12 @@ export function ContactSection(): JSX.Element {
   return (
     <section
       id="contact"
-      className="py-section bg-neutral-50"
+      className="py-16 md:py-24 lg:py-32 bg-bg-tint"
       aria-labelledby="contact-heading"
     >
-      <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
         {/* Header */}
-        <div className="mb-16">
+        <div className="mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +60,7 @@ export function ContactSection(): JSX.Element {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-display-lg font-black text-neutral-900 tracking-tight leading-none"
+            className="text-3xl md:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.1]"
           >
             Let&apos;s Build
             <br />
@@ -79,7 +79,7 @@ export function ContactSection(): JSX.Element {
             className="lg:col-span-2 space-y-8"
           >
             <div>
-              <p className="text-base text-neutral-500 leading-relaxed">
+              <p className="text-[15px] md:text-base text-neutral-600 font-light leading-relaxed">
                 Whether you&apos;re looking to partner on a large-scale mining
                 project, need specialized industrial services, or want to explore
                 career opportunities—we&apos;d love to hear from you.
@@ -96,10 +96,10 @@ export function ContactSection(): JSX.Element {
                       <Icon size={14} className="text-neutral-500" />
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold tracking-widest text-neutral-400 uppercase mb-0.5">
+                      <p className="text-[10px] font-semibold tracking-[0.15em] text-neutral-500 uppercase mb-0.5">
                         {item.label}
                       </p>
-                      <p className="text-sm text-neutral-700 leading-relaxed">
+                      <p className="text-sm text-neutral-600 leading-relaxed">
                         {item.value}
                       </p>
                     </div>
@@ -131,7 +131,7 @@ export function ContactSection(): JSX.Element {
 
             {/* Countries */}
             <div className="pt-8 border-t border-neutral-200">
-              <p className="text-[10px] font-bold tracking-widest text-neutral-400 uppercase mb-4">
+              <p className="text-[10px] font-semibold tracking-[0.15em] text-neutral-500 uppercase mb-4">
                 Operating Countries
               </p>
               <div className="flex flex-wrap gap-2">
@@ -147,7 +147,7 @@ export function ContactSection(): JSX.Element {
                 ].map((country) => (
                   <span
                     key={country}
-                    className="px-3 py-1 text-xs border border-neutral-200 text-neutral-500"
+                    className="px-3 py-1 text-xs border border-neutral-200 text-neutral-600 rounded-full bg-white"
                   >
                     {country}
                   </span>
@@ -164,7 +164,7 @@ export function ContactSection(): JSX.Element {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-3"
           >
-            <div className="bg-white border border-neutral-200 p-8 md:p-12">
+            <div className="bg-white border border-neutral-200/80 rounded-2xl p-6 md:p-8 hover:border-neutral-300 transition-colors duration-300">
               <ContactForm />
             </div>
           </motion.div>

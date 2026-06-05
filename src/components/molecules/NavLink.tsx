@@ -46,7 +46,7 @@ export const NavLink = memo(function NavLink({
           layoutId="nav-indicator"
           className={cn(
             "absolute -bottom-1 left-0 right-0 h-px",
-            light ? "bg-white" : "bg-neutral-900"
+            light ? "bg-white" : "bg-skt-navy"
           )}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
         />

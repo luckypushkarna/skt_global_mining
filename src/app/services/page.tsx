@@ -55,7 +55,7 @@ export default function ServicesPage() {
                 className="group relative overflow-hidden rounded-2xl border border-neutral-100 bg-white transition-all duration-500 hover:border-neutral-900 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] flex flex-col"
               >
                 {/* Image */}
-                <div className="relative h-52 overflow-hidden bg-neutral-950">
+                <div className="relative h-52 overflow-hidden bg-skt-navy">
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                     style={{ backgroundImage: `url("${encodeURI(card.bgImage)}")` }}
@@ -71,7 +71,7 @@ export default function ServicesPage() {
                 <div className="flex flex-col flex-1 p-6">
                   {/* Icon + Tags row */}
                   <div className="flex items-center gap-2 mb-4">
-                    <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-neutral-50 border border-neutral-100 text-neutral-700 transition-colors duration-300 group-hover:bg-neutral-900 group-hover:border-neutral-900 group-hover:text-white">
+                    <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-neutral-50 border border-neutral-100 text-neutral-700 transition-colors duration-300 group-hover:bg-skt-navy group-hover:border-neutral-900 group-hover:text-white">
                       <Icon size={15} strokeWidth={1.5} />
                     </div>
                     <div className="flex gap-1.5 flex-wrap">

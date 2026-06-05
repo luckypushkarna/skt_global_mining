@@ -42,6 +42,7 @@ export interface Milestone {
   readonly year: string;
   readonly title: string;
   readonly description: string;
+  readonly logo?: string;
 }
 
 export interface ContactFormData {

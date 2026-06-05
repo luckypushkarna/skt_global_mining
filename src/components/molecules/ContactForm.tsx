@@ -26,9 +26,9 @@ function InputField({
 }: InputFieldProps): JSX.Element {
   return (
     <div className="space-y-2">
-      <label className="block text-xs font-semibold tracking-widest uppercase text-neutral-500">
+      <label className="block text-xs font-semibold tracking-[0.2em] uppercase text-neutral-500">
         {label}
-        {required && <span className="text-neutral-900 ml-1">*</span>}
+        {required && <span className="text-neutral-950 ml-1">*</span>}
       </label>
       {children}
       <AnimatePresence mode="wait">
@@ -51,7 +51,7 @@ function InputField({
 }
 
 const inputBase =
-  "w-full px-4 py-3 bg-neutral-50 border border-neutral-200 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-900 focus:bg-white transition-all duration-200";
+  "w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-lg text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-900 focus:bg-white transition-all duration-200";
 
 export function ContactForm(): JSX.Element {
   const [status, setStatus] = useState<FormStatus>("idle");
@@ -206,7 +206,7 @@ export function ContactForm(): JSX.Element {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="flex items-center gap-3 p-4 bg-neutral-50 border border-neutral-200"
+            className="flex items-center gap-3 p-4 bg-neutral-50 border border-neutral-200 rounded-lg"
             role="status"
             aria-live="polite"
           >
@@ -222,7 +222,7 @@ export function ContactForm(): JSX.Element {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="flex items-center gap-3 p-4 bg-red-50 border border-red-200"
+            className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-lg"
             role="alert"
             aria-live="assertive"
           >
@@ -238,10 +238,10 @@ export function ContactForm(): JSX.Element {
       <Button
         type="submit"
         variant="primary"
-        size="lg"
-        fullWidth
+        size="md"
+        className="w-full md:w-auto"
         isLoading={isSubmitting || status === "loading"}
-        rightIcon={<Send size={16} />}
+        rightIcon={<Send size={14} />}
       >
         Send Message
       </Button>

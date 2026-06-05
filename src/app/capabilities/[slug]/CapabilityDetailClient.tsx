@@ -195,7 +195,7 @@ export function CapabilityDetailClient({ slug }: CapabilityDetailClientProps) {
       {/* ── NAVIGATION FOOTER ──────────────────────────────── */}
       <section className="border-t border-neutral-200">
         <div className="max-w-screen-xl mx-auto px-5 md:px-8 lg:px-12 py-10">
-          
+
           {/* Mobile Stacking Navigation (Hidden on Tablet and Desktop) */}
           <div className="flex flex-col gap-4 sm:hidden select-none">
             {prev && (

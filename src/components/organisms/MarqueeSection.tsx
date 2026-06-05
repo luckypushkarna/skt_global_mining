@@ -9,7 +9,7 @@ export function MarqueeSection(): JSX.Element {
 
   return (
     <div
-      className="py-6 bg-neutral-900 overflow-hidden"
+      className="py-6 bg-skt-navy overflow-hidden"
       aria-hidden="true"
       role="presentation"
     >
@@ -27,7 +27,7 @@ export function MarqueeSection(): JSX.Element {
             key={`${item}-${index}`}
             className="inline-flex items-center gap-8 px-8"
           >
-            <span className="text-xs font-bold tracking-widest text-neutral-400 uppercase">
+            <span className="text-xs font-semibold tracking-widest text-neutral-400 uppercase">
               {item}
             </span>
             <span className="w-1 h-1 rounded-full bg-neutral-600 flex-shrink-0" />

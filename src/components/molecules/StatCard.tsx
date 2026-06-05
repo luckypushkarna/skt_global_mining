@@ -156,7 +156,7 @@ export const StatCard = memo(function StatCard({ stat, index, className }: StatC
               <span
                 ref={cursorRef}
                 aria-hidden="true"
-                className="inline-block w-[3px] h-[0.85em] bg-neutral-900 ml-[2px] align-middle"
+                className="inline-block w-[3px] h-[0.85em] bg-skt-navy ml-[2px] align-middle"
                 style={{
                   animation: "tw-blink 0.75s step-end infinite",
                 }}

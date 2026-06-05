@@ -8,7 +8,7 @@ import { buttonHover } from "@/lib/animations";
 type ButtonVariant = "primary" | "secondary" | "ghost" | "outline" | "link";
 type ButtonSize = "sm" | "md" | "lg" | "xl";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   readonly variant?: ButtonVariant;
   readonly size?: ButtonSize;
   readonly children: ReactNode;
@@ -21,21 +21,21 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-neutral-900 text-white hover:bg-neutral-700 border border-neutral-900",
+    "bg-skt-navy text-white hover:bg-neutral-700 border border-neutral-900",
   secondary:
     "bg-white text-neutral-900 hover:bg-neutral-50 border border-neutral-200",
   ghost:
     "bg-transparent text-neutral-900 hover:bg-neutral-100 border border-transparent",
   outline:
-    "bg-transparent text-neutral-900 hover:bg-neutral-900 hover:text-white border border-neutral-900",
+    "bg-transparent text-neutral-900 hover:bg-skt-navy hover:text-white border border-neutral-900",
   link: "bg-transparent text-neutral-900 underline-offset-4 hover:underline border-none p-0",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
-  sm: "px-4 py-2 text-sm",
-  md: "px-6 py-3 text-base",
-  lg: "px-8 py-4 text-lg",
-  xl: "px-10 py-5 text-xl",
+  sm: "px-4 py-2 text-xs rounded-full",
+  md: "px-5 py-2.5 text-sm rounded-full",
+  lg: "px-6 py-3 text-base rounded-full",
+  xl: "px-8 py-4 text-base rounded-full",
 };
 
 export const Button = memo(

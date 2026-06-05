@@ -10,7 +10,7 @@ export const metadata = generateMetadata({
 
 export default function ProjectsPage(): JSX.Element {
   return (
-    <main className="min-h-screen bg-neutral-950 text-white">
+    <main className="min-h-screen bg-skt-navy text-white">
       <section className="max-w-screen-xl mx-auto px-6 lg:px-12 pt-36 pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-16 items-center">
           <div>
@@ -26,7 +26,7 @@ export default function ProjectsPage(): JSX.Element {
             </p>
           </div>
 
-          <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black aspect-square shadow-2xl">
+          <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-skt-navy aspect-square shadow-2xl">
             <video
               className="absolute inset-0 h-full w-full object-cover"
               src="/videos/projects-infrastructure.mp4"

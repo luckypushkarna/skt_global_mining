@@ -121,10 +121,10 @@ export const CAPABILITIES: Capability[] = [
     slug: "safety-compliance",
     icon: ShieldCheck,
     title: "Safety & Compliance",
-    tagline: "Zero harm — enforced at the rock face.",
+    tagline: "Committed to zero harm — enforced at the rock face.",
     desc: "A safety-first operational framework embedded across every aspect of underground mining with rigorous compliance, training, and workforce protection protocols.",
     overview: "Safety is built directly into our mechanics — enforced physical barriers, automated gas monitoring, mandatory pre-shift hazard isolation, and continuous workforce training. Compliance with international mining safety standards is non-negotiable across every shift, every machine, every meter underground.",
-    tags: ["Zero Harm", "Compliance Systems", "Continuous Training"],
+    tags: ["Zero Harm Commitment", "Compliance Systems", "Continuous Training"],
     bgImage: "/Safety & Compliance-card.webp",
   },
   {
