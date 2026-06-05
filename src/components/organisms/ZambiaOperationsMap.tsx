@@ -226,7 +226,7 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
                     setActiveLocationId(location.id);
                     setViewport({
                       center: [location.lng, location.lat],
-                      zoom: 9.5,
+                      zoom: 16,
                     });
                   }}
                 >
@@ -259,10 +259,44 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
                   </MarkerContent>
 
                   {/* Tooltip on hover */}
-                  <MarkerTooltip className="!bg-[#1a1f2e] !text-white !rounded-lg !shadow-xl !border !border-white/10 !px-3 !py-1.5 animate-fade-in">
-                    <p className="text-xs font-semibold whitespace-nowrap text-white">
-                      {location.name}
-                    </p>
+                  <MarkerTooltip className="!bg-[#1a1f2e] !text-white !rounded-xl !shadow-2xl !border !border-white/10 !p-0 !max-w-[280px] animate-fade-in z-50">
+                    <div className="p-4 space-y-3">
+                      {/* Header */}
+                      <div className="flex items-start justify-between gap-3">
+                        <div>
+                          <p className="text-base font-bold text-white leading-tight">
+                            {location.name}
+                          </p>
+                          <p
+                            style={{ color: markerColor }}
+                            className="text-[10px] font-semibold tracking-widest uppercase mt-1"
+                          >
+                            {location.role}
+                          </p>
+                        </div>
+                        {location.type === "primary" && (
+                          <span
+                            style={{ backgroundColor: markerColor }}
+                            className="text-[9px] font-bold tracking-wider px-2 py-0.5 rounded-full text-white shrink-0"
+                          >
+                            HQ
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-xs text-white/60 leading-relaxed">
+                        {location.description}
+                      </p>
+
+                      {/* Coordinates */}
+                      <div className="pt-2 border-t border-white/10">
+                        <p className="text-[10px] text-white/30 font-mono">
+                          {Math.abs(location.lat).toFixed(4)}°S,{" "}
+                          {location.lng.toFixed(4)}°E
+                        </p>
+                      </div>
+                    </div>
                   </MarkerTooltip>
 
                   {/* Popup on click */}
@@ -313,8 +347,8 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
             })}
           </Map>
 
-          {/* ── Interactive Locations Control Panel (left-center) ── */}
-          <div className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-[#0B0F19]/95 backdrop-blur-md rounded-xl p-3 sm:p-4 border border-white/10 shadow-2xl z-10 w-52 sm:w-60 pointer-events-auto">
+          {/* ── Interactive Locations Control Panel (bottom-left) ── */}
+          <div className="absolute left-2 sm:left-4 bottom-2 sm:bottom-6 bg-[#0B0F19]/95 backdrop-blur-md rounded-xl p-3 sm:p-4 border border-white/10 shadow-2xl z-10 w-52 sm:w-60 pointer-events-auto">
             <p className="text-[9px] font-bold tracking-[0.2em] uppercase text-white/40 mb-2 sm:mb-3">
               Operational Sites
             </p>
@@ -331,7 +365,7 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
                       setActiveLocationId(loc.id);
                       setViewport({
                         center: [loc.lng, loc.lat],
-                        zoom: 9.5,
+                        zoom: 16,
                       });
                       setTimeout(() => {
                         const el = document.getElementById(`map-marker-${loc.id}`);
