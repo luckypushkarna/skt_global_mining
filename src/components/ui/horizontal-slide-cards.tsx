@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export function HorizontalSlideCards() {
@@ -42,10 +43,12 @@ export function HorizontalSlideCards() {
             </div>
             
             <div className="relative aspect-[1.8/1] w-full overflow-hidden rounded-2xl border border-neutral-100 shadow-inner">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&auto=format&fit=crop&q=80"
                 alt="Operational Footprint"
-                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transform hover:scale-105 transition-transform duration-700"
               />
             </div>
           </motion.div>
@@ -65,10 +68,12 @@ export function HorizontalSlideCards() {
             </div>
             
             <div className="relative aspect-[1.8/1] w-full overflow-hidden rounded-2xl border border-neutral-100 shadow-inner">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&auto=format&fit=crop&q=80"
                 alt="Our Commitment"
-                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transform hover:scale-105 transition-transform duration-700"
               />
             </div>
           </motion.div>

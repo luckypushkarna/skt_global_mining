@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import Image from 'next/image';
 import { X } from 'lucide-react';
 
 // ==========================================
@@ -338,12 +339,14 @@ const SphereImageGrid: React.FC<SphereImageGridProps> = ({
                 <div className={`relative w-full h-full rounded-full overflow-hidden shadow-lg border-2 transition-all duration-300 ${
                   isHovered ? 'border-white scale-105 shadow-[0_0_15px_rgba(255,255,255,0.4)]' : 'border-white/10'
                 }`}>
-                  <img
+                  <Image
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="150px"
+                    className="object-cover"
                     draggable={false}
-                    loading={index < 3 ? 'eager' : 'lazy'}
+                    priority={index < 3}
                   />
                 </div>
               </div>
@@ -364,7 +367,13 @@ const SphereImageGrid: React.FC<SphereImageGridProps> = ({
             style={{ animation: 'sphereScaleIn 0.25s ease-out' }}
           >
             <div className="relative aspect-square">
-              <img src={selectedImage.src} alt={selectedImage.alt} className="w-full h-full object-cover" />
+              <Image
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                fill
+                sizes="(max-width: 384px) 100vw, 384px"
+                className="object-cover"
+              />
               <button
                 onClick={() => setSelectedImage(null)}
                 className="absolute top-3 right-3 w-8 h-8 bg-skt-navy/60 rounded-full text-white flex items-center justify-center hover:bg-skt-navy/80 transition-all cursor-pointer"

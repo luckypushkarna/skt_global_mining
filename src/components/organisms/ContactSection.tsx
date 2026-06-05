@@ -2,12 +2,19 @@
 
 import { JSX } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, LucideIcon } from "lucide-react";
 import { Badge } from "@/components/atoms/Badge";
 import { ContactForm } from "@/components/molecules/ContactForm";
 import { SITE_CONFIG } from "@/lib/constants";
 
-const CONTACT_INFO = [
+interface ContactItem {
+  icon: LucideIcon;
+  label: string;
+  value: string;
+  href?: string;
+}
+
+const CONTACT_INFO: readonly ContactItem[] = [
   {
     icon: Phone,
     label: "Phone",
@@ -26,7 +33,8 @@ const CONTACT_INFO = [
     value: SITE_CONFIG.address,
     href: "https://maps.google.com",
   },
-] as const;
+];
+
 
 export function ContactSection(): JSX.Element {
   return (

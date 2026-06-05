@@ -1,0 +1,3 @@
+[submodule "mapcn"]
+	path = mapcn
+	url = https://github.com/AnmolSaini16/mapcn.git

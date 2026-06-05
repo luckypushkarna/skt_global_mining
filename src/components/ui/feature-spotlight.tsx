@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button, type ButtonProps } from "@/components/atoms/Button";
@@ -140,10 +141,12 @@ const AnimatedFeatureSpotlight = React.forwardRef<HTMLElement, AnimatedFeatureSp
             {/* Subtle background glow behind the image */}
             <div className="absolute w-48 h-48 rounded-full bg-neutral-200/50 blur-3xl" />
             
-            <img
+            <Image
               src={imageUrl}
               alt={imageAlt}
-              className="w-full max-w-md object-cover rounded-lg shadow-lg border border-neutral-200/60 transform transition-transform duration-500 hover:scale-105 animate-float relative z-10"
+              width={500}
+              height={500}
+              className="w-full h-auto max-w-md object-cover rounded-lg shadow-lg border border-neutral-200/60 transform transition-transform duration-500 hover:scale-105 animate-float relative z-10"
             />
           </motion.div>
         </motion.div>
