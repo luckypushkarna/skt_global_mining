@@ -1,75 +1,50 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
 
 export function ESGBanner() {
   return (
-    <div className="relative w-full h-[88vh] min-h-[620px] overflow-hidden bg-slate-950">
-      {/* Video Background */}
+    <section className="relative w-full min-h-[72vh] lg:min-h-[82vh] bg-black overflow-hidden mt-16">
+      {/* Video Background - raw, no filters */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-35"
+        className="absolute inset-0 w-full h-full object-cover"
       >
         <source src="/videos/gallery-sustainability-optimized.mp4" type="video/mp4" />
       </video>
 
-      {/* Fallback / overlay image */}
-      <Image
-        src="/Mechanised Fleet.webp"
-        alt="SKT Global Mining operations"
-        fill
-        className="object-cover opacity-20 mix-blend-luminosity"
-        priority
-      />
-
-      {/* Multi-layer overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-900/30 to-[#FAFAFA]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/40 to-transparent" />
-
-      {/* Thin emerald accent bar at top */}
-      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-500 via-emerald-400 to-transparent" />
-
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-end pb-20 lg:pb-28">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 min-h-[72vh] lg:min-h-[82vh] flex flex-col justify-end pb-16 lg:pb-24">
         <motion.div
-          initial={{ opacity: 0, y: 32 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-3xl"
+          className="max-w-2xl"
         >
           {/* Eyebrow */}
-          <div className="flex items-center gap-3 mb-7">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-slate-400">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-500 inline-block" />
+            <span className="text-[10px] font-semibold tracking-[0.25em] uppercase text-white/95 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
               Sustainability · ESG Overview
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.03] text-white mb-6">
-            Building a Legacy
-            <br />
-            <span className="text-slate-400 font-light">Beyond Extraction</span>
+          <h1 className="text-xl md:text-2xl font-semibold tracking-tight text-white mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+            Building a Legacy{" "}
+            <span className="text-white/80">Beyond Extraction</span>
           </h1>
 
           {/* Sub */}
-          <p className="text-lg md:text-xl text-slate-300 font-light leading-relaxed max-w-2xl mb-10">
+          <p className="text-xs md:text-sm text-white/90 leading-relaxed font-normal drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
             At SKT Global, environmental stewardship, social responsibility, and governance
             aren&apos;t policies — they are the foundation of how we operate every single day.
           </p>
-
-          {/* Scroll cue */}
-          <div className="flex items-center gap-2 text-slate-500">
-            <ArrowDown size={14} className="animate-bounce" />
-            <span className="text-xs tracking-widest uppercase">Scroll to explore</span>
-          </div>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 }

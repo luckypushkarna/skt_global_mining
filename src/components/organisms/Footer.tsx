@@ -158,7 +158,6 @@ export function Footer(): JSX.Element {
               { label: "Terms of Service", href: "/terms" },
               { label: "Cookie Policy", href: "/cookies" },
               { label: "Accessibility", href: "/accessibility" },
-              { label: "Modern Slavery", href: "/modern-slavery" },
               { label: "Anti-Bribery", href: "/anti-bribery" },
               { label: "Sitemap", href: "/sitemap.xml" },
             ].map((item) => (

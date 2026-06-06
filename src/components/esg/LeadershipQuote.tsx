@@ -9,7 +9,7 @@ export function LeadershipQuote() {
           <div className="relative">
             {/* Decorative frame */}
             <div className="absolute -top-3 -left-3 w-full h-full border border-emerald-200" />
-            <div className="relative w-48 h-56 lg:w-56 lg:h-64 overflow-hidden bg-slate-100 grayscale hover:grayscale-0 transition-all duration-700">
+            <div className="relative w-48 h-56 lg:w-56 lg:h-64 overflow-hidden bg-slate-100">
               <Image
                 src="/Raj Sir Photo.webp"
                 alt="Raj Talreja — Chairman, SKT Global Mining"

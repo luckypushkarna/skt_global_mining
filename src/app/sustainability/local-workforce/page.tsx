@@ -19,7 +19,7 @@ export default function LocalWorkforcePage(): JSX.Element {
         title={localWorkforce.title}
         titleAccent={localWorkforce.titleAccent}
         intro={localWorkforce.intro}
-        image={localWorkforce.heroImage}
+        video="/local-workforce-bg.mp4"
         accent={localWorkforce.accentColor}
       />
       <StatsRow stats={localWorkforce.stats} accent={localWorkforce.accentColor} />

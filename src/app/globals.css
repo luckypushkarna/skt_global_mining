@@ -209,6 +209,10 @@
     overflow: hidden;
     clip-path: inset(0);
   }
+
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
 }
 
 /* ─── Component Styles ────────────────────────────────────────────────────── */

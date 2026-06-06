@@ -58,7 +58,7 @@ export function PrincipleSection() {
                       src={principle.image}
                       alt={principle.title}
                       fill
-                      className="object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-[1.02] hover:scale-100"
+                      className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 60vw"
                     />
                     {/* Caption */}

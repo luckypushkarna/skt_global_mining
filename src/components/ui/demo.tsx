@@ -131,7 +131,13 @@ const MediaContent = () => {
 
 const Demo = () => {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Only reset scroll on fresh/forward navigation.
+    // On Back navigation, SmoothScrollProvider handles restoration — don't fight it.
+    const savedPos = sessionStorage.getItem('__scroll__/');
+    const isBackNav = savedPos && parseInt(savedPos, 10) > 100;
+    if (!isBackNav) {
+      window.scrollTo(0, 0);
+    }
 
     const resetEvent = new Event('resetSection');
     window.dispatchEvent(resetEvent);

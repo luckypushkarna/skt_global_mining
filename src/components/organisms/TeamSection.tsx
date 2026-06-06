@@ -1,6 +1,7 @@
 "use client";
 
 import { type JSX } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ImageWithSkeleton } from "@/components/ui/image-with-skeleton";
 import { Badge } from "@/components/atoms/Badge";
@@ -48,64 +49,66 @@ function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
       variants={itemVariants}
       className="group flex flex-col cursor-pointer"
     >
-      {/* Portrait Area */}
-      <div className="relative aspect-[0.95/1.1] overflow-hidden rounded-xl bg-neutral-50 mb-5 border border-neutral-100">
-        <ImageWithSkeleton
-          src={imgSrc}
-          alt={member.name}
-          fill
-          className={`object-cover transition-transform duration-700 ease-out scale-100 group-hover:scale-[1.03] ${
-            ["sahil-talreja", "anand-kolappa-pillai"].includes(member.id) 
-              ? "mix-blend-multiply" 
-              : ""
-          }`}
-          sizes="(max-w-768px) 100vw, 25vw"
-          skeletonClassName="rounded-xl"
-        />
+      <Link href={`/about/leaders?id=${member.id}`} className="flex flex-col h-full w-full">
+        {/* Portrait Area */}
+        <div className="relative aspect-[0.95/1.1] overflow-hidden rounded-xl bg-neutral-50 mb-5 border border-neutral-100">
+          <ImageWithSkeleton
+            src={imgSrc}
+            alt={member.name}
+            fill
+            className={`object-cover transition-transform duration-700 ease-out scale-100 group-hover:scale-[1.03] ${
+              ["sahil-talreja", "anand-kolappa-pillai"].includes(member.id) 
+                ? "mix-blend-multiply" 
+                : ""
+            }`}
+            sizes="(max-w-768px) 100vw, 25vw"
+            skeletonClassName="rounded-xl"
+          />
 
-        {/* ── HOVER OVERLAY: Slides up from the bottom (Reference Match) ── */}
-        <div className="absolute inset-0 bg-skt-navy/95 backdrop-blur-sm flex flex-col justify-between p-3 sm:p-4 md:p-6 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10">
-          
-          {/* Top: Header & Bio */}
-          <div className="space-y-1.5 sm:space-y-3">
-            <h4 className="text-xs sm:text-sm md:text-lg lg:text-xl font-bold text-white tracking-tight leading-snug">
-              {details.title}
-            </h4>
-            <p className="text-[10px] sm:text-xs text-white/80 leading-relaxed font-medium">
-              {member.bio}
-            </p>
-          </div>
-
-          {/* Bottom: Interactive Gray Action Bar */}
-          <div className="flex items-center justify-between mt-auto pt-2 sm:pt-4">
-            <div className="flex items-center gap-2 sm:gap-3">
-              {/* Gray square button with arrow */}
-              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-neutral-200 text-neutral-900 flex items-center justify-center rounded-[6px] shadow-sm select-none">
-                <span className="text-xs sm:text-base font-bold">→</span>
-              </div>
-              <span className="text-[9px] sm:text-xs font-bold tracking-tight text-white">
-                {details.action}
-              </span>
-            </div>
+          {/* ── HOVER OVERLAY: Slides up from the bottom (Reference Match) ── */}
+          <div className="absolute inset-0 bg-skt-navy/95 backdrop-blur-sm flex flex-col justify-between p-3 sm:p-4 md:p-6 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10">
             
-            {/* Gray square button with minus */}
-            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-neutral-200 text-neutral-900 flex items-center justify-center rounded-[6px] shadow-sm select-none">
-              <span className="text-xs sm:text-base font-bold">—</span>
+            {/* Top: Header & Bio */}
+            <div className="space-y-1.5 sm:space-y-3">
+              <h4 className="text-xs sm:text-sm md:text-lg lg:text-xl font-bold text-white tracking-tight leading-snug">
+                {details.title}
+              </h4>
+              <p className="text-[10px] sm:text-xs text-white/80 leading-relaxed font-medium">
+                {member.bio}
+              </p>
             </div>
+
+            {/* Bottom: Interactive Gray Action Bar */}
+            <div className="flex items-center justify-between mt-auto pt-2 sm:pt-4">
+              <div className="flex items-center gap-2 sm:gap-3">
+                {/* Gray square button with arrow */}
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-neutral-200 text-neutral-900 flex items-center justify-center rounded-[6px] shadow-sm select-none">
+                  <span className="text-xs sm:text-base font-bold">→</span>
+                </div>
+                <span className="text-[9px] sm:text-xs font-bold tracking-tight text-white">
+                  {details.action}
+                </span>
+              </div>
+              
+              {/* Gray square button with minus */}
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-neutral-200 text-neutral-900 flex items-center justify-center rounded-[6px] shadow-sm select-none">
+                <span className="text-xs sm:text-base font-bold">—</span>
+              </div>
+            </div>
+
           </div>
-
         </div>
-      </div>
 
-      {/* Info Area */}
-      <div className="flex flex-col px-1">
-        <p className="text-[10px] font-semibold tracking-[0.15em] text-neutral-500 uppercase mb-1.5 leading-relaxed">
-          {member.role}
-        </p>
-        <h3 className="text-base font-semibold text-neutral-900 tracking-tight leading-none">
-          {member.name}
-        </h3>
-      </div>
+        {/* Info Area */}
+        <div className="flex flex-col px-1">
+          <p className="text-[10px] font-semibold tracking-[0.15em] text-neutral-500 uppercase mb-1.5 leading-relaxed">
+            {member.role}
+          </p>
+          <h3 className="text-base font-semibold text-neutral-900 tracking-tight leading-none">
+            {member.name}
+          </h3>
+        </div>
+      </Link>
     </motion.div>
   );
 }

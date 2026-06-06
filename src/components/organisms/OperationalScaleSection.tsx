@@ -74,11 +74,14 @@ function StatCard({
   const numericValue = isNumeric ? parseInt(stat.value, 10) : 0;
 
   const [started, setStarted] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
     if (!sectionStarted) return;
     const t = setTimeout(() => setStarted(true), index * 100);
     return () => clearTimeout(t);
   }, [sectionStarted, index]);
+
 
   return (
     <motion.div
@@ -86,7 +89,12 @@ function StatCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
-      className="bg-bg-pure p-4 sm:p-8 hover:bg-bg-tint transition-all duration-300 flex flex-col justify-between group cursor-default relative overflow-hidden"
+      onClick={() => {
+        if (typeof window !== "undefined" && window.innerWidth < 640) {
+          setIsOpen(!isOpen);
+        }
+      }}
+      className="bg-bg-pure p-4 sm:p-8 hover:bg-bg-tint transition-all duration-300 flex flex-col justify-between group cursor-pointer sm:cursor-default relative overflow-hidden h-[150px] sm:h-[230px]"
     >
       {/* Top Accent Hover Line */}
       <div className="absolute top-0 left-0 w-full h-[2px] bg-rose-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
@@ -123,15 +131,59 @@ function StatCard({
         </div>
 
         {/* Title Label */}
-        <h3 className="text-data-label mb-1.5 sm:mb-2">
+        <h3 className="text-data-label mb-1.5 sm:mb-2 text-left">
           {stat.label}
         </h3>
       </div>
 
-      {/* Description */}
-      <p className="text-body-sm text-neutral-600 mt-1 max-w-[260px] group-hover:text-neutral-700 transition-colors duration-300">
+      {/* Description (visible on desktop only) */}
+      <p className="hidden sm:block text-body-sm text-neutral-600 mt-1 max-w-[260px] group-hover:text-neutral-700 transition-colors duration-300">
         {stat.description}
       </p>
+
+      {/* ── HOVER/CLICK BLUE OVERLAY (visible on mobile only) ── */}
+      <div
+        className={`absolute inset-0 bg-skt-navy/95 backdrop-blur-sm flex flex-col justify-between p-4 sm:p-8 text-white transition-transform duration-500 ease-out z-10 sm:hidden ${
+          isOpen ? "translate-y-0" : "translate-y-full"
+        }`}
+      >
+        <div className="space-y-1.5 sm:space-y-3 text-left">
+          <h4 className="text-xs sm:text-sm md:text-lg lg:text-xl font-bold text-white tracking-tight leading-snug">
+            Focusing on {stat.label}
+          </h4>
+          <p className="text-[10px] sm:text-xs text-white/80 leading-relaxed font-medium">
+            {stat.description}
+          </p>
+        </div>
+
+        {/* Bottom: Close Bar (aligns with the morphing close button on the right) */}
+        <div className="flex items-center justify-between mt-auto pt-2 sm:pt-4">
+          <span className="text-[9px] sm:text-xs font-bold tracking-tight text-white/60">
+            Tap to close
+          </span>
+          
+          {/* Spacer to reserve room for the absolute z-20 morphing button */}
+          <div className="w-6 h-6 sm:w-8 sm:h-8 invisible" />
+        </div>
+      </div>
+
+      {/* Morphing Toggle Button (always on top, visible on mobile only) */}
+      <div className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 w-6 h-6 sm:w-8 sm:h-8 bg-neutral-200 text-neutral-900 flex items-center justify-center rounded-[6px] shadow-sm select-none z-20 sm:hidden">
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="w-3 h-3 sm:w-4 sm:h-4 relative flex items-center justify-center"
+        >
+          {/* Horizontal line */}
+          <span className="absolute w-full h-[2px] bg-neutral-900 rounded-full" />
+          {/* Vertical line */}
+          <motion.span
+            animate={{ scaleY: isOpen ? 0 : 1 }}
+            transition={{ duration: 0.25 }}
+            className="absolute w-[2px] h-full bg-neutral-900 rounded-full"
+          />
+        </motion.div>
+      </div>
     </motion.div>
   );
 }
@@ -214,10 +266,10 @@ export function OperationalScaleSection(): JSX.Element {
           </div>
         </div>
 
-        {/* ── Stats Grid (2-column Grid on Mobile/Tablet, 3-column Grid on Desktop) ── */}
+        {/* ── Stats Grid (Responsive 2-to-3 column Grid) ── */}
         <div
           ref={statsRef}
-          className="grid grid-cols-2 lg:grid-cols-3 gap-[1px] bg-neutral-200/50 border border-neutral-200/50 rounded-2xl overflow-hidden shadow-sm select-none"
+          className="grid grid-cols-2 sm:grid-cols-3 gap-[1px] bg-neutral-200/50 border border-neutral-200/50 rounded-2xl overflow-hidden shadow-sm select-none"
         >
           {STATS.map((stat, index) => (
             <StatCard

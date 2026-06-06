@@ -282,13 +282,12 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
       pitch: viewport.pitch ?? current.pitch,
     };
 
-    const isClose = (a: number, b: number, epsilon = 0.00001) => Math.abs(a - b) < epsilon;
     if (
-      isClose(next.center[0], current.center[0]) &&
-      isClose(next.center[1], current.center[1]) &&
-      isClose(next.zoom, current.zoom, 0.001) &&
-      isClose(next.bearing, current.bearing, 0.001) &&
-      isClose(next.pitch, current.pitch, 0.001)
+      next.center[0] === current.center[0] &&
+      next.center[1] === current.center[1] &&
+      next.zoom === current.zoom &&
+      next.bearing === current.bearing &&
+      next.pitch === current.pitch
     ) {
       return;
     }
@@ -515,7 +514,7 @@ function MarkerContent({ children, className }: MarkerContentProps) {
 
 function DefaultMarkerIcon() {
   return (
-    <div className="relative h-4 w-4 rounded-full border-2 border-white bg-skt-blue shadow-lg" />
+    <div className="relative h-4 w-4 rounded-full border-2 border-white bg-blue-500 shadow-lg" />
   );
 }
 
@@ -1740,6 +1739,7 @@ function MapClusterLayer<
 
       const feature = features[0];
       if (!feature) return;
+      
       const clusterId = feature.properties?.cluster_id as number;
       const pointCount = feature.properties?.point_count as number;
       const coordinates = (feature.geometry as GeoJSON.Point).coordinates as [
@@ -1770,6 +1770,7 @@ function MapClusterLayer<
 
       const feature = e.features[0];
       if (!feature) return;
+      
       const coordinates = (
         feature.geometry as GeoJSON.Point
       ).coordinates.slice() as [number, number];
