@@ -30,16 +30,26 @@ export function FleetPartners() {
         {/* Partner names — typography-only list */}
         <div className="border-t border-slate-200 pt-12">
           <div className="flex flex-wrap gap-x-12 gap-y-6 items-center">
-            {partners.list.map((partner, i) => (
-              <div key={partner} className="flex items-center gap-12">
-                <span className="text-xl lg:text-3xl font-semibold text-slate-300 tracking-tight hover:text-slate-600 transition-colors duration-200 cursor-default">
-                  {partner}
-                </span>
-                {i < partners.list.length - 1 && (
-                  <span className="hidden lg:block w-px h-5 bg-slate-200" />
-                )}
-              </div>
-            ))}
+            {partners.list.map((partner, i) => {
+              const partnersColors: Record<string, string> = {
+                "Caterpillar": "text-[#FFB800] hover:text-[#FFC20E] drop-shadow-[0_1px_0_rgba(0,0,0,0.02)]",
+                "Sandvik": "text-[#E30613] hover:text-[#FF1F2F]",
+                "Epiroc": "text-[#FFB300] hover:text-[#FFD100] drop-shadow-[0_1px_0_rgba(0,0,0,0.02)]",
+                "Atlas Copco": "text-[#004B87] hover:text-[#00639C]",
+                "Komatsu": "text-[#0054A6] hover:text-[#0072CE]",
+                "Volvo CE": "text-[#FDB813] hover:text-[#FFCC00] drop-shadow-[0_1px_0_rgba(0,0,0,0.02)]"
+              };
+              return (
+                <div key={partner} className="flex items-center gap-12">
+                  <span className={`text-xl lg:text-3xl font-semibold tracking-tight transition-all duration-300 hover:scale-105 cursor-default ${partnersColors[partner] || "text-slate-400"}`}>
+                    {partner}
+                  </span>
+                  {i < partners.list.length - 1 && (
+                    <span className="hidden lg:block w-px h-5 bg-slate-200" />
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
 

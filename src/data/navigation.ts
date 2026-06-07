@@ -12,7 +12,6 @@ import {
   Heart,
   Network,
   Newspaper,
-  Mail,
   type LucideIcon,
 } from "lucide-react";
 
@@ -64,7 +63,7 @@ export const aboutSection: NavSection = {
     },
     {
       title: "Global Presence",
-      href: "/about",
+      href: "/about/global-presence",
       icon: Globe,
     },
   ],
@@ -166,11 +165,6 @@ export const mediaSection: NavSection = {
     },
   ],
   links: [
-    {
-      title: "Contact Us",
-      href: "/media/contact-us",
-      icon: Mail,
-    },
     {
       title: "Privacy Policy",
       href: "/media/privacy-policy",

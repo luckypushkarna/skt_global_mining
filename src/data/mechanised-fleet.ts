@@ -22,7 +22,7 @@ export const MECHANISED_FLEET = {
       type: "Load-Haul-Dump (LHD)",
       count: "62 units",
       desc: "Underground loaders for ore transport from production face to ore pass. Capacities range from 7 to 21 tonnes per cycle. Operated from enclosed, air-conditioned cabins.",
-      image: "/HEAVYLODER.webp",
+      image: "/lhd-loader.jpg",
       models: ["Caterpillar R1700", "Sandvik LH514", "Epiroc Scooptram ST14"],
     },
     {
@@ -30,7 +30,7 @@ export const MECHANISED_FLEET = {
       type: "Underground Trucks",
       count: "48 units",
       desc: "Articulated dump trucks for long-distance ore haulage along main declines. Payloads from 30 to 65 tonnes. Hydraulic braking systems certified for underground incline grades.",
-      image: "/TRUCK.webp",
+      image: "/underground-truck.jpg",
       models: ["Caterpillar AD45B", "Sandvik TH551i", "Atlas Copco MT65"],
     },
     {
@@ -38,7 +38,7 @@ export const MECHANISED_FLEET = {
       type: "Drill Rigs",
       count: "54 units",
       desc: "Twin-boom production drills and development jumbos. Hydraulic systems for precision face drilling. Computer-assisted boom positioning for consistent blast pattern accuracy.",
-      image: "/PICEKR.webp",
+      image: "/drill-rig.jpg",
       models: ["Sandvik DD422i", "Atlas Copco Boomer", "Epiroc Boomer M2"],
     },
     {
@@ -46,7 +46,7 @@ export const MECHANISED_FLEET = {
       type: "Bolters & Ground Support",
       count: "28 units",
       desc: "Roof bolters and ground support installation equipment. Automated bolt insertion maintains face stability throughout development and production phases.",
-      image: "/ROOLER.webp",
+      image: "/bolter-support.jpg",
       models: ["Sandvik DS412i", "Atlas Copco Roofex", "Robolt Systems"],
     },
     {
@@ -54,7 +54,7 @@ export const MECHANISED_FLEET = {
       type: "Service & Utility",
       count: "35 units",
       desc: "Personnel carriers, supply vehicles, fuel and lube units, and emergency response vehicles. Maintains operational continuity across all active underground levels.",
-      image: "/LOADER.webp",
+      image: "/utility-service.png",
       models: ["Toyota Land Cruiser HZJ", "MEM Mining Vehicles", "Custom carriers"],
     },
   ],

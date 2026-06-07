@@ -19,24 +19,24 @@
     /* ═══ PREMIUM DESIGN TOKENS ═══ */
 
     /* Backgrounds */
-    --bg-soft:   #FAFAFA;
-    --bg-tint:   #F4F7FA;
-    --bg-steel:  #F0F4F8;
-    --bg-pure:   #FFFFFF;
-    --bg-dark:   #0F172A;
+    --bg-soft: #FAFAFA;
+    --bg-tint: #F4F7FA;
+    --bg-steel: #F0F4F8;
+    --bg-pure: #FFFFFF;
+    --bg-dark: #0F172A;
 
     /* Text — Deep slate hierarchy */
-    --ink:       #0F172A;
-    --ink-dark:  #1E293B;
-    --ink-mid:   #475569;
-    --ink-soft:  #64748B;
-    --ink-mute:  #94A3B8;
+    --ink: #0F172A;
+    --ink-dark: #1E293B;
+    --ink-mid: #475569;
+    --ink-soft: #64748B;
+    --ink-mute: #94A3B8;
 
     /* Brand */
-    --skt-blue:      #1E6F9F;
+    --skt-blue: #1E6F9F;
     --skt-blue-deep: #145A85;
-    --skt-red:       #E63027;
-    --skt-red-deep:  #B81F18;
+    --skt-red: #E63027;
+    --skt-red-deep: #B81F18;
   }
 }
 
@@ -259,14 +259,14 @@
     border: 1px solid #E2E8F0;
     border-radius: 16px;
     box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04),
-                0 1px 2px rgba(15, 23, 42, 0.06);
+      0 1px 2px rgba(15, 23, 42, 0.06);
     transition: all 300ms ease;
   }
 
   .card-elevated:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08),
-                0 4px 12px rgba(15, 23, 42, 0.05);
+      0 4px 12px rgba(15, 23, 42, 0.05);
     border-color: #CBD5E1;
   }
 
@@ -730,46 +730,156 @@ body {
 
 @layer utilities {
   @keyframes fade-in-0 {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  @keyframes fade-out-0 {
-    from { opacity: 1; }
-    to { opacity: 0; }
-  }
-  @keyframes zoom-in-95 {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-  }
-  @keyframes zoom-out-95 {
-    from { opacity: 1; transform: scale(1); }
-    to { opacity: 0; transform: scale(0.95); }
-  }
-  @keyframes slide-in-from-right-4 {
-    from { transform: translateX(1rem); }
-    to { transform: translateX(0); }
-  }
-  @keyframes slide-in-from-left-4 {
-    from { transform: translateX(-1rem); }
-    to { transform: translateX(0); }
-  }
-  @keyframes slide-out-to-right-4 {
-    from { transform: translateX(0); }
-    to { transform: translateX(1rem); }
-  }
-  @keyframes slide-out-to-left-4 {
-    from { transform: translateX(0); }
-    to { transform: translateX(-1rem); }
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
   }
 
-  .animate-in { animation-duration: 200ms; animation-fill-mode: both; }
-  .animate-out { animation-duration: 150ms; animation-fill-mode: both; }
-  .fade-in-0 { animation-name: fade-in-0; }
-  .fade-out-0 { animation-name: fade-out-0; }
-  .zoom-in-95 { animation-name: zoom-in-95; }
-  .zoom-out-95 { animation-name: zoom-out-95; }
-  .slide-in-from-right-4 { animation-name: slide-in-from-right-4; }
-  .slide-in-from-left-4 { animation-name: slide-in-from-left-4; }
-  .slide-out-to-right-4 { animation-name: slide-out-to-right-4; }
-  .slide-out-to-left-4 { animation-name: slide-out-to-left-4; }
+  @keyframes fade-out-0 {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes zoom-in-95 {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes zoom-out-95 {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    to {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+  }
+
+  @keyframes slide-in-from-right-4 {
+    from {
+      transform: translateX(1rem);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-from-left-4 {
+    from {
+      transform: translateX(-1rem);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-out-to-right-4 {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(1rem);
+    }
+  }
+
+  @keyframes slide-out-to-left-4 {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-1rem);
+    }
+  }
+
+  .animate-in {
+    animation-duration: 200ms;
+    animation-fill-mode: both;
+  }
+
+  .animate-out {
+    animation-duration: 150ms;
+    animation-fill-mode: both;
+  }
+
+  .fade-in-0 {
+    animation-name: fade-in-0;
+  }
+
+  .fade-out-0 {
+    animation-name: fade-out-0;
+  }
+
+  .zoom-in-95 {
+    animation-name: zoom-in-95;
+  }
+
+  .zoom-out-95 {
+    animation-name: zoom-out-95;
+  }
+
+  .slide-in-from-right-4 {
+    animation-name: slide-in-from-right-4;
+  }
+
+  .slide-in-from-left-4 {
+    animation-name: slide-in-from-left-4;
+  }
+
+  .slide-out-to-right-4 {
+    animation-name: slide-out-to-right-4;
+  }
+
+  .slide-out-to-left-4 {
+    animation-name: slide-out-to-left-4;
+  }
+}
+
+@keyframes scrollLine {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(300%);
+  }
+}
+
+.animate-scroll-line {
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0% {
+    top: -33%;
+  }
+
+  100% {
+    top: 133%;
+  }
+}
+
+.animate-scroll-pulse {
+  animation: scrollPulse 2.5s ease-in-out infinite;
 }

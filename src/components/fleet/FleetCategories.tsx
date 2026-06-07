@@ -42,7 +42,7 @@ export function FleetCategories() {
                       alt={`${cat.type} — underground mining equipment`}
                       fill
                       sizes="(max-width: 1024px) 100vw, 60vw"
-                      className="object-cover"
+                      className="object-contain bg-white"
                     />
                     {/* Badge */}
                     <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5">

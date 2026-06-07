@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
+import { motion } from "framer-motion";
 
 const leaders = [
   {
@@ -580,93 +581,99 @@ function LeadersContent() {
       className="min-h-screen bg-white"
       style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" }}
     >
-      {/* ── Circular Leader Selector ── */}
-      <div className="w-full border-b border-gray-100 bg-white pt-[76px] pb-2">
+      {/* ── Premium Editorial Leadership Showcase ── */}
+      <section className="w-full bg-neutral-50/40 border-b border-neutral-100 pt-[116px] pb-16 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-          <div className="flex items-center justify-start gap-4 sm:gap-6 lg:gap-8 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory py-2">
-            {leaders.map((l, i) => (
-              <button
-                key={l.id}
-                onClick={() => navigateTo(i)}
-                className="group flex flex-col items-center flex-shrink-0 focus:outline-none transition-all duration-300 snap-center"
-              >
-                {/* Circle container */}
-                <div
-                  className={`relative w-16 h-16 sm:w-20 sm:h-20 rounded-full transition-all duration-500 ease-out flex items-center justify-center ${i === currentIndex
-                    ? "border-[3px] border-neutral-900 scale-110 shadow-md"
-                    : "border-[3px] border-indigo-100 hover:border-indigo-300 hover:scale-105"
-                    }`}
-                >
-                  <img
-                    src={l.image}
-                    alt={l.name}
-                    className="w-full h-full object-cover object-top rounded-full"
-                  />
-                </div>
-                {/* Small indicator label */}
-                <span
-                  className={`text-[9px] font-medium tracking-wider mt-3 transition-all duration-300 max-w-[90px] text-center truncate ${i === currentIndex ? "text-neutral-900 font-semibold" : "text-neutral-400 group-hover:text-neutral-600"
-                    }`}
-                >
-                  {l.name.replace("Mr. ", "").replace("Mrs. ", "").replace("Ms. ", "")}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            {/* Left: Featured Executive Experience */}
+            <div className="lg:col-span-5 flex flex-col justify-center min-h-[360px]">
+              <div className={`transition-all duration-300 transform ${isTransitioning ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"}`}>
+                <span className="text-[10px] tracking-[0.25em] uppercase text-neutral-400 font-medium block mb-2">
+                  {leader.department}
                 </span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
+                
+                <h2 className="text-3xl md:text-5xl font-light text-neutral-950 leading-[1.15] tracking-tight mb-3" style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}>
+                  {leader.name}
+                </h2>
+                
+                <p className="text-sm md:text-base text-neutral-500 font-light mb-6">
+                  {leader.designation}
+                </p>
+                
+                <div className="border-l-2 border-neutral-900/20 pl-6 my-6">
+                  <p className="text-base text-neutral-600 font-light leading-relaxed italic">
+                    &ldquo;{leader.statement}&rdquo;
+                  </p>
+                </div>
 
-      {/* ── Transitioning Content Wrapper ── */}
-      <div className={`transition-opacity duration-200 ${isTransitioning ? "opacity-0" : "opacity-100"}`}>
-        {/* ── 1. Hero ─────────────────────────────────────────────────────────── */}
-        <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-8 md:pt-12 pb-20 md:pb-28">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Portrait */}
-            <div className="order-2 lg:order-1">
-              <div className="relative">
-                <img
-                  src={leader.image}
-                  alt={leader.name}
-                  className="w-full max-w-sm mx-auto lg:mx-0 aspect-[4/5] object-cover object-top rounded-sm"
-                  style={{ filter: "grayscale(8%)" }}
-                />
-                {/* Decorative offset border */}
-                <div className="absolute -bottom-4 -right-4 w-28 h-28 border border-gray-200 rounded-sm -z-10" />
+                <div className="flex flex-wrap gap-2 mt-2">
+                  <span className="text-[9px] tracking-widest uppercase bg-neutral-100 text-neutral-500 px-3 py-1 font-light rounded-sm">
+                    {leader.yearsExperience} Years Leadership
+                  </span>
+                  <span className="text-[9px] tracking-widest uppercase bg-neutral-100 text-neutral-500 px-3 py-1 font-light rounded-sm">
+                    Active Focus: {leader.areasOfFocus[0]?.title}
+                  </span>
+                </div>
               </div>
             </div>
 
-            {/* Text */}
-            <div className="order-1 lg:order-2 flex flex-col justify-center">
-              <p className="text-[10px] tracking-[0.28em] uppercase text-gray-400 mb-4">{leader.department}</p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-3 leading-tight tracking-tight">
-                {leader.name}
-              </h1>
-              <p className="text-lg md:text-xl text-gray-400 font-light mb-10">{leader.designation}</p>
-              <blockquote className="border-l-2 border-gray-200 pl-6">
-                <p className="text-base md:text-lg text-gray-600 font-light italic leading-relaxed">
-                  &ldquo;{leader.statement}&rdquo;
-                </p>
-              </blockquote>
-
-              {/* Leader picker dots */}
-              <div className="flex items-center gap-3 mt-10">
+            {/* Right: Horizontal Leadership Gallery */}
+            <div className="lg:col-span-7 relative">
+              <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-300 font-light mb-4 block text-right">
+                Scroll horizontally to browse
+              </p>
+              
+              <div 
+                className="flex gap-6 overflow-x-auto no-scrollbar py-4 px-1 scroll-smooth snap-x snap-mandatory"
+              >
                 {leaders.map((l, i) => (
-                  <button
+                  <motion.div
                     key={l.id}
                     onClick={() => navigateTo(i)}
-                    className={`transition-all duration-200 rounded-full ${i === currentIndex
-                      ? "w-6 h-2 bg-gray-900"
-                      : "w-2 h-2 bg-gray-300 hover:bg-gray-500"
-                      }`}
-                    aria-label={`View ${l.name}`}
-                  />
+                    className="flex-shrink-0 w-[200px] sm:w-[240px] snap-start cursor-pointer group text-left"
+                    whileHover={{ y: -4 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                  >
+                    {/* Portrait card */}
+                    <div className="relative aspect-[3/4] overflow-hidden bg-neutral-100 rounded-sm mb-4 shadow-sm group-hover:shadow-md transition-shadow duration-500">
+                      <img
+                        src={l.image}
+                        alt={l.name}
+                        className={`w-full h-full object-cover object-top transition-all duration-700 ease-out group-hover:scale-105 ${
+                          i === currentIndex 
+                            ? "grayscale-0 scale-[1.02]" 
+                            : "grayscale group-hover:grayscale-0"
+                        }`}
+                        loading="lazy"
+                      />
+                      <div className={`absolute inset-0 border transition-all duration-500 pointer-events-none ${
+                        i === currentIndex ? "border-neutral-900/40" : "border-transparent"
+                      }`} />
+                    </div>
+
+                    {/* Meta info below */}
+                    <div className="px-1">
+                      <h3 className={`text-sm font-medium transition-colors duration-300 ${
+                        i === currentIndex ? "text-neutral-900 font-semibold" : "text-neutral-500 group-hover:text-neutral-900"
+                      }`}>
+                        {l.name.replace("Mr. ", "").replace("Mrs. ", "").replace("Ms. ", "")}
+                      </h3>
+                      <p className="text-[11px] text-neutral-400 font-light mt-0.5 truncate">
+                        {l.designation}
+                      </p>
+                    </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
-          </div>
-        </section>
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20"><hr className="border-gray-100" /></div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Transitioning Content Wrapper ── */}
+      <div className={`transition-opacity duration-200 ${isTransitioning ? "opacity-0" : "opacity-100"}`}>
 
         {/* ── 2. Overview ─────────────────────────────────────────────────────── */}
         <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-28">
