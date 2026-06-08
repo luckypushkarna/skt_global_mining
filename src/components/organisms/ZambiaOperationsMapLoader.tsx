@@ -2,6 +2,8 @@
 
 import dynamic from "next/dynamic";
 
+import { MapSkeleton } from "@/components/ui/skeleton";
+
 const ZambiaOperationsMap = dynamic(
   () =>
     import("@/components/organisms/ZambiaOperationsMap").then(
@@ -9,9 +11,7 @@ const ZambiaOperationsMap = dynamic(
     ),
   {
     ssr: false,
-    loading: () => (
-      <div className="w-full h-screen bg-[#0B0F19] animate-pulse" />
-    ),
+    loading: () => <MapSkeleton />,
   }
 );
 

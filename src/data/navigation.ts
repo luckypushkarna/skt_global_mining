@@ -7,7 +7,6 @@ import {
   Leaf,
   FileText,
   HardHat,
-  Globe,
   Wrench,
   Heart,
   Network,
@@ -57,14 +56,9 @@ export const aboutSection: NavSection = {
       icon: FileText,
     },
     {
-      title: "Meet Our Leaders",
-      href: "/about/leaders",
-      icon: Users,
-    },
-    {
-      title: "Global Presence",
-      href: "/about/global-presence",
-      icon: Globe,
+      title: "Privacy Policy",
+      href: "/media/privacy-policy",
+      icon: FileText,
     },
   ],
 };
@@ -100,11 +94,6 @@ export const operationsSection: NavSection = {
       title: "Logistics Network",
       href: "/operations/logistics-network",
       icon: Network,
-    },
-    {
-      title: "All Capabilities",
-      href: "/operations/all-capabilities",
-      icon: Globe,
     },
   ],
 };
@@ -164,13 +153,7 @@ export const mediaSection: NavSection = {
       icon: Newspaper,
     },
   ],
-  links: [
-    {
-      title: "Privacy Policy",
-      href: "/media/privacy-policy",
-      icon: FileText,
-    },
-  ],
+  links: [],
 };
 
 // ═══════════════════════════════════════════════════════════

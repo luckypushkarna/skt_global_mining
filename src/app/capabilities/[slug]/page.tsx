@@ -1,5 +1,5 @@
 import { CAPABILITIES, getCapabilityBySlug } from "@/data/capabilities";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { CapabilityDetailClient } from "./CapabilityDetailClient";
 
 interface PageProps {
@@ -20,6 +20,11 @@ export default async function CapabilityDetailPage({ params }: PageProps) {
 
   if (!capability) {
     notFound();
+  }
+
+  // Redirect if this capability has been moved to an operations page
+  if (capability.href) {
+    redirect(capability.href);
   }
 
   // Pass only the slug — client component looks up all data including icon

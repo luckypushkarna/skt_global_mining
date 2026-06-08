@@ -44,10 +44,10 @@ export function CapabilityDetailClient({ slug }: CapabilityDetailClientProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center gap-3 lg:gap-4 mb-3 lg:mb-4"
+            className="flex items-center gap-3 lg:gap-4 mb-3 lg:mb-4 gpu-accelerate"
           >
-            {/* Icon Badge */}
-            <div className="w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center rounded-full bg-white/10 border border-white/20 backdrop-blur-md">
+            {/* Icon Badge - disabled backdrop-blur on mobile for performance */}
+            <div className="w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center rounded-full bg-white/10 border border-white/20 sm:backdrop-blur-md">
               <Icon size={18} className="text-white" strokeWidth={1.75} />
             </div>
 
@@ -61,7 +61,7 @@ export function CapabilityDetailClient({ slug }: CapabilityDetailClientProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[36px] md:text-5xl lg:text-7xl font-black text-white tracking-tight leading-[1.05] mb-3 lg:mb-4"
+            className="text-[36px] md:text-5xl lg:text-7xl font-black text-white tracking-tight leading-[1.05] mb-3 lg:mb-4 gpu-accelerate"
           >
             {capability.title}
           </motion.h1>
@@ -70,7 +70,7 @@ export function CapabilityDetailClient({ slug }: CapabilityDetailClientProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="text-sm md:text-base lg:text-lg text-white/85 max-w-2xl font-light"
+            className="text-sm md:text-base lg:text-lg text-white/85 max-w-2xl font-light gpu-accelerate"
           >
             {capability.tagline}
           </motion.p>
@@ -87,7 +87,7 @@ export function CapabilityDetailClient({ slug }: CapabilityDetailClientProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-7"
+            className="lg:col-span-7 gpu-accelerate"
           >
             <p className="text-[11px] font-semibold tracking-[0.3em] text-neutral-400 uppercase mb-6">
               Overview
@@ -104,7 +104,7 @@ export function CapabilityDetailClient({ slug }: CapabilityDetailClientProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="lg:col-span-5 space-y-5"
+            className="lg:col-span-5 space-y-5 gpu-accelerate"
           >
 
             {/* Key Tags Card */}
@@ -164,7 +164,7 @@ export function CapabilityDetailClient({ slug }: CapabilityDetailClientProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className={`${colSpan} relative h-[260px] md:h-[320px] rounded-2xl overflow-hidden group shadow-sm bg-neutral-100 cursor-pointer`}
+                className={`${colSpan} relative h-[260px] md:h-[320px] rounded-2xl overflow-hidden group shadow-sm bg-neutral-100 cursor-pointer gpu-accelerate no-layout-shift`}
               >
                 {/* Image */}
                 <Image
@@ -172,7 +172,7 @@ export function CapabilityDetailClient({ slug }: CapabilityDetailClientProps) {
                   alt={img.caption}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 select-none"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 select-none will-change-transform"
                   draggable={false}
                   loading="lazy"
                 />
@@ -200,11 +200,11 @@ export function CapabilityDetailClient({ slug }: CapabilityDetailClientProps) {
           <div className="flex flex-col gap-4 sm:hidden select-none">
             {prev && (
               <Link
-                href={`/capabilities/${prev.slug}`}
-                className="group flex items-center justify-between p-4 min-h-[56px] border border-neutral-200 rounded-xl bg-neutral-50/40 active:bg-neutral-100 transition-colors"
+                href={prev.href || `/capabilities/${prev.slug}`}
+                className="group flex items-center justify-between p-4 min-h-[56px] border border-neutral-200 rounded-xl bg-neutral-50/40 active:bg-neutral-100 fast-transition"
               >
                 <div className="flex items-center gap-3">
-                  <ArrowLeft size={16} className="text-neutral-500 group-active:-translate-x-1 transition-transform" />
+                  <ArrowLeft size={16} className="text-neutral-500 group-active:-translate-x-1 fast-transition" />
                   <div className="text-left">
                     <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-neutral-400">
                       Previous
@@ -219,15 +219,15 @@ export function CapabilityDetailClient({ slug }: CapabilityDetailClientProps) {
 
             <Link
               href="/#services"
-              className="flex items-center justify-center min-h-[56px] border border-neutral-200 rounded-xl text-xs font-bold tracking-[0.25em] uppercase text-neutral-500 active:text-neutral-900 active:bg-neutral-50 transition-colors"
+              className="flex items-center justify-center min-h-[56px] border border-neutral-200 rounded-xl text-xs font-bold tracking-[0.25em] uppercase text-neutral-500 active:text-neutral-900 active:bg-neutral-50 fast-transition"
             >
               All Capabilities
             </Link>
 
             {next && (
               <Link
-                href={`/capabilities/${next.slug}`}
-                className="group flex items-center justify-between p-4 min-h-[56px] border border-neutral-200 rounded-xl bg-neutral-50/40 active:bg-neutral-100 transition-colors"
+                href={next.href || `/capabilities/${next.slug}`}
+                className="group flex items-center justify-between p-4 min-h-[56px] border border-neutral-200 rounded-xl bg-neutral-50/40 active:bg-neutral-100 fast-transition"
               >
                 <div className="flex items-center gap-3 justify-end w-full">
                   <div className="text-right">
@@ -238,7 +238,7 @@ export function CapabilityDetailClient({ slug }: CapabilityDetailClientProps) {
                       {next.title}
                     </p>
                   </div>
-                  <ArrowRight size={16} className="text-neutral-500 group-active:translate-x-1 transition-transform" />
+                  <ArrowRight size={16} className="text-neutral-500 group-active:translate-x-1 fast-transition" />
                 </div>
               </Link>
             )}
@@ -250,7 +250,7 @@ export function CapabilityDetailClient({ slug }: CapabilityDetailClientProps) {
             {/* Previous */}
             {prev ? (
               <Link
-                href={`/capabilities/${prev.slug}`}
+                href={prev.href || `/capabilities/${prev.slug}`}
                 className="group flex items-center gap-3 justify-start"
               >
                 <ArrowLeft
@@ -281,7 +281,7 @@ export function CapabilityDetailClient({ slug }: CapabilityDetailClientProps) {
             {/* Next */}
             {next ? (
               <Link
-                href={`/capabilities/${next.slug}`}
+                href={next.href || `/capabilities/${next.slug}`}
                 className="group flex items-center gap-3 justify-end text-right"
               >
                 <div>

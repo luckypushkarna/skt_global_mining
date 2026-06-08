@@ -2,15 +2,12 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "@/lib/gsap.config";
-import { ANIMATION_DELAYS, ANIMATION_DURATIONS, ANIMATION_EASINGS } from "@/lib/animation.constants";
+import { ANIMATION_DURATIONS, ANIMATION_EASINGS } from "@/lib/animation.constants";
 
 interface HeroAnimationRefs {
   headline1Ref: React.RefObject<HTMLHeadingElement | null>;
   headline2Ref: React.RefObject<HTMLHeadingElement | null>;
   headline3Ref: React.RefObject<HTMLHeadingElement | null>;
-  ofMiningRef: React.RefObject<HTMLDivElement | null>;
-  ofMiningLineRef: React.RefObject<HTMLDivElement | null>;
-  ofMiningTextRef: React.RefObject<HTMLSpanElement | null>;
   buttonsRef: React.RefObject<HTMLDivElement | null>;
   metricsRef: React.RefObject<HTMLDivElement | null>;
 }
@@ -28,7 +25,6 @@ export const useHeroAnimation = (refs: HeroAnimationRefs) => {
         refs.headline1Ref.current,
         refs.headline2Ref.current,
         refs.headline3Ref.current,
-        refs.ofMiningRef.current,
         refs.buttonsRef.current,
         refs.metricsRef.current
       ], {
@@ -41,8 +37,6 @@ export const useHeroAnimation = (refs: HeroAnimationRefs) => {
     }
 
     // Initial states for everything
-    gsap.set(refs.ofMiningLineRef.current, { scaleX: 0, transformOrigin: 'left center' });
-    gsap.set(refs.ofMiningTextRef.current, { opacity: 0, x: -10 });
     gsap.set(refs.buttonsRef.current, { opacity: 0, y: 30 });
 
 
@@ -62,26 +56,8 @@ export const useHeroAnimation = (refs: HeroAnimationRefs) => {
 
     tlRef.current = tl;
 
-    // "OF MINING" micro animation
-    tl.to(refs.ofMiningLineRef.current, {
-      scaleX: 1,
-      duration: 1,
-      ease: ANIMATION_EASINGS.organic,
-      boxShadow: "0px 0px 8px rgba(255, 120, 80, 0.4)", // Copper glow shimmer effect
-    }, ANIMATION_DELAYS.initial)
-
-
-      .to(refs.ofMiningTextRef.current, {
-        opacity: 1,
-        x: 0,
-        duration: 0.8,
-        letterSpacing: "0.25em", // slight letter spacing expansion
-      }, "-=0.6")
-
-
-
-      // Buttons reveal
-      .to(refs.buttonsRef.current, {
+    // Buttons reveal
+    tl.to(refs.buttonsRef.current, {
         opacity: 1,
         y: 0,
         duration: 1,

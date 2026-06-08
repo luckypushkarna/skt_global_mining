@@ -25,8 +25,8 @@ function InputField({
   children,
 }: InputFieldProps): JSX.Element {
   return (
-    <div className="space-y-2">
-      <label className="block text-xs font-semibold tracking-[0.2em] uppercase text-neutral-500">
+    <div className="space-y-1.5 md:space-y-2 w-full">
+      <label className="block text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase text-neutral-500">
         {label}
         {required && <span className="text-neutral-950 ml-1">*</span>}
       </label>
@@ -51,7 +51,7 @@ function InputField({
 }
 
 const inputBase =
-  "w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-lg text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-900 focus:bg-white transition-all duration-200";
+  "w-full px-4 py-2.5 md:py-3 bg-neutral-50 border border-neutral-200 rounded-lg text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-900 focus:bg-white transition-all duration-200";
 
 export function ContactForm(): JSX.Element {
   const [status, setStatus] = useState<FormStatus>("idle");
@@ -116,7 +116,7 @@ export function ContactForm(): JSX.Element {
     <form
       onSubmit={handleSubmit(onSubmit)}
       noValidate
-      className="space-y-6"
+      className="flex flex-col gap-5 md:gap-6 w-full"
       aria-label="Contact form"
     >
       {/* Honeypot - hidden from humans */}
@@ -129,8 +129,8 @@ export function ContactForm(): JSX.Element {
         {...register("honeypot")}
       />
 
-      {/* Name & Email Row */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* Name & Email Row - 1 line on mobile, 2 on desktop */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 w-full">
         <InputField label="Full Name" required error={errors.name?.message}>
           <input
             type="text"
@@ -155,7 +155,7 @@ export function ContactForm(): JSX.Element {
       </div>
 
       {/* Company & Phone Row */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 w-full">
         <InputField label="Company" error={errors.company?.message}>
           <input
             type="text"
@@ -191,9 +191,9 @@ export function ContactForm(): JSX.Element {
       {/* Message */}
       <InputField label="Message" required error={errors.message?.message}>
         <textarea
-          rows={6}
+          rows={5}
           placeholder="Tell us about your project or inquiry..."
-          className={cn(inputBase, "resize-none")}
+          className={cn(inputBase, "resize-none md:min-h-[140px]")}
           aria-invalid={!!errors.message}
           {...register("message")}
         />
@@ -206,7 +206,7 @@ export function ContactForm(): JSX.Element {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="flex items-center gap-3 p-4 bg-neutral-50 border border-neutral-200 rounded-lg"
+            className="flex items-center gap-3 p-4 bg-neutral-50 border border-neutral-200 rounded-lg w-full"
             role="status"
             aria-live="polite"
           >
@@ -222,7 +222,7 @@ export function ContactForm(): JSX.Element {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-lg"
+            className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-lg w-full"
             role="alert"
             aria-live="assertive"
           >
@@ -235,18 +235,20 @@ export function ContactForm(): JSX.Element {
       </AnimatePresence>
 
       {/* Submit */}
-      <Button
-        type="submit"
-        variant="primary"
-        size="md"
-        className="w-full md:w-auto"
-        isLoading={isSubmitting || status === "loading"}
-        rightIcon={<Send size={14} />}
-      >
-        Send Message
-      </Button>
+      <div className="pt-2">
+        <Button
+          type="submit"
+          variant="primary"
+          size="md"
+          className="w-full md:w-auto"
+          isLoading={isSubmitting || status === "loading"}
+          rightIcon={<Send size={14} />}
+        >
+          Send Message
+        </Button>
+      </div>
 
-      <p className="text-xs text-neutral-400 text-center">
+      <p className="text-[10px] md:text-xs text-neutral-400 text-center px-4">
         By submitting this form, you agree to our Privacy Policy. We never share
         your information.
       </p>

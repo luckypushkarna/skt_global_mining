@@ -1,6 +1,6 @@
 "use client";
 
-import { type JSX } from "react";
+import { type JSX, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ImageWithSkeleton } from "@/components/ui/image-with-skeleton";
@@ -9,6 +9,8 @@ import { TEAM_MEMBERS } from "@/lib/constants";
 import { containerVariants, itemVariants } from "@/lib/animations";
 
 function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   // Mapping of exact filenames in public folder for premium deterministic resolution
   const images: Record<string, string> = {
     "sahil-talreja": "/Sahil Talreja.webp",
@@ -44,19 +46,52 @@ function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
     action: "Operations"
   };
 
+  const handleMouseEnter = () => {
+    if (typeof window !== "undefined" && window.matchMedia("(hover: hover)").matches) {
+      setIsOpen(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (typeof window !== "undefined" && window.matchMedia("(hover: hover)").matches) {
+      setIsOpen(false);
+    }
+  };
+
+  const handleCardClick = () => {
+    if (typeof window !== "undefined" && !window.matchMedia("(hover: hover)").matches) {
+      setIsOpen((prev) => !prev);
+    }
+  };
+
+  const handleToggleClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setIsOpen((prev) => !prev);
+  };
+
+  const handleArrowClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
+
   return (
     <motion.div
       variants={itemVariants}
       className="group flex flex-col cursor-pointer"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleCardClick}
     >
-      <Link href={`/about/leaders?id=${member.id}`} className="flex flex-col h-full w-full">
+      <div className="flex flex-col h-full w-full">
         {/* Portrait Area */}
         <div className="relative aspect-[0.95/1.1] overflow-hidden rounded-xl bg-neutral-50 mb-5 border border-neutral-100">
           <ImageWithSkeleton
             src={imgSrc}
             alt={member.name}
             fill
-            className={`object-cover transition-transform duration-700 ease-out scale-100 group-hover:scale-[1.03] ${
+            className={`object-cover transition-transform duration-700 ease-out ${
+              isOpen ? "scale-[1.03]" : "scale-100"
+            } ${
               ["sahil-talreja", "anand-kolappa-pillai"].includes(member.id) 
                 ? "mix-blend-multiply" 
                 : ""
@@ -66,7 +101,9 @@ function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
           />
 
           {/* ── HOVER OVERLAY: Slides up from the bottom (Reference Match) ── */}
-          <div className="absolute inset-0 bg-skt-navy/95 backdrop-blur-sm flex flex-col justify-between p-3 sm:p-4 md:p-6 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10">
+          <div className={`absolute inset-0 bg-skt-navy/95 backdrop-blur-sm flex flex-col justify-between p-3 sm:p-4 md:p-6 text-white transition-transform duration-500 ease-out z-10 ${
+            isOpen ? "translate-y-0" : "translate-y-full"
+          }`}>
             
             {/* Top: Header & Bio */}
             <div className="space-y-1.5 sm:space-y-3">
@@ -80,23 +117,38 @@ function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
 
             {/* Bottom: Interactive Gray Action Bar */}
             <div className="flex items-center justify-between mt-auto pt-2 sm:pt-4">
-              <div className="flex items-center gap-2 sm:gap-3">
+              <Link 
+                href={`/about/leaders?id=${member.id}`} 
+                onClick={handleArrowClick}
+                className="flex items-center gap-2 sm:gap-3 group/btn"
+              >
                 {/* Gray square button with arrow */}
-                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-neutral-200 text-neutral-900 flex items-center justify-center rounded-[6px] shadow-sm select-none">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-neutral-200 text-neutral-900 flex items-center justify-center rounded-[6px] shadow-sm select-none group-hover/btn:bg-neutral-300 transition-colors">
                   <span className="text-xs sm:text-base font-bold">→</span>
                 </div>
-                <span className="text-[9px] sm:text-xs font-bold tracking-tight text-white">
+                <span className="text-[9px] sm:text-xs font-bold tracking-tight text-white group-hover/btn:underline">
                   {details.action}
                 </span>
-              </div>
+              </Link>
               
-              {/* Gray square button with minus */}
-              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-neutral-200 text-neutral-900 flex items-center justify-center rounded-[6px] shadow-sm select-none">
-                <span className="text-xs sm:text-base font-bold">—</span>
-              </div>
+              {/* Spacer matching the absolutely positioned close/toggle button */}
+              <div className="w-6 h-6 sm:w-8 sm:h-8" />
             </div>
 
           </div>
+
+          {/* Absolute floating interactive plus/minus button (smooth transition) */}
+          <button
+            type="button"
+            onClick={handleToggleClick}
+            className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 md:bottom-6 md:right-6 w-6 h-6 sm:w-8 sm:h-8 bg-neutral-200 text-neutral-900 flex items-center justify-center rounded-[6px] shadow-sm select-none hover:bg-neutral-300 transition-colors focus:outline-none z-20"
+            aria-label={isOpen ? "Close details" : "Open details"}
+          >
+            {/* Horizontal bar */}
+            <span className="absolute w-2.5 sm:w-3.5 h-[2px] bg-neutral-900 rounded-full" />
+            {/* Vertical bar */}
+            <span className={`absolute w-[2px] h-2.5 sm:h-3.5 bg-neutral-900 rounded-full transition-all duration-300 ${isOpen ? "rotate-90 opacity-0 scale-0" : "rotate-0 opacity-100 scale-100"}`} />
+          </button>
         </div>
 
         {/* Info Area */}
@@ -108,7 +160,7 @@ function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
             {member.name}
           </h3>
         </div>
-      </Link>
+      </div>
     </motion.div>
   );
 }

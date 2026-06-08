@@ -23,9 +23,7 @@ export function HeroSection(): JSX.Element {
   const headline1Ref = useRef<HTMLHeadingElement>(null);
   const headline2Ref = useRef<HTMLHeadingElement>(null);
   const headline3Ref = useRef<HTMLHeadingElement>(null);
-  const ofMiningRef = useRef<HTMLDivElement>(null);
-  const ofMiningLineRef = useRef<HTMLDivElement>(null);
-  const ofMiningTextRef = useRef<HTMLSpanElement>(null);
+
   const buttonsRef = useRef<HTMLDivElement>(null);
   const metricsRef = useRef<HTMLDivElement>(null);
 
@@ -33,9 +31,7 @@ export function HeroSection(): JSX.Element {
     headline1Ref,
     headline2Ref,
     headline3Ref,
-    ofMiningRef,
-    ofMiningLineRef,
-    ofMiningTextRef,
+
     buttonsRef,
     metricsRef,
   }), []);
@@ -148,19 +144,9 @@ export function HeroSection(): JSX.Element {
               Underground
             </h1>
 
-            <div
-              ref={ofMiningRef}
-              className="hidden md:flex items-center gap-3 mb-2 ml-2"
-            >
-              <div
-                ref={ofMiningLineRef}
-                className="w-8 h-px bg-white/40 shadow-[0_0_6px_rgba(255,255,255,0.2)] origin-left"
-                style={{ transformOrigin: "0% 50%" }}
-              />
-              <span
-                ref={ofMiningTextRef}
-                className="text-eyebrow text-white/60"
-              >
+            <div className="flex items-center gap-2 mb-2 ml-2">
+              <div className="w-5 h-px bg-white/40" />
+              <span className="text-eyebrow text-white/60">
                 Zambia
               </span>
             </div>
@@ -181,7 +167,7 @@ export function HeroSection(): JSX.Element {
         {/* Description & CTAs */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mt-4">
           <div className="flex flex-col gap-6">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 mt-2">
+            <div className="flex flex-row items-center gap-4 sm:gap-5 mt-2">
               <div className="inline-block relative h-8 w-32">
                 <Image
                   src="/mopani-logo.webp"
@@ -192,7 +178,7 @@ export function HeroSection(): JSX.Element {
                   priority
                 />
               </div>
-              <div className="hidden sm:block h-5 w-px bg-white/10" />
+              <div className="block h-5 w-px bg-white/10" />
               <div className="inline-block relative h-12 w-28">
                 <Image 
                   src="/irh-logo.webp" 

@@ -7,6 +7,7 @@ import { LucideIcon } from "lucide-react";
 export interface Capability {
   num: string;
   slug: string;
+  href?: string;
   icon: LucideIcon;
   title: string;
   tagline: string;
@@ -42,6 +43,7 @@ export const CAPABILITIES: Capability[] = [
   {
     num: "03",
     slug: "mechanised-fleet",
+    href: "/operations/mechanised-fleet",
     icon: Truck,
     title: "Mechanised Fleet",
     tagline: "Heavy iron, built for deep production.",
@@ -64,6 +66,7 @@ export const CAPABILITIES: Capability[] = [
   {
     num: "05",
     slug: "logistics-network",
+    href: "/operations/logistics-network",
     icon: Network,
     title: "Logistics Network",
     tagline: "Workforce, equipment, material — moving without interruption.",
@@ -97,6 +100,7 @@ export const CAPABILITIES: Capability[] = [
   {
     num: "08",
     slug: "engineering-maintenance",
+    href: "/operations/engineering-services",
     icon: Settings,
     title: "Engineering & Maintenance",
     tagline: "Reliability engineered into every component.",

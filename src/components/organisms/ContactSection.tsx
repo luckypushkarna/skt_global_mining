@@ -40,12 +40,12 @@ export function ContactSection(): JSX.Element {
   return (
     <section
       id="contact"
-      className="py-16 md:py-24 lg:py-32 bg-bg-tint"
+      className="py-16 md:py-24 lg:py-32 bg-bg-tint overflow-hidden"
       aria-labelledby="contact-heading"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
+      <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16 w-full">
         {/* Header */}
-        <div className="mb-12">
+        <div className="mb-10 md:mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ export function ContactSection(): JSX.Element {
         </div>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -94,14 +94,15 @@ export function ContactSection(): JSX.Element {
                 const Icon = item.icon;
                 const content = (
                   <div className="flex items-start gap-4 group">
-                    <div className="w-10 h-10 border border-neutral-200 group-hover:border-neutral-400 flex items-center justify-center flex-shrink-0 transition-colors duration-200">
-                      <Icon size={14} className="text-neutral-500" />
+                    <div className="w-10 h-10 border border-neutral-200 group-hover:border-neutral-400 flex items-center justify-center flex-shrink-0 transition-colors duration-200 rounded-md bg-white">
+                      <Icon size={16} className="text-neutral-500" />
                     </div>
-                    <div>
+                    {/* min-w-0 ensures flex child can shrink below its content size and properly break words */}
+                    <div className="min-w-0 flex-1">
                       <p className="text-[10px] font-semibold tracking-[0.15em] text-neutral-500 uppercase mb-0.5">
                         {item.label}
                       </p>
-                      <p className="text-sm text-neutral-600 leading-relaxed">
+                      <p className="text-sm text-neutral-600 leading-relaxed break-words break-all sm:break-normal">
                         {item.value}
                       </p>
                     </div>
@@ -131,28 +132,7 @@ export function ContactSection(): JSX.Element {
               })}
             </div>
 
-            {/* Countries */}
-            <div className="pt-8 border-t border-neutral-200">
-              <p className="text-[10px] font-bold tracking-widest text-neutral-400 uppercase mb-4">
-                Our Presence
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  "Kitwe",
-                  "Mufulira",
-                  "Chingola",
-                  "Konkola",
-                  "Solwezi",
-                ].map((location) => (
-                  <span
-                    key={location}
-                    className="px-3 py-1 text-xs border border-neutral-200 text-neutral-500 rounded-full bg-white"
-                  >
-                    {location}
-                  </span>
-                ))}
-              </div>
-            </div>
+
           </motion.div>
 
           {/* Form */}
@@ -163,7 +143,7 @@ export function ContactSection(): JSX.Element {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-3"
           >
-            <div className="bg-white border border-neutral-200/80 rounded-2xl p-6 md:p-8 hover:border-neutral-300 transition-colors duration-300">
+            <div className="bg-white border border-neutral-200/80 rounded-2xl p-5 sm:p-6 md:p-8 hover:border-neutral-300 transition-colors duration-300 w-full overflow-hidden">
               <ContactForm />
             </div>
           </motion.div>

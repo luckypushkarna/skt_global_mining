@@ -138,6 +138,22 @@ export function AboutSection(): JSX.Element {
         tl.fromTo(excavator, { opacity: 0 }, { opacity: 1, duration: 0.06, ease: "none" }, 0);
         tl.to(excavator, { opacity: 0, ease: "none", duration: 0.1 }, 0.90);
 
+        // --- Tire Tracks Animation ---
+        const trackWrapper = document.querySelector(".tire-tracks-wrapper") as HTMLElement;
+        if (trackWrapper) {
+          const wheelsOffset = vehicleOffset - 52; // 52px is approx vehicle height
+          const wheelsAt0Time = (wheelsOffset / totalDistance) * 0.90;
+          const finalTrackHeight = containerHeight * 0.90 + 52;
+
+          tl.set(trackWrapper, { height: 0 }, 0);
+          tl.fromTo(trackWrapper,
+            { height: 0 },
+            { height: finalTrackHeight, ease: "none", duration: 0.90 - wheelsAt0Time },
+            wheelsAt0Time
+          );
+          tl.to(trackWrapper, { opacity: 0, duration: 0.1, ease: "none" }, 0.90);
+        }
+
         stones.forEach((stone) => {
           // Calculate absolute vertical center coordinates of the stone
           let stoneCenterY = 0;
@@ -272,6 +288,19 @@ export function AboutSection(): JSX.Element {
 
           {/* Vertical track — faint guide line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-neutral-100 -translate-x-px md:-translate-x-1/2" />
+
+          {/* CSS Tire Tracks Wrapper - Animating height via GSAP */}
+          <div
+            className="tire-tracks-wrapper absolute left-4 md:left-1/2 top-0 w-[24px] -translate-x-1/2 z-0 pointer-events-none flex justify-between"
+            style={{
+              marginTop: "-28px",
+              height: 0
+            }}
+          >
+            {/* Solid trail lines with dynamic gradient fade-out */}
+            <div className="w-[4px] h-full rounded-sm" style={{ background: "linear-gradient(to bottom, rgba(176, 190, 197, 0.1) 0%, rgba(144, 164, 174, 0.8) 100%)" }} />
+            <div className="w-[4px] h-full rounded-sm" style={{ background: "linear-gradient(to bottom, rgba(176, 190, 197, 0.1) 0%, rgba(144, 164, 174, 0.8) 100%)" }} />
+          </div>
 
           {/* JCB vehicle — controlled entirely by GSAP now */}
           <div

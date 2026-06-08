@@ -8,7 +8,7 @@ import { FileUp, ArrowRight } from "lucide-react";
 
 export function CareersCTA(): JSX.Element {
   return (
-    <section className="relative py-28 bg-skt-navy text-white overflow-hidden flex flex-col justify-center min-h-[75vh]">
+    <section className="relative py-16 md:py-20 bg-skt-navy text-white overflow-hidden flex flex-col justify-center min-h-[50vh]">
       {/* Immersive industrial mining overlay background */}
       <div className="absolute inset-0 bg-skt-navy pointer-events-none">
         <Image
@@ -33,7 +33,7 @@ export function CareersCTA(): JSX.Element {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-3xl mx-auto space-y-8"
+          className="max-w-3xl mx-auto space-y-6"
         >
           <Badge variant="outline" className="border-neutral-800 text-neutral-400 bg-transparent justify-center mx-auto">
             Deployment Opportunities
@@ -74,7 +74,7 @@ export function CareersCTA(): JSX.Element {
         </motion.div>
 
         {/* Dynamic bottom metrics summary */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-24 pt-16 border-t border-neutral-900/60">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-16 pt-10 border-t border-neutral-900/60">
           <div className="text-left space-y-1">
             <span className="block text-3xl font-black text-white leading-none tracking-tight">
               1,500+

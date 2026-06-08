@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import React from "react";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import Image from "next/image";
 
@@ -75,10 +74,10 @@ const IMAGE_STYLES = [
  * @param {ImmersiveScrollGalleryProps} props - Component props
  * @returns {JSX.Element} Rendered component
  */
-const ImmersiveScrollGallery: React.FC<iImmersiveScrollGalleryProps> = ({
+export default function ImmersiveScrollGallery({
   images = DEFAULT_IMAGES,
   className = "",
-}) => {
+}: iImmersiveScrollGalleryProps) {
   // Refs
   const container = useRef<HTMLDivElement | null>(null);
 
@@ -115,10 +114,8 @@ const ImmersiveScrollGallery: React.FC<iImmersiveScrollGalleryProps> = ({
       className={`relative bg-neutral-50 ${className}`}
       style={{ height: "300vh", contain: "layout style paint" }}
     >
-      <div
-        className="sticky top-0 h-screen w-full overflow-hidden bg-neutral-50"
-        style={{ willChange: "transform" }}
-      >
+      {/* ⚡ Optimized: Removed willChange: "transform" from this wrapper to prevent a massive GPU layer from being allocated permanently for a non-animated sticky element */}
+      <div className="sticky top-0 h-screen w-full overflow-hidden bg-neutral-50">
         {/* Zooming Images */}
         {pictures.map(({ src, type = "image", scale, opacity }, index) => {
           if (!scale) return null;
@@ -158,6 +155,4 @@ const ImmersiveScrollGallery: React.FC<iImmersiveScrollGalleryProps> = ({
       </div>
     </div>
   );
-};
-
-export default ImmersiveScrollGallery;
+}

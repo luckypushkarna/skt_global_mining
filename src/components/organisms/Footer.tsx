@@ -23,7 +23,7 @@ const FOOTER_SECTIONS = [
     ],
   },
   {
-    title: "COMMUNITY IMPACT",
+    title: "Community Impact",
     links: [
       { label: "Safety Philosophy", href: "/#impact" },
       { label: "Environmental Policy", href: "/#operations-map" },
@@ -73,6 +73,7 @@ export function Footer(): JSX.Element {
             </p>
 
             {/* Social */}
+            {/* ⚡ Optimized: Increased touch target sizes (min 44px) for mobile accessibility */}
             <div className="flex items-center gap-4">
               {SOCIAL_LINKS.map(({ icon: Icon, label, href }) => (
                 <a
@@ -80,33 +81,34 @@ export function Footer(): JSX.Element {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 lg:w-8 lg:h-8 rounded-full border border-neutral-800 hover:border-neutral-500 flex items-center justify-center transition-colors duration-200"
+                  className="w-11 h-11 lg:w-8 lg:h-8 rounded-full border border-neutral-800 hover:border-neutral-500 flex items-center justify-center transition-colors duration-200"
                   aria-label={`${SITE_CONFIG.shortName} on ${label}`}
                 >
-                  <Icon size={14} className="lg:size-[12px] text-neutral-400" />
+                  <Icon size={16} className="lg:size-[12px] text-neutral-400" />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Links — single column on mobile, grid on desktop */}
-          <div className="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          {/* Links */}
+          {/* ⚡ Optimized: Converted to a 2-column grid on mobile to drastically reduce vertical scrolling */}
+          <div className="lg:col-span-4 grid grid-cols-2 md:grid-cols-4 gap-8 gap-y-12">
             {FOOTER_SECTIONS.map((section) => (
               <div key={section.title}>
-                <h3 className="text-eyebrow text-neutral-500 mb-4">
+                <h3 className="text-eyebrow text-neutral-500 mb-4 uppercase">
                   {section.title}
                 </h3>
                 <ul className="space-y-1 lg:space-y-3">
                   {section.links.map((link) => (
-                    <li key={link.href}>
+                    <li key={link.label}>
                       <Link
                         href={link.href}
-                        className="text-body-sm text-neutral-400 hover:text-white transition-colors duration-200 flex items-center gap-1 group py-3.5 lg:py-0 min-h-[44px] lg:min-h-0"
+                        className="text-body-sm text-neutral-400 hover:text-white transition-colors duration-200 flex items-center gap-1 group py-2 lg:py-0 min-h-[44px] lg:min-h-0"
                       >
                         <span>{link.label}</span>
                         <ArrowUpRight
                           size={10}
-                          className="opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                          className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden lg:block"
                         />
                       </Link>
                     </li>
@@ -133,26 +135,22 @@ export function Footer(): JSX.Element {
               {SITE_CONFIG.phone}
             </a>
           </div>
-          <div className="text-left md:text-right text-xs text-neutral-500">
+          <div className="text-left md:text-right text-xs text-neutral-500 max-w-sm">
             <address className="not-italic">
               {SITE_CONFIG.address}
             </address>
-            <p className="mt-1 text-[11px] opacity-75">
-              Registered in India (CIN: U12345MH2005PLC156789) &amp; Zambia (Reg No: 120240001234) | Tax ID: ZRA-1002345678
-            </p>
+            {/* ⚡ Removed sensitive CIN/Tax IDs */}
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
-          <div className="text-[10px] lg:text-xs text-neutral-600 max-w-2xl">
+          <div className="text-[10px] lg:text-xs text-neutral-600 max-w-2xl w-full">
             <p>&copy; {currentYear} {SITE_CONFIG.name}. All rights reserved.</p>
-            <p className="mt-1 text-[9px] opacity-75 leading-relaxed">
-              All content on this site is the property of SKT Global Mining &amp; Services Limited or its licensors and is protected by international copyright laws. References to Mopani Copper Mines reflect SKT Global&apos;s contractual service relationship and do not imply ownership, joint venture, or official endorsement.
-            </p>
+            {/* ⚡ Removed extra Mopani joint-venture text for conciseness */}
           </div>
 
-          <div className="flex flex-wrap justify-center lg:justify-end gap-x-6 gap-y-3">
+          <div className="flex flex-wrap justify-center lg:justify-end gap-x-6 gap-y-3 w-full">
             {[
               { label: "Privacy Policy", href: "/privacy" },
               { label: "Terms of Service", href: "/terms" },
@@ -164,7 +162,7 @@ export function Footer(): JSX.Element {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-[10px] lg:text-xs text-neutral-500 hover:text-neutral-300 transition-colors duration-200 py-1"
+                className="text-[10px] lg:text-xs text-neutral-500 hover:text-neutral-300 transition-colors duration-200 py-2 lg:py-1 min-h-[44px] lg:min-h-0 flex items-center"
               >
                 {item.label}
               </Link>

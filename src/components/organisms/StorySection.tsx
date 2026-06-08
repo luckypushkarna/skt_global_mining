@@ -1,10 +1,9 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, forwardRef, JSX } from "react";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/atoms/Badge";
 import Image from "next/image";
-import { JSX } from "react";
 
 // ─── Safety Pillars Data ──────────────────────────────────────────────────────
 
@@ -92,6 +91,7 @@ function AnimatedMetric({ value, isActive }: { value: string; isActive: boolean 
     const suffix = value.replace(/^[\d.]+/, "");
     const duration = 1200;
     const startTime = performance.now();
+    let rafId: number;
 
     function easeOut(t: number): number {
       return 1 - Math.pow(1 - t, 3);
@@ -102,10 +102,15 @@ function AnimatedMetric({ value, isActive }: { value: string; isActive: boolean 
       const t = Math.min(elapsed / duration, 1);
       const current = Math.round(easeOut(t) * numericPart);
       setDisplayed(String(current) + suffix);
-      if (t < 1) requestAnimationFrame(tick);
+      if (t < 1) {
+        rafId = requestAnimationFrame(tick);
+      }
     }
 
-    requestAnimationFrame(tick);
+    rafId = requestAnimationFrame(tick);
+
+    // ⚡ Optimized: added cleanup for unmount safety
+    return () => cancelAnimationFrame(rafId);
   }, [isActive, value]);
 
   return <>{displayed}</>;
@@ -123,7 +128,7 @@ export function StorySection(): JSX.Element {
 
   // ── GSAP scroll-driven card activation ───────────────────────────────────
   useEffect(() => {
-    let ctx: { revert?: () => void } = {};
+    let ctx: { revert?: () => void } | null = null;
     let mounted = true;
 
     (async () => {
@@ -134,39 +139,38 @@ export function StorySection(): JSX.Element {
 
       gsap.registerPlugin(ScrollTrigger);
 
-      ctx.revert = () => ScrollTrigger.getAll().forEach((t) => t.kill());
+      // ⚡ Optimized: GSAP context automatically manages and cleans up ScrollTriggers
+      ctx = gsap.context(() => {
+        cardRefs.current.forEach((card, index) => {
+          if (!card) return;
 
-      // ── Observe which card is in the "active zone" ──────────────────────
-      cardRefs.current.forEach((card, index) => {
-        if (!card) return;
-
-        ScrollTrigger.create({
-          trigger: card,
-          start: "top 60%",
-          end: "bottom 40%",
-          onEnter: () => setActiveIndex(index),
-          onEnterBack: () => setActiveIndex(index),
+          ScrollTrigger.create({
+            trigger: card,
+            start: "top 60%",
+            end: "bottom 40%",
+            onEnter: () => setActiveIndex(index),
+            onEnterBack: () => setActiveIndex(index),
+          });
         });
-      });
 
-      // ── Progress line driven by scroll within section ───────────────────
-      if (sectionRef.current && progressLineRef.current) {
-        gsap.to(progressLineRef.current, {
-          scaleY: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 0.5,
-          },
-        });
-      }
+        if (sectionRef.current && progressLineRef.current) {
+          gsap.to(progressLineRef.current, {
+            scaleY: 1,
+            ease: "none",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top top",
+              end: "bottom bottom",
+              scrub: 0.5,
+            },
+          });
+        }
+      }, sectionRef);
     })();
 
     return () => {
       mounted = false;
-      ctx.revert?.();
+      ctx?.revert?.();
     };
   }, []);
 
@@ -177,8 +181,7 @@ export function StorySection(): JSX.Element {
       ref={sectionRef}
       id="story"
       aria-labelledby="story-heading"
-      className="relative bg-neutral-50"
-      style={{ minHeight: "100vh" }}
+      className="relative min-h-screen bg-neutral-50"
     >
       {/* ─── Section Header (Mobile Only) ────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 pt-24 pb-16">
@@ -248,13 +251,11 @@ export function StorySection(): JSX.Element {
             <div className="relative flex-grow h-0 w-full">
               {/* Progress line - left edge */}
               <div
-                className="absolute -left-8 top-0 bottom-0 flex flex-col items-center gap-0"
-                style={{ zIndex: 10 }}
+                className="absolute -left-8 top-0 bottom-0 flex flex-col items-center gap-0 z-10"
               >
                 {/* Track */}
                 <div
-                  className="relative w-px flex-1 bg-neutral-200"
-                  style={{ overflow: "visible" }}
+                  className="relative w-px flex-1 bg-neutral-200 overflow-visible"
                 >
                   {/* Active fill */}
                   <div
@@ -274,8 +275,7 @@ export function StorySection(): JSX.Element {
 
               {/* Pillar step dots */}
               <div
-                className="absolute -left-14 top-0 bottom-0 flex flex-col justify-between py-2"
-                style={{ zIndex: 10 }}
+                className="absolute -left-14 top-0 bottom-0 flex flex-col justify-between py-2 z-10"
               >
                 {SAFETY_PILLARS.map((p, i) => (
                   <button
@@ -299,10 +299,7 @@ export function StorySection(): JSX.Element {
               {/* Image container */}
               <div
                 ref={imageRef}
-                className="relative w-full h-full rounded-2xl overflow-hidden bg-neutral-100"
-                style={{
-                  boxShadow: "0 32px 80px rgba(0,0,0,0.12)",
-                }}
+                className="relative w-full h-full rounded-2xl overflow-hidden bg-neutral-100 shadow-[0_32px_80px_rgba(0,0,0,0.12)]"
               >
                 {/* Images — all stacked, active one on top */}
                 {SAFETY_PILLARS.map((pillar, i) => (
@@ -336,16 +333,11 @@ export function StorySection(): JSX.Element {
 
                 {/* Floating info card at bottom of image */}
                 <div
-                  className="absolute bottom-0 left-0 right-0 p-6"
-                  style={{ zIndex: 10 }}
+                  className="absolute bottom-0 left-0 right-0 p-6 z-10"
                 >
                   {/* Active pillar badge */}
                   <div
-                    className="inline-flex items-center gap-2 mb-3"
-                    style={{
-                      opacity: 1,
-                      transition: "opacity 0.4s ease",
-                    }}
+                    className="inline-flex items-center gap-2 mb-3 opacity-100 transition-opacity duration-300"
                   >
                     <span
                       className="text-[9px] font-bold tracking-[0.3em] uppercase text-white/60"
@@ -364,8 +356,7 @@ export function StorySection(): JSX.Element {
                   <div className="flex items-end gap-3">
                     <div>
                       <div
-                        className="text-4xl font-semibold text-white leading-none tracking-tight"
-                        style={{ textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}
+                        className="text-4xl font-semibold text-white leading-none tracking-tight drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)]"
                       >
                         <AnimatedMetric
                           value={activePillar.metric}
@@ -393,8 +384,7 @@ export function StorySection(): JSX.Element {
 
                 {/* Corner accent — industrial detail */}
                 <div
-                  className="absolute top-5 right-5 flex items-center gap-1.5"
-                  style={{ zIndex: 10 }}
+                  className="absolute top-5 right-5 flex items-center gap-1.5 z-10"
                 >
                   <div className="w-1.5 h-1.5 rounded-full bg-white/60" />
                   <span className="text-[9px] font-bold tracking-[0.3em] text-white/40 uppercase">
@@ -431,22 +421,19 @@ interface SafetyCardProps {
   readonly isActive: boolean;
 }
 
-import { forwardRef } from "react";
-
 const SafetyCard = forwardRef<HTMLDivElement, SafetyCardProps>(
   ({ pillar, index, isActive }, ref) => {
     return (
       <div
         ref={ref}
-        className="relative py-16 border-t border-neutral-200 transition-all duration-700"
+        className="relative py-16 border-t border-neutral-200 transition-colors duration-700"
         style={{
           borderColor: isActive ? "rgba(0,0,0,0.18)" : undefined,
         }}
       >
         {/* Mobile image (shows on small screens, hidden on lg) */}
         <div
-          className="lg:hidden relative w-full mb-8 rounded-xl overflow-hidden"
-          style={{ aspectRatio: "16/9" }}
+          className="lg:hidden relative w-full mb-8 rounded-xl overflow-hidden aspect-[16/9]"
         >
           <Image
             src={pillar.image}
@@ -532,7 +519,7 @@ const SafetyCard = forwardRef<HTMLDivElement, SafetyCardProps>(
 
           {/* Metric row — mobile only (desktop shows in image) */}
           <div
-            className="lg:hidden flex items-center gap-6 transition-all duration-500"
+            className="lg:hidden flex items-center gap-6 transition-opacity duration-500"
             style={{ opacity: isActive ? 1 : 0.4 }}
           >
             <div>

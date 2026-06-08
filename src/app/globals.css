@@ -883,3 +883,32 @@ body {
 .animate-scroll-pulse {
   animation: scrollPulse 2.5s ease-in-out infinite;
 }
+
+/* Remove 300ms touch delay */
+* {
+  touch-action: manipulation;
+}
+
+/* Fast scroll snapping */
+.scroll-container {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* GPU acceleration helper */
+.gpu-accelerate {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Prevent layout thrashing */
+.no-layout-shift {
+  contain: layout style paint;
+}
+
+/* Fast transitions */
+.fast-transition {
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}

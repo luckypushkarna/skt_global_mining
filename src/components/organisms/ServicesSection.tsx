@@ -1,9 +1,8 @@
 "use client";
 
-import { useRef, useEffect, useState, memo } from "react";
+import { useRef, useEffect, memo, JSX } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { JSX } from "react";
 import { ImageWithSkeleton } from "@/components/ui/image-with-skeleton";
 import { OperationalScaleSection } from "./OperationalScaleSection";
 import { CAPABILITIES } from "@/data/capabilities";
@@ -19,7 +18,7 @@ const SliderCard = memo(function SliderCard({ card }: { card: typeof CAPABILITIE
   return (
     <Link
       href={`/capabilities/${card.slug}`}
-      className="group relative flex-shrink-0 w-[340px] h-[480px] mx-3 rounded-2xl cursor-pointer select-none overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:shadow-2xl block"
+      className="group relative flex-shrink-0 w-[340px] h-[480px] mx-3 rounded-2xl cursor-pointer select-none overflow-hidden transition-transform duration-700 hover:-translate-y-2 hover:shadow-2xl block"
       style={{
         boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
         willChange: "transform",
@@ -118,18 +117,20 @@ SliderCard.displayName = "SliderCard";
 export function ServicesSection(): JSX.Element {
   const rowARef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
-  const rafRef = useRef<number>(0);
-  const [scrollProgress, setScrollProgress] = useState(0);
 
+  // ⚡ Optimized: Direct DOM mutation prevents expensive React re-renders on mobile scroll
   const handleMobileScroll = (e: React.UIEvent<HTMLDivElement>) => {
     const target = e.currentTarget;
     if (target.scrollWidth === target.clientWidth) return;
     const progress = target.scrollLeft / (target.scrollWidth - target.clientWidth);
-    setScrollProgress(progress);
+    
+    const bar = document.getElementById("mobile-scroll-progress");
+    if (bar) {
+      bar.style.width = `${progress * 100}%`;
+    }
   };
 
   useEffect(() => {
-    // Mobile optimization guard: disable heavy JS slider loop and requestAnimationFrame on mobile/tablet screens
     if (window.innerWidth < 1024) return;
 
     const rowA = rowARef.current;
@@ -149,6 +150,7 @@ export function ServicesSection(): JSX.Element {
     let velA = 0;
     let currentSpeedA = SPEED;
     let wheelResumeTimer: number | null = null;
+    let rafId: number;
 
     const halfA = rowA.scrollWidth / 2;
 
@@ -174,10 +176,10 @@ export function ServicesSection(): JSX.Element {
       }
 
       rowA!.style.transform = `translate3d(${posA}px,0,0)`;
-      rafRef.current = requestAnimationFrame(tick);
+      rafId = requestAnimationFrame(tick);
     }
 
-    rafRef.current = requestAnimationFrame(tick);
+    rafId = requestAnimationFrame(tick);
 
     function onEnter() {
       paused = true;
@@ -266,7 +268,7 @@ export function ServicesSection(): JSX.Element {
     stage.addEventListener('touchend', onTouchEnd);
 
     return () => {
-      cancelAnimationFrame(rafRef.current);
+      cancelAnimationFrame(rafId);
       if (wheelResumeTimer) {
         window.clearTimeout(wheelResumeTimer);
       }
@@ -324,7 +326,7 @@ export function ServicesSection(): JSX.Element {
             >
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 text-sm font-medium text-neutral-900 border border-neutral-200 rounded-full px-5 py-2.5 hover:bg-skt-navy hover:text-white hover:border-neutral-900 transition-all duration-300 active:scale-95"
+                className="inline-flex items-center gap-2 text-sm font-medium text-neutral-900 border border-neutral-200 rounded-full px-5 py-2.5 hover:bg-skt-navy hover:text-white hover:border-neutral-900 transition-colors duration-300 active:scale-95"
               >
                 View Systems →
               </Link>
@@ -332,7 +334,7 @@ export function ServicesSection(): JSX.Element {
           </div>
         </div>
 
-        {/* ── Mobile Horizontal Native Scroll Container (Snap enabled, 1.2 cards visible, energy saver) ── */}
+        {/* ── Mobile Horizontal Native Scroll Container ── */}
         <div
           onScroll={handleMobileScroll}
           className="block lg:hidden overflow-x-auto snap-x snap-mandatory scrollbar-none touch-pan-x px-5 pb-6"
@@ -345,7 +347,8 @@ export function ServicesSection(): JSX.Element {
                   key={`mobile-${card.slug}-${i}`}
                   className="snap-start shrink-0 w-[280px] h-[420px] relative rounded-2xl overflow-hidden shadow-md flex flex-col justify-end p-5 bg-skt-navy border border-white/5 active:scale-[0.98] transition-transform duration-300"
                 >
-                  <Link href={`/capabilities/${card.slug}`} className="absolute inset-0 z-0">
+                  <Link href={card.href || `/capabilities/${card.slug}`} className="absolute inset-0 z-0">
+                    <span className="sr-only">View {card.title}</span>
                     <ImageWithSkeleton
                       src={card.bgImage}
                       alt={card.title}
@@ -356,12 +359,11 @@ export function ServicesSection(): JSX.Element {
                     />
                   </Link>
 
-                  {/* Gradient overlays */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none z-0" />
 
-                  {/* Top section */}
+                  {/* ⚡ Optimized: Removed backdrop-blur-md for better mobile GPU performance */}
                   <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10 pointer-events-none">
-                    <div className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-white">
+                    <div className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 border border-white/20 text-white">
                       <Icon size={16} />
                     </div>
                     <span className="text-[10px] font-bold tracking-[0.2em] text-white/60">
@@ -369,7 +371,6 @@ export function ServicesSection(): JSX.Element {
                     </span>
                   </div>
 
-                  {/* Content */}
                   <div className="relative z-10 flex flex-col pointer-events-none">
                     <h3 className="text-lg font-bold text-white mb-2 leading-tight">
                       {card.title}
@@ -378,7 +379,6 @@ export function ServicesSection(): JSX.Element {
                       {card.desc}
                     </p>
 
-                    {/* Tags with larger touch targets (min 32px height) */}
                     <div className="flex flex-wrap gap-1.5 mb-4 pointer-events-auto">
                       {card.tags.slice(0, 2).map((tag) => (
                         <span
@@ -391,7 +391,7 @@ export function ServicesSection(): JSX.Element {
                     </div>
 
                     <Link
-                      href={`/capabilities/${card.slug}`}
+                      href={card.href || `/capabilities/${card.slug}`}
                       className="pointer-events-auto inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-white/60 active:text-white"
                     >
                       Explore →
@@ -407,8 +407,9 @@ export function ServicesSection(): JSX.Element {
         <div className="lg:hidden flex justify-center items-center mt-2 mb-4">
           <div className="w-24 h-[2px] bg-neutral-200 rounded-full overflow-hidden">
             <div
-              className="h-full bg-skt-navy transition-all duration-75"
-              style={{ width: `${scrollProgress * 100}%` }}
+              id="mobile-scroll-progress"
+              className="h-full bg-skt-navy transition-none"
+              style={{ width: "0%" }}
             />
           </div>
         </div>
@@ -416,12 +417,9 @@ export function ServicesSection(): JSX.Element {
         {/* ── Desktop Slider Stage (Hidden on Mobile) ── */}
         <div
           ref={stageRef}
-          className="hidden lg:block relative"
-          style={{
-            userSelect: "none",
-          }}
+          className="hidden lg:block relative select-none"
         >
-          <div className="overflow-hidden" style={{ paddingTop: "20px", paddingBottom: "20px" }}>
+          <div className="overflow-hidden py-5">
             <div
               ref={rowARef}
               className="flex"

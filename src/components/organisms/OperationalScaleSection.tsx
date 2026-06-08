@@ -29,6 +29,7 @@ function CountUp({
         node.textContent = Math.round(v).toLocaleString();
       },
     });
+    // ⚡ Optimized: Cleanup animation on unmount
     return () => controls.stop();
   }, [started, target, duration]);
 
@@ -53,6 +54,7 @@ function Typewriter({ text, started }: { text: string; started: boolean }) {
       i++;
       if (i >= chars.length) clearInterval(interval);
     }, 90);
+    // ⚡ Optimized: Cleanup interval
     return () => clearInterval(interval);
   }, [started, text]);
 
@@ -82,7 +84,6 @@ function StatCard({
     return () => clearTimeout(t);
   }, [sectionStarted, index]);
 
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -94,26 +95,27 @@ function StatCard({
           setIsOpen(!isOpen);
         }
       }}
-      className="bg-bg-pure p-4 sm:p-8 hover:bg-bg-tint transition-all duration-300 flex flex-col justify-between group cursor-pointer sm:cursor-default relative overflow-hidden h-[150px] sm:h-[230px]"
+      // ⚡ Optimized: Replaced transition-all with transition-colors to prevent layout/GPU thrashing
+      className="relative flex flex-col justify-between h-[150px] sm:h-[230px] p-4 sm:p-8 overflow-hidden transition-colors duration-300 cursor-pointer bg-bg-pure hover:bg-bg-tint group sm:cursor-default"
     >
       {/* Top Accent Hover Line */}
       <div className="absolute top-0 left-0 w-full h-[2px] bg-rose-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
 
       <div>
         {/* Stat Value Container */}
-        <div className="flex flex-wrap items-baseline gap-0.5 sm:gap-1 mb-3 sm:mb-4 select-none">
+        <div className="flex items-baseline flex-wrap gap-0.5 sm:gap-1 mb-3 sm:mb-4 select-none">
           {stat.prefix && (
-            <span className="text-lg sm:text-2xl font-semibold text-neutral-400 group-hover:text-rose-600 transition-colors duration-300 leading-none">
+            <span className="text-lg font-semibold leading-none transition-colors duration-300 sm:text-2xl text-neutral-400 group-hover:text-rose-600">
               {stat.prefix}
             </span>
           )}
 
-          <span className="relative text-stat text-2xl sm:text-4xl md:text-5xl tracking-tight leading-none group-hover:scale-[1.02] transition-transform duration-300 origin-left inline-block stats-number-container">
-            {/* Stable Layout Container: Reserves the maximum width of the final string to prevent jitter */}
-            <span className="opacity-0 select-none pointer-events-none" aria-hidden="true">
+          <span className="relative inline-block text-2xl leading-none origin-left transition-transform duration-300 text-stat sm:text-4xl md:text-5xl tracking-tight group-hover:scale-[1.02] stats-number-container">
+            {/* Stable Layout Container */}
+            <span className="opacity-0 pointer-events-none select-none" aria-hidden="true">
               {isNumeric ? numericValue.toLocaleString() : stat.value}
             </span>
-            {/* Absolute overlay containing the active animated value */}
+            {/* Active animated value */}
             <span className="absolute inset-0 pointer-events-none">
               {isNumeric ? (
                 <CountUp target={numericValue} started={started} />
@@ -124,31 +126,32 @@ function StatCard({
           </span>
 
           {stat.suffix && (
-            <span className="text-lg sm:text-2xl font-semibold text-neutral-400 group-hover:text-rose-600 transition-colors duration-300 leading-none">
+            <span className="text-lg font-semibold leading-none transition-colors duration-300 sm:text-2xl text-neutral-400 group-hover:text-rose-600">
               {stat.suffix}
             </span>
           )}
         </div>
 
         {/* Title Label */}
-        <h3 className="text-data-label mb-1.5 sm:mb-2 text-left">
+        <h3 className="text-left mb-1.5 sm:mb-2 text-data-label">
           {stat.label}
         </h3>
       </div>
 
-      {/* Description (visible on desktop only) */}
-      <p className="hidden sm:block text-body-sm text-neutral-600 mt-1 max-w-[260px] group-hover:text-neutral-700 transition-colors duration-300">
+      {/* Description */}
+      <p className="hidden sm:block mt-1 max-w-[260px] text-body-sm text-neutral-600 transition-colors duration-300 group-hover:text-neutral-700">
         {stat.description}
       </p>
 
       {/* ── HOVER/CLICK BLUE OVERLAY (visible on mobile only) ── */}
+      {/* 📱 Mobile fix: Removed backdrop-blur-sm as it causes massive GPU lag on mobile overlays */}
       <div
-        className={`absolute inset-0 bg-skt-navy/95 backdrop-blur-sm flex flex-col justify-between p-4 sm:p-8 text-white transition-transform duration-500 ease-out z-10 sm:hidden ${
+        className={`absolute inset-0 z-10 flex flex-col justify-between p-4 text-white transition-transform duration-500 ease-out sm:hidden sm:p-8 bg-skt-navy/95 ${
           isOpen ? "translate-y-0" : "translate-y-full"
         }`}
       >
-        <div className="space-y-1.5 sm:space-y-3 text-left">
-          <h4 className="text-xs sm:text-sm md:text-lg lg:text-xl font-bold text-white tracking-tight leading-snug">
+        <div className="text-left space-y-1.5 sm:space-y-3">
+          <h4 className="text-xs font-bold leading-snug tracking-tight text-white sm:text-sm md:text-lg lg:text-xl">
             Focusing on {stat.label}
           </h4>
           <p className="text-[10px] sm:text-xs text-white/80 leading-relaxed font-medium">
@@ -156,39 +159,32 @@ function StatCard({
           </p>
         </div>
 
-        {/* Bottom: Close Bar (aligns with the morphing close button on the right) */}
-        <div className="flex items-center justify-between mt-auto pt-2 sm:pt-4">
+        <div className="flex items-center justify-between pt-2 mt-auto sm:pt-4">
           <span className="text-[9px] sm:text-xs font-bold tracking-tight text-white/60">
             Tap to close
           </span>
-          
-          {/* Spacer to reserve room for the absolute z-20 morphing button */}
-          <div className="w-6 h-6 sm:w-8 sm:h-8 invisible" />
+          <div className="w-6 h-6 invisible sm:w-8 sm:h-8" />
         </div>
       </div>
 
-      {/* Morphing Toggle Button (always on top, visible on mobile only) */}
-      <div className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 w-6 h-6 sm:w-8 sm:h-8 bg-neutral-200 text-neutral-900 flex items-center justify-center rounded-[6px] shadow-sm select-none z-20 sm:hidden">
+      {/* Morphing Toggle Button */}
+      <div className="absolute z-20 flex items-center justify-center w-6 h-6 rounded-[6px] shadow-sm select-none bottom-4 right-4 sm:bottom-8 sm:right-8 sm:w-8 sm:h-8 bg-neutral-200 text-neutral-900 sm:hidden">
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="w-3 h-3 sm:w-4 sm:h-4 relative flex items-center justify-center"
+          className="relative flex items-center justify-center w-3 h-3 sm:w-4 sm:h-4"
         >
-          {/* Horizontal line */}
-          <span className="absolute w-full h-[2px] bg-neutral-900 rounded-full" />
-          {/* Vertical line */}
+          <span className="absolute w-full h-[2px] rounded-full bg-neutral-900" />
           <motion.span
             animate={{ scaleY: isOpen ? 0 : 1 }}
             transition={{ duration: 0.25 }}
-            className="absolute w-[2px] h-full bg-neutral-900 rounded-full"
+            className="absolute w-[2px] h-full rounded-full bg-neutral-900"
           />
         </motion.div>
       </div>
     </motion.div>
   );
 }
-
-
 
 // ─── Section ─────────────────────────────────────────────────────────────────
 
@@ -218,7 +214,7 @@ export function OperationalScaleSection(): JSX.Element {
     <section
       ref={sectionRef}
       id="impact"
-      className="py-16 md:py-24 lg:py-32 bg-bg-soft overflow-hidden"
+      className="py-16 overflow-hidden md:py-24 lg:py-32 bg-bg-soft"
       aria-labelledby="stats-heading"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
@@ -231,13 +227,13 @@ export function OperationalScaleSection(): JSX.Element {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <span className="inline-flex items-center gap-1.5 text-eyebrow mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 inline-block" />
+            <span className="inline-flex items-center gap-1.5 mb-6 text-eyebrow">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-neutral-400" />
               OPERATIONAL SCALE
             </span>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
             <motion.h2
               id="stats-heading"
               initial={{ opacity: 0, y: 25 }}
@@ -256,7 +252,7 @@ export function OperationalScaleSection(): JSX.Element {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-body-lg text-neutral-600 self-end max-w-lg"
+              className="self-end max-w-lg text-body-lg text-neutral-600"
             >
               Behind every metric is our dedicated team of professionals, an
               unwavering commitment to safe operations, and strategic alignment
@@ -266,10 +262,10 @@ export function OperationalScaleSection(): JSX.Element {
           </div>
         </div>
 
-        {/* ── Stats Grid (Responsive 2-to-3 column Grid) ── */}
+        {/* ── Stats Grid ── */}
         <div
           ref={statsRef}
-          className="grid grid-cols-2 sm:grid-cols-3 gap-[1px] bg-neutral-200/50 border border-neutral-200/50 rounded-2xl overflow-hidden shadow-sm select-none"
+          className="grid grid-cols-2 gap-[1px] overflow-hidden border rounded-2xl shadow-sm select-none sm:grid-cols-3 bg-neutral-200/50 border-neutral-200/50"
         >
           {STATS.map((stat, index) => (
             <StatCard
@@ -288,31 +284,23 @@ export function OperationalScaleSection(): JSX.Element {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-16 pt-12 lg:mt-28 lg:pt-20 border-t border-neutral-100"
+          className="mt-16 pt-12 border-t lg:mt-28 lg:pt-20 border-neutral-100"
         >
-          {/* Section label */}
           <div className="flex items-center gap-4 mb-10 lg:mb-16">
             <div className="w-10 h-px bg-neutral-300" />
-            <span
-              className="text-eyebrow"
-            >
+            <span className="text-eyebrow">
               From the Chairman
             </span>
           </div>
 
-          {/* 12-col grid — portrait left, quote right */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-
-            {/* Portrait — col-span-5 */}
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-20">
             <motion.div
-              style={{ x: imageX, opacity: imageOpacity }}
-              className="lg:col-span-5 w-full"
+              style={{ x: imageX, opacity: imageOpacity, willChange: "transform, opacity" }}
+              className="w-full lg:col-span-5"
             >
-              <div className="relative max-w-[440px] mx-auto lg:mx-0 w-full">
-                {/* Offset border accent */}
-                <div className="absolute -bottom-4 -right-4 w-full h-full rounded-sm border border-neutral-200 -z-10" />
-                {/* Image */}
-                <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-neutral-100 w-full max-h-[400px] lg:max-h-none">
+              <div className="relative w-full mx-auto max-w-[440px] lg:mx-0">
+                <div className="absolute -bottom-4 -right-4 w-full h-full border rounded-sm -z-10 border-neutral-200" />
+                <div className="relative w-full overflow-hidden rounded-sm aspect-[4/5] bg-neutral-100 max-h-[400px] lg:max-h-none">
                   <Image
                     alt="Raj Talreja — Chairman & Managing Director"
                     src="/Raj Sir Photo.jpg"
@@ -326,7 +314,6 @@ export function OperationalScaleSection(): JSX.Element {
               </div>
             </motion.div>
 
-            {/* Quote — col-span-7 */}
             <motion.div
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -334,76 +321,35 @@ export function OperationalScaleSection(): JSX.Element {
               transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-7"
             >
-              {/* Decorative open quote mark */}
+              {/* ⚡ Optimized: Converted expensive inline styles to compiled Tailwind classes */}
               <div
                 aria-hidden="true"
-                style={{
-                  fontFamily: "var(--font-sans), 'Inter', sans-serif",
-                  fontSize: "clamp(40px, 8vw, 96px)",
-                  lineHeight: 0.85,
-                  color: "#d4d4d4",
-                  userSelect: "none",
-                  marginBottom: "16px",
-                }}
+                className="select-none mb-4 text-[#d4d4d4] font-sans text-[clamp(40px,8vw,96px)] leading-[0.85]"
               >
                 &ldquo;
               </div>
 
-              {/* Quote text — Inter, weight 300, elegant */}
               <blockquote>
                 <MagicText
                   text="We don't just extract minerals. We extract potential from the earth, and from our people."
-                  className="flex flex-wrap leading-[1.35] p-0 m-0"
-                  wordClassName="relative inline-block mr-[0.22em] text-[clamp(22px,3vw,38px)] font-light text-neutral-900"
-                  style={{
-                    fontFamily: "var(--font-sans), 'Inter', sans-serif",
-                    fontSize: "clamp(22px, 3vw, 38px)",
-                    fontWeight: 300,
-                    lineHeight: 1.35,
-                    letterSpacing: "-0.01em",
-                    color: "#1a1a1a",
-                    maxWidth: "100%",
-                    marginBottom: "32px",
-                  }}
+                  className="flex flex-wrap p-0 m-0 leading-[1.35] font-sans text-[clamp(22px,3vw,38px)] font-light tracking-[-0.01em] max-w-full mb-8"
+                  wordClassName="relative inline-block mr-[0.22em] font-light text-neutral-900"
                 />
 
-                {/* Signature block */}
-                <footer
-                  style={{
-                    borderTop: "1px solid #e5e5e5",
-                    paddingTop: "28px",
-                    maxWidth: "100%",
-                  }}
-                >
-                  <div className="flex items-end justify-between gap-6">
-                    {/* Name + title */}
-                    <div>
-                      <cite
-                        className="not-italic block text-neutral-900"
-                        style={{
-                          fontFamily: "var(--font-sans), 'Inter', sans-serif",
-                          fontSize: "17px",
-                          fontWeight: 500,
-                          letterSpacing: "-0.01em",
-                          marginBottom: "5px",
-                        }}
-                      >
-                        Raj Talreja
-                      </cite>
-                      <p
-                        className="text-eyebrow text-neutral-500"
-                      >
-                        Chairman · SKT Global Mining &amp; Services
-                      </p>
-                    </div>
+                <footer className="pt-7 border-t border-[#e5e5e5] max-w-full">
+                  <div>
+                    <cite className="block not-italic font-medium font-sans text-[17px] tracking-tight mb-1 text-neutral-900">
+                      Raj Talreja
+                    </cite>
+                    <p className="text-eyebrow text-neutral-500">
+                      Chairman · SKT Global Mining &amp; Services
+                    </p>
                   </div>
                 </footer>
               </blockquote>
             </motion.div>
-
           </div>
         </motion.div>
-
       </div>
     </section>
   );

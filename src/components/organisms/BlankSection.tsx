@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
-import { JSX } from "react";
+import { useRef, useEffect, JSX } from "react";
 import { ZambiaOperationsMapLoader } from "@/components/organisms/ZambiaOperationsMapLoader";
 
 export function BlankSection(): JSX.Element {
@@ -11,7 +10,7 @@ export function BlankSection(): JSX.Element {
   const contentRef = useRef<HTMLDivElement>(null);
   const copyTitleRef = useRef<HTMLDivElement>(null);
   const copyParaRef = useRef<HTMLParagraphElement>(null);
-  const mapPathRef = useRef<SVGGElement>(null);
+  // 🧹 Removed mapPathRef as it was unused in GSAP or React logic
   const coreRef = useRef<SVGGElement>(null);
   const revealRef = useRef<HTMLDivElement>(null);
 
@@ -28,7 +27,6 @@ export function BlankSection(): JSX.Element {
 
       gsap.registerPlugin(ScrollTrigger);
 
-      // Helper to calculate exact coordinates of the red pulsing dot relative to the container
       const getPortalCoords = () => {
         if (!coreRef.current || !containerRef.current) return { x: 55, y: 48 };
         const coreRect = coreRef.current.getBoundingClientRect();
@@ -43,15 +41,13 @@ export function BlankSection(): JSX.Element {
       ctx = gsap.context(() => {
         const mm = gsap.matchMedia();
 
-        // ── Full pinned portal zoom animation (all screen sizes) ─────────────
         mm.add("(prefers-reduced-motion: no-preference)", () => {
-          // Set initial states for clean portal reveal
           gsap.set(revealRef.current, {
             clipPath: () => {
               const coords = getPortalCoords();
               return `circle(0px at ${coords.x}% ${coords.y}%)`;
             },
-            opacity: 1, // Let clipPath handle the visibility instead of opacity
+            opacity: 1, 
             force3D: true,
             willChange: "clip-path",
           });
@@ -59,28 +55,20 @@ export function BlankSection(): JSX.Element {
           const tl = gsap.timeline({
             scrollTrigger: {
               trigger: containerRef.current,
-              start: "top top",          // Pin starts when section hits top
-              end: "+=50%",             // Viewport height scroll distance
-              scrub: 0.6,                // Smooth scrubbing
-              pin: pinWrapRef.current,   // Pin the inner wrapper
-              pinSpacing: true,          // Add scroll space for the pinned duration
+              start: "top top",
+              end: "+=50%",
+              scrub: 0.6,
+              pin: pinWrapRef.current,
+              pinSpacing: true,
               anticipatePin: 1,
-              fastScrollEnd: true,       // Better performance on fast scrolling
+              fastScrollEnd: true,
               invalidateOnRefresh: true,
             },
             defaults: { ease: "none" },
           });
 
-          // ════════════════════════════════════════════
-          // PHASE 1 (0% - 30%): Hold for reading (static text is fully visible already)
-          // ════════════════════════════════════════════
           tl.to({}, { duration: 1 }, 0);
 
-          // ════════════════════════════════════════════
-          // PHASE 2 (30% - 70%): Portal opens (clipPath expands)
-          // ════════════════════════════════════════════
-
-          // Core dot disappears as portal opens
           tl.to(coreRef.current,
             {
               opacity: 0,
@@ -92,7 +80,6 @@ export function BlankSection(): JSX.Element {
             1
           );
 
-          // Expand clipPath to reveal the interactive map
           tl.to(revealRef.current,
             {
               clipPath: () => {
@@ -105,9 +92,6 @@ export function BlankSection(): JSX.Element {
             1
           );
 
-          // ════════════════════════════════════════════
-          // PHASE 3 (70% - 100%): Map fully revealed hold
-          // ════════════════════════════════════════════
           tl.to({}, { duration: 1.5 }, 3);
 
           return () => {
@@ -116,7 +100,6 @@ export function BlankSection(): JSX.Element {
           };
         });
 
-        // ── Reduced Motion ─────────────────────────────
         mm.add("(prefers-reduced-motion: reduce)", () => {
           gsap.set(contentRef.current, { opacity: 1 });
           gsap.set(copyTitleRef.current, { opacity: 1, x: 0 });
@@ -130,52 +113,39 @@ export function BlankSection(): JSX.Element {
 
     return () => {
       mounted = false;
-      ctx?.revert();
+      ctx?.revert(); // ⚡ Optimized: proper cleanup
     };
   }, []);
 
-  // ─── Render ─────────────────────────────────────────
   return (
     <section
       ref={containerRef}
       id="operations-map"
       className="relative w-full"
     >
-      {/* 
-        PIN WRAPPER 
-        - Gets pinned by GSAP for the full animation duration
-        - Height = 100vh (the actual viewport)
-        - GSAP adds scroll space below via pinSpacing
-      */}
       <div
         ref={pinWrapRef}
-        className="relative w-full h-screen overflow-hidden bg-white"
+        className="relative w-full h-screen bg-white overflow-hidden"
       >
-        {/* ═══════════════════════════════════════════════
-            LAYER 1 — Initial editorial content
-        ═══════════════════════════════════════════════ */}
         <div
           ref={contentRef}
-          className="absolute inset-0 flex items-center py-4 lg:py-0"
-          style={{ zIndex: 10 }}
+          className="absolute inset-0 z-10 flex items-center py-4 lg:py-0"
         >
-          <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-16 items-center w-full">
-
-              {/* Left: Copy */}
+          <div className="w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-16 items-center">
               <div className="flex flex-col justify-center">
                 <div ref={copyTitleRef}>
-                  <h3 className="text-xs font-semibold tracking-[0.2em] text-neutral-500 uppercase mb-2 lg:mb-5">
+                  <h3 className="mb-2 lg:mb-5 text-xs font-semibold tracking-[0.2em] text-neutral-500 uppercase">
                     Underground Operations
                   </h3>
-                  <h2 className="text-3xl md:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.1] mb-3 lg:mb-8">
+                  <h2 className="mb-3 lg:mb-8 text-3xl md:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.1]">
                     Zambia <br />
                     <span className="text-neutral-300">Mining Ecosystem</span>
                   </h2>
                 </div>
                 <p
                   ref={copyParaRef}
-                  className="text-neutral-600 max-w-lg text-[15px] md:text-base font-light leading-relaxed"
+                  className="max-w-lg text-[15px] md:text-base font-light text-neutral-600 leading-relaxed"
                 >
                   SKT Global&apos;s operations in Zambia are built around underground
                   mechanisation, operational infrastructure, workforce
@@ -186,13 +156,12 @@ export function BlankSection(): JSX.Element {
                 </p>
               </div>
 
-              {/* Right: SVG Operations Map */}
-              <div className="relative w-full h-[22vh] sm:h-[30vh] lg:h-auto aspect-[8/5] lg:aspect-square flex items-center justify-center">
+              <div className="relative flex items-center justify-center w-full mt-8 lg:mt-0 h-[32vh] sm:h-[40vh] lg:h-auto aspect-[8/5] lg:aspect-square">
                 <svg
                   viewBox="0 0 800 500"
-                  className="w-full h-full object-contain overflow-visible"
+                  className="w-full h-full object-contain overflow-visible origin-center scale-[1.35] sm:scale-125 lg:scale-100"
                 >
-                  <g ref={mapPathRef}>
+                  <g>
                     <image
                       href="/zambia-map-detailed.webp"
                       x="0"
@@ -203,7 +172,7 @@ export function BlankSection(): JSX.Element {
                     />
                   </g>
 
-                  {/* Interactive dot/pin */}
+                  {/* GSAP targets */}
                   <g
                     ref={coreRef}
                     className="map-pin"
@@ -225,22 +194,13 @@ export function BlankSection(): JSX.Element {
           </div>
         </div>
 
-        {/* ═══════════════════════════════════════════════
-            LAYER 3 — Zambia Interactive Map Reveal
-        ═══════════════════════════════════════════════ */}
+        {/* ⚡ Optimized: Moved z-index to Tailwind, removed static transform3d/willChange since GSAP applies them */}
         <div
           ref={revealRef}
-          className="absolute inset-0 opacity-0 bg-[#0B0F19] overflow-y-auto"
-          style={{
-            zIndex: 50,
-            transform: "translate3d(0,0,0)",
-            backfaceVisibility: "hidden",
-            willChange: "clip-path",
-          }}
+          className="absolute inset-0 z-50 opacity-0 bg-[#0B0F19] overflow-y-auto"
         >
           <ZambiaOperationsMapLoader clean={true} />
         </div>
-
       </div>
     </section>
   );

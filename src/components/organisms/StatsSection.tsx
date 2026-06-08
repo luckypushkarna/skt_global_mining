@@ -293,40 +293,38 @@ export function StatsSection(): JSX.Element {
 
                       {/* Mobile Accordion Container: Animated fold-out */}
                       <div className="block lg:hidden">
-                        <AnimatePresence initial={false}>
-                          {isActive && (
-                            <motion.div
-                              initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                              animate={{ height: "auto", opacity: 1, marginTop: 8 }}
-                              exit={{ height: 0, opacity: 0, marginTop: 0 }}
-                              transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-                              className="overflow-hidden will-change-[height,opacity]"
-                            >
-                              <p className="text-body-sm mb-4">
-                                {p.body}
-                              </p>
+                        <motion.div
+                          initial={{ height: isActive ? "auto" : 0, opacity: isActive ? 1 : 0, marginTop: isActive ? 8 : 0 }}
+                          animate={{ height: isActive ? "auto" : 0, opacity: isActive ? 1 : 0, marginTop: isActive ? 8 : 0 }}
+                          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+                          className="overflow-hidden will-change-[height,opacity]"
+                        >
+                          <div className="pb-1">
+                            <p className="text-body-sm mb-4">
+                              {p.body}
+                            </p>
 
-                              {/* Responsive Mobile Inline Image */}
-                              <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden shadow-md">
-                                <Image
-                                  src={p.img}
-                                  alt={p.tag}
-                                  fill
-                                  sizes="(max-width: 1024px) 100vw, 30vw"
-                                  className="object-cover"
-                                  quality={65}
-                                />
-                                {/* Bottom gradient overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-neutral-950/20 to-transparent" />
-                                
-                                {/* Tag badge overlay */}
-                                <span className="absolute top-3 right-3 text-[9px] font-semibold tracking-widest text-neutral-500 uppercase border border-neutral-200 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-sm">
-                                  {p.tag}
-                                </span>
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
+                            {/* Responsive Mobile Inline Image */}
+                            <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden shadow-md">
+                              <Image
+                                src={p.img}
+                                alt={p.tag}
+                                fill
+                                sizes="100vw"
+                                className="object-cover"
+                                quality={60}
+                                priority
+                              />
+                              {/* Bottom gradient overlay */}
+                              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-neutral-950/20 to-transparent" />
+                              
+                              {/* Tag badge overlay */}
+                              <span className="absolute top-3 right-3 text-[9px] font-semibold tracking-widest text-neutral-500 uppercase border border-neutral-200 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-sm">
+                                {p.tag}
+                              </span>
+                            </div>
+                          </div>
+                        </motion.div>
                       </div>
                     </div>
 

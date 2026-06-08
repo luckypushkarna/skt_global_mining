@@ -1,9 +1,9 @@
 "use client";
 
-import { JSX, useEffect, useRef, useState } from "react";
+import { JSX, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Search, MapPin, Briefcase } from "lucide-react";
+
 
 const CATEGORIES = [
   "Engineering",
@@ -43,9 +43,7 @@ const EMPLOYEE_CARDS = [
 
 export function CareersHero(): JSX.Element {
   const heroRef = useRef<HTMLDivElement>(null);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [department, setDepartment] = useState("");
-  const [location, setLocation] = useState("");
+
 
   useEffect(() => {
     let ctx: { revert: () => void } | null = null;
@@ -105,7 +103,7 @@ export function CareersHero(): JSX.Element {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-[90vh] flex items-center bg-neutral-50 overflow-hidden py-16"
+      className="relative min-h-[70vh] flex items-center bg-neutral-50 overflow-hidden py-10 md:py-12"
     >
       {/* Background blueprint/industrial grid */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.02)_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none" />
@@ -113,11 +111,11 @@ export function CareersHero(): JSX.Element {
       <div className="absolute top-1/2 -right-40 w-96 h-96 bg-neutral-200/30 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-screen-xl mx-auto px-6 lg:px-12 w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
           {/* LEFT SIDE: Content and Search */}
-          <div className="lg:col-span-6 space-y-8">
-            <div className="space-y-4">
+          <div className="lg:col-span-6 space-y-6">
+            <div className="space-y-3">
               <motion.span
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -127,7 +125,7 @@ export function CareersHero(): JSX.Element {
                 <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 animate-pulse" />
                 Build with SKT Global
               </motion.span>
-              
+
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -137,7 +135,7 @@ export function CareersHero(): JSX.Element {
                 Build the <br />
                 Future of <span className="text-neutral-300">Mining.</span>
               </motion.h1>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -149,81 +147,30 @@ export function CareersHero(): JSX.Element {
               </motion.p>
             </div>
 
-            {/* Search Bar */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="bg-white rounded-2xl border border-neutral-200/80 p-3 shadow-lg shadow-neutral-100/50"
-            >
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                <div className="relative flex items-center border-b md:border-b-0 md:border-r border-neutral-100 pb-3 md:pb-0 md:pr-3">
-                  <Search size={18} className="absolute left-3 text-neutral-400" />
-                  <input
-                    type="text"
-                    placeholder="Job title or keywords..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-3 py-2 text-sm bg-transparent border-none focus:outline-none placeholder:text-neutral-400 text-neutral-800"
-                  />
-                </div>
-                <div className="relative flex items-center border-b md:border-b-0 md:border-r border-neutral-100 pb-3 md:pb-0 md:pr-3 md:pl-2">
-                  <Briefcase size={18} className="absolute left-3 text-neutral-400" />
-                  <select
-                    value={department}
-                    onChange={(e) => setDepartment(e.target.value)}
-                    className="w-full pl-10 pr-3 py-2 text-sm bg-transparent border-none focus:outline-none appearance-none text-neutral-500"
-                  >
-                    <option value="">All Departments</option>
-                    <option value="engineering">Engineering</option>
-                    <option value="mining">Underground Mining</option>
-                    <option value="safety">Safety & HSE</option>
-                    <option value="operations">Operations</option>
-                  </select>
-                </div>
-                <div className="relative flex items-center md:pl-2">
-                  <MapPin size={18} className="absolute left-3 text-neutral-400" />
-                  <select
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                    className="w-full pl-10 pr-12 py-2 text-sm bg-transparent border-none focus:outline-none appearance-none text-neutral-500"
-                  >
-                    <option value="">All Locations</option>
-                    <option value="zambia">Zambia Operations</option>
-                    <option value="india">India HQ</option>
-                    <option value="sa">South Africa</option>
-                  </select>
-                  <button
-                    onClick={() => {
-                      document.getElementById("open-jobs")?.scrollIntoView({ behavior: "smooth" });
-                    }}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 bg-skt-navy hover:bg-neutral-800 text-white rounded-lg p-2.5 transition-colors shadow-sm"
-                  >
-                    <Search size={16} />
-                  </button>
-                </div>
-              </div>
-            </motion.div>
+
 
             {/* Quick Pills */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="space-y-3"
+              className="flex flex-wrap items-center gap-3 pt-1"
             >
-              <h3 className="text-[10px] font-bold tracking-widest text-neutral-400 uppercase">
-                Popular Categories
-              </h3>
-              <div className="flex flex-wrap gap-2">
+              <span className="text-[9px] font-bold tracking-[0.2em] text-neutral-400 uppercase">
+                Popular:
+              </span>
+              <div className="flex flex-wrap gap-1.5">
                 {CATEGORIES.map((cat) => (
                   <button
                     key={cat}
                     onClick={() => {
-                      setSearchQuery(cat);
+                      const params = new URLSearchParams();
+                      params.set("q", cat);
+                      window.history.pushState({}, "", `${window.location.pathname}?${params.toString()}`);
+                      window.dispatchEvent(new Event("job-search-updated"));
                       document.getElementById("open-jobs")?.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className="px-3.5 py-1.5 bg-white border border-neutral-200 text-xs font-semibold text-neutral-500 hover:text-neutral-900 hover:border-neutral-400 rounded-full transition-all"
+                    className="px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-neutral-500 hover:text-neutral-900 bg-neutral-100 hover:bg-neutral-200/80 border border-neutral-200/30 rounded transition-all duration-200"
                   >
                     {cat}
                   </button>
@@ -233,8 +180,8 @@ export function CareersHero(): JSX.Element {
           </div>
 
           {/* RIGHT SIDE: Layered Visual Cards */}
-          <div className="lg:col-span-6 relative h-[520px] md:h-[600px] flex items-center justify-center">
-            
+          <div className="lg:col-span-6 relative h-[440px] md:h-[480px] flex items-center justify-center">
+
             {/* Background layered shape */}
             <div className="absolute w-[80%] aspect-square border border-neutral-200/50 rounded-full pointer-events-none" />
             <div className="absolute w-[60%] aspect-square border border-neutral-200/30 rounded-full pointer-events-none" />

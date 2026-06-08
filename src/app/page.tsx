@@ -9,6 +9,7 @@ import { GallerySection } from "@/components/organisms/GallerySection";
 import { ContactSection } from "@/components/organisms/ContactSection";
 
 import { PartnersSection } from "@/components/organisms/PartnersSection";
+import { CopperBanner } from "@/components/organisms/CopperBanner";
 import { generateMetadata } from "@/lib/seo";
 import { BlankSection } from "@/components/organisms/BlankSection";
 import { PagePreloader } from "@/components/PagePreloader";
@@ -63,6 +64,11 @@ export default function HomePage(): JSX.Element {
       {/* Partners */}
       <Suspense fallback={<SectionSkeleton />}>
         <PartnersSection />
+      </Suspense>
+
+      {/* Copper Procurement Banner */}
+      <Suspense fallback={<SectionSkeleton />}>
+        <CopperBanner />
       </Suspense>
 
       {/* Contact */}
