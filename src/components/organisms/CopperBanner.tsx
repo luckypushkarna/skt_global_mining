@@ -1,11 +1,11 @@
 "use client";
 
 import { JSX, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { CopperBrick3D } from "@/components/CopperBrick3D";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -73,15 +73,8 @@ export function CopperBanner(): JSX.Element {
                 }}
               >
                 {/* Hover Effect Wrapper */}
-                <div className="w-full h-full relative transition-transform duration-700 hover:scale-105 hover:-rotate-2 pointer-events-auto">
-                  <Image
-                    src="/skt-brick.png"
-                    alt="Premium Copper Ingot"
-                    fill
-                    sizes="(max-width: 1024px) 200px, 260px"
-                    className="object-contain filter drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)]"
-                    priority
-                  />
+                <div className="w-full h-full relative transition-transform duration-700 hover:scale-105 hover:-rotate-2 pointer-events-auto flex items-center justify-center">
+                  <CopperBrick3D />
                 </div>
               </div>
             </div>

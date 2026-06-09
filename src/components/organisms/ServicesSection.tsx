@@ -213,11 +213,15 @@ export function ServicesSection(): JSX.Element {
     }
 
     function onWheel(e: WheelEvent) {
-      const dominantDelta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-      if (Math.abs(dominantDelta) < 1) return;
+      // If vertical scroll is stronger than horizontal, ignore and let page scroll natively
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        return;
+      }
+
+      if (Math.abs(e.deltaX) < 1) return;
 
       const modeMultiplier = e.deltaMode === WheelEvent.DOM_DELTA_LINE ? 16 : e.deltaMode === WheelEvent.DOM_DELTA_PAGE ? stage!.clientWidth : 1;
-      velA = -dominantDelta * modeMultiplier * WHEEL_FACTOR;
+      velA = -e.deltaX * modeMultiplier * WHEEL_FACTOR;
       paused = true;
       currentSpeedA = 0;
       e.preventDefault();
