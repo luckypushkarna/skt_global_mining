@@ -452,7 +452,7 @@ function SuccessToast({ onClose }: { onClose: () => void }): JSX.Element {
             Message sent successfully!
           </p>
           <p className="mt-1 text-xs text-neutral-500 leading-relaxed">
-            Thank you for reaching out. We'll respond within 24 hours.
+            Thank you for reaching out. We&apos;ll respond within 24 hours.
           </p>
         </div>
 
