@@ -20,8 +20,6 @@ npm run lint
 
 # 3. Test local production build
 npm run build
-```
-
 ---
 
 ## 🚀 Dev Commands
