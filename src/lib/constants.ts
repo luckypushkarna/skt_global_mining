@@ -10,7 +10,7 @@ export const SITE_CONFIG = {
   twitterHandle: "@sktglobal",
   founded: "2005",
   headquarters: "Mumbai, India",
-  email: "director@sktglobalminings.com",
+  email: "Info@sktglobalminings.com",
   phone: "+260 762 620 036",
   address: "CHIM/254/A, Copperbelt Province Opposite Mindolo Police Station, Between Rubies & Meru Filling Station Kitwe, Zambia",
 } as const;

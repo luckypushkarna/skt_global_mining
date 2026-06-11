@@ -11,6 +11,8 @@ import {
   Heart,
   Network,
   Newspaper,
+  Handshake,
+  Globe,
   type LucideIcon,
 } from "lucide-react";
 
@@ -86,6 +88,11 @@ export const operationsSection: NavSection = {
   ],
   links: [
     {
+      title: "Infrastructure & Facilities",
+      href: "/operations/infrastructure-facilities",
+      icon: Building2,
+    },
+    {
       title: "Engineering Services",
       href: "/operations/engineering-services",
       icon: Wrench,
@@ -157,6 +164,30 @@ export const mediaSection: NavSection = {
 };
 
 // ═══════════════════════════════════════════════════════════
+// PARTNERS
+// ═══════════════════════════════════════════════════════════
+
+export const partnersSection: NavSection = {
+  id: "partners",
+  label: "Partners",
+  featured: [
+    {
+      title: "Our Partners",
+      href: "/partners",
+      description: "Collaborations and strategic alliances",
+      icon: Handshake,
+    },
+  ],
+  links: [
+    {
+      title: "Become a Partner",
+      href: "/partners/become-partner",
+      icon: Users,
+    },
+  ],
+};
+
+// ═══════════════════════════════════════════════════════════
 // SIMPLE LINKS (No dropdown)
 // ═══════════════════════════════════════════════════════════
 
@@ -174,4 +205,5 @@ export const dropdownSections: NavSection[] = [
   operationsSection,
   sustainabilitySection,
   mediaSection,
+  partnersSection,
 ];

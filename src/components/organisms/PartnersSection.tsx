@@ -4,35 +4,31 @@ import { type JSX } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Badge } from "@/components/atoms/Badge";
-import { containerVariants, itemVariants } from "@/lib/animations";
 
 const PARTNERS = [
   {
-    id: "mopani",
+    id: "irh-ceo",
     name: "Ali Rashed Al Rashdi",
-    role: "CEO of International Resources Holding (IRH)",
+    role: "CEO, International Resources Holding",
     image: "/ali-rashed-new.webp",
-    overlayTitle: "Focusing on Strategic Investments",
-    bio: "Overseeing IRH's global natural resources investment platform and securing critical minerals to drive energy and mining projects.",
-    action: "Mine-to-Market Strategy",
+    focus: "Mine-to-Market Strategy",
+    description: "Overseeing IRH's global natural resources investment platform and securing critical minerals to drive energy and mining projects.",
   },
   {
-    id: "ttipl",
+    id: "irh-coo",
     name: "Ravi Sharma",
-    role: "COO of International Resources Holding (IRH)",
+    role: "COO, International Resources Holding",
     image: "/Ravi Sharma.webp",
-    overlayTitle: "Focusing on Global Operations",
-    bio: "Leading IRH's mining value chain operations with over 35 years of industry expertise in mineral resource evaluation and management.",
-    action: "Operational Leadership",
+    focus: "Operational Leadership",
+    description: "Leading IRH's mining value chain operations with over 35 years of industry expertise in mineral resource evaluation and management.",
   },
   {
-    id: "irh",
+    id: "mcm-ceo",
     name: "Charles Sakanya",
-    role: "CEO of Mopani Copper Mines(MCM)",
+    role: "CEO, Mopani Copper Mines",
     image: "/Charles Sakanya.webp",
-    overlayTitle: "Focusing on Mining Excellence",
-    bio: "An accomplished mechanical engineer with 35+ years of experience across global mining operations, leading Mopani's production since 2020.",
-    action: "Production Leadership",
+    focus: "Production Leadership",
+    description: "An accomplished mechanical engineer with 35+ years of experience across global mining operations, leading Mopani's production since 2020.",
   },
 ];
 
@@ -40,122 +36,95 @@ export function PartnersSection(): JSX.Element {
   return (
     <section
       id="partners"
-      className="py-16 md:py-24 lg:py-32 bg-bg-soft border-t border-slate-200"
+      className="py-16 md:py-24 bg-bg-soft border-t border-slate-200"
       aria-labelledby="partners-heading"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
-        {/* Header: Symmetrical Split Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1.8fr] gap-12 items-end mb-16">
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-6"
-            >
-              <Badge variant="dot">Our Partners</Badge>
-            </motion.div>
-            <motion.h2
-              id="partners-heading"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-3xl md:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.1]"
-            >
-              Strategic Partnership <br />
-              <span className="text-neutral-300"> Ecosystem</span>
-            </motion.h2>
-          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-          >
-            <p className="text-[15px] md:text-base text-neutral-600 font-light leading-relaxed max-w-xl">
-              SKT Global operates as a key mining contractor supporting International Resources Holding (IRH) and Mopani Copper Mines through underground mechanisation, operational infrastructure, and production support systems. Through continuous operational expansion, infrastructure development, and workforce scaling, SKT Global intends to support up to 90% of future IRH/MCM mining operations.
-              <br />
-              <br />
-              IRH currently holds a 51% stake in Mopani Copper Mines.
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Partners Grid: High-Impact 3-Column Grid */}
+        {/* ─── Header ────────────────────────────────── */}
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-5%" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-2xl mb-16 md:mb-20 text-center mx-auto"
         >
-          {PARTNERS.map((partner) => {
+          <Badge variant="dot">Our Partners</Badge>
+
+          <h2
+            id="partners-heading"
+            className="mt-4 text-3xl md:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.15]"
+          >
+            Strategic Partnership{" "}
+            <span className="text-neutral-400">Ecosystem</span>
+          </h2>
+
+          <p className="mt-5 text-[15px] md:text-base text-neutral-600 leading-relaxed max-w-xl mx-auto">
+            SKT Global supports IRH and Mopani Copper Mines through
+            underground mechanisation, infrastructure, and production systems —
+            scaling to support up to 90% of future operations.
+          </p>
+        </motion.div>
+
+        {/* ─── Partners Alternating Layout ───────────── */}
+        <div className="space-y-16 md:space-y-32">
+          {PARTNERS.map((partner, i) => {
+            const isEven = i % 2 === 0;
             return (
-              <motion.div
+              <motion.article
                 key={partner.id}
-                variants={itemVariants}
-                className="group flex flex-col cursor-pointer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-10%" }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className={`flex flex-col gap-6 md:gap-12 lg:gap-16 items-center ${
+                  isEven ? "md:flex-row" : "md:flex-row-reverse"
+                } group`}
               >
-                {/* Image Container Area */}
-                <div className="relative aspect-[0.95/1.1] overflow-hidden rounded-xl bg-neutral-100 mb-5 border border-neutral-100/70">
-                  <Image
-                    src={partner.image}
-                    alt={partner.name}
-                    fill
-                    className="object-cover transition-transform duration-700 ease-out scale-100 group-hover:scale-[1.03]"
-                    sizes="(max-w-768px) 100vw, 33vw"
-                    priority
-                  />
+                {/* Image Section */}
+                <div className="w-full max-w-[280px] sm:max-w-[320px] md:w-4/12 shrink-0">
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-neutral-100 border border-neutral-100 shadow-sm">
+                    <Image
+                      src={partner.image}
+                      alt={partner.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    />
 
-                  {/* ── HOVER OVERLAY: Slides up from the bottom ── */}
-                  <div className="absolute inset-0 bg-skt-navy/95 backdrop-blur-sm flex flex-col justify-between p-6 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10">
+                    {/* Gradient overlay on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                    {/* Top: Header & Bio */}
-                    <div className="space-y-3">
-                      <h4 className="text-lg md:text-xl font-bold text-white tracking-tight leading-snug">
-                        {partner.overlayTitle}
-                      </h4>
-                      <p className="text-xs text-white/80 leading-relaxed font-medium">
-                        {partner.bio}
-                      </p>
+                    {/* Focus tag */}
+                    <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-500">
+                      <span className="inline-block px-3 py-1.5 bg-white/95 backdrop-blur-sm text-[10px] font-semibold tracking-wide text-neutral-900 rounded-lg shadow-sm">
+                        {partner.focus}
+                      </span>
                     </div>
-
-                    {/* Bottom: Interactive Gray Action Bar */}
-                    <div className="flex items-center justify-between mt-auto pt-4">
-                      <div className="flex items-center gap-3">
-                        {/* Gray square button with arrow */}
-                        <div className="w-8 h-8 bg-neutral-200 text-neutral-900 flex items-center justify-center rounded-[6px] shadow-sm select-none">
-                          <span className="text-base font-bold">→</span>
-                        </div>
-                        <span className="text-xs font-bold tracking-tight text-white">
-                          {partner.action}
-                        </span>
-                      </div>
-
-                      {/* Gray square button with minus */}
-                      <div className="w-8 h-8 bg-neutral-200 text-neutral-900 flex items-center justify-center rounded-[6px] shadow-sm select-none">
-                        <span className="text-base font-bold">—</span>
-                      </div>
-                    </div>
-
                   </div>
                 </div>
 
-                {/* Info Area */}
-                <div className="flex flex-col px-1">
-                  <p className="text-[10px] font-semibold tracking-[0.15em] text-neutral-500 uppercase mb-1.5 leading-relaxed">
+                {/* Text Section */}
+                <div className="w-full md:w-8/12 flex flex-col justify-center text-center md:text-left">
+                  <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-skt-blue mb-2.5">
                     {partner.role}
                   </p>
-                  <h3 className="text-base font-semibold text-neutral-900 tracking-tight leading-none">
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-neutral-900 tracking-tight leading-tight mb-6">
                     {partner.name}
                   </h3>
+                  <p className="text-base md:text-lg text-neutral-600 leading-relaxed font-light">
+                    {partner.description}
+                  </p>
                 </div>
-              </motion.div>
+              </motion.article>
             );
           })}
-        </motion.div>
+        </div>
+
+        {/* ─── Footnote ──────────────────────────────── */}
+        <p className="mt-20 md:mt-24 pt-8 border-t border-slate-200 text-xs md:text-sm text-neutral-400 text-center font-medium">
+          IRH holds a 51% stake in Mopani Copper Mines.
+        </p>
       </div>
     </section>
   );

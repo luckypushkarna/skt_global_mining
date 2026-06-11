@@ -10,7 +10,7 @@ import { Button } from "@/components/atoms/Button";
 import { cn } from "@/lib/utils";
 
 // ─── CONFIG ──────────────────────────────────────────────
-const WEB3FORMS_ACCESS_KEY = "b7c4e785-9483-4189-8686-d51d31e8a5de";
+const WEB3FORMS_ACCESS_KEY = "386fb841-e18c-4f44-a066-b9ca44646790";
 const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 const STATUS_AUTO_HIDE_MS = 6000;
 const REQUEST_TIMEOUT_MS = 15000;
@@ -115,7 +115,7 @@ const parseWeb3FormsError = (
       return {
         title: "Service Temporarily Unavailable",
         message: "Our servers are experiencing high traffic at the moment.",
-        hint: "Please email us directly at director@sktglobalminings.com",
+        hint: "Please email us directly at Info@sktglobalminings.com",
       };
     }
     

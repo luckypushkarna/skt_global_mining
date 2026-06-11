@@ -31,7 +31,7 @@ export const Badge = memo(function Badge({
       )}
     >
       {variant === "dot" && (
-        <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 inline-block" />
+        <span className="w-1.5 h-1.5 rounded-full bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.6)] inline-block" />
       )}
       {children}
     </span>
