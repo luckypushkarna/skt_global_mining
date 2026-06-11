@@ -41,7 +41,7 @@ export function ESGBanner() {
           {/* Sub */}
           <p className="text-xs md:text-sm text-white/90 leading-relaxed font-normal drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
             At SKT Global, environmental stewardship, social responsibility, and governance
-            aren&apos;t policies — they are the foundation of how we operate every single day.
+            aren&apos;t policies - they are the foundation of how we operate every single day.
           </p>
         </motion.div>
       </div>

@@ -21,7 +21,7 @@ const LOCATIONS = [
     name: "Chingola",
     role: "Mining Operations Hub",
     description:
-      "Primary underground mining operations base — the core of SKT's mechanised mining capability supporting Mopani Copper Mines.",
+      "Primary underground mining operations base - the core of SKT's mechanised mining capability supporting Mopani Copper Mines.",
     lng: 27.8635,
     lat: -12.5295,
     type: "primary" as const,
@@ -132,7 +132,7 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
 
             <p className="text-white/60 font-light max-w-xl text-[15px] md:text-base leading-relaxed mb-8">
               Five active operational sites across Zambia&apos;s Copperbelt and North-Western
-              regions — supporting the Mopani Copper Mines ecosystem with
+              regions - supporting the Mopani Copper Mines ecosystem with
               mechanised underground mining services.
             </p>
 
@@ -219,7 +219,7 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
                       id={`map-marker-${location.id}`}
                       className="relative group cursor-pointer flex items-center justify-center animate-fade-in"
                     >
-                      {/* Pulsing ring — primary location only */}
+                      {/* Pulsing ring - primary location only */}
                       {location.type === "primary" && (
                         <span className={`absolute w-8 h-8 rounded-full ${pulseBg} animate-ping`} />
                       )}

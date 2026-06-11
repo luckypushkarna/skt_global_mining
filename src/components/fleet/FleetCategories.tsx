@@ -23,7 +23,7 @@ export function FleetCategories() {
           </h2>
         </div>
 
-        {/* Category rows — alternating layout */}
+        {/* Category rows - alternating layout */}
         <div className="space-y-20 lg:space-y-28">
           {categories.map((cat, i) => {
             const isReversed = i % 2 === 1;
@@ -39,7 +39,7 @@ export function FleetCategories() {
                   <div className="relative aspect-[4/3] bg-slate-200 overflow-hidden">
                     <Image
                       src={cat.image}
-                      alt={`${cat.type} — underground mining equipment`}
+                      alt={`${cat.type} - underground mining equipment`}
                       fill
                       sizes="(max-width: 1024px) 100vw, 60vw"
                       className="object-contain bg-white"

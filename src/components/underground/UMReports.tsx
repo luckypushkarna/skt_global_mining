@@ -25,7 +25,7 @@ export function UMReports() {
             <a
               key={report.title}
               href="#"
-              aria-label={`Download ${report.title} — ${report.size} PDF`}
+              aria-label={`Download ${report.title} - ${report.size} PDF`}
               className="group flex items-center justify-between gap-6 py-6 border-t border-slate-200 last:border-b hover:bg-slate-50/40 transition-colors -mx-5 px-5 lg:-mx-12 lg:px-12"
             >
               <div className="flex-1 min-w-0">

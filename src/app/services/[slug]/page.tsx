@@ -123,7 +123,7 @@ export default function ServiceDetailPage() {
         </div>
       </section>
 
-      {/* ── Detail Content — Brief animated reveal ── */}
+      {/* ── Detail Content - Brief animated reveal ── */}
       <section
         className="max-w-screen-xl mx-auto px-6 lg:px-12 py-20 animate-[fadeSlideUp_0.6s_ease-out_forwards]"
         style={{ opacity: 0, animationDelay: "0.1s" }}

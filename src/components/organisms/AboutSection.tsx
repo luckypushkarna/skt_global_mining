@@ -287,7 +287,7 @@ export function AboutSection(): JSX.Element {
         {/* ─── Timeline ─────────────────────────────────────────── */}
         <div ref={timelineRef} id="history" className="relative">
 
-          {/* Vertical track — faint guide line */}
+          {/* Vertical track - faint guide line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-neutral-100 -translate-x-px md:-translate-x-1/2" />
 
           {/* CSS Tire Tracks Wrapper - Animating height via GSAP */}
@@ -303,7 +303,7 @@ export function AboutSection(): JSX.Element {
             <div className="w-[4px] h-full rounded-sm" style={{ background: "linear-gradient(to bottom, rgba(176, 190, 197, 0.1) 0%, rgba(144, 164, 174, 0.8) 100%)" }} />
           </div>
 
-          {/* JCB vehicle — controlled entirely by GSAP now */}
+          {/* JCB vehicle - controlled entirely by GSAP now */}
           <div
             className="excavator-vehicle absolute left-4 md:left-1/2 top-0 z-10"
             style={{
@@ -355,7 +355,7 @@ export function AboutSection(): JSX.Element {
                     )}
                   </div>
 
-                  {/* Center dot — absolutely positioned on timeline axis */}
+                  {/* Center dot - absolutely positioned on timeline axis */}
                   <div className="absolute left-4 md:left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
                     <MilestoneDot index={index} />
                   </div>

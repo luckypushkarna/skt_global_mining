@@ -9,7 +9,7 @@ import { GallerySection } from "@/components/organisms/GallerySection";
 import { ContactSection } from "@/components/organisms/ContactSection";
 
 import { PartnersSection } from "@/components/organisms/PartnersSection";
-import { CopperBanner } from "@/components/organisms/CopperBanner";
+
 import { generateMetadata } from "@/lib/seo";
 import { BlankSection } from "@/components/organisms/BlankSection";
 import { PagePreloader } from "@/components/PagePreloader";
@@ -17,7 +17,7 @@ import { SectionHeaderSkeleton, TextBlockSkeleton } from "@/components/ui/skelet
 
 export const metadata = generateMetadata({
   description:
-    "SKT Global Mining & Services Limited — Engineering excellence in mining and industrial services across 8+ countries. 18+ years. 4,200+ workforce. Committed to Zero Harm.",
+    "SKT Global Mining & Services Limited - Engineering excellence in mining and industrial services across 8+ countries. 18+ years. 4,200+ workforce. Committed to Zero Harm.",
 });
 
 export default function HomePage(): JSX.Element {
@@ -66,10 +66,7 @@ export default function HomePage(): JSX.Element {
         <PartnersSection />
       </Suspense>
 
-      {/* Copper Procurement Banner */}
-      <Suspense fallback={<SectionSkeleton />}>
-        <CopperBanner />
-      </Suspense>
+
 
       {/* Contact */}
       <Suspense fallback={<SectionSkeleton />}>

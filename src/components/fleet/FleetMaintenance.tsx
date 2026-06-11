@@ -15,7 +15,7 @@ export function FleetMaintenance() {
           <div className="lg:col-span-5 relative aspect-[4/5] bg-slate-100 overflow-hidden">
             <Image
               src="/Engineering & Maintenance.webp"
-              alt="Underground fleet maintenance workshop — SKT Global technicians performing planned maintenance"
+              alt="Underground fleet maintenance workshop - SKT Global technicians performing planned maintenance"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
               className="object-cover"

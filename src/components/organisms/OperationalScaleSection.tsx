@@ -309,7 +309,7 @@ export function OperationalScaleSection(): JSX.Element {
                 <div className="absolute -bottom-4 -right-4 w-full h-full border rounded-sm -z-10 border-neutral-200" />
                 <div className="relative w-full overflow-hidden rounded-sm aspect-[4/5] bg-neutral-100 max-h-[400px] lg:max-h-none">
                   <Image
-                    alt="Raj Talreja — Chairman & Managing Director"
+                    alt="Raj Talreja - Chairman & Managing Director"
                     src="/Raj Sir Photo.jpg"
                     fill
                     quality={100}

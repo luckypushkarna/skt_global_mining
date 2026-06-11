@@ -45,7 +45,7 @@ export function CertificationBar() {
           <div className="text-5xl text-emerald-500/15 font-serif mb-2 leading-none select-none">&ldquo;</div>
           <blockquote className="text-lg lg:text-xl font-light text-white/75 leading-[1.6] italic mb-8 -mt-4">
             Zero harm is not a slogan. It&apos;s the standard every operator at SKT
-            Global is held to — from the rock face to the boardroom.
+            Global is held to - from the rock face to the boardroom.
           </blockquote>
           <div className="h-px w-10 bg-emerald-500 mx-auto mb-4" />
           <p className="text-[10px] font-mono uppercase tracking-[0.25em] text-white/40">

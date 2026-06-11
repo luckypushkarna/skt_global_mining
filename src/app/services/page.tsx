@@ -13,9 +13,9 @@ const ICON_MAP: Record<string, LucideIcon> = {
 };
 
 export const metadata = generateMetadata({
-  title: "What We Do — Core Capabilities",
+  title: "What We Do - Core Capabilities",
   description:
-    "Explore SKT Global's 12 core mining capabilities — from underground workshops and mechanised fleets to safety systems and regional expansion.",
+    "Explore SKT Global's 12 core mining capabilities - from underground workshops and mechanised fleets to safety systems and regional expansion.",
   path: "/services",
 });
 

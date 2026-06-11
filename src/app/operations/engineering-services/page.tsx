@@ -10,7 +10,7 @@ import { ESTeam } from "@/components/engineering/ESTeam";
 import { ESCTA } from "@/components/engineering/ESCTA";
 
 export const metadata: Metadata = {
-  title: "Engineering Services — SKT Global Mining & Services",
+  title: "Engineering Services - SKT Global Mining & Services",
   description:
     "Mechanical, electrical, welding, and reconditioning services keeping 225+ underground machines operational across Zambia's Copperbelt.",
 };

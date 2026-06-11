@@ -15,7 +15,7 @@ export function ESWorkshops() {
             <div className="relative aspect-[4/5] bg-slate-100 overflow-hidden">
               <Image
                 src="/Underground Workshop.webp"
-                alt="Underground engineering workshop — SKT Global operations"
+                alt="Underground engineering workshop - SKT Global operations"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover"

@@ -84,7 +84,7 @@ export function ContactSection(): JSX.Element {
               <p className="text-[15px] md:text-base text-neutral-600 font-light leading-relaxed">
                 Whether you&apos;re looking to partner on a large-scale mining
                 project, need specialized industrial services, or want to explore
-                career opportunities—we&apos;d love to hear from you.
+                career opportunities-we&apos;d love to hear from you.
               </p>
             </div>
 

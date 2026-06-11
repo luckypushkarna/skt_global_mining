@@ -12,7 +12,7 @@ export function LeadershipQuote() {
             <div className="relative w-48 h-56 lg:w-56 lg:h-64 overflow-hidden bg-slate-100">
               <Image
                 src="/Raj Sir Photo.webp"
-                alt="Raj Talreja — Chairman, SKT Global Mining"
+                alt="Raj Talreja - Chairman, SKT Global Mining"
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 1024px) 200px, 224px"

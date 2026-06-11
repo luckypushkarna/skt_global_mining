@@ -63,7 +63,7 @@ export function ManifestoHero() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="text-zinc-400 text-base md:text-lg font-light max-w-xl mt-8 leading-relaxed z-10"
         >
-          We don&apos;t import expertise — we build it. By shifting leadership, engineering, 
+          We don&apos;t import expertise - we build it. By shifting leadership, engineering, 
           and operations to 85% domestic representation, SKT is ensuring the wealth 
           of Zambia remains in the hands of its people.
         </motion.p>

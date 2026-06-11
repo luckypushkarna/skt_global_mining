@@ -93,7 +93,7 @@ export function WhyJoinSection(): JSX.Element {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-sm text-neutral-500 leading-relaxed max-w-lg"
           >
-            We don&apos;t just extract value from the earth—we cultivate potentials within our
+            We don&apos;t just extract value from the earth-we cultivate potentials within our
             people. Explore the core principles that support your career journey.
           </motion.p>
         </div>

@@ -7,7 +7,7 @@ import { SustainabilityNetwork } from "@/components/logistics/SustainabilityNetw
 import { FutureGrowthLayer } from "@/components/logistics/FutureGrowthLayer";
 
 export const metadata = {
-  title: "Logistics Network — SKT Global Mining",
+  title: "Logistics Network - SKT Global Mining",
   description: "An intelligent mining network spanning extraction, processing, infrastructure, and export across Zambia's Copperbelt.",
 };
 

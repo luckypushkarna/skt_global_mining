@@ -132,7 +132,7 @@ const MediaContent = () => {
 const Demo = () => {
   useEffect(() => {
     // Only reset scroll on fresh/forward navigation.
-    // On Back navigation, SmoothScrollProvider handles restoration — don't fight it.
+    // On Back navigation, SmoothScrollProvider handles restoration - don't fight it.
     const savedPos = sessionStorage.getItem('__scroll__/');
     const isBackNav = savedPos && parseInt(savedPos, 10) > 100;
     if (!isBackNav) {

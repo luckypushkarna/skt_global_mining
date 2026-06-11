@@ -47,7 +47,7 @@ export function BlankSection(): JSX.Element {
               const coords = getPortalCoords();
               return `circle(0px at ${coords.x}% ${coords.y}%)`;
             },
-            opacity: 1, 
+            opacity: 1,
             force3D: true,
             willChange: "clip-path",
           });

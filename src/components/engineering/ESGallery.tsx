@@ -6,13 +6,13 @@ const GALLERY_ITEMS = [
   {
     src: "/Engineering & Maintenance-card.webp",
     alt: "Engineering and maintenance work in progress",
-    caption: "Planned maintenance cycle — multi-point inspection",
+    caption: "Planned maintenance cycle - multi-point inspection",
     isReal: true,
   },
   {
     src: "/Underground Workshop-card.webp",
     alt: "Underground workshop interior",
-    caption: "Level 850m workshop — heavy equipment bay",
+    caption: "Level 850m workshop - heavy equipment bay",
     isReal: true,
   },
   {

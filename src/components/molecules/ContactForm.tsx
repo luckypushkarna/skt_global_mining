@@ -80,7 +80,7 @@ const parseWeb3FormsError = (
     };
   }
 
-  // Bad request — validation issues
+  // Bad request - validation issues
   if (status === 400) {
     const msg = data?.message?.toLowerCase() || "";
 

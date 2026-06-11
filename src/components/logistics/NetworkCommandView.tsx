@@ -88,7 +88,7 @@ export function NetworkCommandView() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="text-xs md:text-sm text-slate-600 max-w-xl leading-relaxed font-normal"
             >
-              From extraction to export — every mine, processor, rail line, and port operates as 
+              From extraction to export - every mine, processor, rail line, and port operates as 
               a single coordinated system across Zambia&apos;s Copperbelt.
             </motion.p>
           </div>

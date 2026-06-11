@@ -5,7 +5,7 @@ export function FleetHero() {
 
   return (
     <section className="relative w-full min-h-[72vh] lg:min-h-[82vh] bg-black overflow-hidden mt-16">
-      {/* Background video — raw, no filters */}
+      {/* Background video - raw, no filters */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
         src="/fleet-hero.mp4"

@@ -6,7 +6,7 @@ interface UsePrefetchImagesOptions {
   images: string[];
   enabled?: boolean;
   /**
-   * Priority — when to start prefetching
+   * Priority - when to start prefetching
    * - 'immediate' = right away
    * - 'idle' = when browser is idle
    * - 'visible' = when section is near viewport
@@ -32,13 +32,13 @@ export function usePrefetchImages({
     // Check if user has data-saver enabled (respect mobile users)
     const connection = (navigator as any).connection;
     if (connection?.saveData) {
-      console.log("Data saver enabled — skipping image prefetch");
+      console.log("Data saver enabled - skipping image prefetch");
       return;
     }
 
-    // Check connection speed — skip on slow networks
+    // Check connection speed - skip on slow networks
     if (connection?.effectiveType === "slow-2g" || connection?.effectiveType === "2g") {
-      console.log("Slow connection — skipping image prefetch");
+      console.log("Slow connection - skipping image prefetch");
       return;
     }
 

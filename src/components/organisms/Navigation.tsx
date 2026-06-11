@@ -62,7 +62,7 @@ export function Navigation() {
             <Link
               href="/"
               className="flex items-center gap-2.5 group"
-              aria-label="SKT Global Mining — Home"
+              aria-label="SKT Global Mining - Home"
             >
               <Image
                 src="/SKT Full logo (Color).png"

@@ -136,7 +136,7 @@ export function PartnersSection(): JSX.Element {
 
                       {/* Gray square button with minus */}
                       <div className="w-8 h-8 bg-neutral-200 text-neutral-900 flex items-center justify-center rounded-[6px] shadow-sm select-none">
-                        <span className="text-base font-bold">—</span>
+                        <span className="text-base font-bold">-</span>
                       </div>
                     </div>
 

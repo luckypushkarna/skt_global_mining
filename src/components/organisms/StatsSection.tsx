@@ -4,7 +4,7 @@ import { JSX, useEffect, useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from "framer-motion";
 import Image from "next/image";
 
-// ─── Safety pillars — each maps to one image card ───────────────────────────
+// ─── Safety pillars - each maps to one image card ───────────────────────────
 const PILLARS = [
   {
     num: "01",
@@ -193,7 +193,7 @@ export function StatsSection(): JSX.Element {
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 relative z-10">
 
         {/* ══════════════════════════════════════════════════════════════
-            TOP — Editorial Header Block
+            TOP - Editorial Header Block
         ══════════════════════════════════════════════════════════════ */}
         <div className="max-w-3xl space-y-6 mb-16">
           {/* Label */}
@@ -208,7 +208,7 @@ export function StatsSection(): JSX.Element {
             Safety First · SKT Global
           </motion.span>
 
-          {/* Headline — GSAP word-reveal */}
+          {/* Headline - GSAP word-reveal */}
           <h2
             ref={headlineRef}
             id="safety-heading"
@@ -232,11 +232,11 @@ export function StatsSection(): JSX.Element {
         </div>
 
         {/* ══════════════════════════════════════════════════════════════
-            MIDDLE — 2-Column Symmetrical Workspace
+            MIDDLE - 2-Column Symmetrical Workspace
         ══════════════════════════════════════════════════════════════ */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
 
-          {/* LEFT — Clickable pillars (Symmetrical, Stable Heights on Desktop, Responsive Accordions on Mobile) */}
+          {/* LEFT - Clickable pillars (Symmetrical, Stable Heights on Desktop, Responsive Accordions on Mobile) */}
           <div className="lg:col-span-6">
             <div ref={pillarsRef} className="space-y-0 border-t border-neutral-200">
               {PILLARS.map((p, i) => {
@@ -360,7 +360,7 @@ export function StatsSection(): JSX.Element {
             </div>
           </div>
 
-          {/* RIGHT — Premium stacked image cards (Symmetric Centered Height) */}
+          {/* RIGHT - Premium stacked image cards (Symmetric Centered Height) */}
           <motion.div
             ref={cardsBlockRef}
             className="lg:col-span-6 relative lg:flex hidden items-center justify-center w-full"
@@ -368,7 +368,7 @@ export function StatsSection(): JSX.Element {
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => { setPaused(false); startAuto(); }}
           >
-            {/* Stack container — cards are absolutely stacked */}
+            {/* Stack container - cards are absolutely stacked */}
             <div className="relative" style={{ width: "360px", height: "440px" }}>
 
               {/* Render all 5 cards, stacked */}
@@ -407,7 +407,7 @@ export function StatsSection(): JSX.Element {
                     {/* Bottom gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-neutral-950/20 to-transparent" />
 
-                    {/* Bottom label — only on active */}
+                    {/* Bottom label - only on active */}
                     <AnimatePresence>
                       {isActive && (
                         <motion.div

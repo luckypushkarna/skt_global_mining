@@ -25,7 +25,7 @@ export function ProtocolSection() {
           </div>
           <p className="lg:col-span-5 text-base text-slate-600 leading-relaxed font-light">
             Underground rescue chambers, certified mine rescue teams, and on-site
-            medical response — operational 24 hours a day, 365 days a year.
+            medical response - operational 24 hours a day, 365 days a year.
           </p>
         </div>
 
@@ -48,7 +48,7 @@ export function ProtocolSection() {
             />
             <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/70 to-transparent">
               <p className="text-[10px] font-mono text-white/70 tracking-widest uppercase">
-                Fig. 01 — Underground Rescue Systems · SKT Global
+                Fig. 01 - Underground Rescue Systems · SKT Global
               </p>
             </div>
             {/* Index tag */}

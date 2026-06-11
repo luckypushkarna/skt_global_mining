@@ -272,7 +272,7 @@ const SphereImageGrid: React.FC<SphereImageGridProps> = ({
     };
   }, [isMounted, handleMouseMove, handleMouseUp, handleTouchMove, handleTouchEnd]);
 
-  // Compute world positions fresh every render — no stale closure
+  // Compute world positions fresh every render - no stale closure
   const worldPositions = calculateWorldPositions();
 
   const handleImageClick = useCallback(

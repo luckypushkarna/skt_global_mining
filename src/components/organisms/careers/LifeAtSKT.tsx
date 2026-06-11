@@ -28,7 +28,7 @@ const STORIES: Story[] = [
   {
     category: "Safety Stewardship",
     title: "Pioneering the Zero Harm Commitment",
-    quote: "Every morning starts with a meticulous safety audit. The commitment to human life isn't just printed on wall signs here—it dictates our mechanical designs and operations at all levels.",
+    quote: "Every morning starts with a meticulous safety audit. The commitment to human life isn't just printed on wall signs here-it dictates our mechanical designs and operations at all levels.",
     author: "Prisca Banda",
     role: "Senior Safety Inspector (HSE)",
     duration: "6 years with SKT Global",

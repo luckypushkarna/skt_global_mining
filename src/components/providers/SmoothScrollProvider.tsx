@@ -293,7 +293,7 @@ export function SmoothScrollProvider({
   return (
     <>
       {/*
-        Skeleton cover — kept hidden at rest.
+        Skeleton cover - kept hidden at rest.
         showCover() fires synchronously on popstate (before React re-renders)
         using transition:"none" so it appears INSTANTLY with zero delay.
         hideCover() fades it out smoothly after scroll is restored.
