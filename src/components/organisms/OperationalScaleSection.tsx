@@ -1,7 +1,7 @@
 "use client";
 
 import { JSX, useEffect, useRef, useState } from "react";
-import { motion, useInView, animate, useScroll, useTransform } from "framer-motion";
+import { motion, useInView, animate, useScroll, useTransform, useSpring } from "framer-motion";
 import Image from "next/image";
 import { STATS } from "@/lib/constants";
 import { MagicText } from "@/components/ui/magic-text";
@@ -207,8 +207,15 @@ export function OperationalScaleSection(): JSX.Element {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const imageX = useTransform(scrollYProgress, [0, 0.65], [isMobile ? "-40px" : "-120px", "0px"]);
-  const imageOpacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
+  // ⚡ CRITICAL FIX: Wrap scrollYProgress in a Spring to completely absorb touch-scroll stuttering on mobile
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
+  const imageX = useTransform(smoothProgress, [0, 0.65], [isMobile ? "-40px" : "-120px", "0px"]);
+  const imageOpacity = useTransform(smoothProgress, [0, 0.5], [0, 1]);
 
   return (
     <section

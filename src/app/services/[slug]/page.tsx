@@ -60,7 +60,7 @@ export default function ServiceDetailPage() {
   return (
     <main className="bg-white min-h-screen">
       {/* ── Hero ── */}
-      <section className="relative h-[70vh] min-h-[480px] overflow-hidden bg-skt-navy">
+      <section className="relative h-[60vh] md:h-[70vh] min-h-[400px] md:min-h-[480px] overflow-hidden bg-skt-navy">
         {/* Parallax BG */}
         <Image
           src={card.bgImage}
@@ -110,8 +110,7 @@ export default function ServiceDetailPage() {
               <Icon size={22} className="text-white" strokeWidth={1.5} />
             </div>
             <h1
-              style={{ fontSize: "clamp(40px, 6vw, 80px)", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1 }}
-              className="text-white"
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-[80px] font-extrabold tracking-[-0.03em] leading-none text-white"
             >
               {card.title}
             </h1>
@@ -129,22 +128,21 @@ export default function ServiceDetailPage() {
         className="max-w-screen-xl mx-auto px-6 lg:px-12 py-20 animate-[fadeSlideUp_0.6s_ease-out_forwards]"
         style={{ opacity: 0, animationDelay: "0.1s" }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-16">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
           {/* Main detail copy */}
-          <div>
+          <div className="flex-1">
             <p className="text-xs font-bold tracking-[0.28em] text-neutral-400 uppercase mb-6">
               Overview
             </p>
             <p
-              style={{ fontSize: "18px", lineHeight: "1.75" }}
-              className="text-neutral-700 max-w-2xl"
+              className="text-base sm:text-[18px] leading-relaxed sm:leading-[1.75] text-neutral-700 max-w-2xl"
             >
               {card.detail}
             </p>
           </div>
 
           {/* Sidebar facts */}
-          <div className="space-y-6">
+          <div className="w-full lg:w-[380px] space-y-5 lg:space-y-6">
             <div className="rounded-2xl border border-neutral-100 p-6">
               <p className="text-xs font-bold tracking-[0.28em] text-neutral-400 uppercase mb-4">
                 Key Tags
@@ -177,7 +175,7 @@ export default function ServiceDetailPage() {
 
       {/* ── Prev / Next navigation ── */}
       <section className="border-t border-neutral-100">
-        <div className="max-w-screen-xl mx-auto px-6 lg:px-12 py-10 flex justify-between items-center gap-6">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-10 flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-4">
           {prev ? (
             <Link
               href={`/services/${prev.slug}`}
@@ -191,11 +189,11 @@ export default function ServiceDetailPage() {
                 <span style={{ fontSize: "10px", letterSpacing: "0.1em" }} className="block uppercase font-bold text-neutral-300 mb-0.5">
                   Previous
                 </span>
-                <span style={{ fontSize: "16px", fontWeight: 600 }}>{prev.title}</span>
+                <span className="text-[14px] sm:text-[16px] font-semibold">{prev.title}</span>
               </span>
             </Link>
           ) : (
-            <span />
+            <span className="hidden sm:block" />
           )}
 
           <Link
@@ -209,13 +207,13 @@ export default function ServiceDetailPage() {
           {next ? (
             <Link
               href={`/services/${next.slug}`}
-              className="group flex items-center gap-3 text-neutral-400 hover:text-neutral-900 transition-colors duration-300 text-right"
+              className="group flex items-center gap-2 sm:gap-3 text-neutral-400 hover:text-neutral-900 transition-colors duration-300 text-right w-full sm:w-auto justify-end"
             >
               <span>
                 <span style={{ fontSize: "10px", letterSpacing: "0.1em" }} className="block uppercase font-bold text-neutral-300 mb-0.5">
                   Next
                 </span>
-                <span style={{ fontSize: "16px", fontWeight: 600 }}>{next.title}</span>
+                <span className="text-[14px] sm:text-[16px] font-semibold">{next.title}</span>
               </span>
               <ArrowRight
                 size={16}
@@ -223,7 +221,7 @@ export default function ServiceDetailPage() {
               />
             </Link>
           ) : (
-            <span />
+            <span className="hidden sm:block" />
           )}
         </div>
       </section>

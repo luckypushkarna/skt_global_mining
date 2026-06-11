@@ -95,24 +95,7 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Force close Maplibre default open attribution panel on mount/load
-  useEffect(() => {
-    let attempts = 0;
-    const interval = setInterval(() => {
-      const attribContainer = document.querySelector(".maplibregl-ctrl-attrib");
-      if (attribContainer) {
-        attribContainer.classList.remove("maplibregl-compact-show");
-        attribContainer.removeAttribute("open");
-        clearInterval(interval);
-      }
-      attempts++;
-      if (attempts > 40) {
-        clearInterval(interval);
-      }
-    }, 100);
 
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section
@@ -259,39 +242,33 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
                   </MarkerContent>
 
                   {/* Tooltip on hover */}
-                  <MarkerTooltip className="!bg-[#1a1f2e] !text-white !rounded-xl !shadow-2xl !border !border-white/10 !p-0 !max-w-[280px] animate-fade-in z-50">
-                    <div className="p-4 space-y-3">
+                  <MarkerTooltip className="!bg-white/95 !backdrop-blur-md !text-neutral-900 !rounded-xl !shadow-[0_8px_30px_rgb(0,0,0,0.12)] !border !border-neutral-200/60 !p-0 !max-w-[260px] animate-fade-in z-50">
+                    <div className="p-3.5 space-y-2.5">
                       {/* Header */}
                       <div className="flex items-start justify-between gap-3">
                         <div>
-                          <p className="text-base font-bold text-white leading-tight">
+                          <p className="text-[14px] font-semibold text-neutral-900 leading-tight">
                             {location.name}
                           </p>
-                          <p
-                            style={{ color: markerColor }}
-                            className="text-[10px] font-semibold tracking-widest uppercase mt-1"
-                          >
+                          <p className="text-[10px] font-medium text-neutral-500 mt-0.5">
                             {location.role}
                           </p>
                         </div>
                         {location.type === "primary" && (
-                          <span
-                            style={{ backgroundColor: markerColor }}
-                            className="text-[9px] font-bold tracking-wider px-2 py-0.5 rounded-full text-white shrink-0"
-                          >
+                          <span className="text-[9px] font-medium px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-600 border border-neutral-200 shrink-0">
                             HQ
                           </span>
                         )}
                       </div>
 
                       {/* Description */}
-                      <p className="text-xs text-white/60 leading-relaxed">
+                      <p className="text-[12px] text-neutral-600 leading-relaxed font-light">
                         {location.description}
                       </p>
 
                       {/* Coordinates */}
-                      <div className="pt-2 border-t border-white/10">
-                        <p className="text-[10px] text-white/30 font-mono">
+                      <div className="pt-2.5 border-t border-neutral-100">
+                        <p className="text-[10px] text-neutral-400 font-mono tracking-tight">
                           {Math.abs(location.lat).toFixed(4)}°S,{" "}
                           {location.lng.toFixed(4)}°E
                         </p>
@@ -302,40 +279,34 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
                   {/* Popup on click */}
                   <MarkerPopup
                     closeButton
-                    className="!bg-[#1a1f2e] !text-white !rounded-xl !shadow-2xl !border !border-white/10 !p-0 !max-w-[280px]"
+                    className="!bg-white/95 !backdrop-blur-md !text-neutral-900 !rounded-xl !shadow-[0_8px_30px_rgb(0,0,0,0.12)] !border !border-neutral-200/60 !p-0 !max-w-[260px]"
                   >
-                    <div className="p-4 space-y-3">
+                    <div className="p-3.5 space-y-2.5">
                       {/* Header */}
                       <div className="flex items-start justify-between gap-3">
                         <div>
-                          <p className="text-base font-bold text-white leading-tight">
+                          <p className="text-[14px] font-semibold text-neutral-900 leading-tight">
                             {location.name}
                           </p>
-                          <p
-                            style={{ color: markerColor }}
-                            className="text-[10px] font-semibold tracking-widest uppercase mt-1"
-                          >
+                          <p className="text-[10px] font-medium text-neutral-500 mt-0.5">
                             {location.role}
                           </p>
                         </div>
                         {location.type === "primary" && (
-                          <span
-                            style={{ backgroundColor: markerColor }}
-                            className="text-[9px] font-bold tracking-wider px-2 py-0.5 rounded-full text-white shrink-0"
-                          >
+                          <span className="text-[9px] font-medium px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-600 border border-neutral-200 shrink-0">
                             HQ
                           </span>
                         )}
                       </div>
 
                       {/* Description */}
-                      <p className="text-xs text-white/60 leading-relaxed">
+                      <p className="text-[12px] text-neutral-600 leading-relaxed font-light">
                         {location.description}
                       </p>
 
                       {/* Coordinates */}
-                      <div className="pt-2 border-t border-white/10">
-                        <p className="text-[10px] text-white/30 font-mono">
+                      <div className="pt-2.5 border-t border-neutral-100">
+                        <p className="text-[10px] text-neutral-400 font-mono tracking-tight">
                           {Math.abs(location.lat).toFixed(4)}°S,{" "}
                           {location.lng.toFixed(4)}°E
                         </p>

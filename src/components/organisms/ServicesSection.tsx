@@ -322,19 +322,7 @@ export function ServicesSection(): JSX.Element {
               </motion.h2>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-2 text-sm font-medium text-neutral-900 border border-neutral-200 rounded-full px-5 py-2.5 hover:bg-skt-navy hover:text-white hover:border-neutral-900 transition-colors duration-300 active:scale-95"
-              >
-                View Systems →
-              </Link>
-            </motion.div>
+
           </div>
         </div>
 

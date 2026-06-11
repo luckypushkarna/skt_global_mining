@@ -23,16 +23,16 @@ export default function ServicesPage() {
   return (
     <main className="bg-white min-h-screen">
       {/* ── Hero Header ── */}
-      <section className="max-w-screen-xl mx-auto px-6 lg:px-12 pt-36 pb-20">
-        <p className="text-xs font-bold tracking-[0.28em] text-neutral-400 uppercase mb-6">
+      <section className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-12 pt-28 md:pt-36 pb-12 md:pb-20">
+        <p className="text-[10px] sm:text-xs font-bold tracking-[0.28em] text-neutral-400 uppercase mb-4 sm:mb-6">
           What We Do
         </p>
-        <h1 className="text-6xl md:text-8xl font-black text-neutral-900 tracking-tight leading-none mb-8">
+        <h1 className="text-5xl sm:text-6xl md:text-8xl font-black text-neutral-900 tracking-tight leading-none mb-6 sm:mb-8">
           Core
           <br />
           <span className="text-neutral-300">Capabilities</span>
         </h1>
-        <p className="text-lg text-neutral-500 max-w-xl leading-relaxed">
+        <p className="text-base sm:text-lg text-neutral-500 max-w-xl leading-relaxed">
           Twelve capabilities. One operating system. Every function engineered
           to keep underground mining running without interruption.
         </p>
@@ -44,8 +44,8 @@ export default function ServicesPage() {
       </div>
 
       {/* ── Cards Grid ── */}
-      <section className="max-w-screen-xl mx-auto px-6 lg:px-12 py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <section className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-12 py-12 md:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
           {CARDS.map((card) => {
             const Icon = ICON_MAP[card.iconName] ?? Wrench;
             return (
@@ -55,7 +55,7 @@ export default function ServicesPage() {
                 className="group relative overflow-hidden rounded-2xl border border-neutral-100 bg-white transition-all duration-500 hover:border-neutral-900 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] flex flex-col"
               >
                 {/* Image */}
-                <div className="relative h-52 overflow-hidden bg-skt-navy">
+                <div className="relative h-40 sm:h-52 overflow-hidden bg-skt-navy">
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                     style={{ backgroundImage: `url("${encodeURI(card.bgImage)}")` }}
@@ -70,8 +70,8 @@ export default function ServicesPage() {
                 {/* Content */}
                 <div className="flex flex-col flex-1 p-6">
                   {/* Icon + Tags row */}
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-neutral-50 border border-neutral-100 text-neutral-700 transition-colors duration-300 group-hover:bg-skt-navy group-hover:border-neutral-900 group-hover:text-white">
+                  <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-lg bg-neutral-50 border border-neutral-100 text-neutral-700 transition-colors duration-300 group-hover:bg-skt-navy group-hover:border-neutral-900 group-hover:text-white">
                       <Icon size={15} strokeWidth={1.5} />
                     </div>
                     <div className="flex gap-1.5 flex-wrap">
@@ -89,16 +89,14 @@ export default function ServicesPage() {
 
                   {/* Title */}
                   <h2
-                    style={{ fontSize: "24px", fontWeight: 700, letterSpacing: "-0.02em" }}
-                    className="text-neutral-900 leading-tight mb-2 transition-colors duration-300"
+                    className="text-[20px] sm:text-[24px] font-bold tracking-[-0.02em] text-neutral-900 leading-tight mb-1.5 sm:mb-2 transition-colors duration-300"
                   >
                     {card.title}
                   </h2>
 
                   {/* Description */}
                   <p
-                    style={{ fontSize: "13px", opacity: 0.6, lineHeight: "1.55" }}
-                    className="text-neutral-700 line-clamp-2 flex-1"
+                    className="text-[12px] sm:text-[13px] text-neutral-600 opacity-80 leading-[1.55] line-clamp-2 flex-1"
                   >
                     {card.desc}
                   </p>

@@ -57,7 +57,7 @@ export function BlankSection(): JSX.Element {
               trigger: containerRef.current,
               start: "top top",
               end: "+=50%",
-              scrub: 0.6,
+              scrub: window.innerWidth < 1024 ? true : 0.6,
               pin: pinWrapRef.current,
               pinSpacing: true,
               anticipatePin: 1,

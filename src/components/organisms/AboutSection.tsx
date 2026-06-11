@@ -89,7 +89,6 @@ export function AboutSection(): JSX.Element {
     // Configure ScrollTrigger globally for mobile optimizations
     ScrollTrigger.config({
       ignoreMobileResize: true,
-      syncInterval: 40,
     });
 
     const ctx = gsap.context(() => {
@@ -120,7 +119,7 @@ export function AboutSection(): JSX.Element {
             trigger: container,
             start: isDesktop ? "top 80%" : "top 85%",
             end: isDesktop ? "bottom 20%" : "bottom 15%",
-            scrub: isDesktop ? 1 : 2.0, // Smoother scrub on mobile (higher = smoother)
+            scrub: isDesktop ? 1 : true, // Lock directly to scroll on mobile to avoid lag/stutter
             anticipatePin: isDesktop ? 1 : 0,
             fastScrollEnd: true,
             invalidateOnRefresh: true,
@@ -206,7 +205,9 @@ export function AboutSection(): JSX.Element {
       };
 
       const buildTimeline = () => {
-        if (activeTimeline) activeTimeline.kill();
+        if (activeTimeline) {
+          activeTimeline.revert(); // ⚡ CRITICAL FIX: Revert strips stale inline styles before remeasuring!
+        }
         activeTimeline = runAnimations(isDesktopMedia);
       };
 
@@ -217,7 +218,7 @@ export function AboutSection(): JSX.Element {
         ScrollTrigger.addEventListener("refresh", buildTimeline);
         return () => {
           ScrollTrigger.removeEventListener("refresh", buildTimeline);
-          if (activeTimeline) activeTimeline.kill();
+          if (activeTimeline) activeTimeline.revert();
         };
       });
 
@@ -228,7 +229,7 @@ export function AboutSection(): JSX.Element {
         ScrollTrigger.addEventListener("refresh", buildTimeline);
         return () => {
           ScrollTrigger.removeEventListener("refresh", buildTimeline);
-          if (activeTimeline) activeTimeline.kill();
+          if (activeTimeline) activeTimeline.revert();
         };
       });
 

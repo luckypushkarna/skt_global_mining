@@ -40,18 +40,18 @@ export function ContactSection(): JSX.Element {
   return (
     <section
       id="contact"
-      className="py-16 md:py-24 lg:py-32 bg-bg-tint overflow-hidden"
+      className="py-8 md:py-12 lg:py-16 bg-bg-tint overflow-hidden min-h-[calc(100vh-80px)] flex flex-col justify-center"
       aria-labelledby="contact-heading"
     >
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16 w-full">
         {/* Header */}
-        <div className="mb-10 md:mb-12">
+        <div className="mb-6 md:mb-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <Badge variant="dot" className="mb-6">
+            <Badge variant="dot" className="mb-4">
               Get In Touch
             </Badge>
           </motion.div>
@@ -71,7 +71,7 @@ export function ContactSection(): JSX.Element {
         </div>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 items-center">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -89,7 +89,7 @@ export function ContactSection(): JSX.Element {
             </div>
 
             {/* Contact details */}
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-5">
               {CONTACT_INFO.map((item) => {
                 const Icon = item.icon;
                 const content = (
@@ -143,7 +143,7 @@ export function ContactSection(): JSX.Element {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-3"
           >
-            <div className="bg-white border border-neutral-200/80 rounded-2xl p-5 sm:p-6 md:p-8 hover:border-neutral-300 transition-colors duration-300 w-full overflow-hidden">
+            <div className="bg-white border border-neutral-200/80 rounded-2xl p-4 sm:p-5 md:p-6 hover:border-neutral-300 transition-colors duration-300 w-full overflow-hidden">
               <ContactForm />
             </div>
           </motion.div>

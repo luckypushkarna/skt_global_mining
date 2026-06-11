@@ -34,7 +34,7 @@ const securityHeaders = [
       "font-src 'self' https://fonts.gstatic.com data:",
       "img-src 'self' data: blob: https:",
       "media-src 'self' blob: https://assets.mixkit.co",
-      "connect-src 'self' https://www.google-analytics.com https://cdn.jsdelivr.net https://unpkg.com https://basemaps.cartocdn.com https://*.basemaps.cartocdn.com https://tiles.openfreemap.org https://*.tile.openstreetmap.org",
+      "connect-src 'self' https://api.web3forms.com https://www.google-analytics.com https://cdn.jsdelivr.net https://unpkg.com https://basemaps.cartocdn.com https://*.basemaps.cartocdn.com https://tiles.openfreemap.org https://*.tile.openstreetmap.org",
       "worker-src 'self' blob:",
       "child-src blob:",
       "frame-ancestors 'none'",

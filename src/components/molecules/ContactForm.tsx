@@ -10,8 +10,10 @@ import { Button } from "@/components/atoms/Button";
 import { cn } from "@/lib/utils";
 
 // ─── CONFIG ──────────────────────────────────────────────
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/mjgdrwzz";
+const WEB3FORMS_ACCESS_KEY = "b7c4e785-9483-4189-8686-d51d31e8a5de";
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 const STATUS_AUTO_HIDE_MS = 6000;
+const REQUEST_TIMEOUT_MS = 15000;
 // ─────────────────────────────────────────────────────────
 
 type FormStatus = "idle" | "loading" | "success" | "error";
@@ -36,7 +38,7 @@ function InputField({
   children,
 }: InputFieldProps): JSX.Element {
   return (
-    <div className="space-y-1.5 md:space-y-2 w-full">
+    <div className="space-y-1 w-full">
       <label className="block text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase text-neutral-500">
         {label}
         {required && <span className="text-neutral-950 ml-1">*</span>}
@@ -62,10 +64,10 @@ function InputField({
 }
 
 const inputBase =
-  "w-full px-4 py-2.5 md:py-3 bg-neutral-50 border border-neutral-200 rounded-lg text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-900 focus:bg-white transition-all duration-200";
+  "w-full px-4 py-2 md:py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-900 focus:bg-white transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed";
 
-// ─── ERROR PARSER ────────────────────────────────────────
-const parseFormspreeError = (
+// ─── ERROR PARSER FOR WEB3FORMS ──────────────────────────
+const parseWeb3FormsError = (
   status: number,
   data: any
 ): ErrorDetails => {
@@ -80,41 +82,60 @@ const parseFormspreeError = (
 
   // Bad request — validation issues
   if (status === 400) {
-    const errors = data?.errors?.[0];
-    if (errors?.message?.toLowerCase().includes("email")) {
+    const msg = data?.message?.toLowerCase() || "";
+
+    if (msg.includes("email")) {
       return {
         title: "Invalid email address",
         message: "Please use a valid email format (e.g. name@domain.com).",
         hint: "Try a different email address.",
       };
     }
+
+    if (msg.includes("required")) {
+      return {
+        title: "Missing required fields",
+        message: data?.message || "Some required fields are missing.",
+        hint: "Please fill in all required fields.",
+      };
+    }
+
     return {
       title: "Invalid form data",
-      message: errors?.message || "Some fields contain invalid data.",
+      message: data?.message || "Some fields contain invalid data.",
       hint: "Please review your inputs and try again.",
     };
   }
 
-  // Forbidden — usually unverified email or restricted form
-  if (status === 403) {
+  // Unauthorized / Limit reached
+  if (status === 401 || status === 403) {
+    const msg = data?.message?.toLowerCase() || "";
+    // Web3Forms returns specific messages when the 250 free tier limit is reached
+    if (msg.includes("limit") || msg.includes("exceeded") || msg.includes("quota")) {
+      return {
+        title: "Service Temporarily Unavailable",
+        message: "Our servers are experiencing high traffic at the moment.",
+        hint: "Please email us directly at director@sktglobalminings.com",
+      };
+    }
+    
     return {
-      title: "Email not verified",
-      message:
-        "The admin email hasn't been verified with Formspree yet.",
-      hint: "Please verify your email in Formspree dashboard or contact support.",
+      title: "Authentication failed",
+      message: "The form access key is invalid or restricted.",
+      hint: "Please contact site administrator.",
     };
   }
 
-  // Not found — wrong form ID
+  // Not found — wrong endpoint
   if (status === 404) {
     return {
-      title: "Form not configured",
+      title: "Service unavailable",
       message: "The contact form endpoint cannot be reached.",
       hint: "Please contact us directly via email.",
     };
   }
 
-  // Too many requests — Formspree rate limit
+  // Too many requests — rate limit
   if (status === 429) {
     return {
       title: "Too many requests",
@@ -132,17 +153,9 @@ const parseFormspreeError = (
     };
   }
 
-  // Same-email block (some users use admin email)
-  if (data?.error?.toLowerCase().includes("same email")) {
-    return {
-      title: "Cannot use admin email",
-      message: "Please use a different email address from the admin's.",
-      hint: "Use your personal or business email instead.",
-    };
-  }
-
-  // Spam detection
-  if (data?.error?.toLowerCase().includes("spam")) {
+  // Spam detection (Web3Forms returns this in message)
+  const dataMsg = (data?.message || "").toLowerCase();
+  if (dataMsg.includes("spam") || dataMsg.includes("bot")) {
     return {
       title: "Message flagged as spam",
       message: "Your message was blocked by our spam filter.",
@@ -153,7 +166,7 @@ const parseFormspreeError = (
   // Default fallback
   return {
     title: "Something went wrong",
-    message: data?.error || "We couldn't send your message.",
+    message: data?.message || "We couldn't send your message.",
     hint: "Please try again or email us directly.",
   };
 };
@@ -177,13 +190,12 @@ export function ContactForm(): JSX.Element {
       phone: "",
       subject: "",
       message: "",
-      honeypot: "",
     },
   });
 
   // ─── Auto-hide status ──────────────────────────────────
   useEffect(() => {
-    let timer: ReturnType<typeof setTimeout>;
+    let timer: ReturnType<typeof setTimeout> | undefined;
     if (status === "success" || status === "error") {
       timer = setTimeout(() => {
         setStatus("idle");
@@ -198,45 +210,43 @@ export function ContactForm(): JSX.Element {
   // ─── Submit handler ────────────────────────────────────
   const onSubmit = useCallback(
     async (data: ContactFormSchema) => {
-      // Bot honeypot check
-      if (data.honeypot) {
-        setStatus("error");
-        setErrorDetails({
-          title: "Bot detected",
-          message: "Submission blocked.",
-        });
-        return;
-      }
-
       setStatus("loading");
       setErrorDetails(null);
 
       try {
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 15000); // 15s timeout
+        const timeoutId = setTimeout(
+          () => controller.abort(),
+          REQUEST_TIMEOUT_MS
+        );
 
-        const response = await fetch(FORMSPREE_ENDPOINT, {
+        // ─── Build Web3Forms payload ───────────────────
+        const payload = {
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name: data.name,
+          email: data.email,
+          company: data.company || "Not provided",
+          phone: data.phone || "Not provided",
+          subject: `New Contact: ${data.subject}`,
+          message: data.message,
+          from_name: "SKT Global Contact Form",
+          replyto: data.email,
+          botcheck: "", // honeypot for Web3Forms
+        };
+
+        const response = await fetch(WEB3FORMS_ENDPOINT, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
           },
-          body: JSON.stringify({
-            name: data.name,
-            email: data.email,
-            company: data.company || "Not provided",
-            phone: data.phone || "Not provided",
-            subject: data.subject,
-            message: data.message,
-            _replyto: data.email,            // Formspree: reply to user
-            _subject: `New Contact: ${data.subject}`, // email subject line
-          }),
+          body: JSON.stringify(payload),
           signal: controller.signal,
         });
 
         clearTimeout(timeoutId);
 
-        // Try to parse response (Formspree returns JSON)
+        // Parse response
         let responseData: any = {};
         try {
           responseData = await response.json();
@@ -244,13 +254,17 @@ export function ContactForm(): JSX.Element {
           // If parsing fails, use empty object
         }
 
-        if (!response.ok) {
-          const errDetails = parseFormspreeError(response.status, responseData);
+        // ─── Handle Web3Forms response ─────────────────
+        // Web3Forms returns { success: true/false, message: "..." }
+        if (!response.ok || !responseData.success) {
+          const errDetails = parseWeb3FormsError(
+            response.status,
+            responseData
+          );
           setErrorDetails(errDetails);
           setStatus("error");
 
-          // Log for debugging
-          console.error("Formspree error:", {
+          console.error("Web3Forms error:", {
             status: response.status,
             data: responseData,
           });
@@ -294,26 +308,27 @@ export function ContactForm(): JSX.Element {
     [reset]
   );
 
+  const onInvalid = useCallback((errors: any) => {
+    console.error("Validation errors from react-hook-form:", errors);
+    const failedFields = Object.keys(errors).join(", ");
+    setStatus("error");
+    setErrorDetails({
+      title: "Validation Error",
+      message: `Please check the following fields: ${failedFields}`,
+      hint: "Make sure all required fields are filled correctly.",
+    });
+  }, []);
+
   return (
     <>
       <form
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(onSubmit, onInvalid)}
         noValidate
-        className="flex flex-col gap-5 md:gap-6 w-full"
+        className="flex flex-col gap-4 w-full"
         aria-label="Contact form"
       >
-        {/* Honeypot */}
-        <input
-          type="text"
-          tabIndex={-1}
-          className="absolute -left-full opacity-0 pointer-events-none"
-          aria-hidden="true"
-          autoComplete="off"
-          {...register("honeypot")}
-        />
-
-        {/* Name & Email */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 w-full">
+        {/* Name & Email Row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
           <InputField label="Full Name" required error={errors.name?.message}>
             <input
               type="text"
@@ -326,7 +341,11 @@ export function ContactForm(): JSX.Element {
             />
           </InputField>
 
-          <InputField label="Email Address" required error={errors.email?.message}>
+          <InputField
+            label="Email Address"
+            required
+            error={errors.email?.message}
+          >
             <input
               type="email"
               placeholder="john@company.com"
@@ -339,8 +358,8 @@ export function ContactForm(): JSX.Element {
           </InputField>
         </div>
 
-        {/* Company & Phone */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 w-full">
+        {/* Company & Phone Row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
           <InputField label="Company" error={errors.company?.message}>
             <input
               type="text"
@@ -379,33 +398,33 @@ export function ContactForm(): JSX.Element {
         {/* Message */}
         <InputField label="Message" required error={errors.message?.message}>
           <textarea
-            rows={5}
+            rows={3}
             placeholder="Tell us about your project or inquiry..."
             disabled={isSubmitting}
-            className={cn(inputBase, "resize-none md:min-h-[140px]")}
+            className={cn(inputBase, "resize-none md:min-h-[100px]")}
             aria-invalid={!!errors.message}
             {...register("message")}
           />
         </InputField>
 
-        {/* Submit Button */}
-        <div className="pt-2">
+        {/* Submit Section */}
+        <div className="pt-4 mt-2 border-t border-neutral-100 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <Button
             type="submit"
             variant="primary"
             size="md"
-            className="w-full md:w-auto"
+            className="w-full md:w-auto flex-shrink-0"
             isLoading={isSubmitting || status === "loading"}
             rightIcon={<Send size={14} />}
           >
             {status === "loading" ? "Sending..." : "Send Message"}
           </Button>
-        </div>
 
-        <p className="text-[10px] md:text-xs text-neutral-400 text-center px-4">
-          By submitting this form, you agree to our Privacy Policy. We never
-          share your information.
-        </p>
+          <p className="text-[10px] md:text-xs text-neutral-400 text-center md:text-right">
+            By submitting this form, you agree to our Privacy Policy.<br className="hidden lg:block" /> We never
+            share your information.
+          </p>
+        </div>
       </form>
 
       {/* ─── TOAST POPUP (Success / Error) ──────────────── */}
@@ -441,12 +460,10 @@ function SuccessToast({ onClose }: { onClose: () => void }): JSX.Element {
       aria-live="polite"
     >
       <div className="relative flex items-start gap-3 p-4 bg-white border border-green-200 rounded-xl shadow-xl">
-        {/* Success icon */}
         <div className="flex-shrink-0 h-10 w-10 rounded-full bg-green-50 flex items-center justify-center">
           <CheckCircle size={20} className="text-green-600" />
         </div>
 
-        {/* Content */}
         <div className="flex-1 pt-0.5">
           <p className="text-sm font-semibold text-neutral-900">
             Message sent successfully!
@@ -456,7 +473,6 @@ function SuccessToast({ onClose }: { onClose: () => void }): JSX.Element {
           </p>
         </div>
 
-        {/* Close button */}
         <button
           onClick={onClose}
           className="flex-shrink-0 text-neutral-400 hover:text-neutral-700 transition-colors"
@@ -466,7 +482,6 @@ function SuccessToast({ onClose }: { onClose: () => void }): JSX.Element {
         </button>
       </div>
 
-      {/* Progress bar */}
       <motion.div
         initial={{ width: "100%" }}
         animate={{ width: "0%" }}
@@ -496,12 +511,10 @@ function ErrorToast({
       aria-live="assertive"
     >
       <div className="relative flex items-start gap-3 p-4 bg-white border border-red-200 rounded-xl shadow-xl">
-        {/* Error icon */}
         <div className="flex-shrink-0 h-10 w-10 rounded-full bg-red-50 flex items-center justify-center">
           <AlertCircle size={20} className="text-red-600" />
         </div>
 
-        {/* Content */}
         <div className="flex-1 pt-0.5">
           <p className="text-sm font-semibold text-neutral-900">
             {details.title}
@@ -516,7 +529,6 @@ function ErrorToast({
           )}
         </div>
 
-        {/* Close button */}
         <button
           onClick={onClose}
           className="flex-shrink-0 text-neutral-400 hover:text-neutral-700 transition-colors"
@@ -526,7 +538,6 @@ function ErrorToast({
         </button>
       </div>
 
-      {/* Progress bar */}
       <motion.div
         initial={{ width: "100%" }}
         animate={{ width: "0%" }}
