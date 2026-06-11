@@ -126,11 +126,11 @@ export default function ImpactImagery() {
     >
       <div className="max-w-[1400px] mx-auto">
         <div ref={titleRef} className="mb-8 md:mb-12 opacity-0">
-          <span className="inline-block text-[11px] tracking-[0.35em] uppercase text-neutral-400 mb-6 font-light">
+          <span className="inline-block text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-6 font-medium">
             Impact
           </span>
           <h2
-            className="text-3xl md:text-4xl font-extralight text-neutral-900 tracking-[-0.02em] max-w-xl"
+            className="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight max-w-xl"
             style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
           >
             The world we build, in every frame

@@ -579,7 +579,7 @@ function LeadersContent() {
     <div
       ref={containerRef}
       className="min-h-screen bg-white"
-      style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" }}
+      
     >
       {/* ── Premium Editorial Leadership Showcase ── */}
       <section className="w-full bg-neutral-50/40 border-b border-neutral-100 pt-[116px] pb-16 overflow-hidden">
@@ -589,29 +589,29 @@ function LeadersContent() {
             {/* Left: Featured Executive Experience */}
             <div className="lg:col-span-5 flex flex-col justify-center min-h-[360px]">
               <div className={`transition-all duration-300 transform ${isTransitioning ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"}`}>
-                <span className="text-[10px] tracking-[0.25em] uppercase text-neutral-400 font-medium block mb-2">
+                <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 block mb-2">
                   {leader.department}
                 </span>
                 
-                <h2 className="text-3xl md:text-5xl font-light text-neutral-950 leading-[1.15] tracking-tight mb-3" style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.08] mb-3" >
                   {leader.name}
                 </h2>
                 
-                <p className="text-sm md:text-base text-neutral-500 font-light mb-6">
+                <p className="text-sm md:text-base text-slate-500 leading-relaxed font-normal mb-6">
                   {leader.designation}
                 </p>
                 
                 <div className="border-l-2 border-neutral-900/20 pl-6 my-6">
-                  <p className="text-base text-neutral-600 font-light leading-relaxed italic">
+                  <p className="text-base text-slate-600 font-light leading-relaxed italic">
                     &ldquo;{leader.statement}&rdquo;
                   </p>
                 </div>
 
                 <div className="flex flex-wrap gap-2 mt-2">
-                  <span className="text-[9px] tracking-widest uppercase bg-neutral-100 text-neutral-500 px-3 py-1 font-light rounded-sm">
+                  <span className="text-[9px] tracking-widest uppercase bg-neutral-100 text-slate-500 px-3 py-1 font-light rounded-sm">
                     {leader.yearsExperience} Years Leadership
                   </span>
-                  <span className="text-[9px] tracking-widest uppercase bg-neutral-100 text-neutral-500 px-3 py-1 font-light rounded-sm">
+                  <span className="text-[9px] tracking-widest uppercase bg-neutral-100 text-slate-500 px-3 py-1 font-light rounded-sm">
                     Active Focus: {leader.areasOfFocus[0]?.title}
                   </span>
                 </div>
@@ -620,7 +620,7 @@ function LeadersContent() {
 
             {/* Right: Horizontal Leadership Gallery */}
             <div className="lg:col-span-7 relative">
-              <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-300 font-light mb-4 block text-right">
+              <p className="text-[10px] tracking-[0.2em] uppercase text-slate-300 font-light mb-4 block text-right">
                 Scroll horizontally to browse
               </p>
               
@@ -655,11 +655,11 @@ function LeadersContent() {
                     {/* Meta info below */}
                     <div className="px-1">
                       <h3 className={`text-sm font-medium transition-colors duration-300 ${
-                        i === currentIndex ? "text-neutral-900 font-semibold" : "text-neutral-500 group-hover:text-neutral-900"
+                        i === currentIndex ? "text-slate-900 font-semibold" : "text-slate-500 group-hover:text-slate-900"
                       }`}>
                         {l.name.replace("Mr. ", "").replace("Mrs. ", "").replace("Ms. ", "")}
                       </h3>
-                      <p className="text-[11px] text-neutral-400 font-light mt-0.5 truncate">
+                      <p className="text-[11px] text-slate-400 font-light mt-0.5 truncate">
                         {l.designation}
                       </p>
                     </div>
@@ -679,16 +679,16 @@ function LeadersContent() {
         <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
             <div className="lg:col-span-4">
-              <p className="text-[10px] tracking-[0.28em] uppercase text-gray-400 mb-3">Leadership Overview</p>
-              <h2 className="text-3xl md:text-4xl font-light text-gray-900 leading-tight">
+              <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-3">Leadership Overview</p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.08] leading-tight">
                 {leader.yearsExperience} years of industry leadership
               </h2>
             </div>
             <div className="lg:col-span-8 space-y-7">
-              <p className="text-base lg:text-lg text-gray-600 font-light leading-relaxed">{leader.overview.intro}</p>
-              <p className="text-base lg:text-lg text-gray-600 font-light leading-relaxed">{leader.overview.expertise}</p>
-              <p className="text-base lg:text-lg text-gray-600 font-light leading-relaxed">{leader.overview.philosophy}</p>
-              <p className="text-sm text-gray-500 font-light leading-relaxed border-t border-gray-100 pt-7">
+              <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal leading-relaxed">{leader.overview.intro}</p>
+              <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal leading-relaxed">{leader.overview.expertise}</p>
+              <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal leading-relaxed">{leader.overview.philosophy}</p>
+              <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal leading-relaxed border-t border-slate-200 pt-7">
                 {leader.overview.responsibilities}
               </p>
             </div>
@@ -696,18 +696,18 @@ function LeadersContent() {
         </section>
 
         {/* ── 3. Areas of Focus ───────────────────────────────────────────────── */}
-        <section className="bg-gray-50/60 py-20 md:py-28">
+        <section className="bg-bg-soft py-20 md:py-28">
           <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-            <p className="text-[10px] tracking-[0.28em] uppercase text-gray-400 mb-3">Areas of Focus</p>
-            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-14">Leadership Domains</h2>
+            <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-3">Areas of Focus</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.08] mb-14">Leadership Domains</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">
               {leader.areasOfFocus.map((area, i) => (
                 <div key={i} className="group">
-                  <div className="text-gray-400 group-hover:text-gray-700 transition-colors mb-4">
+                  <div className="text-slate-400 group-hover:text-gray-700 transition-colors mb-4">
                     {getIcon(area.title)}
                   </div>
-                  <h3 className="text-base font-medium text-gray-900 mb-2">{area.title}</h3>
-                  <p className="text-sm text-gray-500 font-light leading-relaxed">{area.description}</p>
+                  <h3 className="text-base font-bold tracking-tight text-slate-900 mb-2">{area.title}</h3>
+                  <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal leading-relaxed">{area.description}</p>
                 </div>
               ))}
             </div>
@@ -718,8 +718,8 @@ function LeadersContent() {
         <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
             <div className="lg:col-span-4">
-              <p className="text-[10px] tracking-[0.28em] uppercase text-gray-400 mb-3">Executive Journey</p>
-              <h2 className="text-3xl md:text-4xl font-light text-gray-900 leading-tight">A career defined by impact</h2>
+              <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-3">Executive Journey</p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.08] leading-tight">A career defined by impact</h2>
             </div>
             <div className="lg:col-span-8">
               <div className="relative">
@@ -727,10 +727,10 @@ function LeadersContent() {
                 <div className="space-y-10">
                   {leader.journey.map((item, i) => (
                     <div key={i} className="relative pl-9">
-                      <div className="absolute left-0 top-1.5 w-[15px] h-[15px] rounded-full border-2 border-gray-300 bg-white" />
-                      <p className="text-[10px] tracking-[0.2em] uppercase text-gray-400 mb-1">{item.year}</p>
-                      <h3 className="text-base font-medium text-gray-900 mb-1.5">{item.title}</h3>
-                      <p className="text-sm text-gray-500 font-light leading-relaxed">{item.description}</p>
+                      <div className="absolute left-0 top-1.5 w-[15px] h-[15px] rounded-full border-2 border-slate-300 bg-white" />
+                      <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-1">{item.year}</p>
+                      <h3 className="text-base font-bold tracking-tight text-slate-900 mb-1.5">{item.title}</h3>
+                      <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal leading-relaxed">{item.description}</p>
                     </div>
                   ))}
                 </div>
@@ -739,23 +739,23 @@ function LeadersContent() {
           </div>
         </section>
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20"><hr className="border-gray-100" /></div>
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20"><hr className="border-slate-200" /></div>
 
         {/* ── 5. Contributions ────────────────────────────────────────────────── */}
         <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-28">
-          <p className="text-[10px] tracking-[0.28em] uppercase text-gray-400 mb-3">Signature Contributions</p>
-          <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-14">Defining achievements</h2>
+          <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-3">Signature Contributions</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.08] mb-14">Defining achievements</h2>
           <div className="space-y-14">
             {leader.contributions.map((item, i) => (
               <div key={i} className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-14">
                 <div className="lg:col-span-4">
-                  <span className="text-5xl font-extralight text-gray-200 block mb-2 tabular-nums">
+                  <span className="text-5xl font-extralight text-neutral-200 block mb-2 tabular-nums">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="text-lg font-medium text-gray-900">{item.title}</h3>
+                  <h3 className="text-lg font-medium text-slate-900">{item.title}</h3>
                 </div>
                 <div className="lg:col-span-8">
-                  <p className="text-base lg:text-lg text-gray-600 font-light leading-relaxed">{item.narrative}</p>
+                  <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal leading-relaxed">{item.narrative}</p>
                 </div>
               </div>
             ))}
@@ -763,32 +763,32 @@ function LeadersContent() {
         </section>
 
         {/* ── 6. Philosophy Quote ─────────────────────────────────────────────── */}
-        <section className="bg-gray-900 py-24 md:py-32">
+        <section className="bg-skt-navy py-24 md:py-32">
           <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-20 text-center">
-            <svg className="mx-auto mb-8 text-gray-600" width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
+            <svg className="mx-auto mb-8 text-slate-600" width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
             </svg>
             <blockquote>
-              <p className="text-xl md:text-2xl lg:text-3xl text-white font-light leading-relaxed tracking-tight">
+              <p className="text-2xl md:text-4xl text-white font-semibold tracking-tight leading-relaxed tracking-tight">
                 {leader.philosophyQuote}
               </p>
             </blockquote>
-            <p className="mt-10 text-[11px] tracking-widest uppercase text-gray-500">- {leader.name}</p>
+            <p className="mt-10 text-[11px] tracking-widest uppercase text-slate-500">- {leader.name}</p>
           </div>
         </section>
 
         {/* ── 7. Organisation Impact ──────────────────────────────────────────── */}
         <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-28">
-          <p className="text-[10px] tracking-[0.28em] uppercase text-gray-400 mb-3">Organisation Impact</p>
-          <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-14">Shaping SKT Global</h2>
+          <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-3">Organisation Impact</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.08] mb-14">Shaping SKT Global</h2>
           <div className="space-y-0">
             {leader.impact.map((item, i) => (
-              <div key={i} className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-14 border-b border-gray-100 py-10 last:border-0">
+              <div key={i} className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-14 border-b border-slate-200 py-10 last:border-0">
                 <div className="lg:col-span-4">
-                  <h3 className="text-base font-medium text-gray-900">{item.area}</h3>
+                  <h3 className="text-base font-bold tracking-tight text-slate-900">{item.area}</h3>
                 </div>
                 <div className="lg:col-span-8">
-                  <p className="text-base lg:text-lg text-gray-600 font-light leading-relaxed">{item.description}</p>
+                  <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal leading-relaxed">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -796,19 +796,19 @@ function LeadersContent() {
         </section>
 
         {/* ── 8. Network ──────────────────────────────────────────────────────── */}
-        <section className="bg-gray-50/60 py-20 md:py-28">
+        <section className="bg-bg-soft py-20 md:py-28">
           <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-            <p className="text-[10px] tracking-[0.28em] uppercase text-gray-400 mb-3">Leadership Network</p>
-            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-14">Cross-functional leadership</h2>
+            <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-3">Leadership Network</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.08] mb-14">Cross-functional leadership</h2>
             <div className="space-y-7">
               {leader.network.map((node, i) => (
                 <div key={i} className="flex items-start gap-5">
-                  <div className="w-9 h-9 rounded-full bg-white border border-gray-200 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-xs font-medium text-gray-600">{node.department[0]}</span>
+                  <div className="w-9 h-9 rounded-full bg-white border border-slate-200 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-xs font-medium text-slate-600">{node.department[0]}</span>
                   </div>
                   <div>
-                    <h4 className="text-sm font-medium text-gray-900 mb-1">{node.department}</h4>
-                    <p className="text-sm text-gray-500 font-light leading-relaxed">{node.connection}</p>
+                    <h4 className="text-sm font-medium text-slate-900 mb-1">{node.department}</h4>
+                    <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal leading-relaxed">{node.connection}</p>
                   </div>
                 </div>
               ))}
@@ -819,10 +819,10 @@ function LeadersContent() {
         {/* ── 9. Personal Message ─────────────────────────────────────────────── */}
         <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-28">
           <div className="max-w-3xl mx-auto">
-            <p className="text-[10px] tracking-[0.28em] uppercase text-gray-400 mb-8">A Personal Message</p>
+            <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-8">A Personal Message</p>
             <div className="space-y-6">
               {leader.personalMessage.split("\n\n").map((paragraph, i) => (
-                <p key={i} className="text-base lg:text-lg text-gray-600 font-light leading-relaxed italic">
+                <p key={i} className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal leading-relaxed italic">
                   {paragraph}
                 </p>
               ))}
@@ -831,23 +831,23 @@ function LeadersContent() {
         </section>
 
         {/* ── 10. Navigation ──────────────────────────────────────────────────── */}
-        <section className="border-t border-gray-100">
+        <section className="border-t border-slate-200">
           <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
             <div className="grid grid-cols-2 divide-x divide-gray-100">
               <button
                 onClick={() => prevLeader && navigateTo(currentIndex - 1)}
                 disabled={!prevLeader}
-                className={`py-12 pr-6 text-left transition-colors group ${prevLeader ? "hover:bg-gray-50 cursor-pointer" : "opacity-25 cursor-default"
+                className={`py-12 pr-6 text-left transition-colors group ${prevLeader ? "hover:bg-neutral-50 cursor-pointer" : "opacity-25 cursor-default"
                   }`}
               >
-                <p className="text-[10px] tracking-widest uppercase text-gray-400 mb-2 flex items-center gap-2">
+                <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-2 flex items-center gap-2">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
                   Previous
                 </p>
                 {prevLeader && (
                   <>
-                    <p className="text-base md:text-lg font-light text-gray-900 group-hover:text-gray-600 transition-colors">{prevLeader.name}</p>
-                    <p className="text-xs text-gray-400 mt-1">{prevLeader.designation}</p>
+                    <p className="text-base md:text-lg font-light text-slate-900 group-hover:text-slate-600 transition-colors">{prevLeader.name}</p>
+                    <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mt-1">{prevLeader.designation}</p>
                   </>
                 )}
               </button>
@@ -855,17 +855,17 @@ function LeadersContent() {
               <button
                 onClick={() => nextLeader && navigateTo(currentIndex + 1)}
                 disabled={!nextLeader}
-                className={`py-12 pl-6 text-right transition-colors group ${nextLeader ? "hover:bg-gray-50 cursor-pointer" : "opacity-25 cursor-default"
+                className={`py-12 pl-6 text-right transition-colors group ${nextLeader ? "hover:bg-neutral-50 cursor-pointer" : "opacity-25 cursor-default"
                   }`}
               >
-                <p className="text-[10px] tracking-widest uppercase text-gray-400 mb-2 flex items-center justify-end gap-2">
+                <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-2 flex items-center justify-end gap-2">
                   Next
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                 </p>
                 {nextLeader && (
                   <>
-                    <p className="text-base md:text-lg font-light text-gray-900 group-hover:text-gray-600 transition-colors">{nextLeader.name}</p>
-                    <p className="text-xs text-gray-400 mt-1">{nextLeader.designation}</p>
+                    <p className="text-base md:text-lg font-light text-slate-900 group-hover:text-slate-600 transition-colors">{nextLeader.name}</p>
+                    <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mt-1">{nextLeader.designation}</p>
                   </>
                 )}
               </button>
@@ -880,7 +880,7 @@ function LeadersContent() {
 export default function LeadersPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-white flex items-center justify-center text-neutral-400 font-light">
+      <div className="min-h-screen bg-white flex items-center justify-center text-slate-400 font-light">
         Loading leadership profiles...
       </div>
     }>

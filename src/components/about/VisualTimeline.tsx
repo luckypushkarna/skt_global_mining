@@ -128,19 +128,19 @@ function TimelineEra({
         className={`lg:col-span-5 pl-16 lg:pl-0 opacity-0 ${isEven ? "lg:col-start-1 lg:pr-16 lg:text-right" : "lg:col-start-8 lg:pl-16"
           }`}
       >
-        <span className="text-[10px] tracking-[0.3em] uppercase text-neutral-400 font-light">
+        <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 font-medium">
           {era.label}
         </span>
-        <p className="text-sm text-neutral-400 font-light mt-1 mb-6">
+        <p className="text-sm text-slate-400 font-medium mt-1 mb-6">
           {era.period}
         </p>
         <h3
-          className="text-3xl md:text-4xl font-extralight text-neutral-900 tracking-[-0.02em] mb-6"
+          className="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight mb-6"
           style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
         >
           {era.title}
         </h3>
-        <p className="text-base text-neutral-500 font-light leading-[1.8] max-w-lg">
+        <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal leading-[1.8] max-w-lg">
           {era.description}
         </p>
       </div>
@@ -196,11 +196,11 @@ export default function VisualTimeline() {
     >
       <div className="max-w-[1400px] mx-auto">
         <div ref={titleRef} className="mb-8 md:mb-12 text-center opacity-0">
-          <span className="inline-block text-[11px] tracking-[0.35em] uppercase text-neutral-400 mb-6 font-light">
+          <span className="inline-block text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-6 font-medium">
             Our Journey
           </span>
           <h2
-            className="text-3xl md:text-4xl lg:text-5xl font-extralight text-neutral-900 tracking-[-0.02em]"
+            className="text-3xl md:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight"
             style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
           >
             Built through generations

@@ -81,11 +81,11 @@ export default function SignatureVideo() {
           className="absolute inset-0 flex items-center justify-center z-10 opacity-0"
         >
           <div className="text-center px-6">
-            <p className="text-[11px] tracking-[0.35em] uppercase text-white/50 mb-6 font-light">
+            <p className="text-[11px] tracking-[0.35em] uppercase text-white/50 mb-6 font-medium">
               Our World
             </p>
             <h2
-              className="text-3xl md:text-5xl lg:text-6xl font-extralight text-white leading-[1.15] tracking-[-0.02em] max-w-3xl mx-auto"
+              className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.08] max-w-3xl mx-auto"
               style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
             >
               Where ambition meets

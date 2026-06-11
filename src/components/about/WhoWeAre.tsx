@@ -85,11 +85,11 @@ export default function WhoWeAre() {
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
           <div ref={headerRef} className="lg:col-span-4 opacity-0">
-            <span className="inline-block text-[11px] tracking-[0.35em] uppercase text-neutral-400 mb-6 font-light">
+            <span className="inline-block text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-6 font-medium">
               Who We Are
             </span>
             <h2
-              className="text-3xl md:text-4xl font-extralight text-neutral-900 leading-[1.2] tracking-[-0.02em]"
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1]"
               style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
             >
               Five disciplines.
@@ -107,18 +107,18 @@ export default function WhoWeAre() {
                 <div className="flex items-baseline justify-between gap-8">
                   <div>
                     <h3
-                      className="text-2xl md:text-3xl lg:text-4xl font-extralight text-neutral-900 tracking-[-0.02em] mb-3 group-hover:text-neutral-600 transition-colors duration-500"
+                      className="text-2xl lg:text-3xl font-extrabold tracking-[-0.03em] text-slate-900 leading-tight mb-3 group-hover:text-slate-600 transition-colors duration-500"
                       style={{
                         fontFamily: "'Georgia', 'Times New Roman', serif",
                       }}
                     >
                       {d.word}
                     </h3>
-                    <p className="text-sm md:text-base text-neutral-400 font-light max-w-md">
+                    <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal max-w-md">
                       {d.description}
                     </p>
                   </div>
-                  <span className="text-[11px] tracking-[0.2em] text-neutral-300 font-light hidden md:block">
+                  <span className="text-[11px] tracking-[0.2em] text-slate-300 font-medium hidden md:block">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>

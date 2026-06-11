@@ -39,20 +39,20 @@ export default function AboutFooter() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
             <p
-              className="text-lg font-extralight text-neutral-900 tracking-[-0.01em] mb-4"
+              className="text-lg font-semibold text-slate-900 tracking-[-0.01em] mb-4"
               style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
             >
               Global Mining &<br />
               Infrastructure Corporation
             </p>
-            <p className="text-sm text-neutral-400 font-light leading-relaxed max-w-xs">
+            <p className="text-sm text-slate-400 font-medium leading-relaxed max-w-xs">
               Building the foundations of progress through responsible resource
               development.
             </p>
           </div>
 
           <div className="md:col-span-2 md:col-start-7">
-            <p className="text-[11px] tracking-[0.2em] uppercase text-neutral-400 mb-4 font-light">
+            <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-4 font-medium">
               Company
             </p>
             <nav className="space-y-3">
@@ -61,7 +61,7 @@ export default function AboutFooter() {
                   <a
                     key={link}
                     href="#"
-                    className="block text-sm text-neutral-500 hover:text-neutral-900 transition-colors duration-300 font-light"
+                    className="block text-sm text-slate-500 hover:text-slate-900 transition-colors duration-300 font-medium"
                   >
                     {link}
                   </a>
@@ -71,7 +71,7 @@ export default function AboutFooter() {
           </div>
 
           <div className="md:col-span-2">
-            <p className="text-[11px] tracking-[0.2em] uppercase text-neutral-400 mb-4 font-light">
+            <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-4 font-medium">
               Resources
             </p>
             <nav className="space-y-3">
@@ -79,7 +79,7 @@ export default function AboutFooter() {
                 <a
                   key={link}
                   href="#"
-                  className="block text-sm text-neutral-500 hover:text-neutral-900 transition-colors duration-300 font-light"
+                  className="block text-sm text-slate-500 hover:text-slate-900 transition-colors duration-300 font-medium"
                 >
                   {link}
                 </a>
@@ -88,7 +88,7 @@ export default function AboutFooter() {
           </div>
 
           <div className="md:col-span-2">
-            <p className="text-[11px] tracking-[0.2em] uppercase text-neutral-400 mb-4 font-light">
+            <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-4 font-medium">
               Connect
             </p>
             <nav className="space-y-3">
@@ -96,7 +96,7 @@ export default function AboutFooter() {
                 <a
                   key={link}
                   href="#"
-                  className="block text-sm text-neutral-500 hover:text-neutral-900 transition-colors duration-300 font-light"
+                  className="block text-sm text-slate-500 hover:text-slate-900 transition-colors duration-300 font-medium"
                 >
                   {link}
                 </a>
@@ -106,26 +106,26 @@ export default function AboutFooter() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-neutral-100 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <p className="text-[11px] text-neutral-400 font-light">
+          <p className="text-[11px] text-slate-400 font-medium">
             © 2024 Global Mining & Infrastructure Corporation. All rights
             reserved.
           </p>
           <div className="flex items-center gap-6">
             <a
               href="#"
-              className="text-[11px] text-neutral-400 hover:text-neutral-700 transition-colors font-light"
+              className="text-[11px] text-slate-400 hover:text-neutral-700 transition-colors font-medium"
             >
               Privacy Policy
             </a>
             <a
               href="#"
-              className="text-[11px] text-neutral-400 hover:text-neutral-700 transition-colors font-light"
+              className="text-[11px] text-slate-400 hover:text-neutral-700 transition-colors font-medium"
             >
               Terms of Use
             </a>
             <a
               href="#"
-              className="text-[11px] text-neutral-400 hover:text-neutral-700 transition-colors font-light"
+              className="text-[11px] text-slate-400 hover:text-neutral-700 transition-colors font-medium"
             >
               Cookie Settings
             </a>

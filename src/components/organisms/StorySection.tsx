@@ -490,7 +490,7 @@ const SafetyCard = forwardRef<HTMLDivElement, SafetyCardProps>(
 
           {/* Title */}
           <h3
-            className="text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-3 transition-colors duration-500"
+            className="text-2xl md:text-3xl font-bold tracking-[-0.02em] tracking-tight leading-tight mb-3 transition-colors duration-500"
             style={{ color: isActive ? "#0a0a0a" : "#a3a3a3" }}
           >
             {pillar.title}

@@ -146,7 +146,7 @@ function StoryImageBlock({ image }: { image: StoryImage }) {
       {image.caption && (
         <p
           ref={captionRef}
-          className="mt-4 md:mt-6 text-[11px] tracking-[0.2em] uppercase text-neutral-400 font-light opacity-0"
+          className="mt-4 md:mt-6 text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 font-medium opacity-0"
         >
           {image.caption}
         </p>

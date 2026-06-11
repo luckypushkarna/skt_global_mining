@@ -101,7 +101,7 @@ export default function BecomePartnerPage(): JSX.Element {
             </h1>
 
             <p className="mt-4 md:mt-5 text-[13px] md:text-[15px] text-neutral-600 leading-relaxed max-w-2xl mx-auto">
-              Join SKT Global's network of mining contractors, suppliers, and
+              Join SKT Global&apos;s network of mining contractors, suppliers, and
               investors. Together we power the future of copper production.
             </p>
           </motion.div>

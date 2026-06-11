@@ -90,7 +90,7 @@ export default function OpeningScene() {
       <div className="max-w-[1400px] w-full mx-auto">
         <span
           ref={labelRef}
-          className="inline-block text-[11px] tracking-[0.35em] uppercase text-neutral-400 mb-8 md:mb-12 font-light opacity-0"
+          className="inline-block text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-8 md:mb-12 font-medium opacity-0"
         >
           About
         </span>
@@ -98,7 +98,7 @@ export default function OpeningScene() {
         <div className="space-y-1 md:space-y-2">
           <div ref={line1Ref} className="overflow-hidden opacity-0">
             <h1
-              className="text-[clamp(2.5rem,7vw,6.5rem)] font-extralight text-neutral-900 leading-[1.05] tracking-[-0.03em]"
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1]"
               style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
             >
               We build what
@@ -106,7 +106,7 @@ export default function OpeningScene() {
           </div>
           <div ref={line2Ref} className="overflow-hidden opacity-0">
             <h1
-              className="text-[clamp(2.5rem,7vw,6.5rem)] font-extralight text-neutral-900 leading-[1.05] tracking-[-0.03em]"
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1]"
               style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
             >
               the world relies
@@ -114,7 +114,7 @@ export default function OpeningScene() {
           </div>
           <div ref={line3Ref} className="overflow-hidden opacity-0">
             <h1
-              className="text-[clamp(2.5rem,7vw,6.5rem)] font-extralight text-neutral-400 leading-[1.05] tracking-[-0.03em]"
+              className="text-[clamp(2.5rem,7vw,6.5rem)] font-semibold text-slate-400 leading-[1.05] tracking-[-0.03em]"
               style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
             >
               upon.
@@ -127,7 +127,7 @@ export default function OpeningScene() {
         ref={scrollHintRef}
         className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-0"
       >
-        <span className="text-[10px] tracking-[0.25em] uppercase text-neutral-400 font-light">
+        <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 font-medium">
           Discover
         </span>
         <div className="w-[1px] h-10 bg-neutral-300 relative overflow-hidden">

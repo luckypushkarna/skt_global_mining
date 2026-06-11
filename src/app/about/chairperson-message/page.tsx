@@ -23,6 +23,7 @@ function useInView(options: IntersectionObserverInit = {}) {
 
     observer.observe(element);
     return () => observer.unobserve(element);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return { ref, isInView, hasBeenInView };
@@ -112,7 +113,7 @@ function ValueWord({
       }}
     >
       <span
-        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extralight tracking-tight text-gray-900"
+        className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-[-0.03em] text-white/90"
         style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
       >
         {word}
@@ -243,7 +244,7 @@ export default function ChairpersonsMessage() {
       }}
     >
       {/* Progress indicator */}
-      <div className="fixed top-0 left-0 z-50 w-full h-[2px] bg-gray-100">
+      <div className="fixed top-0 left-0 z-50 w-full h-[2px] bg-slate-100">
         <div
           className="h-full bg-gray-900 transition-all duration-150"
           style={{
@@ -262,8 +263,8 @@ export default function ChairpersonsMessage() {
             transition: "all 0.5s ease",
           }}
         >
-          <div className="bg-white/80 backdrop-blur-md rounded-full px-5 py-2.5 shadow-sm border border-gray-100/80">
-            <span className="text-xs tracking-[0.2em] uppercase text-gray-500 font-light">
+          <div className="bg-white/80 backdrop-blur-md rounded-full px-5 py-2.5 shadow-sm border border-slate-200/80">
+            <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400">
               Leadership Vision
             </span>
           </div>
@@ -294,20 +295,20 @@ export default function ChairpersonsMessage() {
                     />
                   </div>
                   <div className="absolute -bottom-6 -right-6 w-40 h-40 border border-gray-200/50 rounded-sm -z-10" />
-                  <div className="absolute -top-6 -left-6 w-24 h-24 border border-gray-100/50 rounded-sm -z-10" />
+                  <div className="absolute -top-6 -left-6 w-24 h-24 border border-slate-200/50 rounded-sm -z-10" />
                 </div>
               </FadeIn>
             </div>
 
             <div className="lg:col-span-6 lg:col-start-7">
               <FadeIn delay={0.2}>
-                <p className="text-[10px] tracking-[0.3em] uppercase text-gray-400 mb-6">
+                <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-6">
                   The Chairperson
                 </p>
               </FadeIn>
               <FadeIn delay={0.3}>
                 <h2
-                  className="text-4xl md:text-5xl font-extralight text-gray-900 mb-2 tracking-tight"
+                  className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1] mb-2 tracking-tight"
                   style={{
                     fontFamily: "'Georgia', 'Times New Roman', serif",
                   }}
@@ -315,7 +316,7 @@ export default function ChairpersonsMessage() {
                   Mr. Raj
                 </h2>
                 <h2
-                  className="text-4xl md:text-5xl font-extralight text-gray-900 mb-6 tracking-tight"
+                  className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1] mb-6 tracking-tight"
                   style={{
                     fontFamily: "'Georgia', 'Times New Roman', serif",
                   }}
@@ -324,12 +325,12 @@ export default function ChairpersonsMessage() {
                 </h2>
               </FadeIn>
               <FadeIn delay={0.4}>
-                <p className="text-sm tracking-[0.15em] uppercase text-gray-400 mb-10">
+                <p className="text-[11px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-10">
                   Chairperson of the Board
                 </p>
               </FadeIn>
               <FadeIn delay={0.5}>
-                <p className="text-lg text-gray-600 font-light leading-[1.8] mb-10">
+                <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal mb-10">
                   For years, Mr. Talreja has navigated the
                   complexities of global resource development with a singular
                   conviction: that mining, done right, has the power to uplift
@@ -339,7 +340,7 @@ export default function ChairpersonsMessage() {
                 </p>
               </FadeIn>
               <FadeIn delay={0.6}>
-                <div className="border-t border-gray-100 pt-8">
+                <div className="border-t border-slate-200 pt-8">
                   <svg
                     viewBox="0 0 200 60"
                     className="w-40 text-gray-800"
@@ -380,11 +381,11 @@ export default function ChairpersonsMessage() {
       <section className="py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 mb-20 md:mb-32">
           <FadeIn>
-            <p className="text-[10px] tracking-[0.3em] uppercase text-gray-400 mb-4">
+            <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-4">
               Vision Narrative
             </p>
             <h2
-              className="text-3xl md:text-4xl font-extralight text-gray-900 tracking-tight"
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1] tracking-tight"
               style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
             >
               A message in five chapters
@@ -426,7 +427,7 @@ export default function ChairpersonsMessage() {
                   >
                     <div className="mb-6">
                       <span
-                        className="text-6xl md:text-7xl font-extralight text-gray-100 block leading-none"
+                        className="text-6xl md:text-7xl font-extrabold text-slate-200 block leading-none"
                         style={{
                           fontFamily: "'Georgia', 'Times New Roman', serif",
                         }}
@@ -440,7 +441,7 @@ export default function ChairpersonsMessage() {
                     direction={i % 2 === 0 ? "right" : "left"}
                   >
                     <h3
-                      className="text-2xl md:text-3xl font-extralight text-gray-900 mb-8 tracking-tight"
+                      className="text-2xl lg:text-3xl font-bold tracking-[-0.02em] text-slate-900 mb-8 tracking-tight"
                       style={{
                         fontFamily: "'Georgia', 'Times New Roman', serif",
                       }}
@@ -456,7 +457,7 @@ export default function ChairpersonsMessage() {
                       {chapter.content.split("\n\n").map((para, j) => (
                         <p
                           key={j}
-                          className="text-base md:text-lg text-gray-500 font-light leading-[1.85]"
+                          className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal"
                         >
                           {para}
                         </p>
@@ -471,10 +472,10 @@ export default function ChairpersonsMessage() {
       </section>
 
       {/* ━━━ 4. Values In Motion ━━━ */}
-      <section className="py-24 md:py-40 bg-gray-950">
+      <section className="py-24 md:py-40 bg-slate-950">
         <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-20">
           <FadeIn>
-            <p className="text-[10px] tracking-[0.3em] uppercase text-gray-500 mb-16 text-center">
+            <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-16 text-center">
               Our Values
             </p>
           </FadeIn>
@@ -486,10 +487,10 @@ export default function ChairpersonsMessage() {
         </div>
 
         <style>{`
-          .bg-gray-950 span {
+          .bg-slate-950 span {
             color: #e5e5e5 !important;
           }
-          .bg-gray-950 p {
+          .bg-slate-950 p {
             color: #737373 !important;
           }
         `}</style>
@@ -502,11 +503,11 @@ export default function ChairpersonsMessage() {
       >
         <div className="max-w-7xl mx-auto">
           <FadeIn>
-            <p className="text-[10px] tracking-[0.3em] uppercase text-gray-400 mb-4">
+            <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-4">
               Legacy
             </p>
             <h2
-              className="text-3xl md:text-4xl font-extralight text-gray-900 tracking-tight mb-20 md:mb-32"
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1] tracking-tight mb-20 md:mb-32"
               style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
             >
               Past, present, and the future
@@ -517,7 +518,7 @@ export default function ChairpersonsMessage() {
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gray-200 -translate-x-1/2 hidden md:block">
+            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-slate-200 -translate-x-1/2 hidden md:block">
               <div
                 className="w-full bg-gray-900 transition-all duration-300"
                 style={{
@@ -525,7 +526,7 @@ export default function ChairpersonsMessage() {
                 }}
               />
             </div>
-            <div className="absolute left-4 top-0 bottom-0 w-px bg-gray-200 md:hidden">
+            <div className="absolute left-4 top-0 bottom-0 w-px bg-slate-200 md:hidden">
               <div
                 className="w-full bg-gray-900 transition-all duration-300"
                 style={{
@@ -546,23 +547,23 @@ export default function ChairpersonsMessage() {
                     <div
                       className={`${i % 2 === 0 ? "md:text-right md:pr-16" : "md:col-start-2 md:pl-16"}`}
                     >
-                      <span className="text-[10px] tracking-[0.3em] uppercase text-gray-400 block mb-2">
+                      <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 block mb-2">
                         {item.era}
                       </span>
                       <span
-                        className="text-sm text-gray-400 font-light block mb-4"
+                        className="text-sm text-slate-500 leading-relaxed font-normal block mb-4"
                       >
                         {item.year}
                       </span>
                       <h3
-                        className="text-2xl md:text-3xl font-extralight text-gray-900 mb-4 tracking-tight"
+                        className="text-2xl lg:text-3xl font-bold tracking-[-0.02em] text-slate-900 mb-4 tracking-tight"
                         style={{
                           fontFamily: "'Georgia', 'Times New Roman', serif",
                         }}
                       >
                         {item.title}
                       </h3>
-                      <p className="text-base text-gray-500 font-light leading-[1.85]">
+                      <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal">
                         {item.description}
                       </p>
                     </div>
@@ -578,7 +579,7 @@ export default function ChairpersonsMessage() {
       <section className="py-24 md:py-40 bg-stone-50/50">
         <div className="max-w-2xl mx-auto px-6 md:px-12">
           <FadeIn>
-            <p className="text-[10px] tracking-[0.3em] uppercase text-gray-400 mb-16 text-center">
+            <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-16 text-center">
               Letter to Stakeholders
             </p>
           </FadeIn>
@@ -586,13 +587,13 @@ export default function ChairpersonsMessage() {
           <FadeIn delay={0.1}>
             <div className="space-y-7">
               <p
-                className="text-lg text-gray-600 font-light leading-[1.9]"
+                className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal"
                 style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
               >
                 Dear Shareholders, Partners, and Friends,
               </p>
 
-              <p className="text-base text-gray-600 font-light leading-[1.9]">
+              <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal">
                 As I reflect upon the past year, I am struck by the
                 extraordinary resilience and determination demonstrated across
                 every level of our organization. In a year marked by geopolitical
@@ -602,7 +603,7 @@ export default function ChairpersonsMessage() {
                 commitment.
               </p>
 
-              <p className="text-base text-gray-600 font-light leading-[1.9]">
+              <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal">
                 We produced record volumes across our key commodities while
                 simultaneously achieving our lowest-ever injury frequency rate.
                 This is not coincidence - it is the fruit of a culture that
@@ -610,7 +611,7 @@ export default function ChairpersonsMessage() {
                 between ambition and responsibility.
               </p>
 
-              <p className="text-base text-gray-600 font-light leading-[1.9]">
+              <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal">
                 Our financial performance has been robust, with revenue exceeding
                 projections and free cash flow enabling both disciplined capital
                 returns and continued investment in growth. We have maintained a
@@ -618,7 +619,7 @@ export default function ChairpersonsMessage() {
                 opportunities while honoring our commitments to all stakeholders.
               </p>
 
-              <p className="text-base text-gray-600 font-light leading-[1.9]">
+              <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal">
                 But numbers alone do not tell our story. This year, we launched
                 our most ambitious community investment program to date,
                 partnering with local governments and organizations to improve
@@ -628,7 +629,7 @@ export default function ChairpersonsMessage() {
                 emissions that is both ambitious and achievable.
               </p>
 
-              <p className="text-base text-gray-600 font-light leading-[1.9]">
+              <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal">
                 I want to express my personal gratitude to every member of our
                 organization - from the engineers who design our mines to the
                 operators who run them, from the scientists who protect our
@@ -638,7 +639,7 @@ export default function ChairpersonsMessage() {
                 the world that depends on the materials we produce.
               </p>
 
-              <p className="text-base text-gray-600 font-light leading-[1.9]">
+              <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal">
                 Looking ahead, I am confident that we are well positioned for the
                 challenges and opportunities that lie before us. The global
                 transition to clean energy will require vast quantities of the
@@ -647,7 +648,7 @@ export default function ChairpersonsMessage() {
                 integrity.
               </p>
 
-              <p className="text-base text-gray-600 font-light leading-[1.9]">
+              <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal">
                 Thank you for your continued trust and partnership.
               </p>
             </div>
@@ -680,13 +681,13 @@ export default function ChairpersonsMessage() {
                   opacity="0.2"
                 />
               </svg>
-              <p className="text-sm text-gray-900 font-medium">
+              <p className="text-sm text-slate-900 font-medium">
                 Mr. Raj Talreja
               </p>
-              <p className="text-sm text-gray-500 font-light mt-0.5">
+              <p className="text-sm text-slate-500 leading-relaxed font-normal mt-0.5">
                 Chairperson of the Board
               </p>
-              <p className="text-xs text-gray-400 font-light mt-3">
+              <p className="text-[11px] font-bold tracking-[0.1em] uppercase text-slate-400 mt-3">
                 June 2026
               </p>
             </div>
@@ -699,7 +700,7 @@ export default function ChairpersonsMessage() {
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
             <p
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extralight text-gray-900 leading-tight tracking-tight mb-8"
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1] leading-tight tracking-tight mb-8"
               style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
             >
               &ldquo;Our responsibility extends far beyond
@@ -713,7 +714,7 @@ export default function ChairpersonsMessage() {
 
           <FadeIn delay={0.6}>
             <p
-              className="text-xl sm:text-2xl md:text-3xl font-extralight text-gray-500 leading-tight tracking-tight"
+              className="text-xl md:text-2xl font-bold tracking-[-0.02em] text-slate-500 leading-tight tracking-tight"
               style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
             >
               We build resources for generations.
@@ -723,18 +724,18 @@ export default function ChairpersonsMessage() {
 
         <FadeIn delay={0.8} className="absolute bottom-16">
           <div className="text-center">
-            <div className="w-px h-12 bg-gray-200 mx-auto mb-4" />
-            <p className="text-[10px] tracking-[0.3em] uppercase text-gray-400">
-              Chairperson's Message 2026
+            <div className="w-px h-12 bg-slate-200 mx-auto mb-4" />
+            <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400">
+              Chairperson&apos;s Message 2026
             </p>
           </div>
         </FadeIn>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-50 border-t border-gray-100 py-10">
+      <footer className="bg-gray-50 border-t border-slate-200 py-10">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-gray-400 font-light">
+          <p className="text-[11px] font-bold tracking-[0.1em] uppercase text-slate-400">
             © 2026 SKT Global Mining & Services Limited. All rights reserved.
           </p>
           <div className="flex items-center gap-8">

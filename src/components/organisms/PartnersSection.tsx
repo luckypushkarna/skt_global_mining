@@ -59,7 +59,7 @@ export function PartnersSection(): JSX.Element {
             <span className="text-neutral-400">Ecosystem</span>
           </h2>
 
-          <p className="mt-5 text-[15px] md:text-base text-neutral-600 leading-relaxed max-w-xl mx-auto">
+          <p className="mt-5 text-[15px] md:text-sm lg:text-base text-slate-500 leading-relaxed font-normal max-w-xl mx-auto">
             SKT Global supports IRH and Mopani Copper Mines through
             underground mechanisation, infrastructure, and production systems —
             scaling to support up to 90% of future operations.
@@ -101,7 +101,6 @@ export function PartnersSection(): JSX.Element {
                         {partner.focus}
                       </span>
                     </div>
-                    </div>
                   </div>
                 </div>
 
@@ -113,7 +112,7 @@ export function PartnersSection(): JSX.Element {
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-neutral-900 tracking-tight leading-tight mb-6">
                     {partner.name}
                   </h3>
-                  <p className="text-base md:text-lg text-neutral-600 leading-relaxed font-light">
+                  <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal">
                     {partner.description}
                   </p>
                 </div>

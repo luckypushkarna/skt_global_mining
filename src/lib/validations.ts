@@ -40,6 +40,8 @@ export const contactFormSchema = z.object({
     .trim()
     .min(20, "Message must be at least 20 characters")
     .max(5000, "Message must not exceed 5000 characters"),
+
+  honeypot: z.string().optional(),
 });
 
 export type ContactFormSchema = z.infer<typeof contactFormSchema>;

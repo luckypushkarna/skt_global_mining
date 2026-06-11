@@ -127,7 +127,7 @@ export function HeroSection(): JSX.Element {
           <div className="overflow-hidden pb-2 -mb-2">
             <h1
               ref={headline1Ref}
-              className="text-3xl md:text-4xl lg:text-5xl text-white font-medium leading-tight tracking-tight"
+              className="text-3xl md:text-4xl lg:text-5xl text-white font-extrabold leading-[1.1] tracking-[-0.03em]"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 120%, 0 120%)" }}
             >
               Engineering
@@ -138,7 +138,7 @@ export function HeroSection(): JSX.Element {
           <div className="flex items-end gap-6 flex-wrap overflow-hidden pb-2 -mb-2 mt-1">
             <h1
               ref={headline2Ref}
-              className="text-3xl md:text-4xl lg:text-5xl text-white font-bold leading-tight tracking-tight"
+              className="text-3xl md:text-4xl lg:text-5xl text-white font-extrabold leading-[1.1] tracking-[-0.03em]"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 120%, 0 120%)" }}
             >
               Underground

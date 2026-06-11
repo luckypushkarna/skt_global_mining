@@ -13,7 +13,7 @@ export function GallerySection(): JSX.Element {
       {/* Header */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 pt-24 pb-12">
         <div className="mb-6">
-          <span className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-[0.2em] uppercase text-neutral-500 mb-6">
+          <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 inline-block" />
             Operations Gallery
           </span>

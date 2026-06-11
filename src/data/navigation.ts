@@ -12,7 +12,6 @@ import {
   Network,
   Newspaper,
   Handshake,
-  Globe,
   type LucideIcon,
 } from "lucide-react";
 

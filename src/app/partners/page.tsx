@@ -28,7 +28,7 @@ export default function PartnersPage() {
             </span>
           </h1>
           <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed mb-16">
-            We work alongside the world's most innovative organizations to
+            We work alongside the world&apos;s most innovative organizations to
             deliver excellence in mining and operational infrastructure.
           </p>
 
@@ -85,7 +85,7 @@ export default function PartnersPage() {
                 Mopani Copper Mines (MCM)
               </h2>
               <p className="text-slate-600 mb-6 font-medium text-[15px]">
-                One of the most significant integrated copper and cobalt producers globally, located in Zambia's Copperbelt.
+                One of the most significant integrated copper and cobalt producers globally, located in Zambia&apos;s Copperbelt.
               </p>
               <div className="space-y-5">
                 <div>

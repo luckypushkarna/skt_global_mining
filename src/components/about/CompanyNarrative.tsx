@@ -43,13 +43,13 @@ export default function CompanyNarrative() {
       className="py-16 md:py-24 px-6 md:px-16 lg:px-24 xl:px-32"
     >
       <div className="max-w-[1100px] mx-auto">
-        <span className="inline-block text-[11px] tracking-[0.35em] uppercase text-neutral-400 mb-6 md:mb-8 font-light">
+        <span className="inline-block text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-6 md:mb-8 font-medium">
           Our Story
         </span>
 
         <div ref={wordsRef}>
           <p
-            className="text-[clamp(1.5rem,3.5vw,3.2rem)] font-extralight text-neutral-900 leading-[1.4] tracking-[-0.01em]"
+            className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1]"
             style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
           >
             {narrativeText.split(" ").map((word, i) => (
