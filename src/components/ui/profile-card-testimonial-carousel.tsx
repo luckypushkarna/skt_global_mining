@@ -42,7 +42,7 @@ export function TestimonialCarousel({ className }: TestimonialCarouselProps) {
             }}
           />
 
-          {/* Portrait image — fills the column, blended at bottom */}
+          {/* Portrait image - fills the column, blended at bottom */}
           <div className="relative w-full h-full min-h-[420px] lg:min-h-[640px]">
             <Image
               src={chairperson.imageUrl}
@@ -114,7 +114,7 @@ export function TestimonialCarousel({ className }: TestimonialCarouselProps) {
                 &ldquo;
               </div>
 
-              {/* The actual quote — clean sans, no word-span gimmicks */}
+              {/* The actual quote - clean sans, no word-span gimmicks */}
               <blockquote
                 style={{
                   fontFamily: "var(--font-sans), 'Inter', sans-serif",
@@ -160,7 +160,7 @@ export function TestimonialCarousel({ className }: TestimonialCarouselProps) {
                 </p>
               </div>
 
-              {/* LinkedIn icon — clean circular white button */}
+              {/* LinkedIn icon - clean circular white button */}
               <Link
                 href={chairperson.linkedinUrl}
                 target="_blank"

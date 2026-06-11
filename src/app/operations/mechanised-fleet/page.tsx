@@ -9,7 +9,7 @@ import { FleetMaintenance } from "@/components/fleet/FleetMaintenance";
 import { FleetPartners } from "@/components/fleet/FleetPartners";
 
 export const metadata: Metadata = {
-  title: "Mechanised Fleet — SKT Global Mining & Services",
+  title: "Mechanised Fleet - SKT Global Mining & Services",
   description:
     "225+ heavy underground mining machines supporting continuous operations across Zambia's Copperbelt. Engineered for availability, built for performance.",
 };

@@ -27,7 +27,7 @@ export function SafetyPillars() {
           </p>
         </div>
 
-        {/* Pillars — 2×2 grid with border lines */}
+        {/* Pillars - 2×2 grid with border lines */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
           {SAFETY_PILLARS.map((pillar, i) => (
             <motion.div

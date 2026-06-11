@@ -10,7 +10,7 @@ import { UMInnovation } from "@/components/underground/UMInnovation";
 import { UMReports } from "@/components/underground/UMReports";
 
 export const metadata = {
-  title: "Underground Mining — SKT Global Mining & Services",
+  title: "Underground Mining - SKT Global Mining & Services",
   description:
     "Mechanised underground mining operations across Zambia's Copperbelt. Independently verified reserves, engineered safety controls, and transparent operational reporting.",
 };

@@ -81,7 +81,7 @@ export function UMProcessStory() {
           />
           <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/70 to-transparent">
             <p className="text-[10px] font-mono text-white/80 tracking-wider uppercase">
-              Fig. 01 — Mechanised LHD Vehicle at the Production Face
+              Fig. 01 - Mechanised LHD Vehicle at the Production Face
             </p>
           </div>
         </div>

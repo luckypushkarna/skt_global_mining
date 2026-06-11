@@ -7,7 +7,7 @@ export const ENGINEERING_SERVICES = {
   },
 
   intro: {
-    body: "Engineering services are not an afterthought in underground mining — they are the foundation. Every cycle of every machine depends on engineers who anticipate failure, prevent breakdowns, and respond immediately when issues arise. Our approach is structured, technical, and built around one principle: keep production moving.",
+    body: "Engineering services are not an afterthought in underground mining - they are the foundation. Every cycle of every machine depends on engineers who anticipate failure, prevent breakdowns, and respond immediately when issues arise. Our approach is structured, technical, and built around one principle: keep production moving.",
     stats: [
       { value: "118", label: "Certified Engineers" },
       { value: "94%", label: "Fleet Availability" },
@@ -64,12 +64,12 @@ export const ENGINEERING_SERVICES = {
         focus: "Electrical, instrumentation, light repairs",
       },
       {
-        location: "Surface — Kitwe",
+        location: "Surface - Kitwe",
         type: "Major Overhaul Facility",
         focus: "Engine rebuilds, transmission, fabrication",
       },
       {
-        location: "Surface — Mufulira",
+        location: "Surface - Mufulira",
         type: "Component Reconditioning Centre",
         focus: "Cylinder rebuilds, machining, testing",
       },

@@ -43,7 +43,7 @@ export function Skeleton({
 }
 
 // ═══════════════════════════════════════════════════════════
-// PRESET SKELETONS — For common UI patterns
+// PRESET SKELETONS - For common UI patterns
 // ═══════════════════════════════════════════════════════════
 
 // ── Card Skeleton (Services, Capabilities) ──

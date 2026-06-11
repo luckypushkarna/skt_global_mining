@@ -78,7 +78,7 @@ export default function FullWidthVideo() {
 
           <div className="absolute inset-0 flex items-end p-8 md:p-16">
             <p className="text-white/70 text-[11px] tracking-[0.25em] uppercase font-light">
-              Our Operations — Global Reach
+              Our Operations - Global Reach
             </p>
           </div>
         </div>

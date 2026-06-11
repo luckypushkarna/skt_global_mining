@@ -3,7 +3,7 @@ export const MECHANISED_FLEET = {
     eyebrow: "Operations · Mechanised Fleet",
     title: "Built for the deepest work.",
     intro:
-      "225+ heavy machines deployed across underground operations — engineered for high availability, low downtime, and the demanding conditions of Zambia's Copperbelt.",
+      "225+ heavy machines deployed across underground operations - engineered for high availability, low downtime, and the demanding conditions of Zambia's Copperbelt.",
   },
 
   overview: {
@@ -63,7 +63,7 @@ export const MECHANISED_FLEET = {
     {
       src: "/Mechanised Fleet.webp",
       alt: "Heavy mechanised fleet staging area",
-      caption: "Heavy fleet staging — Mufulira operations",
+      caption: "Heavy fleet staging - Mufulira operations",
     },
     {
       src: "/Mechanised Fleet-card.webp",
@@ -83,7 +83,7 @@ export const MECHANISED_FLEET = {
     {
       src: "/Engineering & Maintenance.webp",
       alt: "Engineering and maintenance team",
-      caption: "Planned maintenance — multi-point inspection",
+      caption: "Planned maintenance - multi-point inspection",
     },
     {
       src: "/Operational Command.webp",

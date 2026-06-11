@@ -301,7 +301,7 @@ export function StorySection(): JSX.Element {
                 ref={imageRef}
                 className="relative w-full h-full rounded-2xl overflow-hidden bg-neutral-100 shadow-[0_32px_80px_rgba(0,0,0,0.12)]"
               >
-                {/* Images — all stacked, active one on top */}
+                {/* Images - all stacked, active one on top */}
                 {SAFETY_PILLARS.map((pillar, i) => (
                   <div
                     key={pillar.id}
@@ -382,7 +382,7 @@ export function StorySection(): JSX.Element {
                   </div>
                 </div>
 
-                {/* Corner accent — industrial detail */}
+                {/* Corner accent - industrial detail */}
                 <div
                   className="absolute top-5 right-5 flex items-center gap-1.5 z-10"
                 >
@@ -504,7 +504,7 @@ const SafetyCard = forwardRef<HTMLDivElement, SafetyCardProps>(
             {pillar.tagline}
           </p>
 
-          {/* Description — expands on active */}
+          {/* Description - expands on active */}
           <div
             className="overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
             style={{
@@ -517,7 +517,7 @@ const SafetyCard = forwardRef<HTMLDivElement, SafetyCardProps>(
             </p>
           </div>
 
-          {/* Metric row — mobile only (desktop shows in image) */}
+          {/* Metric row - mobile only (desktop shows in image) */}
           <div
             className="lg:hidden flex items-center gap-6 transition-opacity duration-500"
             style={{ opacity: isActive ? 1 : 0.4 }}

@@ -16,7 +16,7 @@ export const SAFETY_METRICS = [
     value: "100",
     suffix: "%",
     label: "Compliance",
-    sub: "ISO 45001 certified operations — every site, every shift",
+    sub: "ISO 45001 certified operations - every site, every shift",
     accent: "emerald",
   },
   {
@@ -44,7 +44,7 @@ export const SAFETY_PILLARS = [
   {
     number: "03",
     title: "Continuous Training",
-    desc: "Every operator certified in equipment-specific safety, emergency response, and underground rescue procedures — re-certified annually.",
+    desc: "Every operator certified in equipment-specific safety, emergency response, and underground rescue procedures - re-certified annually.",
     items: ["Equipment certification", "Emergency response", "First aid training", "Rescue drills"],
   },
   {
@@ -74,7 +74,7 @@ export const SAFETY_TIMELINE = [
   {
     year: "2025 Q3",
     milestone: "1M Hour Milestone",
-    detail: "One million consecutive safe working hours — a landmark for Zambian mining.",
+    detail: "One million consecutive safe working hours - a landmark for Zambian mining.",
   },
   {
     year: "2026",

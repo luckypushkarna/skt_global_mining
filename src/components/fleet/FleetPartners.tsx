@@ -27,7 +27,7 @@ export function FleetPartners() {
           </div>
         </div>
 
-        {/* Partner names — typography-only list */}
+        {/* Partner names - typography-only list */}
         <div className="border-t border-slate-200 pt-12">
           <div className="flex flex-wrap gap-x-12 gap-y-6 items-center">
             {partners.list.map((partner, i) => {

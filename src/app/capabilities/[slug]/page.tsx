@@ -27,6 +27,6 @@ export default async function CapabilityDetailPage({ params }: PageProps) {
     redirect(capability.href);
   }
 
-  // Pass only the slug — client component looks up all data including icon
+  // Pass only the slug - client component looks up all data including icon
   return <CapabilityDetailClient slug={slug} />;
 }

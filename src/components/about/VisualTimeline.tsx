@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 const eras = [
   {
     label: "Past",
-    period: "1968 — 2000",
+    period: "1968 - 2000",
     title: "Foundation",
     description:
       "From a single exploration license to a regional mining enterprise, the early decades were defined by geological discovery, disciplined capital deployment, and the formation of a safety-first culture that would become our enduring signature.",
@@ -18,19 +18,19 @@ const eras = [
   },
   {
     label: "Present",
-    period: "2000 — 2024",
+    period: "2000 - 2024",
     title: "Transformation",
     description:
-      "A generation of growth across four continents — embracing technology, committing to sustainability, diversifying into infrastructure, and proving that scale and responsibility are not opposing forces but complementary ones.",
+      "A generation of growth across four continents - embracing technology, committing to sustainability, diversifying into infrastructure, and proving that scale and responsibility are not opposing forces but complementary ones.",
     image:
       "https://images.unsplash.com/photo-1578496479914-7ef3b0193be3?w=900&h=600&fit=crop",
   },
   {
     label: "Future",
-    period: "2025 — Beyond",
+    period: "2025 - Beyond",
     title: "Legacy",
     description:
-      "The chapters ahead will be written by those who understand that mining's greatest contribution is not what we extract, but what we build — for communities, for economies, and for the generations who will inherit both our resources and our responsibilities.",
+      "The chapters ahead will be written by those who understand that mining's greatest contribution is not what we extract, but what we build - for communities, for economies, and for the generations who will inherit both our resources and our responsibilities.",
     image:
       "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=900&h=600&fit=crop",
   },

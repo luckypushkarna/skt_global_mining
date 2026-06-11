@@ -23,7 +23,7 @@ export function EditorialClosing() {
                 been who benefits, who bears the cost, and who is left standing when 
                 the last truck rolls out. At SKT Global, these aren&apos;t abstract 
                 governance questions. They are operational commitments, audited, 
-                reported, and felt — in classrooms, clinics, and kitchens across 
+                reported, and felt - in classrooms, clinics, and kitchens across 
                 the Copperbelt.
               </p>
 

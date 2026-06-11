@@ -20,7 +20,7 @@ const leaders = [
       expertise:
         "His expertise spans international business development, strategic capital deployment, and the mobilisation of large-scale industrial operations in emerging markets. Under his leadership, SKT Global mobilised 225+ underground machines and onboarded 1,500+ Zambian employees within the company's first six months of operations.",
       philosophy:
-        "Sahil's leadership philosophy is grounded in speed without recklessness — moving decisively on opportunity while maintaining the discipline to build systems that last. He believes that world-class mining outcomes begin with world-class people and the infrastructure to support them.",
+        "Sahil's leadership philosophy is grounded in speed without recklessness - moving decisively on opportunity while maintaining the discipline to build systems that last. He believes that world-class mining outcomes begin with world-class people and the infrastructure to support them.",
       responsibilities:
         "As Managing Director, Sahil oversees the company's overall strategic direction, capital allocation, international partnerships, and relationship with key stakeholders including Mopani Copper Mines and the TTIPL Group.",
     },
@@ -37,20 +37,20 @@ const leaders = [
       { year: "2012", title: "TTIPL Group", description: "Joined TTIPL Group leadership, directing strategic expansion into African resource and infrastructure markets." },
       { year: "2018", title: "Africa Expansion", description: "Led feasibility studies and partnership negotiations for entry into Zambia's Copperbelt mining sector." },
       { year: "2023", title: "SKT Global Formation", description: "Founded SKT Global Mining & Services Limited as part of TTIPL Group's strategic mining arm." },
-      { year: "2024", title: "Rapid Mobilisation", description: "Led the mobilisation of 225+ underground machines and 1,500+ Zambian workforce within six months — a record for the region." },
+      { year: "2024", title: "Rapid Mobilisation", description: "Led the mobilisation of 225+ underground machines and 1,500+ Zambian workforce within six months - a record for the region." },
       { year: "2025", title: "Current Position", description: "Continues to drive SKT Global's growth agenda, targeting 90% of Mopani Copper Mines' future mining activities." },
     ],
     contributions: [
       { title: "Company Foundation", narrative: "Founded SKT Global Mining & Services Limited from the ground up, establishing the legal, operational, and financial frameworks required to operate in Zambia's complex regulatory environment. The company became operational within months of inception." },
-      { title: "Record Mobilisation", narrative: "Oversaw the fastest large-scale mining fleet mobilisation in recent Zambian history — 225+ underground machines deployed within six months through a US$50M+ investment program. The achievement is widely cited as a benchmark for project execution." },
+      { title: "Record Mobilisation", narrative: "Oversaw the fastest large-scale mining fleet mobilisation in recent Zambian history - 225+ underground machines deployed within six months through a US$50M+ investment program. The achievement is widely cited as a benchmark for project execution." },
       { title: "Mopani Partnership", narrative: "Negotiated and established the strategic service contract with Mopani Copper Mines, positioning SKT Global as the primary underground mining contractor for one of Zambia's most significant copper operations. Within ten months, approximately 50% of MCM development and production targets were achieved." },
       { title: "Zambian Workforce Development", narrative: "Championed a hire-local philosophy that resulted in over 1,500 Zambian employees joining the company. Structured training and mentorship programs alongside experienced international mining professionals to build domestic technical capability." },
-      { title: "Infrastructure Platform", narrative: "Directed the build-out of comprehensive operational infrastructure — underground workshops, strategic warehousing, accommodation facilities, transport networks, and support systems — creating the backbone for long-term operational excellence." },
+      { title: "Infrastructure Platform", narrative: "Directed the build-out of comprehensive operational infrastructure - underground workshops, strategic warehousing, accommodation facilities, transport networks, and support systems - creating the backbone for long-term operational excellence." },
     ],
     philosophyQuote:
-      "The best mining operations are built not from the top down, but from the ground up — with the right people, the right tools, and a shared belief in what's possible.",
+      "The best mining operations are built not from the top down, but from the ground up - with the right people, the right tools, and a shared belief in what's possible.",
     impact: [
-      { area: "Operational Excellence", description: "Under Sahil's leadership, SKT Global achieved approximately 50% of Mopani Copper Mines' development and production targets within the first ten months — a pace that exceeded expectations across the industry." },
+      { area: "Operational Excellence", description: "Under Sahil's leadership, SKT Global achieved approximately 50% of Mopani Copper Mines' development and production targets within the first ten months - a pace that exceeded expectations across the industry." },
       { area: "Safety Performance", description: "The company established a safety-first operational culture from day one, implementing ISO 45001-aligned systems and zero-harm protocols across all underground sites." },
       { area: "Financial Discipline", description: "US$50M+ was invested with disciplined capital controls, establishing the asset base for long-term operational sustainability and future expansion toward 90% of MCM mining activity." },
       { area: "Sustainability Goals", description: "SKT Global's hiring and procurement frameworks prioritise Zambian employment and local suppliers, embedding economic sustainability at the core of the business model." },
@@ -64,7 +64,7 @@ const leaders = [
       { department: "Commercial", connection: "Alignment on market strategy, contract management, and Mopani partnership governance." },
     ],
     personalMessage:
-      "When we founded SKT Global, we committed to a simple belief: that Zambia deserves world-class mining services delivered by a company that respects the land, the communities, and the people who work the ground.\n\nWhat we have built in a short time is extraordinary — not because of any single decision, but because of the collective effort of over 1,500 Zambian professionals who showed up every day and gave their best.\n\nWe are just beginning. The target of supporting 90% of Mopani's future mining activities is ambitious. But looking at what our teams have already achieved, I have no doubt that it is within reach.\n\nThank you to everyone who made this company what it is today.\n\nWith respect and determination,\nSahil Talreja",
+      "When we founded SKT Global, we committed to a simple belief: that Zambia deserves world-class mining services delivered by a company that respects the land, the communities, and the people who work the ground.\n\nWhat we have built in a short time is extraordinary - not because of any single decision, but because of the collective effort of over 1,500 Zambian professionals who showed up every day and gave their best.\n\nWe are just beginning. The target of supporting 90% of Mopani's future mining activities is ambitious. But looking at what our teams have already achieved, I have no doubt that it is within reach.\n\nThank you to everyone who made this company what it is today.\n\nWith respect and determination,\nSahil Talreja",
   },
   {
     id: 2,
@@ -109,7 +109,7 @@ const leaders = [
       { title: "Regulatory Navigation", narrative: "Guided the company through Zambia's complex mining regulatory environment, ensuring full compliance with the Mines and Minerals Development Act, environmental standards, and employment regulations." },
     ],
     philosophyQuote:
-      "Lasting value in mining is not extracted from the ground — it is built through the trust of communities, the rigour of planning, and the integrity of every decision made along the way.",
+      "Lasting value in mining is not extracted from the ground - it is built through the trust of communities, the rigour of planning, and the integrity of every decision made along the way.",
     impact: [
       { area: "Operational Excellence", description: "Anand's governance frameworks and technology transfer programs have contributed to the operational discipline that allowed SKT Global to achieve Mopani targets within its first year." },
       { area: "Safety Performance", description: "His international standards experience informed the safety management systems deployed across SKT Global's underground operations." },
@@ -125,7 +125,7 @@ const leaders = [
       { department: "Commercial", connection: "International business development and partnership governance." },
     ],
     personalMessage:
-      "Mining has always been an industry of vision and discipline — the vision to see value where others see only rock, and the discipline to extract that value responsibly and sustainably.\n\nAt SKT Global, we have had the privilege of building something significant in a very short time. What makes me proud is not just the fleet we deployed or the targets we achieved — it is the way we did it. With respect for the regulatory frameworks, with genuine commitment to local employment, and with an eye always on the long term.\n\nThe road ahead is exciting. The Copperbelt has extraordinary potential, and we have positioned ourselves to be a genuine partner in realising it.\n\nWith admiration for our entire team,\nAnand Kolappa Pillai",
+      "Mining has always been an industry of vision and discipline - the vision to see value where others see only rock, and the discipline to extract that value responsibly and sustainably.\n\nAt SKT Global, we have had the privilege of building something significant in a very short time. What makes me proud is not just the fleet we deployed or the targets we achieved - it is the way we did it. With respect for the regulatory frameworks, with genuine commitment to local employment, and with an eye always on the long term.\n\nThe road ahead is exciting. The Copperbelt has extraordinary potential, and we have positioned ourselves to be a genuine partner in realising it.\n\nWith admiration for our entire team,\nAnand Kolappa Pillai",
   },
   {
     id: 3,
@@ -133,14 +133,14 @@ const leaders = [
     designation: "Chief Executive Officer",
     department: "Operations Leadership",
     statement:
-      "Operational discipline is not a constraint — it is the force that transforms potential into performance, every shift, every day.",
+      "Operational discipline is not a constraint - it is the force that transforms potential into performance, every shift, every day.",
     image: "/Sanjay Kumar sharma.webp",
     yearsExperience: 28,
     overview: {
       intro:
         "Sanjay Kumar Sharma is a distinguished operations leader with nearly three decades of experience in heavy machinery deployment, underground mining methods, and the regional scaling of large industrial operations. As CEO of SKT Global, he provides the operational backbone that drives the company's performance across Zambia's Copperbelt.",
       expertise:
-        "His expertise is deeply rooted in the technical realities of underground mining — from rock mechanics and ventilation design to fleet management and shift-by-shift production optimisation. He has managed operations spanning multiple countries and operational environments.",
+        "His expertise is deeply rooted in the technical realities of underground mining - from rock mechanics and ventilation design to fleet management and shift-by-shift production optimisation. He has managed operations spanning multiple countries and operational environments.",
       philosophy:
         "Sanjay leads with the conviction that excellence in underground mining is the product of relentless attention to fundamentals. He champions a culture where every supervisor knows their section, every technician knows their machine, and every shift ends safer than it began.",
       responsibilities:
@@ -163,14 +163,14 @@ const leaders = [
       { year: "2024", title: "Current Position", description: "Appointed CEO of SKT Global, directing the operational execution of the company's Mopani Copper Mines service contracts." },
     ],
     contributions: [
-      { title: "Operational System Design", narrative: "Designed the operational management system used across all SKT Global underground sites — from shift handover protocols and production reporting to maintenance scheduling and safety sign-off procedures. The system has been instrumental in achieving consistency across multiple concurrent mine sites." },
+      { title: "Operational System Design", narrative: "Designed the operational management system used across all SKT Global underground sites - from shift handover protocols and production reporting to maintenance scheduling and safety sign-off procedures. The system has been instrumental in achieving consistency across multiple concurrent mine sites." },
       { title: "Fleet Deployment Strategy", narrative: "Developed the phased fleet deployment strategy that allowed 225+ machines to be made operational in stages without sacrificing productivity or safety standards. His sequencing methodology minimised mobilisation risk while accelerating the path to full operational capacity." },
-      { title: "Production Target Achievement", narrative: "Under Sanjay's operational leadership, SKT Global achieved approximately 50% of Mopani Copper Mines' development and production targets within the first ten months — a milestone that cemented the company's reputation as a reliable and capable mining contractor." },
+      { title: "Production Target Achievement", narrative: "Under Sanjay's operational leadership, SKT Global achieved approximately 50% of Mopani Copper Mines' development and production targets within the first ten months - a milestone that cemented the company's reputation as a reliable and capable mining contractor." },
       { title: "Underground Safety Architecture", narrative: "Implemented a comprehensive underground safety architecture combining physical controls, behavioural programs, and management systems. The framework aligns with Zambia Mines Safety Department requirements and international best practice." },
       { title: "Zambian Technician Development", narrative: "Established structured mentorship and technical training pathways that have elevated Zambian technicians and supervisors into operational leadership roles, reducing dependency on expatriate expertise while building long-term domestic capacity." },
     ],
     philosophyQuote:
-      "Underground mining demands honesty from everyone in the chain — from the face worker to the CEO. The rock doesn't forgive poor planning, and neither do the families of the people who depend on us to get it right.",
+      "Underground mining demands honesty from everyone in the chain - from the face worker to the CEO. The rock doesn't forgive poor planning, and neither do the families of the people who depend on us to get it right.",
     impact: [
       { area: "Operational Excellence", description: "Sanjay's operational discipline has established SKT Global as a top-performing mining contractor in the Copperbelt, with consistent shift-on-shift improvement in productivity metrics." },
       { area: "Safety Performance", description: "Under his leadership, SKT Global's underground operations have maintained strong safety records, with a safety-first culture embedded at every operational level." },
@@ -186,7 +186,7 @@ const leaders = [
       { department: "Commercial", connection: "Production delivery alignment with Mopani contract commitments and performance targets." },
     ],
     personalMessage:
-      "I have spent my career underground — and I would not have it any other way. There is a clarity that comes with underground mining that you don't find anywhere else. Either the system works, or it doesn't. Either the team is ready, or it isn't. The mine tells the truth every single shift.\n\nWhat I have found at SKT Global is a team that wants to do things the right way. Not just achieve the numbers, but build something that lasts — an operation that Zambia can be proud of and that Mopani can depend on.\n\nTo every operator, supervisor, engineer, and support worker on our sites — you are the reason we are succeeding. Keep leading from the front.\n\nWith deep respect,\nSanjay Kumar Sharma",
+      "I have spent my career underground - and I would not have it any other way. There is a clarity that comes with underground mining that you don't find anywhere else. Either the system works, or it doesn't. Either the team is ready, or it isn't. The mine tells the truth every single shift.\n\nWhat I have found at SKT Global is a team that wants to do things the right way. Not just achieve the numbers, but build something that lasts - an operation that Zambia can be proud of and that Mopani can depend on.\n\nTo every operator, supervisor, engineer, and support worker on our sites - you are the reason we are succeeding. Keep leading from the front.\n\nWith deep respect,\nSanjay Kumar Sharma",
   },
   {
     id: 4,
@@ -203,7 +203,7 @@ const leaders = [
       expertise:
         "His expertise spans financial planning and analysis, treasury management, risk governance, capital project oversight, and regulatory compliance across multiple jurisdictions. He brings disciplined financial management to an organisation operating in one of the world's most demanding industrial environments.",
       philosophy:
-        "Srinivasulu leads with the belief that financial discipline enables operational ambition — that strong controls, transparent reporting, and rigorous capital management create the freedom to pursue bold strategic goals. He is a trusted partner to both the operational and executive leadership.",
+        "Srinivasulu leads with the belief that financial discipline enables operational ambition - that strong controls, transparent reporting, and rigorous capital management create the freedom to pursue bold strategic goals. He is a trusted partner to both the operational and executive leadership.",
       responsibilities:
         "As CFO, Srinivasulu oversees all financial management functions including treasury, accounting, financial planning, risk management, capital allocation, and compliance. He manages relationships with banking and financial partners and leads investor reporting.",
     },
@@ -225,7 +225,7 @@ const leaders = [
     ],
     contributions: [
       { title: "Financial Architecture", narrative: "Established the complete financial management architecture for SKT Global from inception, including accounting systems, internal controls, treasury operations, and management reporting frameworks suited to the Zambian operating environment." },
-      { title: "Capital Deployment Oversight", narrative: "Managed the financial governance of the US$50M+ initial capital program — ensuring that fleet acquisition, infrastructure build-out, and working capital requirements were funded in the right sequence, at the right cost, and with appropriate risk controls." },
+      { title: "Capital Deployment Oversight", narrative: "Managed the financial governance of the US$50M+ initial capital program - ensuring that fleet acquisition, infrastructure build-out, and working capital requirements were funded in the right sequence, at the right cost, and with appropriate risk controls." },
       { title: "Zambia Regulatory Compliance", narrative: "Led the implementation of Zambia Revenue Authority, Bank of Zambia, and mining sector regulatory compliance frameworks, establishing the company's reputation as a transparent and compliant operator." },
       { title: "Banking Relationships", narrative: "Structured and secured the company's banking and credit facilities in Zambia, providing the financial flexibility to manage operational cashflows, equipment financing, and strategic investment." },
       { title: "Management Reporting", narrative: "Designed the management reporting system that provides real-time financial insight to operational and executive leadership, enabling faster and more informed decision-making across the business." },
@@ -235,7 +235,7 @@ const leaders = [
     impact: [
       { area: "Operational Excellence", description: "Financial controls and cost management frameworks under Srinivasulu's stewardship have enabled SKT Global to operate efficiently within budget while maintaining high operational standards." },
       { area: "Safety Performance", description: "His financial governance ensures that safety investment is protected and prioritised, never compromised in the pursuit of cost savings." },
-      { area: "Financial Discipline", description: "Srinivasulu has built a financial management culture characterised by discipline, transparency, and accountability — creating the credibility that gives the company access to financial markets and partnerships." },
+      { area: "Financial Discipline", description: "Srinivasulu has built a financial management culture characterised by discipline, transparency, and accountability - creating the credibility that gives the company access to financial markets and partnerships." },
       { area: "Sustainability Goals", description: "His ESG-aligned reporting frameworks position SKT Global for sustainable financing and responsible investor relationships." },
       { area: "Community Development", description: "His management of local procurement and payroll programs ensures the direct economic benefit to Zambian communities is measurable and accountable." },
     ],
@@ -247,7 +247,7 @@ const leaders = [
       { department: "Commercial", connection: "Contract financial analysis, pricing governance, and commercial risk management." },
     ],
     personalMessage:
-      "Financial management in a young, fast-moving mining company is a unique challenge — and one I find deeply rewarding. You need to be disciplined enough to maintain control and flexible enough to support rapid operational growth. Getting that balance right is the daily work.\n\nWhat gives me confidence is the quality of the people around me. Every department at SKT Global operates with a professionalism and seriousness of purpose that makes financial governance straightforward — because the organisation itself is committed to doing things correctly.\n\nWe have built strong foundations. The financial platform is in place. Now we focus on the next phase of growth — and making sure every dollar we invest continues to deliver value for our people, our partners, and Zambia.\n\nWith respect,\nSrinivasulu Jonnalagadda",
+      "Financial management in a young, fast-moving mining company is a unique challenge - and one I find deeply rewarding. You need to be disciplined enough to maintain control and flexible enough to support rapid operational growth. Getting that balance right is the daily work.\n\nWhat gives me confidence is the quality of the people around me. Every department at SKT Global operates with a professionalism and seriousness of purpose that makes financial governance straightforward - because the organisation itself is committed to doing things correctly.\n\nWe have built strong foundations. The financial platform is in place. Now we focus on the next phase of growth - and making sure every dollar we invest continues to deliver value for our people, our partners, and Zambia.\n\nWith respect,\nSrinivasulu Jonnalagadda",
   },
   {
     id: 5,
@@ -379,7 +379,7 @@ const leaders = [
     name: "Mr. Mulenga Mutati",
     designation: "HR Manager",
     department: "Human Capital",
-    statement: "Our greatest resource is the potential of our workforce — nurtured through training, safety, and mutual respect.",
+    statement: "Our greatest resource is the potential of our workforce - nurtured through training, safety, and mutual respect.",
     image: "/Mulenga Mutati.webp",
     yearsExperience: 18,
     overview: {
@@ -467,7 +467,7 @@ const leaders = [
     overview: {
       intro: "Toms Joseph is the Mine Manager at Mufulira, directing mechanized operations, stope safety, and ventilation systems. Over a 14-year career in underground hard-rock mining, he has successfully delivered on complex production targets in high-capacity shafts.",
       expertise: "His technical focus is on mechanized production drilling, ventilation network management, ground stabilization, and air volume distribution underground.",
-      philosophy: "Toms believes that a mine is a complex system that requires balance. Every component — from equipment condition to air quality and ground support — must be monitored and optimized continuously.",
+      philosophy: "Toms believes that a mine is a complex system that requires balance. Every component - from equipment condition to air quality and ground support - must be monitored and optimized continuously.",
       responsibilities: "He oversees all mining development and stope production activities at the Mufulira site, ensuring safety standards and air ventilation requirements are fully met.",
     },
     areasOfFocus: [
@@ -773,7 +773,7 @@ function LeadersContent() {
                 {leader.philosophyQuote}
               </p>
             </blockquote>
-            <p className="mt-10 text-[11px] tracking-widest uppercase text-gray-500">— {leader.name}</p>
+            <p className="mt-10 text-[11px] tracking-widest uppercase text-gray-500">- {leader.name}</p>
           </div>
         </section>
 

@@ -41,7 +41,7 @@ export function SafetyHero() {
           {/* Body */}
           <p className="text-xs md:text-sm text-white/90 leading-relaxed font-normal drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
             Every shift, every protocol, every meter underground is governed by
-            one non-negotiable principle — bring everyone home.
+            one non-negotiable principle - bring everyone home.
           </p>
         </motion.div>
       </div>

@@ -11,7 +11,7 @@ export const UNDERGROUND_MINING = {
     {
       number: "01",
       title: "Why underground",
-      body: "Some of the world's richest copper deposits sit hundreds of meters below the Copperbelt. Surface mining cannot reach them — only mechanised underground operations can. We operate where the ore body demands depth, not where convenience suggests width.",
+      body: "Some of the world's richest copper deposits sit hundreds of meters below the Copperbelt. Surface mining cannot reach them - only mechanised underground operations can. We operate where the ore body demands depth, not where convenience suggests width.",
     },
     {
       number: "02",
@@ -27,7 +27,7 @@ export const UNDERGROUND_MINING = {
 
   process: {
     eyebrow: "The Method",
-    title: "From ore body to surface — a six-stage process.",
+    title: "From ore body to surface - a six-stage process.",
     stages: [
       {
         step: "01",
@@ -84,7 +84,7 @@ export const UNDERGROUND_MINING = {
   localInsights: {
     eyebrow: "Local Context",
     title: "The Copperbelt is more than a geological formation.",
-    body: "It is a region with century-old mining heritage, communities whose families have worked these mines for generations, and a workforce that combines deep institutional knowledge with modern technical training. We operate as a guest in this region — and that shapes every decision.",
+    body: "It is a region with century-old mining heritage, communities whose families have worked these mines for generations, and a workforce that combines deep institutional knowledge with modern technical training. We operate as a guest in this region - and that shapes every decision.",
     points: [
       "Operations across Chingola, Kitwe, and Mufulira districts",
       "Partnership with Mopani Copper Mines under long-term service contracts",
@@ -108,7 +108,7 @@ export const UNDERGROUND_MINING = {
   safety: {
     eyebrow: "Safety & Health",
     title: "The non-negotiable foundation.",
-    body: "Underground mining carries inherent risk. We do not eliminate that risk — we engineer it down to the lowest achievable level through controls, training, and constant verification.",
+    body: "Underground mining carries inherent risk. We do not eliminate that risk - we engineer it down to the lowest achievable level through controls, training, and constant verification.",
     items: [
       {
         title: "Engineered Controls",
@@ -140,7 +140,7 @@ export const UNDERGROUND_MINING = {
   innovation: {
     eyebrow: "Innovation",
     title: "What changes underground mining.",
-    body: "Mining hasn't fundamentally changed in 100 years — but the tools have. We invest in technologies that improve safety, reduce environmental impact, and unlock ore bodies that were previously uneconomic.",
+    body: "Mining hasn't fundamentally changed in 100 years - but the tools have. We invest in technologies that improve safety, reduce environmental impact, and unlock ore bodies that were previously uneconomic.",
     items: [
       {
         title: "Tele-remote operations",

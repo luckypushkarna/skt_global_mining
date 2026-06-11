@@ -29,7 +29,7 @@ export function LiveCounter() {
           </div>
         </div>
 
-        {/* Metrics grid — grid border layout */}
+        {/* Metrics grid - grid border layout */}
         <div className="grid grid-cols-2 lg:grid-cols-4 border border-slate-200 bg-slate-200 gap-px">
           {SAFETY_METRICS.map((metric, i) => (
             <motion.div

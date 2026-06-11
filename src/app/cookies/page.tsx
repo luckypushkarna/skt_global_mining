@@ -75,7 +75,7 @@ export default function CookiesPage(): JSX.Element {
             <p>
               For further queries regarding our Cookie Policy, please reach out to us at:
               <br />
-              <a href="mailto:privacy@sktglobal.com" className="text-rose-600 hover:underline">privacy@sktglobal.com</a>
+              <a href="mailto:director@sktglobalminings.com" className="text-rose-600 hover:underline">director@sktglobalminings.com</a>
             </p>
           </section>
 

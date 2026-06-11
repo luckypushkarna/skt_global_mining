@@ -7,7 +7,7 @@ export function DropCapIntro() {
     <section className="bg-[#FAF8F5]">
       <div className="max-w-5xl mx-auto px-6 py-16 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Main text — 2 column editorial */}
+          {/* Main text - 2 column editorial */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -21,7 +21,7 @@ export function DropCapIntro() {
                 I
               </span>
               n the copper-rich corridors of Zambia&apos;s Copperbelt, mining has always 
-              been about extraction — of metal, of value, of resources. For decades, 
+              been about extraction - of metal, of value, of resources. For decades, 
               communities watched companies arrive, dig, and depart. What remained 
               were open pits and broken promises. SKT Global arrived with a different 
               contract.
@@ -29,7 +29,7 @@ export function DropCapIntro() {
 
             <p className="text-slate-600 text-base leading-[1.9] mb-6 font-light">
               Twenty percent of net profits. That&apos;s the commitment enshrined in SKT 
-              Global&apos;s founding charter — not as a PR target, but as a legally binding 
+              Global&apos;s founding charter - not as a PR target, but as a legally binding 
               community reinvestment obligation. Schools get built. Clinics get staffed. 
               Boreholes go down. And the company stays accountable to the very people 
               beneath whose land they work.
@@ -40,7 +40,7 @@ export function DropCapIntro() {
             </p>
           </motion.div>
 
-          {/* Sidebar — sticky stats */}
+          {/* Sidebar - sticky stats */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}

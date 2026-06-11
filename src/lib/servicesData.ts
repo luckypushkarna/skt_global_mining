@@ -1,5 +1,5 @@
 // ─── Services data ────────────────────────────────────────────────────────────
-// Pure data — no "use client". Safe to import from Server and Client components.
+// Pure data - no "use client". Safe to import from Server and Client components.
 
 export type ServiceCard = {
   num: string;
@@ -42,7 +42,7 @@ export const CARDS: ServiceCard[] = [
     title: "Fleet",
     desc: "Loaders, drill rigs, mine trucks. Underground-ready, always.",
     detail:
-      "SKT operates a mechanised underground fleet covering every production phase — LHD loaders, 50-tonne mine trucks, long-hole drill rigs, development jumbos, cable bolters, and utility vehicles. Each unit is maintained to OEM specification and deployed to maximise shift utilisation.",
+      "SKT operates a mechanised underground fleet covering every production phase - LHD loaders, 50-tonne mine trucks, long-hole drill rigs, development jumbos, cable bolters, and utility vehicles. Each unit is maintained to OEM specification and deployed to maximise shift utilisation.",
     tags: ["Drill Rigs", "Mine Trucks"],
     bgImage: "/Mechanised Fleet.webp",
   },
@@ -62,7 +62,7 @@ export const CARDS: ServiceCard[] = [
     iconName: "Network",
     slug: "logistics",
     title: "Logistics",
-    desc: "Workforce, equipment, material — moving without interruption.",
+    desc: "Workforce, equipment, material - moving without interruption.",
     detail:
       "Coordinated logistics spanning workforce transport, equipment mobilisation, and ore-to-surface material handling. Our fleet of light and heavy surface vehicles ensures shift movements are on time, consumables reach the face, and production ore reaches the mill without delay.",
     tags: ["Fleet Dispatch", "Material Handling"],
@@ -73,7 +73,7 @@ export const CARDS: ServiceCard[] = [
     iconName: "Monitor",
     slug: "command",
     title: "Command",
-    desc: "Engineering, mining, maintenance — one coordinated operations room.",
+    desc: "Engineering, mining, maintenance - one coordinated operations room.",
     detail:
       "A single operations command integrating shift reports, equipment tracking, personnel location, and production KPIs. Mine managers and engineers work from a unified dashboard that surfaces bottlenecks in real time, allowing immediate corrective action before production targets are missed.",
     tags: ["Unified Control", "Production Planning"],
@@ -128,9 +128,9 @@ export const CARDS: ServiceCard[] = [
     iconName: "Building2",
     slug: "infrastructure",
     title: "Infrastructure",
-    desc: "Workshops, offices, utilities — built for scale underground.",
+    desc: "Workshops, offices, utilities - built for scale underground.",
     detail:
-      "Surface and underground infrastructure designed for long-life mining operations — portal construction, decline development, pump stations, compressed air reticulation, ventilation fans, underground electrical substations, and a surface workshop complex capable of handling the heaviest fleet components.",
+      "Surface and underground infrastructure designed for long-life mining operations - portal construction, decline development, pump stations, compressed air reticulation, ventilation fans, underground electrical substations, and a surface workshop complex capable of handling the heaviest fleet components.",
     tags: ["Utility Systems", "Workshops"],
     bgImage: "/Infrastructure Systems.webp",
   },

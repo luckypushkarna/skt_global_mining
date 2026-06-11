@@ -7,7 +7,7 @@ export const ESG_STATS = [
   {
     label: "Water Recycled",
     value: "90%",
-    sub: "Closed-loop processing circuits — zero discharge",
+    sub: "Closed-loop processing circuits - zero discharge",
   },
   {
     label: "Local Workforce",

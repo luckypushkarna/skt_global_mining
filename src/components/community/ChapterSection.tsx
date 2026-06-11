@@ -19,7 +19,7 @@ const CHAPTERS = [
     label: "Healthcare",
     icon: Heart,
     headline: "Twelve Clinics. Zero Charge for Maternal Care.",
-    body: "Mobile clinics and fixed-site facilities across the operational zone offer basic care, vaccinations, and maternal health services. Every expectant mother in the surrounding communities receives free prenatal and postnatal care — no exceptions.",
+    body: "Mobile clinics and fixed-site facilities across the operational zone offer basic care, vaccinations, and maternal health services. Every expectant mother in the surrounding communities receives free prenatal and postnatal care - no exceptions.",
     stat: "12 community clinics supported",
     image: "/Workforce Facilities.webp",
   },
@@ -51,10 +51,10 @@ export function ChapterSection() {
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
-                {/* Chapter label — editorial */}
+                {/* Chapter label - editorial */}
                 <div className="flex items-center gap-4 mb-10">
                   <span className="font-mono text-[10px] font-black tracking-[0.4em] uppercase text-amber-600">
-                    Chapter {chapter.number} — {chapter.label}
+                    Chapter {chapter.number} - {chapter.label}
                   </span>
                   <div className="flex-1 h-px bg-amber-200" />
                   <Icon size={14} className="text-amber-400" />

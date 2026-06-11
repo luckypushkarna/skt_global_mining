@@ -61,7 +61,7 @@ export const articles: Article[] = [
     slug: "zero-harm-milestone-2026",
     title: "SKT Achieves 1 Million Man-Hours Without a Lost-Time Injury",
     excerpt:
-      "We are proud to announce that our teams across all active mining sites have collectively worked 1 million man-hours without a single lost-time injury — a testament to our unwavering safety culture.",
+      "We are proud to announce that our teams across all active mining sites have collectively worked 1 million man-hours without a single lost-time injury - a testament to our unwavering safety culture.",
     category: "safety",
     date: "2026-05-10",
     readTime: "3 min read",

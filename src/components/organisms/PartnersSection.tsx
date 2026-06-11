@@ -101,6 +101,7 @@ export function PartnersSection(): JSX.Element {
                         {partner.focus}
                       </span>
                     </div>
+                    </div>
                   </div>
                 </div>
 

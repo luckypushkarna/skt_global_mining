@@ -18,7 +18,7 @@ export function DashboardHero() {
 
   return (
     <section className="bg-slate-950 text-white min-h-[90vh] grid grid-cols-1 lg:grid-cols-2">
-      {/* LEFT — Headline + context */}
+      {/* LEFT - Headline + context */}
       <div className="relative flex flex-col justify-end p-8 lg:p-14 pb-12 lg:pb-16 border-b lg:border-b-0 lg:border-r border-white/10 overflow-hidden">
         <Image
           src="/zambia-operations-nobgs.webp"
@@ -61,7 +61,7 @@ export function DashboardHero() {
         </div>
       </div>
 
-      {/* RIGHT — Live data panel */}
+      {/* RIGHT - Live data panel */}
       <div className="bg-slate-900 flex flex-col justify-center p-8 lg:p-14">
         <motion.div
           initial={{ opacity: 0, x: 20 }}

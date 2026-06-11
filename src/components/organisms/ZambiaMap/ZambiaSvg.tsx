@@ -24,7 +24,7 @@ export function ZambiaSvg() {
       </defs>
 
       {/*
-        Zambia outline — hand-traced from geographic data.
+        Zambia outline - hand-traced from geographic data.
         The shape covers the map container at viewBox 0 0 1000 820.
         Provinces are approximated with dashed interior lines.
       */}

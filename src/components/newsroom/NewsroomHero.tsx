@@ -14,7 +14,7 @@ export default function NewsroomHero() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* Dark overlay — navy + blue tint so brand colours come through */}
+      {/* Dark overlay - navy + blue tint so brand colours come through */}
       <div className="absolute inset-0 bg-gradient-to-br from-skt-navy/90 via-skt-blue/80 to-slate-900/85" />
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">

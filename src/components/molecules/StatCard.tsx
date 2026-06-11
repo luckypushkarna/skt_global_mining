@@ -76,7 +76,7 @@ export const StatCard = memo(function StatCard({ stat, index, className }: StatC
               }, 800);
             }
           }
-        }, 90); // ~90ms per character — crisp, premium pacing
+        }, 90); // ~90ms per character - crisp, premium pacing
       }, startDelay);
 
       return () => {
@@ -152,7 +152,7 @@ export const StatCard = memo(function StatCard({ stat, index, className }: StatC
             // Text values: typewriter fills characters into valueRef
             <>
               <span ref={valueRef} />
-              {/* Blinking cursor — fades out after typing completes */}
+              {/* Blinking cursor - fades out after typing completes */}
               <span
                 ref={cursorRef}
                 aria-hidden="true"

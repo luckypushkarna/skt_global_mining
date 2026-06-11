@@ -160,7 +160,7 @@ export default function ChairpersonsMessage() {
       number: "01",
       title: "Responsible Growth",
       content:
-        "Growth without responsibility is not growth at all — it is extraction in its most shortsighted form. Over the past year, we have deepened our commitment to responsible resource development, ensuring that every tonne extracted creates lasting value not only for our shareholders, but for the communities and ecosystems that surround our operations.\n\nWe have expanded our environmental monitoring capabilities, invested in water recycling infrastructure, and strengthened our land rehabilitation programs. These are not costs to our business — they are investments in our future legitimacy and our enduring social license to operate.",
+        "Growth without responsibility is not growth at all - it is extraction in its most shortsighted form. Over the past year, we have deepened our commitment to responsible resource development, ensuring that every tonne extracted creates lasting value not only for our shareholders, but for the communities and ecosystems that surround our operations.\n\nWe have expanded our environmental monitoring capabilities, invested in water recycling infrastructure, and strengthened our land rehabilitation programs. These are not costs to our business - they are investments in our future legitimacy and our enduring social license to operate.",
       image:
         "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&h=600&fit=crop",
     },
@@ -168,7 +168,7 @@ export default function ChairpersonsMessage() {
       number: "02",
       title: "Operational Excellence",
       content:
-        "Excellence in mining is not achieved through grand gestures. It is built shift by shift, decision by decision, in the disciplined execution of fundamentals. This year, our operations have demonstrated that precision and consistency are the truest measures of a mature mining enterprise.\n\nAcross our portfolio, we have achieved record throughput while simultaneously reducing unit costs. Our investment in autonomous systems, predictive maintenance, and data-driven mine planning is yielding returns that exceed our initial projections — not because we pursued technology for its own sake, but because we applied it where it matters most.",
+        "Excellence in mining is not achieved through grand gestures. It is built shift by shift, decision by decision, in the disciplined execution of fundamentals. This year, our operations have demonstrated that precision and consistency are the truest measures of a mature mining enterprise.\n\nAcross our portfolio, we have achieved record throughput while simultaneously reducing unit costs. Our investment in autonomous systems, predictive maintenance, and data-driven mine planning is yielding returns that exceed our initial projections - not because we pursued technology for its own sake, but because we applied it where it matters most.",
       image:
         "https://images.unsplash.com/photo-1578496479914-7ef3b0193be3?w=900&h=600&fit=crop",
     },
@@ -176,7 +176,7 @@ export default function ChairpersonsMessage() {
       number: "03",
       title: "People First",
       content:
-        "Every achievement documented in this report was made possible by people — their expertise, their courage, their commitment to one another. A mining company is only as strong as the trust between the individuals who plan, execute, and safeguard its operations every day.\n\nWe have made significant investments in leadership development, mental health support, and skills training. Our workforce represents over forty nationalities, and this diversity is among our greatest strengths. When people feel valued, heard, and safe, they bring their best work — and in mining, that best work can be the difference between an ordinary operation and an exceptional one.",
+        "Every achievement documented in this report was made possible by people - their expertise, their courage, their commitment to one another. A mining company is only as strong as the trust between the individuals who plan, execute, and safeguard its operations every day.\n\nWe have made significant investments in leadership development, mental health support, and skills training. Our workforce represents over forty nationalities, and this diversity is among our greatest strengths. When people feel valued, heard, and safe, they bring their best work - and in mining, that best work can be the difference between an ordinary operation and an exceptional one.",
       image:
         "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=900&h=600&fit=crop",
     },
@@ -184,7 +184,7 @@ export default function ChairpersonsMessage() {
       number: "04",
       title: "Sustainable Mining",
       content:
-        "Sustainability in mining is often perceived as paradoxical. We extract finite resources from the earth — how can that be sustainable? The answer lies not in what we take, but in how we take it, what we leave behind, and what we enable for the world.\n\nOur decarbonization roadmap is ahead of schedule. We have reduced Scope 1 and 2 emissions by thirty-four percent against our 2019 baseline. We have committed to science-based targets, and our water intensity per tonne has decreased for the fourth consecutive year. These numbers reflect a genuine transformation in how we operate — not a marketing exercise.",
+        "Sustainability in mining is often perceived as paradoxical. We extract finite resources from the earth - how can that be sustainable? The answer lies not in what we take, but in how we take it, what we leave behind, and what we enable for the world.\n\nOur decarbonization roadmap is ahead of schedule. We have reduced Scope 1 and 2 emissions by thirty-four percent against our 2019 baseline. We have committed to science-based targets, and our water intensity per tonne has decreased for the fourth consecutive year. These numbers reflect a genuine transformation in how we operate - not a marketing exercise.",
       image:
         "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=900&h=600&fit=crop",
     },
@@ -192,7 +192,7 @@ export default function ChairpersonsMessage() {
       number: "05",
       title: "Future Generations",
       content:
-        "The true measure of our leadership will not be found in this year's production figures or share price. It will be found in the condition of the land we mine, the strength of the communities we touch, and the caliber of the leaders we develop to carry this enterprise forward.\n\nWe are building a company that the next generation of mining professionals will be proud to join — one that combines commercial ambition with genuine stewardship, technical excellence with human compassion, and global reach with local accountability. This is the legacy we intend to leave.",
+        "The true measure of our leadership will not be found in this year's production figures or share price. It will be found in the condition of the land we mine, the strength of the communities we touch, and the caliber of the leaders we develop to carry this enterprise forward.\n\nWe are building a company that the next generation of mining professionals will be proud to join - one that combines commercial ambition with genuine stewardship, technical excellence with human compassion, and global reach with local accountability. This is the legacy we intend to leave.",
       image:
         "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=900&h=600&fit=crop",
     },
@@ -220,14 +220,14 @@ export default function ChairpersonsMessage() {
       year: "2000–2024",
       title: "Transformation",
       description:
-        "A period of unprecedented growth and evolution — expanding across four continents, embracing digital transformation, committing to net-zero emissions, and redefining the relationship between mining and the communities in which we operate.",
+        "A period of unprecedented growth and evolution - expanding across four continents, embracing digital transformation, committing to net-zero emissions, and redefining the relationship between mining and the communities in which we operate.",
     },
     {
       era: "Future",
       year: "2025–Beyond",
       title: "Legacy",
       description:
-        "The next chapter will be defined by the choices we make today — investments in clean energy, circular economy principles, biodiversity restoration, and the development of leaders who understand that mining's greatest resource is not beneath the ground, but within our people.",
+        "The next chapter will be defined by the choices we make today - investments in clean energy, circular economy principles, biodiversity restoration, and the development of leaders who understand that mining's greatest resource is not beneath the ground, but within our people.",
     },
   ];
 
@@ -285,8 +285,8 @@ export default function ChairpersonsMessage() {
                     }}
                   >
                     <img
-                      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=1100&fit=crop&crop=face"
-                      alt="Sir Richard Blackwood"
+                      src="/Raj Sir Photo.webp"
+                      alt="Mr. Raj Talreja"
                       className="w-full aspect-[3/4] object-cover"
                       style={{
                         filter: "grayscale(15%) contrast(1.02)",
@@ -312,7 +312,7 @@ export default function ChairpersonsMessage() {
                     fontFamily: "'Georgia', 'Times New Roman', serif",
                   }}
                 >
-                  Sir Richard
+                  Mr. Raj
                 </h2>
                 <h2
                   className="text-4xl md:text-5xl font-extralight text-gray-900 mb-6 tracking-tight"
@@ -320,7 +320,7 @@ export default function ChairpersonsMessage() {
                     fontFamily: "'Georgia', 'Times New Roman', serif",
                   }}
                 >
-                  Blackwood
+                  Talreja
                 </h2>
               </FadeIn>
               <FadeIn delay={0.4}>
@@ -330,7 +330,7 @@ export default function ChairpersonsMessage() {
               </FadeIn>
               <FadeIn delay={0.5}>
                 <p className="text-lg text-gray-600 font-light leading-[1.8] mb-10">
-                  For over three decades, Sir Richard has navigated the
+                  For years, Mr. Talreja has navigated the
                   complexities of global resource development with a singular
                   conviction: that mining, done right, has the power to uplift
                   nations, sustain communities, and build the material
@@ -357,7 +357,7 @@ export default function ChairpersonsMessage() {
                           "'Brush Script MT', 'Segoe Script', cursive",
                       }}
                     >
-                      R. Blackwood
+                      R. Talreja
                     </text>
                     <line
                       x1="10"
@@ -376,7 +376,7 @@ export default function ChairpersonsMessage() {
         </div>
       </section>
 
-      {/* ━━━ 3. Vision Narrative — Chapters ━━━ */}
+      {/* ━━━ 3. Vision Narrative - Chapters ━━━ */}
       <section className="py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 mb-20 md:mb-32">
           <FadeIn>
@@ -605,7 +605,7 @@ export default function ChairpersonsMessage() {
               <p className="text-base text-gray-600 font-light leading-[1.9]">
                 We produced record volumes across our key commodities while
                 simultaneously achieving our lowest-ever injury frequency rate.
-                This is not coincidence — it is the fruit of a culture that
+                This is not coincidence - it is the fruit of a culture that
                 refuses to accept a trade-off between productivity and safety,
                 between ambition and responsibility.
               </p>
@@ -630,7 +630,7 @@ export default function ChairpersonsMessage() {
 
               <p className="text-base text-gray-600 font-light leading-[1.9]">
                 I want to express my personal gratitude to every member of our
-                organization — from the engineers who design our mines to the
+                organization - from the engineers who design our mines to the
                 operators who run them, from the scientists who protect our
                 environments to the leaders who inspire our teams. Your work
                 matters. It matters to the shareholders who entrust us with their
@@ -668,7 +668,7 @@ export default function ChairpersonsMessage() {
                     fontFamily: "'Brush Script MT', 'Segoe Script', cursive",
                   }}
                 >
-                  R. Blackwood
+                  R. Talreja
                 </text>
                 <line
                   x1="10"
@@ -681,13 +681,13 @@ export default function ChairpersonsMessage() {
                 />
               </svg>
               <p className="text-sm text-gray-900 font-medium">
-                Sir Richard Blackwood
+                Mr. Raj Talreja
               </p>
               <p className="text-sm text-gray-500 font-light mt-0.5">
                 Chairperson of the Board
               </p>
               <p className="text-xs text-gray-400 font-light mt-3">
-                December 2024
+                June 2026
               </p>
             </div>
           </FadeIn>
@@ -725,7 +725,7 @@ export default function ChairpersonsMessage() {
           <div className="text-center">
             <div className="w-px h-12 bg-gray-200 mx-auto mb-4" />
             <p className="text-[10px] tracking-[0.3em] uppercase text-gray-400">
-              Annual Report 2024
+              Chairperson's Message 2026
             </p>
           </div>
         </FadeIn>
@@ -735,7 +735,7 @@ export default function ChairpersonsMessage() {
       <footer className="bg-gray-50 border-t border-gray-100 py-10">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-400 font-light">
-            © 2024 Global Mining Corporation. All rights reserved.
+            © 2026 SKT Global Mining & Services Limited. All rights reserved.
           </p>
           <div className="flex items-center gap-8">
             <button className="text-xs text-gray-400 hover:text-gray-700 transition-colors font-light">

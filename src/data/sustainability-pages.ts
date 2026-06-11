@@ -24,7 +24,7 @@ export const communityImpact: PageConfig = {
   title: "Building stronger",
   titleAccent: "communities.",
   intro:
-    "Twenty percent of our net profits go directly back into Zambia's mining communities — funding schools, clinics, water networks, and small business growth.",
+    "Twenty percent of our net profits go directly back into Zambia's mining communities - funding schools, clinics, water networks, and small business growth.",
   heroImage: "/Community Safety Culture.webp",
   accentColor: "amber",
   stats: [
@@ -52,7 +52,7 @@ export const communityImpact: PageConfig = {
   ],
   story: {
     quote:
-      "When SKT built the clinic in our village, my children received care for the first time within walking distance. That's not corporate responsibility — that's being a neighbour.",
+      "When SKT built the clinic in our village, my children received care for the first time within walking distance. That's not corporate responsibility - that's being a neighbour.",
     author: "Mary Banda",
     role: "Resident, Chingola District",
   },
@@ -70,7 +70,7 @@ export const environmentalCare: PageConfig = {
   title: "Stewardship of",
   titleAccent: "the land.",
   intro:
-    "Mining is extraction — but it doesn't have to be destruction. Our closed-loop systems, rehabilitation programs, and emissions controls leave the land healthier than we found it.",
+    "Mining is extraction - but it doesn't have to be destruction. Our closed-loop systems, rehabilitation programs, and emissions controls leave the land healthier than we found it.",
   heroImage: "/zambia-operations-nobgs.webp",
   accentColor: "emerald",
   stats: [
@@ -116,7 +116,7 @@ export const localWorkforce: PageConfig = {
   title: "Skills built in",
   titleAccent: "Zambia, for Zambia.",
   intro:
-    "Eighty-five percent of our workforce is Zambian. Through the Ubuntu Mentorship Program and certified training pathways, we're building the next generation of African mining leadership — not importing it.",
+    "Eighty-five percent of our workforce is Zambian. Through the Ubuntu Mentorship Program and certified training pathways, we're building the next generation of African mining leadership - not importing it.",
   heroImage: "/Continuous Training.webp",
   accentColor: "sky",
   stats: [
@@ -144,7 +144,7 @@ export const localWorkforce: PageConfig = {
   ],
   story: {
     quote:
-      "I started as an underground loader operator. SKT paid for my engineering certification. Today I supervise a team of 24. That's the SKT difference — they invest in you.",
+      "I started as an underground loader operator. SKT paid for my engineering certification. Today I supervise a team of 24. That's the SKT difference - they invest in you.",
     author: "Joseph Phiri",
     role: "Underground Supervisor, Kitwe",
   },

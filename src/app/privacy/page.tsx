@@ -93,9 +93,9 @@ export default function PrivacyPage(): JSX.Element {
             </p>
             <div className="bg-neutral-50 p-6 rounded-xl border border-neutral-200/60 mt-4 space-y-1">
               <p className="font-bold text-neutral-950">SKT Global Mining & Services Limited</p>
-              <p>Email: <a href="mailto:privacy@sktglobal.com" className="text-rose-600 hover:underline">privacy@sktglobal.com</a></p>
-              <p>Registered Office: SKT Tower, BKC, Mumbai 400 051, India</p>
-              <p>Zambian Operations: Kitwe, Copperbelt Province, Zambia</p>
+              <p>Email: <a href="mailto:director@sktglobalminings.com" className="text-rose-600 hover:underline">director@sktglobalminings.com</a></p>
+              <p>Headquarters: Mumbai, India</p>
+              <p>Zambian Operations: CHIM/254/A, Copperbelt Province Opposite Mindolo Police Station, Between Rubies & Meru Filling Station Kitwe, Zambia</p>
             </div>
           </section>
 

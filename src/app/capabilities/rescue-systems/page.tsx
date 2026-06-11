@@ -199,7 +199,7 @@ export default function RescueSystemsPage() {
             </div>
 
             <p className="text-sm md:text-[15px] leading-7 text-neutral-500 max-w-xl">
-              Short, practical, and operational — built around readiness and
+              Short, practical, and operational - built around readiness and
               response.
             </p>
           </div>

@@ -44,7 +44,7 @@ export function WorkerSpotlight() {
 
               <div className="flex-1 space-y-2">
                 <div className="flex justify-between items-center text-[10px] font-mono text-zinc-500">
-                  <span>Charles Sakanya — Audio Story</span>
+                  <span>Charles Sakanya - Audio Story</span>
                   <span>0:42 / 1:30</span>
                 </div>
 

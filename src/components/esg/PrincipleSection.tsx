@@ -28,7 +28,7 @@ export function PrincipleSection() {
         </h2>
         <p className="text-slate-500 text-base font-light leading-relaxed">
           Guided by three pillars that shape every decision we make underground and on the surface.
-          These are not aspirations — they are operational commitments.
+          These are not aspirations - they are operational commitments.
         </p>
       </div>
 
@@ -64,7 +64,7 @@ export function PrincipleSection() {
                     {/* Caption */}
                     <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/70 to-transparent">
                       <p className="text-[10px] text-white/70 font-mono tracking-widest uppercase">
-                        Fig. {index + 1} — {principle.title} Initiative · SKT Global
+                        Fig. {index + 1} - {principle.title} Initiative · SKT Global
                       </p>
                     </div>
                     {/* Index number */}
