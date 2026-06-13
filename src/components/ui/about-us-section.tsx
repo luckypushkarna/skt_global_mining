@@ -73,7 +73,7 @@ export default function AboutUsSection() {
       secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-neutral-400" />,
       title: "Rapid Mobilisation",
       description:
-        "Successfully mobilised 225 advanced underground mining machines backed by a strategic investment exceeding US$50 million to ensure high-capacity output.",
+        "Successfully mobilised 225 advanced underground mining machines backed by a strategic investment exceeding $50 million to ensure high-capacity output.",
       position: "left",
     },
     {

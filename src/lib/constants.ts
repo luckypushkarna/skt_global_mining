@@ -130,7 +130,7 @@ export const STATS: ReadonlyArray<Stat> = [
   {
     value: "50",
     suffix: "M+",
-    prefix: "US$",
+    prefix: "$",
     label: "Strategic Investment",
     description: "Capital deployed to build heavy infrastructure and fleet capacity.",
   },
@@ -151,7 +151,7 @@ export const STATS: ReadonlyArray<Stat> = [
   {
     value: "3",
     suffix: "M+",
-    prefix: "US$",
+    prefix: "$",
     label: "Strategic Spare Parts",
     description: "Inventory stockpile ensuring maximum fleet availability.",
   },
@@ -262,10 +262,10 @@ export const MILESTONES: ReadonlyArray<Milestone> = [
 export const MARQUEE_ITEMS = [
   "225+ UNDERGROUND MACHINES",
   "1,500+ WORKFORCE",
-  "US$50M+ STRATEGIC INVESTMENT",
+  "$50M+ STRATEGIC INVESTMENT",
   "50% MOPANI TARGETS ACHIEVED",
   "24/7 OPERATIONAL SUPPORT",
-  "US$3M+ SPARE PARTS INVENTORY",
+  "$3M+ SPARE PARTS INVENTORY",
   "UNDERGROUND MINING",
   "MECHANISED OPERATIONS",
   "ENGINEERING & MAINTENANCE",

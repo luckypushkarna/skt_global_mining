@@ -101,8 +101,8 @@ export const MECHANISED_FLEET = {
       { label: "Mean time between failures", value: "412 hours" },
       { label: "In-shaft workshops", value: "4" },
       { label: "Certified technicians", value: "118" },
-      { label: "Spare parts inventory value", value: "US$3.2M" },
-      { label: "Annual fleet investment", value: "US$28M" },
+      { label: "Spare parts inventory value", value: "$3.2M" },
+      { label: "Annual fleet investment", value: "$28M" },
     ],
   },
 
@@ -124,7 +124,7 @@ export const MECHANISED_FLEET = {
       },
       {
         title: "Parts Availability",
-        desc: "US$3M+ spare parts inventory held locally in Zambia. Critical components stocked to less than 4-hour replacement lead time.",
+        desc: "$3M+ spare parts inventory held locally in Zambia. Critical components stocked to less than 4-hour replacement lead time.",
       },
     ],
   },

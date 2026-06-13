@@ -87,9 +87,9 @@ export const CAPABILITIES: Capability[] = [
     icon: Package,
     title: "Strategic Warehousing",
     tagline: "Every part. Every shift. Always within reach.",
-    desc: "Centralised supply depots managing a US$3M+ active spare parts inventory to eliminate maintenance downtime.",
-    overview: "We maintain a massive US$3M+ active spare parts inventory across strategically located depots. This ensures that replacement components are immediately available for our underground workshops, virtually eliminating wait times and protecting operational continuity.",
-    tags: ["US$3M+ Inventory", "Zero Wait Time", "Supply Chain"],
+    desc: "Centralised supply depots managing a $3M+ active spare parts inventory to eliminate maintenance downtime.",
+    overview: "We maintain a massive $3M+ active spare parts inventory across strategically located depots. This ensures that replacement components are immediately available for our underground workshops, virtually eliminating wait times and protecting operational continuity.",
+    tags: ["$3M+ Inventory", "Zero Wait Time", "Supply Chain"],
     bgImage: "/Strategic Warehousing-card.webp",
   },
   {
@@ -198,7 +198,7 @@ export function getCapabilityGallery(slug: string): GalleryItem[] {
       ];
     case "strategic-warehousing":
       return [
-        { src: "/Strategic Warehousing.webp", caption: "US$3M+ Parts Stockpile" },
+        { src: "/Strategic Warehousing.webp", caption: "$3M+ Parts Stockpile" },
         { src: "/Logistics Network.webp", caption: "Shift Materials Dispatch" },
         { src: "/Underground Workshop.webp", caption: "Parts Assembly Stations" },
         { src: "/Mechanised Fleet.webp", caption: "Heavy Transport Fleet Support" },

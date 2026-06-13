@@ -29,10 +29,10 @@ export const CARDS: ServiceCard[] = [
     iconName: "Package",
     slug: "warehousing",
     title: "Warehousing",
-    desc: "US$3M+ spare parts inventory. Zero downtime readiness.",
+    desc: "$3M+ spare parts inventory. Zero downtime readiness.",
     detail:
-      "A centralised warehousing operation stocking over US$3 million in OEM and aftermarket parts. Inventory is tracked in real time, enabling same-shift parts fulfilment and eliminating the production delays associated with procurement lead times.",
-    tags: ["US$3M+ Stock", "Zero Downtime"],
+      "A centralised warehousing operation stocking over $3 million in OEM and aftermarket parts. Inventory is tracked in real time, enabling same-shift parts fulfilment and eliminating the production delays associated with procurement lead times.",
+    tags: ["$3M+ Stock", "Zero Downtime"],
     bgImage: "/Strategic Warehousing.webp",
   },
   {

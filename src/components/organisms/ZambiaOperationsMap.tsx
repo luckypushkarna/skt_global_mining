@@ -29,7 +29,7 @@ const LOCATIONS = [
     id: 2,
     name: "Kitwe",
     role: "Logistics & Support",
-    description: "Strategic supply chain and workforce centre. Manages the deployment of 1,500+ personnel and a US$3M+ active spare parts inventory.",
+    description: "Strategic supply chain and workforce centre. Manages the deployment of 1,500+ personnel and a $3M+ active spare parts inventory.",
     lng: 28.2132,
     lat: -12.8024,
     type: "major" as const,

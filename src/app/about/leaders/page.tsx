@@ -26,7 +26,7 @@ const leaders = [
     },
     areasOfFocus: [
       { title: "Strategic Planning", description: "Long-term growth and international market positioning" },
-      { title: "Capital Deployment", description: "US$50M+ strategic infrastructure and operational investment" },
+      { title: "Capital Deployment", description: "$50M+ strategic infrastructure and operational investment" },
       { title: "Mining Operations", description: "Overseeing 225+ underground machines and 24/7 operations" },
       { title: "Workforce Development", description: "Building a 1,500+ strong Zambian operational workforce" },
       { title: "Commercial Growth", description: "Expanding revenue, partnerships, and service contracts" },
@@ -42,7 +42,7 @@ const leaders = [
     ],
     contributions: [
       { title: "Company Foundation", narrative: "Founded SKT Global Mining & Services Limited from the ground up, establishing the legal, operational, and financial frameworks required to operate in Zambia's complex regulatory environment. The company became operational within months of inception." },
-      { title: "Record Mobilisation", narrative: "Oversaw the fastest large-scale mining fleet mobilisation in recent Zambian history - 225+ underground machines deployed within six months through a US$50M+ investment program. The achievement is widely cited as a benchmark for project execution." },
+      { title: "Record Mobilisation", narrative: "Oversaw the fastest large-scale mining fleet mobilisation in recent Zambian history - 225+ underground machines deployed within six months through a $50M+ investment program. The achievement is widely cited as a benchmark for project execution." },
       { title: "Mopani Partnership", narrative: "Negotiated and established the strategic service contract with Mopani Copper Mines, positioning SKT Global as the primary underground mining contractor for one of Zambia's most significant copper operations. Within ten months, approximately 50% of MCM development and production targets were achieved." },
       { title: "Zambian Workforce Development", narrative: "Championed a hire-local philosophy that resulted in over 1,500 Zambian employees joining the company. Structured training and mentorship programs alongside experienced international mining professionals to build domestic technical capability." },
       { title: "Infrastructure Platform", narrative: "Directed the build-out of comprehensive operational infrastructure - underground workshops, strategic warehousing, accommodation facilities, transport networks, and support systems - creating the backbone for long-term operational excellence." },
@@ -52,7 +52,7 @@ const leaders = [
     impact: [
       { area: "Operational Excellence", description: "Under Sahil's leadership, SKT Global achieved approximately 50% of Mopani Copper Mines' development and production targets within the first ten months - a pace that exceeded expectations across the industry." },
       { area: "Safety Performance", description: "The company established a safety-first operational culture from day one, implementing ISO 45001-aligned systems and zero-harm protocols across all underground sites." },
-      { area: "Financial Discipline", description: "US$50M+ was invested with disciplined capital controls, establishing the asset base for long-term operational sustainability and future expansion toward 90% of MCM mining activity." },
+      { area: "Financial Discipline", description: "$50M+ was invested with disciplined capital controls, establishing the asset base for long-term operational sustainability and future expansion toward 90% of MCM mining activity." },
       { area: "Sustainability Goals", description: "SKT Global's hiring and procurement frameworks prioritise Zambian employment and local suppliers, embedding economic sustainability at the core of the business model." },
       { area: "Community Development", description: "The employment of 1,500+ Zambian workers and investment in local infrastructure has created measurable economic impact for communities across the Copperbelt." },
     ],
@@ -104,7 +104,7 @@ const leaders = [
     contributions: [
       { title: "Corporate Governance Framework", narrative: "Designed the corporate governance and compliance framework for SKT Global, ensuring the company operates to international standards across Zambian regulatory, financial, and operational requirements from day one." },
       { title: "Technology Transfer Program", narrative: "Established structured technology transfer arrangements with international OEM partners, bringing best-in-class mining technology and practices to SKT Global's Zambian operations, reducing technology gaps and improving fleet performance." },
-      { title: "Capital Structure", narrative: "Led the structuring of the company's initial US$50M+ capital deployment, balancing fleet acquisition, infrastructure build-out, and working capital requirements to ensure operational readiness from the outset." },
+      { title: "Capital Structure", narrative: "Led the structuring of the company's initial $50M+ capital deployment, balancing fleet acquisition, infrastructure build-out, and working capital requirements to ensure operational readiness from the outset." },
       { title: "International Partnerships", narrative: "Developed and maintains strategic relationships with global mining equipment suppliers, technology providers, and institutional partners that give SKT Global preferential access to equipment, expertise, and commercial opportunities." },
       { title: "Regulatory Navigation", narrative: "Guided the company through Zambia's complex mining regulatory environment, ensuring full compliance with the Mines and Minerals Development Act, environmental standards, and employment regulations." },
     ],
@@ -113,7 +113,7 @@ const leaders = [
     impact: [
       { area: "Operational Excellence", description: "Anand's governance frameworks and technology transfer programs have contributed to the operational discipline that allowed SKT Global to achieve Mopani targets within its first year." },
       { area: "Safety Performance", description: "His international standards experience informed the safety management systems deployed across SKT Global's underground operations." },
-      { area: "Financial Discipline", description: "The capital structuring work he led ensured US$50M+ was deployed efficiently and that the company maintained financial resilience through its establishment phase." },
+      { area: "Financial Discipline", description: "The capital structuring work he led ensured $50M+ was deployed efficiently and that the company maintained financial resilience through its establishment phase." },
       { area: "Sustainability Goals", description: "Anand has championed the integration of ESG principles into the company's governance framework from the outset." },
       { area: "Community Development", description: "His insistence on local procurement and employment standards in contractual arrangements has amplified the economic benefit to Zambian communities." },
     ],
@@ -209,7 +209,7 @@ const leaders = [
     },
     areasOfFocus: [
       { title: "Strategic Planning", description: "Financial planning aligned with the company's operational growth agenda" },
-      { title: "Asset Management", description: "Capital lifecycle management across a US$200M+ fleet and infrastructure base" },
+      { title: "Asset Management", description: "Capital lifecycle management across a $200M+ fleet and infrastructure base" },
       { title: "Supply Chain", description: "Financial governance of procurement and supply chain investment" },
       { title: "ESG Governance", description: "Financial reporting transparency and stakeholder accountability" },
       { title: "Commercial Growth", description: "Financial structuring of new contracts and business development" },
@@ -221,11 +221,11 @@ const leaders = [
       { year: "2012", title: "Multinational Experience", description: "Regional Finance Director with responsibility for cross-border treasury, tax, and compliance across African and Asian operations." },
       { year: "2018", title: "Group Finance", description: "Group Finance Controller at TTIPL, overseeing consolidated financial management and international subsidiary reporting." },
       { year: "2023", title: "SKT Global Formation", description: "Appointed CFO at SKT Global founding, structuring the financial architecture for the company's Zambian mining operations." },
-      { year: "2024", title: "Current Position", description: "Manages all financial operations including the stewardship of a US$50M+ initial capital deployment and ongoing operational finance." },
+      { year: "2024", title: "Current Position", description: "Manages all financial operations including the stewardship of a $50M+ initial capital deployment and ongoing operational finance." },
     ],
     contributions: [
       { title: "Financial Architecture", narrative: "Established the complete financial management architecture for SKT Global from inception, including accounting systems, internal controls, treasury operations, and management reporting frameworks suited to the Zambian operating environment." },
-      { title: "Capital Deployment Oversight", narrative: "Managed the financial governance of the US$50M+ initial capital program - ensuring that fleet acquisition, infrastructure build-out, and working capital requirements were funded in the right sequence, at the right cost, and with appropriate risk controls." },
+      { title: "Capital Deployment Oversight", narrative: "Managed the financial governance of the $50M+ initial capital program - ensuring that fleet acquisition, infrastructure build-out, and working capital requirements were funded in the right sequence, at the right cost, and with appropriate risk controls." },
       { title: "Zambia Regulatory Compliance", narrative: "Led the implementation of Zambia Revenue Authority, Bank of Zambia, and mining sector regulatory compliance frameworks, establishing the company's reputation as a transparent and compliant operator." },
       { title: "Banking Relationships", narrative: "Structured and secured the company's banking and credit facilities in Zambia, providing the financial flexibility to manage operational cashflows, equipment financing, and strategic investment." },
       { title: "Management Reporting", narrative: "Designed the management reporting system that provides real-time financial insight to operational and executive leadership, enabling faster and more informed decision-making across the business." },
@@ -308,7 +308,7 @@ const leaders = [
     },
     areasOfFocus: [
       { title: "Asset Management", description: "Maximizing the availability and life of our 225+ vehicle fleet" },
-      { title: "Supply Chain", description: "Stewardship of the US$3M+ spare parts and logistics inventory" },
+      { title: "Supply Chain", description: "Stewardship of the $3M+ spare parts and logistics inventory" },
       { title: "Operational Technology", description: "Deploying telemetry systems to predict and prevent machine faults" },
       { title: "Safety Systems", description: "Ensuring all mobile fleet safety brakes and controls meet zero-harm requirements" },
     ],

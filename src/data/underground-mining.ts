@@ -76,7 +76,7 @@ export const UNDERGROUND_MINING = {
     footnotes: [
       "Mt = Million tonnes. Cu = Copper. kt = Thousand tonnes.",
       "Mineral Resources are reported inclusive of Mineral Reserves.",
-      "Reserve estimates assume long-term copper price of US$8,500/tonne.",
+      "Reserve estimates assume long-term copper price of $8,500/tonne.",
       "Full technical report available on request.",
     ],
   },

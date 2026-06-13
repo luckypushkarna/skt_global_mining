@@ -77,7 +77,7 @@ export default function InfrastructurePage(): JSX.Element {
             </p>
 
             <p className="mt-4 md:mt-5 text-[13px] md:text-[15px] text-neutral-500 leading-relaxed max-w-2xl">
-              At SKT Global, our US$50 million initial investment extended far
+              At SKT Global, our $50 million initial investment extended far
               beyond heavy machinery. To support a world-record mobilization and
               a workforce of over 1,500 personnel, we established an
               operational backbone capable of sustaining round-the-clock mining
