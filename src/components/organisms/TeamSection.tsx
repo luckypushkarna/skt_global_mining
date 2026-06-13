@@ -192,8 +192,8 @@ export function TeamSection(): JSX.Element {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="text-3xl md:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.1]"
             >
-              The People Behind <br />
-              <span className="text-neutral-300">the Mission</span>
+              Leadership Behind <br />
+              <span className="text-neutral-300">the Vision</span>
             </motion.h2>
           </div>
 
@@ -204,7 +204,7 @@ export function TeamSection(): JSX.Element {
             transition={{ duration: 0.8, delay: 0.1 }}
           >
             <p className="text-[15px] md:text-base text-neutral-600 font-light leading-relaxed max-w-xl">
-              Our success is driven by a highly capable team of professionals across Human Resources, Finance, Commercial, Engineering, and Mining, advancing our vision of sustainable, profitable, and safe mining operations.
+              Our growth is supported by experienced leaders across operations, engineering, workforce development, finance, and strategic planning, driving long-term capability within Zambia's mining ecosystem.
             </p>
           </motion.div>
         </div>

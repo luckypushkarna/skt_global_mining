@@ -30,7 +30,7 @@ export function MarqueeSection(): JSX.Element {
             <span className="text-xs font-semibold tracking-widest text-white uppercase">
               {item}
             </span>
-            <span className="w-1 h-1 rounded-full bg-white flex-shrink-0" />
+            <span className="text-white text-xs font-semibold flex-shrink-0">•</span>
           </span>
         ))}
       </motion.div>

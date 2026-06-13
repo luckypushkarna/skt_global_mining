@@ -33,9 +33,13 @@ function MilestoneDot({ index }: { index: number }) {
   );
 }
 
-function TimelineCard({ milestone }: { milestone: (typeof MILESTONES)[number] }) {
+function TimelineCard({ milestone, isFinal }: { milestone: (typeof MILESTONES)[number], isFinal?: boolean }) {
   return (
-    <div className="w-full md:max-w-[92%] bg-white border border-neutral-200/60 rounded-2xl p-5 md:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.02)] text-left">
+    <div className={`w-full md:max-w-[92%] bg-white border rounded-2xl p-5 md:p-6 text-left transition-colors duration-300 ${
+      isFinal 
+        ? "border-skt-blue/30 shadow-[0_4px_20px_rgba(0,0,0,0.08)] bg-blue-50/20" 
+        : "border-neutral-200/60 shadow-[0_4px_20px_rgba(0,0,0,0.02)]"
+    }`}>
       <div className="flex items-start justify-between gap-4">
         <div className="space-y-1 flex-1">
           <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-skt-blue block mb-1">
@@ -340,6 +344,7 @@ export function AboutSection(): JSX.Element {
           >
             {MILESTONES.map((milestone, index) => {
               const isEven = index % 2 === 0;
+              const isFinal = index === MILESTONES.length - 1;
 
               return (
                 <motion.div
@@ -349,7 +354,7 @@ export function AboutSection(): JSX.Element {
                 >
                   <div className={`${isEven ? "flex md:justify-end" : "hidden md:block"} pl-12 md:pl-0`}>
                     {isEven ? (
-                      <TimelineCard milestone={milestone} />
+                      <TimelineCard milestone={milestone} isFinal={isFinal} />
                     ) : (
                       <div />
                     )}
@@ -363,7 +368,7 @@ export function AboutSection(): JSX.Element {
                   {/* ── RIGHT COLUMN ── */}
                   <div className={`${!isEven ? "hidden md:flex md:justify-start" : "hidden md:block"} md:pl-0`}>
                     {!isEven ? (
-                      <TimelineCard milestone={milestone} />
+                      <TimelineCard milestone={milestone} isFinal={isFinal} />
                     ) : (
                       <div />
                     )}
@@ -372,7 +377,7 @@ export function AboutSection(): JSX.Element {
                   {/* Mobile fallback: show card content for the hidden side on small screens */}
                   {!isEven && (
                     <div className="md:hidden pl-12">
-                      <TimelineCard milestone={milestone} />
+                      <TimelineCard milestone={milestone} isFinal={isFinal} />
                     </div>
                   )}
                 </motion.div>

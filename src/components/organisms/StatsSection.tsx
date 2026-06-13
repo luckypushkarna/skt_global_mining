@@ -214,7 +214,7 @@ export function StatsSection(): JSX.Element {
             id="safety-heading"
             className="text-headline"
           >
-            Every Worker Returns Home Safe.
+            Safety Without Compromise.
           </h2>
 
           {/* Sub-copy */}
@@ -225,9 +225,7 @@ export function StatsSection(): JSX.Element {
             transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="text-body-lg text-neutral-600 max-w-xl"
           >
-            Safety is the prime motto of SKT Global Mining. Every decision,
-            every shift, every system is designed around one non-negotiable
-            principle: committed to zero harm to our people, our communities, and our environment.
+            Safety is embedded into every aspect of our operations. Through rigorous standards, continuous training, and a culture of accountability, we are committed to ensuring every employee returns home safely every day.
           </motion.p>
         </div>
 

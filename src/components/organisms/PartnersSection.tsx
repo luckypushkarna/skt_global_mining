@@ -47,7 +47,7 @@ export function PartnersSection(): JSX.Element {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-2xl mb-16 md:mb-20 text-center mx-auto"
+          className="max-w-3xl mb-16 md:mb-20"
         >
           <Badge variant="dot">Our Partners</Badge>
 
@@ -55,15 +55,18 @@ export function PartnersSection(): JSX.Element {
             id="partners-heading"
             className="mt-4 text-3xl md:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.15]"
           >
-            Strategic Partnership{" "}
-            <span className="text-neutral-400">Ecosystem</span>
+            Strategic Partnerships.<br />
+            <span className="text-neutral-400">Shared Ambition.</span>
           </h2>
 
-          <p className="mt-5 text-[15px] md:text-sm lg:text-base text-slate-500 leading-relaxed font-normal max-w-xl mx-auto">
-            SKT Global supports IRH and Mopani Copper Mines through
-            underground mechanisation, infrastructure, and production systems —
-            scaling to support up to 90% of future operations.
-          </p>
+          <div className="mt-6 flex flex-col gap-4 text-[15px] md:text-base text-slate-500 leading-relaxed font-normal">
+            <p>
+              Working alongside IRH and Mopani Copper Mines to accelerate development, strengthen operational capability, and support the long-term growth of Zambia's mining sector.
+            </p>
+            <p>
+              Supporting the road toward 90% operational capability through continued investment in people, infrastructure, mechanisation and operational excellence.
+            </p>
+          </div>
         </motion.div>
 
         {/* ─── Partners Alternating Layout ───────────── */}

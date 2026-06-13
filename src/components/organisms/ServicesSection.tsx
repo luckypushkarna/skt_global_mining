@@ -4,7 +4,6 @@ import { useRef, useEffect, memo, JSX } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ImageWithSkeleton } from "@/components/ui/image-with-skeleton";
-import { OperationalScaleSection } from "./OperationalScaleSection";
 import { CAPABILITIES } from "@/data/capabilities";
 
 // Duplicate for seamless infinite loop
@@ -297,7 +296,7 @@ export function ServicesSection(): JSX.Element {
         {/* ── Header ── */}
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 mb-12 md:mb-16 lg:mb-20">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8">
-            <div>
+            <div className="max-w-3xl">
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -305,7 +304,7 @@ export function ServicesSection(): JSX.Element {
                 transition={{ duration: 0.5 }}
                 className="text-eyebrow mb-4"
               >
-                What We Do
+                Ecosystem
               </motion.p>
 
               <motion.h2
@@ -314,15 +313,23 @@ export function ServicesSection(): JSX.Element {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="text-headline"
+                className="text-headline mb-6"
               >
-                Core
+                The SKT Mining
                 <br />
-                <span className="text-neutral-300">Capabilities</span>
+                <span className="text-neutral-300">Ecosystem</span>
               </motion.h2>
+              
+              <motion.p
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                className="text-body text-neutral-600 max-w-2xl"
+              >
+                From underground production and engineering support to logistics, warehousing, workforce facilities and rescue systems, SKT operates an integrated mining ecosystem designed for scale, safety and continuous operations.
+              </motion.p>
             </div>
-
-
           </div>
         </div>
 
@@ -424,9 +431,6 @@ export function ServicesSection(): JSX.Element {
           </div>
         </div>
       </section>
-
-      {/* Operational Scale Section */}
-      <OperationalScaleSection />
     </>
   );
 }

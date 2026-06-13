@@ -20,8 +20,7 @@ const LOCATIONS = [
     id: 1,
     name: "Chingola",
     role: "Mining Operations Hub",
-    description:
-      "Primary underground mining operations base - the core of SKT's mechanised mining capability supporting Mopani Copper Mines.",
+    description: "Primary operational headquarters supporting Mopani Copper Mines. Coordinates the deployment of 225+ mechanised underground machines and core engineering services.",
     lng: 27.8635,
     lat: -12.5295,
     type: "primary" as const,
@@ -30,8 +29,7 @@ const LOCATIONS = [
     id: 2,
     name: "Kitwe",
     role: "Logistics & Support",
-    description:
-      "Regional logistics centre providing workforce deployment, equipment staging, and operational support services.",
+    description: "Strategic supply chain and workforce centre. Manages the deployment of 1,500+ personnel and a US$3M+ active spare parts inventory.",
     lng: 28.2132,
     lat: -12.8024,
     type: "major" as const,
@@ -40,8 +38,7 @@ const LOCATIONS = [
     id: 3,
     name: "Mufulira",
     role: "Active Mining Site",
-    description:
-      "Active mechanised underground mining operations with continuous mineral extraction and ore processing support.",
+    description: "Mechanised deep-shaft mining operations focused on high-volume mineral extraction, continuous ore processing, and achieving aggressive production targets.",
     lng: 28.2392,
     lat: -12.5497,
     type: "major" as const,
@@ -50,8 +47,7 @@ const LOCATIONS = [
     id: 4,
     name: "Solwezi",
     role: "Active Mining Site",
-    description:
-      "Mechanised underground operations site supporting regional geodetic plans and key mineral resources extraction.",
+    description: "Key regional extraction site operating 24/7. Supported by dedicated on-site engineering teams and modern underground infrastructure.",
     lng: 26.3858,
     lat: -12.1433,
     type: "major" as const,
@@ -60,8 +56,7 @@ const LOCATIONS = [
     id: 5,
     name: "Konkola Mine Main Site",
     role: "Active Mining Site",
-    description:
-      "Strategic mechanised underground operations base at Konkola, supporting deep-level copper extraction.",
+    description: "Deep-level copper extraction operations. Utilises advanced mechanised fleets to ensure continuous, safe, and scalable production output.",
     lng: 27.8296,
     lat: -12.3789,
     type: "major" as const,

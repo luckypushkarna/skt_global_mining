@@ -136,23 +136,18 @@ export function BlankSection(): JSX.Element {
               <div className="flex flex-col justify-center">
                 <div ref={copyTitleRef}>
                   <h3 className="mb-2 lg:mb-5 text-xs font-semibold tracking-[0.2em] text-neutral-500 uppercase">
-                    Underground Operations
+                    Long-Term Commitment
                   </h3>
                   <h2 className="mb-3 lg:mb-8 text-3xl md:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.1]">
-                    Zambia <br />
-                    <span className="text-neutral-300">Mining Ecosystem</span>
+                    Building Zambia's <br />
+                    <span className="text-neutral-300">Mining Future</span>
                   </h2>
                 </div>
                 <p
                   ref={copyParaRef}
                   className="max-w-lg text-[15px] md:text-base font-light text-neutral-600 leading-relaxed"
                 >
-                  SKT Global&apos;s operations in Zambia are built around underground
-                  mechanisation, operational infrastructure, workforce
-                  development, and long-term mining sustainability. Continuous
-                  investment in underground equipment, operational systems, and
-                  workforce expansion is strengthening long-term mining
-                  continuity.
+                  Mining progress is built on more than production. Through workforce development, infrastructure investment, skills transfer, and mechanised operations, SKT Global is helping strengthen the foundations of Zambia&apos;s mining future.
                 </p>
               </div>
 

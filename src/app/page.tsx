@@ -12,6 +12,9 @@ import { PartnersSection } from "@/components/organisms/PartnersSection";
 
 import { generateMetadata } from "@/lib/seo";
 import { BlankSection } from "@/components/organisms/BlankSection";
+import { CommunityImpactSection } from "@/components/organisms/CommunityImpactSection";
+import { OperationalScaleSection } from "@/components/organisms/OperationalScaleSection";
+import { ChairmanMessageSection } from "@/components/organisms/ChairmanMessageSection";
 import { PagePreloader } from "@/components/PagePreloader";
 import { SectionHeaderSkeleton, TextBlockSkeleton } from "@/components/ui/skeleton";
 
@@ -26,49 +29,60 @@ export default function HomePage(): JSX.Element {
       {/* Smart image and resource preloader */}
       <PagePreloader />
 
-      {/* Hero */}
+      {/* Hero & Proof Ticker */}
       <HeroSection />
 
-
-
-      {/* About + Timeline */}
+      {/* Built on Rock. Built to Last. */}
       <Suspense fallback={<SectionSkeleton />}>
         <AboutSection />
       </Suspense>
 
-      {/* Map Zoom Intro (GSAP scroll portal zoom revealing the Interactive Zambia Operations Map) */}
+      {/* Building Zambia's Mining Future & Operational Footprint */}
       <Suspense fallback={<SectionSkeleton />}>
         <BlankSection />
       </Suspense>
 
-      {/* Services Grid */}
+      {/* The SKT Mining Ecosystem */}
       <Suspense fallback={<SectionSkeleton />}>
         <ServicesSection />
       </Suspense>
 
-      {/* Stats */}
+      {/* Scale That Speaks Volumes */}
+      <Suspense fallback={<SectionSkeleton />}>
+        <OperationalScaleSection />
+      </Suspense>
+
+      {/* Safety Without Compromise */}
       <Suspense fallback={<SectionSkeleton />}>
         <StatsSection />
       </Suspense>
 
-      {/* Gallery */}
+      {/* Chairman's Message */}
+      <Suspense fallback={<SectionSkeleton />}>
+        <ChairmanMessageSection />
+      </Suspense>
+
+      {/* Life at SKT */}
       <GallerySection />
 
-      {/* Team */}
+      {/* Leadership Behind the Vision */}
       <div className="relative z-10 bg-bg-tint">
         <Suspense fallback={<SectionSkeleton />}>
           <TeamSection />
         </Suspense>
       </div>
 
-      {/* Partners */}
+      {/* Building More Than Mines (CSR) */}
+      <Suspense fallback={<SectionSkeleton />}>
+        <CommunityImpactSection />
+      </Suspense>
+
+      {/* Strategic Partnerships. Shared Ambition. */}
       <Suspense fallback={<SectionSkeleton />}>
         <PartnersSection />
       </Suspense>
 
-
-
-      {/* Contact */}
+      {/* Footer */}
       <Suspense fallback={<SectionSkeleton />}>
         <ContactSection />
       </Suspense>

@@ -3,8 +3,10 @@
 import { useRef, useMemo, JSX, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useHeroAnimation } from "@/hooks/useHeroAnimation";
 import { MarqueeSection } from "@/components/organisms/MarqueeSection";
+import { Button } from "@/components/atoms/Button";
 
 export function HeroSection(): JSX.Element {
   const containerRef = useRef<HTMLElement>(null);
@@ -130,7 +132,7 @@ export function HeroSection(): JSX.Element {
               className="text-3xl md:text-4xl lg:text-5xl text-white font-extrabold leading-[1.1] tracking-[-0.03em]"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 120%, 0 120%)" }}
             >
-              Engineering
+              Building
             </h1>
           </div>
 
@@ -141,7 +143,7 @@ export function HeroSection(): JSX.Element {
               className="text-3xl md:text-4xl lg:text-5xl text-white font-extrabold leading-[1.1] tracking-[-0.03em]"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 120%, 0 120%)" }}
             >
-              Underground
+              Mining's Next
             </h1>
 
             <div className="flex items-center gap-2 mb-2 ml-2">
@@ -159,7 +161,7 @@ export function HeroSection(): JSX.Element {
               className="text-3xl md:text-4xl lg:text-5xl text-white/30 font-light leading-tight tracking-tight mix-blend-plus-lighter"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 120%, 0 120%)" }}
             >
-              Operations
+              Chapter
             </h1>
           </div>
         </div>
@@ -167,6 +169,9 @@ export function HeroSection(): JSX.Element {
         {/* Description & CTAs */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mt-4">
           <div className="flex flex-col gap-6">
+            <p className="text-white/80 text-lg md:text-xl font-light leading-relaxed max-w-xl">
+              Strategic mining operations powering Zambia's growth.
+            </p>
             <div className="flex flex-row items-center gap-4 sm:gap-5 mt-2">
               <div className="inline-block relative h-8 w-32">
                 <Image
@@ -180,8 +185,8 @@ export function HeroSection(): JSX.Element {
               </div>
               <div className="block h-5 w-px bg-white/10" />
               <div className="inline-block relative h-12 w-28">
-                <Image 
-                  src="/irh-logo.webp" 
+                <Image
+                  src="/irh-logo.webp"
                   alt="IRH Logo"
                   fill
                   sizes="(max-width: 768px) 112px, 112px"
@@ -192,7 +197,18 @@ export function HeroSection(): JSX.Element {
             </div>
           </div>
 
-          <div ref={buttonsRef} className="hidden" />
+          <div ref={buttonsRef} className="flex flex-row gap-4 flex-wrap lg:justify-end items-center">
+            <Link href="/services">
+              <Button variant="secondary">
+                Explore Operations
+              </Button>
+            </Link>
+            <Link href="/about">
+              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-neutral-900">
+                Our Journey
+              </Button>
+            </Link>
+          </div>
         </div>
       </motion.div>
 
@@ -200,7 +216,7 @@ export function HeroSection(): JSX.Element {
 
       {/* Cinematic Bottom Gradient for deep black fade */}
       <div className="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-[#050505] to-transparent z-0 opacity-90" />
-      
+
       {/* Marquee at the bottom of the first fold */}
       <div className="absolute bottom-0 inset-x-0 z-20">
         <MarqueeSection />
