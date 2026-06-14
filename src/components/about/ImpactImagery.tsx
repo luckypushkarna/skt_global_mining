@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -81,12 +82,13 @@ function ImpactImage({
 
   return (
     <div ref={imgRef} className="opacity-0">
-      <div className={`${aspectMap[image.size]} overflow-hidden bg-neutral-100`}>
-        <img
+      <div className={`relative ${aspectMap[image.size]} overflow-hidden bg-neutral-100`}>
+        <Image
           src={image.src}
           alt={image.alt}
-          className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-[1.5s] ease-out"
-          loading="lazy"
+          fill
+          className="object-cover hover:scale-[1.02] transition-transform duration-[1.5s] ease-out"
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
     </div>

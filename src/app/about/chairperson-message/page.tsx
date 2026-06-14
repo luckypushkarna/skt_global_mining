@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
 // Custom hook for intersection observer
 function useInView(options: IntersectionObserverInit = {}) {
@@ -279,19 +280,21 @@ export default function ChairpersonsMessage() {
               <FadeIn direction="left">
                 <div className="relative">
                   <div
-                    className="overflow-hidden rounded-sm"
+                    className="relative overflow-hidden rounded-sm w-full aspect-[3/4]"
                     style={{
                       transform: `scale(${1 + Math.max(0, Math.min(0.05, (scrollY - windowHeight * 0.5) * 0.00005))})`,
                       transition: "transform 0.1s linear",
                     }}
                   >
-                    <img
+                    <Image
                       src="/Raj Sir Photo.webp"
                       alt="Mr. Raj Talreja"
-                      className="w-full aspect-[3/4] object-cover"
+                      fill
+                      className="object-cover"
                       style={{
                         filter: "grayscale(15%) contrast(1.02)",
                       }}
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                     />
                   </div>
                   <div className="absolute -bottom-6 -right-6 w-40 h-40 border border-gray-200/50 rounded-sm -z-10" />
@@ -405,14 +408,16 @@ export default function ChairpersonsMessage() {
                   className={`lg:col-span-5 ${i % 2 === 1 ? "lg:col-start-8 lg:order-2" : "lg:order-1"}`}
                 >
                   <FadeIn direction={i % 2 === 0 ? "left" : "right"}>
-                    <div className="overflow-hidden rounded-sm">
-                      <img
+                    <div className="relative overflow-hidden rounded-sm w-full aspect-[4/3]">
+                      <Image
                         src={chapter.image}
                         alt={chapter.title}
-                        className="w-full aspect-[4/3] object-cover"
+                        fill
+                        className="object-cover"
                         style={{
                           filter: "grayscale(20%) contrast(1.05)",
                         }}
+                        sizes="(max-width: 1024px) 100vw, 50vw"
                       />
                     </div>
                   </FadeIn>

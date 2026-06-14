@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -134,13 +135,14 @@ function StoryImageBlock({ image }: { image: StoryImage }) {
     >
       <div
         ref={imgRef}
-        className={`${aspectClasses[image.layout]} overflow-hidden bg-neutral-100`}
+        className={`relative ${aspectClasses[image.layout]} overflow-hidden bg-neutral-100`}
       >
-        <img
+        <Image
           src={image.src}
           alt={image.alt}
-          className="w-full h-[110%] object-cover"
-          loading="lazy"
+          fill
+          className="object-cover scale-[1.1]"
+          sizes="(max-width: 1024px) 100vw, 80vw"
         />
       </div>
       {image.caption && (

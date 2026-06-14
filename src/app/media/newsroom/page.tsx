@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useMemo } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 // --- Types ---
@@ -294,11 +295,13 @@ function FeaturedArticle({ article }: { article: Article }) {
           <div className="lg:col-span-7">
             {article.image && (
               <a href="#" className="block group">
-                <div className="aspect-[16/10] bg-neutral-100 overflow-hidden">
-                  <img
+                <div className="relative aspect-[16/10] bg-neutral-100 overflow-hidden">
+                  <Image
                     src={article.image}
                     alt={article.headline}
-                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                    fill
+                    className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                    sizes="(max-width: 1024px) 100vw, 60vw"
                   />
                 </div>
               </a>

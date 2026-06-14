@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -150,12 +151,13 @@ function TimelineEra({
         className={`lg:col-span-5 pl-16 lg:pl-0 opacity-0 ${isEven ? "lg:col-start-7 lg:pl-16" : "lg:col-start-1 lg:pr-16 lg:row-start-1"
           }`}
       >
-        <div className="overflow-hidden">
-          <img
+        <div className="relative overflow-hidden w-full aspect-[3/2]">
+          <Image
             src={era.image}
             alt={era.title}
-            className="w-full aspect-[3/2] object-cover"
-            loading="lazy"
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
         </div>
       </div>

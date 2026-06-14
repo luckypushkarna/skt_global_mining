@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, Suspense } from "react";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 
@@ -637,15 +638,16 @@ function LeadersContent() {
                   >
                     {/* Portrait card */}
                     <div className="relative aspect-[3/4] overflow-hidden bg-neutral-100 rounded-sm mb-4 shadow-sm group-hover:shadow-md transition-shadow duration-500">
-                      <img
+                      <Image
                         src={l.image}
                         alt={l.name}
-                        className={`w-full h-full object-cover object-top transition-all duration-700 ease-out group-hover:scale-105 ${
+                        fill
+                        className={`object-cover object-top transition-all duration-700 ease-out group-hover:scale-105 ${
                           i === currentIndex 
                             ? "grayscale-0 scale-[1.02]" 
                             : "grayscale group-hover:grayscale-0"
                         }`}
-                        loading="lazy"
+                        sizes="(max-width: 640px) 200px, 240px"
                       />
                       <div className={`absolute inset-0 border transition-all duration-500 pointer-events-none ${
                         i === currentIndex ? "border-neutral-900/40" : "border-transparent"
