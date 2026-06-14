@@ -144,7 +144,7 @@ export function HeroSection(): JSX.Element {
               className="text-3xl md:text-4xl lg:text-5xl text-white font-extrabold leading-[1.1] tracking-[-0.03em]"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 120%, 0 120%)" }}
             >
-              Mining's Next
+              Mining&apos;s Next
             </h1>
 
             <div className="flex items-center gap-2 mb-2 ml-2">
@@ -171,7 +171,7 @@ export function HeroSection(): JSX.Element {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mt-4">
           <div className="flex flex-col gap-6">
             <p className="text-white/80 text-lg md:text-xl font-light leading-relaxed max-w-xl">
-              Strategic mining operations powering Zambia's growth.
+              Strategic mining operations powering Zambia&apos;s growth.
             </p>
             <div className="flex flex-row items-center gap-4 sm:gap-5 mt-2">
               <div className="inline-block relative h-8 w-32">

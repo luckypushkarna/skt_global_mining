@@ -139,7 +139,7 @@ export function BlankSection(): JSX.Element {
                     Long-Term Commitment
                   </h3>
                   <h2 className="mb-3 lg:mb-8 text-3xl md:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.1]">
-                    Building Zambia's <br />
+                    Building Zambia&apos;s <br />
                     <span className="text-neutral-300">Mining Future</span>
                   </h2>
                 </div>

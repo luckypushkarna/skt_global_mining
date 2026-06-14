@@ -204,7 +204,7 @@ export function TeamSection(): JSX.Element {
             transition={{ duration: 0.8, delay: 0.1 }}
           >
             <p className="text-[15px] md:text-base text-neutral-600 font-light leading-relaxed max-w-xl">
-              Our growth is supported by experienced leaders across operations, engineering, workforce development, finance, and strategic planning, driving long-term capability within Zambia's mining ecosystem.
+              Our growth is supported by experienced leaders across operations, engineering, workforce development, finance, and strategic planning, driving long-term capability within Zambia&apos;s mining ecosystem.
             </p>
           </motion.div>
         </div>

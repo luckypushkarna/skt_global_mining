@@ -514,7 +514,7 @@ export function OperationalScaleSection(): JSX.Element {
               className="self-end max-w-lg text-body-lg text-neutral-600"
             >
               Built through strategic investment, operational discipline and
-              long-term commitment to Zambia's mining future.
+              long-term commitment to Zambia&apos;s mining future.
             </motion.p>
           </div>
         </div>

@@ -98,7 +98,7 @@ export function PartnersSection(): JSX.Element {
             <p className="text-[14px] sm:text-[15.5px] leading-[1.7] text-neutral-500 font-light">
               Working alongside IRH and Mopani Copper Mines to accelerate
               development, strengthen operational capability, and support the
-              long-term growth of Zambia's mining sector.
+              long-term growth of Zambia&apos;s mining sector.
             </p>
             <p className="text-[14px] sm:text-[15.5px] leading-[1.7] text-neutral-500 font-light">
               Supporting the road toward 90% operational capability through
