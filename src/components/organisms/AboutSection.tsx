@@ -15,6 +15,7 @@ import { Badge } from "@/components/atoms/Badge";
 import { Button } from "@/components/atoms/Button";
 import { MILESTONES } from "@/lib/constants";
 import { containerVariants, itemVariants } from "@/lib/animations";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 function MilestoneDot({ index }: { index: number }) {
   return (
@@ -72,6 +73,7 @@ export function AboutSection(): JSX.Element {
   const sectionRef = useRef<HTMLElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
   const isTimelineInView = useInView(timelineRef, { once: true, margin: "-10%" });
+  const isMobile = useIsMobile();
 
   // Scroll animations for Header (matching the Chairman Image style)
   const headerRef = useRef<HTMLDivElement>(null);
@@ -255,7 +257,8 @@ export function AboutSection(): JSX.Element {
         <div ref={headerRef} className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 mb-10 md:mb-16">
           {/* Left (Comes from Left) */}
           <motion.div
-            style={{ x: leftX, opacity: leftOpacity }}
+            style={isMobile ? {} : { x: leftX, opacity: leftOpacity }}
+            {...(isMobile ? { initial: { opacity: 0, y: 16 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, transition: { duration: 0.5 } } : {})}
           >
             <Badge variant="dot" className="mb-3 lg:mb-6 text-eyebrow">
               THE FOUNDATION
@@ -272,7 +275,8 @@ export function AboutSection(): JSX.Element {
 
           {/* Right (Comes from Right) */}
           <motion.div
-            style={{ x: rightX, opacity: rightOpacity }}
+            style={isMobile ? {} : { x: rightX, opacity: rightOpacity }}
+            {...(isMobile ? { initial: { opacity: 0, y: 16 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, transition: { duration: 0.5, delay: 0.1 } } : {})}
             className="flex flex-col justify-end"
           >
             <p className="text-body text-neutral-600 mb-4 lg:mb-8">

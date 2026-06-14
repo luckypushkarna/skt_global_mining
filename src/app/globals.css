@@ -912,3 +912,55 @@ body {
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MOBILE SCROLL PERFORMANCE FIXES
+   Target: 55-60 FPS on mid-range mobile devices
+   Desktop is COMPLETELY UNTOUCHED by these rules.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1023px) {
+  /* Kill expensive backdrop-filter on mobile GPU */
+  .backdrop-blur-md,
+  .backdrop-blur-lg,
+  .backdrop-blur-xl,
+  .backdrop-blur-sm,
+  [class*="backdrop-blur"] {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  /* Native iOS momentum scrolling */
+  html,
+  body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
+
+  /* Stop maps/canvas from blocking vertical page scroll */
+  .maplibregl-canvas-container,
+  .maplibregl-interactive,
+  canvas[class*="maplibre"] {
+    touch-action: pan-y !important;
+  }
+
+  /* Reduce heavy shadows to lightweight on mobile */
+  .shadow-2xl {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .shadow-xl {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  }
+}
+
+/* CSS Containment — isolate each section's rendering (universal perf boost) */
+section:not(#operations-map):not(.no-contain) {
+  contain: layout style;
+}
+
+/* Utility: lazy-render off-screen sections */
+.contain-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}

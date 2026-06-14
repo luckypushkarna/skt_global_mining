@@ -4,7 +4,279 @@ import { JSX, useEffect, useRef, useState } from "react";
 import { motion, useInView, animate } from "framer-motion";
 import { STATS } from "@/lib/constants";
 
-// ─── Animated Number Counter ─────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════
+//   CONTEXT-AWARE SVG PATTERNS
+//   Each label gets a unique pattern that hints at its meaning
+// ═══════════════════════════════════════════════════════════
+
+function StatPattern({ label }: { label: string }): JSX.Element {
+  const key = label.toLowerCase();
+
+  // PATTERN: People — scattered dots representing community
+  if (
+    key.includes("workforce") ||
+    key.includes("employee") ||
+    key.includes("people") ||
+    key.includes("staff") ||
+    key.includes("team")
+  ) {
+    return (
+      <svg viewBox="0 0 60 60" className="w-full h-full" fill="none">
+        {[
+          [12, 18], [22, 14], [32, 18], [42, 14], [50, 20],
+          [16, 28], [28, 32], [40, 28], [48, 34],
+          [14, 42], [24, 46], [36, 42], [46, 46],
+        ].map(([cx, cy], i) => (
+          <circle
+            key={i}
+            cx={cx}
+            cy={cy}
+            r="1.5"
+            className="fill-rose-500"
+          />
+        ))}
+      </svg>
+    );
+  }
+
+  // PATTERN: Fleet — 4×3 grid of squares representing machinery
+  if (
+    key.includes("machine") ||
+    key.includes("equipment") ||
+    key.includes("fleet") ||
+    key.includes("vehicle")
+  ) {
+    return (
+      <svg viewBox="0 0 60 60" className="w-full h-full" fill="none">
+        {Array.from({ length: 3 }).map((_, row) =>
+          Array.from({ length: 4 }).map((_, col) => (
+            <rect
+              key={`${row}-${col}`}
+              x={6 + col * 13}
+              y={10 + row * 15}
+              width="7"
+              height="7"
+              rx="1"
+              className="fill-rose-500"
+            />
+          ))
+        )}
+      </svg>
+    );
+  }
+
+  // PATTERN: Growth — ascending bars (investment chart)
+  if (
+    key.includes("invest") ||
+    key.includes("capital") ||
+    key.includes("budget") ||
+    key.includes("growth") ||
+    key.includes("revenue")
+  ) {
+    return (
+      <svg viewBox="0 0 60 60" className="w-full h-full" fill="none">
+        {[
+          { x: 8, h: 16 },
+          { x: 20, h: 26 },
+          { x: 32, h: 36 },
+          { x: 44, h: 48 },
+        ].map((b, i) => (
+          <rect
+            key={i}
+            x={b.x}
+            y={56 - b.h}
+            width="7"
+            height={b.h}
+            rx="1"
+            className="fill-rose-500"
+          />
+        ))}
+      </svg>
+    );
+  }
+
+  // PATTERN: Target — bullseye with crosshairs (achievement)
+  if (
+    key.includes("target") ||
+    key.includes("achieved") ||
+    key.includes("goal") ||
+    key.includes("milestone")
+  ) {
+    return (
+      <svg viewBox="0 0 60 60" className="w-full h-full" fill="none">
+        <circle cx="30" cy="30" r="22" strokeWidth="1" className="stroke-rose-500" />
+        <circle cx="30" cy="30" r="14" strokeWidth="1" className="stroke-rose-500" />
+        <circle cx="30" cy="30" r="6" strokeWidth="1" className="stroke-rose-500" />
+        <circle cx="30" cy="30" r="2" className="fill-rose-500" />
+        {/* Crosshairs */}
+        <line x1="30" y1="4" x2="30" y2="14" strokeWidth="1" className="stroke-rose-400" />
+        <line x1="30" y1="46" x2="30" y2="56" strokeWidth="1" className="stroke-rose-400" />
+        <line x1="4" y1="30" x2="14" y2="30" strokeWidth="1" className="stroke-rose-400" />
+        <line x1="46" y1="30" x2="56" y2="30" strokeWidth="1" className="stroke-rose-400" />
+      </svg>
+    );
+  }
+
+  // PATTERN: Time — clock with concentric rings + tick marks
+  if (
+    key.includes("execution") ||
+    key.includes("hour") ||
+    key.includes("24") ||
+    key.includes("continuous") ||
+    key.includes("ops")
+  ) {
+    return (
+      <svg viewBox="0 0 60 60" className="w-full h-full" fill="none">
+        <circle cx="30" cy="30" r="22" strokeWidth="1" className="stroke-rose-400" />
+        <circle cx="30" cy="30" r="15" strokeWidth="1" strokeDasharray="2 3" className="stroke-rose-400" />
+        <circle cx="30" cy="30" r="2.5" className="fill-rose-500" />
+        {/* Hour hand */}
+        <line x1="30" y1="30" x2="30" y2="18" strokeWidth="1.5" strokeLinecap="round" className="stroke-rose-500" />
+        {/* Minute hand */}
+        <line x1="30" y1="30" x2="40" y2="24" strokeWidth="1" strokeLinecap="round" className="stroke-rose-500" />
+        {/* 4 tick marks at cardinal positions */}
+        {[0, 90, 180, 270].map((deg, i) => (
+          <line
+            key={i}
+            x1="30" y1="6" x2="30" y2="10"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            transform={`rotate(${deg} 30 30)`}
+            className="stroke-rose-500"
+          />
+        ))}
+      </svg>
+    );
+  }
+
+  // PATTERN: Inventory — stacked horizontal layers (spare parts / strata)
+  if (
+    key.includes("spare") ||
+    key.includes("part") ||
+    key.includes("inventory") ||
+    key.includes("stock") ||
+    key.includes("warehouse")
+  ) {
+    return (
+      <svg viewBox="0 0 60 60" className="w-full h-full" fill="none">
+        {/* Stacked shelves with items */}
+        {[
+          { y: 8, w: 44 },
+          { y: 18, w: 38 },
+          { y: 28, w: 44 },
+          { y: 38, w: 32 },
+          { y: 48, w: 44 },
+        ].map((s, i) => (
+          <rect
+            key={i}
+            x={8}
+            y={s.y}
+            width={s.w}
+            height="4"
+            rx="1"
+            className="fill-rose-500"
+          />
+        ))}
+      </svg>
+    );
+  }
+
+  // PATTERN: Network — connected nodes (projects / sites)
+  if (
+    key.includes("project") ||
+    key.includes("contract") ||
+    key.includes("site") ||
+    key.includes("location")
+  ) {
+    return (
+      <svg viewBox="0 0 60 60" className="w-full h-full" fill="none">
+        <line x1="15" y1="20" x2="30" y2="35" strokeWidth="1" className="stroke-rose-400" />
+        <line x1="30" y1="35" x2="45" y2="20" strokeWidth="1" className="stroke-rose-400" />
+        <line x1="30" y1="35" x2="30" y2="48" strokeWidth="1" className="stroke-rose-400" />
+        <line x1="15" y1="20" x2="45" y2="20" strokeWidth="1" strokeDasharray="2 2" className="stroke-rose-400" />
+        {[[15, 20], [30, 35], [45, 20], [30, 48]].map(([cx, cy], i) => (
+          <circle
+            key={i}
+            cx={cx}
+            cy={cy}
+            r="3"
+            className="fill-rose-500"
+          />
+        ))}
+      </svg>
+    );
+  }
+
+  // PATTERN: Timeline — horizontal line with milestone dots
+  if (
+    key.includes("year") ||
+    key.includes("experience") ||
+    key.includes("decade") ||
+    key.includes("heritage")
+  ) {
+    return (
+      <svg viewBox="0 0 60 60" className="w-full h-full" fill="none">
+        <line x1="6" y1="30" x2="54" y2="30" strokeWidth="1" strokeDasharray="3 2" className="stroke-rose-400" />
+        {[12, 24, 36, 48].map((cx, i) => (
+          <circle
+            key={i}
+            cx={cx}
+            cy={30}
+            r="3"
+            className="fill-rose-500"
+          />
+        ))}
+        <circle cx="48" cy="30" r="5" strokeWidth="1" className="stroke-rose-400 fill-none" />
+      </svg>
+    );
+  }
+
+  // PATTERN: Safety — shield outline + checkmark
+  if (
+    key.includes("safety") ||
+    key.includes("compliance") ||
+    key.includes("standard") ||
+    key.includes("zero")
+  ) {
+    return (
+      <svg viewBox="0 0 60 60" className="w-full h-full" fill="none">
+        <path
+          d="M30 8 L48 14 L48 32 Q48 44 30 52 Q12 44 12 32 L12 14 Z"
+          strokeWidth="1.2"
+          className="stroke-rose-500 fill-none"
+        />
+        <path
+          d="M22 30 L28 36 L40 24"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="stroke-rose-500 fill-none"
+        />
+      </svg>
+    );
+  }
+
+  // PATTERN: Default — minimal 5×5 dot grid
+  return (
+    <svg viewBox="0 0 60 60" className="w-full h-full" fill="none">
+      {Array.from({ length: 5 }).map((_, row) =>
+        Array.from({ length: 5 }).map((_, col) => (
+          <circle
+            key={`${row}-${col}`}
+            cx={10 + col * 10}
+            cy={10 + row * 10}
+            r="1.2"
+            className="fill-rose-400"
+          />
+        ))
+      )}
+    </svg>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════
+//   ANIMATED COUNTERS
+// ═══════════════════════════════════════════════════════════
 
 function CountUp({
   target,
@@ -27,14 +299,11 @@ function CountUp({
         node.textContent = Math.round(v).toLocaleString();
       },
     });
-    // ⚡ Optimized: Cleanup animation on unmount
     return () => controls.stop();
   }, [started, target, duration]);
 
   return <span ref={spanRef}>0</span>;
 }
-
-// ─── Typewriter for text values (e.g. 24/7) ──────────────────────────────────
 
 function Typewriter({ text, started }: { text: string; started: boolean }) {
   const spanRef = useRef<HTMLSpanElement>(null);
@@ -47,19 +316,23 @@ function Typewriter({ text, started }: { text: string; started: boolean }) {
     const chars = text.split("");
     const interval = setInterval(() => {
       const currentText = chars.slice(0, i + 1).join("");
-      const cursor = currentText.length < text.length ? '<span class="animate-pulse opacity-50">|</span>' : '';
+      const cursor =
+        currentText.length < text.length
+          ? '<span class="animate-pulse opacity-50">|</span>'
+          : "";
       node.innerHTML = `${currentText}${cursor}`;
       i++;
       if (i >= chars.length) clearInterval(interval);
     }, 90);
-    // ⚡ Optimized: Cleanup interval
     return () => clearInterval(interval);
   }, [started, text]);
 
   return <span ref={spanRef} />;
 }
 
-// ─── Single stat card ─────────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════
+//   STAT CARD
+// ═══════════════════════════════════════════════════════════
 
 function StatCard({
   stat,
@@ -87,33 +360,39 @@ function StatCard({
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.05,
+        ease: [0.16, 1, 0.3, 1],
+      }}
       onClick={() => {
         if (typeof window !== "undefined" && window.innerWidth < 640) {
           setIsOpen(!isOpen);
         }
       }}
-      // ⚡ Optimized: Replaced transition-all with transition-colors to prevent layout/GPU thrashing
-      className="relative flex flex-col justify-between h-[150px] sm:h-[230px] p-4 sm:p-8 overflow-hidden transition-colors duration-300 cursor-pointer bg-bg-pure hover:bg-bg-tint group sm:cursor-default"
+      className="relative flex flex-col justify-between h-[150px] sm:h-[230px] p-4 sm:p-8 overflow-hidden bg-bg-pure cursor-pointer sm:cursor-default"
     >
-      {/* Top Accent Hover Line */}
-      <div className="absolute top-0 left-0 w-full h-[2px] bg-rose-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+      {/* ✨ CONTEXT SVG PATTERN — top right corner */}
+      <div className="absolute top-3 right-3 sm:top-5 sm:right-5 w-10 h-10 sm:w-14 sm:h-14 opacity-90 pointer-events-none">
+        <StatPattern label={stat.label} />
+      </div>
 
-      <div>
-        {/* Stat Value Container */}
+      <div className="relative z-[1]">
+        {/* Stat value */}
         <div className="flex items-baseline flex-wrap gap-0.5 sm:gap-1 mb-3 sm:mb-4 select-none">
           {stat.prefix && (
-            <span className="text-lg font-semibold leading-none transition-colors duration-300 sm:text-2xl text-neutral-400 group-hover:text-rose-600">
+            <span className="text-lg font-semibold leading-none sm:text-2xl text-neutral-400">
               {stat.prefix}
             </span>
           )}
 
-          <span className="relative inline-block text-2xl leading-none origin-left transition-transform duration-300 text-stat sm:text-4xl md:text-5xl tracking-tight group-hover:scale-[1.02] stats-number-container">
-            {/* Stable Layout Container */}
-            <span className="opacity-0 pointer-events-none select-none" aria-hidden="true">
+          <span className="relative inline-block text-2xl leading-none origin-left text-stat sm:text-4xl md:text-5xl tracking-tight stats-number-container">
+            <span
+              className="opacity-0 pointer-events-none select-none"
+              aria-hidden="true"
+            >
               {isNumeric ? numericValue.toLocaleString() : stat.value}
             </span>
-            {/* Active animated value */}
             <span className="absolute inset-0 pointer-events-none">
               {isNumeric ? (
                 <CountUp target={numericValue} started={started} />
@@ -124,29 +403,27 @@ function StatCard({
           </span>
 
           {stat.suffix && (
-            <span className="text-lg font-semibold leading-none transition-colors duration-300 sm:text-2xl text-neutral-400 group-hover:text-rose-600">
+            <span className="text-lg font-semibold leading-none sm:text-2xl text-neutral-400">
               {stat.suffix}
             </span>
           )}
         </div>
 
-        {/* Title Label */}
+        {/* Label */}
         <h3 className="text-left mb-1.5 sm:mb-2 text-data-label">
           {stat.label}
         </h3>
       </div>
 
-      {/* Description */}
-      <p className="hidden sm:block mt-1 max-w-[260px] text-body-sm text-neutral-600 transition-colors duration-300 group-hover:text-neutral-700">
+      {/* Description (desktop) */}
+      <p className="hidden sm:block mt-1 max-w-[260px] text-body-sm text-neutral-600 relative z-[1]">
         {stat.description}
       </p>
 
-      {/* ── HOVER/CLICK BLUE OVERLAY (visible on mobile only) ── */}
-      {/* 📱 Mobile fix: Removed backdrop-blur-sm as it causes massive GPU lag on mobile overlays */}
+      {/* Mobile overlay (Tap to expand) */}
       <div
-        className={`absolute inset-0 z-10 flex flex-col justify-between p-4 text-white transition-transform duration-500 ease-out sm:hidden sm:p-8 bg-skt-navy/95 ${
-          isOpen ? "translate-y-0" : "translate-y-full"
-        }`}
+        className={`absolute inset-0 z-10 flex flex-col justify-between p-4 text-white transition-transform duration-500 ease-out sm:hidden sm:p-8 bg-skt-navy/95 ${isOpen ? "translate-y-0" : "translate-y-full"
+          }`}
       >
         <div className="text-left space-y-1.5 sm:space-y-3">
           <h4 className="text-xs font-bold leading-snug tracking-tight text-white sm:text-sm md:text-lg lg:text-xl">
@@ -165,7 +442,7 @@ function StatCard({
         </div>
       </div>
 
-      {/* Morphing Toggle Button */}
+      {/* Mobile toggle button */}
       <div className="absolute z-20 flex items-center justify-center w-6 h-6 rounded-[6px] shadow-sm select-none bottom-4 right-4 sm:bottom-8 sm:right-8 sm:w-8 sm:h-8 bg-neutral-200 text-neutral-900 sm:hidden">
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
@@ -184,7 +461,9 @@ function StatCard({
   );
 }
 
-// ─── Section ─────────────────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════
+//   SECTION
+// ═══════════════════════════════════════════════════════════
 
 export function OperationalScaleSection(): JSX.Element {
   const sectionRef = useRef<HTMLElement>(null);
@@ -199,8 +478,7 @@ export function OperationalScaleSection(): JSX.Element {
       aria-labelledby="stats-heading"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
-
-        {/* ── Header ── */}
+        {/* Header */}
         <div className="mb-16">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -235,12 +513,13 @@ export function OperationalScaleSection(): JSX.Element {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="self-end max-w-lg text-body-lg text-neutral-600"
             >
-              Built through strategic investment, operational discipline and long-term commitment to Zambia's mining future.
+              Built through strategic investment, operational discipline and
+              long-term commitment to Zambia's mining future.
             </motion.p>
           </div>
         </div>
 
-        {/* ── Stats Grid ── */}
+        {/* Stats grid */}
         <div
           ref={statsRef}
           className="grid grid-cols-2 gap-[1px] overflow-hidden border rounded-2xl shadow-sm select-none sm:grid-cols-3 bg-neutral-200/50 border-neutral-200/50"
@@ -254,7 +533,6 @@ export function OperationalScaleSection(): JSX.Element {
             />
           ))}
         </div>
-
       </div>
     </section>
   );

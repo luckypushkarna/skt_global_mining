@@ -1,11 +1,68 @@
 "use client";
 
-import { type JSX, useRef, useState, useEffect } from "react";
+import { type JSX, useRef, useState, useEffect, useMemo } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Image from "next/image";
-import { MagicText } from "@/components/ui/magic-text";
+
+// ═══════════════════════════════════════════════════════════
+//   SCROLL-TRIGGERED WORD REVEAL
+//   Each word fades + lifts based on scroll position
+// ═══════════════════════════════════════════════════════════
+
+interface RevealTextProps {
+  text: string;
+  progress: any; // MotionValue from useScroll
+}
+
+function ScrollRevealText({ text, progress }: RevealTextProps): JSX.Element {
+  const words = useMemo(() => text.split(" "), [text]);
+
+  return (
+    <span className="inline">
+      {words.map((word, i) => {
+        const start = i / words.length;
+        const end = start + 1 / words.length;
+
+        return (
+          <Word key={i} progress={progress} range={[start, end]}>
+            {word}
+          </Word>
+        );
+      })}
+    </span>
+  );
+}
+
+function Word({
+  children,
+  progress,
+  range,
+}: {
+  children: string;
+  progress: any;
+  range: [number, number];
+}): JSX.Element {
+  const opacity = useTransform(progress, range, [0.15, 1]);
+  const y = useTransform(progress, range, [8, 0]);
+
+  return (
+    <span className="inline-block mr-[0.28em] overflow-hidden align-baseline">
+      <motion.span
+        style={{ opacity, y }}
+        className="inline-block will-change-[transform,opacity]"
+      >
+        {children}
+      </motion.span>
+    </span>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════
+//   MAIN SECTION
+// ═══════════════════════════════════════════════════════════
 
 export function ChairmanMessageSection(): JSX.Element {
+  const sectionRef = useRef<HTMLElement>(null);
   const quoteBlockRef = useRef<HTMLDivElement>(null);
 
   const [isMobile, setIsMobile] = useState(false);
@@ -16,47 +73,84 @@ export function ChairmanMessageSection(): JSX.Element {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Scroll animations for Chairman Quote
-  const { scrollYProgress } = useScroll({
+  // ─── Image scroll motion ───
+  const { scrollYProgress: imageScrollY } = useScroll({
     target: quoteBlockRef,
     offset: ["start 90%", "end 45%"],
   });
 
-  const smoothProgress = useSpring(scrollYProgress, {
+  const smoothImageProgress = useSpring(imageScrollY, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001,
   });
 
-  const imageX = useTransform(smoothProgress, [0, 0.65], [isMobile ? "-40px" : "-120px", "0px"]);
-  const imageOpacity = useTransform(smoothProgress, [0, 0.5], [0, 1]);
+  const imageX = useTransform(
+    smoothImageProgress,
+    [0, 0.65],
+    [isMobile ? "-30px" : "-80px", "0px"]
+  );
+  const imageOpacity = useTransform(smoothImageProgress, [0, 0.5], [0, 1]);
+
+  // ─── Quote text scroll progress (word reveal) ───
+  const quoteTextRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: textScrollY } = useScroll({
+    target: quoteTextRef,
+    offset: ["start 0.85", "start 0.25"],
+  });
+
+  const smoothTextProgress = useSpring(textScrollY, {
+    stiffness: 80,
+    damping: 25,
+    restDelta: 0.001,
+  });
+
+  const quoteText =
+    "Our vision extends far beyond today's production. By investing in local talent, demanding operational excellence, and maintaining an absolute commitment to safety, we are building an enduring institution that powers Zambia's mining future.";
 
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-white" aria-labelledby="chairman-heading">
-      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
+    <section
+      ref={sectionRef}
+      className="py-20 md:py-28 lg:py-36 bg-white"
+      aria-labelledby="chairman-heading"
+    >
+      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16">
         <motion.div
           ref={quoteBlockRef}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="border-neutral-100"
         >
-          <div className="flex items-center gap-4 mb-10 lg:mb-16">
-            <div className="w-10 h-px bg-neutral-300" />
-            <span id="chairman-heading" className="text-eyebrow">
+          {/* ─── EYEBROW LABEL ─────────────────────────── */}
+          <div className="flex items-center gap-3 mb-12 lg:mb-16">
+            <div className="w-8 h-px bg-neutral-300" />
+            <span
+              id="chairman-heading"
+              className="text-[10px] sm:text-[11px] font-semibold tracking-[0.3em] uppercase text-neutral-500"
+            >
               From the Chairman
             </span>
           </div>
 
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-20">
+          {/* ─── CONTENT GRID ──────────────────────────── */}
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-16">
+
+            {/* ─── LEFT: IMAGE ─────────────────────────── */}
             <motion.div
-              style={{ x: imageX, opacity: imageOpacity, willChange: "transform, opacity" }}
-              className="w-full lg:col-span-5"
+              style={{
+                x: imageX,
+                opacity: imageOpacity,
+                willChange: "transform, opacity",
+              }}
+              className="w-full lg:col-span-5 lg:sticky lg:top-24"
             >
-              <div className="relative w-full mx-auto max-w-[440px] lg:mx-0">
-                <div className="absolute -bottom-4 -right-4 w-full h-full border rounded-sm -z-10 border-neutral-200" />
-                <div className="relative w-full overflow-hidden rounded-sm aspect-[4/5] bg-neutral-100 max-h-[400px] lg:max-h-none">
+              <div className="relative w-full mx-auto max-w-[400px] lg:mx-0">
+                {/* Subtle accent frame behind image */}
+                <div className="absolute -bottom-3 -right-3 w-full h-full border border-neutral-200 rounded-sm -z-10" />
+
+                {/* Image container */}
+                <div className="relative w-full overflow-hidden rounded-sm aspect-[4/5] bg-neutral-100 max-h-[420px] lg:max-h-none">
                   <Image
                     alt="Raj Talreja - Chairman & Managing Director"
                     src="/Raj Sir Photo.jpg"
@@ -70,39 +164,51 @@ export function ChairmanMessageSection(): JSX.Element {
               </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-7"
-            >
-              <div
+            {/* ─── RIGHT: QUOTE ─────────────────────────── */}
+            <div className="lg:col-span-7" ref={quoteTextRef}>
+
+              {/* Opening quote mark */}
+              <motion.div
                 aria-hidden="true"
-                className="select-none mb-4 text-[#d4d4d4] font-sans text-[clamp(40px,8vw,96px)] leading-[0.85]"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="select-none mb-2 text-neutral-200 font-serif text-[clamp(56px,9vw,110px)] leading-[0.7]"
               >
                 &ldquo;
-              </div>
+              </motion.div>
 
               <blockquote>
-                <MagicText
-                  text="Our vision extends far beyond today's production. By investing in local talent, demanding operational excellence, and maintaining an absolute commitment to safety, we are building an enduring institution that powers Zambia's mining future."
-                  className="flex flex-wrap p-0 m-0 leading-[1.35] font-sans text-[clamp(22px,3vw,38px)] font-light tracking-[-0.01em] max-w-full mb-8"
-                  wordClassName="relative inline-block mr-[0.22em] font-light text-neutral-900"
-                />
+                {/* Scroll-revealed quote text */}
+                <p className="m-0 leading-[1.45] font-sans text-[clamp(20px,2.4vw,30px)] font-normal tracking-[-0.01em] text-neutral-900 mb-10 lg:mb-12">
+                  <ScrollRevealText
+                    text={quoteText}
+                    progress={smoothTextProgress}
+                  />
+                </p>
 
-                <footer className="pt-7 border-t border-[#e5e5e5] max-w-full">
-                  <div>
-                    <cite className="block not-italic font-medium font-sans text-[17px] tracking-tight mb-1 text-neutral-900">
-                      Raj Talreja
-                    </cite>
-                    <p className="text-eyebrow text-neutral-500">
-                      Chairman · SKT Global Mining &amp; Services
-                    </p>
-                  </div>
-                </footer>
+                {/* Attribution */}
+                <motion.footer
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.7,
+                    delay: 0.3,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                  className="pt-6 border-t border-neutral-200/80 max-w-full"
+                >
+                  <cite className="block not-italic font-medium font-sans text-[15px] sm:text-[16px] tracking-tight mb-1.5 text-neutral-900">
+                    Raj Talreja
+                  </cite>
+                  <p className="text-[10px] sm:text-[11px] font-semibold tracking-[0.25em] uppercase text-neutral-500">
+                    Chairman · SKT Global Mining &amp; Services
+                  </p>
+                </motion.footer>
               </blockquote>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>

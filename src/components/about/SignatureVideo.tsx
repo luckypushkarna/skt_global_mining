@@ -54,7 +54,7 @@ export default function SignatureVideo() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative">
+    <section ref={sectionRef} className="relative no-contain">
       <div ref={stickyRef} className="h-screen relative overflow-hidden">
         <div ref={maskRef} className="absolute inset-0">
           <div ref={videoRef} className="w-full h-full bg-neutral-900 relative">

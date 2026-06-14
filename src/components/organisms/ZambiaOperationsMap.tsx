@@ -314,7 +314,7 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
           </Map>
 
           {/* ── Interactive Locations Control Panel (bottom-left) ── */}
-          <div className="absolute left-2 sm:left-4 bottom-2 sm:bottom-6 bg-[#0B0F19]/95 backdrop-blur-md rounded-xl p-3 sm:p-4 border border-white/10 shadow-2xl z-10 w-52 sm:w-60 pointer-events-auto">
+          <div className="absolute left-2 sm:left-4 bottom-2 sm:bottom-6 bg-white/10 backdrop-blur-xl rounded-xl p-3 sm:p-4 border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] z-10 w-52 sm:w-60 pointer-events-auto">
             <p className="text-[9px] font-bold tracking-[0.2em] uppercase text-white/40 mb-2 sm:mb-3">
               Operational Sites
             </p>
@@ -389,7 +389,7 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
           </div>
 
           {/* ── Region label (top-right) ── */}
-          <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-[#0B0F19]/90 backdrop-blur-md rounded-lg px-2 py-1.5 sm:px-3 sm:py-2 border border-white/10 shadow-lg pointer-events-none z-10">
+          <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white/10 backdrop-blur-xl rounded-lg px-2 py-1.5 sm:px-3 sm:py-2 border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] pointer-events-none z-10">
             <p className="text-[8px] sm:text-[9px] font-semibold tracking-[0.2em] uppercase text-white/40">
               Region
             </p>
