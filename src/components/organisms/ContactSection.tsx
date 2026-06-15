@@ -71,7 +71,7 @@ export function ContactSection(): JSX.Element {
         </div>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 items-start">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Linkedin, Twitter, Youtube, ArrowUpRight } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 import { JSX } from "react";
@@ -52,19 +53,22 @@ export function Footer(): JSX.Element {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-skt-navy text-white" role="contentinfo">
+    <footer className="relative z-10 bg-skt-navy text-white" role="contentinfo">
       {/* Top section */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 pt-16 pb-10 lg:pt-24 lg:pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-10 lg:gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-flex flex-col mb-6 group">
-              <span className="text-2xl font-bold tracking-tight text-white leading-none">
-                SKT
-              </span>
-              <span className="text-micro tracking-[0.2em] text-neutral-500 uppercase leading-none mt-0.5">
-                Global Mining & Services
-              </span>
+            <Link href="/" className="inline-block mb-6 group">
+              <div className="relative w-[216px] h-[54px]">
+                <Image
+                  src="/SKT Full logo (Color).png"
+                  alt="SKT Global Mining"
+                  fill
+                  className="object-contain object-left brightness-0 invert opacity-90 transition-opacity group-hover:opacity-100"
+                  sizes="216px"
+                />
+              </div>
             </Link>
 
             <p className="text-body-sm text-neutral-400 mb-6 max-w-xs">
@@ -172,9 +176,9 @@ export function Footer(): JSX.Element {
       </div>
 
       {/* Massive watermark */}
-      <div className="overflow-hidden border-t border-neutral-800">
+      <div className="overflow-hidden border-t border-neutral-800 w-full pt-8 mt-8 flex flex-col justify-end">
         <p
-          className="text-[clamp(3rem,10vw,9rem)] font-semibold text-neutral-800 leading-none tracking-tighter select-none pointer-events-none py-4 px-6 text-center"
+          className="text-[14.4vw] font-bold text-white leading-none tracking-tighter select-none pointer-events-none text-center whitespace-nowrap -mb-[2.25vw]"
           aria-hidden="true"
         >
           SKT GLOBAL

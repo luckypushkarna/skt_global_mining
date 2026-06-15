@@ -314,7 +314,7 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
           </Map>
 
           {/* ── Interactive Locations Control Panel (bottom-left) ── */}
-          <div className="absolute left-2 sm:left-4 bottom-2 sm:bottom-6 bg-white/10 backdrop-blur-xl rounded-xl p-3 sm:p-4 border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] z-10 w-52 sm:w-60 pointer-events-auto">
+          <div className="absolute left-2 sm:left-4 bottom-2 sm:bottom-6 bg-neutral-900/95 sm:bg-white/10 backdrop-blur-xl rounded-xl p-3 sm:p-4 border border-white/10 sm:border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] z-10 w-52 sm:w-60 pointer-events-auto">
             <p className="text-[9px] font-bold tracking-[0.2em] uppercase text-white/40 mb-2 sm:mb-3">
               Operational Sites
             </p>

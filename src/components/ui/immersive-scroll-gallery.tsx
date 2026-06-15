@@ -24,32 +24,32 @@ const DEFAULT_IMAGES: iIPicture[] = [
     scale: null,
   },
   {
-    src: "/Operation gallery/1.png?v=2",
+    src: "/Operation gallery/1.png?v=3",
     type: "image",
     scale: null,
   },
   {
-    src: "/Operation gallery/2.png?v=2",
+    src: "/Operation gallery/2.png?v=3",
     type: "image",
     scale: null,
   },
   {
-    src: "/Operation gallery/3.png?v=2",
+    src: "/Operation gallery/3.png?v=3",
     type: "image",
     scale: null,
   },
   {
-    src: "/Operation gallery/4.png?v=2",
+    src: "/Operation gallery/4.png?v=3",
     type: "image",
     scale: null,
   },
   {
-    src: "/Operation gallery/5.png?v=2",
+    src: "/Operation gallery/5.png?v=3",
     type: "image",
     scale: null,
   },
   {
-    src: "/Operation gallery/6.png?v=2",
+    src: "/Operation gallery/6.png?v=3",
     type: "image",
     scale: null,
   },
@@ -111,11 +111,11 @@ export default function ImmersiveScrollGallery({
   return (
     <div
       ref={container}
-      className={`relative bg-neutral-50 ${className}`}
+      className={`relative ${className}`}
       style={{ height: "300vh", contain: "layout style paint" }}
     >
       {/* ⚡ Optimized: Removed willChange: "transform" from this wrapper to prevent a massive GPU layer from being allocated permanently for a non-animated sticky element */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden bg-neutral-50">
+      <div className="sticky top-0 h-screen w-full overflow-hidden">
         {/* Zooming Images */}
         {pictures.map(({ src, type = "image", scale, opacity }, index) => {
           if (!scale) return null;

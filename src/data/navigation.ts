@@ -12,6 +12,7 @@ import {
   Network,
   Newspaper,
   Handshake,
+  Camera,
   type LucideIcon,
 } from "lucide-react";
 
@@ -159,7 +160,13 @@ export const mediaSection: NavSection = {
       icon: Newspaper,
     },
   ],
-  links: [],
+  links: [
+    {
+      title: "Photo Gallery",
+      href: "/media/photo-gallery",
+      icon: Camera,
+    },
+  ],
 };
 
 // ═══════════════════════════════════════════════════════════
@@ -192,7 +199,6 @@ export const partnersSection: NavSection = {
 
 export const simpleLinks: NavItem[] = [
   { title: "Careers", href: "/careers" },
-  { title: "Contact", href: "/contact" },
 ];
 
 // ═══════════════════════════════════════════════════════════

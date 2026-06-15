@@ -373,7 +373,7 @@ function StatCard({
       className="relative flex flex-col justify-between h-[150px] sm:h-[230px] p-4 sm:p-8 overflow-hidden bg-bg-pure cursor-pointer sm:cursor-default"
     >
       {/* ✨ CONTEXT SVG PATTERN — top right corner */}
-      <div className="absolute top-3 right-3 sm:top-5 sm:right-5 w-10 h-10 sm:w-14 sm:h-14 opacity-90 pointer-events-none">
+      <div className="absolute top-3 right-3 sm:top-5 sm:right-5 w-8 h-8 sm:w-10 sm:h-10 opacity-90 pointer-events-none">
         <StatPattern label={stat.label} />
       </div>
 

@@ -31,7 +31,7 @@ function CommunityCard(): JSX.Element {
       />
 
       {/* Constellation visual */}
-      <div className="mb-4 sm:mb-5 h-10 sm:h-14 relative shrink-0">
+      <div className="mb-4 sm:mb-5 h-10 sm:h-14 relative shrink-0 scale-75 origin-left">
         <svg viewBox="0 0 80 56" className="h-full w-auto" fill="none">
           {/* Connection lines — copper tinted */}
           <line x1="12" y1="28" x2="34" y2="14" stroke="#c47b48" strokeWidth="1" strokeOpacity="0.4" />
@@ -85,7 +85,7 @@ function SkillsCard(): JSX.Element {
       className="relative bg-white border border-neutral-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 flex flex-col"
     >
       {/* Ascending bars visual */}
-      <div className="mb-4 sm:mb-5 h-10 sm:h-14 flex items-end gap-1 sm:gap-1.5 shrink-0">
+      <div className="mb-4 sm:mb-5 h-10 sm:h-14 flex items-end gap-1 sm:gap-1.5 shrink-0 scale-75 origin-left">
         {barHeights.map((h, i) => (
           <div
             key={i}
@@ -134,7 +134,7 @@ function WorkforceCard(): JSX.Element {
       className="relative bg-white border border-neutral-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 flex flex-col"
     >
       {/* Staircase SVG */}
-      <div className="mb-4 sm:mb-5 h-10 sm:h-14 shrink-0">
+      <div className="mb-4 sm:mb-5 h-10 sm:h-14 shrink-0 scale-75 origin-left">
         <svg viewBox="0 0 80 56" className="h-full w-auto" fill="none">
           {/* Stair steps — emerald tints */}
           <rect x="2" y="44" width="18" height="10" rx="2" fill="#6ee7b7" fillOpacity="0.25" stroke="#6ee7b7" strokeOpacity="0.4" strokeWidth="1" />
@@ -181,8 +181,8 @@ function LegacyCard(): JSX.Element {
       className="relative bg-white border border-neutral-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 overflow-hidden flex flex-col"
     >
       {/* Concentric rings + year */}
-      <div className="mb-4 sm:mb-5 h-10 sm:h-14 relative flex items-center shrink-0">
-        <div className="relative flex-shrink-0 scale-75 sm:scale-100 origin-left">
+      <div className="mb-4 sm:mb-5 h-10 sm:h-14 relative flex items-center shrink-0 scale-75 origin-left">
+        <div className="relative flex-shrink-0 origin-left">
           {/* Outer ring — faint neutral */}
           <div className="h-14 w-14 rounded-full border-2 border-neutral-200" />
           {/* Mid ring — dark accent */}
@@ -373,13 +373,7 @@ export function CommunityImpactSection(): JSX.Element {
         </div>
       </div>
 
-      {/* ─── BOTTOM RULE ────────────────────────────────────── */}
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20 mt-16 md:mt-24">
-        <motion.div
-          style={{ opacity: ruleOpacity, scaleX: ruleScaleX }}
-          className="h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent origin-center"
-        />
-      </div>
+
     </section>
   );
 }
