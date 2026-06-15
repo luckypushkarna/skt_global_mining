@@ -90,7 +90,7 @@ export const CAPABILITIES: Capability[] = [
     desc: "Centralised supply depots managing a $3M+ active spare parts inventory to eliminate maintenance downtime.",
     overview: "We maintain a massive $3M+ active spare parts inventory across strategically located depots. This ensures that replacement components are immediately available for our underground workshops, virtually eliminating wait times and protecting operational continuity.",
     tags: ["$3M+ Inventory", "Zero Wait Time", "Supply Chain"],
-    bgImage: "/Strategic Warehousing-card.webp",
+    bgImage: "/Strategic Warehousing.png",
   },
   {
     num: "07",
@@ -125,7 +125,7 @@ export const CAPABILITIES: Capability[] = [
     desc: "Unified control centers tracking real-time telemetry, shift outputs, and safety sensors across active operations.",
     overview: "Our centralised command centers monitor live machine telemetry, production output, and workforce safety in real-time. This integrated oversight allows us to allocate resources dynamically and coordinate engineering, mining, and logistics from a single dashboard.",
     tags: ["Live Telemetry", "Dynamic Allocation", "Unified Dashboard"],
-    bgImage: "/Operational Command-card.webp",
+    bgImage: "/Operational Command.png",
   },
   {
     num: "10",
@@ -136,7 +136,7 @@ export const CAPABILITIES: Capability[] = [
     desc: "Integrated emergency infrastructure featuring dedicated rescue chambers and rapid-response safety teams.",
     overview: "We maintain highly trained rapid-response teams and strategically placed underground rescue chambers across all active sections. Advanced atmospheric monitoring and established escape protocols ensure a redundant safety net is always active.",
     tags: ["Rescue Chambers", "Rapid Response", "Live Monitoring"],
-    bgImage: "/Rescue Systems-card.webp",
+    bgImage: "/Rescue Systems.png",
   },
   {
     num: "11",
@@ -192,18 +192,18 @@ export function getCapabilityGallery(slug: string): GalleryItem[] {
         { src: "/Underground Workshop.webp", caption: "Heavy Maintenance Bays" },
         { src: "/Mechanised Fleet.webp", caption: "Hydraulic System Repairs" },
         { src: "/Engineering & Maintenance.webp", caption: "Electrical Calibrations" },
-        { src: "/Strategic Warehousing.webp", caption: "Critical Spare Parts Depot" },
+        { src: "/Strategic Warehousing.png", caption: "Critical Spare Parts Depot" },
         { src: "/Safety & Compliance.webp", caption: "Technician Training Programs" },
-        { src: "/Operational Command.webp", caption: "Digital Diagnostics Center" },
+        { src: "/Operational Command.png", caption: "Digital Diagnostics Center" },
       ];
     case "strategic-warehousing":
       return [
-        { src: "/Strategic Warehousing.webp", caption: "$3M+ Parts Stockpile" },
+        { src: "/Strategic Warehousing.png", caption: "$3M+ Parts Stockpile" },
         { src: "/Logistics Network.webp", caption: "Shift Materials Dispatch" },
         { src: "/Underground Workshop.webp", caption: "Parts Assembly Stations" },
         { src: "/Mechanised Fleet.webp", caption: "Heavy Transport Fleet Support" },
         { src: "/Infrastructure Systems.webp", caption: "Centralized Supply Depots" },
-        { src: "/Operational Command.webp", caption: "Smart Inventory Tracking" },
+        { src: "/Operational Command.png", caption: "Smart Inventory Tracking" },
       ];
     case "mechanised-fleet":
       return [
@@ -211,16 +211,16 @@ export function getCapabilityGallery(slug: string): GalleryItem[] {
         { src: "/Underground Workshop.webp", caption: "LHD Loader Servicing" },
         { src: "/Infrastructure Systems.webp", caption: "Drill Rig Fleet Deployment" },
         { src: "/Safety & Compliance.webp", caption: "Twin-Boom Boomer Operations" },
-        { src: "/Rescue Systems.webp", caption: "Automated Utility Fleet" },
+        { src: "/Rescue Systems.png", caption: "Automated Utility Fleet" },
         { src: "/Logistics Network.webp", caption: "Ore Transportation Systems" },
       ];
     case "rescue-systems":
       return [
-        { src: "/Rescue Systems.webp", caption: "Underground Rescue Chambers" },
+        { src: "/Rescue Systems.png", caption: "Underground Rescue Chambers" },
         { src: "/Safety & Compliance.webp", caption: "Atmospheric Monitoring Units" },
         { src: "/Emergency Readiness.webp", caption: "Sub-5-Minute Response Protocols" },
         { src: "/Continuous Training.webp", caption: "Safety Drills & Education" },
-        { src: "/Operational Command.webp", caption: "Real-Time Tracking Systems" },
+        { src: "/Operational Command.png", caption: "Real-Time Tracking Systems" },
         { src: "/Workforce Facilities.webp", caption: "Emergency Medical Center" },
       ];
     case "logistics-network":
@@ -229,12 +229,12 @@ export function getCapabilityGallery(slug: string): GalleryItem[] {
         { src: "/Mechanised Fleet.webp", caption: "Articulated Mine Haulers" },
         { src: "/Infrastructure Systems.webp", caption: "Heavy Surface Transit Depot" },
         { src: "/Workforce Facilities.webp", caption: "Staff Transport Operations" },
-        { src: "/Operational Command.webp", caption: "Real-Time Fleet Dispatch" },
-        { src: "/Strategic Warehousing.webp", caption: "Consumables Inventory Depots" },
+        { src: "/Operational Command.png", caption: "Real-Time Fleet Dispatch" },
+        { src: "/Strategic Warehousing.png", caption: "Consumables Inventory Depots" },
       ];
     case "operational-command":
       return [
-        { src: "/Operational Command.webp", caption: "Central Control Interface" },
+        { src: "/Operational Command.png", caption: "Central Control Interface" },
         { src: "/Safety & Compliance.webp", caption: "Safety Telemetry Control" },
         { src: "/Logistics Network.webp", caption: "Real-Time Fleet Monitors" },
         { src: "/Engineering & Maintenance.webp", caption: "Predictive Health Dashboards" },
@@ -247,7 +247,7 @@ export function getCapabilityGallery(slug: string): GalleryItem[] {
         { src: "/Logistics Network.webp", caption: "Shift Transport Hub" },
         { src: "/Safety & Compliance.webp", caption: "Catering and Dining Hall" },
         { src: "/Emergency Readiness.webp", caption: "On-site Medical Clinic" },
-        { src: "/Community Safety Culture.webp", caption: "Recreational Fields" },
+        { src: "/Community Safety Culture.png", caption: "Recreational Fields" },
         { src: "/Continuous Training.webp", caption: "Welfare Support Center" },
       ];
     case "engineering-maintenance":
@@ -255,8 +255,8 @@ export function getCapabilityGallery(slug: string): GalleryItem[] {
         { src: "/Engineering & Maintenance.webp", caption: "Predictive Asset Auditing" },
         { src: "/Underground Workshop.webp", caption: "High-Pressure Hydraulic Rig" },
         { src: "/Mechanised Fleet.webp", caption: "LHD Loader Calibration" },
-        { src: "/Strategic Warehousing.webp", caption: "Pre-Assembled Component Depot" },
-        { src: "/Operational Command.webp", caption: "Telemetry Analysis Labs" },
+        { src: "/Strategic Warehousing.png", caption: "Pre-Assembled Component Depot" },
+        { src: "/Operational Command.png", caption: "Telemetry Analysis Labs" },
         { src: "/Safety & Compliance.webp", caption: "Engine Load Testing" },
       ];
     case "production-development":
@@ -271,16 +271,16 @@ export function getCapabilityGallery(slug: string): GalleryItem[] {
     case "safety-compliance":
       return [
         { src: "/Safety & Compliance.webp", caption: "Mandatory Pre-Shift Briefing" },
-        { src: "/Rescue Systems.webp", caption: "Self-Rescuer Inspection" },
+        { src: "/Rescue Systems.png", caption: "Self-Rescuer Inspection" },
         { src: "/Continuous Training.webp", caption: "Over 5,000 Hours Safety Ed." },
         { src: "/Emergency Readiness.webp", caption: "On-Site Rescue Drills" },
-        { src: "/Community Safety Culture.webp", caption: "Outreach Partnership Centers" },
-        { src: "/Operational Command.webp", caption: "Continuous Gas Telemetry" },
+        { src: "/Community Safety Culture.png", caption: "Outreach Partnership Centers" },
+        { src: "/Operational Command.png", caption: "Continuous Gas Telemetry" },
       ];
     case "infrastructure-systems":
       return [
         { src: "/Infrastructure Systems.webp", caption: "Power & Utility Substation" },
-        { src: "/Strategic Warehousing.webp", caption: "Consolidated Material Depots" },
+        { src: "/Strategic Warehousing.png", caption: "Consolidated Material Depots" },
         { src: "/Underground Workshop.webp", caption: "Surface Machine Shop" },
         { src: "/Logistics Network.webp", caption: "Administrative Office Blocks" },
         { src: "/Workforce Facilities.webp", caption: "Personnel Transit Centers" },
@@ -293,15 +293,15 @@ export function getCapabilityGallery(slug: string): GalleryItem[] {
         { src: "/Logistics Network.webp", caption: "Heavy Equipment Mobilization" },
         { src: "/Continuous Training.webp", caption: "International Skills Exchange" },
         { src: "/Safety & Compliance.webp", caption: "Unified Mining Frameworks" },
-        { src: "/Operational Command.webp", caption: "Global Command Operations" },
+        { src: "/Operational Command.png", caption: "Global Command Operations" },
       ];
     default:
       return [
         { src: "/Workforce Facilities.webp", caption: "System Overview" },
         { src: "/Underground Workshop.webp", caption: "Active Operations" },
-        { src: "/Strategic Warehousing.webp", caption: "Material Supply" },
+        { src: "/Strategic Warehousing.png", caption: "Material Supply" },
         { src: "/Mechanised Fleet.webp", caption: "Heavy Machinery" },
-        { src: "/Rescue Systems.webp", caption: "Emergency Systems" },
+        { src: "/Rescue Systems.png", caption: "Emergency Systems" },
         { src: "/Logistics Network.webp", caption: "Distribution Network" },
       ];
   }

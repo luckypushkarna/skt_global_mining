@@ -38,7 +38,7 @@ export const UNDERGROUND_WORKSHOP = {
       type: "Predictive Monitoring",
       count: "Real-time Telemetry",
       desc: "Onboard telemetry monitors engine health, hydraulics, and component wear in real time. Alerts issued before failure thresholds are reached, investigated on-site.",
-      image: "/Operational Command.webp",
+      image: "/Operational Command.png",
       models: ["Wear Analysis", "Vibration Monitoring", "Thermal Diagnostics"],
     },
     {
@@ -78,7 +78,7 @@ export const UNDERGROUND_WORKSHOP = {
       caption: "Heavy fleet staging - Mufulira operations",
     },
     {
-      src: "/Operational Command.webp",
+      src: "/Operational Command.png",
       alt: "Workshop operational command centre",
       caption: "Workshop dispatch & command",
     },

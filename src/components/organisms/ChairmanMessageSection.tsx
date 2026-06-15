@@ -106,7 +106,7 @@ export function ChairmanMessageSection(): JSX.Element {
   });
 
   const quoteText =
-    "Our vision extends far beyond today's production. By investing in local talent, demanding operational excellence, and maintaining an absolute commitment to safety, we are building an enduring institution that powers Zambia's mining future.";
+    "We are not just building mining operations. We are building capability, opportunity, and a stronger future for Zambia.";
 
   return (
     <section

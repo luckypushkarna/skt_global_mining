@@ -86,7 +86,7 @@ export const MECHANISED_FLEET = {
       caption: "Planned maintenance - multi-point inspection",
     },
     {
-      src: "/Operational Command.webp",
+      src: "/Operational Command.png",
       alt: "Fleet operational command centre",
       caption: "Fleet dispatch & command, surface control",
     },

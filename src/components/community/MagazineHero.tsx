@@ -70,7 +70,7 @@ export function MagazineHero() {
         className="relative h-[70vh] min-h-[480px] overflow-hidden"
       >
         <Image
-          src="/Community Safety Culture.webp"
+          src="/Community Safety Culture.png"
           alt="SKT Global community engagement in Zambia"
           fill
           priority

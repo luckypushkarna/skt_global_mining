@@ -45,7 +45,7 @@ export function BeforeAfterSlider() {
           style={{ clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` }}
         >
           <Image
-            src="/Community Safety Culture.webp"
+            src="/Community Safety Culture.png"
             alt="After rehabilitation - Reclaimed Land"
             fill
             sizes="100vw"

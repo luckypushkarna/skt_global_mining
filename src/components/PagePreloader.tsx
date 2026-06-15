@@ -17,7 +17,7 @@ export function PagePreloader() {
   const belowFoldImages = [
     // Services section
     "/Underground Workshop.webp",
-    "/Strategic Warehousing.webp",
+    "/Strategic Warehousing.png",
     "/Mechanised Fleet.webp",
     
     // Gallery section

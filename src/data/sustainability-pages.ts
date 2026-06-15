@@ -25,7 +25,7 @@ export const communityImpact: PageConfig = {
   titleAccent: "communities.",
   intro:
     "Twenty percent of our net profits go directly back into Zambia's mining communities - funding schools, clinics, water networks, and small business growth.",
-  heroImage: "/Community Safety Culture.webp",
+  heroImage: "/Community Safety Culture.png",
   accentColor: "amber",
   stats: [
     { value: "$2.4", suffix: "M", label: "Community Investment", sub: "Three schools, 1,800+ students" },

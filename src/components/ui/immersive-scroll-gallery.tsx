@@ -19,37 +19,37 @@ interface iImmersiveScrollGalleryProps {
 // Constants
 const DEFAULT_IMAGES: iIPicture[] = [
   {
-    src: "/videos/gallery-sustainability2-optimized.mp4",
+    src: "/Operation gallery/center video.mp4",
     type: "video",
     scale: null,
   },
   {
-    src: "/Safety & Compliance.webp",
+    src: "/Operation gallery/1.png?v=2",
     type: "image",
     scale: null,
   },
   {
-    src: "/Underground Workshop.webp",
+    src: "/Operation gallery/2.png?v=2",
     type: "image",
     scale: null,
   },
   {
-    src: "/Worker Protection Systems.webp",
+    src: "/Operation gallery/3.png?v=2",
     type: "image",
     scale: null,
   },
   {
-    src: "/Workforce Facilities.webp",
+    src: "/Operation gallery/4.png?v=2",
     type: "image",
     scale: null,
   },
   {
-    src: "/Strategic Warehousing.webp",
+    src: "/Operation gallery/5.png?v=2",
     type: "image",
     scale: null,
   },
   {
-    src: "/Rescue Systems-card.webp",
+    src: "/Operation gallery/6.png?v=2",
     type: "image",
     scale: null,
   },

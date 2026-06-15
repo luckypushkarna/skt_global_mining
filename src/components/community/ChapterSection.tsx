@@ -30,7 +30,7 @@ const CHAPTERS = [
     headline: "Boreholes, Purification, Pipe Networks.",
     body: "Clean water was the most urgent ask from every community consultation. SKT funded 14 borehole installations and two purification systems serving over 5,000 residents. Waterborne illness rates in target villages fell 60% within the first year.",
     stat: "5,000+ residents with safe water access",
-    image: "/Community Safety Culture.webp",
+    image: "/Community Safety Culture.png",
   },
 ];
 

@@ -22,7 +22,6 @@ export const NAV_ITEMS: ReadonlyArray<NavItem> = [
   { label: "Safety", href: "/#impact" },
   { label: "Communities", href: "/#operations-map" },
   { label: "Careers", href: "/careers" },
-  { label: "Contact Us", href: "/contact" },
 ] as const;
 
 export const SERVICES: ReadonlyArray<Service> = [
