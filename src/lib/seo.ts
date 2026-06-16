@@ -125,7 +125,7 @@ export const jsonLd = {
       contactType: "customer service",
     },
     sameAs: [
-      "https://www.linkedin.com/company/skt-global-mining",
+      "https://www.linkedin.com/company/skt-global-mining-service-limited/",
       "https://twitter.com/sktglobal",
     ],
   },

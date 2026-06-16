@@ -36,11 +36,10 @@ function MilestoneDot({ index }: { index: number }) {
 
 function TimelineCard({ milestone, isFinal }: { milestone: (typeof MILESTONES)[number], isFinal?: boolean }) {
   return (
-    <div className={`w-full md:max-w-[92%] bg-white border rounded-2xl p-5 md:p-6 text-left transition-colors duration-300 ${
-      isFinal 
-        ? "border-skt-blue/30 shadow-[0_4px_20px_rgba(0,0,0,0.08)] bg-blue-50/20" 
+    <div className={`w-full md:max-w-[92%] bg-white border rounded-2xl p-5 md:p-6 text-left transition-colors duration-300 ${isFinal
+        ? "border-skt-blue/30 shadow-[0_4px_20px_rgba(0,0,0,0.08)] bg-blue-50/20"
         : "border-neutral-200/60 shadow-[0_4px_20px_rgba(0,0,0,0.02)]"
-    }`}>
+      }`}>
       <div className="flex items-start justify-between gap-4">
         <div className="space-y-1 flex-1">
           <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-skt-blue block mb-1">

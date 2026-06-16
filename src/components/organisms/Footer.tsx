@@ -44,7 +44,7 @@ const FOOTER_SECTIONS = [
 ] as const;
 
 const SOCIAL_LINKS = [
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/skt-global-mining-service-limited/" },
   { icon: Twitter, label: "Twitter / X", href: "https://twitter.com" },
   { icon: Youtube, label: "YouTube", href: "https://youtube.com" },
 ] as const;

@@ -17,7 +17,7 @@ import {
 // ═══════════════════════════════════════════════════════════
 
 const LINKEDIN_JOBS_URL =
-  "https://www.linkedin.com/company/skt-global-mining/jobs/";
+  "https://www.linkedin.com/company/skt-global-mining-service-limited/jobs/";
 
 const JOBS = [
   {
@@ -353,19 +353,34 @@ export default function CareersPage(): JSX.Element {
               you in mind for future opportunities.
             </p>
 
-            <a
-              href={LINKEDIN_JOBS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2.5 px-6 py-3.5 bg-neutral-900 text-white text-[13px] font-semibold tracking-[0.15em] uppercase rounded-full hover:bg-neutral-800 transition-colors duration-300"
-            >
-              View All Openings
-              <ArrowUpRight
-                size={14}
-                strokeWidth={2}
-                className="transition-transform duration-300 group-hover:rotate-45"
-              />
-            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href={LINKEDIN_JOBS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2.5 px-6 py-3.5 bg-neutral-900 text-white text-[13px] font-semibold tracking-[0.15em] uppercase rounded-full hover:bg-neutral-800 transition-colors duration-300"
+              >
+                View All Openings
+                <ArrowUpRight
+                  size={14}
+                  strokeWidth={2}
+                  className="transition-transform duration-300 group-hover:rotate-45"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/skt-global-mining-service-limited/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2.5 px-6 py-3.5 bg-transparent border border-neutral-300 text-neutral-900 text-[13px] font-semibold tracking-[0.15em] uppercase rounded-full hover:bg-neutral-50 transition-colors duration-300"
+              >
+                Follow Company Page
+                <ArrowUpRight
+                  size={14}
+                  strokeWidth={2}
+                  className="transition-transform duration-300 group-hover:rotate-45"
+                />
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>

@@ -166,10 +166,17 @@ export function PartnersSection(): JSX.Element {
         </div>
 
         {/* ─── FOOTNOTE ──────────────────────────────── */}
-        <div className="mt-24 md:mt-32 pt-10 border-t border-neutral-200/70">
-          <p className="text-[11px] sm:text-[12px] font-bold tracking-[0.2em] uppercase text-neutral-500 text-center">
-            IRH holds a 51% stake in Mopani Copper Mines
-          </p>
+        <div className="mt-24 md:mt-32 pt-10 border-t border-neutral-200/70 flex justify-center">
+          <div className="inline-flex items-center gap-3 rounded-xl bg-neutral-900 px-4 py-3 shadow-lg shadow-neutral-900/15">
+            <span className="text-[28px] font-bold leading-none text-white tabular-nums tracking-tight">
+              51<span className="text-[18px] text-white/50 font-semibold">%</span>
+            </span>
+            <div className="h-7 w-px bg-white/15 flex-shrink-0" />
+            <p className="text-[12px] leading-snug text-white/70 text-left">
+              <span className="block font-semibold text-white">IRH Stake</span>
+              In Mopani Copper Mines
+            </p>
+          </div>
         </div>
       </div>
     </section>
