@@ -47,9 +47,12 @@ export function GallerySection(): JSX.Element {
           </div>
           
           <Link href="/media/photo-gallery" passHref legacyBehavior>
-            <Button variant="secondary" className="shrink-0 group">
-              Explore Full Gallery
-              <ArrowRight className="w-4 h-4 ml-1 opacity-80 group-hover:translate-x-0.5 transition-transform" />
+            <Button 
+              variant="secondary" 
+              className="shrink-0 group"
+              rightIcon={<ArrowRight className="w-4 h-4 opacity-80 group-hover:translate-x-0.5 transition-transform" />}
+            >
+              Photo Gallery
             </Button>
           </Link>
         </div>
