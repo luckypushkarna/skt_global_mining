@@ -178,7 +178,7 @@ export function Footer(): JSX.Element {
       {/* Massive watermark */}
       <div className="overflow-hidden border-t border-neutral-800 w-full pt-8 mt-8 flex flex-col justify-end">
         <p
-          className="text-[14.4vw] font-bold text-white leading-none tracking-tighter select-none pointer-events-none text-center whitespace-nowrap -mb-[2.25vw]"
+          className="text-[14.4vw] font-bold text-slate-800 leading-none tracking-tighter select-none pointer-events-none text-center whitespace-nowrap -mb-[2.25vw]"
           aria-hidden="true"
         >
           SKT GLOBAL
