@@ -3,10 +3,8 @@
 import { useRef, useMemo, JSX, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { useHeroAnimation } from "@/hooks/useHeroAnimation";
 import { MarqueeSection } from "@/components/organisms/MarqueeSection";
-import { Button } from "@/components/atoms/Button";
 
 export function HeroSection(): JSX.Element {
   const containerRef = useRef<HTMLElement>(null);
@@ -136,7 +134,7 @@ export function HeroSection(): JSX.Element {
                 <span className="absolute inset-0 text-white" aria-hidden="true" style={{ WebkitTextStroke: "1px white" }}>
                   Today
                 </span>
-                <span className="absolute inset-0 text-black" aria-hidden="true" style={{ mixBlendMode: "destination-out" }}>
+                <span className="absolute inset-0 text-black" aria-hidden="true" style={{ mixBlendMode: "destination-out" as any }}>
                   Today
                 </span>
                 <span className="relative text-white/15">

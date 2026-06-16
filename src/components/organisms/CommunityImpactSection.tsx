@@ -267,10 +267,6 @@ export function CommunityImpactSection(): JSX.Element {
 
 
 
-  // ─── BOTTOM RULE ────────────────────────────────────────────
-  const ruleOpacity = useTransform(scrollYProgress, [0.70, 0.78], [0, 1]);
-  const ruleScaleX  = useTransform(scrollYProgress, [0.70, 0.78], [0.4, 1]);
-
   return (
     <section
       ref={sectionRef}
