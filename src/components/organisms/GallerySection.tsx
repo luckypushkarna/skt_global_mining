@@ -29,7 +29,7 @@ export function GallerySection(): JSX.Element {
 
       {/* Header */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 lg:px-16 pt-24 pb-12">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6">
+        <div className="flex flex-row items-end justify-between gap-4 md:gap-6 mb-6">
           <div>
             <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.15em] uppercase text-white/50 mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-white/50 inline-block" />
@@ -49,10 +49,10 @@ export function GallerySection(): JSX.Element {
           <Link href="/media/photo-gallery" passHref legacyBehavior>
             <Button 
               variant="secondary" 
-              className="shrink-0 group"
-              rightIcon={<ArrowRight className="w-4 h-4 opacity-80 group-hover:translate-x-0.5 transition-transform" />}
+              className="shrink-0 group p-3 md:px-5 md:py-2.5 mb-1 md:mb-0 gap-0 md:gap-2"
+              rightIcon={<ArrowRight className="w-5 h-5 md:w-4 md:h-4 opacity-80 group-hover:translate-x-0.5 transition-transform" />}
             >
-              Photo Gallery
+              <span className="hidden md:inline">Photo Gallery</span>
             </Button>
           </Link>
         </div>

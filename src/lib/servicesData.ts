@@ -33,7 +33,7 @@ export const CARDS: ServiceCard[] = [
     detail:
       "A centralised warehousing operation stocking over $3 million in OEM and aftermarket parts. Inventory is tracked in real time, enabling same-shift parts fulfilment and eliminating the production delays associated with procurement lead times.",
     tags: ["$3M+ Stock", "Zero Downtime"],
-    bgImage: "/Strategic Warehousing.png",
+    bgImage: "/Strategic Warehousing.webp",
   },
   {
     num: "03",
@@ -55,7 +55,7 @@ export const CARDS: ServiceCard[] = [
     detail:
       "Purpose-built rescue chambers are positioned at strategic underground intervals, each stocked with life support supplies for extended survival. Paired with real-time atmospheric and personnel monitoring, our mine rescue team conducts regular drills and holds certifications aligned with international standards.",
     tags: ["Rescue Chambers", "Live Monitoring"],
-    bgImage: "/Rescue Systems.png",
+    bgImage: "/Rescue Systems.webp",
   },
   {
     num: "05",
@@ -77,7 +77,7 @@ export const CARDS: ServiceCard[] = [
     detail:
       "A single operations command integrating shift reports, equipment tracking, personnel location, and production KPIs. Mine managers and engineers work from a unified dashboard that surfaces bottlenecks in real time, allowing immediate corrective action before production targets are missed.",
     tags: ["Unified Control", "Production Planning"],
-    bgImage: "/Operational Command.png",
+    bgImage: "/Operational Command.webp",
   },
   {
     num: "07",

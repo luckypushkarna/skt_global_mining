@@ -29,7 +29,7 @@ export default function ProjectsPage(): JSX.Element {
           <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-skt-navy aspect-square shadow-2xl">
             <video
               className="absolute inset-0 h-full w-full object-cover"
-              src="/videos/projects-infrastructure.mp4"
+              src="/videos/projects-infrastructure-optimized.mp4"
               autoPlay
               muted
               loop

@@ -11,14 +11,14 @@ const PILLARS = [
     title: "Hazard Elimination",
     body: "Every task begins with a structured risk assessment and live environmental monitoring to eliminate hazards before they form.",
     tag: "Risk Assessment",
-    img: "/Hazard Elimination.png",
+    img: "/Hazard Elimination.webp",
   },
   {
     num: "02",
     title: "Worker Protection Systems",
     body: "State-of-the-art PPE, atmospheric sensors, and automated ventilation guard every underground crew, 24 hours a day.",
     tag: "PPE & Monitoring",
-    img: "/Worker Protection Systems.png",
+    img: "/Worker Protection Systems.webp",
   },
   {
     num: "03",
@@ -39,7 +39,7 @@ const PILLARS = [
     title: "Community Safety Culture",
     body: "Beyond the mine, SKT Global extends its safety philosophy into surrounding communities through education, awareness, and active partnership programs.",
     tag: "Community Programs",
-    img: "/Community Safety Culture.png",
+    img: "/Community Safety Culture.webp",
   },
 ] as const;
 

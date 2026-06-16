@@ -90,7 +90,7 @@ export function HeroSection(): JSX.Element {
           preload={isMobile ? "metadata" : "auto"}
           className="w-full h-full object-cover object-center opacity-60"
         >
-          <source src="/videos/hero-background-optimized.mp4" type="video/mp4" />
+          <source src="/videos/skt-global-hero-optimized.mp4" type="video/mp4" />
         </video>
       </motion.div>
 

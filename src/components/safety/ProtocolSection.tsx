@@ -40,7 +40,7 @@ export function ProtocolSection() {
             className="lg:col-span-5 relative aspect-[4/5] bg-slate-100 overflow-hidden"
           >
             <Image
-              src="/Rescue Systems.png"
+              src="/Rescue Systems.webp"
               alt="Underground rescue systems and emergency preparedness"
               fill
               sizes="(max-width: 1024px) 100vw, 42vw"

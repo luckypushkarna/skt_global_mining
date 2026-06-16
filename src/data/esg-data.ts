@@ -48,7 +48,7 @@ export const PRINCIPLES = [
     subtitle: "Integrity in every action",
     desc: "Transparency drives every decision at SKT Global. From board diversity to anti-bribery protocols, we adhere to international standards including ICMM and EITI. Our annual reports are independently audited to ensure absolute accountability to all stakeholders.",
     metric: "ISO 45001:2018 Certified",
-    image: "/Operational Command.png",
+    image: "/Operational Command.webp",
     accent: "from-skt-blue to-skt-navy",
     tag: "Governance",
   },

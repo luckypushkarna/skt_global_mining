@@ -65,7 +65,7 @@ export function Navigation() {
               aria-label="SKT Global Mining - Home"
             >
               <Image
-                src="/SKT Full logo (Color).png"
+                src="/SKT Full logo (Color).webp"
                 alt="SKT Global Mining"
                 width={150}
                 height={38}
@@ -274,7 +274,7 @@ function MobileNav({
             {/* Header */}
             <div className="flex items-center justify-between p-5 border-b border-slate-100">
               <Image
-                src="/SKT Full logo (Color).png"
+                src="/SKT Full logo (Color).webp"
                 alt="SKT Global Mining"
                 width={120}
                 height={30}

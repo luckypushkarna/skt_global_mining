@@ -24,32 +24,32 @@ const DEFAULT_IMAGES: iIPicture[] = [
     scale: null,
   },
   {
-    src: "/Operation gallery/1.png?v=3",
+    src: "/Operation gallery/1.webp?v=3",
     type: "image",
     scale: null,
   },
   {
-    src: "/Operation gallery/2.png?v=3",
+    src: "/Operation gallery/2.webp?v=3",
     type: "image",
     scale: null,
   },
   {
-    src: "/Operation gallery/3.png?v=3",
+    src: "/Operation gallery/3.webp?v=3",
     type: "image",
     scale: null,
   },
   {
-    src: "/Operation gallery/4.png?v=3",
+    src: "/Operation gallery/4.webp?v=3",
     type: "image",
     scale: null,
   },
   {
-    src: "/Operation gallery/5.png?v=3",
+    src: "/Operation gallery/5.webp?v=3",
     type: "image",
     scale: null,
   },
   {
-    src: "/Operation gallery/6.png?v=3",
+    src: "/Operation gallery/6.webp?v=3",
     type: "image",
     scale: null,
   },

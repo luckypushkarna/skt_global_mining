@@ -93,9 +93,9 @@ export function generateMetadata(
     },
     icons: {
       icon: [
-        { url: "/favicon.png", type: "image/png" },
+        { url: "/favicon.webp", type: "image/png" },
       ],
-      apple: [{ url: "/favicon.png" }],
+      apple: [{ url: "/favicon.webp" }],
     },
     manifest: "/manifest.json",
     verification: {

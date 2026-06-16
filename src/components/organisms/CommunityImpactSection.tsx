@@ -7,12 +7,13 @@ import {
   useTransform,
   useSpring,
 } from "framer-motion";
-import { Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { Badge } from "@/components/atoms/Badge";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
 // ─── CONFIG ────────────────────────────────────────────────
-const VIDEO_SRC = "/csr-video.mp4";
+const VIDEO_SRC = "/videos/csr-activities-optimized.mp4";
 const POSTER_SRC = "/csr-poster.jpg";
 
 
@@ -341,15 +342,17 @@ export function CommunityImpactSection(): JSX.Element {
             >
               <video autoPlay muted loop playsInline poster={POSTER_SRC} src={VIDEO_SRC} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/[0.06] to-transparent pointer-events-none" />
-              <motion.div
-                style={{ scale: playScale, opacity: playOpacity }}
-                className="absolute bottom-5 left-5 md:bottom-7 md:left-7 flex items-center gap-2.5 bg-white/95 backdrop-blur-md rounded-full pl-1 pr-4 py-1 shadow-xl cursor-pointer group select-none"
-              >
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-900 text-white transition-transform group-hover:scale-105">
-                  <Play size={14} fill="white" strokeWidth={2} className="ml-0.5" />
-                </span>
-                <span className="text-xs font-semibold tracking-wider uppercase text-neutral-800">Watch Our Story</span>
-              </motion.div>
+              <Link href="/sustainability/community-impact" passHref legacyBehavior>
+                <motion.a
+                  style={{ scale: playScale, opacity: playOpacity }}
+                  className="absolute bottom-5 left-5 md:bottom-7 md:left-7 flex items-center gap-2.5 bg-white/95 backdrop-blur-md rounded-full pl-4 pr-1 py-1 shadow-xl cursor-pointer group select-none"
+                >
+                  <span className="text-xs font-semibold tracking-wider uppercase text-neutral-800">Learn More</span>
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-900 text-white transition-transform group-hover:scale-105">
+                    <ArrowRight size={14} strokeWidth={2} />
+                  </span>
+                </motion.a>
+              </Link>
             </motion.div>
           </div>
         </div>

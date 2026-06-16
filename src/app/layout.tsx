@@ -4,6 +4,7 @@ import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvide
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { Navigation } from "@/components/organisms/Navigation";
 import { Footer } from "@/components/organisms/Footer";
+import { GlobalLoader } from "@/components/organisms/GlobalLoader";
 import { generateMetadata as genMeta, jsonLd } from "@/lib/seo";
 import { CookieConsentBanner } from "@/components/organisms/CookieConsentBanner";
 import "@/app/globals.css";
@@ -67,6 +68,7 @@ export default function RootLayout({
       <body className="font-sans antialiased" suppressHydrationWarning>
         <SmoothScrollProvider>
           <ThemeProvider>
+            <GlobalLoader />
 
             <Navigation />
 

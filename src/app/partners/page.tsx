@@ -35,11 +35,11 @@ export default function PartnersPage() {
           {/* Logo Grid */}
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 pt-12 border-t border-slate-100">
             <div className="relative h-16 md:h-20 w-48 md:w-64 mix-blend-multiply">
-              <Image src="/partner-logo-1.png" alt="Strategic Partner" fill className="object-contain" />
+              <Image src="/partner-logo-1.webp" alt="Strategic Partner" fill className="object-contain" />
             </div>
             {/* Using 'invert' so the white logo becomes dark and visible on the light background */}
             <div className="relative h-16 md:h-20 w-48 md:w-64 invert">
-              <Image src="/partner-logo-2.png" alt="Strategic Partner" fill className="object-contain" />
+              <Image src="/partner-logo-2.webp" alt="Strategic Partner" fill className="object-contain" />
             </div>
           </div>
         </div>

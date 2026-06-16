@@ -15,7 +15,7 @@ export function UMEnvironment() {
           {/* Image */}
           <div className="lg:col-span-5 relative aspect-[4/5] bg-slate-800 overflow-hidden">
             <Image
-              src="/Community Safety Culture.png"
+              src="/Community Safety Culture.webp"
               alt="Environmental monitoring and landscape rehabilitation"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"

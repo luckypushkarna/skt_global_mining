@@ -1,19 +1,13 @@
-import { HeroSkeleton, SectionHeaderSkeleton, CardSkeleton } from "@/components/ui/skeleton";
-
 export default function Loading() {
   return (
-    <div className="min-h-screen bg-bg-soft flex flex-col pt-24 px-6 md:px-10 lg:px-16 pb-20 gap-16">
-      {/* Simulate a Hero Section load */}
-      <HeroSkeleton />
-
-      {/* Simulate content section load */}
-      <div className="space-y-12 max-w-7xl mx-auto w-full mt-8">
-        <SectionHeaderSkeleton />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <CardSkeleton />
-          <CardSkeleton />
-          <CardSkeleton />
-        </div>
+    <div className="fixed inset-0 z-[9999] bg-white flex items-center justify-center">
+      <div className="w-24 h-24 sm:w-32 sm:h-32 relative flex items-center justify-center">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img 
+          src="/loader-animation.webp" 
+          alt="Loading SKT Global Mining..." 
+          className="w-full h-full object-contain mix-blend-multiply rounded-2xl"
+        />
       </div>
     </div>
   );
