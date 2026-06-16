@@ -106,7 +106,7 @@ function CareerPattern({ type }: { type: "people" | "growth" | "care" }): JSX.El
             cx={cx}
             cy={cy}
             r="1.5"
-            className="fill-neutral-300 group-hover:fill-neutral-900 transition-colors duration-500"
+            className="fill-sky-200 group-hover:fill-sky-500 transition-colors duration-500"
             style={{ transitionDelay: `${i * 30}ms` }}
           />
         ))}
@@ -130,7 +130,7 @@ function CareerPattern({ type }: { type: "people" | "growth" | "care" }): JSX.El
             width="6"
             height={b.h}
             rx="1"
-            className="fill-neutral-300 group-hover:fill-neutral-900 transition-colors duration-500"
+            className="fill-amber-200 group-hover:fill-amber-500 transition-colors duration-500"
             style={{ transitionDelay: `${i * 60}ms` }}
           />
         ))}
@@ -141,9 +141,9 @@ function CareerPattern({ type }: { type: "people" | "growth" | "care" }): JSX.El
   // care — concentric rings
   return (
     <svg viewBox="0 0 60 60" className="w-full h-full" fill="none">
-      <circle cx="30" cy="30" r="22" strokeWidth="1" className="stroke-neutral-300 group-hover:stroke-neutral-900 transition-colors duration-500" />
-      <circle cx="30" cy="30" r="14" strokeWidth="1" strokeDasharray="3 3" className="stroke-neutral-300 group-hover:stroke-neutral-900 transition-colors duration-500" />
-      <circle cx="30" cy="30" r="3" className="fill-neutral-300 group-hover:fill-neutral-900 transition-colors duration-500" />
+      <circle cx="30" cy="30" r="22" strokeWidth="1" className="stroke-rose-200 group-hover:stroke-rose-500 transition-colors duration-500" />
+      <circle cx="30" cy="30" r="14" strokeWidth="1" strokeDasharray="3 3" className="stroke-rose-200 group-hover:stroke-rose-500 transition-colors duration-500" />
+      <circle cx="30" cy="30" r="3" className="fill-rose-200 group-hover:fill-rose-500 transition-colors duration-500" />
     </svg>
   );
 }
