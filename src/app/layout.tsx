@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, JetBrains_Mono, Playfair_Display } from "next/font/google";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { Navigation } from "@/components/organisms/Navigation";
@@ -22,6 +22,14 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
   variable: "--font-mono",
   weight: ["400", "500", "600"],
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-serif",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
@@ -50,7 +58,7 @@ export default function RootLayout({
     <html
       lang="en"
       dir="ltr"
-      className={`${plusJakartaSans.variable} ${jetbrainsMono.variable}`}
+      className={`${plusJakartaSans.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable}`}
       suppressHydrationWarning
     >
       <head>
