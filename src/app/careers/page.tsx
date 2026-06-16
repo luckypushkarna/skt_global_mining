@@ -339,17 +339,17 @@ export default function CareersPage(): JSX.Element {
             transition={{ duration: 0.6 }}
           >
             <p className="text-[10px] sm:text-[11px] font-semibold tracking-[0.3em] uppercase text-neutral-500 mb-5">
-              Don't see your role?
+              Don&apos;t see your role?
             </p>
 
             <h2 className="text-[24px] sm:text-3xl lg:text-4xl font-semibold tracking-[-0.02em] leading-[1.1] text-neutral-900 mb-5">
-              We're always looking for
+              We&apos;re always looking for
               <br />
               <span className="text-neutral-300">great talent.</span>
             </h2>
 
             <p className="text-[14px] sm:text-[15.5px] leading-[1.7] text-neutral-500 font-light mb-9 max-w-xl mx-auto">
-              If you don't see a role that fits, send us your CV. We'll keep
+              If you don&apos;t see a role that fits, send us your CV. We&apos;ll keep
               you in mind for future opportunities.
             </p>
 
