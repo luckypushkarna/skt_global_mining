@@ -19,7 +19,7 @@ interface iImmersiveScrollGalleryProps {
 // Constants
 const DEFAULT_IMAGES: iIPicture[] = [
   {
-    src: "https://res.cloudinary.com/dxhwcq1eg/video/upload/f_auto,q_auto/skt/center-video.mp4",
+    src: "https://res.cloudinary.com/dxhwcq1eg/video/upload/q_auto/skt/center-video.mp4",
     type: "video",
     scale: null,
   },

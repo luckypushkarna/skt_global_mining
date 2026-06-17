@@ -90,9 +90,8 @@ export function HeroSection(): JSX.Element {
           poster="https://res.cloudinary.com/dxhwcq1eg/video/upload/f_auto,q_auto,so_0/skt/skt-global-hero-optimized.jpg"
           preload={isMobile ? "none" : "auto"}
           className="w-full h-full object-cover object-center opacity-60"
-        >
-          <source src="https://res.cloudinary.com/dxhwcq1eg/video/upload/f_auto,q_auto/skt/skt-global-hero-optimized.mp4" type="video/mp4" />
-        </video>
+          src="https://res.cloudinary.com/dxhwcq1eg/video/upload/q_auto/skt/skt-global-hero-optimized.mp4"
+        />
       </motion.div>
 
       {/* Mouse reactive ambient glow */}
