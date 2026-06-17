@@ -175,7 +175,6 @@ export function SmoothScrollProvider({
         smoothWheel: true,
         syncTouch: true,
         syncTouchLerp: 0.075,
-        touchInertiaMultiplier: 25,
         wheelMultiplier: 1.2,
         touchMultiplier: 1.5,
         lerp: 0.1,
