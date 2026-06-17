@@ -130,16 +130,15 @@ export function HeroSection(): JSX.Element {
               className="text-[36px] md:text-[40px] text-white font-extrabold leading-[1.1] tracking-[-0.02em]"
             >
               Powering Zambia&apos;s<br />Copper Future{" "}
-              <span className="relative inline-block font-serif italic font-medium tracking-normal text-[1.05em] ml-1" style={{ isolation: "isolate" }}>
-                <span className="absolute inset-0 text-white" aria-hidden="true" style={{ WebkitTextStroke: "1px white" }}>
-                  Today
-                </span>
-                <span className="absolute inset-0 text-black" aria-hidden="true" style={{ mixBlendMode: "destination-out" as any }}>
-                  Today
-                </span>
-                <span className="relative text-white/20">
-                  Today
-                </span>
+              <span 
+                className="relative inline-block font-serif italic font-medium tracking-normal text-[1.05em] ml-1" 
+                style={{ 
+                  WebkitTextStroke: "1px white", 
+                  WebkitTextFillColor: "rgba(255, 255, 255, 0.2)",
+                  color: "rgba(255, 255, 255, 0.2)" 
+                }}
+              >
+                Today
               </span>
             </h1>
             <div ref={headline2Ref} className="hidden" aria-hidden="true"></div>
