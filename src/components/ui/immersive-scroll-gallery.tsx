@@ -125,7 +125,14 @@ export default function ImmersiveScrollGallery({
           return (
             <motion.div
               key={index}
-              style={{ scale, opacity, willChange: "transform, opacity" }}
+              style={{ 
+                scale, 
+                opacity, 
+                willChange: "transform, opacity",
+                WebkitBackfaceVisibility: "hidden",
+                backfaceVisibility: "hidden",
+                transformOrigin: "center"
+              }}
               className="absolute flex items-center justify-center w-full h-full top-0"
             >
               <div className={`relative ${IMAGE_STYLES[index]}`}>

@@ -154,6 +154,29 @@ const DotField = memo(({
         glowEl.style.opacity = glowOpacity.current.toString();
       }
 
+      let needsDraw = false;
+      if (eng > 0.01 || p.waveAmplitude > 0 || p.sparkle) {
+        needsDraw = true;
+      } else {
+        // Check if any dots are still moving towards their resting positions
+        for (let i = 0; i < len; i++) {
+          const d = dots[i];
+          if (Math.abs(d.sx - d.ax) > 0.1 || Math.abs(d.sy - d.ay) > 0.1 || Math.abs(d.vx) > 0.1 || Math.abs(d.vy) > 0.1) {
+            needsDraw = true;
+            break;
+          }
+        }
+      }
+
+      if (!needsDraw && frameCount > 5) {
+        if (isVisible.current) {
+          rafRef.current = requestAnimationFrame(tick);
+        } else {
+          rafRef.current = null;
+        }
+        return;
+      }
+
       ctx!.clearRect(0, 0, w, h);
 
       const grad = ctx!.createLinearGradient(0, 0, w, h);

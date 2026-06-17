@@ -8,9 +8,22 @@ interface PageProps {
 
 // ── Generate Static Paths for all 12 capabilities (Server Only) ──
 export async function generateStaticParams() {
-  return CAPABILITIES.map((capability) => ({
-    slug: capability.slug,
-  }));
+  const hardcodedSlugs = [
+    "future-expansion",
+    "infrastructure-systems",
+    "operational-command",
+    "rescue-systems",
+    "safety-compliance",
+    "strategic-warehousing",
+    "underground-workshop",
+    "workforce-facilities"
+  ];
+
+  return CAPABILITIES
+    .filter((capability) => !hardcodedSlugs.includes(capability.slug))
+    .map((capability) => ({
+      slug: capability.slug,
+    }));
 }
 
 // ── Server Component ──────────────────────────────────────────────
