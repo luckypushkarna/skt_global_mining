@@ -91,17 +91,13 @@ function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
             fill
             className={`object-cover transition-transform duration-700 ease-out ${
               isOpen ? "scale-[1.03]" : "scale-100"
-            } ${
-              ["sahil-talreja", "anand-kolappa-pillai"].includes(member.id) 
-                ? "mix-blend-multiply" 
-                : ""
             }`}
             sizes="(max-w-768px) 100vw, 25vw"
             skeletonClassName="rounded-xl"
           />
 
           {/* ── HOVER OVERLAY: Slides up from the bottom (Reference Match) ── */}
-          <div className={`absolute inset-0 bg-skt-navy/95 backdrop-blur-sm flex flex-col justify-between p-3 sm:p-4 md:p-6 text-white transition-transform duration-500 ease-out z-10 ${
+          <div className={`absolute inset-0 bg-skt-navy/95 flex flex-col justify-between p-3 sm:p-4 md:p-6 text-white transition-transform duration-500 ease-out z-10 ${
             isOpen ? "translate-y-0" : "translate-y-full"
           }`}>
             

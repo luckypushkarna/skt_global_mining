@@ -78,10 +78,10 @@ export function HeroSection(): JSX.Element {
     <section
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-[#050505]"
+      className="relative min-h-[100svh] lg:min-h-screen flex flex-col justify-end overflow-hidden bg-[#050505]"
       aria-label="Hero section"
     >
-      <motion.div style={isMobile ? {} : { y: videoY }} className="absolute inset-0 z-0 origin-top will-change-transform">
+      <motion.div style={{ ...(isMobile ? {} : { y: videoY }), willChange: "transform" }} className="absolute inset-0 z-0 origin-top will-change-transform">
         <video
           autoPlay
           muted
@@ -117,7 +117,7 @@ export function HeroSection(): JSX.Element {
 
       {/* Main content */}
       <motion.div
-        style={isMobile ? {} : { y, opacity }}
+        style={{ ...(isMobile ? {} : { y, opacity }), willChange: "transform, opacity" }}
         className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 lg:px-16 pt-32 pb-20 w-full"
       >
 

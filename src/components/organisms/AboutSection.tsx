@@ -19,7 +19,7 @@ import { useIsMobile } from "@/hooks/useIsMobile";
 
 function MilestoneDot({ index }: { index: number }) {
   return (
-    <div className="stone-marker-gsap w-12 h-12 flex items-center justify-center select-none" data-index={index}>
+    <div className="stone-marker-gsap w-12 h-12 flex items-center justify-center select-none" data-index={index} style={{ willChange: "transform, opacity" }}>
       {/* Stone Marker WebP */}
       <div className="relative w-11 h-11">
         <Image
@@ -237,7 +237,7 @@ export function AboutSection(): JSX.Element {
         <div ref={headerRef} className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 mb-10 md:mb-16">
           {/* Left (Comes from Left) */}
           <motion.div
-            style={isMobile ? {} : { x: leftX, opacity: leftOpacity }}
+            style={{ ...(isMobile ? {} : { x: leftX, opacity: leftOpacity }), willChange: "transform, opacity" }}
             {...(isMobile ? { initial: { opacity: 0, y: 16 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, transition: { duration: 0.5 } } : {})}
           >
             <Badge variant="dot" className="mb-3 lg:mb-6 text-eyebrow">
@@ -255,7 +255,7 @@ export function AboutSection(): JSX.Element {
 
           {/* Right (Comes from Right) */}
           <motion.div
-            style={isMobile ? {} : { x: rightX, opacity: rightOpacity }}
+            style={{ ...(isMobile ? {} : { x: rightX, opacity: rightOpacity }), willChange: "transform, opacity" }}
             {...(isMobile ? { initial: { opacity: 0, y: 16 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, transition: { duration: 0.5, delay: 0.1 } } : {})}
             className="flex flex-col justify-end"
           >
@@ -296,6 +296,7 @@ export function AboutSection(): JSX.Element {
             className="excavator-vehicle absolute left-4 md:left-1/2 top-0 z-10"
             style={{
               marginTop: "-28px", // Vertical alignment adjustment
+              willChange: "transform, opacity"
             }}
           >
             {/* Drop shadow ring beneath vehicle */}

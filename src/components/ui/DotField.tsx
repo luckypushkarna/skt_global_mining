@@ -45,6 +45,7 @@ const DotField = memo(({
   const sizeRef = useRef({ w: 0, h: 0, offsetX: 0, offsetY: 0 });
   const glowOpacity = useRef(0);
   const engagement = useRef(0);
+  const isVisible = useRef(true);
   const propsRef = useRef<any>({});
   
   propsRef.current = { dotRadius, dotSpacing, cursorRadius, cursorForce, bulgeOnly, bulgeStrength, sparkle, waveAmplitude, gradientFrom, gradientTo };
@@ -225,13 +226,26 @@ const DotField = memo(({
 
       ctx!.fill();
 
-      rafRef.current = requestAnimationFrame(tick);
+      if (isVisible.current) {
+        rafRef.current = requestAnimationFrame(tick);
+      } else {
+        rafRef.current = null;
+      }
     }
 
     doResize();
     window.addEventListener('resize', resize);
     window.addEventListener('mousemove', onMouseMove, { passive: true });
-    rafRef.current = requestAnimationFrame(tick);
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry) {
+        isVisible.current = entry.isIntersecting;
+        if (isVisible.current && !rafRef.current) {
+          rafRef.current = requestAnimationFrame(tick);
+        }
+      }
+    });
+    if (canvasRef.current) observer.observe(canvasRef.current);
 
     rebuildRef.current = () => {
       const { w, h } = sizeRef.current;
@@ -244,6 +258,7 @@ const DotField = memo(({
       clearTimeout(resizeTimer);
       window.removeEventListener('resize', resize);
       window.removeEventListener('mousemove', onMouseMove);
+      observer.disconnect();
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

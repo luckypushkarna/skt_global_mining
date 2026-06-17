@@ -44,7 +44,7 @@ const SliderCard = memo(function SliderCard({ card }: { card: typeof CAPABILITIE
       {/* ── Top Section: Icon + Number ── */}
       <div className="absolute top-6 left-6 right-6 flex items-start justify-between z-10">
         {/* Icon Badge */}
-        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 border border-white/15 backdrop-blur-md text-white transition-all duration-500 group-hover:bg-white group-hover:text-neutral-900 group-hover:scale-110">
+        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 border border-white/15 text-white transition-all duration-500 group-hover:bg-white group-hover:text-neutral-900 group-hover:scale-110">
           <Icon size={16} strokeWidth={1.5} />
         </div>
 
@@ -76,7 +76,7 @@ const SliderCard = memo(function SliderCard({ card }: { card: typeof CAPABILITIE
               {card.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-[9px] font-medium tracking-[0.15em] uppercase px-2.5 py-1 rounded-full text-white/85 bg-white/8 border border-white/12 backdrop-blur-sm transition-all duration-300 hover:bg-white/15"
+                  className="text-[9px] font-medium tracking-[0.15em] uppercase px-2.5 py-1 rounded-full text-white/85 bg-white/8 border border-white/12 transition-all duration-300 hover:bg-white/15"
                 >
                   {tag}
                 </span>

@@ -15,16 +15,15 @@ import { usePrefetchImages } from "@/hooks/use-prefetch-images";
 export function PagePreloader() {
   // Critical images for below-the-fold sections
   const belowFoldImages = [
-    // Services section
-    "/Underground Workshop.webp",
+    // Services section (marquee cards)
+    "/Underground Workshop-card.webp",
     "/Strategic Warehousing.webp",
-    "/Mechanised Fleet.webp",
+    "/Mechanised Fleet-card.webp",
     
-    // Gallery section
-    "/Production Development.webp",
-    "/Safety & Compliance.webp",
+    // Services Section
+    "/Production Development-card.webp",
     
-    // Team section
+    // Team & Chairman section
     "/Sahil Talreja.webp",
     "/Raj Sir Photo.webp",
   ];

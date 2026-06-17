@@ -363,8 +363,8 @@ export function StatsSection(): JSX.Element {
             ref={cardsBlockRef}
             className="lg:col-span-6 relative lg:flex hidden items-center justify-center w-full"
             style={isMobile
-              ? { height: "480px" }  // ⚡ no scroll-linked transform on mobile
-              : { height: "480px", x: cardsX, opacity: cardsOpacity }
+              ? { height: "480px", willChange: "transform, opacity" }  // ⚡ no scroll-linked transform on mobile, but keep acceleration
+              : { height: "480px", x: cardsX, opacity: cardsOpacity, willChange: "transform, opacity" }
             }
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => { setPaused(false); startAuto(); }}
