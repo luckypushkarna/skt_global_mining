@@ -33,7 +33,7 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com data:",
       "img-src 'self' data: blob: https:",
-      "media-src 'self' blob: https://assets.mixkit.co",
+      "media-src 'self' blob: https://assets.mixkit.co https://res.cloudinary.com",
       "connect-src 'self' https://api.web3forms.com https://www.google-analytics.com https://cdn.jsdelivr.net https://unpkg.com https://basemaps.cartocdn.com https://*.basemaps.cartocdn.com https://tiles.openfreemap.org https://*.tile.openstreetmap.org",
       "worker-src 'self' blob:",
       "child-src blob:",
