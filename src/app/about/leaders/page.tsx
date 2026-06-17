@@ -13,7 +13,7 @@ const leaders = [
     department: "Executive Leadership",
     statement:
       "Sustainable growth is built on decisive action, disciplined teams, and an unwavering commitment to the people and communities we serve.",
-    image: "/Sahil Talreja.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/sahil-talreja.webp",
     yearsExperience: 20,
     overview: {
       intro:
@@ -74,7 +74,7 @@ const leaders = [
     department: "Corporate Strategy",
     statement:
       "Enduring enterprise value is created through long-term thinking, technical precision, and deep respect for the communities where we operate.",
-    image: "/Anand Kolappa Pillai.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/anand-kolappa-pillai.webp",
     yearsExperience: 25,
     overview: {
       intro:
@@ -135,7 +135,7 @@ const leaders = [
     department: "Operations Leadership",
     statement:
       "Operational discipline is not a constraint - it is the force that transforms potential into performance, every shift, every day.",
-    image: "/Sanjay Kumar sharma.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/sanjay-kumar-sharma.webp",
     yearsExperience: 28,
     overview: {
       intro:
@@ -196,7 +196,7 @@ const leaders = [
     department: "Finance & Risk",
     statement:
       "Financial rigour is what gives ambitious operational plans the credibility and resilience to survive contact with reality.",
-    image: "/Srinivasulu Jonnalagadda.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/srinivasulu-jonnalagadda.webp",
     yearsExperience: 22,
     overview: {
       intro:
@@ -256,7 +256,7 @@ const leaders = [
     designation: "Mine manager at SOB",
     department: "SOB Operations",
     statement: "Technical precision in underground excavation underpins safety, productivity, and the integrity of our production targets.",
-    image: "/Kiran Kumar Reddy.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/kiran-kumar-reddy.webp",
     yearsExperience: 15,
     overview: {
       intro: "Kiran Kumar Reddy is the Mine Manager at SOB operations, directing the execution of mechanised mining and ventilation protocols at high-capacity underground shafts. With over 15 years of hard-rock mining experience, he coordinates shift-on-shift production targets with absolute precision.",
@@ -299,7 +299,7 @@ const leaders = [
     designation: "Head of Maintenance",
     department: "Asset Readiness",
     statement: "Operational readiness is the product of preventive maintenance, robust supply chains, and technical pride in our fleet.",
-    image: "/Suresh Babu Deshamalla.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/suresh-babu-deshamalla.webp",
     yearsExperience: 18,
     overview: {
       intro: "Suresh Babu Deshamalla is the Head of Maintenance at SKT Global, managing the lifecycle, availability, and preventive servicing of our 225+ underground mechanized mining vehicle fleet. He holds 18 years of asset engineering experience across large-scale industrial projects.",
@@ -340,7 +340,7 @@ const leaders = [
     designation: "Commercial Manager",
     department: "Commercial Strategy",
     statement: "Sustainable commercial partnerships are built on contract compliance, mutual benefit, and operational reliability.",
-    image: "/Kuldeep Kulshrestha.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/kuldeep-kulshrestha.webp",
     yearsExperience: 16,
     overview: {
       intro: "Kuldeep Kulshrestha is the Commercial Manager at SKT Global, overseeing international supply chain integrations, commercial risk analysis, and customer relationship governance. His 16-year career focuses on commercial growth in resource and logistics sectors.",
@@ -381,7 +381,7 @@ const leaders = [
     designation: "HR Manager",
     department: "Human Capital",
     statement: "Our greatest resource is the potential of our workforce - nurtured through training, safety, and mutual respect.",
-    image: "/Mulenga Mutati.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/mulenga-mutati.webp",
     yearsExperience: 18,
     overview: {
       intro: "Mulenga Mutati is the HR Manager at SKT Global, directing human resource strategies, workforce development programs, and employee relations across our operations. With 18 years of experience, he leads the hire-local programs that have successfully onboarded 1,500+ Zambian professionals.",
@@ -422,7 +422,7 @@ const leaders = [
     designation: "Site Manager at Mufulira",
     department: "Site Operations",
     statement: "Underground site success is built on clear communication, strict safety standards, and disciplined team coordination.",
-    image: "/Safeli maxim chipulu.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/safeli-maxim-chipulu.webp",
     yearsExperience: 16,
     overview: {
       intro: "Safeli Maxim Chipulu is the Site Manager at Mufulira operations, directing day-to-day mechanized mining, ventilation engineering, and safety protocols at the active site. With 16 years of underground experience, he maintains a strict focus on shift efficiency and site safety.",
@@ -463,7 +463,7 @@ const leaders = [
     designation: "Mine Manager at Mufulira",
     department: "Mufulira Operations",
     statement: "Mining excellence lies in the details. Precise drilling, proper air flow, and disciplined operators create a world-class mine.",
-    image: "/Toms Joseph.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/toms-joseph.webp",
     yearsExperience: 14,
     overview: {
       intro: "Toms Joseph is the Mine Manager at Mufulira, directing mechanized operations, stope safety, and ventilation systems. Over a 14-year career in underground hard-rock mining, he has successfully delivered on complex production targets in high-capacity shafts.",

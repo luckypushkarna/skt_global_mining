@@ -13,19 +13,19 @@ function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
 
   // Mapping of exact filenames in public folder for premium deterministic resolution
   const images: Record<string, string> = {
-    "sahil-talreja": "/Sahil Talreja.webp",
-    "anand-kolappa-pillai": "/Anand Kolappa Pillai.webp",
-    "sanjay-kumar-sharma": "/Sanjay Kumar sharma.webp",
-    "srinivasulu-jonnalagadda": "/Srinivasulu Jonnalagadda.webp",
-    "kiran-kumar-reddy": "/Kiran Kumar Reddy.webp",
-    "suresh-babu-deshamalla": "/Suresh Babu Deshamalla.webp",
-    "kuldeep-kulshrestha": "/Kuldeep Kulshrestha.webp",
-    "mulenga-mutati": "/Mulenga Mutati.webp",
-    "safeli-maxim-chipulu": "/Safeli maxim chipulu.webp",
-    "toms-joseph": "/Toms Joseph.webp",
+    "sahil-talreja": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/sahil-talreja.webp",
+    "anand-kolappa-pillai": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/anand-kolappa-pillai.webp",
+    "sanjay-kumar-sharma": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/sanjay-kumar-sharma.webp",
+    "srinivasulu-jonnalagadda": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/srinivasulu-jonnalagadda.webp",
+    "kiran-kumar-reddy": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/kiran-kumar-reddy.webp",
+    "suresh-babu-deshamalla": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/suresh-babu-deshamalla.webp",
+    "kuldeep-kulshrestha": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/kuldeep-kulshrestha.webp",
+    "mulenga-mutati": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/mulenga-mutati.webp",
+    "safeli-maxim-chipulu": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/safeli-maxim-chipulu.webp",
+    "toms-joseph": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/toms-joseph.webp",
   };
 
-  const imgSrc = images[member.id] || "/unknown-leader.webp";
+  const imgSrc = images[member.id] || "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/unknown-leader.webp";
 
   // Custom premium editorial overlay actions
   const overlayDetails: Record<string, { title: string; action: string }> = {
