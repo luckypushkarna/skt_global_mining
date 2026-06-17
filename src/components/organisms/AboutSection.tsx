@@ -104,8 +104,6 @@ export function AboutSection(): JSX.Element {
       if (!container || !excavator || stones.length === 0) return;
 
       const mm = gsap.matchMedia();
-      let activeTimeline: gsap.core.Timeline | null = null;
-      let isDesktopMedia = false;
 
       const runAnimations = (isDesktop: boolean) => {
         const containerHeight = container.offsetHeight;
@@ -136,7 +134,7 @@ export function AboutSection(): JSX.Element {
         tl.to({}, { duration: 1 }); // Force duration to exactly 1.0
         tl.fromTo(excavator,
           { y: -vehicleOffset },
-          { y: containerHeight * 0.90, ease: "none", duration: 0.90 },
+          { y: containerHeight * 0.90, ease: "none", duration: 0.90, force3D: true },
           0
         );
         tl.fromTo(excavator, { opacity: 0 }, { opacity: 1, duration: 0.06, ease: "none" }, 0);
@@ -179,7 +177,7 @@ export function AboutSection(): JSX.Element {
             // Lock onto vehicle via GPU y transform at the exact hit moment
             tl.fromTo(stone,
               { y: 0, x: 0, rotation: 0 },
-              { y: y90, ease: "none", duration: durationDown },
+              { y: y90, ease: "none", duration: durationDown, force3D: true },
               rawHitProgress
             );
 
@@ -209,33 +207,16 @@ export function AboutSection(): JSX.Element {
         return tl;
       };
 
-      const buildTimeline = () => {
-        if (activeTimeline) {
-          activeTimeline.revert(); // ⚡ CRITICAL FIX: Revert strips stale inline styles before remeasuring!
-        }
-        activeTimeline = runAnimations(isDesktopMedia);
-      };
-
       // ── DESKTOP ─────────────────────────────────
       mm.add("(min-width: 1024px)", () => {
-        isDesktopMedia = true;
-        buildTimeline();
-        ScrollTrigger.addEventListener("refresh", buildTimeline);
-        return () => {
-          ScrollTrigger.removeEventListener("refresh", buildTimeline);
-          if (activeTimeline) activeTimeline.revert();
-        };
+        const tl = runAnimations(true);
+        return () => { if (tl) tl.revert(); };
       });
 
       // ── MOBILE ──────────────────────────────────
       mm.add("(max-width: 1023px)", () => {
-        isDesktopMedia = false;
-        buildTimeline();
-        ScrollTrigger.addEventListener("refresh", buildTimeline);
-        return () => {
-          ScrollTrigger.removeEventListener("refresh", buildTimeline);
-          if (activeTimeline) activeTimeline.revert();
-        };
+        const tl = runAnimations(false);
+        return () => { if (tl) tl.revert(); };
       });
 
     }, timelineRef);

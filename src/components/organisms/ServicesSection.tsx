@@ -328,7 +328,7 @@ export function ServicesSection(): JSX.Element {
         {/* ── Mobile Slider ── */}
         <div
           onScroll={handleMobileScroll}
-          className="block lg:hidden overflow-x-auto snap-x snap-mandatory scrollbar-none touch-pan-x px-5 pb-6"
+          className="block lg:hidden overflow-x-auto snap-x snap-mandatory scrollbar-none touch-auto px-5 pb-6"
         >
           <div className="flex gap-4">
             {CAPABILITIES.map((card, i) => {

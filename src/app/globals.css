@@ -619,18 +619,23 @@ body {
 /* GPU Acceleration & Performance Optimizations for Scrollytelling Section */
 .excavator-vehicle,
 .stone-marker-gsap {
-  will-change: transform;
+  will-change: transform, opacity;
   transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  perspective: 1000px;
-  -webkit-perspective: 1000px;
-  transform-style: preserve-3d;
-  image-rendering: -webkit-optimize-contrast;
+  contain: layout style;
   pointer-events: none;
   user-select: none;
   -webkit-user-select: none;
+}
+
+/* Tire tracks: separate rule to avoid overriding Tailwind's -translate-x-1/2 */
+.tire-tracks-wrapper {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  contain: layout style;
 }
 
 /* Fix scale/hover stuttering on numbers */
