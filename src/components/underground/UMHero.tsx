@@ -1,13 +1,16 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { UNDERGROUND_MINING } from "@/data/underground-mining";
 
 export function UMHero() {
   const heroRef = useRef<HTMLDivElement>(null);
 
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
       tl.from(".um-hero-eyebrow", { opacity: 0, y: 10, duration: 0.6 })
@@ -30,8 +33,10 @@ export function UMHero() {
           loop
           muted
           playsInline
+          poster="https://res.cloudinary.com/dxhwcq1eg/video/upload/f_auto,q_auto,so_0/skt/underground-mining-bg.jpg"
+          preload={isMobile ? "none" : "auto"}
           className="w-full h-full object-cover"
-          src="/underground-mining-bg.mp4"
+          src="https://res.cloudinary.com/dxhwcq1eg/video/upload/f_auto,q_auto/skt/underground-mining-bg.mp4"
         />
       </div>
 

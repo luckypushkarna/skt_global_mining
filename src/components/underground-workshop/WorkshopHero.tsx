@@ -1,14 +1,23 @@
+"use client";
+import { useState, useEffect } from "react";
 import { UNDERGROUND_WORKSHOP } from "@/data/underground-workshop";
 
 export function WorkshopHero() {
   const { hero } = UNDERGROUND_WORKSHOP;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
 
   return (
     <section className="relative w-full min-h-[72vh] lg:min-h-[82vh] bg-black overflow-hidden mt-16">
       {/* Background video - raw, no filters */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="/fleet-hero.mp4"
+        src="https://res.cloudinary.com/dxhwcq1eg/video/upload/f_auto,q_auto/skt/fleet-hero.mp4"
+        poster="https://res.cloudinary.com/dxhwcq1eg/video/upload/f_auto,q_auto,so_0/skt/fleet-hero.jpg"
+        preload={isMobile ? "none" : "auto"}
         autoPlay
         loop
         muted
