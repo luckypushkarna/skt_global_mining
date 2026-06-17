@@ -36,7 +36,7 @@ export function UMHero() {
           poster="https://res.cloudinary.com/dxhwcq1eg/video/upload/f_auto,q_auto,so_0/skt/underground-mining-bg.jpg"
           preload={isMobile ? "none" : "auto"}
           className="w-full h-full object-cover"
-          src="https://res.cloudinary.com/dxhwcq1eg/video/upload/q_auto/skt/underground-mining-bg.mp4"
+          src="https://res.cloudinary.com/dxhwcq1eg/video/upload/skt/underground-mining-bg.mp4"
         />
       </div>
 
