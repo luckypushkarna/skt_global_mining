@@ -1,9 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
-import { FLEET_DATA } from "@/data/fleet";
+import { MECHANISED_FLEET } from "@/data/mechanised-fleet";
 
 export function FleetHero() {
-  const { hero } = FLEET_DATA;
+  const { hero } = MECHANISED_FLEET;
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
