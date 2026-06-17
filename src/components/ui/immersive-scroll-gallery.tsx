@@ -26,32 +26,32 @@ const DEFAULT_IMAGES: iIPicture[] = [
     scale: null,
   },
   {
-    src: "/Operation gallery/1.webp?v=3",
+    src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/gallery/1.webp",
     type: "image",
     scale: null,
   },
   {
-    src: "/Operation gallery/2.webp?v=3",
+    src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/gallery/2.webp",
     type: "image",
     scale: null,
   },
   {
-    src: "/Operation gallery/3.webp?v=3",
+    src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/gallery/3.webp",
     type: "image",
     scale: null,
   },
   {
-    src: "/Operation gallery/4.webp?v=3",
+    src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/gallery/4.webp",
     type: "image",
     scale: null,
   },
   {
-    src: "/Operation gallery/5.webp?v=3",
+    src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/gallery/5.webp",
     type: "image",
     scale: null,
   },
   {
-    src: "/Operation gallery/6.webp?v=3",
+    src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/gallery/6.webp",
     type: "image",
     scale: null,
   },
