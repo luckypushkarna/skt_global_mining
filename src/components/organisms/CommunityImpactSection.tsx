@@ -12,9 +12,8 @@ import Link from "next/link";
 import { Badge } from "@/components/atoms/Badge";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
-// ─── CONFIG ────────────────────────────────────────────────
-const VIDEO_SRC = "/videos/csr-activities-optimized.mp4";
-const POSTER_SRC = "/csr-poster.jpg";
+const VIDEO_SRC = "https://res.cloudinary.com/dxhwcq1eg/video/upload/skt/csr-activities-optimized.mp4";
+const POSTER_SRC = "https://res.cloudinary.com/dxhwcq1eg/video/upload/f_auto,q_auto,so_0/skt/csr-activities-optimized.jpg";
 
 
 
@@ -337,10 +336,16 @@ export function CommunityImpactSection(): JSX.Element {
           {/* ═══ RIGHT: VIDEO ══════════════════════════════════ */}
           <div className="relative order-1 lg:order-2 flex items-center min-h-[340px] md:min-h-[420px] lg:min-h-full">
             <motion.div
-              style={{ clipPath: clipPathY, opacity: videoOpacity }}
-              className="absolute inset-x-0 top-0 bottom-0 w-full h-full rounded-2xl md:rounded-3xl overflow-hidden"
+              style={{ 
+                clipPath: clipPathY, 
+                opacity: videoOpacity,
+                willChange: "clip-path, opacity",
+                WebkitBackfaceVisibility: "hidden",
+                backfaceVisibility: "hidden"
+              }}
+              className="absolute inset-x-0 top-0 bottom-0 w-full h-full rounded-2xl md:rounded-3xl overflow-hidden transform-gpu"
             >
-              <video autoPlay muted loop playsInline poster={POSTER_SRC} src={VIDEO_SRC} className="w-full h-full object-cover" />
+              <video crossOrigin="anonymous" autoPlay muted loop playsInline poster={POSTER_SRC} src={VIDEO_SRC} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/[0.06] to-transparent pointer-events-none" />
               <Link href="/sustainability/community-impact" passHref legacyBehavior>
                 <motion.a

@@ -8,17 +8,7 @@ cloudinary.config({
 });
 
 const filesToUpload = [
-  { path: 'public/Operation gallery/1.webp', folder: 'skt/gallery', public_id: '1' },
-  { path: 'public/Operation gallery/2.webp', folder: 'skt/gallery', public_id: '2' },
-  { path: 'public/Operation gallery/3.webp', folder: 'skt/gallery', public_id: '3' },
-  { path: 'public/Operation gallery/4.webp', folder: 'skt/gallery', public_id: '4' },
-  { path: 'public/Operation gallery/5.webp', folder: 'skt/gallery', public_id: '5' },
-  { path: 'public/Operation gallery/6.webp', folder: 'skt/gallery', public_id: '6' },
-  { path: 'public/Hazard Elimination.webp', folder: 'skt/safety', public_id: 'hazard-elimination' },
-  { path: 'public/Worker Protection Systems.webp', folder: 'skt/safety', public_id: 'worker-protection-systems' },
-  { path: 'public/Continuous Training.webp', folder: 'skt/safety', public_id: 'continuous-training' },
-  { path: 'public/Emergency Readiness.webp', folder: 'skt/safety', public_id: 'emergency-readiness' },
-  { path: 'public/Community Safety Culture.webp', folder: 'skt/safety', public_id: 'community-safety-culture' }
+  { path: 'public/videos/csr-activities-optimized.mp4', folder: 'skt', public_id: 'csr-activities-optimized', resource_type: 'video' }
 ];
 
 async function uploadFiles() {
@@ -29,7 +19,7 @@ async function uploadFiles() {
         folder: file.folder,
         public_id: file.public_id,
         overwrite: true,
-        resource_type: 'image'
+        resource_type: file.resource_type
       });
       console.log(`[SUCCESS] ${file.path} -> ${result.secure_url}`);
     } catch (err) {
