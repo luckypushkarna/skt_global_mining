@@ -33,6 +33,7 @@ export function UMHero() {
           loop
           muted
           playsInline
+          crossOrigin="anonymous"
           poster="https://res.cloudinary.com/dxhwcq1eg/video/upload/f_auto,q_auto,so_0/skt/underground-mining-bg.jpg"
           preload={isMobile ? "none" : "auto"}
           className="w-full h-full object-cover"

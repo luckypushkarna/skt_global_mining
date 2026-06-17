@@ -17,6 +17,7 @@ export function FleetHero() {
         className="absolute inset-0 w-full h-full object-cover"
         src="https://res.cloudinary.com/dxhwcq1eg/video/upload/skt/fleet-hero.mp4"
         poster="https://res.cloudinary.com/dxhwcq1eg/video/upload/f_auto,q_auto,so_0/skt/fleet-hero.jpg"
+        crossOrigin="anonymous"
         preload={isMobile ? "none" : "auto"}
         autoPlay
         loop

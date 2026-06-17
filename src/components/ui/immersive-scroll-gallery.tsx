@@ -7,6 +7,7 @@ import Image from "next/image";
 // Types
 interface iIPicture {
   src: string;
+  poster?: string;
   type?: "image" | "video";
   scale: MotionValue<number> | null;
 }
@@ -20,6 +21,7 @@ interface iImmersiveScrollGalleryProps {
 const DEFAULT_IMAGES: iIPicture[] = [
   {
     src: "https://res.cloudinary.com/dxhwcq1eg/video/upload/skt/center-video.mp4",
+    poster: "https://res.cloudinary.com/dxhwcq1eg/video/upload/f_auto,q_auto,so_0/skt/center-video.jpg",
     type: "video",
     scale: null,
   },
@@ -117,7 +119,7 @@ export default function ImmersiveScrollGallery({
       {/* ⚡ Optimized: Removed willChange: "transform" from this wrapper to prevent a massive GPU layer from being allocated permanently for a non-animated sticky element */}
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         {/* Zooming Images */}
-        {pictures.map(({ src, type = "image", scale, opacity }, index) => {
+        {pictures.map(({ src, poster, type = "image", scale, opacity }, index) => {
           if (!scale) return null;
 
           return (
@@ -130,6 +132,8 @@ export default function ImmersiveScrollGallery({
                 {type === "video" ? (
                   <video
                     src={src}
+                    poster={poster}
+                    crossOrigin="anonymous"
                     autoPlay
                     loop
                     muted
