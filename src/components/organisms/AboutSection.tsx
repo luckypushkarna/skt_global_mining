@@ -122,7 +122,7 @@ export function AboutSection(): JSX.Element {
             trigger: container,
             start: isDesktop ? "top 80%" : "top 85%",
             end: isDesktop ? "bottom 20%" : "bottom 15%",
-            scrub: isDesktop ? 1 : true, // Lock directly to scroll on mobile to avoid lag/stutter
+            scrub: isDesktop ? 1 : 0.5, // Smooth interpolation — Lenis syncTouch provides smooth scroll position
             anticipatePin: isDesktop ? 1 : 0,
             fastScrollEnd: true,
             invalidateOnRefresh: true,
