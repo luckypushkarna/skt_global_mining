@@ -1,47 +1,86 @@
+"use client";
+
+import { useRef } from "react";
 import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ENGINEERING_SERVICES } from "@/data/engineering-services";
 
 export function ESHero() {
   const { hero } = ENGINEERING_SERVICES;
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section className="relative w-full bg-white border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-5 lg:px-12 pt-16 lg:pt-24 pb-12 lg:pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+    <section ref={containerRef} className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-neutral-950 mt-16">
+      
+      {/* Parallax Background Image */}
+      <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
+        <Image
+          src="/Engineering & Maintenance.webp"
+          alt="Engineering and Maintenance"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/40 via-transparent to-neutral-950" />
+      </motion.div>
 
-          {/* Left: Text */}
-          <div className="lg:col-span-7">
-            <div className="flex items-center gap-3 mb-8">
-              <span className="w-1.5 h-1.5 rounded-full bg-slate-700" />
-              <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-slate-500">
-                {hero.eyebrow}
-              </span>
-            </div>
+      {/* Cinematic Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full text-center mt-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex items-center justify-center gap-2 mb-6 md:mb-8"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-amber-500 inline-block" />
+          <span className="text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-neutral-400">
+            {hero.eyebrow}
+          </span>
+        </motion.div>
+        
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          className="text-4xl md:text-6xl lg:text-7xl xl:text-[80px] font-serif font-normal tracking-tight text-white leading-[1.05] max-w-5xl mx-auto mb-10"
+        >
+          Built for the <span className="text-white/80">demanding conditions.</span>
+        </motion.h1>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.05] text-slate-900 mb-6 font-serif font-normal">
-              {hero.title}
-            </h1>
-
-            <p className="text-base lg:text-lg text-slate-600 max-w-xl leading-relaxed font-light">
-              {hero.intro}
-            </p>
-          </div>
-
-          {/* Right: Hero image using existing asset */}
-          <div className="lg:col-span-5">
-            <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden">
-              <Image
-                src="/Engineering & Maintenance.webp"
-                alt="SKT Global engineering team performing maintenance on underground mining equipment"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 42vw"
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="text-base md:text-xl text-neutral-300 font-light leading-relaxed max-w-3xl mx-auto"
+        >
+          {hero.intro}
+        </motion.p>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 1 }}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10"
+      >
+        <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-white/50">
+          Discover
+        </span>
+        <div className="w-[1px] h-12 bg-white/20 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1/2 bg-white animate-scroll-line" />
+        </div>
+      </motion.div>
+
     </section>
   );
 }
