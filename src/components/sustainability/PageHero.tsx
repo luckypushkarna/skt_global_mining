@@ -23,6 +23,9 @@ interface Props {
 
 export function PageHero({ eyebrow, title, titleAccent, intro, image, video, accent }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const dotClass = ACCENT[accent];
+  const hasVideo = !!video;
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
@@ -31,12 +34,9 @@ export function PageHero({ eyebrow, title, titleAccent, intro, image, video, acc
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
-  const hasVideo = !!video;
-
   return (
     <section ref={containerRef} className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-neutral-950">
-      
-      {/* Background Video or Image with Parallax */}
+      {/* Background Video or Image */}
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
         {hasVideo ? (
           <video
@@ -44,7 +44,7 @@ export function PageHero({ eyebrow, title, titleAccent, intro, image, video, acc
             muted
             loop
             playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-50"
+            className="absolute inset-0 w-full h-full object-cover opacity-60 grayscale"
           >
             <source src={video} type="video/mp4" />
           </video>
@@ -52,7 +52,7 @@ export function PageHero({ eyebrow, title, titleAccent, intro, image, video, acc
           image && (
             <Image
               src={image}
-              alt=""
+              alt={title}
               fill
               priority
               className="object-cover opacity-40 grayscale"
@@ -63,25 +63,22 @@ export function PageHero({ eyebrow, title, titleAccent, intro, image, video, acc
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/40 via-transparent to-neutral-950" />
       </motion.div>
 
-      {/* Centered Content matching CareersHero */}
+      {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full text-center">
+        {/* Eyebrow */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex items-center justify-center gap-2 mb-6 md:mb-8"
         >
-          <span
-            className={cn(
-              "w-1.5 h-1.5 rounded-full animate-pulse",
-              ACCENT[accent]
-            )}
-          />
+          <span className={cn("w-1.5 h-1.5 rounded-full animate-pulse", dotClass)} />
           <span className="text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-white/70">
             {eyebrow}
           </span>
         </motion.div>
-        
+
+        {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -89,9 +86,13 @@ export function PageHero({ eyebrow, title, titleAccent, intro, image, video, acc
           className="text-4xl md:text-6xl lg:text-7xl xl:text-[80px] font-serif font-normal tracking-tight text-white leading-[1.05] max-w-5xl mx-auto mb-10"
         >
           {title}
-          <br className="hidden md:block" /> {titleAccent}
+          <br className="hidden md:block" />
+          <span className="text-white/80 font-normal">
+            {" "}{titleAccent}
+          </span>
         </motion.h1>
 
+        {/* Intro */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -102,7 +103,7 @@ export function PageHero({ eyebrow, title, titleAccent, intro, image, video, acc
         </motion.p>
       </div>
 
-      {/* Scroll indicator matching CareersHero */}
+      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -110,7 +111,7 @@ export function PageHero({ eyebrow, title, titleAccent, intro, image, video, acc
         className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10"
       >
         <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-white/50">
-          Explore
+          Discover
         </span>
         <div className="w-[1px] h-12 bg-white/20 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1/2 bg-white animate-scroll-line" />
