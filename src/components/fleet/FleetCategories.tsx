@@ -47,7 +47,7 @@ export function FleetCategories() {
                     {/* Badge */}
                     <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5">
                       <span className="font-mono text-[10px] font-semibold text-slate-600 tracking-[0.2em]">
-                        {cat.number} / 05
+                        {cat.number} / {String(categories.length).padStart(2, '0')}
                       </span>
                     </div>
                     {/* Unit count badge */}

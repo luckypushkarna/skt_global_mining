@@ -57,6 +57,38 @@ export const MECHANISED_FLEET = {
       image: "/utility-service.webp",
       models: ["Toyota Land Cruiser HZJ", "MEM Mining Vehicles", "Custom carriers"],
     },
+    {
+      number: "06",
+      type: "Independent Diesel Bowsers",
+      count: "Active units",
+      desc: "Dedicated self-reliant diesel bowsers providing continuous, independent refueling for the underground fleet, eliminating dependency on surface fuel transit.",
+      image: "/diesel-bowser.jpg",
+      models: ["Underground Refueling Bowser"],
+    },
+    {
+      number: "07",
+      type: "Self-Developed LMVs",
+      count: "Active units",
+      desc: "Self-developed Light Motor Vehicles (LMVs) custom-engineered specifically for underground operation monitoring, supervisory access, and personnel transport.",
+      image: "/lmv-monitoring.jpg",
+      models: ["SKT Custom LMV"],
+    },
+    {
+      number: "08",
+      type: "Passenger Carriers",
+      count: "Active units",
+      desc: "Self-developed passenger carriers designed for the safe and comfortable transport of workers underground. Engineered to reduce transit fatigue, ensuring crews arrive ready and increasing overall productivity.",
+      image: "/passenger-carrier.jpg",
+      models: ["SKT Custom Passenger Carrier"],
+    },
+    {
+      number: "09",
+      type: "Self-Developed Utility Vehicles",
+      count: "Active units",
+      desc: "Self-developed utility vehicles engineered for efficient underground material shifting and rapid deployment of maintenance crews, ensuring equipment servicing is handled swiftly to maintain high operational uptime.",
+      image: "/utility-vehicle.jpg",
+      models: ["SKT Custom Utility Vehicle"],
+    },
   ],
 
   gallery: [
