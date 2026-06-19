@@ -118,7 +118,7 @@ const parseWeb3FormsError = (
         hint: "Please email us directly at Info@sktglobalminings.com",
       };
     }
-    
+
     return {
       title: "Authentication failed",
       message: "The form access key is invalid or restricted.",
