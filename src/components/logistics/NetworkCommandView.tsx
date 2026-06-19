@@ -1,31 +1,202 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { NETWORK_NODES, NETWORK_FLOWS } from "@/data/logistics-network";
-import { Map, MapMarker, MarkerContent, MapControls, MapRoute } from "@/components/ui/map";
+import { Map, useMap, MapMarker, MarkerContent, MapControls } from "@/components/ui/map";
+import type MapLibreGL from "maplibre-gl";
+
+/* ── Module-level counter for unique MapLibre layer IDs ── */
+let flowIdCounter = 0;
+
+/* ──────────────────────────────────────────────
+   Animated Flow Line – "train on tracks" effect
+   Uses the Mapbox "marching ants" dash-array cycling
+   technique to show material flowing from → to.
+   ────────────────────────────────────────────── */
+
+// Pre-compute dash array sequence for smooth marching animation.
+// dashLen=3, gapLen=4, totalPeriod=7.
+// Phase A: leading invisible gap grows, trailing dash shrinks
+// Phase B: wrap-around — leading dash grows back
+function buildDashSequence(dashLen: number, gapLen: number, steps: number) {
+  const seq: number[][] = [];
+  const half = Math.floor(steps / 2);
+
+  // Phase A: shift the dash forward by increasing leading gap
+  for (let i = 0; i < half; i++) {
+    const t = (i / half) * dashLen;
+    seq.push([t, gapLen, dashLen - t]);
+  }
+
+  // Phase B: wrap-around — the dash re-enters from behind the gap
+  for (let i = 0; i < half; i++) {
+    const t = (i / half) * gapLen;
+    seq.push([0, t, dashLen, gapLen - t]);
+  }
+
+  return seq;
+}
+
+const DASH_SEQUENCE = buildDashSequence(3, 4, 40);
+
+function AnimatedFlowLine({
+  coordinates,
+  color,
+  width = 1.5,
+  opacity = 0.5,
+  speed = 1,
+}: {
+  coordinates: [number, number][];
+  color: string;
+  width?: number;
+  opacity?: number;
+  speed?: number;
+}) {
+  const { map, isLoaded } = useMap();
+  const idsRef = useRef(() => {
+    const n = flowIdCounter++;
+    return {
+      source: `afl-src-${n}`,
+      bgLayer: `afl-bg-${n}`,
+      fgLayer: `afl-fg-${n}`,
+    };
+  });
+  const ids = useRef(idsRef.current()).current;
+  const animRef = useRef<number>(0);
+  const stepRef = useRef(0);
+  const lastFrameRef = useRef(0);
+
+  useEffect(() => {
+    if (!isLoaded || !map) return;
+
+    // Bail if source/layer already exists (hot-reload safety)
+    if (map.getSource(ids.source)) return;
+
+    // Add GeoJSON source
+    map.addSource(ids.source, {
+      type: "geojson",
+      data: {
+        type: "Feature",
+        properties: {},
+        geometry: { type: "LineString", coordinates },
+      },
+    });
+
+    // Background layer – faint static track line
+    map.addLayer({
+      id: ids.bgLayer,
+      type: "line",
+      source: ids.source,
+      layout: { "line-join": "round", "line-cap": "round" },
+      paint: {
+        "line-color": color,
+        "line-width": width,
+        "line-opacity": opacity * 0.3,
+      },
+    });
+
+    // Foreground layer – the animated "moving" dashes
+    map.addLayer({
+      id: ids.fgLayer,
+      type: "line",
+      source: ids.source,
+      layout: { "line-join": "round", "line-cap": "butt" },
+      paint: {
+        "line-color": color,
+        "line-width": width + 1,
+        "line-opacity": opacity,
+        "line-dasharray": DASH_SEQUENCE[0] || [0, 4, 3],
+      },
+    });
+
+    // Animation loop — cycle through the pre-computed dash sequence
+    function animate(timestamp: number) {
+      // Throttle to ~30 fps to keep it performant
+      if (timestamp - lastFrameRef.current < 33) {
+        animRef.current = requestAnimationFrame(animate);
+        return;
+      }
+      lastFrameRef.current = timestamp;
+
+      stepRef.current =
+        (stepRef.current + speed * 0.5) % DASH_SEQUENCE.length;
+      const idx = Math.floor(stepRef.current);
+
+      try {
+        if (map!.getLayer(ids.fgLayer)) {
+          map!.setPaintProperty(
+            ids.fgLayer,
+            "line-dasharray",
+            DASH_SEQUENCE[idx],
+          );
+        }
+      } catch {
+        // layer may have been removed during cleanup
+      }
+
+      animRef.current = requestAnimationFrame(animate);
+    }
+
+    animRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      cancelAnimationFrame(animRef.current);
+      try {
+        if (map.getLayer(ids.fgLayer)) map.removeLayer(ids.fgLayer);
+        if (map.getLayer(ids.bgLayer)) map.removeLayer(ids.bgLayer);
+        if (map.getSource(ids.source)) map.removeSource(ids.source);
+      } catch {
+        // ignore
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoaded, map]);
+
+  // Keep coordinates in sync
+  useEffect(() => {
+    if (!isLoaded || !map || coordinates.length < 2) return;
+    const source = map.getSource(ids.source) as MapLibreGL.GeoJSONSource;
+    if (source) {
+      source.setData({
+        type: "Feature",
+        properties: {},
+        geometry: { type: "LineString", coordinates },
+      });
+    }
+  }, [isLoaded, map, coordinates, ids.source]);
+
+  return null;
+}
+
 
 const NODE_COLORS: Record<string, string> = {
-  "open-pit":     "#64748B", // slate-500
-  "underground":  "#475569", // slate-600
-  "exploration":  "#94A3B8", // slate-400
-  "concentrator": "#475569", // slate-600
-  "smelter":      "#334155", // slate-700
-  "refinery":     "#1E293B", // slate-800
-  "rail-hub":     "#64748B", // slate-500
-  "power":        "#CBD5E1", // slate-300
-  "water":        "#94A3B8", // slate-400
-  "port":         "#0F172A", // slate-900
-  "settlement":   "#CBD5E1", // slate-300
+  "open-pit":     "#F59E0B", // amber-500
+  "underground":  "#A8A29E", // stone-400
+  "exploration":  "#10B981", // emerald-500
+  "concentrator": "#06B6D4", // cyan-500
+  "smelter":      "#EF4444", // red-500
+  "refinery":     "#8B5CF6", // violet-500
+  "rail-hub":     "#F97316", // orange-500
+  "power":        "#FBBF24", // amber-400
+  "water":        "#38BDF8", // sky-400
+  "port":         "#3B82F6", // blue-500
+  "settlement":   "#22C55E", // green-500
 };
 
 const FLOW_COLORS: Record<string, string> = {
-  ore: "#94A3B8",
-  concentrate: "#64748B",
-  matte: "#475569",
-  refined: "#334155",
-  export: "#0F172A",
-  power: "#CBD5E1",
+  ore: "#F59E0B",        // amber – raw material
+  concentrate: "#06B6D4", // cyan – processed ore
+  matte: "#EF4444",      // red – smelted product
+  refined: "#8B5CF6",    // violet – refined copper
+  export: "#3B82F6",     // blue – export shipping
+  power: "#FBBF24",      // yellow – energy supply
+};
+
+const FLOW_SPEEDS: Record<string, number> = {
+  high: 1.2,
+  medium: 0.8,
+  low: 0.4,
 };
 
 export function NetworkCommandView() {
@@ -144,7 +315,7 @@ export function NetworkCommandView() {
             scrollZoom={false}
             touchZoomRotate={false}
           >
-            {/* Connections (Routes) */}
+            {/* Animated Flow Connections (Routes) */}
             {NETWORK_FLOWS.map((flow, i) => {
               const fromNode = NETWORK_NODES.find((n) => n.id === flow.from);
               const toNode = NETWORK_NODES.find((n) => n.id === flow.to);
@@ -156,16 +327,16 @@ export function NetworkCommandView() {
               const lon2 = 27.2 + (toNode.x / 100) * 1.8;
               const lat2 = -12.2 - (toNode.y / 100) * 1.2;
               const color = FLOW_COLORS[flow.type] || "#94A3B8";
+              const speed = FLOW_SPEEDS[flow.intensity] || 0.8;
 
               return (
-                <MapRoute
+                <AnimatedFlowLine
                   key={`flow-${i}`}
                   coordinates={[[lon1, lat1], [lon2, lat2]]}
                   color={color}
                   width={1.5}
-                  opacity={0.35}
-                  dashArray={[3, 3]}
-                  interactive={false}
+                  opacity={0.6}
+                  speed={speed}
                 />
               );
             })}
@@ -296,25 +467,25 @@ export function NetworkCommandView() {
         {/* Legend */}
         <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 text-[10px] font-mono uppercase tracking-widest text-slate-400">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-slate-500" /> Open Pit
+            <span className="w-2 h-2 rounded-full bg-amber-500" /> Open Pit
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-slate-600" /> Underground
+            <span className="w-2 h-2 rounded-full bg-stone-400" /> Underground
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-slate-700" /> Processing
+            <span className="w-2 h-2 rounded-full bg-cyan-500" /> Processing
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-slate-800" /> Smelter
+            <span className="w-2 h-2 rounded-full bg-red-500" /> Smelter
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-slate-900" /> Refinery
+            <span className="w-2 h-2 rounded-full bg-violet-500" /> Refinery
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-slate-400" /> Rail
+            <span className="w-2 h-2 rounded-full bg-orange-500" /> Rail
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-slate-900" /> Port
+            <span className="w-2 h-2 rounded-full bg-blue-500" /> Port
           </div>
         </div>
       </div>
