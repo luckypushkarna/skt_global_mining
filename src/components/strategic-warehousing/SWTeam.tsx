@@ -19,7 +19,7 @@ export function SWTeam() {
               </span>
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900 leading-[1.08] mb-5">
+            <h2 className="text-3xl md:text-4xl tracking-tight text-slate-900 leading-[1.08] mb-5 font-serif font-normal">
               {team.title}
             </h2>
 

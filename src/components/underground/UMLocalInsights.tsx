@@ -20,7 +20,7 @@ export function UMLocalInsights() {
                 {localInsights.eyebrow}
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900 leading-[1.1] mb-6">
+            <h2 className="text-3xl md:text-4xl tracking-tight text-slate-900 leading-[1.1] mb-6 font-serif font-normal">
               {localInsights.title}
             </h2>
             <p className="text-base lg:text-lg text-slate-600 leading-relaxed font-light mb-8">

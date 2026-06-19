@@ -17,7 +17,7 @@ export default function AntiBriberyPage(): JSX.Element {
           <span className="text-xs font-semibold uppercase tracking-wider text-rose-600 block mb-3">
             Ethics & Governance
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 tracking-tight leading-none">
+          <h1 className="text-4xl md:text-5xl text-neutral-900 tracking-tight leading-none font-serif font-normal">
             Anti-Bribery Policy
           </h1>
           <p className="text-sm text-neutral-500 mt-4">
@@ -29,14 +29,14 @@ export default function AntiBriberyPage(): JSX.Element {
         <div className="prose prose-neutral max-w-none space-y-8 text-neutral-600 leading-relaxed text-[15px]">
           
           <section className="space-y-3">
-            <h2 className="text-xl font-bold text-neutral-900 tracking-tight">1. Policy Statement</h2>
+            <h2 className="text-xl text-neutral-900 tracking-tight font-serif font-normal">1. Policy Statement</h2>
             <p>
               SKT Global Mining & Services Limited maintains a zero-tolerance stance toward all forms of bribery and corruption. We are committed to conducting our business operations ethically, transparently, and with integrity. This Policy applies to all directors, officers, employees, agents, and contractors across all global and local offices.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-bold text-neutral-900 tracking-tight">2. Legal Frameworks</h2>
+            <h2 className="text-xl text-neutral-900 tracking-tight font-serif font-normal">2. Legal Frameworks</h2>
             <p>
               Our operations are subject to strict anti-corruption laws, and we comply fully with:
             </p>
@@ -48,7 +48,7 @@ export default function AntiBriberyPage(): JSX.Element {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-bold text-neutral-900 tracking-tight">3. Prohibited Conduct</h2>
+            <h2 className="text-xl text-neutral-900 tracking-tight font-serif font-normal">3. Prohibited Conduct</h2>
             <p>
               Under this Policy, the following activities are strictly prohibited:
             </p>
@@ -60,14 +60,14 @@ export default function AntiBriberyPage(): JSX.Element {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-bold text-neutral-900 tracking-tight">4. Gift & Hospitality Standards</h2>
+            <h2 className="text-xl text-neutral-900 tracking-tight font-serif font-normal">4. Gift & Hospitality Standards</h2>
             <p>
               Gifts or corporate hospitality may only be offered or accepted if they are nominal in value, occur infrequently, comply with local laws, and are logged transparently in the Corporate Gift Register. Cash or cash-equivalent gifts are prohibited under all circumstances.
             </p>
           </section>
 
           <section className="space-y-3 pb-6 border-b border-neutral-100">
-            <h2 className="text-xl font-bold text-neutral-900 tracking-tight">5. Reporting & Whistleblowing</h2>
+            <h2 className="text-xl text-neutral-900 tracking-tight font-serif font-normal">5. Reporting & Whistleblowing</h2>
             <p>
               We protect whistleblowers who report suspected violations in good faith. Reports can be filed anonymously and are handled through our internal audit compliance department:
               <br />

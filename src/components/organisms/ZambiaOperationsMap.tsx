@@ -118,7 +118,7 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
 
             <h2
               id="operations-map-heading"
-              className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-[1.1] mb-5"
+              className="text-3xl md:text-4xl lg:text-5xl text-white tracking-tight leading-[1.1] mb-5 font-serif font-normal"
             >
               Where We
               <br />

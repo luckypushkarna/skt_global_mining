@@ -85,8 +85,8 @@ export default function SignatureVideo() {
               Our World
             </p>
             <h2
-              className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.08] max-w-3xl mx-auto"
-              style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+              className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-white leading-[1.08] max-w-3xl mx-auto font-serif font-normal"
+              
             >
               Where ambition meets
               <br />

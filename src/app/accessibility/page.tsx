@@ -17,7 +17,7 @@ export default function AccessibilityPage(): JSX.Element {
           <span className="text-xs font-semibold uppercase tracking-wider text-rose-600 block mb-3">
             Inclusion & Access
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 tracking-tight leading-none">
+          <h1 className="text-4xl md:text-5xl text-neutral-900 tracking-tight leading-none font-serif font-normal">
             Accessibility Statement
           </h1>
           <p className="text-sm text-neutral-500 mt-4">
@@ -29,14 +29,14 @@ export default function AccessibilityPage(): JSX.Element {
         <div className="prose prose-neutral max-w-none space-y-8 text-neutral-600 leading-relaxed text-[15px]">
           
           <section className="space-y-3">
-            <h2 className="text-xl font-bold text-neutral-900 tracking-tight">1. Our Commitment</h2>
+            <h2 className="text-xl text-neutral-900 tracking-tight font-serif font-normal">1. Our Commitment</h2>
             <p>
               SKT Global Mining & Services Limited is dedicated to ensuring digital accessibility for all visitors, including individuals with disabilities. We continually review and improve our web interface to deliver an inclusive experience, targeting alignment with the <strong>Web Content Accessibility Guidelines (WCAG) 2.1 Level AA</strong> criteria.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-bold text-neutral-900 tracking-tight">2. Implemented Accessibility Features</h2>
+            <h2 className="text-xl text-neutral-900 tracking-tight font-serif font-normal">2. Implemented Accessibility Features</h2>
             <p>
               To maintain compliance and ease of use, we have integrated the following features into our Site structure:
             </p>
@@ -50,7 +50,7 @@ export default function AccessibilityPage(): JSX.Element {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-bold text-neutral-900 tracking-tight">3. Known Compliance Limitations</h2>
+            <h2 className="text-xl text-neutral-900 tracking-tight font-serif font-normal">3. Known Compliance Limitations</h2>
             <p>
               While we strive to ensure total accessibility, certain third-party elements integrated into the Site may present navigation difficulties. These include:
             </p>
@@ -61,7 +61,7 @@ export default function AccessibilityPage(): JSX.Element {
           </section>
 
           <section className="space-y-3 pb-6 border-b border-neutral-100">
-            <h2 className="text-xl font-bold text-neutral-900 tracking-tight">4. Feedback & Contact Support</h2>
+            <h2 className="text-xl text-neutral-900 tracking-tight font-serif font-normal">4. Feedback & Contact Support</h2>
             <p>
               If you experience any accessibility barriers or require assistance with any information on this Site, please contact our support team:
               <br />

@@ -128,15 +128,15 @@ export function HeroSection(): JSX.Element {
           <div className="overflow-hidden pb-2 -mb-2">
             <h1
               ref={headline1Ref}
-              className="text-[36px] md:text-[40px] text-white font-extrabold leading-[1.1] tracking-[-0.02em]"
+              className="text-[36px] md:text-[40px] text-white font-serif font-normal leading-[1.1] tracking-[-0.02em]"
             >
               Powering Zambia&apos;s<br />Copper Future{" "}
               <span 
-                className="relative inline-block font-serif italic font-medium tracking-normal text-[1.05em] ml-1" 
+                className="relative inline-block font-serif font-medium tracking-normal text-[1.05em]"
                 style={{ 
-                  WebkitTextStroke: "1px white", 
+                  WebkitTextStroke: "0.5px white", 
                   WebkitTextFillColor: "rgba(255, 255, 255, 0.2)",
-                  color: "rgba(255, 255, 255, 0.2)" 
+                  color: "rgba(255, 255, 255, 0.2)"
                 }}
               >
                 Today

@@ -319,7 +319,7 @@ function FeaturedArticle({ article }: { article: Article }) {
             </div>
             <a href="#" className="group">
               <h2
-                className="text-2xl md:text-3xl font-normal text-neutral-900 leading-[1.25] tracking-[-0.01em] mb-5 group-hover:text-neutral-600 transition-colors duration-300"
+                className="text-2xl md:text-3xl font-normal text-neutral-900 leading-[1.25] tracking-[-0.01em] mb-5 group-hover:text-neutral-600 transition-colors duration-300 font-serif"
                 style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
               >
                 {article.headline}
@@ -470,7 +470,7 @@ export default function NewsroomPage() {
       <header className="max-w-[1200px] mx-auto px-5 md:px-8 pt-12 md:pt-16 pb-8 md:pb-10 border-b border-neutral-900">
         <FadeIn>
           <h1
-            className="text-4xl md:text-5xl lg:text-6xl font-normal text-neutral-900 tracking-[-0.03em] mb-4"
+            className="text-4xl md:text-5xl lg:text-6xl font-normal text-neutral-900 tracking-[-0.03em] mb-4 font-serif"
             style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
           >
             Newsroom

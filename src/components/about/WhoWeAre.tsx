@@ -8,24 +8,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 const disciplines = [
   {
-    word: "Mining",
-    description: "Extracting value from the earth with precision and care",
+    word: "Mechanised Mining",
+    description: "Over 225 machines deployed to advance sustainable, profitable, and safe operations",
   },
   {
-    word: "Engineering",
-    description: "Solving complex challenges through technical excellence",
+    word: "Safety First",
+    description: "Rigorous frameworks ensuring every employee returns home safely each day",
   },
   {
-    word: "Infrastructure",
-    description: "Building systems that connect and empower communities",
+    word: "Talent Development",
+    description: "Empowering 1,500+ Zambian professionals to rise to leadership excellence",
   },
   {
-    word: "People",
-    description: "Investing in the talent that drives everything we do",
+    word: "Strategic Partnerships",
+    description: "Setting new benchmarks alongside Mopani Copper Mines and IRH",
   },
   {
-    word: "Sustainability",
-    description: "Ensuring our legacy extends far beyond extraction",
+    word: "Social Responsibility",
+    description: "Allocating 20% of net profits to strengthen communities and enhance livelihoods",
   },
 ];
 
@@ -89,8 +89,8 @@ export default function WhoWeAre() {
               Who We Are
             </span>
             <h2
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1]"
-              style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+              className="text-3xl md:text-4xl lg:text-5xl tracking-[-0.03em] text-slate-900 leading-[1.1] font-serif font-normal"
+              
             >
               Five disciplines.
               <br />
@@ -108,9 +108,7 @@ export default function WhoWeAre() {
                   <div>
                     <h3
                       className="text-2xl lg:text-3xl font-extrabold tracking-[-0.03em] text-slate-900 leading-tight mb-3 group-hover:text-slate-600 transition-colors duration-500"
-                      style={{
-                        fontFamily: "'Georgia', 'Times New Roman', serif",
-                      }}
+                      
                     >
                       {d.word}
                     </h3>

@@ -9,29 +9,29 @@ gsap.registerPlugin(ScrollTrigger);
 
 const eras = [
   {
-    label: "Past",
-    period: "1968 - 2000",
-    title: "Foundation",
+    label: "Inception",
+    period: "First 6 Months",
+    title: "Mobilisation",
     description:
-      "From a single exploration license to a regional mining enterprise, the early decades were defined by geological discovery, disciplined capital deployment, and the formation of a safety-first culture that would become our enduring signature.",
+      "Within an extraordinary period of just six months, SKT successfully mobilised a fleet of underground equipment and recruited more than 1,500 Zambian citizens and expatriate experts.",
     image:
       "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=900&h=600&fit=crop",
   },
   {
-    label: "Present",
-    period: "2000 - 2024",
-    title: "Transformation",
+    label: "Growth",
+    period: "10 Months",
+    title: "Operational Excellence",
     description:
-      "A generation of growth across four continents - embracing technology, committing to sustainability, diversifying into infrastructure, and proving that scale and responsibility are not opposing forces but complementary ones.",
+      "Achieved 50% of development and production targets set by Mopani Copper Mines, supported by an initial investment of over US$50 million and 225 underground mining machines.",
     image:
       "https://images.unsplash.com/photo-1578496479914-7ef3b0193be3?w=900&h=600&fit=crop",
   },
   {
     label: "Future",
-    period: "2025 - Beyond",
-    title: "Legacy",
+    period: "Beyond",
+    title: "Expansion",
     description:
-      "The chapters ahead will be written by those who understand that mining's greatest contribution is not what we extract, but what we build - for communities, for economies, and for the generations who will inherit both our resources and our responsibilities.",
+      "Positioning ourselves for substantial year-on-year growth across Zambia, India, the DRC, and South Africa, while pioneering innovation in mining.",
     image:
       "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=900&h=600&fit=crop",
   },
@@ -137,7 +137,7 @@ function TimelineEra({
         </p>
         <h3
           className="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight mb-6"
-          style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+          
         >
           {era.title}
         </h3>
@@ -202,10 +202,10 @@ export default function VisualTimeline() {
             Our Journey
           </span>
           <h2
-            className="text-3xl md:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight"
-            style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+            className="text-3xl md:text-4xl lg:text-5xl text-slate-900 tracking-tight font-serif font-normal"
+            
           >
-            Built through generations
+            A Journey of Ambition and Speed
           </h2>
         </div>
 

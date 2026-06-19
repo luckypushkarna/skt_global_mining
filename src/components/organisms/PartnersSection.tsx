@@ -65,7 +65,7 @@ export function PartnersSection(): JSX.Element {
 
               <h2
                 id="partners-heading"
-                className="text-[32px] sm:text-[42px] lg:text-[56px] font-semibold tracking-[-0.02em] leading-[1.05] text-neutral-900"
+                className="text-[32px] sm:text-[42px] lg:text-[56px] tracking-[-0.02em] leading-[1.05] text-neutral-900 font-serif font-normal"
               >
                 Strategic Partnerships.
                 <br />

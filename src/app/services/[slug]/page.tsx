@@ -110,7 +110,7 @@ export default function ServiceDetailPage() {
               <Icon size={22} className="text-white" strokeWidth={1.5} />
             </div>
             <h1
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-[80px] font-extrabold tracking-[-0.03em] leading-none text-white"
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-[80px] tracking-[-0.03em] leading-none text-white font-serif font-normal"
             >
               {card.title}
             </h1>

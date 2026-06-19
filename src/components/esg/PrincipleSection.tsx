@@ -23,7 +23,7 @@ export function PrincipleSection() {
             Three Pillars
           </span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-4 leading-tight">
+        <h2 className="text-3xl md:text-4xl tracking-tight text-slate-900 mb-4 leading-tight font-serif font-normal">
           Our Core Principles
         </h2>
         <p className="text-slate-500 text-base font-light leading-relaxed">

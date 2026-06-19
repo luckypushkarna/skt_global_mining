@@ -42,7 +42,7 @@ export function UMProcessStory() {
               {UNDERGROUND_MINING.process.eyebrow}
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.1]">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-slate-900 leading-[1.1] font-serif font-normal">
             {UNDERGROUND_MINING.process.title}
           </h2>
         </div>

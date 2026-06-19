@@ -295,7 +295,7 @@ export function InteractiveBentoGallery({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="text-5xl md:text-6xl font-black text-neutral-900 tracking-tight leading-[0.95] mb-5"
+                className="text-5xl md:text-6xl text-neutral-900 tracking-tight leading-[0.95] mb-5 font-serif font-normal"
               >
                 {title}
               </motion.h2>

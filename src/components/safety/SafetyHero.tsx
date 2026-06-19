@@ -33,7 +33,7 @@ export function SafetyHero() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-xl md:text-2xl font-semibold tracking-tight text-white mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+          <h1 className="text-xl md:text-2xl tracking-tight text-white mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-serif font-normal">
             Safety is not a target.{" "}
             <span className="text-white/80 font-normal">It&apos;s how we operate.</span>
           </h1>

@@ -14,7 +14,7 @@ export function MetricGrid() {
             Performance Metrics
           </span>
         </div>
-        <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-slate-900">
+        <h2 className="text-2xl md:text-3xl tracking-tight text-slate-900 font-serif font-normal">
           Measured. Verified. Reported.
         </h2>
         <p className="text-slate-500 text-sm mt-2 max-w-xl">

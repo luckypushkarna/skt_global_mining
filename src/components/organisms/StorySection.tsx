@@ -202,7 +202,7 @@ export function StorySection(): JSX.Element {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-3xl font-semibold text-neutral-900 tracking-tight leading-[1.1]"
+          className="text-3xl text-neutral-900 tracking-tight leading-[1.1] font-serif font-normal"
         >
           What Makes Us
           <br />
@@ -239,7 +239,7 @@ export function StorySection(): JSX.Element {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="text-display-md font-semibold text-neutral-900 tracking-tight leading-tight"
+                className="text-display-md text-neutral-900 tracking-tight leading-tight font-serif font-normal"
               >
                 What Makes Us
                 <br />

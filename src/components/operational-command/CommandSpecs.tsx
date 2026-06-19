@@ -15,7 +15,7 @@ export function CommandSpecs() {
               Specifications
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-emerald-50 leading-[1.08] mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-emerald-50 leading-[1.08] mb-4 font-serif font-normal">
             {specs.title}
           </h2>
           <p className="text-emerald-100/70">

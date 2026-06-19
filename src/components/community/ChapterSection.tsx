@@ -81,7 +81,7 @@ export function ChapterSection() {
 
                   {/* Text */}
                   <div className={`lg:col-span-7 lg:[direction:ltr] ${isEven ? "lg:pt-6" : "lg:pt-6"}`}>
-                    <h2 className="text-2xl md:text-3xl font-bold text-slate-900 leading-tight tracking-tight mb-5">
+                    <h2 className="text-2xl md:text-3xl text-slate-900 leading-tight tracking-tight mb-5 font-serif font-normal">
                       {chapter.headline}
                     </h2>
                     <p className="text-slate-600 text-base leading-[1.85] mb-6 font-light">

@@ -40,7 +40,7 @@ export default function AboutFooter() {
           <div className="md:col-span-4">
             <p
               className="text-lg font-semibold text-slate-900 tracking-[-0.01em] mb-4"
-              style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+              
             >
               Global Mining &<br />
               Infrastructure Corporation

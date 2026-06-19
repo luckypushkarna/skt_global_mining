@@ -17,7 +17,7 @@ export function LiveCounter() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-[1.08]">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-slate-900 leading-[1.08] font-serif font-normal">
               By the numbers,
               <br />
               <span className="text-slate-400 font-light">verified independently.</span>

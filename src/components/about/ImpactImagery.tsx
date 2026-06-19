@@ -132,10 +132,10 @@ export default function ImpactImagery() {
             Impact
           </span>
           <h2
-            className="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight max-w-xl"
-            style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+            className="text-3xl md:text-4xl text-slate-900 tracking-tight max-w-xl font-serif font-normal"
+            
           >
-            The world we build, in every frame
+            A commitment to Zambia, in every frame
           </h2>
         </div>
 

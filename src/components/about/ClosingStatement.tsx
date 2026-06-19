@@ -68,10 +68,9 @@ export default function ClosingStatement() {
         <div ref={line1Ref} className="overflow-hidden opacity-0">
           <p
             className="text-[clamp(1.8rem,5vw,4.5rem)] font-semibold text-white leading-[1.15] tracking-[-0.03em]"
-            style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+            
           >
-            The resources we develop today will shape the world our children
-            inherit tomorrow.
+            We are more than a mining company; we are a partner in progress and a catalyst for economic growth.
           </p>
         </div>
 
@@ -84,16 +83,16 @@ export default function ClosingStatement() {
         <div ref={line2Ref} className="opacity-0">
           <p
             className="text-xl md:text-2xl font-semibold text-white/40 tracking-[-0.01em]"
-            style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+            
           >
-            This is why we exist.
+            Creating sustainable value for all stakeholders.
           </p>
         </div>
       </div>
 
       <div className="mt-12">
         <p className="text-[10px] tracking-[0.3em] uppercase text-white/20 font-medium">
-          Est. 1968
+          SKT Global Mining & Services Limited
         </p>
       </div>
     </section>

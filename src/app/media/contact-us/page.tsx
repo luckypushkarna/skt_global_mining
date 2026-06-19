@@ -35,7 +35,7 @@ export default function ContactUsPage(): JSX.Element {
 
             {/* Page Heading */}
             <div className="space-y-2">
-              <h1 className="text-2xl md:text-4xl font-bold tracking-tight text-ink">
+              <h1 className="text-2xl md:text-4xl tracking-tight text-ink font-serif font-normal">
                 Contact Us
               </h1>
               <p className="text-xs text-ink-soft">

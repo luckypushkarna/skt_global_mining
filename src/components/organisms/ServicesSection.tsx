@@ -306,7 +306,7 @@ export function ServicesSection(): JSX.Element {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[32px] sm:text-[42px] lg:text-[56px] font-semibold tracking-[-0.02em] leading-[1.05] text-neutral-900 mb-7"
+              className="text-[32px] sm:text-[42px] lg:text-[56px] tracking-[-0.02em] leading-[1.05] text-neutral-900 mb-7 font-serif font-normal"
             >
               The SKT Mining
               <br />

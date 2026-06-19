@@ -76,7 +76,7 @@ export function NetworkCommandView() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15 }}
-              className="text-xl md:text-2xl font-semibold tracking-tight text-slate-900 max-w-2xl mb-4"
+              className="text-xl md:text-2xl tracking-tight text-slate-900 max-w-2xl mb-4 font-serif font-normal"
             >
               One intelligent network.{" "}
               <span className="text-slate-400">Every asset connected.</span>

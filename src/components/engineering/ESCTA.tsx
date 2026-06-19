@@ -13,7 +13,7 @@ export function ESCTA() {
             <p className="text-[11px] font-semibold tracking-[0.25em] uppercase text-white/40 mb-3">
               Get in Touch
             </p>
-            <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-white mb-3">
+            <h2 className="text-2xl lg:text-3xl tracking-tight text-white mb-3 font-serif font-normal">
               {cta.title}
             </h2>
             <p className="text-sm lg:text-base text-white/55 leading-relaxed max-w-lg font-light">

@@ -209,11 +209,13 @@ function FeaturedCard({ item }: { item: NavItem }) {
 // ─── Quick Link ───
 function QuickLink({ item }: { item: NavItem }) {
   const Icon = item.icon;
+  const isComingSoon = item.badge === "Coming soon";
   return (
     <NavigationMenuLink asChild>
       <Link
         href={item.href}
-        className="flex items-center gap-2 px-1.5 py-1 rounded-md hover:bg-slate-50 transition-colors group/link"
+        onClick={(e) => { if (isComingSoon) e.preventDefault(); }}
+        className={cn("flex items-center gap-2 px-1.5 py-1 rounded-md transition-colors group/link", isComingSoon ? "cursor-default opacity-80" : "hover:bg-slate-50")}
       >
         {Icon && (
           <Icon
@@ -221,10 +223,13 @@ function QuickLink({ item }: { item: NavItem }) {
             strokeWidth={1.75}
           />
         )}
-        <span className="text-[12px] font-medium text-slate-700 group-hover/link:text-slate-900 flex-1 text-left">
+        <span className="text-[12px] font-medium text-slate-700 group-hover/link:text-slate-900 flex-1 text-left flex items-center gap-2">
           {item.title}
+          {item.badge && (
+            <span className="text-[9px] font-bold bg-skt-blue text-white px-1.5 py-0.5 rounded-full uppercase tracking-wider">{item.badge}</span>
+          )}
         </span>
-        <ArrowRightIcon className="w-2.5 h-2.5 text-slate-300 opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all" />
+        {!isComingSoon && <ArrowRightIcon className="w-2.5 h-2.5 text-slate-300 opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all" />}
       </Link>
     </NavigationMenuLink>
   );
@@ -333,8 +338,8 @@ function MobileNav({
                               <Link
                                 key={item.href}
                                 href={item.href}
-                                onClick={onClose}
-                                className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-slate-50 transition-colors"
+                                onClick={(e) => { if (item.badge === "Coming soon") e.preventDefault(); else onClose(); }}
+                                className={cn("flex items-center gap-3 px-3 py-3 rounded-lg transition-colors", item.badge === "Coming soon" ? "opacity-80" : "hover:bg-slate-50")}
                               >
                                 {item.icon && (
                                   <item.icon
@@ -342,10 +347,13 @@ function MobileNav({
                                     strokeWidth={1.75}
                                   />
                                 )}
-                                <span className="text-sm text-slate-700 flex-1">
+                                <span className="text-sm text-slate-700 flex-1 flex items-center gap-2">
                                   {item.title}
+                                  {item.badge && (
+                                    <span className="text-[9px] font-bold bg-skt-blue text-white px-1.5 py-0.5 rounded-full uppercase tracking-wider">{item.badge}</span>
+                                  )}
                                 </span>
-                                <ArrowRightIcon className="w-3 h-3 text-slate-300" />
+                                {item.badge !== "Coming soon" && <ArrowRightIcon className="w-3 h-3 text-slate-300" />}
                               </Link>
                             ))}
                           </div>

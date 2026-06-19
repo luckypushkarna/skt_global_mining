@@ -61,7 +61,7 @@ export function CapabilityDetailClient({ slug }: CapabilityDetailClientProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[36px] md:text-5xl lg:text-7xl font-black text-white tracking-tight leading-[1.05] mb-3 lg:mb-4 gpu-accelerate"
+            className="text-[36px] md:text-5xl lg:text-7xl text-white tracking-tight leading-[1.05] mb-3 lg:mb-4 gpu-accelerate font-serif font-normal"
           >
             {capability.title}
           </motion.h1>

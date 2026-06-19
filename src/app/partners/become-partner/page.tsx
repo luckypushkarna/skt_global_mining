@@ -95,7 +95,7 @@ export default function BecomePartnerPage(): JSX.Element {
           >
             <Badge variant="dot">Partnership Program</Badge>
 
-            <h1 className="mt-4 text-[28px] md:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.1]">
+            <h1 className="mt-4 text-[28px] md:text-5xl text-neutral-900 tracking-tight leading-[1.1] font-serif font-normal">
               Become a{" "}
               <span className="text-neutral-400">Partner</span>
             </h1>
@@ -120,7 +120,7 @@ export default function BecomePartnerPage(): JSX.Element {
             <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-neutral-500">
               Why Partner With Us
             </p>
-            <h2 className="mt-3 text-[22px] md:text-3xl font-semibold text-neutral-900 tracking-tight leading-[1.15]">
+            <h2 className="mt-3 text-[22px] md:text-3xl text-neutral-900 tracking-tight leading-[1.15] font-serif font-normal">
               Built for sustainable growth
             </h2>
           </motion.div>
@@ -163,7 +163,7 @@ export default function BecomePartnerPage(): JSX.Element {
             <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-neutral-500">
               Apply Now
             </p>
-            <h2 className="mt-3 text-[22px] md:text-3xl font-semibold text-neutral-900 tracking-tight leading-[1.15]">
+            <h2 className="mt-3 text-[22px] md:text-3xl text-neutral-900 tracking-tight leading-[1.15] font-serif font-normal">
               Start your partnership journey
             </h2>
             <p className="mt-3 text-[13px] text-neutral-500">

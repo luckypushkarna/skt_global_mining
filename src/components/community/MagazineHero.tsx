@@ -45,7 +45,7 @@ export function MagazineHero() {
           </p>
 
           {/* Main headline - editorial serif feel via font-weight contrast */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.05] tracking-tight mb-6 max-w-3xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl text-slate-900 leading-[1.05] tracking-tight mb-6 max-w-3xl font-serif font-normal">
             When a Mining Company
             <br />
             <em className="font-light text-slate-500 not-italic">

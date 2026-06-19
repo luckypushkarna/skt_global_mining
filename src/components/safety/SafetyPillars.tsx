@@ -16,7 +16,7 @@ export function SafetyPillars() {
               Our Approach
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-[1.08] mb-5">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-slate-900 leading-[1.08] mb-5 font-serif font-normal">
             Four pillars of
             <br />
             <span className="text-slate-400 font-light">underground safety.</span>

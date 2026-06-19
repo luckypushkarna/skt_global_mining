@@ -31,7 +31,7 @@ export function UMEnvironment() {
                 {environment.eyebrow}
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.1] mb-5">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-white leading-[1.1] mb-5 font-serif font-normal">
               {environment.title}
             </h2>
             <p className="text-base lg:text-lg text-white/70 leading-relaxed font-light mb-10">

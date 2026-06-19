@@ -44,7 +44,7 @@ export function TypographyStat() {
         <span className="font-mono text-[11px] font-bold tracking-[0.25em] text-sky-400 uppercase block mb-3">
           ── The Metrics of Pride
         </span>
-        <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight max-w-2xl leading-[0.95]">
+        <h2 className="text-4xl md:text-5xl uppercase tracking-tight max-w-2xl leading-[0.95] font-serif font-normal">
           A business is built by people, not machinery.
         </h2>
       </div>

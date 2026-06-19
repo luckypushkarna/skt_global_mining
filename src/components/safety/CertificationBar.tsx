@@ -16,7 +16,7 @@ export function CertificationBar() {
               Independently Verified
             </span>
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white max-w-2xl mx-auto leading-snug">
+          <h2 className="text-2xl md:text-3xl tracking-tight text-white max-w-2xl mx-auto leading-snug font-serif font-normal">
             Certified to international safety standards.
           </h2>
         </div>

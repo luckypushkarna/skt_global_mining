@@ -67,7 +67,7 @@ export default function InfrastructurePage(): JSX.Element {
           >
             <Badge variant="dot">Infrastructure & Facilities</Badge>
 
-            <h1 className="mt-4 text-[28px] md:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.1]">
+            <h1 className="mt-4 text-[28px] md:text-5xl text-neutral-900 tracking-tight leading-[1.1] font-serif font-normal">
               World-Class Facilities &{" "}
               <span className="text-neutral-400">Infrastructure</span>
             </h1>
@@ -124,7 +124,7 @@ export default function InfrastructurePage(): JSX.Element {
             <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-neutral-500">
               Key Infrastructure Pillars
             </p>
-            <h2 className="mt-3 text-[24px] md:text-4xl font-semibold text-neutral-900 tracking-tight leading-[1.15]">
+            <h2 className="mt-3 text-[24px] md:text-4xl text-neutral-900 tracking-tight leading-[1.15] font-serif font-normal">
               The operational backbone of{" "}
               <span className="text-neutral-400">our mining excellence</span>
             </h2>
@@ -182,7 +182,7 @@ export default function InfrastructurePage(): JSX.Element {
               <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-neutral-500">
                 Built for the Long Term
               </p>
-              <h2 className="mt-3 text-[22px] md:text-3xl font-semibold text-neutral-900 tracking-tight leading-[1.15]">
+              <h2 className="mt-3 text-[22px] md:text-3xl text-neutral-900 tracking-tight leading-[1.15] font-serif font-normal">
                 Infrastructure that{" "}
                 <span className="text-neutral-400">scales with us</span>
               </h2>

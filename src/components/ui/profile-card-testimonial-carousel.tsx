@@ -152,7 +152,7 @@ export function TestimonialCarousel({ className }: TestimonialCarouselProps) {
             <div className="flex items-end justify-between gap-6">
               {/* Identity */}
               <div>
-                <h2 className="text-2xl md:text-3xl font-semibold text-white tracking-tight mb-1">
+                <h2 className="text-2xl md:text-3xl text-white tracking-tight mb-1 font-serif font-normal">
                   {chairperson.name}
                 </h2>
                 <p className="text-eyebrow text-slate-400 max-w-xs leading-relaxed">

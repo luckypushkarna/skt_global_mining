@@ -174,7 +174,7 @@ export default function AboutUsSection() {
             <Zap className="w-4 h-4" />
             DISCOVER OUR STORY
           </motion.span>
-          <h2 className="text-4xl md:text-5xl font-black text-neutral-900 tracking-tight leading-none mb-4 text-center">About Us</h2>
+          <h2 className="text-4xl md:text-5xl text-neutral-900 tracking-tight leading-none mb-4 text-center font-serif font-normal">About Us</h2>
           <motion.div
             className="w-24 h-1 bg-skt-navy"
             initial={{ width: 0 }}

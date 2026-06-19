@@ -38,7 +38,7 @@ export function ImpactGrid({ pillars, accent }: ImpactGridProps) {
               Our Approach
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-[1.08]">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-slate-900 leading-[1.08] font-serif font-normal">
             Three areas of
             <br />
             <span className="text-slate-400 font-light">focused investment.</span>

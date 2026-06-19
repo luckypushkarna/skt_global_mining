@@ -14,7 +14,7 @@ export function SWVideo() {
               </span>
             </div>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.08]">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-white leading-[1.08] font-serif font-normal">
               See the work
               <br />
               <span className="text-white/30">behind the work.</span>

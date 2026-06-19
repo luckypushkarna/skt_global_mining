@@ -16,7 +16,7 @@ export function CommandCapabilities() {
             </span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-emerald-50 leading-[1.08]">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-emerald-50 leading-[1.08] font-serif font-normal">
             {capabilities.title}
           </h2>
         </div>

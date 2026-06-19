@@ -38,7 +38,7 @@ export function GallerySection(): JSX.Element {
 
             <h2
               id="gallery-section-heading"
-              className="text-3xl md:text-5xl font-semibold text-white tracking-tight leading-[1.1]"
+              className="text-3xl md:text-5xl text-white tracking-tight leading-[1.1] font-serif font-normal"
             >
               Inside Our
               <br />

@@ -82,7 +82,7 @@ export function CopperBanner(): JSX.Element {
 
           {/* 4. Center Text */}
           <div className="w-full lg:w-1/2 py-8 px-6 lg:py-10 lg:px-6 flex flex-col justify-center text-center lg:text-left z-10 mt-16 md:mt-24 lg:mt-0">
-            <h2 className="text-2xl md:text-3xl lg:text-[32px] font-black tracking-tight text-neutral-950 mb-3 leading-[1.1]">
+            <h2 className="text-2xl md:text-3xl lg:text-[32px] tracking-tight text-neutral-950 mb-3 leading-[1.1] font-serif font-normal">
               The Future of
               <br className="hidden lg:block" />
               Copper Procurement

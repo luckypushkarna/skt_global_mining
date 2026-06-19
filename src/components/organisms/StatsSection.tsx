@@ -212,7 +212,7 @@ export function StatsSection(): JSX.Element {
           <h2
             ref={headlineRef}
             id="safety-heading"
-            className="text-headline"
+            className="text-headline font-serif font-normal"
           >
             Safety Without Compromise.
           </h2>

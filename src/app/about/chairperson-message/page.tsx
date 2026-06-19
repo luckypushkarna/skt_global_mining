@@ -115,7 +115,7 @@ function ValueWord({
     >
       <span
         className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-[-0.03em] text-white/90"
-        style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+        
       >
         {word}
       </span>
@@ -311,18 +311,14 @@ export default function ChairpersonsMessage() {
               </FadeIn>
               <FadeIn delay={0.3}>
                 <h2
-                  className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1] mb-2 tracking-tight"
-                  style={{
-                    fontFamily: "'Georgia', 'Times New Roman', serif",
-                  }}
+                  className="text-4xl md:text-5xl lg:text-6xl tracking-[-0.03em] text-slate-900 leading-[1.1] mb-2 tracking-tight font-serif font-normal"
+                  
                 >
                   Mr. Raj
                 </h2>
                 <h2
-                  className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1] mb-6 tracking-tight"
-                  style={{
-                    fontFamily: "'Georgia', 'Times New Roman', serif",
-                  }}
+                  className="text-4xl md:text-5xl lg:text-6xl tracking-[-0.03em] text-slate-900 leading-[1.1] mb-6 tracking-tight font-serif font-normal"
+                  
                 >
                   Talreja
                 </h2>
@@ -388,8 +384,8 @@ export default function ChairpersonsMessage() {
               Vision Narrative
             </p>
             <h2
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1] tracking-tight"
-              style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+              className="text-3xl md:text-4xl lg:text-5xl tracking-[-0.03em] text-slate-900 leading-[1.1] tracking-tight font-serif font-normal"
+              
             >
               A message in five chapters
             </h2>
@@ -433,9 +429,7 @@ export default function ChairpersonsMessage() {
                     <div className="mb-6">
                       <span
                         className="text-6xl md:text-7xl font-extrabold text-slate-200 block leading-none"
-                        style={{
-                          fontFamily: "'Georgia', 'Times New Roman', serif",
-                        }}
+                        
                       >
                         {chapter.number}
                       </span>
@@ -447,9 +441,7 @@ export default function ChairpersonsMessage() {
                   >
                     <h3
                       className="text-2xl lg:text-3xl font-bold tracking-[-0.02em] text-slate-900 mb-8 tracking-tight"
-                      style={{
-                        fontFamily: "'Georgia', 'Times New Roman', serif",
-                      }}
+                      
                     >
                       {chapter.title}
                     </h3>
@@ -512,8 +504,8 @@ export default function ChairpersonsMessage() {
               Legacy
             </p>
             <h2
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1] tracking-tight mb-20 md:mb-32"
-              style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+              className="text-3xl md:text-4xl lg:text-5xl tracking-[-0.03em] text-slate-900 leading-[1.1] tracking-tight mb-20 md:mb-32 font-serif font-normal"
+              
             >
               Past, present, and the future
               <br />
@@ -562,9 +554,7 @@ export default function ChairpersonsMessage() {
                       </span>
                       <h3
                         className="text-2xl lg:text-3xl font-bold tracking-[-0.02em] text-slate-900 mb-4 tracking-tight"
-                        style={{
-                          fontFamily: "'Georgia', 'Times New Roman', serif",
-                        }}
+                        
                       >
                         {item.title}
                       </h3>
@@ -593,7 +583,7 @@ export default function ChairpersonsMessage() {
             <div className="space-y-7">
               <p
                 className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal"
-                style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+                
               >
                 Dear Shareholders, Partners, and Friends,
               </p>
@@ -706,7 +696,7 @@ export default function ChairpersonsMessage() {
           <FadeIn>
             <p
               className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1] leading-tight tracking-tight mb-8"
-              style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+              
             >
               &ldquo;Our responsibility extends far beyond
               <br className="hidden md:block" /> today&apos;s production targets.&rdquo;
@@ -720,7 +710,7 @@ export default function ChairpersonsMessage() {
           <FadeIn delay={0.6}>
             <p
               className="text-xl md:text-2xl font-bold tracking-[-0.02em] text-slate-500 leading-tight tracking-tight"
-              style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+              
             >
               We build resources for generations.
             </p>

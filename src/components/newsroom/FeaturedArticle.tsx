@@ -59,7 +59,7 @@ export default function FeaturedArticle({ article }: Props) {
             )}
           </div>
 
-          <h2 className="text-2xl md:text-3xl font-bold text-ink tracking-tight leading-tight mb-4 group-hover:text-skt-blue transition-colors duration-300">
+          <h2 className="text-2xl md:text-3xl text-ink tracking-tight leading-tight mb-4 group-hover:text-skt-blue transition-colors duration-300 font-serif font-normal">
             {article.title}
           </h2>
 

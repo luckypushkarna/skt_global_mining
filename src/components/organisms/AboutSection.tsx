@@ -245,7 +245,7 @@ export function AboutSection(): JSX.Element {
             </Badge>
             <h2
               id="about-heading"
-              className="text-headline mb-4 lg:mb-8"
+              className="text-headline mb-4 lg:mb-8 font-serif font-normal"
             >
               Built on Rock.
               <br />

@@ -27,7 +27,7 @@ export default function ServicesPage() {
         <p className="text-[10px] sm:text-xs font-bold tracking-[0.28em] text-neutral-400 uppercase mb-4 sm:mb-6">
           What We Do
         </p>
-        <h1 className="text-5xl sm:text-6xl md:text-8xl font-black text-neutral-900 tracking-tight leading-none mb-6 sm:mb-8">
+        <h1 className="text-5xl sm:text-6xl md:text-8xl text-neutral-900 tracking-tight leading-none mb-6 sm:mb-8 font-serif font-normal">
           Core
           <br />
           <span className="text-neutral-300">Capabilities</span>
@@ -89,7 +89,7 @@ export default function ServicesPage() {
 
                   {/* Title */}
                   <h2
-                    className="text-[20px] sm:text-[24px] font-bold tracking-[-0.02em] text-neutral-900 leading-tight mb-1.5 sm:mb-2 transition-colors duration-300"
+                    className="text-[20px] sm:text-[24px] tracking-[-0.02em] text-neutral-900 leading-tight mb-1.5 sm:mb-2 transition-colors duration-300 font-serif font-normal"
                   >
                     {card.title}
                   </h2>

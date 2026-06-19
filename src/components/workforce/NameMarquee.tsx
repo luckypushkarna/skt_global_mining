@@ -29,7 +29,7 @@ export function NameMarquee() {
           <span className="font-mono text-[11px] font-bold tracking-[0.25em] text-sky-400 uppercase block">
             ── Roll Call Monument
           </span>
-          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight">
+          <h2 className="text-4xl md:text-5xl uppercase tracking-tight font-serif font-normal">
             THE ROLL CALL
           </h2>
           <p className="text-zinc-400 text-sm font-light leading-relaxed">

@@ -45,7 +45,7 @@ export default function NewsroomHero() {
           </div>
 
           {/* Heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.05] mb-5">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight leading-[1.05] mb-5 font-serif font-normal">
             SKT Global{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-blue-200">
               Newsroom

@@ -34,7 +34,7 @@ export function WorkshopHero() {
           </span>
         </div>
 
-        <h1 className="text-xl md:text-2xl font-semibold tracking-tight text-white max-w-2xl mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+        <h1 className="text-xl md:text-2xl tracking-tight text-white max-w-2xl mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-serif font-normal">
           {hero.title}
         </h1>
 

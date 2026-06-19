@@ -18,7 +18,7 @@ export function CommandHero() {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-slate-900 mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.05] text-slate-900 mb-6 font-serif font-normal">
               {hero.title}
             </h1>
 

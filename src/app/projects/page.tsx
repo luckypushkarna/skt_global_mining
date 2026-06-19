@@ -17,7 +17,7 @@ export default function ProjectsPage(): JSX.Element {
             <p className="text-xs font-bold tracking-[0.28em] text-white/40 uppercase mb-6">
               Infrastructure
             </p>
-            <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-none mb-8">
+            <h1 className="text-6xl md:text-8xl tracking-tight leading-none mb-8 font-serif font-normal">
               Projects
             </h1>
             <p className="text-base md:text-lg text-white/60 max-w-xl leading-relaxed">

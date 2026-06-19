@@ -17,7 +17,7 @@ export default function CookiesPage(): JSX.Element {
           <span className="text-xs font-semibold uppercase tracking-wider text-rose-600 block mb-3">
             Legal & Choices
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 tracking-tight leading-none">
+          <h1 className="text-4xl md:text-5xl text-neutral-900 tracking-tight leading-none font-serif font-normal">
             Cookie Policy
           </h1>
           <p className="text-sm text-neutral-500 mt-4">
@@ -29,14 +29,14 @@ export default function CookiesPage(): JSX.Element {
         <div className="prose prose-neutral max-w-none space-y-8 text-neutral-600 leading-relaxed text-[15px]">
           
           <section className="space-y-3">
-            <h2 className="text-xl font-bold text-neutral-900 tracking-tight">1. What are Cookies?</h2>
+            <h2 className="text-xl text-neutral-900 tracking-tight font-serif font-normal">1. What are Cookies?</h2>
             <p>
               Cookies are small text files stored on your computer or mobile device when you visit websites. They are widely used to make websites work or improve efficiency, as well as to provide reporting information to the website owners.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-bold text-neutral-900 tracking-tight">2. How We Use Cookies</h2>
+            <h2 className="text-xl text-neutral-900 tracking-tight font-serif font-normal">2. How We Use Cookies</h2>
             <p>
               We use cookies to improve your user experience and maintain site security. The categories of cookies used on our Site are:
             </p>
@@ -48,14 +48,14 @@ export default function CookiesPage(): JSX.Element {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-bold text-neutral-900 tracking-tight">3. Your Consent and Preferences</h2>
+            <h2 className="text-xl text-neutral-900 tracking-tight font-serif font-normal">3. Your Consent and Preferences</h2>
             <p>
               When you first visit our Site, a Cookie Consent Banner will appear, allowing you to accept or decline performance/analytics cookies. By choosing &ldquo;Accept All,&rdquo; you consent to the storage of both strictly necessary and analytical cookies. If you choose &ldquo;Reject Non-Essential,&rdquo; only strictly necessary cookies will be active.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-bold text-neutral-900 tracking-tight">4. Managing Cookies in Your Browser</h2>
+            <h2 className="text-xl text-neutral-900 tracking-tight font-serif font-normal">4. Managing Cookies in Your Browser</h2>
             <p>
               You can modify your browser settings to reject or delete cookies. Please refer to your browser&apos;s help documentation for instructions:
             </p>
@@ -71,7 +71,7 @@ export default function CookiesPage(): JSX.Element {
           </section>
 
           <section className="space-y-3 pb-6 border-b border-neutral-100">
-            <h2 className="text-xl font-bold text-neutral-900 tracking-tight">5. Contact Policy Officer</h2>
+            <h2 className="text-xl text-neutral-900 tracking-tight font-serif font-normal">5. Contact Policy Officer</h2>
             <p>
               For further queries regarding our Cookie Policy, please reach out to us at:
               <br />

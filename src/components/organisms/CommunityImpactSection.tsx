@@ -294,7 +294,7 @@ export function CommunityImpactSection(): JSX.Element {
               <motion.h2
                 style={isMobile ? {} : { opacity: headlineOpacity, y: headlineY }}
                 {...(isMobile ? { initial: { opacity: 0, y: 16 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, transition: { duration: 0.5, delay: 0.1 } } : {})}
-                className="text-[34px] md:text-5xl lg:text-[56px] font-semibold text-neutral-900 tracking-[-0.02em] leading-[1.08]"
+                className="text-[34px] md:text-5xl lg:text-[56px] text-neutral-900 tracking-[-0.02em] leading-[1.08] font-serif font-normal"
               >
                 Building More{" "}
                 <span className="text-neutral-400 block mt-1 md:mt-2">

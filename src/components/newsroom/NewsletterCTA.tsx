@@ -51,7 +51,7 @@ export default function NewsletterCTA() {
                   Newsletter
                 </span>
               </div>
-              <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-2">
+              <h2 className="text-xl md:text-2xl text-white tracking-tight mb-2 font-serif font-normal">
                 Stay Informed with SKT Global
               </h2>
               <p className="text-slate-300 text-sm leading-relaxed max-w-md">

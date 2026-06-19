@@ -138,7 +138,7 @@ export function BlankSection(): JSX.Element {
                   <h3 className="mb-2 lg:mb-5 text-xs font-semibold tracking-[0.2em] text-neutral-500 uppercase">
                     Long-Term Commitment
                   </h3>
-                  <h2 className="mb-3 lg:mb-8 text-3xl md:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.1]">
+                  <h2 className="mb-3 lg:mb-8 text-3xl md:text-5xl text-neutral-900 tracking-tight leading-[1.1] font-serif font-normal">
                     Building Zambia&apos;s <br />
                     <span className="text-neutral-300">Mining Future</span>
                   </h2>

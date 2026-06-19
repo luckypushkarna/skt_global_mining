@@ -16,7 +16,7 @@ export function UMInnovation() {
               {innovation.eyebrow}
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.1] mb-5">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-slate-900 leading-[1.1] mb-5 font-serif font-normal">
             {innovation.title}
           </h2>
           <p className="text-base lg:text-lg text-slate-600 leading-relaxed font-light">

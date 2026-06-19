@@ -35,7 +35,7 @@ export default function CompanyNarrative() {
   }, []);
 
   const narrativeText =
-    "We are a global mining and infrastructure corporation built on the conviction that responsible resource development can transform communities, power economies, and shape a more sustainable future. For over five decades, we have operated with discipline, integrity, and an unwavering commitment to the people and environments we touch.";
+    "SKT Global Mining & Services Limited, a proud subsidiary of Tyre Technocrats India Private Limited, represents TTIPL's strategic investment and long-term commitment to Zambia's mining sector. From inception, our journey has been defined by ambition, speed, and excellence.";
 
   return (
     <section
@@ -50,7 +50,7 @@ export default function CompanyNarrative() {
         <div ref={wordsRef}>
           <p
             className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1]"
-            style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+            
           >
             {narrativeText.split(" ").map((word, i) => (
               <span key={i} className="narrative-word inline-block mr-[0.3em]">

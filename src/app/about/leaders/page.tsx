@@ -594,7 +594,7 @@ function LeadersContent() {
                   {leader.department}
                 </span>
                 
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.08] mb-3" >
+                <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-[-0.03em] text-slate-900 leading-[1.08] mb-3 font-serif font-normal" >
                   {leader.name}
                 </h2>
                 
@@ -682,7 +682,7 @@ function LeadersContent() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
             <div className="lg:col-span-4">
               <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-3">Leadership Overview</p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.08] leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-[-0.03em] text-slate-900 leading-[1.08] leading-tight font-serif font-normal">
                 {leader.yearsExperience} years of industry leadership
               </h2>
             </div>
@@ -701,7 +701,7 @@ function LeadersContent() {
         <section className="bg-bg-soft py-20 md:py-28">
           <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
             <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-3">Areas of Focus</p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.08] mb-14">Leadership Domains</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-[-0.03em] text-slate-900 leading-[1.08] mb-14 font-serif font-normal">Leadership Domains</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">
               {leader.areasOfFocus.map((area, i) => (
                 <div key={i} className="group">
@@ -721,7 +721,7 @@ function LeadersContent() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
             <div className="lg:col-span-4">
               <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-3">Executive Journey</p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.08] leading-tight">A career defined by impact</h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-[-0.03em] text-slate-900 leading-[1.08] leading-tight font-serif font-normal">A career defined by impact</h2>
             </div>
             <div className="lg:col-span-8">
               <div className="relative">
@@ -746,7 +746,7 @@ function LeadersContent() {
         {/* ── 5. Contributions ────────────────────────────────────────────────── */}
         <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-28">
           <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-3">Signature Contributions</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.08] mb-14">Defining achievements</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-[-0.03em] text-slate-900 leading-[1.08] mb-14 font-serif font-normal">Defining achievements</h2>
           <div className="space-y-14">
             {leader.contributions.map((item, i) => (
               <div key={i} className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-14">
@@ -782,7 +782,7 @@ function LeadersContent() {
         {/* ── 7. Organisation Impact ──────────────────────────────────────────── */}
         <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-28">
           <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-3">Organisation Impact</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.08] mb-14">Shaping SKT Global</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-[-0.03em] text-slate-900 leading-[1.08] mb-14 font-serif font-normal">Shaping SKT Global</h2>
           <div className="space-y-0">
             {leader.impact.map((item, i) => (
               <div key={i} className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-14 border-b border-slate-200 py-10 last:border-0">
@@ -801,7 +801,7 @@ function LeadersContent() {
         <section className="bg-bg-soft py-20 md:py-28">
           <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
             <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-3">Leadership Network</p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.08] mb-14">Cross-functional leadership</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-[-0.03em] text-slate-900 leading-[1.08] mb-14 font-serif font-normal">Cross-functional leadership</h2>
             <div className="space-y-7">
               {leader.network.map((node, i) => (
                 <div key={i} className="flex items-start gap-5">

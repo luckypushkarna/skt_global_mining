@@ -21,7 +21,7 @@ export default function PartnersPage() {
           <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold tracking-[0.2em] uppercase text-slate-500 bg-slate-100 rounded-full mb-6">
             Trusted Partnerships
           </span>
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight text-slate-900">
+          <h1 className="text-4xl md:text-6xl tracking-tight mb-6 leading-tight text-slate-900 font-serif font-normal">
             Collaborating with <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-skt-blue to-skt-blue-deep">
               Industry Leaders
@@ -34,12 +34,11 @@ export default function PartnersPage() {
 
           {/* Logo Grid */}
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 pt-12 border-t border-slate-100">
-            <div className="relative h-16 md:h-20 w-48 md:w-64 mix-blend-multiply">
-              <Image src="/partner-logo-1.webp" alt="Strategic Partner" fill className="object-contain" />
+            <div className="relative h-16 md:h-20 w-48 md:w-64">
+              <Image src="/irh-logo.webp" alt="International Resources Holding" fill className="object-contain brightness-0 opacity-80 hover:opacity-100 transition-opacity" />
             </div>
-            {/* Using 'invert' so the white logo becomes dark and visible on the light background */}
-            <div className="relative h-16 md:h-20 w-48 md:w-64 invert">
-              <Image src="/partner-logo-2.webp" alt="Strategic Partner" fill className="object-contain" />
+            <div className="relative h-16 md:h-20 w-48 md:w-64">
+              <Image src="/mopani-logo.webp" alt="Mopani Copper Mines" fill className="object-contain brightness-0 opacity-80 hover:opacity-100 transition-opacity" />
             </div>
           </div>
         </div>
@@ -51,7 +50,7 @@ export default function PartnersPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
             {/* Partner 1: IRH */}
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+              <h2 className="text-2xl md:text-3xl text-slate-900 mb-3 font-serif font-normal">
                 International Resources Holding (IRH)
               </h2>
               <p className="text-slate-600 mb-6 font-medium text-[15px]">
@@ -81,7 +80,7 @@ export default function PartnersPage() {
             
             {/* Partner 2: Mopani */}
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+              <h2 className="text-2xl md:text-3xl text-slate-900 mb-3 font-serif font-normal">
                 Mopani Copper Mines (MCM)
               </h2>
               <p className="text-slate-600 mb-6 font-medium text-[15px]">

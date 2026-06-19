@@ -21,6 +21,7 @@ export type NavItem = {
   href: string;
   description?: string;
   icon?: LucideIcon;
+  badge?: string;
 };
 
 export type NavSection = {
@@ -154,17 +155,18 @@ export const mediaSection: NavSection = {
   label: "Media",
   featured: [
     {
-      title: "Newsroom",
-      href: "/media/newsroom",
-      description: "Latest press releases and company updates",
-      icon: Newspaper,
+      title: "Photo Gallery",
+      href: "/media/photo-gallery",
+      description: "A visual journey through our mining operations",
+      icon: Camera,
     },
   ],
   links: [
     {
-      title: "Photo Gallery",
-      href: "/media/photo-gallery",
-      icon: Camera,
+      title: "Newsroom",
+      href: "#",
+      icon: Newspaper,
+      badge: "Coming soon"
     },
   ],
 };

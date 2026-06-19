@@ -32,7 +32,7 @@ export function PortraitGrid() {
             <span className="font-mono text-[11px] font-bold tracking-[0.25em] text-sky-400 uppercase block mb-3">
               ── DOCUMENTARY PHOTOGRAPHY
             </span>
-            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight">
+            <h2 className="text-4xl md:text-5xl uppercase tracking-tight font-serif font-normal">
               MEET THE OPERATORS
             </h2>
           </div>

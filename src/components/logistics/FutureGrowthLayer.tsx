@@ -17,7 +17,7 @@ export function FutureGrowthLayer() {
               Future Growth Layer
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.1]">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-slate-900 leading-[1.1] font-serif font-normal">
             What comes next.
             <br />
             <span className="text-slate-400 font-light">Through 2028.</span>

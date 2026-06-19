@@ -51,7 +51,7 @@ export function SWGallery() {
             </span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 leading-[1.08]">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-slate-900 leading-[1.08] font-serif font-normal">
             From the workshop floor.
           </h2>
         </div>

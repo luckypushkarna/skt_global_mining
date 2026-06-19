@@ -1,62 +1,25 @@
-"use client";
+import type { JSX } from "react";
+import AboutHero from "@/components/about/AboutHero";
+import TheGenesisRecord from "@/components/about/TheGenesisRecord";
+import StrategicPillars from "@/components/about/StrategicPillars";
+import CultureAndRetention from "@/components/about/CultureAndRetention";
+import GlobalFootprint from "@/components/about/GlobalFootprint";
+import AboutClosing from "@/components/about/AboutClosing";
 
-import { useEffect, useRef } from "react";
-import Lenis from "lenis";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import OpeningScene from "@/components/about/OpeningScene";
-import CompanyNarrative from "@/components/about/CompanyNarrative";
-import WhoWeAre from "@/components/about/WhoWeAre";
-import SignatureVideo from "@/components/about/SignatureVideo";
-import VisualTimeline from "@/components/about/VisualTimeline";
-import ImpactImagery from "@/components/about/ImpactImagery";
-import ClosingStatement from "@/components/about/ClosingStatement";
-import AboutFooter from "@/components/about/AboutFooter";
-import ScrollProgress from "@/components/about/ScrollProgress";
+export const metadata = {
+  title: "Company Overview | SKT Global Mining",
+  description: "Learn about SKT Global Mining & Services Limited, our history, our pillars, and our commitment to sustainable mining in Zambia.",
+};
 
-gsap.registerPlugin(ScrollTrigger);
-
-export default function AboutPage() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.4,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-    });
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    lenis.on("scroll", ScrollTrigger.update);
-
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-
-    gsap.ticker.lagSmoothing(0);
-
-    return () => {
-      lenis.destroy();
-      gsap.ticker.remove((time) => lenis.raf(time * 1000));
-    };
-  }, []);
-
+export default function AboutPage(): JSX.Element {
   return (
-    <div ref={containerRef} className="bg-white overflow-hidden">
-      <ScrollProgress />
-      <OpeningScene />
-      <CompanyNarrative />
-      <WhoWeAre />
-      <SignatureVideo />
-      <VisualTimeline />
-      <ImpactImagery />
-      <ClosingStatement />
-      <AboutFooter />
+    <div className="bg-white">
+      <AboutHero />
+      <TheGenesisRecord />
+      <StrategicPillars />
+      <GlobalFootprint />
+      <CultureAndRetention />
+      <AboutClosing />
     </div>
   );
 }

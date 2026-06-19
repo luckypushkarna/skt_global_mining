@@ -98,26 +98,26 @@ export default function OpeningScene() {
         <div className="space-y-1 md:space-y-2">
           <div ref={line1Ref} className="overflow-hidden opacity-0">
             <h1
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1]"
-              style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+              className="text-3xl md:text-4xl lg:text-5xl tracking-[-0.03em] text-slate-900 leading-[1.1] font-serif font-normal"
+              
             >
-              We build what
+              Setting records in
             </h1>
           </div>
           <div ref={line2Ref} className="overflow-hidden opacity-0">
             <h1
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1]"
-              style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+              className="text-3xl md:text-4xl lg:text-5xl tracking-[-0.03em] text-slate-900 leading-[1.1] font-serif font-normal"
+              
             >
-              the world relies
+              ambition, speed, and
             </h1>
           </div>
           <div ref={line3Ref} className="overflow-hidden opacity-0">
             <h1
-              className="text-[clamp(2.5rem,7vw,6.5rem)] font-semibold text-slate-400 leading-[1.05] tracking-[-0.03em]"
-              style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+              className="text-[clamp(2.5rem,7vw,6.5rem)] text-slate-400 leading-[1.05] tracking-[-0.03em] font-serif font-normal"
+              
             >
-              upon.
+              excellence.
             </h1>
           </div>
         </div>

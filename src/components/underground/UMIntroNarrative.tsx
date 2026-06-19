@@ -41,7 +41,7 @@ export function UMIntroNarrative() {
                 Introduction
               </span>
             </div>
-            <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight leading-tight text-slate-900">
+            <h2 className="text-2xl lg:text-3xl tracking-tight leading-tight text-slate-900 font-serif font-normal">
               The work below.
             </h2>
           </div>

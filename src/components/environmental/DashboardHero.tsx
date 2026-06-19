@@ -43,7 +43,7 @@ export function DashboardHero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.05] text-white mb-6 font-serif font-normal"
           >
             Stewardship
             <br />

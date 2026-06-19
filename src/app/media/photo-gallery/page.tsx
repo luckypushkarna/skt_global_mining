@@ -70,7 +70,7 @@ export default function PhotoGalleryPage() {
               <span className="w-1.5 h-1.5 rounded-full bg-skt-blue inline-block" />
               Media
             </span>
-            <h1 className="text-4xl md:text-6xl font-semibold text-white tracking-tight leading-[1.1] mb-6">
+            <h1 className="text-4xl md:text-6xl text-white tracking-tight leading-[1.1] mb-6 font-serif font-normal">
               Photo Gallery
             </h1>
             <p className="text-lg text-neutral-400 max-w-2xl font-light">

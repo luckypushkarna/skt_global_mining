@@ -186,7 +186,7 @@ export function TeamSection(): JSX.Element {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-3xl md:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.1]"
+              className="text-3xl md:text-5xl text-neutral-900 tracking-tight leading-[1.1] font-serif font-normal"
             >
               Leadership Behind <br />
               <span className="text-neutral-300">the Vision</span>

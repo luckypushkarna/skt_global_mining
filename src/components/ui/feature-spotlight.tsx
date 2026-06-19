@@ -114,7 +114,7 @@ const AnimatedFeatureSpotlight = React.forwardRef<HTMLElement, AnimatedFeatureSp
             <motion.h2
               variants={itemVariants}
               id="feature-spotlight-heading"
-              className="text-4xl lg:text-5xl font-black tracking-tight text-neutral-900 leading-tight text-balance"
+              className="text-4xl lg:text-5xl tracking-tight text-neutral-900 leading-tight text-balance font-serif font-normal"
             >
               {heading}
             </motion.h2>

@@ -72,7 +72,7 @@ export default function RescueSystemsPage() {
               </div>
 
               <h1
-                className="text-[38px] md:text-6xl lg:text-7xl leading-[0.98] tracking-[-0.05em] text-neutral-950 mb-5"
+                className="text-[38px] md:text-6xl lg:text-7xl leading-[0.98] tracking-[-0.05em] text-neutral-950 mb-5 font-serif font-normal"
                 style={{ fontFamily: "Georgia, serif" }}
               >
                 Rescue Systems
@@ -190,7 +190,7 @@ export default function RescueSystemsPage() {
                 Core Focus
               </p>
               <h2
-                className="text-2xl md:text-4xl leading-[1.08] tracking-[-0.04em] text-neutral-950"
+                className="text-2xl md:text-4xl leading-[1.08] tracking-[-0.04em] text-neutral-950 font-serif font-normal"
                 style={{ fontFamily: "Georgia, serif" }}
               >
                 Prepared for the moments

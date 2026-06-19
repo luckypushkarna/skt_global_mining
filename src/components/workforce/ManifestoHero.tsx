@@ -49,7 +49,7 @@ export function ManifestoHero() {
           </span>
 
           {/* Huge Poster Title */}
-          <h1 className="text-[12vw] sm:text-[10vw] lg:text-[8vw] font-black leading-[0.85] tracking-tighter uppercase select-none">
+          <h1 className="text-[12vw] sm:text-[10vw] lg:text-[8vw] leading-[0.85] tracking-tighter uppercase select-none font-serif font-normal">
             85% ZAMBIAN.
             <br />
             <span className="text-transparent stroke-text hover:text-sky-400 transition-colors duration-300">100% COMMITTED.</span>
