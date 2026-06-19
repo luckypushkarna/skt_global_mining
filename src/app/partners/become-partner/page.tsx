@@ -8,7 +8,6 @@ import {
   TrendingUp,
   Globe,
   CheckCircle,
-  ArrowRight,
   Send,
   AlertCircle,
   X,
@@ -411,22 +410,6 @@ export default function BecomePartnerPage(): JSX.Element {
               </p>
             </motion.form>
           )}
-        </div>
-      </section>
-
-      {/* ─── CTA ─────────────────────────────────────── */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-16 border-t border-neutral-200/60 bg-neutral-50/50">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm md:text-base text-neutral-500">
-            Already a partner?
-          </p>
-          <a
-            href="/partners/portal"
-            className="mt-3 inline-flex items-center gap-2 text-[15px] md:text-base font-semibold text-neutral-900 hover:gap-3 hover:text-neutral-600 transition-all"
-          >
-            Access Partner Portal
-            <ArrowRight size={16} />
-          </a>
         </div>
       </section>
 
