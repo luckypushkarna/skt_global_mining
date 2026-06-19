@@ -8,7 +8,7 @@ export const MECHANISED_FLEET = {
 
   overview: {
     stats: [
-      { value: "296", label: "Active Machines" },
+      { value: "227", label: "Active Machines" },
       { value: "94%", label: "Availability Rate" },
       { value: "24/7", label: "Operations" },
       { value: "$200M+", label: "Fleet Value" },
@@ -127,7 +127,7 @@ export const MECHANISED_FLEET = {
   specs: {
     title: "Fleet at a glance.",
     items: [
-      { label: "Total active units", value: "296" },
+      { label: "Total active units", value: "227" },
       { label: "Average machine age", value: "3.2 years" },
       { label: "Fleet utilisation rate", value: "87%" },
       { label: "Mean time between failures", value: "412 hours" },
