@@ -128,7 +128,7 @@ export function HeroSection(): JSX.Element {
           <div className="overflow-hidden pb-2 -mb-2">
             <h1
               ref={headline1Ref}
-              className="text-[45px] md:text-[50px] lg:text-[60px] text-white font-serif font-normal leading-[1.1] tracking-[-0.02em]"
+              className="text-[36px] md:text-[50px] text-white font-serif font-normal leading-[1.1] tracking-[-0.02em]"
             >
               Powering Zambia&apos;s<br />Copper Future{" "}
               <span 
