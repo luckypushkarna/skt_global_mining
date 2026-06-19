@@ -1,5 +1,6 @@
 import type { JSX } from "react";
 import { generateMetadata } from "@/lib/seo";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export const metadata = generateMetadata({
   title: "Privacy Policy",
@@ -93,9 +94,9 @@ export default function PrivacyPolicyPage(): JSX.Element {
             </p>
             <div className="bg-neutral-50 p-6 rounded-xl border border-neutral-200/60 mt-4 space-y-1">
               <p className="font-bold text-neutral-950">SKT Global Mining & Services Limited</p>
-              <p>Email: <a href="mailto:privacy@sktglobal.com" className="text-rose-600 hover:underline">privacy@sktglobal.com</a></p>
-              <p>Registered Office: SKT Tower, BKC, Mumbai 400 051, India</p>
-              <p>Zambian Operations: Kitwe, Copperbelt Province, Zambia</p>
+              <p>Email: <a href={`mailto:${SITE_CONFIG.email}`} className="text-rose-600 hover:underline">{SITE_CONFIG.email}</a></p>
+              <p>Headquarters: {SITE_CONFIG.headquarters}</p>
+              <p>Zambian Operations: {SITE_CONFIG.address}</p>
             </div>
           </section>
 
