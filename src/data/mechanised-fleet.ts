@@ -20,7 +20,7 @@ export const MECHANISED_FLEET = {
     {
       number: "01",
       type: "Load-Haul-Dump (LHD)",
-      count: "62 units",
+      count: "50 units",
       desc: "Underground loaders for ore transport from production face to ore pass. Capacities range from 7 to 21 tonnes per cycle. Operated from enclosed, air-conditioned cabins.",
       image: "/lhd-loader.webp",
       models: ["Caterpillar R1700", "Sandvik LH514", "Epiroc Scooptram ST14"],
@@ -28,7 +28,7 @@ export const MECHANISED_FLEET = {
     {
       number: "02",
       type: "Underground Trucks",
-      count: "48 units",
+      count: "40 units",
       desc: "Articulated dump trucks for long-distance ore haulage along main declines. Payloads from 30 to 65 tonnes. Hydraulic braking systems certified for underground incline grades.",
       image: "/underground-truck.webp",
       models: ["Caterpillar AD45B", "Sandvik TH551i", "Atlas Copco MT65"],
@@ -36,7 +36,7 @@ export const MECHANISED_FLEET = {
     {
       number: "03",
       type: "Drill Rigs",
-      count: "54 units",
+      count: "45 units",
       desc: "Twin-boom production drills and development jumbos. Hydraulic systems for precision face drilling. Computer-assisted boom positioning for consistent blast pattern accuracy.",
       image: "/drill-rig.webp",
       models: ["Sandvik DD422i", "Atlas Copco Boomer", "Epiroc Boomer M2"],
@@ -44,21 +44,13 @@ export const MECHANISED_FLEET = {
     {
       number: "04",
       type: "Bolters & Ground Support",
-      count: "28 units",
+      count: "23 units",
       desc: "Roof bolters and ground support installation equipment. Automated bolt insertion maintains face stability throughout development and production phases.",
       image: "/bolter-support.webp",
       models: ["Sandvik DS412i", "Atlas Copco Roofex", "Robolt Systems"],
     },
     {
       number: "05",
-      type: "Service & Utility",
-      count: "35 units",
-      desc: "Personnel carriers, supply vehicles, fuel and lube units, and emergency response vehicles. Maintains operational continuity across all active underground levels.",
-      image: "/utility-service.webp",
-      models: ["Toyota Land Cruiser HZJ", "MEM Mining Vehicles", "Custom carriers"],
-    },
-    {
-      number: "06",
       type: "Independent Diesel Bowsers",
       count: "12 units",
       desc: "Dedicated self-reliant diesel bowsers providing continuous, independent refueling for the underground fleet, eliminating dependency on surface fuel transit.",
@@ -66,7 +58,7 @@ export const MECHANISED_FLEET = {
       models: ["Underground Refueling Bowser"],
     },
     {
-      number: "07",
+      number: "06",
       type: "Self-Developed LMVs",
       count: "18 units",
       desc: "Self-developed Light Motor Vehicles (LMVs) custom-engineered specifically for underground operation monitoring, supervisory access, and personnel transport.",
@@ -74,7 +66,7 @@ export const MECHANISED_FLEET = {
       models: ["SKT Custom LMV"],
     },
     {
-      number: "08",
+      number: "07",
       type: "Passenger Carriers",
       count: "15 units",
       desc: "Self-developed passenger carriers designed for the safe and comfortable transport of workers underground. Engineered to reduce transit fatigue, ensuring crews arrive ready and increasing overall productivity.",
@@ -82,7 +74,7 @@ export const MECHANISED_FLEET = {
       models: ["SKT Custom Passenger Carrier"],
     },
     {
-      number: "09",
+      number: "08",
       type: "Self-Developed Utility Vehicles",
       count: "24 units",
       desc: "Self-developed utility vehicles engineered for efficient underground material shifting and rapid deployment of maintenance crews, ensuring equipment servicing is handled swiftly to maintain high operational uptime.",
