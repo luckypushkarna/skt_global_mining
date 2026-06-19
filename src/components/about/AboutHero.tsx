@@ -18,7 +18,7 @@ export default function AboutHero() {
     <section ref={containerRef} className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-skt-navy">
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
         <Image
-          src="/about-hero-bg.jpg"
+          src="/About hero image.png"
           alt="SKT Global Mining Operations"
           fill
           priority
