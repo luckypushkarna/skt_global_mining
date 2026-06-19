@@ -44,7 +44,7 @@ export default function ChairpersonLetter() {
             </p>
 
             <p>
-              Looking to the future, our mandate is clear. We will continue to drive mechanisation, optimize operational infrastructure, and work alongside our strategic partners like IRH and Mopani Copper Mines to accelerate Zambia&apos;s copper production. We are building a legacy of sustainable value—one that benefits our shareholders, empowers our employees, and strengthens the communities we serve.
+              Looking to the future, our mandate is clear. We will continue to drive mechanisation, optimize operational infrastructure, and work alongside our strategic partners like IRH and Mopani Copper Mines to accelerate Zambia&apos;s copper production. We are building a legacy of sustainable value - one that benefits our shareholders, empowers our employees, and strengthens the communities we serve.
             </p>
 
             <p>

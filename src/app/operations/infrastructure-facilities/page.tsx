@@ -40,7 +40,7 @@ const PILLARS = [
     icon: Bus,
     title: "Comprehensive Transportation",
     description:
-      "Dedicated transportation services guarantee the secure and reliable daily movement of 1,500+ employees to and from mining sites — extending safety beyond the mine shafts.",
+      "Dedicated transportation services guarantee the secure and reliable daily movement of 1,500+ employees to and from mining sites - extending safety beyond the mine shafts.",
     highlight: "1,500+ Daily Commutes",
   },
 ];

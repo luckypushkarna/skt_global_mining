@@ -18,37 +18,12 @@ export default function ChairpersonClosing() {
         >
           <div className="mb-16">
             <p className="text-xl md:text-3xl font-serif text-white/90 leading-relaxed italic mb-8">
-              &ldquo;We are building a legacy of sustainable value—one that benefits our shareholders, empowers our employees, and strengthens the communities we serve.&rdquo;
+              &ldquo;We are building a legacy of sustainable value - one that benefits our shareholders, empowers our employees, and strengthens the communities we serve.&rdquo;
             </p>
             <div className="w-16 h-px bg-white/20 mx-auto" />
           </div>
 
           <div className="flex flex-col items-center justify-center">
-            <svg
-              viewBox="0 0 220 65"
-              className="w-48 text-white/90 mb-8"
-            >
-              <text
-                x="10"
-                y="42"
-                fontSize="32"
-                fill="currentColor"
-                style={{
-                  fontFamily: "'Brush Script MT', 'Segoe Script', cursive",
-                }}
-              >
-                R. Talreja
-              </text>
-              <line
-                x1="10"
-                y1="50"
-                x2="190"
-                y2="50"
-                stroke="currentColor"
-                strokeWidth="0.5"
-                opacity="0.3"
-              />
-            </svg>
             
             <h3 className="text-xl font-serif text-white mb-2">Mr. Raj Talreja</h3>
             <p className="text-sm font-bold tracking-[0.15em] uppercase text-white/50 mb-4">

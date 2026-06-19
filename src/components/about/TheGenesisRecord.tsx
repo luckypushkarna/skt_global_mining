@@ -30,7 +30,7 @@ export default function TheGenesisRecord() {
             </h2>
             <div className="space-y-6 text-base md:text-lg text-slate-600 font-light leading-relaxed">
               <p>
-                Within an extraordinary period of just six months, SKT orchestrated one of the most rapid infrastructural mobilisations in Zambian mining history. We didn&apos;t just procure equipment—we built a fully operational, world-class mining ecosystem from the ground up.
+                Within an extraordinary period of just six months, SKT orchestrated one of the most rapid infrastructural mobilisations in Zambian mining history. We didn&apos;t just procure equipment - we built a fully operational, world-class mining ecosystem from the ground up.
               </p>
               <p>
                 This remarkable achievement earned direct recognition from the Labour Organization of Zambia. It encompassed the importation of machinery across multiple international borders, ensuring strict regulatory compliance, and establishing modern warehouses, 24-hour catering, and comprehensive workforce transportation networks. SKT Global forms part of a dynamic international group of companies and represents TTIPL&apos;s strategic investment into Zambia.

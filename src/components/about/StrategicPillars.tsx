@@ -13,7 +13,7 @@ const pillars = [
   {
     icon: ShieldCheck,
     title: "Safety First",
-    desc: "Safety is not merely a priority—it is our core value. We foster a culture where every employee returns home safely each day.",
+    desc: "Safety is not merely a priority - it is our core value. We foster a culture where every employee returns home safely each day.",
     colSpan: "lg:col-span-1",
   },
   {
