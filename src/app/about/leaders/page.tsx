@@ -716,55 +716,7 @@ function LeadersContent() {
           </div>
         </section>
 
-        {/* ── 4. Journey ──────────────────────────────────────────────────────── */}
-        <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-28">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-            <div className="lg:col-span-4">
-              <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-3">Executive Journey</p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-[-0.03em] text-slate-900 leading-[1.08] leading-tight font-serif font-normal">A career defined by impact</h2>
-            </div>
-            <div className="lg:col-span-8">
-              <div className="relative">
-                <div className="absolute left-[7px] top-3 bottom-3 w-px bg-gray-200" />
-                <div className="space-y-10">
-                  {leader.journey.map((item, i) => (
-                    <div key={i} className="relative pl-9">
-                      <div className="absolute left-0 top-1.5 w-[15px] h-[15px] rounded-full border-2 border-slate-300 bg-white" />
-                      <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-1">{item.year}</p>
-                      <h3 className="text-base font-bold tracking-tight text-slate-900 mb-1.5">{item.title}</h3>
-                      <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal leading-relaxed">{item.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20"><hr className="border-slate-200" /></div>
-
-        {/* ── 5. Contributions ────────────────────────────────────────────────── */}
-        <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-28">
-          <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-3">Signature Contributions</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-[-0.03em] text-slate-900 leading-[1.08] mb-14 font-serif font-normal">Defining achievements</h2>
-          <div className="space-y-14">
-            {leader.contributions.map((item, i) => (
-              <div key={i} className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-14">
-                <div className="lg:col-span-4">
-                  <span className="text-5xl font-extralight text-neutral-200 block mb-2 tabular-nums">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="text-lg font-medium text-slate-900">{item.title}</h3>
-                </div>
-                <div className="lg:col-span-8">
-                  <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal leading-relaxed">{item.narrative}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ── 6. Philosophy Quote ─────────────────────────────────────────────── */}
+        {/* ── 4. Philosophy Quote ─────────────────────────────────────────────── */}
         <section className="bg-skt-navy py-24 md:py-32">
           <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-20 text-center">
             <svg className="mx-auto mb-8 text-slate-600" width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
@@ -779,60 +731,7 @@ function LeadersContent() {
           </div>
         </section>
 
-        {/* ── 7. Organisation Impact ──────────────────────────────────────────── */}
-        <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-28">
-          <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-3">Organisation Impact</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-[-0.03em] text-slate-900 leading-[1.08] mb-14 font-serif font-normal">Shaping SKT Global</h2>
-          <div className="space-y-0">
-            {leader.impact.map((item, i) => (
-              <div key={i} className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-14 border-b border-slate-200 py-10 last:border-0">
-                <div className="lg:col-span-4">
-                  <h3 className="text-base font-bold tracking-tight text-slate-900">{item.area}</h3>
-                </div>
-                <div className="lg:col-span-8">
-                  <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal leading-relaxed">{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ── 8. Network ──────────────────────────────────────────────────────── */}
-        <section className="bg-bg-soft py-20 md:py-28">
-          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-            <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-3">Leadership Network</p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-[-0.03em] text-slate-900 leading-[1.08] mb-14 font-serif font-normal">Cross-functional leadership</h2>
-            <div className="space-y-7">
-              {leader.network.map((node, i) => (
-                <div key={i} className="flex items-start gap-5">
-                  <div className="w-9 h-9 rounded-full bg-white border border-slate-200 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-xs font-medium text-slate-600">{node.department[0]}</span>
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-medium text-slate-900 mb-1">{node.department}</h4>
-                    <p className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal leading-relaxed">{node.connection}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── 9. Personal Message ─────────────────────────────────────────────── */}
-        <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-28">
-          <div className="max-w-3xl mx-auto">
-            <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-8">A Personal Message</p>
-            <div className="space-y-6">
-              {leader.personalMessage.split("\n\n").map((paragraph, i) => (
-                <p key={i} className="text-sm lg:text-base text-slate-500 leading-relaxed font-normal leading-relaxed italic">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── 10. Navigation ──────────────────────────────────────────────────── */}
+        {/* ── 5. Navigation ──────────────────────────────────────────────────── */}
         <section className="border-t border-slate-200">
           <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
             <div className="grid grid-cols-2 divide-x divide-gray-100">

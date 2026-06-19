@@ -1,6 +1,7 @@
 "use client";
 
 import { type JSX, useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ImageWithSkeleton } from "@/components/ui/image-with-skeleton";
@@ -10,6 +11,7 @@ import { containerVariants, itemVariants } from "@/lib/animations";
 
 function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   // Mapping of exact filenames in public folder for premium deterministic resolution
   const images: Record<string, string> = {
@@ -59,9 +61,7 @@ function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
   };
 
   const handleCardClick = () => {
-    if (typeof window !== "undefined" && !window.matchMedia("(hover: hover)").matches) {
-      setIsOpen((prev) => !prev);
-    }
+    router.push(`/about/leaders?id=${member.id}`);
   };
 
   const handleToggleClick = (e: React.MouseEvent) => {
