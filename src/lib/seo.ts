@@ -115,8 +115,8 @@ export const jsonLd = {
     foundingDate: SITE_CONFIG.founded,
     headquarters: {
       "@type": "PostalAddress",
-      addressLocality: "Mumbai",
-      addressCountry: "IN",
+      addressLocality: "Udaipur",
+      addressRegion: "Rajasthan",
     },
     contactPoint: {
       "@type": "ContactPoint",

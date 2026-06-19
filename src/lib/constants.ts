@@ -9,7 +9,7 @@ export const SITE_CONFIG = {
   ogImage: "/og-image.webp",
   twitterHandle: "@sktglobal",
   founded: "2005",
-  headquarters: "SKT Tower, BKC, Mumbai 400 051, India",
+  headquarters: "Tyre Technocrats India Pvt Ltd, Udaipur, Rajasthan",
   email: "Info@sktglobalminings.com",
   phone: "+260 762 620 036",
   address: "CHIM/254/A, Copperbelt Province Opposite Mindolo Police Station, Between Rubies & Meru Filling Station Kitwe, Zambia",

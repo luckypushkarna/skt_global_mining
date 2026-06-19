@@ -77,7 +77,7 @@ export default function TermsPage(): JSX.Element {
           <section className="space-y-3 pb-6 border-b border-neutral-100">
             <h2 className="text-xl text-neutral-900 tracking-tight font-serif font-normal">7. Governing Law and Jurisdiction</h2>
             <p>
-              These Terms, and all disputes arising directly out of the use of this Site, shall be governed by and interpreted in accordance with the laws of <strong>India</strong> (for corporate affairs of parent entities) and <strong>Zambia</strong> (for regional operational matters). Users consent to the exclusive jurisdiction of the competent courts in Mumbai, India, or Kitwe, Zambia, as applicable, for any legal proceedings.
+              These Terms, and all disputes arising directly out of the use of this Site, shall be governed by and interpreted in accordance with the laws of <strong>India</strong> (for corporate affairs of parent entities) and <strong>Zambia</strong> (for regional operational matters). Users consent to the exclusive jurisdiction of the competent courts in Udaipur, India, or Kitwe, Zambia, as applicable, for any legal proceedings.
             </p>
           </section>
 
