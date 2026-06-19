@@ -20,7 +20,7 @@ export const MECHANISED_FLEET = {
     {
       number: "01",
       type: "LHD 17 Ton (Loader)",
-      count: "62 units",
+      count: "45 units",
       desc: "Heavy-duty underground loaders engineered for rapid ore extraction and transport from the production face to the ore pass. Features an enclosed, air-conditioned cabin for maximum operator safety and comfort.",
       image: "/lhd-loader.webp",
       models: ["17 Ton Capacity Class", "Caterpillar R1700", "Sandvik LH514"],
@@ -28,7 +28,7 @@ export const MECHANISED_FLEET = {
     {
       number: "02",
       type: "Mine Truck 30 Ton (Dumper)",
-      count: "48 units",
+      count: "40 units",
       desc: "Articulated underground dump trucks designed for high-capacity ore haulage along main declines. Features heavy-duty hydraulic braking systems certified for steep incline grades.",
       image: "/underground-truck.webp",
       models: ["30 Ton Capacity Class", "Sandvik TH530i", "Epiroc Minetruck MT30"],
@@ -36,7 +36,7 @@ export const MECHANISED_FLEET = {
     {
       number: "03",
       type: "Underground Grader",
-      count: "12 units",
+      count: "6 units",
       desc: "Specialised low-profile graders used to maintain underground haul roads. Proper road maintenance reduces wear on haul truck tires and improves overall fleet tramming speeds.",
       image: "/gaadi-jcb.webp",
       models: ["Low-Profile Underground Grader"],
@@ -44,7 +44,7 @@ export const MECHANISED_FLEET = {
     {
       number: "04",
       type: "Diesel Bowser",
-      count: "15 units",
+      count: "8 units",
       desc: "Dedicated, self-reliant diesel bowsers providing continuous, independent refueling for the underground fleet. This eliminates dependency on surface fuel transit and maximizes shift uptime.",
       image: "/diesel-bowser.jpg",
       models: ["Underground Refueling Bowser"],
@@ -52,7 +52,7 @@ export const MECHANISED_FLEET = {
     {
       number: "05",
       type: "Self-Developed LMV",
-      count: "35 units",
+      count: "30 units",
       desc: "Custom-engineered Light Motor Vehicles (LMVs) designed specifically for underground operation monitoring, supervisory access, and safe personnel transport.",
       image: "/lmv-monitoring.jpg",
       models: ["SKT Custom LMV"],
@@ -60,7 +60,7 @@ export const MECHANISED_FLEET = {
     {
       number: "06",
       type: "Passenger Carriers",
-      count: "24 units",
+      count: "18 units",
       desc: "Self-developed passenger carriers designed for the safe and comfortable transport of workers underground. Engineered to reduce transit fatigue, ensuring crews arrive ready and increasing overall productivity.",
       image: "/passenger-carrier.jpg",
       models: ["SKT Custom Passenger Carrier"],
@@ -68,7 +68,7 @@ export const MECHANISED_FLEET = {
     {
       number: "07",
       type: "Self-Developed Utility Vehicles",
-      count: "31 units",
+      count: "25 units",
       desc: "Custom-built utility vehicles engineered for efficient underground material shifting and rapid deployment of maintenance crews. Ensures equipment servicing is handled swiftly to maintain high operational availability.",
       image: "/utility-vehicle.jpg",
       models: ["SKT Custom Utility Vehicle"],
@@ -76,7 +76,7 @@ export const MECHANISED_FLEET = {
     {
       number: "08",
       type: "Drill Rigs & Bolters",
-      count: "82 units",
+      count: "55 units",
       desc: "Twin-boom production drills, development jumbos, and automated roof bolters. Equipped with computer-assisted boom positioning for precision face drilling and ground support.",
       image: "/drill-rig.webp",
       models: ["Sandvik DD422i", "Epiroc Boomer M2", "Sandvik DS412i Bolter"],
