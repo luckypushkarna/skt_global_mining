@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export function ESGBanner() {
-  const containerRef = useRef<HTMLElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
@@ -15,36 +15,32 @@ export function ESGBanner() {
 
   return (
     <section ref={containerRef} className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-neutral-950">
-      {/* Video Background */}
+      
+      {/* Parallax Background */}
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-60 grayscale"
+          className="absolute inset-0 w-full h-full object-cover opacity-50"
         >
           <source src="/videos/gallery-sustainability-optimized.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/40 via-transparent to-neutral-950" />
       </motion.div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full text-center">
-        {/* Eyebrow */}
-        <motion.div
+      {/* Cinematic Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full text-center mt-16">
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex items-center justify-center gap-2 mb-6 md:mb-8"
+          className="text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 md:mb-8"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-amber-500 inline-block animate-pulse" />
-          <span className="text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-white/70">
-            Sustainability · ESG Overview
-          </span>
-        </motion.div>
-
-        {/* Headline */}
+          Sustainability · ESG Overview
+        </motion.p>
+        
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -52,21 +48,16 @@ export function ESGBanner() {
           className="text-4xl md:text-6xl lg:text-7xl xl:text-[80px] font-serif font-normal tracking-tight text-white leading-[1.05] max-w-5xl mx-auto mb-10"
         >
           Building a Legacy
-          <br className="hidden md:block" />
-          <span className="text-white/80 font-normal">
-            {" "}Beyond Extraction
-          </span>
+          <br className="hidden md:block" /> <span className="text-white/80">Beyond Extraction.</span>
         </motion.h1>
 
-        {/* Sub */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="text-base md:text-xl text-white/80 font-light leading-relaxed max-w-3xl mx-auto"
+          className="text-base md:text-xl text-neutral-300 font-light leading-relaxed max-w-3xl mx-auto"
         >
-          At SKT Global, environmental stewardship, social responsibility, and governance
-          aren&apos;t policies - they are the foundation of how we operate every single day.
+          At SKT Global, environmental stewardship, social responsibility, and governance aren&apos;t just policies—they are the foundation of how we operate every single day.
         </motion.p>
       </div>
 
@@ -84,6 +75,7 @@ export function ESGBanner() {
           <div className="absolute top-0 left-0 w-full h-1/2 bg-white animate-scroll-line" />
         </div>
       </motion.div>
+
     </section>
   );
 }
