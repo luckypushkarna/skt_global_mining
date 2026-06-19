@@ -4,14 +4,38 @@ import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { X, ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 import DotField from "@/components/ui/DotField";
 
-// Placeholder photos array, replicating the 6 gallery images to show 24 images for masonry testing
-const GALLERY_IMAGES = Array.from({ length: 24 }).map((_, i) => ({
-  id: i,
-  src: `/Operation gallery/${(i % 6) + 1}.png`,
-  alt: `Gallery image ${(i % 6) + 1}`,
-}));
+const GALLERY_IMAGES = [
+  { id: 1, src: "/Mechanised Fleet.webp", alt: "Mechanised Fleet" },
+  { id: 2, src: "/Underground Workshop.webp", alt: "Underground Workshop" },
+  { id: 3, src: "/Production Development.webp", alt: "Production Development" },
+  { id: 4, src: "/Engineering & Maintenance.webp", alt: "Engineering & Maintenance" },
+  { id: 5, src: "/Logistics Network.webp", alt: "Logistics Network" },
+  { id: 6, src: "/Operational Command.webp", alt: "Operational Command" },
+  { id: 7, src: "/Rescue Systems.webp", alt: "Rescue Systems" },
+  { id: 8, src: "/Safety & Compliance.webp", alt: "Safety & Compliance" },
+  { id: 9, src: "/Infrastructure Systems.webp", alt: "Infrastructure Systems" },
+  { id: 10, src: "/Future Expansion.webp", alt: "Future Expansion" },
+  { id: 11, src: "/Strategic Warehousing.webp", alt: "Strategic Warehousing" },
+  { id: 12, src: "/Workforce Facilities.webp", alt: "Workforce Facilities" },
+  { id: 13, src: "/Hazard Elimination.webp", alt: "Hazard Elimination" },
+  { id: 14, src: "/Worker Protection Systems.webp", alt: "Worker Protection Systems" },
+  { id: 15, src: "/Community Safety Culture.webp", alt: "Community Safety Culture" },
+  { id: 16, src: "/Continuous Training.webp", alt: "Continuous Training" },
+  { id: 17, src: "/Emergency Readiness.webp", alt: "Emergency Readiness" },
+  { id: 18, src: "/diesel-bowser.jpg", alt: "Diesel Bowser" },
+  { id: 19, src: "/lmv-monitoring.jpg", alt: "LMV Monitoring" },
+  { id: 20, src: "/passenger-carrier.jpg", alt: "Passenger Carrier" },
+  { id: 21, src: "/utility-vehicle.jpg", alt: "Utility Vehicle" },
+  { id: 22, src: "/gaadi-jcb.webp", alt: "Mining Equipment" },
+  { id: 23, src: "/bolter-support.webp", alt: "Bolter Support" },
+  { id: 24, src: "/drill-rig.webp", alt: "Drill Rig" },
+  { id: 25, src: "/lhd-loader.webp", alt: "LHD Loader" },
+  { id: 26, src: "/underground-truck.webp", alt: "Underground Truck" },
+  { id: 27, src: "/newsroom-hero-bg.webp", alt: "Operations Overview" },
+];
 
 export default function PhotoGalleryPage() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -27,7 +51,6 @@ export default function PhotoGalleryPage() {
     setLightboxIndex((prev) => (prev === null ? null : (prev - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length));
   }, []);
 
-  // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (lightboxIndex === null) return;
@@ -40,8 +63,8 @@ export default function PhotoGalleryPage() {
   }, [lightboxIndex, handleNext, handlePrev]);
 
   return (
-    <div className="relative bg-skt-navy min-h-screen text-white overflow-hidden isolate pt-32 pb-20">
-      <div className="fixed inset-0 z-0 pointer-events-auto">
+    <div className="relative bg-neutral-950 min-h-screen text-white overflow-hidden isolate pt-32 pb-32">
+      <div className="fixed inset-0 z-0 pointer-events-auto opacity-40">
         <DotField
           dotRadius={1.5}
           dotSpacing={14}
@@ -55,100 +78,118 @@ export default function PhotoGalleryPage() {
         />
       </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+      <div className="relative z-10 max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16">
         {/* Header */}
-        <div className="mb-12 md:mb-20">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors mb-8 backdrop-blur-md bg-white/5 px-4 py-2 rounded-full border border-white/10"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Home
-          </Link>
-          <div className="flex flex-col gap-2">
-            <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.15em] uppercase text-white/50 mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-skt-blue inline-block" />
-              Media
-            </span>
-            <h1 className="text-4xl md:text-6xl text-white tracking-tight leading-[1.1] mb-6 font-serif font-normal">
+        <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div className="max-w-2xl">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-400 hover:text-white transition-colors mb-12"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back to Home
+            </Link>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-px w-8 bg-neutral-600" />
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-neutral-400">
+                Media Center
+              </span>
+            </div>
+            <h1 className="text-5xl md:text-7xl text-white tracking-tight leading-[1.05] mb-6 font-serif font-normal">
               Photo Gallery
             </h1>
-            <p className="text-lg text-neutral-400 max-w-2xl font-light">
-              A visual journey through SKT Global&apos;s operations, facilities, and the people driving our success.
+            <p className="text-lg md:text-xl text-neutral-400 max-w-2xl font-light leading-relaxed">
+              A visual journey through SKT Global&apos;s underground operations, high-tech facilities, and the people driving our success across the Copperbelt.
             </p>
+          </div>
+          <div className="hidden md:block text-right">
+            <p className="text-4xl font-serif text-white">{GALLERY_IMAGES.length}</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-neutral-500 font-bold mt-2">Total Captures</p>
           </div>
         </div>
 
-        {/* Masonry Grid */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
-          {GALLERY_IMAGES.map((img, idx) => (
-            <div
-              key={idx}
-              className="relative break-inside-avoid overflow-hidden rounded-xl bg-neutral-900 group cursor-pointer border border-white/5"
-              onClick={() => openLightbox(idx)}
-            >
-              <div 
-                className="relative w-full overflow-hidden" 
-                style={{ 
-                  aspectRatio: idx % 5 === 0 ? "4/5" : idx % 3 === 0 ? "1/1" : "3/2" 
-                }}
+        {/* Premium Bento Box Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 grid-flow-dense auto-rows-[200px] md:auto-rows-[300px]">
+          {GALLERY_IMAGES.map((img, idx) => {
+            const isLarge = idx % 8 === 0;
+            const isWide = idx % 7 === 4 && !isLarge;
+            const isTall = idx % 5 === 2 && !isLarge && !isWide;
+
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, delay: (idx % 4) * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className={`relative overflow-hidden group cursor-pointer bg-neutral-900 border border-white/5 ${
+                  isLarge ? "col-span-2 row-span-2" : 
+                  isWide ? "col-span-2 row-span-1" : 
+                  isTall ? "col-span-1 row-span-2" : 
+                  "col-span-1 row-span-1"
+                }`}
+                onClick={() => openLightbox(idx)}
               >
                 <Image
                   src={img.src}
                   alt={img.alt}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-                  loading="lazy"
+                  className="object-cover group-hover:scale-110 group-hover:rotate-1 transition-all duration-1000 ease-out opacity-90 group-hover:opacity-100"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
-              </div>
-              <div className="absolute inset-0 bg-skt-navy/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-sm font-medium border border-white/20">
-                  Expand
-                </span>
-              </div>
-            </div>
-          ))}
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8">
+                  <span className="text-white text-lg md:text-xl font-light tracking-wide">{img.alt}</span>
+                  <span className="text-xs text-neutral-400 uppercase tracking-widest mt-2 font-bold flex items-center gap-2">
+                    <span className="w-4 h-px bg-neutral-400" /> View Image
+                  </span>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
 
       {/* Lightbox */}
       {lightboxIndex !== null && GALLERY_IMAGES[lightboxIndex] && (
-        <div className="fixed inset-0 z-[100] bg-neutral-950/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8" onClick={closeLightbox}>
+        <div className="fixed inset-0 z-[100] bg-neutral-950/98 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8" onClick={closeLightbox}>
           <button
             onClick={closeLightbox}
-            className="absolute top-6 right-6 z-10 w-12 h-12 flex items-center justify-center bg-white/10 hover:bg-white/20 border border-white/20 rounded-full transition-all text-white"
+            className="absolute top-6 right-6 z-10 w-12 h-12 flex items-center justify-center bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all text-white"
           >
-            <X className="w-6 h-6" />
+            <X className="w-5 h-5" />
           </button>
           
           <button
             onClick={(e) => { e.stopPropagation(); handlePrev(); }}
-            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-white/10 hover:bg-white/20 border border-white/20 rounded-full transition-all text-white"
+            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 w-14 h-14 flex items-center justify-center bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all text-white backdrop-blur-md"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
 
           <button
             onClick={(e) => { e.stopPropagation(); handleNext(); }}
-            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-white/10 hover:bg-white/20 border border-white/20 rounded-full transition-all text-white"
+            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 w-14 h-14 flex items-center justify-center bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all text-white backdrop-blur-md"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
 
-          <div className="relative w-full max-w-6xl h-full max-h-[85vh] rounded-2xl overflow-hidden shadow-2xl" onClick={(e) => e.stopPropagation()}>
-            <Image
-              src={GALLERY_IMAGES[lightboxIndex].src}
-              alt={GALLERY_IMAGES[lightboxIndex].alt}
-              fill
-              className="object-contain"
-              sizes="100vw"
-              priority
-            />
-          </div>
-          
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-sm font-medium border border-white/20 text-white">
-            {lightboxIndex + 1} / {GALLERY_IMAGES.length}
+          <div className="relative w-full max-w-[80vw] h-full max-h-[85vh] rounded-xl overflow-hidden shadow-2xl bg-neutral-900/50 flex flex-col" onClick={(e) => e.stopPropagation()}>
+            <div className="relative flex-1">
+              <Image
+                src={GALLERY_IMAGES[lightboxIndex].src}
+                alt={GALLERY_IMAGES[lightboxIndex].alt}
+                fill
+                className="object-contain"
+                sizes="100vw"
+                priority
+              />
+            </div>
+            <div className="p-6 bg-neutral-900 border-t border-white/10 flex justify-between items-center">
+              <span className="text-white text-lg font-light tracking-wide">{GALLERY_IMAGES[lightboxIndex].alt}</span>
+              <span className="px-4 py-1.5 bg-white/10 rounded-full text-xs font-bold tracking-[0.2em] text-white">
+                {String(lightboxIndex + 1).padStart(2, '0')} / {String(GALLERY_IMAGES.length).padStart(2, '0')}
+              </span>
+            </div>
           </div>
         </div>
       )}
