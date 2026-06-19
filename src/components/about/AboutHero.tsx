@@ -18,7 +18,7 @@ export default function AboutHero() {
     <section ref={containerRef} className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-skt-navy">
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1578496479914-7ef3b0193be3?q=80&w=2000&auto=format&fit=crop"
+          src="/tunnel-drills.webp"
           alt="SKT Global Mining Operations"
           fill
           priority

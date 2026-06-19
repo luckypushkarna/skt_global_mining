@@ -1,7 +1,8 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const ACCENT = {
@@ -21,122 +22,100 @@ interface Props {
 }
 
 export function PageHero({ eyebrow, title, titleAccent, intro, image, video, accent }: Props) {
-  const dotClass = ACCENT[accent];
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
   const hasVideo = !!video;
 
   return (
-    <section
-      className={cn(
-        "relative w-full overflow-hidden bg-slate-950",
-        hasVideo ? "min-h-[72vh] lg:min-h-[82vh] bg-black mt-16" : "min-h-[80vh] lg:min-h-[88vh]"
-      )}
-    >
-      {/* Background Video or Image */}
-      {hasVideo ? (
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src={video} type="video/mp4" />
-        </video>
-      ) : (
-        image && (
-          <Image
-            src={image}
-            alt=""
-            fill
-            priority
-            className="object-cover opacity-50"
-            sizes="100vw"
-          />
-        )
-      )}
-
-      {/* Overlays (only for images) */}
-      {!hasVideo && (
-        <>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/15" />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/75 via-slate-950/20 to-transparent" />
-        </>
-      )}
-
-      {/* Content */}
-      <div
-        className={cn(
-          "relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex flex-col justify-end",
-          hasVideo
-            ? "min-h-[72vh] lg:min-h-[82vh] pb-16 lg:pb-24"
-            : "min-h-[80vh] lg:min-h-[88vh] pb-18 lg:pb-26"
+    <section ref={containerRef} className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-neutral-950">
+      
+      {/* Background Video or Image with Parallax */}
+      <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
+        {hasVideo ? (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-50"
+          >
+            <source src={video} type="video/mp4" />
+          </video>
+        ) : (
+          image && (
+            <Image
+              src={image}
+              alt=""
+              fill
+              priority
+              className="object-cover opacity-40 grayscale"
+              sizes="100vw"
+            />
+          )
         )}
-      >
-        {/* Eyebrow */}
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/40 via-transparent to-neutral-950" />
+      </motion.div>
+
+      {/* Centered Content matching CareersHero */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full text-center">
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex items-center gap-2 mb-4"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex items-center justify-center gap-2 mb-6 md:mb-8"
         >
           <span
             className={cn(
               "w-1.5 h-1.5 rounded-full animate-pulse",
-              hasVideo ? "bg-amber-500" : dotClass
+              ACCENT[accent]
             )}
           />
-          <span
-            className={cn(
-              "text-[10px] font-semibold tracking-[0.25em] uppercase",
-              hasVideo
-                ? "text-white/95 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
-                : "text-white/60"
-            )}
-          >
+          <span className="text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-white/70">
             {eyebrow}
           </span>
         </motion.div>
-
-        {/* Headline */}
+        
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className={cn(
-            "tracking-tight",
-            hasVideo
-              ? "text-xl md:text-2xl font-semibold text-white mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
-              : "text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-7 leading-[1.02]"
-          )}
+          transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          className="text-4xl md:text-6xl lg:text-7xl xl:text-[80px] font-serif font-normal tracking-tight text-white leading-[1.05] max-w-5xl mx-auto mb-10"
         >
           {title}
-          {hasVideo ? " " : <br />}
-          <span
-            className={cn(
-              hasVideo
-                ? "text-white/80 font-normal"
-                : "text-white/35 font-light"
-            )}
-          >
-            {titleAccent}
-          </span>
+          <br className="hidden md:block" /> {titleAccent}
         </motion.h1>
 
-        {/* Intro */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className={cn(
-            "leading-relaxed",
-            hasVideo
-              ? "text-xs md:text-sm text-white/90 max-w-xl font-normal drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
-              : "text-base lg:text-lg text-white/65 max-w-2xl pb-16 lg:pb-24 font-light"
-          )}
+          transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="text-base md:text-xl text-white/80 font-light leading-relaxed max-w-3xl mx-auto"
         >
           {intro}
         </motion.p>
       </div>
+
+      {/* Scroll indicator matching CareersHero */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 1 }}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10"
+      >
+        <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-white/50">
+          Explore
+        </span>
+        <div className="w-[1px] h-12 bg-white/20 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1/2 bg-white animate-scroll-line" />
+        </div>
+      </motion.div>
     </section>
   );
 }
