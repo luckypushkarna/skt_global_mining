@@ -44,32 +44,6 @@ export function ContactSection(): JSX.Element {
       aria-labelledby="contact-heading"
     >
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16 w-full">
-        {/* Header */}
-        <div className="mb-6 md:mb-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <Badge variant="dot" className="mb-4">
-              Get In Touch
-            </Badge>
-          </motion.div>
-
-          <motion.h2
-            id="contact-heading"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-10%" }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-3xl md:text-5xl text-neutral-900 tracking-tight leading-[1.1] font-serif font-normal"
-          >
-            Let&apos;s Build
-            <br />
-            <span className="text-neutral-300">Something Together</span>
-          </motion.h2>
-        </div>
-
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 items-start">
           {/* Contact Info */}
@@ -78,8 +52,34 @@ export function ContactSection(): JSX.Element {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-2 space-y-8"
+            className="lg:col-span-2 flex flex-col space-y-8"
           >
+            {/* Header */}
+            <div className="mb-2 md:mb-4">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <Badge variant="dot" className="mb-4">
+                  Get In Touch
+                </Badge>
+              </motion.div>
+
+              <motion.h2
+                id="contact-heading"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-10%" }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="text-3xl md:text-5xl text-neutral-900 tracking-tight leading-[1.1] font-serif font-normal"
+              >
+                Let&apos;s Build
+                <br />
+                <span className="text-neutral-300">Something Together</span>
+              </motion.h2>
+            </div>
+
             <div>
               <p className="text-[15px] md:text-base text-neutral-600 font-light leading-relaxed">
                 Whether you&apos;re looking to partner on a large-scale mining

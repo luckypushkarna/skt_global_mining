@@ -23,7 +23,7 @@ export function ESHero() {
       {/* Parallax Background Image */}
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
         <Image
-          src="/Engineering & Maintenance.webp"
+          src="/engineering-services.webp"
           alt="Engineering and Maintenance"
           fill
           priority
