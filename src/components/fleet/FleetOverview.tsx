@@ -9,7 +9,7 @@ function AnimatedNumber({ value }: { value: string }) {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   
   const numMatch = value.match(/(\d+)/);
-  const targetNum = numMatch ? parseInt(numMatch[1], 10) : 0;
+  const targetNum = numMatch ? parseInt(numMatch[0], 10) : 0;
   
   const spring = useSpring(0, { duration: 2500, bounce: 0 });
   const display = useTransform(spring, (current) => Math.floor(current));
@@ -20,10 +20,10 @@ function AnimatedNumber({ value }: { value: string }) {
     }
   }, [isInView, spring, targetNum]);
 
-  if (!numMatch) return <span>{value}</span>;
+  if (!numMatch || numMatch.index === undefined) return <span>{value}</span>;
   
   const prefix = value.substring(0, numMatch.index);
-  const suffix = value.substring(numMatch.index! + numMatch[1].length);
+  const suffix = value.substring(numMatch.index + numMatch[0].length);
 
   return (
     <span ref={ref}>
