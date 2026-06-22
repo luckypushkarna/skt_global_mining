@@ -13,7 +13,6 @@ import {
   Globe,
   Shield,
 } from "lucide-react";
-import { Badge } from "@/components/atoms/Badge";
 
 const PILLARS = [
   {
