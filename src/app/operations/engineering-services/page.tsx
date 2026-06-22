@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function EngineeringServicesPage(): JSX.Element {
   return (
-    <div className="bg-[#FAFAFA] text-slate-900">
+    <div className="bg-bg-soft text-slate-900 min-h-screen">
       <ESHero />
       <ESIntro />
       <ESCapabilities />

@@ -185,7 +185,7 @@ export function PartnersSection(): JSX.Element {
                   <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-skt-blue-100">Strategic Investment</span>
                 </div>
                 <h3 className="text-[26px] md:text-3xl lg:text-4xl text-white font-serif font-normal leading-[1.2] tracking-tight">
-                  Driving Zambia's copper resurgence through powerful global partnerships and strategic capital injection.
+                  Driving Zambia&apos;s copper resurgence through powerful global partnerships and strategic capital injection.
                 </h3>
               </div>
               

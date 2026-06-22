@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ChairpersonMessagePage() {
   return (
-    <main className="flex flex-col bg-neutral-950 min-h-screen">
+    <main className="flex flex-col bg-bg-soft min-h-screen">
       <ChairpersonHero />
       <ChairpersonLetter />
       <ChairpersonClosing />

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function ChairpersonLetter() {
   return (
-    <section className="py-24 md:py-40 bg-neutral-950 border-t border-white/5">
+    <section className="py-24 md:py-40 bg-white border-b border-slate-200">
       <div className="max-w-4xl mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -12,11 +12,11 @@ export default function ChairpersonLetter() {
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="text-xl md:text-2xl lg:text-3xl font-serif text-white/90 leading-relaxed mb-16">
+          <p className="text-xl md:text-2xl lg:text-3xl font-serif text-slate-900 leading-relaxed mb-16">
             Dear Partners, Stakeholders, and the SKT Family,
           </p>
 
-          <div className="space-y-8 md:space-y-12 text-base md:text-lg lg:text-xl text-white/60 font-light leading-relaxed">
+          <div className="space-y-8 md:space-y-12 text-base md:text-lg lg:text-xl text-slate-600 font-light leading-relaxed">
             <p>
               When we established SKT Global Mining & Services Limited, we did so with a singular, unwavering vision. As a proud subsidiary of Tyre Technocrats India Private Limited (TTIPL), we set out to prove that world-class mining operations could be built not just with scale, but with unprecedented speed, precision, and deep integration into the local economy.
             </p>
@@ -25,8 +25,8 @@ export default function ChairpersonLetter() {
               SKT Global forms part of a dynamic international group of companies, but our strategic investment in Zambia is deeply personal. It represents TTIPL&apos;s long-term commitment to the Zambian mining sector and our belief in the vast potential of this nation&apos;s resources and its people. 
             </p>
 
-            <blockquote className="my-16 pl-8 border-l-2 border-skt-blue">
-              <p className="text-2xl md:text-4xl font-serif text-white leading-snug">
+            <blockquote className="my-16 pl-8 border-l-2 border-skt-blue bg-bg-tint py-6 pr-6 rounded-r-lg">
+              <p className="text-2xl md:text-4xl font-serif text-slate-900 leading-snug">
                 &ldquo;From inception, our journey has been defined by three core pillars: ambition, speed, and uncompromising excellence.&rdquo;
               </p>
             </blockquote>

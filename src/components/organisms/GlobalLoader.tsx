@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export function GlobalLoader() {
   const pathname = usePathname();
@@ -28,10 +29,12 @@ export function GlobalLoader() {
           className="fixed inset-0 z-[9999] bg-[#FDFDFD] flex items-center justify-center"
         >
           <div className="w-24 h-24 sm:w-32 sm:h-32 relative flex items-center justify-center">
-            <img 
+            <Image 
               src="/loader-animation.webp" 
               alt="Loading SKT Global Mining..." 
-              className="w-full h-full object-contain rounded-2xl"
+              fill
+              priority
+              className="object-contain rounded-2xl"
             />
           </div>
         </motion.div>

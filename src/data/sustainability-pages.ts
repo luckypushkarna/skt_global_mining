@@ -52,9 +52,9 @@ export const communityImpact: PageConfig = {
   ],
   story: {
     quote:
-      "When SKT built the clinic in our village, my children received care for the first time within walking distance. That's not corporate responsibility - that's being a neighbour.",
-    author: "Mary Banda",
-    role: "Resident, Chingola District",
+      "Lasting value in mining is not extracted from the ground - it is built through the trust of communities, the rigour of planning, and the integrity of every decision made along the way.",
+    author: "Anand Kolappa Pillai",
+    role: "Director",
   },
   ctaText: "Learn about our local workforce",
   ctaHref: "/sustainability/local-workforce",
@@ -98,9 +98,9 @@ export const environmentalCare: PageConfig = {
   ],
   story: {
     quote:
-      "We measure environmental success not in policies, but in the wildlife that returns to our rehabilitated sites. Last year, we recorded 23 species back in zones we'd rehabilitated.",
-    author: "Dr. James Mwale",
-    role: "Head of Environmental Compliance, SKT Global",
+      "The best mining operations are built not from the top down, but from the ground up - with the right people, the right tools, and a shared belief in what's possible.",
+    author: "Sahil Talreja",
+    role: "Managing Director",
   },
   ctaText: "See our community impact",
   ctaHref: "/sustainability/community-impact",
@@ -144,9 +144,9 @@ export const localWorkforce: PageConfig = {
   ],
   story: {
     quote:
-      "I started as an underground loader operator. SKT paid for my engineering certification. Today I supervise a team of 24. That's the SKT difference - they invest in you.",
-    author: "Joseph Phiri",
-    role: "Underground Supervisor, Kitwe",
+      "Underground mining demands honesty from everyone in the chain - from the face worker to the CEO. The rock doesn't forgive poor planning, and neither do the families of the people who depend on us to get it right.",
+    author: "Sanjay Kumar Sharma",
+    role: "Chief Executive Officer",
   },
   ctaText: "Explore our environmental work",
   ctaHref: "/sustainability/environmental-care",

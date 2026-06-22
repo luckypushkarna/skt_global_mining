@@ -1,9 +1,8 @@
 import type { JSX } from "react";
-import { MagazineHero } from "@/components/community/MagazineHero";
-import { DropCapIntro } from "@/components/community/DropCapIntro";
-import { PullQuote } from "@/components/community/PullQuote";
-import { ChapterSection } from "@/components/community/ChapterSection";
-import { EditorialClosing } from "@/components/community/EditorialClosing";
+import { CommunityHero } from "@/components/community/CommunityHero";
+import { CommunityIntro } from "@/components/community/CommunityIntro";
+import { CommunityQuote } from "@/components/community/CommunityQuote";
+import { CommunityInitiatives } from "@/components/community/CommunityInitiatives";
 
 export const metadata = {
   title: "Community Impact | SKT Global Mining & Services Limited",
@@ -13,21 +12,18 @@ export const metadata = {
 
 export default function CommunityImpactPage(): JSX.Element {
   return (
-    <main className="bg-[#FAF8F5]">
-      {/* 1. Magazine-style article header + lead image */}
-      <MagazineHero />
+    <main className="bg-bg-soft">
+      {/* 1. Article header + lead image */}
+      <CommunityHero />
 
-      {/* 2. Drop-cap editorial intro + at-a-glance sidebar stats */}
-      <DropCapIntro />
+      {/* 2. Intro + at-a-glance sidebar stats */}
+      <CommunityIntro />
 
-      {/* 3. Pull quote - large amber typography */}
-      <PullQuote />
+      {/* 3. Pull quote */}
+      <CommunityQuote />
 
       {/* 4. Three chapters: Education, Healthcare, Water */}
-      <ChapterSection />
-
-      {/* 5. Italic editorial closing + author byline + related reading */}
-      <EditorialClosing />
+      <CommunityInitiatives />
     </main>
   );
 }
