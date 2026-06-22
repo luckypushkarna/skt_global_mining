@@ -18,7 +18,7 @@ export default function CareersHero() {
     <section ref={containerRef} className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-neutral-950">
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
         <Image
-          src="/Careers BG.png"
+          src="/Careers BG.webp"
           alt="SKT Global Mining Careers"
           fill
           priority

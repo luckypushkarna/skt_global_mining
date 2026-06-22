@@ -72,7 +72,7 @@ export default function InfrastructurePage(): JSX.Element {
         {/* Parallax Background */}
         <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
           <Image
-            src="/infrastructure-facilities.png"
+            src="/infrastructure-facilities.webp"
             alt="Infrastructure and Facilities"
             fill
             priority
