@@ -18,11 +18,11 @@ export default function CareersHero() {
     <section ref={containerRef} className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-neutral-950">
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2000&auto=format&fit=crop"
+          src="/Careers BG.png"
           alt="SKT Global Mining Careers"
           fill
           priority
-          className="object-cover opacity-40 grayscale"
+          className="object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/40 via-transparent to-neutral-950" />
       </motion.div>
