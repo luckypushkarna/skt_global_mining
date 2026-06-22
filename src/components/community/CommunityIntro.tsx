@@ -72,7 +72,7 @@ export function CommunityIntro() {
                   <div key={s.label} className="border-b border-slate-200 pb-6 last:border-0 last:pb-0">
                     <p className="font-mono text-4xl font-medium text-skt-blue tabular-nums tracking-tight mb-2">
                       {s.prefix}
-                      <LiveCounter from={0} to={parseInt(s.value)} suffix={s.suffix} duration={2.5} />
+                      <LiveCounter from={0} to={parseInt(s.value)} suffix={s.suffix || ""} duration={2.5} />
                     </p>
                     <p className="text-sm font-medium tracking-wide text-slate-600">
                       {s.label}
