@@ -12,7 +12,7 @@ const INITIATIVES = [
     headline: "Three Schools Built. 1,800 Students Enrolled.",
     body: "In Chingola, Kitwe, and Mufulira, SKT Global funded the construction and staffing of three primary schools. Combined enrolment now exceeds 1,800 students. Engineering scholarships send the brightest into technical training. The knowledge stays in Zambia.",
     stat: "200+ scholarship recipients annually",
-    image: "/Continuous Training.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125372/skt_global_mining/Continuous%20Training.webp",
   },
   {
     id: "02",
@@ -21,7 +21,7 @@ const INITIATIVES = [
     headline: "Twelve Clinics. Free Maternal Care.",
     body: "Mobile clinics and fixed-site facilities across the operational zone offer basic care, vaccinations, and maternal health services. Every expectant mother in the surrounding communities receives free prenatal and postnatal care—no exceptions.",
     stat: "12 community clinics supported",
-    image: "/Workforce Facilities.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125472/skt_global_mining/Workforce%20Facilities.webp",
   },
   {
     id: "03",
@@ -30,7 +30,7 @@ const INITIATIVES = [
     headline: "Boreholes, Purification, & Pipe Networks.",
     body: "Clean water was the most urgent ask from every community consultation. SKT funded 14 borehole installations and two purification systems serving over 5,000 residents. Waterborne illness rates in target villages fell 60% within the first year.",
     stat: "5,000+ residents with safe water access",
-    image: "/Community Safety Culture.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125371/skt_global_mining/Community%20Safety%20Culture.webp",
   },
 ];
 

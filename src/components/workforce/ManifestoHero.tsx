@@ -12,7 +12,7 @@ export function ManifestoHero() {
       {/* Background B&W Portrait - positioned at the right on larger viewports */}
       <div className="absolute right-0 bottom-0 top-0 w-full lg:w-1/2 h-full opacity-40 lg:opacity-75 mix-blend-luminosity pointer-events-none z-0">
         <Image
-          src="/Mulenga Mutati.webp"
+          src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125390/skt_global_mining/Mulenga%20Mutati.webp"
           alt="Mulenga Mutati - Zambia Operations Chief"
           fill
           priority

@@ -30,7 +30,7 @@ export function GlobalLoader() {
         >
           <div className="w-24 h-24 sm:w-32 sm:h-32 relative flex items-center justify-center">
             <Image 
-              src="/loader-animation.webp" 
+              src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125505/skt_global_mining/loader-animation.webp" 
               alt="Loading SKT Global Mining..." 
               fill
               priority

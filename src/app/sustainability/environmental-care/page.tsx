@@ -19,7 +19,7 @@ export default function EnvironmentalCarePage(): JSX.Element {
         title={environmentalCare.title}
         titleAccent={environmentalCare.titleAccent}
         intro={environmentalCare.intro}
-        video="/Solar video.mp4"
+        video="https://res.cloudinary.com/dxhwcq1eg/video/upload/v1782125455/skt_global_mining/Solar%20video.mp4"
         accent={environmentalCare.accentColor}
       />
       <StatsRow stats={environmentalCare.stats} accent={environmentalCare.accentColor} />

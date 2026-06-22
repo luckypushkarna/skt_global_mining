@@ -8,7 +8,7 @@ export default function NewsroomHero() {
     <section
       className="relative overflow-hidden"
       style={{
-        backgroundImage: `url('/newsroom-hero-bg.webp')`,
+        backgroundImage: `url('https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125513/skt_global_mining/newsroom-hero-bg.webp')`,
         backgroundSize: "cover",
         backgroundPosition: "center top",
         backgroundRepeat: "no-repeat",

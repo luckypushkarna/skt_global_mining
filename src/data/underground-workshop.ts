@@ -22,7 +22,7 @@ export const UNDERGROUND_WORKSHOP = {
       type: "Preventive Maintenance",
       count: "Scheduled Servicing",
       desc: "Scheduled servicing at fixed operating hours right at the rock face. All major components tracked digitally with full maintenance history.",
-      image: "/Underground Workshop.webp",
+      image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125466/skt_global_mining/Underground%20Workshop.webp",
       models: ["Fluid Analysis", "Component Inspection", "Filter Replacement"],
     },
     {
@@ -38,7 +38,7 @@ export const UNDERGROUND_WORKSHOP = {
       type: "Predictive Monitoring",
       count: "Real-time Telemetry",
       desc: "Onboard telemetry monitors engine health, hydraulics, and component wear in real time. Alerts issued before failure thresholds are reached, investigated on-site.",
-      image: "/Operational Command.webp",
+      image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125405/skt_global_mining/Operational%20Command.webp",
       models: ["Wear Analysis", "Vibration Monitoring", "Thermal Diagnostics"],
     },
     {
@@ -46,14 +46,14 @@ export const UNDERGROUND_WORKSHOP = {
       type: "Emergency Repairs",
       count: "Rapid Response",
       desc: "Mobile repair units deployed directly to the production face. Our certified technicians rapidly diagnose and repair critical faults to restore production immediately.",
-      image: "/Mechanised Fleet.webp",
+      image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125389/skt_global_mining/Mechanised%20Fleet.webp",
       models: ["Hydraulic Hose Repair", "Electrical Diagnostics", "Structural Welding"],
     },
   ],
 
   gallery: [
     {
-      src: "/Underground Workshop.webp",
+      src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125466/skt_global_mining/Underground%20Workshop.webp",
       alt: "Underground workshop maintenance",
       caption: "Underground workshop, level 850m",
     },
@@ -63,22 +63,22 @@ export const UNDERGROUND_WORKSHOP = {
       caption: "Planned maintenance - multi-point inspection",
     },
     {
-      src: "/Mechanised Fleet-card.webp",
+      src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125388/skt_global_mining/Mechanised%20Fleet-card.webp",
       alt: "Fleet lineup near workshop",
       caption: "Fleet staging near underground workshop",
     },
     {
-      src: "/Production Development.webp",
+      src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125408/skt_global_mining/Production%20Development.webp",
       alt: "Production development heading",
       caption: "Active development heading support",
     },
     {
-      src: "/Mechanised Fleet.webp",
+      src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125389/skt_global_mining/Mechanised%20Fleet.webp",
       alt: "Heavy mechanised fleet staging area",
       caption: "Heavy fleet staging - Mufulira operations",
     },
     {
-      src: "/Operational Command.webp",
+      src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125405/skt_global_mining/Operational%20Command.webp",
       alt: "Workshop operational command centre",
       caption: "Workshop dispatch & command",
     },

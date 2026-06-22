@@ -25,7 +25,7 @@ export function SafetyHero() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-50"
         >
-          <source src="/safety-first-bg.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dxhwcq1eg/video/upload/v1782125520/skt_global_mining/safety-first-bg.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/40 via-transparent to-neutral-950" />
       </motion.div>

@@ -11,7 +11,7 @@ export function LeadershipQuote() {
             <div className="absolute -top-3 -left-3 w-full h-full border border-emerald-200" />
             <div className="relative w-48 h-56 lg:w-56 lg:h-64 overflow-hidden bg-slate-100">
               <Image
-                src="/Raj Sir Photo.webp"
+                src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125409/skt_global_mining/Raj%20Sir%20Photo.webp"
                 alt="Raj Talreja - Chairman, SKT Global Mining"
                 fill
                 className="object-cover object-top"

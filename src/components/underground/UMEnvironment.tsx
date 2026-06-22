@@ -22,7 +22,7 @@ export function UMEnvironment() {
             className="lg:col-span-5 relative aspect-[4/5] bg-slate-100 overflow-hidden"
           >
             <Image
-              src="/Community Safety Culture.webp"
+              src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125371/skt_global_mining/Community%20Safety%20Culture.webp"
               alt="Environmental monitoring and landscape rehabilitation"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"

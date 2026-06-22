@@ -35,10 +35,10 @@ export default function PartnersPage() {
           {/* Logo Grid */}
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 pt-12 border-t border-slate-100">
             <div className="relative h-16 md:h-20 w-48 md:w-64">
-              <Image src="/irh-logo.webp" alt="International Resources Holding" fill className="object-contain brightness-0 opacity-80 hover:opacity-100 transition-opacity" />
+              <Image src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125499/skt_global_mining/irh-logo.webp" alt="International Resources Holding" fill className="object-contain brightness-0 opacity-80 hover:opacity-100 transition-opacity" />
             </div>
             <div className="relative h-16 md:h-20 w-48 md:w-64">
-              <Image src="/mopani-logo.webp" alt="Mopani Copper Mines" fill className="object-contain brightness-0 opacity-80 hover:opacity-100 transition-opacity" />
+              <Image src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125511/skt_global_mining/mopani-logo.webp" alt="Mopani Copper Mines" fill className="object-contain brightness-0 opacity-80 hover:opacity-100 transition-opacity" />
             </div>
           </div>
         </div>

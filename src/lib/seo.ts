@@ -93,9 +93,9 @@ export function generateMetadata(
     },
     icons: {
       icon: [
-        { url: "/favicon.webp", type: "image/png" },
+        { url: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125490/skt_global_mining/favicon.webp", type: "image/png" },
       ],
-      apple: [{ url: "/favicon.webp" }],
+      apple: [{ url: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125490/skt_global_mining/favicon.webp" }],
     },
     manifest: "/manifest.json",
     verification: {

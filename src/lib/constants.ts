@@ -224,37 +224,37 @@ export const MILESTONES: ReadonlyArray<Milestone> = [
     year: "2024",
     title: "SKT Global Established",
     description: "Founded with a vision to support Zambia's mining sector through mechanised operations, infrastructure investment, and workforce development.",
-    logo: "/establishment-icon-v3.webp",
+    logo: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125488/skt_global_mining/establishment-icon-v3.webp",
   },
   {
     year: "First 6 Months",
     title: "225+ Underground Machines Mobilised",
     description: "One of the largest underground equipment mobilisations in the region, backed by strategic investment and operational planning.",
-    logo: "/mining-icon.webp",
+    logo: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125510/skt_global_mining/mining-icon.webp",
   },
   {
     year: "Workforce Expansion",
     title: "1,500+ Workforce Recruited",
     description: "Building local capability through large-scale recruitment, skills development, and international expertise.",
-    logo: "/miner-icon.webp",
+    logo: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125509/skt_global_mining/miner-icon.webp",
   },
   {
     year: "Operational Infrastructure",
     title: "Mining Ecosystem Established",
     description: "Warehousing, transportation, accommodation, engineering support, and operational systems built to support continuous mining activities.",
-    logo: "/infrastructure-icon.webp",
+    logo: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125496/skt_global_mining/infrastructure-icon.webp",
   },
   {
     year: "Operational Achievement",
     title: "50% Mopani Targets Achieved",
     description: "Delivering measurable development and production progress through disciplined execution and mechanised mining operations.",
-    logo: "/logo2025-icon.webp",
+    logo: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125508/skt_global_mining/logo2025-icon.webp",
   },
   {
     year: "Future Vision",
     title: "Road to 90% Support Capability",
     description: "Expanding people, equipment, infrastructure, and operational capacity to support up to 90% of future IRH / MCM operational requirements.",
-    logo: "/forecasting-icon.webp",
+    logo: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125491/skt_global_mining/forecasting-icon.webp",
   },
 ] as const;
 

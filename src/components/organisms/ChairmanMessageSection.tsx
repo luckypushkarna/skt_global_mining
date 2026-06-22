@@ -153,7 +153,7 @@ export function ChairmanMessageSection(): JSX.Element {
                 <div className="relative w-full overflow-hidden rounded-sm aspect-[4/5] bg-neutral-100 max-h-[420px] lg:max-h-none">
                   <Image
                     alt="Raj Talreja - Chairman & Managing Director"
-                    src="/Raj Sir Photo.webp"
+                    src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125409/skt_global_mining/Raj%20Sir%20Photo.webp"
                     fill
                     quality={100}
                     className="object-cover object-top"

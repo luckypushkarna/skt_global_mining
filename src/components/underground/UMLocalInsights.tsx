@@ -67,7 +67,7 @@ export function UMLocalInsights() {
         <div className="relative min-h-[60vh] lg:min-h-full bg-neutral-900 border-t lg:border-t-0 lg:border-l border-neutral-800 flex flex-col justify-end">
           <div className="absolute inset-0">
             <Image
-              src="/Workforce Facilities.webp"
+              src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125472/skt_global_mining/Workforce%20Facilities.webp"
               alt="Local Zambian mining workforce"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

@@ -47,7 +47,7 @@ export default function ChairpersonHero() {
             className="relative h-[400px] sm:h-[500px] lg:h-[700px] w-full rounded-2xl overflow-hidden order-first lg:order-last shadow-md"
           >
             <Image
-              src="/Raj Sir Photo.webp"
+              src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125409/skt_global_mining/Raj%20Sir%20Photo.webp"
               alt="Mr. Raj Talreja, Chairperson"
               fill
               priority

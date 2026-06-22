@@ -158,7 +158,7 @@ export function HeroSection(): JSX.Element {
           <div ref={buttonsRef} className="flex flex-row items-center gap-4 sm:gap-5 flex-wrap lg:justify-end">
             <div className="inline-block relative h-8 w-32">
               <Image
-                src="/mopani-logo.webp"
+                src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125511/skt_global_mining/mopani-logo.webp"
                 alt="Mopani Copper Mines Logo"
                 fill
                 sizes="(max-width: 768px) 128px, 128px"
@@ -169,7 +169,7 @@ export function HeroSection(): JSX.Element {
             <div className="block h-5 w-px bg-white/10" />
             <div className="inline-block relative h-12 w-28">
               <Image
-                src="/irh-logo.webp"
+                src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125499/skt_global_mining/irh-logo.webp"
                 alt="IRH Logo"
                 fill
                 sizes="(max-width: 768px) 112px, 112px"

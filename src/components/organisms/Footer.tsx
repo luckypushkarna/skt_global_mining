@@ -62,7 +62,7 @@ export function Footer(): JSX.Element {
             <Link href="/" className="inline-block mb-6 group">
               <div className="relative w-[216px] h-[54px]">
                 <Image
-                  src="/SKT Full logo (Color).webp"
+                  src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125414/skt_global_mining/SKT%20Full%20logo%20%28Color%29.webp"
                   alt="SKT Global Mining"
                   fill
                   className="object-contain object-left brightness-0 invert opacity-90 transition-opacity group-hover:opacity-100"

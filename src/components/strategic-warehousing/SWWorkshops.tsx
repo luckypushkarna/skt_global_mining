@@ -14,7 +14,7 @@ export function SWWorkshops() {
           <div className="lg:col-span-5 lg:sticky lg:top-24">
             <div className="relative aspect-[4/5] bg-slate-100 overflow-hidden">
               <Image
-                src="/Underground Workshop.webp"
+                src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125466/skt_global_mining/Underground%20Workshop.webp"
                 alt="Underground engineering workshop - SKT Global operations"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"

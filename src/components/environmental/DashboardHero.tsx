@@ -21,7 +21,7 @@ export function DashboardHero() {
       {/* LEFT - Headline + context */}
       <div className="relative flex flex-col justify-end p-8 lg:p-14 pb-12 lg:pb-16 border-b lg:border-b-0 lg:border-r border-white/10 overflow-hidden">
         <Image
-          src="/zambia-operations-nobgs.webp"
+          src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125553/skt_global_mining/zambia-operations-nobgs.webp"
           alt="Zambia operations"
           fill
           priority

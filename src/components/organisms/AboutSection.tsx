@@ -23,7 +23,7 @@ function MilestoneDot({ index }: { index: number }) {
       {/* Stone Marker WebP */}
       <div className="relative w-11 h-11">
         <Image
-          src="/stone-marker-v2.webp"
+          src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125522/skt_global_mining/stone-marker-v2.webp"
           alt="Stone Marker"
           fill
           sizes="44px"
@@ -311,7 +311,7 @@ export function AboutSection(): JSX.Element {
               }}
             />
             <Image
-              src="/gaadi-jcb.webp"
+              src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125492/skt_global_mining/gaadi-jcb.webp"
               alt=""
               aria-hidden="true"
               width={52}

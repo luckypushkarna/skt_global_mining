@@ -81,7 +81,7 @@ export function UMProcessStory() {
           className="mt-20 relative aspect-[21/9] overflow-hidden bg-neutral-950 group"
         >
           <Image
-            src="/Mechanised Fleet.webp"
+            src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125389/skt_global_mining/Mechanised%20Fleet.webp"
             alt="Mechanised LHD vehicle at the underground production face"
             fill
             sizes="(max-width: 1024px) 100vw, 1280px"

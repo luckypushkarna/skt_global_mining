@@ -14,7 +14,7 @@ export function TestimonialCarousel({ className }: TestimonialCarouselProps) {
   const chairperson = {
     name: "Mr. Raj Kumar",
     title: "Chairperson, SKT Global Mining & Services Limited",
-    imageUrl: "/Raj Sir Photo.webp",
+    imageUrl: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125409/skt_global_mining/Raj%20Sir%20Photo.webp",
     linkedinUrl: "https://linkedin.com",
   };
 

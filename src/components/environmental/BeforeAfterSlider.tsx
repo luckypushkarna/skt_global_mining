@@ -27,7 +27,7 @@ export function BeforeAfterSlider() {
         {/* Before Image (Background) */}
         <div className="absolute inset-0 w-full h-full">
           <Image
-            src="/Underground Workshop.webp"
+            src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125466/skt_global_mining/Underground%20Workshop.webp"
             alt="Before rehabilitation - Active Mining Site"
             fill
             sizes="100vw"
@@ -45,7 +45,7 @@ export function BeforeAfterSlider() {
           style={{ clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` }}
         >
           <Image
-            src="/Community Safety Culture.webp"
+            src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125371/skt_global_mining/Community%20Safety%20Culture.webp"
             alt="After rehabilitation - Reclaimed Land"
             fill
             sizes="100vw"

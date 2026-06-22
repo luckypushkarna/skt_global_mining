@@ -217,7 +217,7 @@ export default function AboutUsSection() {
                 whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
               >
                 <Image
-                  src="/Underground Workshop.webp"
+                  src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125466/skt_global_mining/Underground%20Workshop.webp"
                   alt="SKT Global Mining Operations"
                   fill
                   sizes="320px"

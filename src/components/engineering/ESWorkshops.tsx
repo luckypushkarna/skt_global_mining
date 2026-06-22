@@ -22,7 +22,7 @@ export function ESWorkshops() {
               className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-slate-200 border border-slate-200 shadow-sm"
             >
               <Image
-                src="/Underground Workshop.webp"
+                src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125466/skt_global_mining/Underground%20Workshop.webp"
                 alt="Underground engineering workshop - SKT Global operations"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"

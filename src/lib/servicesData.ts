@@ -22,7 +22,7 @@ export const CARDS: ServiceCard[] = [
     detail:
       "Our underground workshop is a fully self-sufficient maintenance facility operating 24 hours a day. Equipped with heavy lifting capability, precision tooling, and a rapid-response technical team, it minimises equipment downtime and keeps every machine on the roster mission-ready.",
     tags: ["24/7 Repair", "Rapid Response"],
-    bgImage: "/Underground Workshop.webp",
+    bgImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125466/skt_global_mining/Underground%20Workshop.webp",
   },
   {
     num: "02",
@@ -33,7 +33,7 @@ export const CARDS: ServiceCard[] = [
     detail:
       "A centralised warehousing operation stocking over $3 million in OEM and aftermarket parts. Inventory is tracked in real time, enabling same-shift parts fulfilment and eliminating the production delays associated with procurement lead times.",
     tags: ["$3M+ Stock", "Zero Downtime"],
-    bgImage: "/Strategic Warehousing.webp",
+    bgImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125460/skt_global_mining/Strategic%20Warehousing.webp",
   },
   {
     num: "03",
@@ -44,7 +44,7 @@ export const CARDS: ServiceCard[] = [
     detail:
       "SKT operates a mechanised underground fleet covering every production phase - LHD loaders, 50-tonne mine trucks, long-hole drill rigs, development jumbos, cable bolters, and utility vehicles. Each unit is maintained to OEM specification and deployed to maximise shift utilisation.",
     tags: ["Drill Rigs", "Mine Trucks"],
-    bgImage: "/Mechanised Fleet.webp",
+    bgImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125389/skt_global_mining/Mechanised%20Fleet.webp",
   },
   {
     num: "04",
@@ -55,7 +55,7 @@ export const CARDS: ServiceCard[] = [
     detail:
       "Purpose-built rescue chambers are positioned at strategic underground intervals, each stocked with life support supplies for extended survival. Paired with real-time atmospheric and personnel monitoring, our mine rescue team conducts regular drills and holds certifications aligned with international standards.",
     tags: ["Rescue Chambers", "Live Monitoring"],
-    bgImage: "/Rescue Systems.webp",
+    bgImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125412/skt_global_mining/Rescue%20Systems.webp",
   },
   {
     num: "05",
@@ -66,7 +66,7 @@ export const CARDS: ServiceCard[] = [
     detail:
       "Coordinated logistics spanning workforce transport, equipment mobilisation, and ore-to-surface material handling. Our fleet of light and heavy surface vehicles ensures shift movements are on time, consumables reach the face, and production ore reaches the mill without delay.",
     tags: ["Fleet Dispatch", "Material Handling"],
-    bgImage: "/Logistics Network.webp",
+    bgImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125387/skt_global_mining/Logistics%20Network.webp",
   },
   {
     num: "06",
@@ -77,7 +77,7 @@ export const CARDS: ServiceCard[] = [
     detail:
       "A single operations command integrating shift reports, equipment tracking, personnel location, and production KPIs. Mine managers and engineers work from a unified dashboard that surfaces bottlenecks in real time, allowing immediate corrective action before production targets are missed.",
     tags: ["Unified Control", "Production Planning"],
-    bgImage: "/Operational Command.webp",
+    bgImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125405/skt_global_mining/Operational%20Command.webp",
   },
   {
     num: "07",
@@ -88,7 +88,7 @@ export const CARDS: ServiceCard[] = [
     detail:
       "Permanent and rotational workforce accommodation built to international mining camp standards. A 24-hour catering operation feeds every shift, recreational facilities support wellbeing, and a dedicated welfare team manages the pastoral needs of both local national and expatriate personnel.",
     tags: ["Accommodation", "24/7 Catering"],
-    bgImage: "/Workforce Facilities.webp",
+    bgImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125472/skt_global_mining/Workforce%20Facilities.webp",
   },
   {
     num: "08",
@@ -110,7 +110,7 @@ export const CARDS: ServiceCard[] = [
     detail:
       "Underground development and production drilling executed using fully mechanised methods. Development headings are advanced on a twin-boom jumbo cycle, with production blasting, mucking, and trucking sequenced to sustain continuous ore flow from the stopes to the primary crusher.",
     tags: ["Mechanisation", "Growth Strategy"],
-    bgImage: "/Production Development.webp",
+    bgImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125408/skt_global_mining/Production%20Development.webp",
   },
   {
     num: "10",
@@ -132,7 +132,7 @@ export const CARDS: ServiceCard[] = [
     detail:
       "Surface and underground infrastructure designed for long-life mining operations - portal construction, decline development, pump stations, compressed air reticulation, ventilation fans, underground electrical substations, and a surface workshop complex capable of handling the heaviest fleet components.",
     tags: ["Utility Systems", "Workshops"],
-    bgImage: "/Infrastructure Systems.webp",
+    bgImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125382/skt_global_mining/Infrastructure%20Systems.webp",
   },
   {
     num: "12",
@@ -143,6 +143,6 @@ export const CARDS: ServiceCard[] = [
     detail:
       "SKT Global is actively evaluating new project opportunities across sub-Saharan Africa, with a focus on countries that have established mining codes and proven mineral endowment. Our expansion model leverages existing equipment assets, operational expertise, and local community relationships to fast-track project establishment.",
     tags: ["Africa Regions", "Scale-Up"],
-    bgImage: "/Future Expansion.webp",
+    bgImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125377/skt_global_mining/Future%20Expansion.webp",
   },
 ];

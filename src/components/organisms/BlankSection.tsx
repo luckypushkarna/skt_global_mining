@@ -158,7 +158,7 @@ export function BlankSection(): JSX.Element {
                 >
                   <g>
                     <image
-                      href="/zambia-map-detailed.webp"
+                      href="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125551/skt_global_mining/zambia-map-detailed.webp"
                       x="0"
                       y="0"
                       width="800"

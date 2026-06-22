@@ -49,7 +49,7 @@ export function CommunityHero() {
             className="relative h-[400px] sm:h-[500px] lg:h-[700px] w-full rounded-2xl overflow-hidden order-first lg:order-last shadow-md"
           >
             <Image
-              src="/Community Safety Culture.webp"
+              src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125371/skt_global_mining/Community%20Safety%20Culture.webp"
               alt="SKT Global community engagement in Zambia"
               fill
               priority

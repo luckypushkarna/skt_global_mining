@@ -25,7 +25,7 @@ export const communityImpact: PageConfig = {
   titleAccent: "communities.",
   intro:
     "Twenty percent of our net profits go directly back into Zambia's mining communities - funding schools, clinics, water networks, and small business growth.",
-  heroImage: "/Community Safety Culture.webp",
+  heroImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125371/skt_global_mining/Community%20Safety%20Culture.webp",
   accentColor: "amber",
   stats: [
     { value: "$2.4", suffix: "M", label: "Community Investment", sub: "Three schools, 1,800+ students" },
@@ -71,7 +71,7 @@ export const environmentalCare: PageConfig = {
   titleAccent: "the land.",
   intro:
     "Mining is extraction - but it doesn't have to be destruction. Our closed-loop systems, rehabilitation programs, and emissions controls leave the land healthier than we found it.",
-  heroImage: "/zambia-operations-nobgs.webp",
+  heroImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125553/skt_global_mining/zambia-operations-nobgs.webp",
   accentColor: "emerald",
   stats: [
     { value: "90", suffix: "%", label: "Water Recycled", sub: "Closed-loop processing circuits" },
@@ -117,7 +117,7 @@ export const localWorkforce: PageConfig = {
   titleAccent: "Zambia, for Zambia.",
   intro:
     "Eighty-five percent of our workforce is Zambian. Through the Ubuntu Mentorship Program and certified training pathways, we're building the next generation of African mining leadership - not importing it.",
-  heroImage: "/Continuous Training.webp",
+  heroImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125372/skt_global_mining/Continuous%20Training.webp",
   accentColor: "sky",
   stats: [
     { value: "85", suffix: "%", label: "Local Workforce", sub: "Zambian employees across all sites" },

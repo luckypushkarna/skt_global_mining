@@ -24,7 +24,7 @@ export function WorkerSpotlight() {
           <div className="lg:col-span-5 space-y-6">
             <div className="relative aspect-[4/5] w-full border border-zinc-800 bg-zinc-900 overflow-hidden filter grayscale contrast-110">
               <Image
-                src="/Charles Sakanya.webp"
+                src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125369/skt_global_mining/Charles%20Sakanya.webp"
                 alt="Charles Sakanya Portrait"
                 fill
                 className="object-cover"

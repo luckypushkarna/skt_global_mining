@@ -13,7 +13,7 @@ const GALLERY_ITEMS = [
     isReal: true,
   },
   {
-    src: "/Underground Workshop-card.webp",
+    src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125465/skt_global_mining/Underground%20Workshop-card.webp",
     alt: "Underground workshop interior",
     caption: "Level 850m workshop bay",
     isReal: true,

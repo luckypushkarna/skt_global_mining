@@ -16,16 +16,16 @@ export function PagePreloader() {
   // Critical images for below-the-fold sections
   const belowFoldImages = [
     // Services section (marquee cards)
-    "/Underground Workshop-card.webp",
-    "/Strategic Warehousing.webp",
-    "/Mechanised Fleet-card.webp",
+    "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125465/skt_global_mining/Underground%20Workshop-card.webp",
+    "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125460/skt_global_mining/Strategic%20Warehousing.webp",
+    "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125388/skt_global_mining/Mechanised%20Fleet-card.webp",
     
     // Services Section
-    "/Production Development-card.webp",
+    "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125406/skt_global_mining/Production%20Development-card.webp",
     
     // Team & Chairman section
-    "/Sahil Talreja.webp",
-    "/Raj Sir Photo.webp",
+    "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125422/skt_global_mining/Sahil%20Talreja.webp",
+    "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125409/skt_global_mining/Raj%20Sir%20Photo.webp",
   ];
 
   usePrefetchImages({
