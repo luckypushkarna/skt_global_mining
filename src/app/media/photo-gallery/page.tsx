@@ -11,7 +11,7 @@ const GALLERY_IMAGES = [
   { id: 1, src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125389/skt_global_mining/Mechanised%20Fleet.webp", alt: "Mechanised Fleet" },
   { id: 2, src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125466/skt_global_mining/Underground%20Workshop.webp", alt: "Underground Workshop" },
   { id: 3, src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125408/skt_global_mining/Production%20Development.webp", alt: "Production Development" },
-  { id: 4, src: "/Engineering & Maintenance.webp", alt: "Engineering & Maintenance" },
+  { id: 4, src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt_global_mining/Engineering-Maintenance.webp", alt: "Engineering & Maintenance" },
   { id: 5, src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125387/skt_global_mining/Logistics%20Network.webp", alt: "Logistics Network" },
   { id: 6, src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125405/skt_global_mining/Operational%20Command.webp", alt: "Operational Command" },
   { id: 7, src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125412/skt_global_mining/Rescue%20Systems.webp", alt: "Rescue Systems" },

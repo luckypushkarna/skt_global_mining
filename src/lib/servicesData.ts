@@ -99,7 +99,7 @@ export const CARDS: ServiceCard[] = [
     detail:
       "A structured engineering regime built on manufacturer-recommended maintenance intervals, oil analysis, and predictive condition monitoring. Component rebuild schedules are tracked by a dedicated planning team, ensuring major failures are anticipated and addressed during planned downtime rather than unplanned stoppages.",
     tags: ["Preventive Maint.", "Max Availability"],
-    bgImage: "/Engineering & Maintenance.webp",
+    bgImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt_global_mining/Engineering-Maintenance.webp",
   },
   {
     num: "09",

@@ -105,7 +105,7 @@ export const MECHANISED_FLEET = {
       caption: "Active development heading, Copperbelt",
     },
     {
-      src: "/Engineering & Maintenance.webp",
+      src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt_global_mining/Engineering-Maintenance.webp",
       alt: "Engineering and maintenance team",
       caption: "Planned maintenance - multi-point inspection",
     },

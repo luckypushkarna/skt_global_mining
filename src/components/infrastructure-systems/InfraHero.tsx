@@ -31,7 +31,7 @@ export function InfraHero() {
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden">
               <Image
-                src="/Engineering & Maintenance.webp"
+                src="https://res.cloudinary.com/dxhwcq1eg/image/upload/skt_global_mining/Engineering-Maintenance.webp"
                 alt="SKT Global engineering team performing maintenance on underground mining equipment"
                 fill
                 priority

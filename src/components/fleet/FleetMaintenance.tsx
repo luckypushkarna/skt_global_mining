@@ -14,7 +14,7 @@ export function FleetMaintenance() {
           {/* Image */}
           <div className="lg:col-span-5 relative aspect-[4/5] bg-slate-100 overflow-hidden">
             <Image
-              src="/Engineering & Maintenance.webp"
+              src="https://res.cloudinary.com/dxhwcq1eg/image/upload/skt_global_mining/Engineering-Maintenance.webp"
               alt="Underground fleet maintenance workshop - SKT Global technicians performing planned maintenance"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"

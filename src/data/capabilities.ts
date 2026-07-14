@@ -65,7 +65,7 @@ export const CAPABILITIES: Capability[] = [
     desc: "Specialised crews maintaining mechanical, electrical, and hydraulic systems to ensure maximum fleet availability.",
     overview: "Our dedicated engineering teams maintain strict condition monitoring and scheduled maintenance protocols. By intervening rapidly on mechanical, electrical, and hydraulic issues, we ensure that our mechanised fleet sustains an availability rate exceeding 90%.",
     tags: ["90%+ Availability", "Preventive Maint.", "Specialised Crews"],
-    bgImage: "/Engineering & Maintenance-card.webp",
+    bgImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt_global_mining/Engineering-Maintenance-card.webp",
   },
 
   // ── Infrastructure & Logistics ──
@@ -191,7 +191,7 @@ export function getCapabilityGallery(slug: string): GalleryItem[] {
       return [
         { src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125466/skt_global_mining/Underground%20Workshop.webp", caption: "Heavy Maintenance Bays" },
         { src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125389/skt_global_mining/Mechanised%20Fleet.webp", caption: "Hydraulic System Repairs" },
-        { src: "/Engineering & Maintenance.webp", caption: "Electrical Calibrations" },
+        { src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt_global_mining/Engineering-Maintenance.webp", caption: "Electrical Calibrations" },
         { src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125460/skt_global_mining/Strategic%20Warehousing.webp", caption: "Critical Spare Parts Depot" },
         { src: "/Safety & Compliance.webp", caption: "Technician Training Programs" },
         { src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125405/skt_global_mining/Operational%20Command.webp", caption: "Digital Diagnostics Center" },
@@ -237,7 +237,7 @@ export function getCapabilityGallery(slug: string): GalleryItem[] {
         { src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125405/skt_global_mining/Operational%20Command.webp", caption: "Central Control Interface" },
         { src: "/Safety & Compliance.webp", caption: "Safety Telemetry Control" },
         { src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125387/skt_global_mining/Logistics%20Network.webp", caption: "Real-Time Fleet Monitors" },
-        { src: "/Engineering & Maintenance.webp", caption: "Predictive Health Dashboards" },
+        { src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt_global_mining/Engineering-Maintenance.webp", caption: "Predictive Health Dashboards" },
         { src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125382/skt_global_mining/Infrastructure%20Systems.webp", caption: "Substation Control Network" },
         { src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125466/skt_global_mining/Underground%20Workshop.webp", caption: "Maintenance Queue Display" },
       ];
@@ -252,7 +252,7 @@ export function getCapabilityGallery(slug: string): GalleryItem[] {
       ];
     case "engineering-maintenance":
       return [
-        { src: "/Engineering & Maintenance.webp", caption: "Predictive Asset Auditing" },
+        { src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt_global_mining/Engineering-Maintenance.webp", caption: "Predictive Asset Auditing" },
         { src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125466/skt_global_mining/Underground%20Workshop.webp", caption: "High-Pressure Hydraulic Rig" },
         { src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125389/skt_global_mining/Mechanised%20Fleet.webp", caption: "LHD Loader Calibration" },
         { src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125460/skt_global_mining/Strategic%20Warehousing.webp", caption: "Pre-Assembled Component Depot" },

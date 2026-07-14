@@ -7,7 +7,7 @@ import { ImagePlaceholder } from "./ImagePlaceholder";
 // Using existing project images where available, placeholders for assets not yet shot
 const GALLERY_ITEMS = [
   {
-    src: "/Engineering & Maintenance-card.webp",
+    src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt_global_mining/Engineering-Maintenance-card.webp",
     alt: "Engineering and maintenance work in progress",
     caption: "Planned maintenance cycle",
     isReal: true,

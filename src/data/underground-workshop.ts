@@ -30,7 +30,7 @@ export const UNDERGROUND_WORKSHOP = {
       type: "Component Overhauls",
       count: "Deep Level Repairs",
       desc: "Complete component overhauls performed directly inside the shaft. From engine swaps to hydraulic system rebuilds, eliminating surface transport delays.",
-      image: "/Engineering & Maintenance.webp",
+      image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt_global_mining/Engineering-Maintenance.webp",
       models: ["Engine Rebuilds", "Hydraulic Systems", "Transmission Service"],
     },
     {
@@ -58,7 +58,7 @@ export const UNDERGROUND_WORKSHOP = {
       caption: "Underground workshop, level 850m",
     },
     {
-      src: "/Engineering & Maintenance.webp",
+      src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt_global_mining/Engineering-Maintenance.webp",
       alt: "Engineering and maintenance team",
       caption: "Planned maintenance - multi-point inspection",
     },
