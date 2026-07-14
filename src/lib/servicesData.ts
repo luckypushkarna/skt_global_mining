@@ -66,7 +66,7 @@ export const CARDS: ServiceCard[] = [
     detail:
       "Coordinated logistics spanning workforce transport, equipment mobilisation, and ore-to-surface material handling. Our fleet of light and heavy surface vehicles ensures shift movements are on time, consumables reach the face, and production ore reaches the mill without delay.",
     tags: ["Fleet Dispatch", "Material Handling"],
-    bgImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/skt_global_mining/Logistic-network.webp",
+    bgImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/skt_global_mining/logistic-network-new.webp",
   },
   {
     num: "06",
@@ -77,7 +77,7 @@ export const CARDS: ServiceCard[] = [
     detail:
       "A single operations command integrating shift reports, equipment tracking, personnel location, and production KPIs. Mine managers and engineers work from a unified dashboard that surfaces bottlenecks in real time, allowing immediate corrective action before production targets are missed.",
     tags: ["Unified Control", "Production Planning"],
-    bgImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/skt_global_mining/Operational-command.webp",
+    bgImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/skt_global_mining/operational-command-new.webp",
   },
   {
     num: "07",
@@ -132,7 +132,7 @@ export const CARDS: ServiceCard[] = [
     detail:
       "Surface and underground infrastructure designed for long-life mining operations - portal construction, decline development, pump stations, compressed air reticulation, ventilation fans, underground electrical substations, and a surface workshop complex capable of handling the heaviest fleet components.",
     tags: ["Utility Systems", "Workshops"],
-    bgImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/skt_global_mining/infrastructure.webp",
+    bgImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/skt_global_mining/infrastructure-new.webp",
   },
   {
     num: "12",
