@@ -246,7 +246,7 @@ export const MILESTONES: ReadonlyArray<Milestone> = [
   },
   {
     year: "Operational Achievement",
-    title: "50% Mopani Targets Achieved",
+    title: "Nearly Approaching 50% Mopani Targets Achieved",
     description: "Delivering measurable development and production progress through disciplined execution and mechanised mining operations.",
     logo: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125508/skt_global_mining/logo2025-icon.webp",
   },
@@ -262,7 +262,7 @@ export const MARQUEE_ITEMS = [
   "225+ UNDERGROUND MACHINES",
   "1,500+ WORKFORCE",
   "$50M+ STRATEGIC INVESTMENT",
-  "50% MOPANI TARGETS ACHIEVED",
+  "NEARLY APPROACHING 50% MOPANI TARGETS ACHIEVED",
   "24/7 OPERATIONAL SUPPORT",
   "$3M+ SPARE PARTS INVENTORY",
   "UNDERGROUND MINING",

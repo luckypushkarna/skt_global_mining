@@ -88,10 +88,10 @@ export function HeroSection(): JSX.Element {
           loop
           playsInline
           crossOrigin="anonymous"
-          poster="https://res.cloudinary.com/dxhwcq1eg/video/upload/f_auto,q_auto,so_0/skt/skt-global-hero-optimized.jpg"
+          poster="https://res.cloudinary.com/dxhwcq1eg/video/upload/f_auto,q_auto,so_0/skt/skt-website-hero-video-optimized-new.jpg"
           preload={isMobile ? "none" : "auto"}
           className="w-full h-full object-cover object-center opacity-60"
-          src="https://res.cloudinary.com/dxhwcq1eg/video/upload/skt/skt-global-hero-optimized.mp4"
+          src="https://res.cloudinary.com/dxhwcq1eg/video/upload/skt/skt-website-hero-video-optimized-new.mp4"
         />
       </motion.div>
 
