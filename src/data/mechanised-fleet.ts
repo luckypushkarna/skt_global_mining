@@ -110,7 +110,7 @@ export const MECHANISED_FLEET = {
       caption: "Planned maintenance - multi-point inspection",
     },
     {
-      src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125405/skt_global_mining/Operational%20Command.webp",
+      src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/skt_global_mining/Operational-command.webp",
       alt: "Fleet operational command centre",
       caption: "Fleet dispatch & command, surface control",
     },
