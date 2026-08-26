@@ -25,6 +25,8 @@ function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
     "mulenga-mutati": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/mulenga-mutati.webp",
     "safeli-maxim-chipulu": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/safeli-maxim-chipulu.webp",
     "toms-joseph": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/toms-joseph.webp",
+    "collins": "/skt/leaders/collins.jpg",
+    "kerson-phiri": "/skt/leaders/kerson.jpg",
   };
 
   const imgSrc = images[member.id] || "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/unknown-leader.webp";
@@ -41,6 +43,8 @@ function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
     "mulenga-mutati": { title: "Focusing on Team Growth", action: "Human Capital" },
     "safeli-maxim-chipulu": { title: "Focusing on Mufulira Scale", action: "Site Operations" },
     "toms-joseph": { title: "Focusing on Site Precision", action: "Mufulira Operations" },
+    "collins": { title: "Focusing on Site Operations", action: "MSV Operations" },
+    "kerson-phiri": { title: "Focusing on Corporate Administration", action: "Executive Admin" },
   };
 
   const details = overlayDetails[member.id] || {

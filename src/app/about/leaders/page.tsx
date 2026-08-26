@@ -14,7 +14,7 @@ const leaders = [
     statement:
       "Sustainable growth is built on decisive action, disciplined teams, and an unwavering commitment to the people and communities we serve.",
     image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/sahil-talreja.webp",
-    yearsExperience: 20,
+    yearsExperience: 15,
     overview: {
       intro:
         "Sahil Talreja is the strategic architect behind SKT Global Mining & Services Limited, directing the company's rapid establishment and growth across Zambia's Copperbelt. As Managing Director, he leads the organisation's vision to become the most reliable and respected mining services partner in sub-Saharan Africa.",
@@ -498,6 +498,80 @@ const leaders = [
     ],
     personalMessage: "Underground mining is a team sport of high stakes. The technical precision of our team at Mufulira is what allows us to overcome daily challenges and deliver the copper that powers the global economy.",
   },
+  {
+    id: 11,
+    name: "Mr. Collins",
+    designation: "MSV Site Manager",
+    department: "Operations",
+    statement: "Excellence in site management is driven by rigorous standards, clear communication, and empowering teams to execute safely and efficiently.",
+    image: "/skt/leaders/collins.jpg",
+    yearsExperience: 10,
+    overview: {
+      intro: "Mr. Collins is the MSV Site Manager at SKT Global, bringing over a decade of dedicated operational leadership to our site activities. He oversees the critical day-to-day execution of site programs, ensuring all teams operate seamlessly and safely.",
+      expertise: "His expertise lies in field operations, team coordination, and implementing rigorous safety protocols in complex industrial environments.",
+      philosophy: "Collins believes that a well-managed site is the foundation of any successful mining operation, where every individual understands their role and values safety above all else.",
+      responsibilities: "As MSV Site Manager, he directs daily site activities, manages local operational teams, coordinates with engineering units, and ensures compliance with all health, safety, and environmental standards."
+    },
+    areasOfFocus: [
+      { title: "Site Coordination", description: "Directing day-to-day field operations and personnel deployment" },
+      { title: "Safety Execution", description: "Implementing and monitoring strict on-site safety protocols" }
+    ],
+    journey: [
+      { year: "2016", title: "Early Career", description: "Began career in operational site management and field coordination." },
+      { year: "2026", title: "SKT Global", description: "Appointed MSV Site Manager to lead operations and ensure seamless execution of site targets." }
+    ],
+    contributions: [
+      { title: "Operational Streamlining", narrative: "Streamlined daily site reporting and personnel deployment, increasing active operational hours." },
+      { title: "Safety Record", narrative: "Maintained an impeccable safety record through continuous on-site training and vigilance." }
+    ],
+    philosophyQuote: "A safe site is a productive site. When we take care of our people and our environment, the results follow naturally.",
+    impact: [
+      { area: "Site Efficiency", description: "Improved daily operational output through better team coordination." },
+      { area: "Safety Culture", description: "Fostered a proactive safety culture among all site personnel." }
+    ],
+    network: [
+      { department: "Operations", connection: "Direct management of site teams and field personnel." },
+      { department: "Engineering", connection: "Coordination with technical teams for equipment deployment." }
+    ],
+    personalMessage: "Being on the ground and seeing the direct results of our team's hard work is the most rewarding part of my role. We are building the future of mining in Zambia, one safe shift at a time."
+  },
+  {
+    id: 12,
+    name: "Mr. Kerson Phiri",
+    designation: "Executive & Administration Manager",
+    department: "Administration",
+    statement: "Strong administration is the invisible backbone that allows operational excellence to thrive.",
+    image: "/skt/leaders/kerson.jpg",
+    yearsExperience: 10,
+    overview: {
+      intro: "Mr. Kerson Phiri serves as the Executive and Administration Manager for SKT Global, bringing exceptional organisational leadership and 10 years of experience to the company's administrative operations.",
+      expertise: "He specializes in corporate administration, executive support, operational logistics, and streamlining internal communication channels.",
+      philosophy: "Kerson believes that operational success relies heavily on robust administrative support, ensuring that executive decisions are executed smoothly across all levels of the organisation.",
+      responsibilities: "He oversees corporate administration, manages executive workflows, coordinates cross-departmental communications, and ensures the efficient functioning of SKT Global's administrative infrastructure."
+    },
+    areasOfFocus: [
+      { title: "Corporate Administration", description: "Managing the core administrative functions of the organisation" },
+      { title: "Executive Operations", description: "Facilitating executive decision-making and cross-functional alignment" }
+    ],
+    journey: [
+      { year: "2016", title: "Early Career", description: "Developed expertise in corporate administration and logistics management." },
+      { year: "2026", title: "SKT Global", description: "Joined as Executive and Administration Manager to bolster the company's internal operations." }
+    ],
+    contributions: [
+      { title: "Administrative Efficiency", narrative: "Implemented modern administrative workflows that significantly reduced processing times for internal operations." },
+      { title: "Executive Support", narrative: "Established streamlined communication protocols between site operations and the executive board." }
+    ],
+    philosophyQuote: "Efficiency in administration directly translates to effectiveness in the field. Our goal is to remove roadblocks so our teams can focus on their core objectives.",
+    impact: [
+      { area: "Internal Operations", description: "Enhanced the speed and reliability of corporate communications." },
+      { area: "Resource Management", description: "Optimised administrative resources to better support site activities." }
+    ],
+    network: [
+      { department: "Executive Leadership", connection: "Direct support to the CEO and Managing Director." },
+      { department: "Human Resources", connection: "Collaboration on internal policies and personnel administration." }
+    ],
+    personalMessage: "The strength of SKT Global lies in our unity and organisation. I am proud to support a team of such dedicated professionals as we work together to achieve our vision."
+  }
 ];
 
 const iconPaths: Record<string, string> = {

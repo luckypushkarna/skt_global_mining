@@ -25,8 +25,7 @@ export function FleetHero() {
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
         <video
           className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity"
-          src="https://res.cloudinary.com/dxhwcq1eg/video/upload/skt/fleet-hero.mp4"
-          poster="https://res.cloudinary.com/dxhwcq1eg/video/upload/f_auto,q_auto,so_0/skt/fleet-hero.jpg"
+          src="/skt/videos/lhd-video.mp4"
           crossOrigin="anonymous"
           preload={isMobile ? "none" : "auto"}
           autoPlay

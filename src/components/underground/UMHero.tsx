@@ -1,12 +1,12 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { UNDERGROUND_MINING } from "@/data/underground-mining";
 
 export function UMHero() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -16,25 +16,17 @@ export function UMHero() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
-  }, []);
-
   return (
     <section ref={containerRef} className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-neutral-950">
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
-        <video
-          className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity"
-          src="https://res.cloudinary.com/dxhwcq1eg/video/upload/skt/underground-mining-bg.mp4"
-          poster="https://res.cloudinary.com/dxhwcq1eg/video/upload/f_auto,q_auto,so_0/skt/underground-mining-bg.jpg"
-          crossOrigin="anonymous"
-          preload={isMobile ? "none" : "auto"}
-          autoPlay
-          loop
-          muted
-          playsInline
+        <Image
+          src="/skt/esg/drill-team.jpg"
+          alt="Underground Drill Team"
+          fill
+          className="object-cover opacity-50 mix-blend-luminosity"
+          priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/40 via-transparent to-neutral-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/60 via-transparent to-neutral-950" />
       </motion.div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full text-center mt-16">

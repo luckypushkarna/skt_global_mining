@@ -164,9 +164,8 @@ export const mediaSection: NavSection = {
   links: [
     {
       title: "Newsroom",
-      href: "#",
+      href: "/media/newsroom",
       icon: Newspaper,
-      badge: "Coming soon"
     },
   ],
 };

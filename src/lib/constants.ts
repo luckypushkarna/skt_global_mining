@@ -217,6 +217,18 @@ export const TEAM_MEMBERS: ReadonlyArray<TeamMember> = [
     role: "Mine Manager (Mufulira)",
     bio: "Directs deep-level mining operations and oversees the rigorous safety compliance necessary to sustain large-scale mechanised extraction.",
   },
+  {
+    id: "collins",
+    name: "Mr. Collins",
+    role: "MSV Site Manager",
+    bio: "Excellence in site management is driven by rigorous standards, clear communication, and empowering teams to execute safely and efficiently.",
+  },
+  {
+    id: "kerson-phiri",
+    name: "Mr. Kerson Phiri",
+    role: "Executive & Administration Manager",
+    bio: "Strong administration is the invisible backbone that allows operational excellence to thrive.",
+  },
 ] as const;
 
 export const MILESTONES: ReadonlyArray<Milestone> = [
