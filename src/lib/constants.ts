@@ -159,76 +159,94 @@ export const STATS: ReadonlyArray<Stat> = [
 export const TEAM_MEMBERS: ReadonlyArray<TeamMember> = [
   {
     id: "sahil-talreja",
-    name: "Mr. Sahil Talreja",
+    name: "Sahil Talreja",
     role: "Managing Director",
     bio: "Architects SKT Global's long-term vision, driving corporate expansion, major capital investments, and the strategic roadmap across African mining operations.",
   },
   {
     id: "anand-kolappa-pillai",
-    name: "Mr. Anand Kolappa Pillai",
+    name: "Anand Kolappa Pillai",
     role: "Director",
     bio: "Guides international infrastructure development and corporate strategy, ensuring operational readiness and execution capability at an institutional scale.",
   },
   {
     id: "sanjay-kumar-sharma",
-    name: "Mr. Sanjay Kumar Sharma",
+    name: "Sanjay Kumar Sharma",
     role: "Chief Executive Officer",
     bio: "Leads executive operations with extensive expertise in mechanised mining methodologies, fleet deployment, and regional growth strategies.",
   },
   {
     id: "srinivasulu-jonnalagadda",
-    name: "Mr. Srinivasulu Jonnalagadda",
+    name: "Srinivasulu Jonnalagadda",
     role: "Chief Financial Officer",
     bio: "Directs financial strategy and capital allocation, ensuring robust risk management and sustainable funding for large-scale mining projects.",
   },
   {
-    id: "kiran-kumar-reddy",
-    name: "Mr. Kiran Kumar Reddy",
-    role: "Mine Manager (SOB)",
-    bio: "Drives daily production performance, advanced mechanised extraction, and critical safety frameworks at the high-capacity SOB underground site.",
-  },
-  {
-    id: "suresh-babu-deshamalla",
-    name: "Mr. Suresh Babu Deshamalla",
-    role: "Head of Maintenance",
-    bio: "Ensures maximum operational uptime by leading preventive engineering protocols and managing the deployment of 225+ underground machines.",
-  },
-  {
-    id: "kuldeep-kulshrestha",
-    name: "Mr. Kuldeep Kulshrestha",
-    role: "Commercial Manager",
-    bio: "Optimizes supply chain integration, procures critical operational resources, and advances key strategic partnerships to support expansion.",
-  },
-  {
-    id: "mulenga-mutati",
-    name: "Mr. Mulenga Mutati",
-    role: "Human Resources Manager",
-    bio: "Champions workforce development, directing talent acquisition and building a high-performance culture across a 1,500+ strong workforce.",
-  },
-  {
-    id: "safeli-maxim-chipulu",
-    name: "Mr. Safeli Maxim Chipulu",
-    role: "Site Manager (Mufulira)",
-    bio: "Executes strategic production targets at the Mufulira site, overseeing continuous operations, engineering integration, and on-the-ground safety.",
-  },
-  {
-    id: "toms-joseph",
-    name: "Mr. Toms Joseph",
-    role: "Mine Manager (Mufulira)",
-    bio: "Directs deep-level mining operations and oversees the rigorous safety compliance necessary to sustain large-scale mechanised extraction.",
-  },
-  {
     id: "collins",
-    name: "Mr. Collins",
+    name: "Collins",
     role: "MSV Site Manager",
     bio: "Excellence in site management is driven by rigorous standards, clear communication, and empowering teams to execute safely and efficiently.",
   },
   {
     id: "kerson-phiri",
-    name: "Mr. Kerson Phiri",
+    name: "Kerson Phiri",
     role: "Executive & Administration Manager",
     bio: "Strong administration is the invisible backbone that allows operational excellence to thrive.",
   },
+  {
+    id: "chakanga-mukonde",
+    name: "Chakanga Mukonde",
+    role: "Site Manager at Mufulira",
+    bio: "Directs site activities at Mufulira with a focus on safe execution, operational efficiency, and team coordination.",
+  },
+  {
+    id: "mulenga-mutati",
+    name: "Mulenga Mutati",
+    role: "Human Resources Manager",
+    bio: "Champions workforce development, directing talent acquisition and building a high-performance culture across a 1,500+ strong workforce.",
+  },
+  {
+    id: "kiran-kumar-reddy",
+    name: "Kiran Kumar Reddy",
+    role: "Project Head at SOB",
+    bio: "Drives daily production performance, advanced mechanised extraction, and critical safety frameworks at the high-capacity SOB underground site.",
+  },
+  {
+    id: "suresh-babu-deshamalla",
+    name: "Suresh Babu Deshamalla",
+    role: "Head of Maintenance",
+    bio: "Ensures maximum operational uptime by leading preventive engineering protocols and managing the deployment of 225+ underground machines.",
+  },
+  {
+    id: "kuldeep-kulshrestha",
+    name: "Kuldeep Kulshrestha",
+    role: "Commercial Manager",
+    bio: "Optimizes supply chain integration, procures critical operational resources, and advances key strategic partnerships to support expansion.",
+  },
+  {
+    id: "toms-joseph",
+    name: "Toms Joseph",
+    role: "Project Head at Mufulira",
+    bio: "Directs deep-level mining operations and oversees the rigorous safety compliance necessary to sustain large-scale mechanised extraction.",
+  },
+  {
+    id: "willie-simpemba",
+    name: "Willie Simpemba",
+    role: "Accounts Manager",
+    bio: "Oversees financial operations with precision, managing budgets, billing, and ensuring the fiscal health of regional projects.",
+  },
+  {
+    id: "george-sakanyi",
+    name: "George Sakanyi",
+    role: "HSE Manager",
+    bio: "Champions health, safety, and environmental excellence, implementing rigorous standards to protect our workforce and operational ecosystems.",
+  },
+  {
+    id: "peter-ochigbo",
+    name: "Peter Ochigbo",
+    role: "System Coordinator",
+    bio: "Ensures seamless integration of systems and processes, driving operational alignment and technical coordination across projects.",
+  }
 ] as const;
 
 export const MILESTONES: ReadonlyArray<Milestone> = [

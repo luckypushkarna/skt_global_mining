@@ -23,10 +23,13 @@ function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
     "suresh-babu-deshamalla": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/suresh-babu-deshamalla.webp",
     "kuldeep-kulshrestha": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/kuldeep-kulshrestha.webp",
     "mulenga-mutati": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/mulenga-mutati.webp",
-    "safeli-maxim-chipulu": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/safeli-maxim-chipulu.webp",
     "toms-joseph": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/toms-joseph.webp",
     "collins": "/skt/leaders/collins.jpg",
-    "kerson-phiri": "/skt/leaders/kerson.jpg",
+    "kerson-phiri": "/skt/leaders/kerson.png",
+    "peter-ochigbo": "/skt/leaders/peter-ochigbo.png",
+    "willie-simpemba": "/skt/leaders/willie-simpemba.png",
+    "chakanga-mukonde": "/skt/leaders/chakanga-mukonde.png",
+    "george-sakanyi": "/skt/leaders/george-sakanyi.png",
   };
 
   const imgSrc = images[member.id] || "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/unknown-leader.webp";
@@ -41,10 +44,13 @@ function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
     "suresh-babu-deshamalla": { title: "Focusing on Fleet Engineering", action: "Asset Readiness" },
     "kuldeep-kulshrestha": { title: "Focusing on Commercial Value", action: "Commercial Strategy" },
     "mulenga-mutati": { title: "Focusing on Team Growth", action: "Human Capital" },
-    "safeli-maxim-chipulu": { title: "Focusing on Mufulira Scale", action: "Site Operations" },
     "toms-joseph": { title: "Focusing on Site Precision", action: "Mufulira Operations" },
     "collins": { title: "Focusing on Site Operations", action: "MSV Operations" },
     "kerson-phiri": { title: "Focusing on Corporate Administration", action: "Executive Admin" },
+    "peter-ochigbo": { title: "Focusing on System Integration", action: "System Coordination" },
+    "willie-simpemba": { title: "Focusing on Fiscal Health", action: "Financial Operations" },
+    "chakanga-mukonde": { title: "Focusing on Site Efficiency", action: "Site Operations" },
+    "george-sakanyi": { title: "Focusing on Safety Standards", action: "HSE Management" },
   };
 
   const details = overlayDetails[member.id] || {

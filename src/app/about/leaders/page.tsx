@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 const leaders = [
   {
     id: 1,
-    name: "Mr. Sahil Talreja",
+    name: "Sahil Talreja",
     designation: "Managing Director",
     department: "Executive Leadership",
     statement:
@@ -69,13 +69,13 @@ const leaders = [
   },
   {
     id: 2,
-    name: "Mr. Anand Kolappa Pillai",
+    name: "Anand Kolappa Pillai",
     designation: "Director",
     department: "Corporate Strategy",
     statement:
       "Enduring enterprise value is created through long-term thinking, technical precision, and deep respect for the communities where we operate.",
     image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/anand-kolappa-pillai.webp",
-    yearsExperience: 25,
+    yearsExperience: 30,
     overview: {
       intro:
         "Anand Kolappa Pillai brings a quarter-century of strategic and operational expertise to his role as Director at SKT Global. A corporate strategist with a track record spanning international infrastructure, technology transfer, and strategic capital ventures, he is one of the foundational architects of the company's structure and governance.",
@@ -130,7 +130,7 @@ const leaders = [
   },
   {
     id: 3,
-    name: "Mr. Sanjay Kumar Sharma",
+    name: "Sanjay Kumar Sharma",
     designation: "Chief Executive Officer",
     department: "Operations Leadership",
     statement:
@@ -191,30 +191,23 @@ const leaders = [
   },
   {
     id: 4,
-    name: "Mr. Srinivasulu Jonnalagadda",
+    name: "Srinivasulu Jonnalagadda",
     designation: "Chief Financial Officer",
     department: "Finance & Risk",
     statement:
       "Financial rigour is what gives ambitious operational plans the credibility and resilience to survive contact with reality.",
     image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/srinivasulu-jonnalagadda.webp",
-    yearsExperience: 22,
+    yearsExperience: 30,
     overview: {
-      intro:
-        "Srinivasulu Jonnalagadda is a chartered finance executive with deep experience managing multinational balance sheets, complex risk frameworks, and large-scale capital programs in the mining and industrial sectors. As CFO of SKT Global, he ensures that every dollar of investment delivers maximum operational and strategic value.",
-      expertise:
-        "His expertise spans financial planning and analysis, treasury management, risk governance, capital project oversight, and regulatory compliance across multiple jurisdictions. He brings disciplined financial management to an organisation operating in one of the world's most demanding industrial environments.",
-      philosophy:
-        "Srinivasulu leads with the belief that financial discipline enables operational ambition - that strong controls, transparent reporting, and rigorous capital management create the freedom to pursue bold strategic goals. He is a trusted partner to both the operational and executive leadership.",
-      responsibilities:
-        "As CFO, Srinivasulu oversees all financial management functions including treasury, accounting, financial planning, risk management, capital allocation, and compliance. He manages relationships with banking and financial partners and leads investor reporting.",
+      intro: "A senior finance professional with over 30 years of extensive experience leading and transforming financial functions across diverse industries, including Mining, Power, Ferro Alloys, Infrastructure, Food Processing, Sugar and Trading.",
+      expertise: "As Chief Financial Officer, he brings strong expertise in financial strategy, accounting and controllership, financial planning and analysis, budgeting, MIS, working capital management, taxation, fundraising, M&A, project appraisal and risk management.",
+      philosophy: "A strong team leader and change agent, he has consistently delivered commercial and operational results, while strengthening financial systems, developing organisational capabilities and providing strategic direction to support sustainable business growth.",
+      responsibilities: "He has extensive experience in SAP/ERP implementation, IFRS/Ind AS, financial processes and controls, compliance and corporate governance, with a proven ability to align financial strategy with business objectives.",
     },
     areasOfFocus: [
-      { title: "Strategic Planning", description: "Financial planning aligned with the company's operational growth agenda" },
-      { title: "Asset Management", description: "Capital lifecycle management across a $200M+ fleet and infrastructure base" },
-      { title: "Supply Chain", description: "Financial governance of procurement and supply chain investment" },
-      { title: "ESG Governance", description: "Financial reporting transparency and stakeholder accountability" },
-      { title: "Commercial Growth", description: "Financial structuring of new contracts and business development" },
-      { title: "Safety Systems", description: "Investment governance for safety infrastructure and compliance systems" },
+      { title: "Financial Strategy & Controllership", description: "Financial planning and analysis, budgeting, MIS, and working capital management." },
+      { title: "Corporate Finance & M&A", description: "Taxation, fundraising, M&A, project appraisal, and risk management." },
+      { title: "Systems & Compliance", description: "SAP/ERP implementation, IFRS/Ind AS, and ensuring robust financial processes and controls." }
     ],
     journey: [
       { year: "2002", title: "Early Career", description: "Qualified Chartered Accountant. Early roles in audit and financial advisory for industrial and resources sector clients." },
@@ -252,8 +245,148 @@ const leaders = [
   },
   {
     id: 5,
-    name: "Mr. Kiran Kumar Reddy",
-    designation: "Mine manager at SOB",
+    name: "Collins",
+    designation: "MSV Site Manager",
+    department: "Operations",
+    statement: "Excellence in site management is driven by rigorous standards, clear communication, and empowering teams to execute safely and efficiently.",
+    image: "/skt/leaders/collins.jpg",
+    yearsExperience: 10,
+    overview: {
+      intro: "Mr. Collins is the MSV Site Manager at SKT Global, bringing over a decade of dedicated operational leadership to our site activities. He oversees the critical day-to-day execution of site programs, ensuring all teams operate seamlessly and safely.",
+      expertise: "His expertise lies in field operations, team coordination, and implementing rigorous safety protocols in complex industrial environments.",
+      philosophy: "Collins believes that a well-managed site is the foundation of any successful mining operation, where every individual understands their role and values safety above all else.",
+      responsibilities: "As MSV Site Manager, he directs daily site activities, manages local operational teams, coordinates with engineering units, and ensures compliance with all health, safety, and environmental standards."
+    },
+    areasOfFocus: [
+      { title: "Site Coordination", description: "Directing day-to-day field operations and personnel deployment" },
+      { title: "Safety Execution", description: "Implementing and monitoring strict on-site safety protocols" }
+    ],
+    journey: [
+      { year: "2016", title: "Early Career", description: "Began career in operational site management and field coordination." },
+      { year: "2026", title: "SKT Global", description: "Appointed MSV Site Manager to lead operations and ensure seamless execution of site targets." }
+    ],
+    contributions: [
+      { title: "Operational Streamlining", narrative: "Streamlined daily site reporting and personnel deployment, increasing active operational hours." },
+      { title: "Safety Record", narrative: "Maintained an impeccable safety record through continuous on-site training and vigilance." }
+    ],
+    philosophyQuote: "A safe site is a productive site. When we take care of our people and our environment, the results follow naturally.",
+    impact: [
+      { area: "Site Efficiency", description: "Improved daily operational output through better team coordination." },
+      { area: "Safety Culture", description: "Fostered a proactive safety culture among all site personnel." }
+    ],
+    network: [
+      { department: "Operations", connection: "Direct management of site teams and field personnel." },
+      { department: "Engineering", connection: "Coordination with technical teams for equipment deployment." }
+    ],
+    personalMessage: "Being on the ground and seeing the direct results of our team's hard work is the most rewarding part of my role. We are building the future of mining in Zambia, one safe shift at a time."
+  },
+  {
+    id: 6,
+    name: "Kerson Phiri",
+    designation: "Executive & Administration Manager",
+    department: "Administration",
+    statement: "Strong administration is the invisible backbone that allows operational excellence to thrive.",
+    image: "/skt/leaders/kerson.png",
+    yearsExperience: 20,
+    overview: {
+      intro: "Kerson Khondwani Phiri is a versatile IT, Administration and Technical Services professional with over 20 years of experience spanning information technology, graphic design, production, administration, stores and education.",
+      expertise: "His experience includes IT systems and computer maintenance, basic networking, technical support, graphic design, large-format printing, document management, workflow coordination and office administration.",
+      philosophy: "With a combination of technical expertise, administrative capability and creative production skills, he brings a practical and adaptable approach to supporting business operations, technology systems and organisational workflow.",
+      responsibilities: "He has worked across diverse organisations in Zambia and served in administrative and managerial capacities, including Office Assistant, Stores and Administration Manager, Production Studio Manager, IT Technician, Graphic Artist and Computer Studies Teacher.",
+    },
+    areasOfFocus: [
+      { title: "IT & Systems Administration", description: "IT Support & Computer Maintenance, Basic Networking & Systems Administration, Technical Troubleshooting" },
+      { title: "Office & Stores Management", description: "Office Administration & Stores Management, Document & Workflow Management, Basic Accounting" },
+      { title: "Design & Production", description: "Graphic Design & Digital Artwork, Large-Format Printing & Branding, Production & Print Management" }
+    ],
+    journey: [
+      { year: "2016", title: "Early Career", description: "Developed expertise in corporate administration and logistics management." },
+      { year: "2026", title: "SKT Global", description: "Joined as Executive and Administration Manager to bolster the company's internal operations." }
+    ],
+    contributions: [
+      { title: "Administrative Efficiency", narrative: "Implemented modern administrative workflows that significantly reduced processing times for internal operations." },
+      { title: "Executive Support", narrative: "Established streamlined communication protocols between site operations and the executive board." }
+    ],
+    philosophyQuote: "Efficiency in administration directly translates to effectiveness in the field. Our goal is to remove roadblocks so our teams can focus on their core objectives.",
+    impact: [
+      { area: "Internal Operations", description: "Enhanced the speed and reliability of corporate communications." },
+      { area: "Resource Management", description: "Optimised administrative resources to better support site activities." }
+    ],
+    network: [
+      { department: "Executive Leadership", connection: "Direct support to the CEO and Managing Director." },
+      { department: "Human Resources", connection: "Collaboration on internal policies and personnel administration." }
+    ],
+    personalMessage: "The strength of SKT Global lies in our unity and organisation. I am proud to support a team of such dedicated professionals as we work together to achieve our vision."
+  },
+  {
+    id: 7,
+    name: "Chakanga Mukonde",
+    designation: "Site Manager at Mufulira",
+    department: "Operations",
+    statement: "On-site efficiency is driven by safety, teamwork, and clear operational objectives.",
+    image: "/skt/leaders/chakanga-mukonde.png",
+    yearsExperience: 12,
+    overview: {
+      intro: "Chakanga Mukonde is the Site Manager at Mufulira, driving site activities with a focus on safe execution and operational efficiency.",
+      expertise: "He specializes in site operations, team coordination, and efficiency improvement.",
+      philosophy: "A well-coordinated site is a productive and safe site.",
+      responsibilities: "He directs daily site activities and team coordination at Mufulira."
+    },
+    areasOfFocus: [
+      { title: "Site Operations", description: "Directing field operations and team coordination" }
+    ],
+    journey: [],
+    contributions: [],
+    philosophyQuote: "Efficiency at the site level is what drives our broader strategic goals.",
+    impact: [],
+    network: [],
+    personalMessage: "Every shift is an opportunity to improve our execution and ensure everyone returns home safely."
+  },
+  {
+    id: 8,
+    name: "Mulenga Mutati",
+    designation: "HR Manager",
+    department: "Human Capital",
+    statement: "Our greatest resource is the potential of our workforce - nurtured through training, safety, and mutual respect.",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/mulenga-mutati.webp",
+    yearsExperience: 16,
+    overview: {
+      intro: "A strategic and results-driven Human Resources Manager with over 16 years of progressive HR experience, specialising in mining, employee relations, industrial relations and multinational workforce management.",
+      expertise: "He has strong practical expertise in Zambian labour legislation, employee and industrial relations, collective bargaining, HR governance and full employee lifecycle management.",
+      philosophy: "His leadership approach focuses on compliance, employee engagement, operational effectiveness and building productive, sustainable workforces aligned with business objectives.",
+      responsibilities: "Currently leading HR functions for a 1,700+ employee multinational workforce. His experience includes workforce mobilisation and integration, union negotiations, recruitment, performance management, payroll and ERP systems, employee retention and organisational development.",
+    },
+    areasOfFocus: [
+      { title: "Employee & Industrial Relations", description: "Managing Zambian Labour Law & Compliance, Union Relations & Collective Bargaining" },
+      { title: "Workforce Management", description: "Multinational Workforce Management, Recruitment & Workforce Planning, Employee Engagement" },
+      { title: "HR Operations", description: "Payroll, HRIS & ERP Systems, Performance Management, Policy & Procedure Development" },
+      { title: "Compliance & Governance", description: "Investigations & Disciplinary Governance, HR Analytics & Reporting, ISO / IMS Coordination" }
+    ],
+    journey: [
+      { year: "2007", title: "HR Generalist", description: "Began in industrial relations, managing labor compliance and employee relations." },
+      { year: "2013", title: "Talent Development Lead", description: "Designed training systems for mechanized industrial workforces." },
+      { year: "2019", title: "Regional HR Manager", description: "Led talent acquisition and community relations for mining projects in the Copperbelt." },
+      { year: "2024", title: "HR Manager", description: "Assumed leadership of the HR division at SKT Global, managing rapid recruitment and onboarding." },
+    ],
+    contributions: [
+      { title: "Zambian Skills Academy", narrative: "Established a mechanized mining training program in collaboration with local institutes, training hundreds of Zambian operators to operate heavy underground machinery safely." },
+      { title: "Industrial Harmony Framework", narrative: "Designed an employee relations model that maintains open dialogue between management and operations, securing a stable and productive workforce." },
+    ],
+    philosophyQuote: "A company's success is defined by how well it supports the people who do the work. When we invest in our people, we secure our future.",
+    impact: [
+      { area: "Operational Excellence", description: "Mulenga's programs have resulted in a highly skilled, stable workforce with minimal turn-over." },
+      { area: "Community Development", description: "Onboarding 1,500+ local employees has provided direct economic sustainability to families in Kitwe and Mufulira." },
+    ],
+    network: [
+      { department: "Operations", connection: "Aligns workforce recruitment and training with shaft production schedules." },
+      { department: "Finance", connection: "Manages payroll structures, benefit packages, and labor cost budgets." },
+    ],
+    personalMessage: "Kitwe is my home, and helping our local people build lasting careers in mechanized mining is what drives me. We are building a workforce that will lead Zambia's mining sector for decades to come.",
+  },
+  {
+    id: 9,
+    name: "Kiran Kumar Reddy",
+    designation: "Project Head at SOB",
     department: "SOB Operations",
     statement: "Technical precision in underground excavation underpins safety, productivity, and the integrity of our production targets.",
     image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/kiran-kumar-reddy.webp",
@@ -294,8 +427,8 @@ const leaders = [
     personalMessage: "Managing a mine like SOB is a technical test that requires disciplined teamwork and absolute respect for underground physics. Our daily success is built on the expertise and focus of every technician on our team.",
   },
   {
-    id: 6,
-    name: "Mr. Suresh Babu Deshamalla",
+    id: 10,
+    name: "Suresh Babu Deshamalla",
     designation: "Head of Maintenance",
     department: "Asset Readiness",
     statement: "Operational readiness is the product of preventive maintenance, robust supply chains, and technical pride in our fleet.",
@@ -335,8 +468,8 @@ const leaders = [
     personalMessage: "Maintenance is where engineering precision meets daily operations. Our technicians take great pride in ensuring that every machine leaving our workshops is safe, reliable, and ready for the most demanding conditions.",
   },
   {
-    id: 7,
-    name: "Mr. Kuldeep Kulshrestha",
+    id: 11,
+    name: "Kuldeep Kulshrestha",
     designation: "Commercial Manager",
     department: "Commercial Strategy",
     statement: "Sustainable commercial partnerships are built on contract compliance, mutual benefit, and operational reliability.",
@@ -376,91 +509,9 @@ const leaders = [
     personalMessage: "Commercial strategy is about alignment. My focus is on making sure our commercial frameworks support our teams underground, while delivering the reliability and value that our clients expect from us.",
   },
   {
-    id: 8,
-    name: "Mr. Mulenga Mutati",
-    designation: "HR Manager",
-    department: "Human Capital",
-    statement: "Our greatest resource is the potential of our workforce - nurtured through training, safety, and mutual respect.",
-    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/mulenga-mutati.webp",
-    yearsExperience: 18,
-    overview: {
-      intro: "Mulenga Mutati is the HR Manager at SKT Global, directing human resource strategies, workforce development programs, and employee relations across our operations. With 18 years of experience, he leads the hire-local programs that have successfully onboarded 1,500+ Zambian professionals.",
-      expertise: "He specializes in industrial relations, talent acquisition, community training initiatives, employee welfare systems, and regulatory employment compliance.",
-      philosophy: "Mulenga believes that a safe and supportive workplace is key to high productivity. When people feel valued, respected, and possess clear paths for skills development, they deliver their best work.",
-      responsibilities: "He manages employee relations, recruitment processes, training academies, community engagement, safety culture alignment, and compliance with Zambian labor laws.",
-    },
-    areasOfFocus: [
-      { title: "Workforce Development", description: "Structuring employee training and local capabilities programs" },
-      { title: "ESG Governance", description: "Governing fair labor practices, diversity, and community welfare" },
-      { title: "Safety Systems", description: "Aligning safety training protocols with workforce behavior" },
-      { title: "Strategic Planning", description: "Workforce capacity planning to match scaling mining activities" },
-    ],
-    journey: [
-      { year: "2007", title: "HR Generalist", description: "Began in industrial relations, managing labor compliance and employee relations." },
-      { year: "2013", title: "Talent Development Lead", description: "Designed training systems for mechanized industrial workforces." },
-      { year: "2019", title: "Regional HR Manager", description: "Led talent acquisition and community relations for mining projects in the Copperbelt." },
-      { year: "2024", title: "HR Manager", description: "Assumed leadership of the HR division at SKT Global, managing rapid recruitment and onboarding." },
-    ],
-    contributions: [
-      { title: "Zambian Skills Academy", narrative: "Established a mechanized mining training program in collaboration with local institutes, training hundreds of Zambian operators to operate heavy underground machinery safely." },
-      { title: "Industrial Harmony Framework", narrative: "Designed an employee relations model that maintains open dialogue between management and operations, securing a stable and productive workforce." },
-    ],
-    philosophyQuote: "A company's success is defined by how well it supports the people who do the work. When we invest in our people, we secure our future.",
-    impact: [
-      { area: "Operational Excellence", description: "Mulenga's programs have resulted in a highly skilled, stable workforce with minimal turn-over." },
-      { area: "Community Development", description: "Onboarding 1,500+ local employees has provided direct economic sustainability to families in Kitwe and Mufulira." },
-    ],
-    network: [
-      { department: "Operations", connection: "Aligns workforce recruitment and training with shaft production schedules." },
-      { department: "Finance", connection: "Manages payroll structures, benefit packages, and labor cost budgets." },
-    ],
-    personalMessage: "Kitwe is my home, and helping our local people build lasting careers in mechanized mining is what drives me. We are building a workforce that will lead Zambia's mining sector for decades to come.",
-  },
-  {
-    id: 9,
-    name: "Mr. Safeli Maxim Chipulu",
-    designation: "Site Manager at Mufulira",
-    department: "Site Operations",
-    statement: "Underground site success is built on clear communication, strict safety standards, and disciplined team coordination.",
-    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/safeli-maxim-chipulu.webp",
-    yearsExperience: 16,
-    overview: {
-      intro: "Safeli Maxim Chipulu is the Site Manager at Mufulira operations, directing day-to-day mechanized mining, ventilation engineering, and safety protocols at the active site. With 16 years of underground experience, he maintains a strict focus on shift efficiency and site safety.",
-      expertise: "He specializes in mechanized stope mining, shift cycle optimization, ground stabilization, and underground safety compliance management.",
-      philosophy: "Safeli believes that safety and production are inseparable. A clean, disciplined site where safety protocols are strictly followed is naturally a productive and high-yielding mine.",
-      responsibilities: "He manages the Mufulira site team, coordinating development drilling, ground support installation, ore haulage, and environmental compliance underground.",
-    },
-    areasOfFocus: [
-      { title: "Mining Operations", description: "Directing mechanized development and production faces at Mufulira" },
-      { title: "Safety Systems", description: "Implementing site-wide hazard checks and ground control standards" },
-      { title: "Production Management", description: "Managing daily haulage cycles and shift-by-shift output targets" },
-      { title: "Workforce Development", description: "Coordinating safety audits and mentoring underground supervisors" },
-    ],
-    journey: [
-      { year: "2010", title: "Shift Supervisor", description: "Supervised underground development teams and managed face drilling operations." },
-      { year: "2016", title: "Mining Superintendent", description: "Directed stope production and mechanized equipment deployment across multiple shafts." },
-      { year: "2022", title: "Operations Lead", description: "Managed technical safety audits and shift coordination for Copperbelt sites." },
-      { year: "2024", title: "Mufulira Site Manager", description: "Appointed to lead all SKT Global site operations, safety, and production at Mufulira." },
-    ],
-    contributions: [
-      { title: "Cycle Time Optimization", narrative: "Optimized haulage truck cycles at Mufulira by improving ramp maintenance and coordination, increasing shift production by 15%." },
-      { title: "Ground Support Protocol", narrative: "Upgraded underground ground support installation procedures, enhancing rock stability and ensuring zero groundfall incidents." },
-    ],
-    philosophyQuote: "There is no room for shortcuts underground. The safest way is always the most productive way to run a mine.",
-    impact: [
-      { area: "Operational Excellence", description: "Safeli's management has kept Mufulira operations consistently on schedule, meeting Mopani's development requirements." },
-      { area: "Safety Performance", description: "Under his leadership, the Mufulira site has maintained a zero-harm record across all mechanized shifts." },
-    ],
-    network: [
-      { department: "Operations", connection: "Directly leads shift superintendents, drill operators, and haulage teams." },
-      { department: "Engineering", connection: "Coordinates with maintenance teams to ensure high equipment availability at site." },
-    ],
-    personalMessage: "The Mufulira mine is an operational test that requires our team's full attention every shift. By keeping our focus on safety and execution, we deliver the results our company and our clients rely on.",
-  },
-  {
-    id: 10,
-    name: "Mr. Toms Joseph",
-    designation: "Mine Manager at Mufulira",
+    id: 12,
+    name: "Toms Joseph",
+    designation: "Project Head at Mufulira",
     department: "Mufulira Operations",
     statement: "Mining excellence lies in the details. Precise drilling, proper air flow, and disciplined operators create a world-class mine.",
     image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/toms-joseph.webp",
@@ -499,78 +550,78 @@ const leaders = [
     personalMessage: "Underground mining is a team sport of high stakes. The technical precision of our team at Mufulira is what allows us to overcome daily challenges and deliver the copper that powers the global economy.",
   },
   {
-    id: 11,
-    name: "Mr. Collins",
-    designation: "MSV Site Manager",
-    department: "Operations",
-    statement: "Excellence in site management is driven by rigorous standards, clear communication, and empowering teams to execute safely and efficiently.",
-    image: "/skt/leaders/collins.jpg",
+    id: 13,
+    name: "Willie Simpemba",
+    designation: "Accounts Manager",
+    department: "Finance",
+    statement: "Fiscal health is maintained through precise accounting and diligent management.",
+    image: "/skt/leaders/willie-simpemba.png",
     yearsExperience: 10,
     overview: {
-      intro: "Mr. Collins is the MSV Site Manager at SKT Global, bringing over a decade of dedicated operational leadership to our site activities. He oversees the critical day-to-day execution of site programs, ensuring all teams operate seamlessly and safely.",
-      expertise: "His expertise lies in field operations, team coordination, and implementing rigorous safety protocols in complex industrial environments.",
-      philosophy: "Collins believes that a well-managed site is the foundation of any successful mining operation, where every individual understands their role and values safety above all else.",
-      responsibilities: "As MSV Site Manager, he directs daily site activities, manages local operational teams, coordinates with engineering units, and ensures compliance with all health, safety, and environmental standards."
+      intro: "Willie Simpemba is the Accounts Manager, ensuring the financial integrity and fiscal health of our regional projects.",
+      expertise: "He specializes in financial accounting, budget management, and compliance.",
+      philosophy: "Accuracy and diligence in finance build the foundation for sustainable growth.",
+      responsibilities: "He oversees day-to-day accounting operations, budgeting, and financial reporting."
     },
     areasOfFocus: [
-      { title: "Site Coordination", description: "Directing day-to-day field operations and personnel deployment" },
-      { title: "Safety Execution", description: "Implementing and monitoring strict on-site safety protocols" }
+      { title: "Financial Accounting", description: "Managing budgets and financial compliance" }
     ],
-    journey: [
-      { year: "2016", title: "Early Career", description: "Began career in operational site management and field coordination." },
-      { year: "2026", title: "SKT Global", description: "Appointed MSV Site Manager to lead operations and ensure seamless execution of site targets." }
-    ],
-    contributions: [
-      { title: "Operational Streamlining", narrative: "Streamlined daily site reporting and personnel deployment, increasing active operational hours." },
-      { title: "Safety Record", narrative: "Maintained an impeccable safety record through continuous on-site training and vigilance." }
-    ],
-    philosophyQuote: "A safe site is a productive site. When we take care of our people and our environment, the results follow naturally.",
-    impact: [
-      { area: "Site Efficiency", description: "Improved daily operational output through better team coordination." },
-      { area: "Safety Culture", description: "Fostered a proactive safety culture among all site personnel." }
-    ],
-    network: [
-      { department: "Operations", connection: "Direct management of site teams and field personnel." },
-      { department: "Engineering", connection: "Coordination with technical teams for equipment deployment." }
-    ],
-    personalMessage: "Being on the ground and seeing the direct results of our team's hard work is the most rewarding part of my role. We are building the future of mining in Zambia, one safe shift at a time."
+    journey: [],
+    contributions: [],
+    philosophyQuote: "Financial precision empowers operational excellence.",
+    impact: [],
+    network: [],
+    personalMessage: "Supporting our projects through strong financial management is how we secure our continued success."
   },
   {
-    id: 12,
-    name: "Mr. Kerson Phiri",
-    designation: "Executive & Administration Manager",
-    department: "Administration",
-    statement: "Strong administration is the invisible backbone that allows operational excellence to thrive.",
-    image: "/skt/leaders/kerson.jpg",
-    yearsExperience: 10,
+    id: 14,
+    name: "George Sakanyi",
+    designation: "HSE Manager",
+    department: "Health & Safety",
+    statement: "Protecting our workforce and our environment is the prerequisite to every operation.",
+    image: "/skt/leaders/george-sakanyi.png",
+    yearsExperience: 15,
     overview: {
-      intro: "Mr. Kerson Phiri serves as the Executive and Administration Manager for SKT Global, bringing exceptional organisational leadership and 10 years of experience to the company's administrative operations.",
-      expertise: "He specializes in corporate administration, executive support, operational logistics, and streamlining internal communication channels.",
-      philosophy: "Kerson believes that operational success relies heavily on robust administrative support, ensuring that executive decisions are executed smoothly across all levels of the organisation.",
-      responsibilities: "He oversees corporate administration, manages executive workflows, coordinates cross-departmental communications, and ensures the efficient functioning of SKT Global's administrative infrastructure."
+      intro: "George Sakanyi is the HSE Manager, championing health, safety, and environmental excellence across all operations.",
+      expertise: "He specializes in safety protocols, environmental compliance, and hazard mitigation.",
+      philosophy: "Safety is not a metric, it is a core value that must be lived every day.",
+      responsibilities: "He oversees the implementation of rigorous HSE standards and compliance programs."
     },
     areasOfFocus: [
-      { title: "Corporate Administration", description: "Managing the core administrative functions of the organisation" },
-      { title: "Executive Operations", description: "Facilitating executive decision-making and cross-functional alignment" }
+      { title: "HSE Management", description: "Ensuring health, safety, and environmental compliance" }
     ],
-    journey: [
-      { year: "2016", title: "Early Career", description: "Developed expertise in corporate administration and logistics management." },
-      { year: "2026", title: "SKT Global", description: "Joined as Executive and Administration Manager to bolster the company's internal operations." }
+    journey: [],
+    contributions: [],
+    philosophyQuote: "A commitment to safety is a commitment to our people and our future.",
+    impact: [],
+    network: [],
+    personalMessage: "My goal is to ensure that our operations set the benchmark for safety and environmental stewardship in the region."
+  },
+  {
+    id: 15,
+    name: "Peter Ochigbo",
+    designation: "System Coordinator",
+    department: "Systems",
+    statement: "Systematic coordination ensures operational alignment and technical precision across all activities.",
+    image: "/skt/leaders/peter-ochigbo.png",
+    yearsExperience: 8,
+    overview: {
+      intro: "Peter Ochigbo is a System Coordinator with 8 years of professional experience supporting system coordination, HR operations, workforce administration, data management and process improvement across the mining, agribusiness and hospitality sectors.",
+      expertise: "With qualifications including CPM, PGD-HR and ACIHRM, Peter brings a structured and analytical approach to HR systems, workforce data, process coordination and operational reporting.",
+      philosophy: "He contributes to improved efficiency, accuracy and overall business performance through a structured and analytical approach.",
+      responsibilities: "He is experienced in coordinating business systems, maintaining accurate employee and operational records, monitoring data integrity, preparing management reports and ensuring timely availability of reliable information to support decision-making.",
+    },
+    areasOfFocus: [
+      { title: "Business Systems & Processes", description: "Business Systems Coordination, Process Improvement, System & Process Coordination" },
+      { title: "Data & Records Management", description: "Workforce Data Management, Employee Records Management, Data Integrity & Quality Control" },
+      { title: "HR Operations & Reporting", description: "HR Operations & Administration, HR Reporting & Analytics, Management Information & Reporting" }
     ],
-    contributions: [
-      { title: "Administrative Efficiency", narrative: "Implemented modern administrative workflows that significantly reduced processing times for internal operations." },
-      { title: "Executive Support", narrative: "Established streamlined communication protocols between site operations and the executive board." }
-    ],
-    philosophyQuote: "Efficiency in administration directly translates to effectiveness in the field. Our goal is to remove roadblocks so our teams can focus on their core objectives.",
-    impact: [
-      { area: "Internal Operations", description: "Enhanced the speed and reliability of corporate communications." },
-      { area: "Resource Management", description: "Optimised administrative resources to better support site activities." }
-    ],
-    network: [
-      { department: "Executive Leadership", connection: "Direct support to the CEO and Managing Director." },
-      { department: "Human Resources", connection: "Collaboration on internal policies and personnel administration." }
-    ],
-    personalMessage: "The strength of SKT Global lies in our unity and organisation. I am proud to support a team of such dedicated professionals as we work together to achieve our vision."
+    journey: [],
+    contributions: [],
+    philosophyQuote: "Alignment in our systems brings clarity to our actions.",
+    impact: [],
+    network: [],
+    personalMessage: "Our focus on coordinated systems enables the success of our operational teams on the ground."
   }
 ];
 
@@ -604,6 +655,7 @@ function LeadersContent() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   // Helper to cleanly slugify a name for query matching
   const cleanSlug = (str: string) => {
@@ -646,9 +698,19 @@ function LeadersContent() {
     }, 150);
   };
 
+
   useEffect(() => {
     window.scrollTo({ top: 0 });
+    // Auto-scroll the photo gallery
+    if (itemRefs.current[currentIndex]) {
+      itemRefs.current[currentIndex]?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center"
+      });
+    }
   }, [currentIndex]);
+
 
   return (
     <div
@@ -705,6 +767,7 @@ function LeadersContent() {
                 {leaders.map((l, i) => (
                   <motion.div
                     key={l.id}
+                    ref={(el) => { itemRefs.current[i] = el; }}
                     onClick={() => navigateTo(i)}
                     className="flex-shrink-0 w-[200px] sm:w-[240px] snap-start cursor-pointer group text-left"
                     whileHover={{ y: -4 }}
