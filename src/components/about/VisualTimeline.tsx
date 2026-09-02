@@ -137,7 +137,7 @@ function TimelineEra({
         </p>
         <h3
           className="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight mb-6"
-          
+
         >
           {era.title}
         </h3>
@@ -203,7 +203,7 @@ export default function VisualTimeline() {
           </span>
           <h2
             className="text-3xl md:text-4xl lg:text-5xl text-slate-900 tracking-tight font-serif font-normal"
-            
+
           >
             A Journey of Ambition and Speed
           </h2>

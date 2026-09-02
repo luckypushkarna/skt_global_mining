@@ -1,6 +1,6 @@
-import { 
-  Wrench, Package, Truck, Shield, Network, Monitor, 
-  Users, Settings, TrendingUp, ShieldCheck, Building2, Globe 
+import {
+  Wrench, Package, Truck, Shield, Network, Monitor,
+  Users, Settings, TrendingUp, ShieldCheck, Building2, Globe
 } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
@@ -42,7 +42,7 @@ export const CAPABILITIES: Capability[] = [
     tags: ["225+ Machines", "Drill Rigs", "Loaders & Haulers"],
     bgImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125388/skt_global_mining/Mechanised%20Fleet-card.webp",
   },
-  
+
   // ── Engineering & Maintenance ──
   {
     num: "03",
@@ -173,10 +173,10 @@ export function getCapabilityBySlug(slug: string): Capability | undefined {
 export function getAdjacentCapabilities(slug: string) {
   const index = CAPABILITIES.findIndex(c => c.slug === slug);
   if (index === -1) return { prev: null, next: null };
-  
+
   const prev = index > 0 ? CAPABILITIES[index - 1] : CAPABILITIES[CAPABILITIES.length - 1];
   const next = index < CAPABILITIES.length - 1 ? CAPABILITIES[index + 1] : CAPABILITIES[0];
-  
+
   return { prev, next };
 }
 

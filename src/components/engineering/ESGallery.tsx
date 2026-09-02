@@ -46,7 +46,7 @@ export function ESGallery() {
     <section className="bg-bg-tint py-20 lg:py-32 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
@@ -73,9 +73,8 @@ export function ESGallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`relative group rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white aspect-[4/3] ${
-                i === 1 || i === 4 ? "sm:mt-8 lg:mt-12" : "" // Stagger effect
-              }`}
+              className={`relative group rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white aspect-[4/3] ${i === 1 || i === 4 ? "sm:mt-8 lg:mt-12" : "" // Stagger effect
+                }`}
             >
               {item.isReal ? (
                 <>
@@ -89,7 +88,7 @@ export function ESGallery() {
                   />
                   {/* Cinematic dark overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-skt-navy/80 via-skt-navy/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
+
                   {/* Caption */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                     <p className="text-sm font-medium text-white tracking-wide">

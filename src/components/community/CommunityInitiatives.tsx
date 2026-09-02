@@ -52,7 +52,7 @@ export function CommunityInitiatives() {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
                 <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${!isEven ? "lg:[direction:rtl]" : ""}`}>
-                  
+
                   {/* Image Block */}
                   <div className="lg:[direction:ltr]">
                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm border border-slate-200">
@@ -81,7 +81,7 @@ export function CommunityInitiatives() {
                     <h2 className="text-3xl md:text-4xl text-slate-900 leading-[1.1] tracking-tight mb-6 font-serif font-normal">
                       {item.headline}
                     </h2>
-                    
+
                     <p className="text-slate-600 text-lg leading-relaxed mb-8 font-light">
                       {item.body}
                     </p>

@@ -20,21 +20,30 @@ interface Article {
 const articles: Article[] = [
   {
     id: 1,
-    date: "31  January 2025",
+    date: "24  August 2026",
     category: "Media Releases",
-    headline: "GRASS ROOT INVESTMENT",
-    summary: "Download and read the latest update: grass root investment",
-    image: "/gallery-updates/a-tour-at-skt-facility-by-our-area-mp-hon-abel-banda-mr-7.jpeg",
-    pdfUrl: "/news/Issue-001-01-2026.pdf"
+    headline: "DC AND KANTANSHI TENNIS CLUB, MUFULIRA",
+    summary: "SKT / TTZL supports Kantanshi Tennis Club, Mufulira for upbringing the young tennis players.",
+    image: "/news/thumbnails/Thumbnail_CSR.jpeg",
+    pdfUrl: "/news/SKT_CSR.pdf"
   },
   {
-    id: 2,
-    date: "13  March 2026",
+    id: 6,
+    date: "15  June 2026",
     category: "Media Releases",
-    headline: "A VISIT OF THE MONTH",
-    summary: "Download and read the latest update: month",
-    image: "/news/thumbnails/Issue-001-03-2026.pdf_thumb.png",
-    pdfUrl: "/news/Issue-001-03-2026.pdf"
+    headline: "IT'S TIME! ...not to fight, but keep fit & healthy",
+    summary: "Download and read the latest update: it’s time!",
+    image: "/news/thumbnails/Issue-005-06-2026.pdf_thumb.png",
+    pdfUrl: "/news/Issue-005-06-2026.pdf"
+  },
+  {
+    id: 5,
+    date: "10  April 2026",
+    category: "Media Releases",
+    headline: "SIGNING CEREMONY SUCCESS",
+    summary: "Download and read the latest update: success",
+    image: "/news/thumbnails/Issue-004-04-2026.pdf_thumb.png",
+    pdfUrl: "/news/Issue-004-04-2026.pdf"
   },
   {
     id: 3,
@@ -55,22 +64,13 @@ const articles: Article[] = [
     pdfUrl: "/news/Issue-002-03-2026.pdf"
   },
   {
-    id: 5,
-    date: "10  April 2026",
+    id: 2,
+    date: "13  March 2026",
     category: "Media Releases",
-    headline: "SIGNING CEREMONY SUCCESS",
-    summary: "Download and read the latest update: success",
-    image: "/news/thumbnails/Issue-004-04-2026.pdf_thumb.png",
-    pdfUrl: "/news/Issue-004-04-2026.pdf"
-  },
-  {
-    id: 6,
-    date: "15  June 2026",
-    category: "Media Releases",
-    headline: "IT'S TIME! ...not to fight, but keep fit & healthy",
-    summary: "Download and read the latest update: it’s time!",
-    image: "/news/thumbnails/Issue-005-06-2026.pdf_thumb.png",
-    pdfUrl: "/news/Issue-005-06-2026.pdf"
+    headline: "A VISIT OF THE MONTH",
+    summary: "Download and read the latest update: month",
+    image: "/news/thumbnails/Issue-001-03-2026.pdf_thumb.png",
+    pdfUrl: "/news/Issue-001-03-2026.pdf"
   }
 ];
 

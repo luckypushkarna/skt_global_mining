@@ -90,7 +90,7 @@ export default function WhoWeAre() {
             </span>
             <h2
               className="text-3xl md:text-4xl lg:text-5xl tracking-[-0.03em] text-slate-900 leading-[1.1] font-serif font-normal"
-              
+
             >
               Five disciplines.
               <br />
@@ -108,7 +108,7 @@ export default function WhoWeAre() {
                   <div>
                     <h3
                       className="text-2xl lg:text-3xl font-extrabold tracking-[-0.03em] text-slate-900 leading-tight mb-3 group-hover:text-slate-600 transition-colors duration-500"
-                      
+
                     >
                       {d.word}
                     </h3>

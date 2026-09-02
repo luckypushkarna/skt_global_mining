@@ -167,7 +167,7 @@ export function PartnersSection(): JSX.Element {
 
         {/* ─── KEY HIGHLIGHT SECTION ───────────────────── */}
         <div className="mt-24 md:mt-32 w-full">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -177,7 +177,7 @@ export function PartnersSection(): JSX.Element {
             {/* Background elements */}
             <div className="absolute inset-0 bg-gradient-to-br from-skt-blue-deep/20 via-skt-navy to-skt-navy z-0" />
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-skt-blue/50 to-transparent opacity-70" />
-            
+
             <div className="relative z-10 flex flex-col md:flex-row items-center md:justify-between gap-10 md:gap-12">
               <div className="max-w-2xl text-center md:text-left flex-1">
                 <div className="flex items-center gap-3 mb-5 justify-center md:justify-start">
@@ -188,7 +188,7 @@ export function PartnersSection(): JSX.Element {
                   Driving Zambia&apos;s copper resurgence through powerful global partnerships and strategic capital injection.
                 </h3>
               </div>
-              
+
               <div className="flex-shrink-0 flex flex-col items-center justify-center p-8 rounded-xl bg-skt-blue/10 border border-skt-blue/20 backdrop-blur-sm min-w-[220px]">
                 <span className="text-6xl md:text-7xl font-light text-white tracking-tight tabular-nums mb-3 drop-shadow-md">
                   51<span className="text-4xl md:text-5xl text-skt-blue-100 font-normal">%</span>

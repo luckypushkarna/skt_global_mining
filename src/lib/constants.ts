@@ -12,8 +12,8 @@ export const SITE_CONFIG = {
   founded: "2005",
   headquarters: "Tyre Technocrats India Pvt Ltd, Udaipur, Rajasthan",
   email: "Info@sktglobalminings.com",
-  phone: "+260 762 620 036",
-  address: "CHIM/254/A, Copperbelt Province Opposite Mindolo Police Station, Between Rubies & Meru Filling Station Kitwe, Zambia",
+  phone: "+260 769 553 037",
+  address: "CHIM/254/A, Opposite Mindolo Police Station, Between Rubies & Meru Filling Station Kitwe, Copperbelt Province, Zambia",
 } as const;
 
 export const NAV_ITEMS: ReadonlyArray<NavItem> = [

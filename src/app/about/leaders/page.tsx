@@ -702,28 +702,28 @@ function LeadersContent() {
     <div
       ref={containerRef}
       className="min-h-screen bg-white"
-      
+
     >
       {/* ── Premium Editorial Leadership Showcase ── */}
       <section className="w-full bg-neutral-50/40 border-b border-neutral-100 pt-[116px] pb-16 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
+
             {/* Left: Featured Executive Experience */}
             <div className="lg:col-span-5 flex flex-col justify-center min-h-[360px]">
               <div className={`transition-all duration-300 transform ${isTransitioning ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"}`}>
                 <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-slate-400 block mb-2">
                   {leader.department}
                 </span>
-                
+
                 <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-[-0.03em] text-slate-900 leading-[1.08] mb-3 font-serif font-normal" >
                   {leader.name}
                 </h2>
-                
+
                 <p className="text-sm md:text-base text-slate-500 leading-relaxed font-normal mb-6">
                   {leader.designation}
                 </p>
-                
+
                 <div className="border-l-2 border-neutral-900/20 pl-6 my-6">
                   <p className="text-base text-slate-600 font-light leading-relaxed italic">
                     &ldquo;{leader.statement}&rdquo;
@@ -746,8 +746,8 @@ function LeadersContent() {
               <p className="text-[10px] tracking-[0.2em] uppercase text-slate-300 font-light mb-4 block text-right">
                 Scroll horizontally to browse
               </p>
-              
-              <div 
+
+              <div
                 className="flex gap-6 overflow-x-auto no-scrollbar py-4 px-1 scroll-smooth snap-x snap-mandatory"
               >
                 {leaders.map((l, i) => (
@@ -765,23 +765,20 @@ function LeadersContent() {
                         src={l.image}
                         alt={l.name}
                         fill
-                        className={`object-cover object-top transition-all duration-700 ease-out group-hover:scale-105 ${
-                          i === currentIndex 
-                            ? "grayscale-0 scale-[1.02]" 
+                        className={`object-cover object-top transition-all duration-700 ease-out group-hover:scale-105 ${i === currentIndex
+                            ? "grayscale-0 scale-[1.02]"
                             : "grayscale group-hover:grayscale-0"
-                        }`}
+                          }`}
                         sizes="(max-width: 640px) 200px, 240px"
                       />
-                      <div className={`absolute inset-0 border transition-all duration-500 pointer-events-none ${
-                        i === currentIndex ? "border-neutral-900/40" : "border-transparent"
-                      }`} />
+                      <div className={`absolute inset-0 border transition-all duration-500 pointer-events-none ${i === currentIndex ? "border-neutral-900/40" : "border-transparent"
+                        }`} />
                     </div>
 
                     {/* Meta info below */}
                     <div className="px-1">
-                      <h3 className={`text-sm font-medium transition-colors duration-300 ${
-                        i === currentIndex ? "text-slate-900 font-semibold" : "text-slate-500 group-hover:text-slate-900"
-                      }`}>
+                      <h3 className={`text-sm font-medium transition-colors duration-300 ${i === currentIndex ? "text-slate-900 font-semibold" : "text-slate-500 group-hover:text-slate-900"
+                        }`}>
                         {l.name.replace("Mr. ", "").replace("Mrs. ", "").replace("Ms. ", "")}
                       </h3>
                       <p className="text-[11px] text-slate-400 font-light mt-0.5 truncate">

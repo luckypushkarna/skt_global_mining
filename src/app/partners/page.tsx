@@ -77,7 +77,7 @@ export default function PartnersPage() {
                 </div>
               </div>
             </div>
-            
+
             {/* Partner 2: Mopani */}
             <div>
               <h2 className="text-2xl md:text-3xl text-slate-900 mb-3 font-serif font-normal">

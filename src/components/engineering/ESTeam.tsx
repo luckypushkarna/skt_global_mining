@@ -11,7 +11,7 @@ export function ESTeam() {
     <section className="bg-white py-20 lg:py-32 border-b border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
-          
+
           {/* Left: Content */}
           <div className="lg:col-span-6">
             <motion.div
@@ -61,7 +61,7 @@ export function ESTeam() {
                     </span>
                   </div>
                 ))}
-                
+
                 {/* Total */}
                 <div className="flex items-center justify-between pt-6 mt-2 border-t border-slate-300">
                   <span className="text-xs uppercase tracking-widest font-bold text-slate-500">

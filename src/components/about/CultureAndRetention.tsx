@@ -7,7 +7,7 @@ const programs = [
   {
     icon: Award,
     title: "Ukukonka Retention Bonus Scheme",
-    desc: "Our unique long-service recognition program rewards employee loyalty at key service milestones with life-enhancing assets.",
+    desc: "Our unique long-service recognition program rewards key employees for their loyalty at specific service milestones with life-enhancing assets.",
     milestones: [
       { year: "1 Year", reward: "Bicycle & Kitchen Appliances" },
       { year: "2 Years", reward: "Smartphone" },
@@ -19,7 +19,7 @@ const programs = [
   {
     icon: TrendingUp,
     title: "Attendance Incentive Programme",
-    desc: "We reward dedication and consistency. Operators and Artisans on 12-hour shifts earn up to ZMW 600 monthly for excellent attendance, while General Workers earn up to ZMW 400.",
+    desc: "We reward dedication and consistency. Operators, Artisans, and General Workers earn monthly performance bonuses as recognition for their excellent regular attendance.",
   },
   {
     icon: Users,

@@ -67,7 +67,7 @@ export default function InfrastructurePage(): JSX.Element {
 
       {/* ─── HERO ─────────────────────────────────────── */}
       <section ref={containerRef} className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-neutral-950">
-        
+
         {/* Parallax Background */}
         <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
           <Image
@@ -94,7 +94,7 @@ export default function InfrastructurePage(): JSX.Element {
               Infrastructure & Facilities
             </span>
           </motion.div>
-          
+
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

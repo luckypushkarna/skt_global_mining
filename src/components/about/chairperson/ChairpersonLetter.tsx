@@ -22,7 +22,7 @@ export default function ChairpersonLetter() {
             </p>
 
             <p>
-              SKT Global forms part of a dynamic international group of companies, but our strategic investment in Zambia is deeply personal. It represents TTIPL&apos;s long-term commitment to the Zambian mining sector and our belief in the vast potential of this nation&apos;s resources and its people. 
+              SKT Global forms part of a dynamic international group of companies, but our strategic investment in Zambia is deeply personal. It represents TTIPL&apos;s long-term commitment to the Zambian mining sector and our belief in the vast potential of this nation&apos;s resources and its people.
             </p>
 
             <blockquote className="my-16 pl-8 border-l-2 border-skt-blue bg-bg-tint py-6 pr-6 rounded-r-lg">

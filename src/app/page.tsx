@@ -19,8 +19,7 @@ import { PagePreloader } from "@/components/PagePreloader";
 import { SectionHeaderSkeleton, TextBlockSkeleton } from "@/components/ui/skeleton";
 
 export const metadata = generateMetadata({
-  description:
-    "SKT Global Mining & Services Limited - Engineering excellence in mining and industrial services across 8+ countries. 18+ years. 4,200+ workforce. Committed to Zero Harm.",
+  description: "SKT Global: Powering Zambia's Copper Future Today",
 });
 
 export default function HomePage(): JSX.Element {

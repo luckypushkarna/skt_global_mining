@@ -7,7 +7,7 @@ const pillars = [
   {
     icon: Wrench,
     title: "Mechanised Mining",
-    desc: "A world-class fleet of 225+ machines including drill rigs, telehandlers, and service vehicles, positioning us as the premier mechanised mining contractor.",
+    desc: "A world-class fleet including loaders, trucks, production drills, exploration drills, Remote Loaders, Explosive charging units, fuel trucks, and service vehicles, positioning us as the premier mechanised mining contractor.",
     colSpan: "lg:col-span-2",
   },
   {
@@ -19,7 +19,7 @@ const pillars = [
   {
     icon: Handshake,
     title: "Strategic Partnerships",
-    desc: "Accelerating development at Mopani Copper Mines through technical excellence, financial discipline, and strategic alignment with IRH.",
+    desc: "Accelerating development through technical excellence, financial discipline, and strategic alignment with key investment partners, while actively developing local contractors in compliance with Statutory Instrument No. 68.",
     colSpan: "lg:col-span-1",
   },
   {
@@ -40,9 +40,9 @@ export default function StrategicPillars() {
   return (
     <section className="py-24 md:py-36 bg-bg-tint">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        
+
         <div className="mb-16 md:mb-24 text-center max-w-3xl mx-auto">
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -50,7 +50,7 @@ export default function StrategicPillars() {
           >
             Core Disciplines
           </motion.span>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

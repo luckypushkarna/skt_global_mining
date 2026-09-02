@@ -12,7 +12,7 @@ export default function PrivacyPolicyPage(): JSX.Element {
   return (
     <div className="bg-white min-h-screen py-24 md:py-32">
       <div className="max-w-4xl mx-auto px-6 md:px-10 lg:px-16">
-        
+
         {/* Header */}
         <div className="border-b border-neutral-200 pb-8 mb-12">
           <span className="text-xs font-semibold uppercase tracking-wider text-rose-600 block mb-3">
@@ -28,7 +28,7 @@ export default function PrivacyPolicyPage(): JSX.Element {
 
         {/* Content */}
         <div className="prose prose-neutral max-w-none space-y-8 text-neutral-600 leading-relaxed text-[15px]">
-          
+
           <section className="space-y-3">
             <h2 className="text-xl text-neutral-900 tracking-tight font-serif font-normal">1. Introduction & Scope</h2>
             <p>

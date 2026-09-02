@@ -7,10 +7,10 @@ import { MECHANISED_FLEET } from "@/data/mechanised-fleet";
 function AnimatedNumber({ value }: { value: string }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-  
+
   const numMatch = value.match(/(\d+)/);
   const targetNum = numMatch ? parseInt(numMatch[0], 10) : 0;
-  
+
   const spring = useSpring(0, { duration: 2500, bounce: 0 });
   const display = useTransform(spring, (current) => Math.floor(current));
 
@@ -21,7 +21,7 @@ function AnimatedNumber({ value }: { value: string }) {
   }, [isInView, spring, targetNum]);
 
   if (!numMatch || numMatch.index === undefined) return <span>{value}</span>;
-  
+
   const prefix = value.substring(0, numMatch.index);
   const suffix = value.substring(numMatch.index + numMatch[0].length);
 
@@ -55,9 +55,8 @@ export function FleetOverview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className={`p-6 lg:p-8 border-b lg:border-b-0 border-slate-200 ${
-                i < overview.stats.length - 1 ? "lg:border-r" : ""
-              } ${i % 2 === 0 ? "border-r" : ""}`}
+              className={`p-6 lg:p-8 border-b lg:border-b-0 border-slate-200 ${i < overview.stats.length - 1 ? "lg:border-r" : ""
+                } ${i % 2 === 0 ? "border-r" : ""}`}
             >
               <p className="font-mono text-4xl lg:text-5xl font-medium text-slate-900 tabular-nums tracking-tight mb-4">
                 <AnimatedNumber value={stat.value} />
