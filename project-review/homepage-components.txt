@@ -1,0 +1,74 @@
+Homepage Component Structure (Render Order)
+===========================================
+
+1. HeroSection
+   - Source: src/components/organisms/HeroSection.tsx
+   - Client/Server: Client Component (use client)
+   - Animation: GSAP / Framer Motion
+   - ScrollTrigger: Yes
+   - Media: Hero video/background
+   - Lazy-loading: Eager loaded (LCP)
+   - Performance Concerns: High resolution media could delay LCP if not optimized.
+
+2. AboutSection
+   - Source: src/components/organisms/AboutSection.tsx
+   - Client/Server: Client Component
+   - Lazy-loading: Wrapped in Suspense
+
+3. BlankSection
+   - Source: src/components/organisms/BlankSection.tsx
+   - Client/Server: Client Component
+   - Lazy-loading: Wrapped in Suspense
+
+4. ServicesSection
+   - Source: src/components/organisms/ServicesSection.tsx
+   - Client/Server: Client Component
+   - Lazy-loading: Wrapped in Suspense
+
+5. OperationalScaleSection
+   - Source: src/components/organisms/OperationalScaleSection.tsx
+   - Client/Server: Client Component
+   - ScrollTrigger: Yes
+   - Media: Maps / Data visualization
+   - Lazy-loading: Wrapped in Suspense
+
+6. StatsSection
+   - Source: src/components/organisms/StatsSection.tsx
+   - Client/Server: Client Component
+   - Animation: Live Counters
+   - Lazy-loading: Wrapped in Suspense
+
+7. ChairmanMessageSection
+   - Source: src/components/organisms/ChairmanMessageSection.tsx
+   - Client/Server: Client Component
+   - Media: Chairman Image (Cloudinary)
+   - Lazy-loading: Wrapped in Suspense
+
+8. GallerySection
+   - Source: src/components/organisms/GallerySection.tsx
+   - Client/Server: Client Component
+   - Animation: GSAP ScrollTrigger
+   - Media: Multiple Images
+   - Performance Concerns: Heavy image loading.
+
+9. TeamSection
+   - Source: src/components/organisms/TeamSection.tsx
+   - Client/Server: Client Component
+   - Lazy-loading: Wrapped in Suspense
+
+10. CommunityImpactSection
+    - Source: src/components/organisms/CommunityImpactSection.tsx
+    - Client/Server: Client Component
+    - Media: CSR Video / Images
+    - Lazy-loading: Wrapped in Suspense
+
+11. PartnersSection
+    - Source: src/components/organisms/PartnersSection.tsx
+    - Client/Server: Client Component
+    - Media: Partner Logos
+    - Lazy-loading: Wrapped in Suspense
+
+12. ContactSection (Footer)
+    - Source: src/components/organisms/ContactSection.tsx
+    - Client/Server: Client Component
+    - Lazy-loading: Wrapped in Suspense

@@ -1,0 +1,61 @@
+Routes Inventory
+================
+
+Static Pages:
+- /about
+- /about/chairperson-message
+- /about/leaders
+- /accessibility
+- /anti-bribery
+- /capabilities/future-expansion
+- /capabilities/infrastructure-systems
+- /capabilities/operational-command
+- /capabilities/rescue-systems
+- /capabilities/safety-compliance
+- /capabilities/strategic-warehousing
+- /capabilities/underground-workshop
+- /capabilities/workforce-facilities
+- /careers
+- /contact
+- /cookies
+- /media/contact-us
+- /media/newsroom
+- /media/photo-gallery
+- /media/privacy-policy
+- /operations/engineering-services
+- /operations/infrastructure-facilities
+- /operations/logistics-network
+- /operations/mechanised-fleet
+- /operations/underground-mining
+- /partners
+- /partners/become-partner
+- /privacy
+- /projects
+- /services
+- /sustainability/community-impact
+- /sustainability/environmental-care
+- /sustainability/esg-overview
+- /sustainability/local-workforce
+- /sustainability/safety-first
+- /terms
+- / (Homepage)
+
+Dynamic Pages:
+- /capabilities/[slug]
+- /services/[slug]
+
+API Routes:
+- /api/contact
+- /api/health
+- /api/web3forms
+
+Metadata Routes:
+- /robots.txt (located in public/robots.txt)
+
+Missing Routes:
+- /investors (Missing, not found)
+- /sitemap.xml (Missing, not found)
+- /media (Root /media is missing, though child routes exist)
+
+Redirects/Rewrites:
+- None configured in next.config.ts or middleware.ts

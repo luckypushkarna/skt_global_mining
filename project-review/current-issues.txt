@@ -1,0 +1,17 @@
+Current Issues
+==============
+
+Confirmed:
+- Missing Routes: `/investors` and `/sitemap.xml` are referenced or expected but do not exist in the routing structure.
+- Image Optimization: The `loader-animation.webp` is animated and Next.js logs warn it should use the `unoptimized` property to prevent excessive CPU usage.
+
+Likely:
+- Potential Layout Shifts (CLS): High reliance on remote Cloudinary images. If width/height attributes or aspect-ratio CSS aren't strictly enforced on `next/image`, layout shifts may occur during hydration.
+- Mobile Animation Costs: Extensive use of GSAP and Framer Motion could drop framerates on lower-end mobile devices.
+- Duplicate Media Requests: Re-rendering of Suspense boundaries might trigger duplicate requests if media isn't aggressively cached.
+
+Requires Runtime Verification:
+- GSAP Pin-Spacer Usage: Scrolling bugs often emerge with pin-spacers resizing dynamically on mobile browsers when the address bar hides/shows.
+- Hydration Risks: Complex responsive conditional renders often mismatch between server (Node) and client (Browser) causing hydration errors.
+- Accessibility Problems: ARIA labels on custom interactive animated elements.
+- SEO Problems: Missing `sitemap.xml` will impact search indexing.

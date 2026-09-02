@@ -12,14 +12,14 @@ interface TeamMember {
 }
 
 const TEAM_MEMBERS: TeamMember[] = [
-  { num: "01/08", name: "Mulenga Mutati", role: "Chief of Zambia Operations", exp: "14 Years at SKT", image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/mulenga-mutati.webp" },
-  { num: "02/08", name: "Charles Sakanya", role: "Senior Metallurgical Director", exp: "9 Years at SKT", image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/charles-sakanya.webp" },
-  { num: "03/08", name: "Safeli Maxim Chipulu", role: "Underground Shift Manager", exp: "11 Years at SKT", image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/safeli-maxim-chipulu.webp" },
-  { num: "04/08", name: "Toms Joseph", role: "Logistics Division Lead", exp: "7 Years at SKT", image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/toms-joseph.webp" },
-  { num: "05/08", name: "Anand Kolappa Pillai", role: "Refining Systems Specialist", exp: "8 Years at SKT", image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/anand-kolappa-pillai.webp" },
-  { num: "06/08", name: "Kiran Kumar Reddy", role: "Heavy Maintenance Superintendent", exp: "10 Years at SKT", image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/kiran-kumar-reddy.webp" },
-  { num: "07/08", name: "Sahil Talreja", role: "Civil & Infrastructure Engineer", exp: "6 Years at SKT", image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/sahil-talreja.webp" },
-  { num: "08/08", name: "Sanjay Kumar Sharma", role: "Power Systems Engineer", exp: "12 Years at SKT", image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/sanjay-kumar-sharma.webp" },
+  { num: "01/08", name: "Mulenga Mutati", role: "Chief of Zambia Operations", exp: "14 Years at SKT", image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/mulenga-mutati.webp" },
+  { num: "02/08", name: "Charles Sakanya", role: "Senior Metallurgical Director", exp: "9 Years at SKT", image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/charles-sakanya.webp" },
+  { num: "03/08", name: "Safeli Maxim Chipulu", role: "Underground Shift Manager", exp: "11 Years at SKT", image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/safeli-maxim-chipulu.webp" },
+  { num: "04/08", name: "Toms Joseph", role: "Logistics Division Lead", exp: "7 Years at SKT", image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/toms-joseph.webp" },
+  { num: "05/08", name: "Anand Kolappa Pillai", role: "Refining Systems Specialist", exp: "8 Years at SKT", image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/anand-kolappa-pillai.webp" },
+  { num: "06/08", name: "Kiran Kumar Reddy", role: "Heavy Maintenance Superintendent", exp: "10 Years at SKT", image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/kiran-kumar-reddy.webp" },
+  { num: "07/08", name: "Sahil Talreja", role: "Civil & Infrastructure Engineer", exp: "6 Years at SKT", image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/sahil-talreja.webp" },
+  { num: "08/08", name: "Sanjay Kumar Sharma", role: "Power Systems Engineer", exp: "12 Years at SKT", image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/sanjay-kumar-sharma.webp" },
 ];
 
 export function PortraitGrid() {

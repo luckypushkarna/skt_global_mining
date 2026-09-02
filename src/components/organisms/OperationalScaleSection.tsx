@@ -426,9 +426,9 @@ function StatCard({
           }`}
       >
         <div className="text-left space-y-1.5 sm:space-y-3">
-          <h4 className="text-xs font-bold leading-snug tracking-tight text-white sm:text-sm md:text-lg lg:text-xl">
+          <p className="text-xs font-bold leading-snug tracking-tight text-white sm:text-sm md:text-lg lg:text-xl">
             Focusing on {stat.label}
-          </h4>
+          </p>
           <p className="text-[10px] sm:text-xs text-white/80 leading-relaxed font-medium">
             {stat.description}
           </p>
@@ -473,7 +473,6 @@ export function OperationalScaleSection(): JSX.Element {
   return (
     <section
       ref={sectionRef}
-      id="impact"
       className="py-16 overflow-hidden md:py-24 lg:py-32 bg-bg-soft"
       aria-labelledby="stats-heading"
     >

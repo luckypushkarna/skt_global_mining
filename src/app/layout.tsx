@@ -55,12 +55,12 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        {/* JSON-LD Structured Data */}
+        {/* JSON-LD Structured Data — @graph: Organization + WebSite + WebPage */}
         <script
           type="application/ld+json"
           suppressHydrationWarning
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd.organization),
+            __html: JSON.stringify(jsonLd.graph),
           }}
         />
 

@@ -13,7 +13,7 @@ const leaders = [
     department: "Executive Leadership",
     statement:
       "Sustainable growth is built on decisive action, disciplined teams, and an unwavering commitment to the people and communities we serve.",
-    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/sahil-talreja.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/sahil-talreja.webp",
     yearsExperience: 15,
     overview: {
       intro:
@@ -74,7 +74,7 @@ const leaders = [
     department: "Corporate Strategy",
     statement:
       "Enduring enterprise value is created through long-term thinking, technical precision, and deep respect for the communities where we operate.",
-    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/anand-kolappa-pillai.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/anand-kolappa-pillai.webp",
     yearsExperience: 30,
     overview: {
       intro: "Anand Kolappa Pillai is a highly experienced business and engineering professional with over 30 years of international experience in business management, engineering, projects, manufacturing, construction and turnkey operations.",
@@ -128,7 +128,7 @@ const leaders = [
     department: "Operations Leadership",
     statement:
       "Operational discipline is not a constraint - it is the force that transforms potential into performance, every shift, every day.",
-    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/sanjay-kumar-sharma.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/sanjay-kumar-sharma.webp",
     yearsExperience: 30,
     overview: {
       intro: "Sanjay Kumar Sharma is a Mining professional with over three decades of experience in underground hard rock mining with a specialization in operational optimization, mine expansion and Mine development project execution.",
@@ -182,7 +182,7 @@ const leaders = [
     department: "Finance & Risk",
     statement:
       "Financial rigour is what gives ambitious operational plans the credibility and resilience to survive contact with reality.",
-    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/srinivasulu-jonnalagadda.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/srinivasulu-jonnalagadda.webp",
     yearsExperience: 30,
     overview: {
       intro: "A senior finance professional with over 30 years of extensive experience leading and transforming financial functions across diverse industries, including Mining, Power, Ferro Alloys, Infrastructure, Food Processing, Sugar and Trading.",
@@ -235,7 +235,7 @@ const leaders = [
     designation: "MSV Site Manager",
     department: "Operations",
     statement: "Excellence in site management is driven by rigorous standards, clear communication, and empowering teams to execute safely and efficiently.",
-    image: "/skt/leaders/collins.jpg",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/collins",
     yearsExperience: 10,
     overview: {
       intro: "Mr. Collins is the MSV Site Manager at SKT Global, bringing over a decade of dedicated operational leadership to our site activities. He oversees the critical day-to-day execution of site programs, ensuring all teams operate seamlessly and safely.",
@@ -272,7 +272,7 @@ const leaders = [
     designation: "Executive & Administration Manager",
     department: "Administration",
     statement: "Strong administration is the invisible backbone that allows operational excellence to thrive.",
-    image: "/skt/leaders/kerson.png",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/kerson",
     yearsExperience: 20,
     overview: {
       intro: "Kerson Khondwani Phiri is a versatile IT, Administration and Technical Services professional with over 20 years of experience spanning information technology, graphic design, production, administration, stores and education.",
@@ -310,7 +310,7 @@ const leaders = [
     designation: "Site Manager at Mufulira",
     department: "Operations",
     statement: "On-site efficiency is driven by safety, teamwork, and clear operational objectives.",
-    image: "/skt/leaders/chakanga-mukonde.png",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/chakanga-mukonde",
     yearsExperience: 12,
     overview: {
       intro: "Chakanga Mukonde is the Site Manager at Mufulira, driving site activities with a focus on safe execution and operational efficiency.",
@@ -334,7 +334,7 @@ const leaders = [
     designation: "HR Manager",
     department: "Human Capital",
     statement: "Our greatest resource is the potential of our workforce - nurtured through training, safety, and mutual respect.",
-    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/mulenga-mutati.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/mulenga-mutati.webp",
     yearsExperience: 16,
     overview: {
       intro: "A strategic and results-driven Human Resources Manager with over 16 years of progressive HR experience, specialising in mining, employee relations, industrial relations and multinational workforce management.",
@@ -375,7 +375,7 @@ const leaders = [
     designation: "Project Head at SOB",
     department: "SOB Operations",
     statement: "Technical precision in underground excavation underpins safety, productivity, and the integrity of our production targets.",
-    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/kiran-kumar-reddy.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/kiran-kumar-reddy.webp",
     yearsExperience: 15,
     overview: {
       intro: "Kiran Kumar Reddy is the Mine Manager at SOB operations, directing the execution of mechanised mining and ventilation protocols at high-capacity underground shafts. With over 15 years of hard-rock mining experience, he coordinates shift-on-shift production targets with absolute precision.",
@@ -418,7 +418,7 @@ const leaders = [
     designation: "Head of Maintenance",
     department: "Asset Readiness",
     statement: "Operational readiness is the product of preventive maintenance, robust supply chains, and technical pride in our fleet.",
-    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/suresh-babu-deshamalla.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/suresh-babu-deshamalla.webp",
     yearsExperience: 18,
     overview: {
       intro: "Suresh Babu Deshamalla is the Head of Maintenance at SKT Global, managing the lifecycle, availability, and preventive servicing of our 225+ underground mechanized mining vehicle fleet. He holds 18 years of asset engineering experience across large-scale industrial projects.",
@@ -459,7 +459,7 @@ const leaders = [
     designation: "Commercial Manager",
     department: "Commercial Strategy",
     statement: "Sustainable commercial partnerships are built on contract compliance, mutual benefit, and operational reliability.",
-    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/kuldeep-kulshrestha.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/kuldeep-kulshrestha.webp",
     yearsExperience: 16,
     overview: {
       intro: "Kuldeep Kulshrestha is the Commercial Manager at SKT Global, overseeing international supply chain integrations, commercial risk analysis, and customer relationship governance. His 16-year career focuses on commercial growth in resource and logistics sectors.",
@@ -500,7 +500,7 @@ const leaders = [
     designation: "Project Head at Mufulira",
     department: "Mufulira Operations",
     statement: "Mining excellence lies in the details. Precise drilling, proper air flow, and disciplined operators create a world-class mine.",
-    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/toms-joseph.webp",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/toms-joseph.webp",
     yearsExperience: 14,
     overview: {
       intro: "Toms Joseph is the Mine Manager at Mufulira, directing mechanized operations, stope safety, and ventilation systems. Over a 14-year career in underground hard-rock mining, he has successfully delivered on complex production targets in high-capacity shafts.",
@@ -541,7 +541,7 @@ const leaders = [
     designation: "Accounts Manager",
     department: "Finance",
     statement: "Fiscal health is maintained through precise accounting and diligent management.",
-    image: "/skt/leaders/willie-simpemba.png",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/willie-simpemba",
     yearsExperience: 10,
     overview: {
       intro: "Willie Simpemba is the Accounts Manager, ensuring the financial integrity and fiscal health of our regional projects.",
@@ -565,7 +565,7 @@ const leaders = [
     designation: "HSE Manager",
     department: "Health & Safety",
     statement: "Protecting our workforce and our environment is the prerequisite to every operation.",
-    image: "/skt/leaders/george-sakanyi.png",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/george-sakanyi",
     yearsExperience: 15,
     overview: {
       intro: "George Sakanyi is the HSE Manager, championing health, safety, and environmental excellence across all operations.",
@@ -589,7 +589,7 @@ const leaders = [
     designation: "System Coordinator",
     department: "Systems",
     statement: "Systematic coordination ensures operational alignment and technical precision across all activities.",
-    image: "/skt/leaders/peter-ochigbo.png",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/peter-ochigbo",
     yearsExperience: 8,
     overview: {
       intro: "Peter Ochigbo is a System Coordinator with 8 years of professional experience supporting system coordination, HR operations, workforce administration, data management and process improvement across the mining, agribusiness and hospitality sectors.",

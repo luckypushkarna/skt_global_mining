@@ -1,0 +1,560 @@
+skt_global_mining
+├── .vscode
+│   └── settings.json
+├── docs
+│   └── legal
+│       └── developer_client_protection_agreement.md
+├── public
+│   ├── gallery-updates
+│   │   ├── a-tour-at-skt-facility-by-our-area-mp-hon-abel-banda-mr-1.jpeg
+│   │   ├── a-tour-at-skt-facility-by-our-area-mp-hon-abel-banda-mr-10.jpeg
+│   │   ├── a-tour-at-skt-facility-by-our-area-mp-hon-abel-banda-mr-11.jpeg
+│   │   ├── a-tour-at-skt-facility-by-our-area-mp-hon-abel-banda-mr-2.jpeg
+│   │   ├── a-tour-at-skt-facility-by-our-area-mp-hon-abel-banda-mr-3.jpeg
+│   │   ├── a-tour-at-skt-facility-by-our-area-mp-hon-abel-banda-mr-4.jpeg
+│   │   ├── a-tour-at-skt-facility-by-our-area-mp-hon-abel-banda-mr-5.jpeg
+│   │   ├── a-tour-at-skt-facility-by-our-area-mp-hon-abel-banda-mr-6.jpeg
+│   │   ├── a-tour-at-skt-facility-by-our-area-mp-hon-abel-banda-mr-7.jpeg
+│   │   ├── a-tour-at-skt-facility-by-our-area-mp-hon-abel-banda-mr-8.jpeg
+│   │   ├── a-tour-at-skt-facility-by-our-area-mp-hon-abel-banda-mr-9.jpeg
+│   │   ├── collecting-boulder-2.jpeg
+│   │   ├── collecting-boulder.jpeg
+│   │   ├── csr-supporting-kantanshi-tennis-club-1.jpeg
+│   │   ├── csr-supporting-kantanshi-tennis-club-2.jpeg
+│   │   ├── csr-supporting-kantanshi-tennis-club-3.jpeg
+│   │   ├── csr-supporting-kantanshi-tennis-club-4.jpeg
+│   │   ├── csr-supporting-kantanshi-tennis-club-5.jpeg
+│   │   ├── csr-supporting-kantanshi-tennis-club-6.jpeg
+│   │   ├── csr-supporting-kantanshi-tennis-club-7.jpeg
+│   │   ├── csr-supporting-kantanshi-tennis-club-8.jpeg
+│   │   ├── csr-supporting-kantanshi-tennis-club-9.jpeg
+│   │   ├── drill-point.jpeg
+│   │   ├── dump-box-cleaning-time.jpeg
+│   │   ├── grading-work.jpeg
+│   │   ├── hazard-elimination-1.jpeg
+│   │   ├── hazard-elimination-2.jpeg
+│   │   ├── hazard-elimination-3.jpeg
+│   │   ├── hazard-elimination-4.jpeg
+│   │   ├── hazard-elimination-5.jpeg
+│   │   ├── hazard-elimination-6.jpeg
+│   │   ├── loaded-truck.jpeg
+│   │   ├── loading-the-truck.jpeg
+│   │   ├── shaft-road-underground-1.jpeg
+│   │   ├── shaft-road-underground-10.jpeg
+│   │   ├── shaft-road-underground-11.jpeg
+│   │   ├── shaft-road-underground-12.jpeg
+│   │   ├── shaft-road-underground-13.jpeg
+│   │   ├── shaft-road-underground-14.jpeg
+│   │   ├── shaft-road-underground-15.jpeg
+│   │   ├── shaft-road-underground-16.jpeg
+│   │   ├── shaft-road-underground-17.jpeg
+│   │   ├── shaft-road-underground-18.jpeg
+│   │   ├── shaft-road-underground-19.jpeg
+│   │   ├── shaft-road-underground-2.jpeg
+│   │   ├── shaft-road-underground-20.jpeg
+│   │   ├── shaft-road-underground-21.jpeg
+│   │   ├── shaft-road-underground-22.jpeg
+│   │   ├── shaft-road-underground-23.jpeg
+│   │   ├── shaft-road-underground-24.jpeg
+│   │   ├── shaft-road-underground-25.jpeg
+│   │   ├── shaft-road-underground-26.jpeg
+│   │   ├── shaft-road-underground-27.jpeg
+│   │   ├── shaft-road-underground-28.jpeg
+│   │   ├── shaft-road-underground-29.jpeg
+│   │   ├── shaft-road-underground-3.jpeg
+│   │   ├── shaft-road-underground-30.jpeg
+│   │   ├── shaft-road-underground-31.jpeg
+│   │   ├── shaft-road-underground-32.jpeg
+│   │   ├── shaft-road-underground-33.jpeg
+│   │   ├── shaft-road-underground-34.jpeg
+│   │   ├── shaft-road-underground-4.jpeg
+│   │   ├── shaft-road-underground-5.jpeg
+│   │   ├── shaft-road-underground-6.jpeg
+│   │   ├── shaft-road-underground-7.jpeg
+│   │   ├── shaft-road-underground-8.jpeg
+│   │   ├── shaft-road-underground-9.jpeg
+│   │   ├── skt-mufurila-engineering-team-1.png
+│   │   ├── skt-mufurila-engineering-team-10.jpeg
+│   │   ├── skt-mufurila-engineering-team-11.jpeg
+│   │   ├── skt-mufurila-engineering-team-12.jpeg
+│   │   ├── skt-mufurila-engineering-team-13.jpeg
+│   │   ├── skt-mufurila-engineering-team-14.jpeg
+│   │   ├── skt-mufurila-engineering-team-15.jpeg
+│   │   ├── skt-mufurila-engineering-team-16.jpeg
+│   │   ├── skt-mufurila-engineering-team-17.jpeg
+│   │   ├── skt-mufurila-engineering-team-18.jpeg
+│   │   ├── skt-mufurila-engineering-team-19.jpeg
+│   │   ├── skt-mufurila-engineering-team-2.jpeg
+│   │   ├── skt-mufurila-engineering-team-20.jpeg
+│   │   ├── skt-mufurila-engineering-team-21.jpeg
+│   │   ├── skt-mufurila-engineering-team-22.jpeg
+│   │   ├── skt-mufurila-engineering-team-23.jpeg
+│   │   ├── skt-mufurila-engineering-team-24.jpeg
+│   │   ├── skt-mufurila-engineering-team-25.jpeg
+│   │   ├── skt-mufurila-engineering-team-26.jpeg
+│   │   ├── skt-mufurila-engineering-team-27.jpeg
+│   │   ├── skt-mufurila-engineering-team-28.jpeg
+│   │   ├── skt-mufurila-engineering-team-29.jpeg
+│   │   ├── skt-mufurila-engineering-team-3.jpeg
+│   │   ├── skt-mufurila-engineering-team-30.jpeg
+│   │   ├── skt-mufurila-engineering-team-31.jpeg
+│   │   ├── skt-mufurila-engineering-team-32.jpeg
+│   │   ├── skt-mufurila-engineering-team-4.jpeg
+│   │   ├── skt-mufurila-engineering-team-5.jpeg
+│   │   ├── skt-mufurila-engineering-team-6.jpeg
+│   │   ├── skt-mufurila-engineering-team-7.jpeg
+│   │   ├── skt-mufurila-engineering-team-8.jpeg
+│   │   ├── skt-mufurila-engineering-team-9.jpeg
+│   │   ├── skt-starts-here.jpeg
+│   │   ├── sob-site-appreciation-meeting-1.jpeg
+│   │   ├── sob-site-appreciation-meeting-10.jpeg
+│   │   ├── sob-site-appreciation-meeting-11.jpeg
+│   │   ├── sob-site-appreciation-meeting-12.jpeg
+│   │   ├── sob-site-appreciation-meeting-13.jpeg
+│   │   ├── sob-site-appreciation-meeting-2.jpeg
+│   │   ├── sob-site-appreciation-meeting-3.jpeg
+│   │   ├── sob-site-appreciation-meeting-4.jpeg
+│   │   ├── sob-site-appreciation-meeting-5.jpeg
+│   │   ├── sob-site-appreciation-meeting-6.jpeg
+│   │   ├── sob-site-appreciation-meeting-7.jpeg
+│   │   ├── sob-site-appreciation-meeting-8.jpeg
+│   │   ├── sob-site-appreciation-meeting-9.jpeg
+│   │   ├── sob-site-appreciation-meeting-video.mp4
+│   │   ├── tag-board-and-blasting-point.jpeg
+│   │   ├── tyre-workshop-and-management-office-1.jpeg
+│   │   ├── tyre-workshop-and-management-office-2.jpeg
+│   │   ├── tyre-workshop-and-management-office-3.jpeg
+│   │   ├── tyre-workshop-and-management-office-4.jpeg
+│   │   ├── tyre-workshop-and-management-office-5.jpeg
+│   │   ├── underground-water-1.jpeg
+│   │   └── underground-water-2.jpeg
+│   ├── news
+│   │   ├── thumbnails
+│   │   │   ├── Issue-001-01-2026.pdf_thumb.png
+│   │   │   ├── Issue-001-03-2026.pdf_thumb.png
+│   │   │   ├── Issue-002-03-2026-1.pdf_thumb.png
+│   │   │   ├── Issue-002-03-2026.pdf_thumb.png
+│   │   │   ├── Issue-004-04-2026.pdf_thumb.png
+│   │   │   └── Issue-005-06-2026.pdf_thumb.png
+│   │   ├── Issue-001-01-2026.pdf
+│   │   ├── Issue-001-03-2026.pdf
+│   │   ├── Issue-002-03-2026-1.pdf
+│   │   ├── Issue-002-03-2026.pdf
+│   │   ├── Issue-004-04-2026.pdf
+│   │   └── Issue-005-06-2026.pdf
+│   ├── skt
+│   │   ├── esg
+│   │   │   └── drill-team.jpg
+│   │   ├── leaders
+│   │   │   ├── collins.jpg
+│   │   │   └── kerson.jpg
+│   │   └── videos
+│   │       └── lhd-video.mp4
+│   ├── About hero image.png
+│   ├── Engineering & Maintenance-card.webp
+│   ├── Engineering & Maintenance.webp
+│   ├── favicon.ico
+│   ├── infrastructure-new.webp
+│   ├── infrastructure.png
+│   ├── Logistic network.png
+│   ├── logistic-network-new.webp
+│   ├── manifest.json
+│   ├── Operational command.png
+│   ├── operational-command-new.webp
+│   ├── robots.txt
+│   ├── Safety & Compliance-card.webp
+│   ├── Safety & Compliance.webp
+│   └── skt-website-hero-video-optimized.mp4
+├── scripts
+│   ├── cloudinary-mapping.json
+│   ├── compress-hero-sample.js
+│   ├── compress-new-videos.js
+│   ├── gen-gallery-clips.js
+│   ├── increase-hero-quality.js
+│   ├── optimize-all-images.js
+│   ├── optimize-assets.js
+│   ├── optimize-gallery-extreme.js
+│   ├── optimize-gallery-videos.js
+│   ├── optimize-hero-performance.js
+│   ├── replace-paths.js
+│   └── upload-to-cloudinary.js
+├── src
+│   ├── app
+│   │   ├── about
+│   │   │   ├── chairperson-message
+│   │   │   │   └── page.tsx
+│   │   │   ├── leaders
+│   │   │   │   └── page.tsx
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   ├── accessibility
+│   │   │   └── page.tsx
+│   │   ├── anti-bribery
+│   │   │   └── page.tsx
+│   │   ├── api
+│   │   │   ├── contact
+│   │   │   │   └── route.ts
+│   │   │   ├── health
+│   │   │   │   └── route.ts
+│   │   │   └── web3forms
+│   │   │       └── route.ts
+│   │   ├── capabilities
+│   │   │   ├── [slug]
+│   │   │   │   ├── CapabilityDetailClient.tsx
+│   │   │   │   └── page.tsx
+│   │   │   ├── future-expansion
+│   │   │   │   └── page.tsx
+│   │   │   ├── infrastructure-systems
+│   │   │   │   └── page.tsx
+│   │   │   ├── operational-command
+│   │   │   │   └── page.tsx
+│   │   │   ├── rescue-systems
+│   │   │   │   └── page.tsx
+│   │   │   ├── safety-compliance
+│   │   │   │   └── page.tsx
+│   │   │   ├── strategic-warehousing
+│   │   │   │   └── page.tsx
+│   │   │   ├── underground-workshop
+│   │   │   │   └── page.tsx
+│   │   │   └── workforce-facilities
+│   │   │       └── page.tsx
+│   │   ├── careers
+│   │   │   └── page.tsx
+│   │   ├── contact
+│   │   │   └── page.tsx
+│   │   ├── cookies
+│   │   │   └── page.tsx
+│   │   ├── media
+│   │   │   ├── contact-us
+│   │   │   │   └── page.tsx
+│   │   │   ├── newsroom
+│   │   │   │   └── page.tsx
+│   │   │   ├── photo-gallery
+│   │   │   │   └── page.tsx
+│   │   │   └── privacy-policy
+│   │   │       └── page.tsx
+│   │   ├── operations
+│   │   │   ├── engineering-services
+│   │   │   │   └── page.tsx
+│   │   │   ├── infrastructure-facilities
+│   │   │   │   └── page.tsx
+│   │   │   ├── logistics-network
+│   │   │   │   └── page.tsx
+│   │   │   ├── mechanised-fleet
+│   │   │   │   └── page.tsx
+│   │   │   └── underground-mining
+│   │   │       └── page.tsx
+│   │   ├── partners
+│   │   │   ├── become-partner
+│   │   │   │   └── page.tsx
+│   │   │   └── page.tsx
+│   │   ├── privacy
+│   │   │   └── page.tsx
+│   │   ├── projects
+│   │   │   └── page.tsx
+│   │   ├── services
+│   │   │   ├── [slug]
+│   │   │   │   └── page.tsx
+│   │   │   └── page.tsx
+│   │   ├── sustainability
+│   │   │   ├── community-impact
+│   │   │   │   └── page.tsx
+│   │   │   ├── environmental-care
+│   │   │   │   └── page.tsx
+│   │   │   ├── esg-overview
+│   │   │   │   └── page.tsx
+│   │   │   ├── local-workforce
+│   │   │   │   └── page.tsx
+│   │   │   └── safety-first
+│   │   │       └── page.tsx
+│   │   ├── terms
+│   │   │   └── page.tsx
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   ├── loading.tsx
+│   │   └── page.tsx
+│   ├── components
+│   │   ├── about
+│   │   │   ├── chairperson
+│   │   │   │   ├── ChairpersonClosing.tsx
+│   │   │   │   ├── ChairpersonHero.tsx
+│   │   │   │   └── ChairpersonLetter.tsx
+│   │   │   ├── AboutClosing.tsx
+│   │   │   ├── AboutFooter.tsx
+│   │   │   ├── AboutHero.tsx
+│   │   │   ├── ClosingStatement.tsx
+│   │   │   ├── CompanyNarrative.tsx
+│   │   │   ├── CultureAndRetention.tsx
+│   │   │   ├── FullWidthVideo.tsx
+│   │   │   ├── GlobalFootprint.tsx
+│   │   │   ├── ImageStorySequence.tsx
+│   │   │   ├── ImpactImagery.tsx
+│   │   │   ├── OpeningScene.tsx
+│   │   │   ├── ScrollProgress.tsx
+│   │   │   ├── SignatureVideo.tsx
+│   │   │   ├── StrategicPillars.tsx
+│   │   │   ├── TheGenesisRecord.tsx
+│   │   │   ├── VisualTimeline.tsx
+│   │   │   └── WhoWeAre.tsx
+│   │   ├── atoms
+│   │   │   ├── AnimatedText.tsx
+│   │   │   ├── Badge.tsx
+│   │   │   ├── Button.tsx
+│   │   │   └── Heading.tsx
+│   │   ├── careers
+│   │   │   ├── CareersCTA.tsx
+│   │   │   ├── CareersHero.tsx
+│   │   │   ├── CareersOpenings.tsx
+│   │   │   └── CareersPerks.tsx
+│   │   ├── community
+│   │   │   ├── CommunityClosing.tsx
+│   │   │   ├── CommunityHero.tsx
+│   │   │   ├── CommunityInitiatives.tsx
+│   │   │   ├── CommunityIntro.tsx
+│   │   │   └── CommunityQuote.tsx
+│   │   ├── engineering
+│   │   │   ├── ESCapabilities.tsx
+│   │   │   ├── ESCTA.tsx
+│   │   │   ├── ESGallery.tsx
+│   │   │   ├── ESHero.tsx
+│   │   │   ├── ESIntro.tsx
+│   │   │   ├── ESTeam.tsx
+│   │   │   ├── ESVideo.tsx
+│   │   │   ├── ESWorkshops.tsx
+│   │   │   └── ImagePlaceholder.tsx
+│   │   ├── environmental
+│   │   │   ├── BeforeAfterSlider.tsx
+│   │   │   ├── ComparisonChart.tsx
+│   │   │   ├── DashboardHero.tsx
+│   │   │   ├── DataTable.tsx
+│   │   │   ├── DownloadReport.tsx
+│   │   │   ├── InteractiveMap.tsx
+│   │   │   └── ProgressBarStat.tsx
+│   │   ├── esg
+│   │   │   ├── ESGBanner.tsx
+│   │   │   ├── LeadershipQuote.tsx
+│   │   │   ├── MetricGrid.tsx
+│   │   │   └── PrincipleSection.tsx
+│   │   ├── fleet
+│   │   │   ├── FleetCategories.tsx
+│   │   │   ├── FleetGallery.tsx
+│   │   │   ├── FleetHero.tsx
+│   │   │   ├── FleetMaintenance.tsx
+│   │   │   ├── FleetOverview.tsx
+│   │   │   ├── FleetPartners.tsx
+│   │   │   └── FleetSpecs.tsx
+│   │   ├── future-expansion
+│   │   │   ├── FutureCTA.tsx
+│   │   │   ├── FutureGallery.tsx
+│   │   │   ├── FutureHero.tsx
+│   │   │   ├── FutureIntro.tsx
+│   │   │   ├── FuturePillars.tsx
+│   │   │   └── FutureSpecs.tsx
+│   │   ├── infrastructure-systems
+│   │   │   ├── InfraCapabilities.tsx
+│   │   │   ├── InfraCTA.tsx
+│   │   │   ├── InfraHero.tsx
+│   │   │   ├── InfraOverview.tsx
+│   │   │   ├── InfraQuote.tsx
+│   │   │   └── InfraSpecs.tsx
+│   │   ├── logistics
+│   │   │   ├── FutureGrowthLayer.tsx
+│   │   │   ├── InfrastructureIntelligence.tsx
+│   │   │   ├── NetworkCommandView.tsx
+│   │   │   ├── OperationalEcosystem.tsx
+│   │   │   ├── ResourceFlowIntelligence.tsx
+│   │   │   ├── StrategicAssetNetwork.tsx
+│   │   │   └── SustainabilityNetwork.tsx
+│   │   ├── molecules
+│   │   │   ├── ContactForm.tsx
+│   │   │   ├── NavLink.tsx
+│   │   │   ├── ServiceCard.tsx
+│   │   │   ├── StackedImageCard.tsx
+│   │   │   └── StatCard.tsx
+│   │   ├── newsroom
+│   │   │   ├── ArticleCard.tsx
+│   │   │   ├── FeaturedArticle.tsx
+│   │   │   ├── NewsFilters.tsx
+│   │   │   ├── NewsletterCTA.tsx
+│   │   │   └── NewsroomHero.tsx
+│   │   ├── operational-command
+│   │   │   ├── CommandCapabilities.tsx
+│   │   │   ├── CommandCTA.tsx
+│   │   │   ├── CommandHero.tsx
+│   │   │   ├── CommandOverview.tsx
+│   │   │   ├── CommandPillars.tsx
+│   │   │   └── CommandSpecs.tsx
+│   │   ├── organisms
+│   │   │   ├── ZambiaMap
+│   │   │   │   └── ZambiaSvg.tsx
+│   │   │   ├── AboutSection.tsx
+│   │   │   ├── BlankSection.tsx
+│   │   │   ├── ChairmanMessageSection.tsx
+│   │   │   ├── CommunityImpactSection.tsx
+│   │   │   ├── ContactSection.tsx
+│   │   │   ├── CookieConsentBanner.tsx
+│   │   │   ├── CopperBanner.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   ├── GallerySection.tsx
+│   │   │   ├── GlobalLoader.tsx
+│   │   │   ├── HeroSection.tsx
+│   │   │   ├── MarqueeSection.tsx
+│   │   │   ├── Navigation.tsx
+│   │   │   ├── OperationalScaleSection.tsx
+│   │   │   ├── PartnersSection.tsx
+│   │   │   ├── ServicesSection.tsx
+│   │   │   ├── StatsSection.tsx
+│   │   │   ├── StorySection.tsx
+│   │   │   ├── TeamSection.tsx
+│   │   │   ├── ZambiaOperationsMap.tsx
+│   │   │   └── ZambiaOperationsMapLoader.tsx
+│   │   ├── providers
+│   │   │   ├── SmoothScrollProvider.tsx
+│   │   │   └── ThemeProvider.tsx
+│   │   ├── safety
+│   │   │   ├── CertificationBar.tsx
+│   │   │   ├── IncidentTimeline.tsx
+│   │   │   ├── LiveCounter.tsx
+│   │   │   ├── ProtocolSection.tsx
+│   │   │   ├── SafetyHero.tsx
+│   │   │   └── SafetyPillars.tsx
+│   │   ├── safety-compliance
+│   │   │   ├── SafetyCTA.tsx
+│   │   │   ├── SafetyHero.tsx
+│   │   │   ├── SafetyIntro.tsx
+│   │   │   ├── SafetyPillars.tsx
+│   │   │   └── SafetySpecs.tsx
+│   │   ├── strategic-warehousing
+│   │   │   ├── ImagePlaceholder.tsx
+│   │   │   ├── SWCapabilities.tsx
+│   │   │   ├── SWCTA.tsx
+│   │   │   ├── SWGallery.tsx
+│   │   │   ├── SWHero.tsx
+│   │   │   ├── SWIntro.tsx
+│   │   │   ├── SWTeam.tsx
+│   │   │   ├── SWVideo.tsx
+│   │   │   └── SWWorkshops.tsx
+│   │   ├── sustainability
+│   │   │   ├── CallToAction.tsx
+│   │   │   ├── ImpactGrid.tsx
+│   │   │   ├── PageHero.tsx
+│   │   │   ├── StatsRow.tsx
+│   │   │   └── StoryBlock.tsx
+│   │   ├── ui
+│   │   │   ├── map
+│   │   │   │   ├── index.ts
+│   │   │   │   └── map.tsx
+│   │   │   ├── about-us-section.tsx
+│   │   │   ├── ClickSpark.tsx
+│   │   │   ├── demo.tsx
+│   │   │   ├── DotField.css
+│   │   │   ├── DotField.tsx
+│   │   │   ├── feature-spotlight.tsx
+│   │   │   ├── horizontal-slide-cards.tsx
+│   │   │   ├── image-with-skeleton.tsx
+│   │   │   ├── img-sphere.tsx
+│   │   │   ├── immersive-scroll-gallery.tsx
+│   │   │   ├── interactive-bento-gallery.tsx
+│   │   │   ├── live-counter.tsx
+│   │   │   ├── magic-text.tsx
+│   │   │   ├── map.tsx
+│   │   │   ├── navigation-menu.tsx
+│   │   │   ├── profile-card-testimonial-carousel.tsx
+│   │   │   ├── scroll-expansion-hero.tsx
+│   │   │   └── skeleton.tsx
+│   │   ├── underground
+│   │   │   ├── UMEnvironment.tsx
+│   │   │   ├── UMHero.tsx
+│   │   │   ├── UMInnovation.tsx
+│   │   │   ├── UMIntroNarrative.tsx
+│   │   │   ├── UMLocalInsights.tsx
+│   │   │   ├── UMProcessStory.tsx
+│   │   │   ├── UMReports.tsx
+│   │   │   ├── UMReserves.tsx
+│   │   │   └── UMSafety.tsx
+│   │   ├── underground-workshop
+│   │   │   ├── WorkshopCategories.tsx
+│   │   │   ├── WorkshopGallery.tsx
+│   │   │   ├── WorkshopHero.tsx
+│   │   │   ├── WorkshopMaintenance.tsx
+│   │   │   ├── WorkshopOverview.tsx
+│   │   │   ├── WorkshopPartners.tsx
+│   │   │   └── WorkshopSpecs.tsx
+│   │   ├── workforce
+│   │   │   ├── CareerPathway.tsx
+│   │   │   ├── ManifestoHero.tsx
+│   │   │   ├── NameMarquee.tsx
+│   │   │   ├── PortraitGrid.tsx
+│   │   │   ├── TypographyStat.tsx
+│   │   │   ├── UbuntuProgram.tsx
+│   │   │   └── WorkerSpotlight.tsx
+│   │   ├── workforce-facilities
+│   │   │   ├── FacilitiesCTA.tsx
+│   │   │   ├── FacilitiesGallery.tsx
+│   │   │   ├── FacilitiesHero.tsx
+│   │   │   ├── FacilitiesIntro.tsx
+│   │   │   ├── FacilitiesPillars.tsx
+│   │   │   ├── FacilitiesTeam.tsx
+│   │   │   └── ImagePlaceholder.tsx
+│   │   ├── CopperBrick3D.tsx
+│   │   └── PagePreloader.tsx
+│   ├── data
+│   │   ├── capabilities.ts
+│   │   ├── engineering-services.ts
+│   │   ├── esg-data.ts
+│   │   ├── future-expansion.ts
+│   │   ├── infrastructure-systems.ts
+│   │   ├── logistics-network.ts
+│   │   ├── mechanised-fleet.ts
+│   │   ├── navigation.ts
+│   │   ├── news.ts
+│   │   ├── operational-command.ts
+│   │   ├── safety-compliance.ts
+│   │   ├── safety-data.ts
+│   │   ├── strategic-warehousing.ts
+│   │   ├── sustainability-pages.ts
+│   │   ├── underground-mining.ts
+│   │   ├── underground-workshop.ts
+│   │   ├── workforce-facilities.ts
+│   │   └── zambiaLocations.ts
+│   ├── hooks
+│   │   ├── use-prefetch-images.ts
+│   │   ├── useHeroAnimation.ts
+│   │   ├── useInView.ts
+│   │   ├── useIsMobile.ts
+│   │   ├── useMediaQuery.ts
+│   │   └── useScrollProgress.ts
+│   ├── lib
+│   │   ├── animation.constants.ts
+│   │   ├── animations.ts
+│   │   ├── constants.ts
+│   │   ├── email.ts
+│   │   ├── gsap.config.ts
+│   │   ├── image-loader.ts
+│   │   ├── seo.ts
+│   │   ├── servicesData.ts
+│   │   ├── utils.ts
+│   │   └── validations.ts
+│   ├── types
+│   │   ├── api.ts
+│   │   └── index.ts
+│   └── env.ts
+├── .env.example
+├── .eslintrc.json
+├── .gitignore
+├── cloudinary-onboarding.js
+├── find_unused_assets.js
+├── fix_leaders.js
+├── middleware.ts
+├── next-env.d.ts
+├── next.config.ts
+├── package.json
+├── postcss.config.js
+├── README.md
+├── tailwind.config.ts
+├── tsconfig.json
+├── upload_charles.js
+├── upload_cloudinary.js
+├── upload_leaders.js
+├── upload-videos.js
+└── vercel.json

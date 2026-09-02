@@ -15,24 +15,24 @@ function TeamMemberCard({ member }: { member: typeof TEAM_MEMBERS[0] }) {
 
   // Mapping of exact filenames in public folder for premium deterministic resolution
   const images: Record<string, string> = {
-    "sahil-talreja": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/sahil-talreja.webp",
-    "anand-kolappa-pillai": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/anand-kolappa-pillai.webp",
-    "sanjay-kumar-sharma": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/sanjay-kumar-sharma.webp",
-    "srinivasulu-jonnalagadda": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/srinivasulu-jonnalagadda.webp",
-    "kiran-kumar-reddy": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/kiran-kumar-reddy.webp",
-    "suresh-babu-deshamalla": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/suresh-babu-deshamalla.webp",
-    "kuldeep-kulshrestha": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/kuldeep-kulshrestha.webp",
-    "mulenga-mutati": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/mulenga-mutati.webp",
-    "toms-joseph": "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/toms-joseph.webp",
-    "collins": "/skt/leaders/collins.jpg",
-    "kerson-phiri": "/skt/leaders/kerson.png",
-    "peter-ochigbo": "/skt/leaders/peter-ochigbo.png",
-    "willie-simpemba": "/skt/leaders/willie-simpemba.png",
-    "chakanga-mukonde": "/skt/leaders/chakanga-mukonde.png",
-    "george-sakanyi": "/skt/leaders/george-sakanyi.png",
+    "sahil-talreja": "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/sahil-talreja.webp",
+    "anand-kolappa-pillai": "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/anand-kolappa-pillai.webp",
+    "sanjay-kumar-sharma": "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/sanjay-kumar-sharma.webp",
+    "srinivasulu-jonnalagadda": "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/srinivasulu-jonnalagadda.webp",
+    "kiran-kumar-reddy": "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/kiran-kumar-reddy.webp",
+    "suresh-babu-deshamalla": "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/suresh-babu-deshamalla.webp",
+    "kuldeep-kulshrestha": "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/kuldeep-kulshrestha.webp",
+    "mulenga-mutati": "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/mulenga-mutati.webp",
+    "toms-joseph": "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/toms-joseph.webp",
+    "collins": "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/collins",
+    "kerson-phiri": "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/kerson",
+    "peter-ochigbo": "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/peter-ochigbo",
+    "willie-simpemba": "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/willie-simpemba",
+    "chakanga-mukonde": "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/chakanga-mukonde",
+    "george-sakanyi": "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/george-sakanyi",
   };
 
-  const imgSrc = images[member.id] || "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/unknown-leader.webp";
+  const imgSrc = images[member.id] || "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/unknown-leader.webp";
 
   // Custom premium editorial overlay actions
   const overlayDetails: Record<string, { title: string; action: string }> = {

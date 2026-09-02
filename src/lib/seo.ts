@@ -105,28 +105,65 @@ export function generateMetadata(
 }
 
 export const jsonLd = {
-  organization: {
+  graph: {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: SITE_CONFIG.name,
-    url: SITE_CONFIG.url,
-    logo: `${SITE_CONFIG.url}/logo.webp`,
-    description: SITE_CONFIG.description,
-    foundingDate: SITE_CONFIG.founded,
-    headquarters: {
-      "@type": "PostalAddress",
-      addressLocality: "Udaipur",
-      addressRegion: "Rajasthan",
-    },
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: SITE_CONFIG.phone,
-      email: SITE_CONFIG.email,
-      contactType: "customer service",
-    },
-    sameAs: [
-      "https://www.linkedin.com/company/skt-global-mining-service-limited/",
-      "https://twitter.com/sktglobal",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${SITE_CONFIG.url}/#organization`,
+        name: SITE_CONFIG.name,
+        legalName: SITE_CONFIG.name,
+        alternateName: SITE_CONFIG.shortName,
+        url: SITE_CONFIG.url,
+        logo: {
+          "@type": "ImageObject",
+          url: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125414/skt_global_mining/SKT%20Full%20logo%20%28Color%29.webp",
+          width: 432,
+          height: 108,
+        },
+        description: SITE_CONFIG.description,
+        foundingDate: "2024",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "CHIM/254/A, Copperbelt Province, Opposite Mindolo Police Station, Between Rubies & Meru Filling Station",
+          addressLocality: "Kitwe",
+          addressCountry: "ZM",
+        },
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: SITE_CONFIG.phone,
+          email: SITE_CONFIG.email,
+          contactType: "customer service",
+        },
+        areaServed: ["ZM", "IN"],
+        sameAs: [
+          "https://www.linkedin.com/company/skt-global-mining-service-limited/",
+          "https://twitter.com/sktglobal",
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_CONFIG.url}/#website`,
+        url: SITE_CONFIG.url,
+        name: SITE_CONFIG.name,
+        description: SITE_CONFIG.description,
+        publisher: { "@id": `${SITE_CONFIG.url}/#organization` },
+        inLanguage: "en",
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${SITE_CONFIG.url}/#webpage`,
+        url: SITE_CONFIG.url,
+        name: `${SITE_CONFIG.name} | Engineering Excellence in Mining`,
+        description: SITE_CONFIG.description,
+        isPartOf: { "@id": `${SITE_CONFIG.url}/#website` },
+        about: { "@id": `${SITE_CONFIG.url}/#organization` },
+        inLanguage: "en",
+      },
     ],
+  },
+  // Legacy alias for any existing consumers
+  get organization() {
+    return this.graph;
   },
 };

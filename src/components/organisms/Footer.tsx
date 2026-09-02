@@ -37,8 +37,8 @@ const FOOTER_SECTIONS = [
     links: [
       { label: "Contact Us", href: "/contact" },
       { label: "Careers", href: "/careers" },
-      { label: "Media & Press", href: "/media" },
-      { label: "Investor Relations", href: "/investors" },
+      { label: "Media & Press", href: "/media/newsroom" },
+      { label: "Investor Relations", href: "mailto:Info@sktglobalminings.com?subject=Investor%20Relations%20Enquiry" },
     ],
   },
 ] as const;
@@ -99,9 +99,9 @@ export function Footer(): JSX.Element {
           <div className="lg:col-span-4 grid grid-cols-2 md:grid-cols-4 gap-8 gap-y-12">
             {FOOTER_SECTIONS.map((section) => (
               <div key={section.title}>
-                <h3 className="text-eyebrow text-neutral-500 mb-4 uppercase">
+                <p className="text-eyebrow text-neutral-500 mb-4 uppercase">
                   {section.title}
-                </h3>
+                </p>
                 <ul className="space-y-1 lg:space-y-3">
                   {section.links.map((link) => (
                     <li key={link.label}>

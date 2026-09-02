@@ -34,6 +34,7 @@ export function GlobalLoader() {
               alt="Loading SKT Global Mining..." 
               fill
               priority
+              unoptimized
               className="object-contain rounded-2xl"
             />
           </div>

@@ -345,11 +345,12 @@ export function CommunityImpactSection(): JSX.Element {
               }}
               className="absolute inset-x-0 top-0 bottom-0 w-full h-full rounded-2xl md:rounded-3xl overflow-hidden transform-gpu"
             >
-              <video crossOrigin="anonymous" autoPlay muted loop playsInline poster={POSTER_SRC} src={VIDEO_SRC} className="w-full h-full object-cover" />
+              <video crossOrigin="anonymous" autoPlay muted loop playsInline preload="none" poster={POSTER_SRC} src={VIDEO_SRC} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/[0.06] to-transparent pointer-events-none" />
               <Link href="/sustainability/community-impact" passHref legacyBehavior>
                 <motion.a
                   style={{ scale: playScale, opacity: playOpacity }}
+                  aria-label="Learn more about SKT community impact"
                   className="absolute bottom-5 left-5 md:bottom-7 md:left-7 flex items-center gap-2.5 bg-white/95 backdrop-blur-md rounded-full pl-4 pr-1 py-1 shadow-xl cursor-pointer group select-none"
                 >
                   <span className="text-xs font-semibold tracking-wider uppercase text-neutral-800">Learn More</span>

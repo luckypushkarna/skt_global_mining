@@ -49,6 +49,7 @@ export function GallerySection(): JSX.Element {
           <Link href="/media/photo-gallery" passHref legacyBehavior>
             <Button 
               variant="secondary" 
+              aria-label="View Photo Gallery"
               className="shrink-0 group p-3 md:px-5 md:py-2.5 mb-1 md:mb-0 gap-0 md:gap-2"
               rightIcon={<ArrowRight className="w-5 h-5 md:w-4 md:h-4 opacity-80 group-hover:translate-x-0.5 transition-transform" />}
             >

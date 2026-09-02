@@ -40,6 +40,9 @@ export default function TermsPage(): JSX.Element {
             <p>
               All contents, graphics, logos, layouts, images, videos, maps, technical descriptors, software code, and files displayed on this Site are the property of SKT Global Mining & Services Limited, its parent entity (Tyre Technocrats India Private Limited), or their respective licensors. They are protected under national and international copyright, trademark, and intellectual property laws. Any unauthorized duplication, redistribution, framing, or commercial use is strictly prohibited.
             </p>
+            <p>
+              Certain photographs, videos, logos and other materials displayed on this website are owned by, licensed to, or used with authorisation by SKT Global Mining & Services Limited. Third-party trademarks and materials remain the property of their respective rights holders. Rights-related enquiries may be submitted through our Copyright and Media Rights contact process.
+            </p>
           </section>
 
           <section className="space-y-3">

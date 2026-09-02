@@ -11,13 +11,15 @@ const ROW_A = [...CAPABILITIES, ...CAPABILITIES];
 
 // ─── Single Card ─────────────────────────────────────────────────────────────
 
-const SliderCard = memo(function SliderCard({ card }: { card: typeof CAPABILITIES[0] }) {
+const SliderCard = memo(function SliderCard({ card, ariaHidden }: { card: typeof CAPABILITIES[0]; ariaHidden?: boolean }) {
   const Icon = card.icon;
 
   return (
     <Link
       href={`/capabilities/${card.slug}`}
       className="group relative flex-shrink-0 w-[340px] h-[480px] mx-3 rounded-2xl cursor-pointer select-none overflow-hidden transition-transform duration-700 hover:-translate-y-2 hover:shadow-2xl block"
+      aria-hidden={ariaHidden ?? undefined}
+      tabIndex={ariaHidden ? -1 : undefined}
       style={{
         boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
         willChange: "transform",
@@ -416,7 +418,12 @@ export function ServicesSection(): JSX.Element {
               style={{ willChange: "transform" }}
             >
               {ROW_A.map((card, i) => (
-                <SliderCard key={`a-${i}`} card={card} />
+                // Second half of ROW_A are visual clones for seamless infinite loop — hide from a11y/SEO
+                <SliderCard
+                  key={`a-${i}`}
+                  card={card}
+                  ariaHidden={i >= CAPABILITIES.length}
+                />
               ))}
             </div>
           </div>

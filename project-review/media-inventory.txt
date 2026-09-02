@@ -1,0 +1,19 @@
+Media Inventory
+===============
+
+Local Assets (public/):
+- robots.txt
+- Fonts and SVGs (Icons, Logos)
+- favicon.ico
+
+Remote Assets (Cloudinary / Unsplash):
+- `loader-animation.webp`
+  - Source: Cloudinary (https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125505/skt_global_mining/loader-animation.webp)
+  - Usage: PagePreloader
+  - Note: Next.js warned this is an animated image needing `unoptimized`.
+- Various Hero, Chairman, CSR, and Gallery images/videos sourced from Cloudinary (res.cloudinary.com) and Unsplash (images.unsplash.com).
+- Map tiles sourced from basemaps.cartocdn.com and OpenStreetMap.
+
+Ownership/Licensing:
+- Unknown from repository inspection. Must cross-reference with Asset Rights Register.
+- No direct downloads performed.

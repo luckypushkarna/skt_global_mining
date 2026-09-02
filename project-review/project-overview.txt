@@ -1,0 +1,21 @@
+Project Overview
+================
+- Framework: Next.js (Version 15.1.11)
+- React Version: 19.0.0
+- Routing System: App Router (src/app)
+- Styling Solution: Tailwind CSS (v3.4.17) with Radix UI Primitives
+- Animation Libraries: GSAP (v3.15.0), Framer Motion (v11.18.2), Motion, Lenis (for smooth scrolling), Split-Type
+- Map Libraries: maplibre-gl (v5.24.0)
+- Media Providers: Cloudinary, LottieFiles (dotLottie)
+- Form Providers: React Hook Form + Zod, Formspree
+- Analytics: (Needs verification, typically Vercel Analytics or Google Analytics)
+- Deployment Platform: Vercel (inferred from vercel.json)
+- Important Dependencies: three.js, resend, nodemailer, lucide-react
+- Available npm Scripts: 
+  - dev: "next dev"
+  - build: "next build"
+  - start: "next start"
+  - lint: "next lint"
+  - type-check: "tsc --noEmit"
+  - analyze: "ANALYZE=true next build"
+- Project Entry Points: src/app/layout.tsx, src/app/page.tsx, middleware.ts

@@ -145,7 +145,7 @@ export default function ImmersiveScrollGallery({
                     loop
                     muted
                     playsInline
-                    preload="auto"
+                    preload="none"
                     className="object-cover w-full h-full"
                   />
                 ) : (
@@ -155,8 +155,7 @@ export default function ImmersiveScrollGallery({
                     fill
                     sizes="(max-width: 1024px) 40vw, 30vw"
                     className="object-cover"
-                    loading={index < 3 ? undefined : "lazy"}
-                    priority={index < 3}
+                    loading="lazy"
                   />
                 )}
               </div>
