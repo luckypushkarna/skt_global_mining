@@ -2,7 +2,6 @@
 
 import { useRef, useEffect, memo, JSX } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { ImageWithSkeleton } from "@/components/ui/image-with-skeleton";
 import { CAPABILITIES } from "@/data/capabilities";
 
@@ -15,9 +14,8 @@ const SliderCard = memo(function SliderCard({ card, ariaHidden }: { card: typeof
   const Icon = card.icon;
 
   return (
-    <Link
-      href={`/capabilities/${card.slug}`}
-      className="group relative flex-shrink-0 w-[340px] h-[480px] mx-3 rounded-2xl cursor-pointer select-none overflow-hidden transition-transform duration-700 hover:-translate-y-2 hover:shadow-2xl block"
+    <div
+      className="group relative flex-shrink-0 w-[340px] h-[480px] mx-3 rounded-2xl select-none overflow-hidden transition-transform duration-700 hover:-translate-y-2 hover:shadow-2xl block"
       aria-hidden={ariaHidden ?? undefined}
       tabIndex={ariaHidden ? -1 : undefined}
       style={{
@@ -87,27 +85,13 @@ const SliderCard = memo(function SliderCard({ card, ariaHidden }: { card: typeof
 
             {/* Divider */}
             <div className="h-px w-full bg-gradient-to-r from-white/25 via-white/8 to-transparent" />
-
-            {/* CTA */}
-            <div className="flex items-center gap-2 pt-4 text-[10px] font-semibold tracking-[0.25em] uppercase text-white/55 group-hover:text-white transition-colors">
-              <span>Explore</span>
-              <svg
-                width="14"
-                height="8"
-                viewBox="0 0 14 8"
-                fill="none"
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              >
-                <path d="M1 4H13M13 4L10 1M13 4L10 7" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-              </svg>
-            </div>
           </div>
         </div>
       </div>
 
       {/* ── Border highlight ── */}
       <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-white/8 transition-colors duration-500 pointer-events-none" style={{ zIndex: 1 }} />
-    </Link>
+    </div>
   );
 });
 
@@ -340,7 +324,7 @@ export function ServicesSection(): JSX.Element {
                   key={`mobile-${card.slug}-${i}`}
                   className="snap-start shrink-0 w-[280px] h-[420px] relative rounded-2xl overflow-hidden shadow-md flex flex-col justify-end p-6 bg-skt-navy border border-white/5 active:scale-[0.98] transition-transform duration-300"
                 >
-                  <Link href={card.href || `/capabilities/${card.slug}`} className="absolute inset-0 z-0">
+                  <div className="absolute inset-0 z-0">
                     <span className="sr-only">View {card.title}</span>
                     <ImageWithSkeleton
                       src={card.bgImage}
@@ -350,7 +334,7 @@ export function ServicesSection(): JSX.Element {
                       className="object-cover opacity-60"
                       skeletonClassName="rounded-2xl"
                     />
-                  </Link>
+                  </div>
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none z-0" />
 
@@ -381,13 +365,6 @@ export function ServicesSection(): JSX.Element {
                         </span>
                       ))}
                     </div>
-
-                    <Link
-                      href={card.href || `/capabilities/${card.slug}`}
-                      className="pointer-events-auto inline-flex items-center gap-2 text-[10px] font-semibold tracking-[0.25em] uppercase text-white/55 active:text-white"
-                    >
-                      Explore →
-                    </Link>
                   </div>
                 </div>
               );
