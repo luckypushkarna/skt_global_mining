@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_CONFIG } from "./constants";
+import { getSiteUrl, getSiteUrlString } from "./site-url";
 
 interface GenerateMetadataOptions {
   readonly title?: string;
@@ -44,16 +45,20 @@ export function generateMetadata(
     ? `${title} | ${SITE_CONFIG.shortName}`
     : `${SITE_CONFIG.name} | Engineering Excellence in Mining`;
 
-  const canonicalUrl = `${SITE_CONFIG.url}${path}`;
+  const siteUrl = getSiteUrl();
+  const siteUrlString = siteUrl.origin;
+  const canonicalUrl = path
+    ? `${siteUrlString}${path.startsWith("/") ? path : `/${path}`}`
+    : siteUrlString;
 
   return {
     title: pageTitle,
     description,
     keywords: [...DEFAULT_KEYWORDS, ...keywords].join(", "),
-    authors: [{ name: SITE_CONFIG.name, url: SITE_CONFIG.url }],
+    authors: [{ name: SITE_CONFIG.name, url: siteUrlString }],
     creator: SITE_CONFIG.name,
     publisher: SITE_CONFIG.name,
-    metadataBase: new URL(SITE_CONFIG.url),
+    metadataBase: siteUrl,
     alternates: {
       canonical: canonicalUrl,
     },
@@ -105,62 +110,65 @@ export function generateMetadata(
 }
 
 export const jsonLd = {
-  graph: {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": `${SITE_CONFIG.url}/#organization`,
-        name: SITE_CONFIG.name,
-        legalName: SITE_CONFIG.name,
-        alternateName: SITE_CONFIG.shortName,
-        url: SITE_CONFIG.url,
-        logo: {
-          "@type": "ImageObject",
-          url: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125414/skt_global_mining/SKT%20Full%20logo%20%28Color%29.webp",
-          width: 432,
-          height: 108,
+  get graph() {
+    const siteUrl = getSiteUrlString();
+    return {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": `${siteUrl}/#organization`,
+          name: SITE_CONFIG.name,
+          legalName: SITE_CONFIG.name,
+          alternateName: SITE_CONFIG.shortName,
+          url: siteUrl,
+          logo: {
+            "@type": "ImageObject",
+            url: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125414/skt_global_mining/SKT%20Full%20logo%20%28Color%29.webp",
+            width: 432,
+            height: 108,
+          },
+          description: SITE_CONFIG.description,
+          foundingDate: "2024",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "CHIM/254/A, Copperbelt Province, Opposite Mindolo Police Station, Between Rubies & Meru Filling Station",
+            addressLocality: "Kitwe",
+            addressCountry: "ZM",
+          },
+          contactPoint: {
+            "@type": "ContactPoint",
+            telephone: SITE_CONFIG.phone,
+            email: SITE_CONFIG.email,
+            contactType: "customer service",
+          },
+          areaServed: ["ZM", "IN"],
+          sameAs: [
+            "https://www.linkedin.com/company/skt-global-mining-service-limited/",
+            "https://twitter.com/sktglobal",
+          ],
         },
-        description: SITE_CONFIG.description,
-        foundingDate: "2024",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "CHIM/254/A, Copperbelt Province, Opposite Mindolo Police Station, Between Rubies & Meru Filling Station",
-          addressLocality: "Kitwe",
-          addressCountry: "ZM",
+        {
+          "@type": "WebSite",
+          "@id": `${siteUrl}/#website`,
+          url: siteUrl,
+          name: SITE_CONFIG.name,
+          description: SITE_CONFIG.description,
+          publisher: { "@id": `${siteUrl}/#organization` },
+          inLanguage: "en",
         },
-        contactPoint: {
-          "@type": "ContactPoint",
-          telephone: SITE_CONFIG.phone,
-          email: SITE_CONFIG.email,
-          contactType: "customer service",
+        {
+          "@type": "WebPage",
+          "@id": `${siteUrl}/#webpage`,
+          url: siteUrl,
+          name: `${SITE_CONFIG.name} | Engineering Excellence in Mining`,
+          description: SITE_CONFIG.description,
+          isPartOf: { "@id": `${siteUrl}/#website` },
+          about: { "@id": `${siteUrl}/#organization` },
+          inLanguage: "en",
         },
-        areaServed: ["ZM", "IN"],
-        sameAs: [
-          "https://www.linkedin.com/company/skt-global-mining-service-limited/",
-          "https://twitter.com/sktglobal",
-        ],
-      },
-      {
-        "@type": "WebSite",
-        "@id": `${SITE_CONFIG.url}/#website`,
-        url: SITE_CONFIG.url,
-        name: SITE_CONFIG.name,
-        description: SITE_CONFIG.description,
-        publisher: { "@id": `${SITE_CONFIG.url}/#organization` },
-        inLanguage: "en",
-      },
-      {
-        "@type": "WebPage",
-        "@id": `${SITE_CONFIG.url}/#webpage`,
-        url: SITE_CONFIG.url,
-        name: `${SITE_CONFIG.name} | Engineering Excellence in Mining`,
-        description: SITE_CONFIG.description,
-        isPartOf: { "@id": `${SITE_CONFIG.url}/#website` },
-        about: { "@id": `${SITE_CONFIG.url}/#organization` },
-        inLanguage: "en",
-      },
-    ],
+      ],
+    };
   },
   // Legacy alias for any existing consumers
   get organization() {

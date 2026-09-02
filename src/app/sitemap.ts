@@ -1,9 +1,8 @@
 import type { MetadataRoute } from "next";
-import { SITE_CONFIG } from "@/lib/constants";
-
-const BASE_URL = SITE_CONFIG.url;
+import { getSiteUrlString } from "@/lib/site-url";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const BASE_URL = getSiteUrlString();
   const now = new Date();
 
   // All public indexable pages

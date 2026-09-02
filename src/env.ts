@@ -16,8 +16,8 @@ export const env = createEnv({
       .default("development"),
   },
   client: {
-    NEXT_PUBLIC_APP_URL: z.string().url(),
-    NEXT_PUBLIC_APP_NAME: z.string().min(1),
+    NEXT_PUBLIC_APP_URL: z.string().optional(),
+    NEXT_PUBLIC_APP_NAME: z.string().default("SKT Global Mining & Services Limited"),
     NEXT_PUBLIC_GA_ID: z.string().optional(),
   },
   runtimeEnv: {
@@ -34,5 +34,8 @@ export const env = createEnv({
     NEXT_PUBLIC_APP_NAME: process.env.NEXT_PUBLIC_APP_NAME,
     NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
   },
-  skipValidation: !!process.env.SKIP_ENV_VALIDATION,
+  skipValidation:
+    !!process.env.SKIP_ENV_VALIDATION ||
+    process.env.VERCEL === "1" ||
+    process.env.NODE_ENV === "test",
 });

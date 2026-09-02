@@ -1,11 +1,12 @@
 import type { NavItem, Service, Stat, TeamMember, Milestone } from "@/types";
+import { getSiteUrlString } from "./site-url";
 
 export const SITE_CONFIG = {
   name: "SKT Global Mining & Services Limited",
   shortName: "SKT Global",
   description:
     "A world-class mining and industrial services company delivering engineering excellence, safety leadership, and sustainable resource development across global operations.",
-  url: process.env.NEXT_PUBLIC_APP_URL ?? "https://sktglobal.com",
+  url: getSiteUrlString(),
   ogImage: "/og-image.webp",
   twitterHandle: "@sktglobal",
   founded: "2005",
