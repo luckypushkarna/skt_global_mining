@@ -50,6 +50,7 @@ export function FacilitiesTeam() {
               </div>
             </div>
           </div>
+        </div>
       </div>
     </section>
   );

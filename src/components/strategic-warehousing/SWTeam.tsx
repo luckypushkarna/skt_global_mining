@@ -50,6 +50,7 @@ export function SWTeam() {
               </div>
             </div>
           </div>
+        </div>
       </div>
     </section>
   );
