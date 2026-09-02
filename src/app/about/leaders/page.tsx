@@ -77,22 +77,15 @@ const leaders = [
     image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/anand-kolappa-pillai.webp",
     yearsExperience: 30,
     overview: {
-      intro:
-        "Anand Kolappa Pillai brings a quarter-century of strategic and operational expertise to his role as Director at SKT Global. A corporate strategist with a track record spanning international infrastructure, technology transfer, and strategic capital ventures, he is one of the foundational architects of the company's structure and governance.",
-      expertise:
-        "His areas of expertise include international project management, technology transfer across industrial sectors, strategic capital structuring, and cross-border regulatory compliance. He has been instrumental in shaping the TTIPL Group's expansion across African markets.",
-      philosophy:
-        "Anand believes that sustainable enterprise is built through meticulous planning, transparent governance, and the conviction to take the long view in an industry that demands short-term results. He champions a culture where technical excellence and commercial discipline go hand in hand.",
-      responsibilities:
-        "As Director, Anand oversees international infrastructure projects, technology adoption strategy, and capital venture governance within SKT Global. He serves on key governance committees and provides strategic counsel to the Managing Director and executive team.",
+      intro: "Anand Kolappa Pillai is a highly experienced business and engineering professional with over 30 years of international experience in business management, engineering, projects, manufacturing, construction and turnkey operations.",
+      expertise: "He holds an MBA, PGDMM, and a B.E. A certified engineer across multiple countries, he brings a unique combination of technical expertise, strategic business leadership, and multicultural management experience.",
+      philosophy: "His leadership is focused on sustainable growth, operational excellence, innovation and delivering value to clients and stakeholders.",
+      responsibilities: "He has successfully managed large-scale operations and has a strong track record of turning around businesses, driving expansion, and delivering measurable improvements in productivity, plant efficiency, and cost management.",
     },
     areasOfFocus: [
-      { title: "Strategic Planning", description: "Long-term strategic direction and governance frameworks" },
-      { title: "Operational Technology", description: "Technology transfer and industrial innovation adoption" },
-      { title: "Commercial Growth", description: "Capital ventures, partnerships, and market development" },
-      { title: "Asset Management", description: "Infrastructure investment and lifecycle management" },
-      { title: "Mine Planning", description: "Strategic alignment of mine plans with commercial objectives" },
-      { title: "Supply Chain", description: "International procurement and supply chain development" },
+      { title: "Business & Operations", description: "Business transformation, capacity enhancement, operational efficiency, and organizational development." },
+      { title: "Engineering & Projects", description: "Engineering, project management, construction, and turnkey operations." },
+      { title: "Quality & Process Improvement", description: "Total Quality Management (TQM), ISO standards, HAZOP studies, and process optimization." }
     ],
     journey: [
       { year: "2000", title: "Early Career", description: "Infrastructure project management roles across South and Southeast Asia, specialising in industrial and resources sectors." },
@@ -136,24 +129,17 @@ const leaders = [
     statement:
       "Operational discipline is not a constraint - it is the force that transforms potential into performance, every shift, every day.",
     image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt/leaders/sanjay-kumar-sharma.webp",
-    yearsExperience: 28,
+    yearsExperience: 30,
     overview: {
-      intro:
-        "Sanjay Kumar Sharma is a distinguished operations leader with nearly three decades of experience in heavy machinery deployment, underground mining methods, and the regional scaling of large industrial operations. As CEO of SKT Global, he provides the operational backbone that drives the company's performance across Zambia's Copperbelt.",
-      expertise:
-        "His expertise is deeply rooted in the technical realities of underground mining - from rock mechanics and ventilation design to fleet management and shift-by-shift production optimisation. He has managed operations spanning multiple countries and operational environments.",
-      philosophy:
-        "Sanjay leads with the conviction that excellence in underground mining is the product of relentless attention to fundamentals. He champions a culture where every supervisor knows their section, every technician knows their machine, and every shift ends safer than it began.",
-      responsibilities:
-        "As CEO, Sanjay has direct accountability for all of SKT Global's underground mining operations, including production management, fleet deployment, maintenance systems, safety performance, and the operational relationship with Mopani Copper Mines.",
+      intro: "Sanjay Kumar Sharma is a Mining professional with over three decades of experience in underground hard rock mining with a specialization in operational optimization, mine expansion and Mine development project execution.",
+      expertise: "He has extensive experience in advising and leading integrated mining operations (mine to concentrator), delivering measurable improvements in productivity, cost efficiency and safety performance.",
+      philosophy: "Sanjay leads with the conviction that excellence in underground mining is the product of relentless attention to fundamentals. His leadership philosophy is built on ownership, discipline and continuous improvement driving operational excellence with safety for people.",
+      responsibilities: "As CEO of SKT Global, he provides the operational backbone that drives the company's performance. He has direct accountability for all of SKT Global's underground mining operations and the operational relationship with Mopani Copper Mines.",
     },
     areasOfFocus: [
-      { title: "Mining Operations", description: "Directing 24/7 underground production across Copperbelt sites" },
-      { title: "Production Management", description: "Delivering consistent output against Mopani production targets" },
-      { title: "Safety Systems", description: "Zero-harm culture embedded across all operational levels" },
-      { title: "Asset Management", description: "Maximising availability and performance of 225+ machines" },
-      { title: "Workforce Development", description: "Mentoring Zambian operational leaders through structured programs" },
-      { title: "Operational Technology", description: "Deploying technology to improve safety and efficiency underground" },
+      { title: "Business & Strategy", description: "Profit, loss and commercial performance, planning optimization, and contract delivery." },
+      { title: "Operational Excellence", description: "Mine expansion, mine development project execution, and integrated mining operations." },
+      { title: "Leadership & Compliance", description: "Client and stakeholder management, people leadership, safety, and risk compliance." }
     ],
     journey: [
       { year: "1997", title: "Early Career", description: "Graduate mining engineer at underground hard-rock operations. Progressed through technical, supervisory, and management roles across Indian mining operations." },
