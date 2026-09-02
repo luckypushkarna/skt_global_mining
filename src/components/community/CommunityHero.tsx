@@ -35,9 +35,9 @@ export function CommunityHero() {
               transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="text-lg md:text-xl text-slate-600 font-light leading-relaxed max-w-lg"
             >
-              Twenty percent of SKT Global&apos;s net profits return directly to Zambia&apos;s 
-              mining communities. Schools, clinics, water networks—this is what it 
-              looks like when industry takes responsibility seriously.
+              A percentage of SKT Global&apos;s future net profits is earmarked for Zambia&apos;s 
+              mining communities. Developing plans for schools, clinics, and water networks—this is how 
+              we build responsible foundations for the future.
             </motion.p>
           </div>
 

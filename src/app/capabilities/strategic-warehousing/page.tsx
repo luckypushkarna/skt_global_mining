@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { SWHero } from "@/components/strategic-warehousing/SWHero";
 import { SWIntro } from "@/components/strategic-warehousing/SWIntro";
 import { SWCapabilities } from "@/components/strategic-warehousing/SWCapabilities";
-import { SWVideo } from "@/components/strategic-warehousing/SWVideo";
+
 import { SWWorkshops } from "@/components/strategic-warehousing/SWWorkshops";
 import { SWGallery } from "@/components/strategic-warehousing/SWGallery";
 import { SWTeam } from "@/components/strategic-warehousing/SWTeam";
@@ -21,7 +21,7 @@ export default function StrategicWarehousingPage(): JSX.Element {
       <SWHero />
       <SWIntro />
       <SWCapabilities />
-      <SWVideo />
+
       <SWWorkshops />
       <SWGallery />
       <SWTeam />

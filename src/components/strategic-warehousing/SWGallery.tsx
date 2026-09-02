@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { ImagePlaceholder } from "./ImagePlaceholder";
 
 // Using existing project images where available, placeholders for assets not yet shot
 const GALLERY_ITEMS = [
@@ -20,21 +19,6 @@ const GALLERY_ITEMS = [
     alt: "Safety compliance during engineering work",
     caption: "Safety sign-off before underground access",
     isReal: true,
-  },
-  {
-    label: "Welding in progress",
-    hint: "Certified welder on equipment frame, sparks visible, close-up. 800×600px minimum.",
-    isReal: false,
-  },
-  {
-    label: "Hydraulic system repair",
-    hint: "Engineer working on hydraulic cylinders or valve assembly. 800×600px minimum.",
-    isReal: false,
-  },
-  {
-    label: "Component reconditioning",
-    hint: "Machined components laid out for inspection, clean workshop setting. 800×600px minimum.",
-    isReal: false,
   },
 ];
 
@@ -57,8 +41,7 @@ export function SWGallery() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
-          {GALLERY_ITEMS.map((item, i) =>
-            item.isReal ? (
+          {GALLERY_ITEMS.map((item, i) => (
               <figure
                 key={i}
                 className="group relative aspect-[4/3] bg-slate-200 overflow-hidden"
@@ -80,15 +63,7 @@ export function SWGallery() {
                   </div>
                 </figcaption>
               </figure>
-            ) : (
-              <ImagePlaceholder
-                key={i}
-                label={item.label!}
-                hint={item.hint!}
-                aspectRatio="aspect-[4/3]"
-              />
-            )
-          )}
+          ))}
         </div>
       </div>
     </section>

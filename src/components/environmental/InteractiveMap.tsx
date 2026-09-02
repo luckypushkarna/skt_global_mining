@@ -10,7 +10,7 @@ interface SiteInfo {
   coords: { x: number; y: number };
   status: string;
   reclaimedArea: string;
-  waterRecycled: string;
+  complianceScore: string;
   indigenousTrees: string;
   certification: string;
   details: string;
@@ -23,9 +23,9 @@ const OPERATIONS_SITES: SiteInfo[] = [
     coords: { x: 55, y: 45 },
     status: "Active Reclamation Zone",
     reclaimedArea: "410 Hectares",
-    waterRecycled: "92.4%",
+    complianceScore: "98.4%",
     indigenousTrees: "185,000 planted",
-    certification: "ISO 14001:2015",
+    certification: "ZEMA Environmental Cert",
     details: "Focusing on deep tailings restoration. Soil enrichment programs here have re-established three local bird species previously displaced by old workings.",
   },
   {
@@ -34,9 +34,9 @@ const OPERATIONS_SITES: SiteInfo[] = [
     coords: { x: 48, y: 28 },
     status: "Zero-Discharge Site",
     reclaimedArea: "125 Hectares",
-    waterRecycled: "98.1%",
+    complianceScore: "99.1%",
     indigenousTrees: "45,000 planted",
-    certification: "ISO 45001 / ISO 14001",
+    certification: "ZEMA Environmental Cert",
     details: "Utilizing advanced underground recycling pumps. Heavy investment in sub-surface aquifer conservation systems protects the Kafue River basin.",
   },
   {
@@ -45,7 +45,7 @@ const OPERATIONS_SITES: SiteInfo[] = [
     coords: { x: 28, y: 40 },
     status: "Afforestation Reserve",
     reclaimedArea: "320 Hectares",
-    waterRecycled: "88.6%",
+    complianceScore: "95.6%",
     indigenousTrees: "290,000 planted",
     certification: "ZEMA Environmental Cert",
     details: "Partnered with Copperbelt University forestry division to plant indigenous miombo woodland. Employs 120 local community rangers.",
@@ -64,7 +64,7 @@ export function InteractiveMap() {
         </span>
         <h3 className="text-2xl font-bold text-white tracking-tight">Zambian Operations & Conservation Zones</h3>
         <p className="text-slate-400 text-xs font-light mt-2 max-w-xl leading-relaxed">
-          Select operational pins to review real-time ecological indices, ISO standard compliance status, and target forestry reclamation volumes.
+          Select operational pins to review real-time ecological indices, environmental compliance status, and target forestry reclamation volumes.
         </p>
       </div>
 
@@ -154,8 +154,8 @@ export function InteractiveMap() {
                     <p className="text-lg font-mono font-bold text-white">{selectedSite.reclaimedArea}</p>
                   </div>
                   <div className="border-l-2 border-emerald-500 pl-3">
-                    <p className="font-mono text-[9px] text-slate-500 uppercase tracking-widest">Water Recycled</p>
-                    <p className="text-lg font-mono font-bold text-white">{selectedSite.waterRecycled}</p>
+                    <p className="font-mono text-[9px] text-slate-500 uppercase tracking-widest">Compliance Score</p>
+                    <p className="text-lg font-mono font-bold text-white">{selectedSite.complianceScore}</p>
                   </div>
                   <div className="border-l-2 border-emerald-500 pl-3 col-span-2">
                     <p className="font-mono text-[9px] text-slate-500 uppercase tracking-widest">Forestry Progress</p>

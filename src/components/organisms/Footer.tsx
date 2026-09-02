@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, Twitter, Youtube, ArrowUpRight } from "lucide-react";
+import { Linkedin, Facebook, ArrowUpRight } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 import { JSX } from "react";
 
@@ -8,36 +8,36 @@ const FOOTER_SECTIONS = [
   {
     title: "Company",
     links: [
-      { label: "About Us", href: "/about" },
-      { label: "Leadership", href: "/about#team" },
-      { label: "History", href: "/about#history" },
-      { label: "Certifications", href: "/about#certifications" },
+      { label: "Company Overview", href: "/about" },
+      { label: "Leadership Team", href: "/about/leaders" },
+      { label: "Chairperson's Message", href: "/about/chairperson-message" },
+      { label: "Careers", href: "/careers" },
     ],
   },
   {
-    title: "Services",
+    title: "Operations",
     links: [
-      { label: "Open Cast Mining", href: "/services/open-cast-mining" },
-      { label: "Underground Mining", href: "/services/underground-mining" },
-      { label: "Mineral Processing", href: "/services/mineral-processing" },
-      { label: "HSE Management", href: "/services/hse-management" },
+      { label: "Underground Mining", href: "/operations/underground-mining" },
+      { label: "Mechanised Fleet", href: "/operations/mechanised-fleet" },
+      { label: "Infrastructure", href: "/operations/infrastructure-facilities" },
+      { label: "Engineering Services", href: "/operations/engineering-services" },
     ],
   },
   {
-    title: "Community Impact",
+    title: "Sustainability",
     links: [
-      { label: "Safety Philosophy", href: "/#impact" },
-      { label: "Environmental Policy", href: "/#operations-map" },
-      { label: "Community Impact", href: "/#operations-map" },
-      { label: "Net Zero Roadmap", href: "/#operations-map" },
+      { label: "ESG Overview", href: "/sustainability/esg-overview" },
+      { label: "Safety First", href: "/sustainability/safety-first" },
+      { label: "Community Impact", href: "/sustainability/community-impact" },
+      { label: "Local Workforce", href: "/sustainability/local-workforce" },
     ],
   },
   {
     title: "Connect",
     links: [
       { label: "Contact Us", href: "/contact" },
-      { label: "Careers", href: "/careers" },
-      { label: "Media & Press", href: "/media/newsroom" },
+      { label: "Newsroom", href: "/media/newsroom" },
+      { label: "Photo Gallery", href: "/media/photo-gallery" },
       { label: "Investor Relations", href: "mailto:Info@sktglobalminings.com?subject=Investor%20Relations%20Enquiry" },
     ],
   },
@@ -45,8 +45,7 @@ const FOOTER_SECTIONS = [
 
 const SOCIAL_LINKS = [
   { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/skt-global-mining-service-limited/" },
-  { icon: Twitter, label: "Twitter / X", href: "https://twitter.com" },
-  { icon: Youtube, label: "YouTube", href: "https://youtube.com" },
+  { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/share/1EnTRQXEy7/" },
 ] as const;
 
 export function Footer(): JSX.Element {
@@ -72,26 +71,11 @@ export function Footer(): JSX.Element {
             </Link>
 
             <p className="text-body-sm text-neutral-400 mb-6 max-w-xs">
-              Engineering excellence across global mining operations. Building a
-              safer, more sustainable industrial future since 2005.
+              Engineering excellence in underground mechanized mining. Building a
+              safer, more sustainable industrial future in the Zambian Copperbelt.
             </p>
 
-            {/* Social */}
-            {/* ⚡ Optimized: Increased touch target sizes (min 44px) for mobile accessibility */}
-            <div className="flex items-center gap-4">
-              {SOCIAL_LINKS.map(({ icon: Icon, label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-11 h-11 lg:w-8 lg:h-8 rounded-full border border-neutral-800 hover:border-neutral-500 flex items-center justify-center transition-colors duration-200"
-                  aria-label={`${SITE_CONFIG.shortName} on ${label}`}
-                >
-                  <Icon size={16} className="lg:size-[12px] text-neutral-400" />
-                </a>
-              ))}
-            </div>
+
           </div>
 
           {/* Links */}
@@ -154,14 +138,10 @@ export function Footer(): JSX.Element {
             {/* ⚡ Removed extra Mopani joint-venture text for conciseness */}
           </div>
 
-          <div className="flex flex-wrap justify-center lg:justify-end gap-x-6 gap-y-3 w-full">
+          <div className="flex flex-wrap items-center justify-center lg:justify-end gap-x-6 gap-y-3 w-full">
             {[
               { label: "Privacy Policy", href: "/privacy" },
               { label: "Terms of Service", href: "/terms" },
-              { label: "Cookie Policy", href: "/cookies" },
-              { label: "Accessibility", href: "/accessibility" },
-              { label: "Anti-Bribery", href: "/anti-bribery" },
-              { label: "Sitemap", href: "/sitemap.xml" },
             ].map((item) => (
               <Link
                 key={item.href}
@@ -171,6 +151,21 @@ export function Footer(): JSX.Element {
                 {item.label}
               </Link>
             ))}
+
+            <div className="flex items-center gap-3 lg:ml-4 border-l border-neutral-800 pl-6">
+              {SOCIAL_LINKS.map(({ icon: Icon, label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 lg:w-8 lg:h-8 rounded-full bg-neutral-800 hover:bg-neutral-700 flex items-center justify-center transition-colors duration-200"
+                  aria-label={`${SITE_CONFIG.shortName} on ${label}`}
+                >
+                  <Icon size={14} className="text-neutral-300" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>

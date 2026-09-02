@@ -52,7 +52,7 @@ export default function TermsPage(): JSX.Element {
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Mining stats and fleet counts are subject to routine operational changes.</li>
-              <li>References to &ldquo;Committed to Zero Harm&rdquo; denote safety goals and frameworks under ISO 45001 safety guidelines, and do not constitute absolute legal warranties of incident-free environments.</li>
+              <li>References to &ldquo;Committed to Zero Harm&rdquo; denote safety goals and frameworks under international safety guidelines, and do not constitute absolute legal warranties of incident-free environments.</li>
             </ul>
           </section>
 

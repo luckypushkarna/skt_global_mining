@@ -19,7 +19,7 @@ const PILLARS = [
     icon: Warehouse,
     title: "Global Supply Chain & Warehousing",
     description:
-      "We manage the importation of advanced machinery from multiple countries with strict regulatory compliance. Our modern high-capacity warehouses keep critical parts ready for our fleet of 225+ underground machines.",
+      "We manage the importation of advanced machinery from multiple countries with strict regulatory compliance. Our modern high-capacity warehouses keep critical parts worth $10 million USD ready for our fleet of 225+ underground machines.",
     highlight: "225+ Underground Machines",
   },
   {

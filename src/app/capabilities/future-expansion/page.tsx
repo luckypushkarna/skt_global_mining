@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { FutureHero } from "@/components/future-expansion/FutureHero";
 import { FutureIntro } from "@/components/future-expansion/FutureIntro";
 import { FuturePillars } from "@/components/future-expansion/FuturePillars";
-import { FutureGallery } from "@/components/future-expansion/FutureGallery";
+
 import { FutureSpecs } from "@/components/future-expansion/FutureSpecs";
 import { FutureCTA } from "@/components/future-expansion/FutureCTA";
 
@@ -19,7 +19,7 @@ export default function FutureExpansionPage(): JSX.Element {
       <FutureHero />
       <FutureIntro />
       <FuturePillars />
-      <FutureGallery />
+
       <FutureSpecs />
       <FutureCTA />
     </div>

@@ -97,7 +97,7 @@ export const UNDERGROUND_MINING = {
     eyebrow: "Local Benefits",
     title: "Value that stays in Zambia.",
     stats: [
-      { value: "85%", label: "Zambian workforce" },
+      { value: "94%", label: "Zambian workforce" },
       { value: "$48M", label: "Annual local spend" },
       { value: "47", label: "Local SME suppliers" },
       { value: "$2.4M", label: "Community investment" },
@@ -120,7 +120,7 @@ export const UNDERGROUND_MINING = {
       },
       {
         title: "Compliance",
-        desc: "Certified to ISO 45001 (Occupational Health & Safety). Audited quarterly against ICMM safety principles and Zambia Mines Safety Department standards.",
+        desc: "Audited quarterly against international safety standards and Zambia Mines Safety Department standards.",
       },
     ],
   },
@@ -130,7 +130,7 @@ export const UNDERGROUND_MINING = {
     title: "Underground mining, surface responsibility.",
     body: "Our work happens below ground, but our environmental impact is measured above it. Water use, energy consumption, dust, and rehabilitation are all monitored and reported transparently.",
     metrics: [
-      { label: "Process water recycled", value: "90%" },
+      { label: "Environmental compliance", value: "100%" },
       { label: "Emissions reduction (vs 2024)", value: "47%" },
       { label: "Land rehabilitated", value: "340 ha" },
       { label: "Environmental incidents", value: "0" },

@@ -16,7 +16,7 @@ export const SAFETY_METRICS = [
     value: "100",
     suffix: "%",
     label: "Compliance",
-    sub: "ISO 45001 certified operations - every site, every shift",
+    sub: "Internationally aligned safety operations - every site, every shift",
     accent: "emerald",
   },
   {
@@ -49,9 +49,9 @@ export const SAFETY_PILLARS = [
   },
   {
     number: "04",
-    title: "Independent Audit",
-    desc: "Third-party safety audits, ICMM compliance reviews, and ISO 45001 certification renewed annually with no internal pre-screening.",
-    items: ["ISO 45001", "ICMM principles", "Independent audits", "Quarterly reviews"],
+    title: "National Accreditations",
+    desc: "Registered and fully compliant with Zambia's leading professional and regulatory institutions.",
+    items: ["EIZ", "ZIHRM", "ZDA"],
   },
 ];
 
@@ -61,11 +61,7 @@ export const SAFETY_TIMELINE = [
     milestone: "Operations Begin",
     detail: "SKT Global launches at Mopani with an embedded safety-first culture from day one.",
   },
-  {
-    year: "2024 Q3",
-    milestone: "ISO 45001 Certified",
-    detail: "First-year certification achieved across all underground operations.",
-  },
+
   {
     year: "2025 Q1",
     milestone: "500K Safe Hours",
@@ -76,19 +72,15 @@ export const SAFETY_TIMELINE = [
     milestone: "1M Hour Milestone",
     detail: "One million consecutive safe working hours - a landmark for Zambian mining.",
   },
-  {
-    year: "2026",
-    milestone: "Certification Renewed",
-    detail: "Third consecutive year of full ISO 45001 compliance verified by independent auditors.",
-  },
+
 ];
 
 export const CERTIFICATIONS = [
-  "ISO 45001:2018",
-  "ICMM Principles",
-  "Zambia Mining Safety Act",
-  "Mopani Safety Standards",
-  "ILO Convention 176",
+
+
+  "Engineers Institute of Zambia (EIZ)",
+  "Zambia Institute of Human Resource Management (ZIHRM)",
+  "Zambia Development Agency (ZDA)",
 ];
 
 export const EMERGENCY_PROTOCOLS = [

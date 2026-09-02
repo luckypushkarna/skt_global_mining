@@ -2,9 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ImagePlaceholder } from "./ImagePlaceholder";
-
-// Using existing project images where available, placeholders for assets not yet shot
 const GALLERY_ITEMS = [
   {
     src: "https://res.cloudinary.com/dxhwcq1eg/image/upload/skt_global_mining/Engineering-Maintenance-card.webp",
@@ -23,21 +20,6 @@ const GALLERY_ITEMS = [
     alt: "Safety compliance during engineering work",
     caption: "Pre-shift safety sign-off",
     isReal: true,
-  },
-  {
-    label: "Welding in progress",
-    hint: "Certified welder on equipment frame, sparks visible, close-up. 800×600px minimum.",
-    isReal: false,
-  },
-  {
-    label: "Hydraulic system repair",
-    hint: "Engineer working on hydraulic cylinders or valve assembly. 800×600px minimum.",
-    isReal: false,
-  },
-  {
-    label: "Component reconditioning",
-    hint: "Machined components laid out for inspection, clean workshop setting. 800×600px minimum.",
-    isReal: false,
   },
 ];
 
@@ -76,8 +58,6 @@ export function ESGallery() {
               className={`relative group rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white aspect-[4/3] ${i === 1 || i === 4 ? "sm:mt-8 lg:mt-12" : "" // Stagger effect
                 }`}
             >
-              {item.isReal ? (
-                <>
                   <Image
                     src={item.src!}
                     alt={item.alt!}
@@ -95,16 +75,6 @@ export function ESGallery() {
                       {item.caption}
                     </p>
                   </div>
-                </>
-              ) : (
-                <div className="w-full h-full p-2 bg-slate-50">
-                  <ImagePlaceholder
-                    label={item.label!}
-                    hint={item.hint!}
-                    aspectRatio="h-full"
-                  />
-                </div>
-              )}
             </motion.div>
           ))}
         </div>

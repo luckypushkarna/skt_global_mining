@@ -24,30 +24,30 @@ export const communityImpact: PageConfig = {
   title: "Building stronger",
   titleAccent: "communities.",
   intro:
-    "Twenty percent of our net profits go directly back into Zambia's mining communities - funding schools, clinics, water networks, and small business growth.",
+    "We are committed to ensuring our future success is shared. A percentage of our net profits is earmarked to go directly back into Zambia's mining communities - developing plans for schools, clinics, water networks, and small business growth.",
   heroImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125371/skt_global_mining/Community%20Safety%20Culture.webp",
   accentColor: "amber",
   stats: [
-    { value: "$2.4", suffix: "M", label: "Community Investment", sub: "Three schools, 1,800+ students" },
-    { value: "12", label: "Health Clinics", sub: "Supported across operational zones" },
-    { value: "20", suffix: "%", label: "Profit Allocation", sub: "Net profits reinvested locally" },
-    { value: "8,400", suffix: "+", label: "Lives Touched", sub: "Across active community programs" },
+    { value: "Target", label: "Community Investment", sub: "Planning support for schools and students" },
+    { value: "Planning", label: "Health Clinics", sub: "To be supported across operational zones" },
+    { value: "20", suffix: "%", label: "Profit Allocation", sub: "Goal for net profits reinvested locally" },
+    { value: "Developing", label: "Community Programs", sub: "Structuring active community initiatives" },
   ],
   pillars: [
     {
       icon: "GraduationCap",
       title: "Education",
-      desc: "Three new schools constructed in operational zones. Scholarships fund 200+ Zambian students annually in engineering and trades.",
+      desc: "Planning the construction of new schools in operational zones and developing scholarship frameworks to fund Zambian students in engineering and trades.",
     },
     {
       icon: "Heart",
       title: "Healthcare",
-      desc: "Twelve community clinics supplied with equipment, medicines, and trained personnel. Free maternal care for mining-community families.",
+      desc: "Developing strategies to supply future community clinics with equipment, medicines, and trained personnel, with a focus on maternal care.",
     },
     {
       icon: "Droplet",
       title: "Clean Water",
-      desc: "Borehole networks and water purification systems installed in surrounding villages, serving over 5,000 residents directly.",
+      desc: "Initiating plans for borehole networks and water purification systems to serve surrounding villages and local residents directly.",
     },
   ],
   story: {
@@ -70,30 +70,30 @@ export const environmentalCare: PageConfig = {
   title: "Stewardship of",
   titleAccent: "the land.",
   intro:
-    "Mining is extraction - but it doesn't have to be destruction. Our closed-loop systems, rehabilitation programs, and emissions controls leave the land healthier than we found it.",
+    "Mining is extraction - but it doesn't have to be destruction. We are developing closed-loop systems, planning rehabilitation programs, and designing emissions controls to leave the land healthier than we found it.",
   heroImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125553/skt_global_mining/zambia-operations-nobgs.webp",
   accentColor: "emerald",
   stats: [
-    { value: "90", suffix: "%", label: "Water Recycled", sub: "Closed-loop processing circuits" },
-    { value: "47", suffix: "%", label: "Emissions Cut", sub: "Reduction since 2024 baseline" },
-    { value: "1,200", label: "Trees Planted", sub: "In active rehabilitation zones" },
-    { value: "0", label: "Tailings Spills", sub: "Zero environmental incidents recorded" },
+    { value: "Target", label: "Environmental Compliance", sub: "Committing to ZEMA regulations" },
+    { value: "Planning", label: "Emissions Controls", sub: "Establishing baselines for reduction" },
+    { value: "Initiating", label: "Tree Planting", sub: "Designing rehabilitation zones" },
+    { value: "Zero", label: "Harm Goal", sub: "Targeting zero environmental incidents" },
   ],
   pillars: [
     {
       icon: "Droplet",
       title: "Water Stewardship",
-      desc: "Closed-loop water systems recycle 90% of process water. Real-time monitoring of every discharge point, third-party verified quarterly.",
+      desc: "Designing closed-loop water systems with the goal of maximizing process water recycling. Planning real-time monitoring of discharge points.",
     },
     {
       icon: "Wind",
       title: "Emissions Control",
-      desc: "Dust suppression at every transfer point. Electric haul vehicles transitioning fleet by 2028. Air quality monitored 24/7.",
+      desc: "Implementing dust suppression at transfer points and establishing baselines to track air quality. Exploring future transitions to electric haul vehicles.",
     },
     {
       icon: "TreePine",
       title: "Land Rehabilitation",
-      desc: "Every disturbed hectare returns to native vegetation or productive agricultural use. Active partnerships with Zambian agronomists.",
+      desc: "Committing to return disturbed hectares to native vegetation or productive agricultural use through planned partnerships with Zambian agronomists.",
     },
   ],
   story: {
@@ -116,11 +116,11 @@ export const localWorkforce: PageConfig = {
   title: "Skills built in",
   titleAccent: "Zambia, for Zambia.",
   intro:
-    "Eighty-five percent of our workforce is Zambian. Through the Ubuntu Mentorship Program and certified training pathways, we're building the next generation of African mining leadership - not importing it.",
+    "Ninety-four percent of our workforce is Zambian. Through the Ubuntu Mentorship Program and certified training pathways, we're building the next generation of African mining leadership - not importing it.",
   heroImage: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125372/skt_global_mining/Continuous%20Training.webp",
   accentColor: "sky",
   stats: [
-    { value: "85", suffix: "%", label: "Local Workforce", sub: "Zambian employees across all sites" },
+    { value: "94", suffix: "%", label: "Local Workforce", sub: "Zambian employees across all sites" },
     { value: "1,500", suffix: "+", label: "Direct Jobs", sub: "Active employment across operations" },
     { value: "500", suffix: "+", label: "Trained This Year", sub: "Through Ubuntu Mentorship Program" },
     { value: "47", label: "Promoted", sub: "Into supervisory roles in 2025" },
@@ -139,7 +139,7 @@ export const localWorkforce: PageConfig = {
     {
       icon: "Users",
       title: "Equal Opportunity",
-      desc: "Active recruitment of women into trades and leadership. Female workforce grew from 8% to 19% over 18 months of targeted hiring.",
+      desc: "Active recruitment of women into trades and leadership, with a strong commitment to increasing female representation across all operational and supervisory roles.",
     },
   ],
   story: {

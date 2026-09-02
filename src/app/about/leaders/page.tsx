@@ -52,7 +52,7 @@ const leaders = [
       "The best mining operations are built not from the top down, but from the ground up - with the right people, the right tools, and a shared belief in what's possible.",
     impact: [
       { area: "Operational Excellence", description: "Under Sahil's leadership, SKT Global achieved approximately 50% of Mopani Copper Mines' development and production targets within the first ten months - a pace that exceeded expectations across the industry." },
-      { area: "Safety Performance", description: "The company established a safety-first operational culture from day one, implementing ISO 45001-aligned systems and zero-harm protocols across all underground sites." },
+      { area: "Safety Performance", description: "The company established a safety-first operational culture from day one, implementing internationally aligned systems and zero-harm protocols across all underground sites." },
       { area: "Financial Discipline", description: "$50M+ was invested with disciplined capital controls, establishing the asset base for long-term operational sustainability and future expansion toward 90% of MCM mining activity." },
       { area: "Sustainability Goals", description: "SKT Global's hiring and procurement frameworks prioritise Zambian employment and local suppliers, embedding economic sustainability at the core of the business model." },
       { area: "Community Development", description: "The employment of 1,500+ Zambian workers and investment in local infrastructure has created measurable economic impact for communities across the Copperbelt." },
@@ -85,7 +85,7 @@ const leaders = [
     areasOfFocus: [
       { title: "Business & Operations", description: "Business transformation, capacity enhancement, operational efficiency, and organizational development." },
       { title: "Engineering & Projects", description: "Engineering, project management, construction, and turnkey operations." },
-      { title: "Quality & Process Improvement", description: "Total Quality Management (TQM), ISO standards, HAZOP studies, and process optimization." }
+      { title: "Quality & Process Improvement", description: "Total Quality Management (TQM), international standards, HAZOP studies, and process optimization." }
     ],
     journey: [
       { year: "2000", title: "Early Career", description: "Infrastructure project management roles across South and Southeast Asia, specialising in industrial and resources sectors." },
@@ -231,16 +231,16 @@ const leaders = [
   },
   {
     id: 5,
-    name: "Collins",
+    name: "Collins Mwila",
     designation: "MSV Site Manager",
     department: "Operations",
     statement: "Excellence in site management is driven by rigorous standards, clear communication, and empowering teams to execute safely and efficiently.",
     image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/collins",
     yearsExperience: 10,
     overview: {
-      intro: "Mr. Collins is the MSV Site Manager at SKT Global, bringing over a decade of dedicated operational leadership to our site activities. He oversees the critical day-to-day execution of site programs, ensuring all teams operate seamlessly and safely.",
+      intro: "Mr. Collins Mwila is the MSV Site Manager at SKT Global, bringing over a decade of dedicated operational leadership to our site activities. He oversees the critical day-to-day execution of site programs, ensuring all teams operate seamlessly and safely.",
       expertise: "His expertise lies in field operations, team coordination, and implementing rigorous safety protocols in complex industrial environments.",
-      philosophy: "Collins believes that a well-managed site is the foundation of any successful mining operation, where every individual understands their role and values safety above all else.",
+      philosophy: "Collins Mwila believes that a well-managed site is the foundation of any successful mining operation, where every individual understands their role and values safety above all else.",
       responsibilities: "As MSV Site Manager, he directs daily site activities, manages local operational teams, coordinates with engineering units, and ensures compliance with all health, safety, and environmental standards."
     },
     areasOfFocus: [
@@ -307,7 +307,7 @@ const leaders = [
   {
     id: 7,
     name: "Chakanga Mukonde",
-    designation: "Site Manager at Mufulira",
+    designation: "Mufulira Site Manager",
     department: "Operations",
     statement: "On-site efficiency is driven by safety, teamwork, and clear operational objectives.",
     image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/chakanga-mukonde",
@@ -346,7 +346,7 @@ const leaders = [
       { title: "Employee & Industrial Relations", description: "Managing Zambian Labour Law & Compliance, Union Relations & Collective Bargaining" },
       { title: "Workforce Management", description: "Multinational Workforce Management, Recruitment & Workforce Planning, Employee Engagement" },
       { title: "HR Operations", description: "Payroll, HRIS & ERP Systems, Performance Management, Policy & Procedure Development" },
-      { title: "Compliance & Governance", description: "Investigations & Disciplinary Governance, HR Analytics & Reporting, ISO / IMS Coordination" }
+      { title: "Compliance & Governance", description: "Investigations & Disciplinary Governance, HR Analytics & Reporting, Compliance / IMS Coordination" }
     ],
     journey: [
       { year: "2007", title: "HR Generalist", description: "Began in industrial relations, managing labor compliance and employee relations." },
@@ -370,9 +370,83 @@ const leaders = [
     personalMessage: "Kitwe is my home, and helping our local people build lasting careers in mechanized mining is what drives me. We are building a workforce that will lead Zambia's mining sector for decades to come.",
   },
   {
+    id: 13,
+    name: "Willie Simpemba",
+    designation: "Accounts Manager",
+    department: "Finance",
+    statement: "Fiscal health is maintained through precise accounting and diligent management.",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/willie-simpemba",
+    yearsExperience: 10,
+    overview: {
+      intro: "Willie Simpemba is the Accounts Manager, ensuring the financial integrity and fiscal health of our regional projects.",
+      expertise: "He specializes in financial accounting, budget management, and compliance.",
+      philosophy: "Accuracy and diligence in finance build the foundation for sustainable growth.",
+      responsibilities: "He oversees day-to-day accounting operations, budgeting, and financial reporting."
+    },
+    areasOfFocus: [
+      { title: "Financial Accounting", description: "Managing budgets and financial compliance" }
+    ],
+    journey: [],
+    contributions: [],
+    philosophyQuote: "Financial precision empowers operational excellence.",
+    impact: [],
+    network: [],
+    personalMessage: "Supporting our projects through strong financial management is how we secure our continued success."
+  },
+  {
+    id: 14,
+    name: "George Sakanyi",
+    designation: "HSE Manager",
+    department: "Health & Safety",
+    statement: "Protecting our workforce and our environment is the prerequisite to every operation.",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/george-sakanyi",
+    yearsExperience: 15,
+    overview: {
+      intro: "George Sakanyi is the HSE Manager, championing health, safety, and environmental excellence across all operations.",
+      expertise: "He specializes in safety protocols, environmental compliance, and hazard mitigation.",
+      philosophy: "Safety is not a metric, it is a core value that must be lived every day.",
+      responsibilities: "He oversees the implementation of rigorous HSE standards and compliance programs."
+    },
+    areasOfFocus: [
+      { title: "HSE Management", description: "Ensuring health, safety, and environmental compliance" }
+    ],
+    journey: [],
+    contributions: [],
+    philosophyQuote: "A commitment to safety is a commitment to our people and our future.",
+    impact: [],
+    network: [],
+    personalMessage: "My goal is to ensure that our operations set the benchmark for safety and environmental stewardship in the region."
+  },
+  {
+    id: 15,
+    name: "Peter Ochigbo",
+    designation: "System Coordinator",
+    department: "Systems",
+    statement: "Systematic coordination ensures operational alignment and technical precision across all activities.",
+    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/peter-ochigbo",
+    yearsExperience: 8,
+    overview: {
+      intro: "Peter Ochigbo is a System Coordinator with 8 years of professional experience supporting system coordination, HR operations, workforce administration, data management and process improvement across the mining, agribusiness and hospitality sectors.",
+      expertise: "With qualifications including CPM, PGD-HR and ACIHRM, Peter brings a structured and analytical approach to HR systems, workforce data, process coordination and operational reporting.",
+      philosophy: "He contributes to improved efficiency, accuracy and overall business performance through a structured and analytical approach.",
+      responsibilities: "He is experienced in coordinating business systems, maintaining accurate employee and operational records, monitoring data integrity, preparing management reports and ensuring timely availability of reliable information to support decision-making.",
+    },
+    areasOfFocus: [
+      { title: "Business Systems & Processes", description: "Business Systems Coordination, Process Improvement, System & Process Coordination" },
+      { title: "Data & Records Management", description: "Workforce Data Management, Employee Records Management, Data Integrity & Quality Control" },
+      { title: "HR Operations & Reporting", description: "HR Operations & Administration, HR Reporting & Analytics, Management Information & Reporting" }
+    ],
+    journey: [],
+    contributions: [],
+    philosophyQuote: "Alignment in our systems brings clarity to our actions.",
+    impact: [],
+    network: [],
+    personalMessage: "Our focus on coordinated systems enables the success of our operational teams on the ground."
+  },
+  {
     id: 9,
     name: "Kiran Kumar Reddy",
-    designation: "Project Head at SOB",
+    designation: "SOB Project Head",
     department: "SOB Operations",
     statement: "Technical precision in underground excavation underpins safety, productivity, and the integrity of our production targets.",
     image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/kiran-kumar-reddy.webp",
@@ -415,13 +489,13 @@ const leaders = [
   {
     id: 10,
     name: "Suresh Babu Deshamalla",
-    designation: "Head of Maintenance",
+    designation: "Maintenance Head",
     department: "Asset Readiness",
     statement: "Operational readiness is the product of preventive maintenance, robust supply chains, and technical pride in our fleet.",
     image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/suresh-babu-deshamalla.webp",
     yearsExperience: 18,
     overview: {
-      intro: "Suresh Babu Deshamalla is the Head of Maintenance at SKT Global, managing the lifecycle, availability, and preventive servicing of our 225+ underground mechanized mining vehicle fleet. He holds 18 years of asset engineering experience across large-scale industrial projects.",
+      intro: "Suresh Babu Deshamalla is the Maintenance Head at SKT Global, managing the lifecycle, availability, and preventive servicing of our 225+ underground mechanized mining vehicle fleet. He holds 18 years of asset engineering experience across large-scale industrial projects.",
       expertise: "He specializes in preventive maintenance systems, spare parts supply chain logistics, diagnostics telemetry, and rebuild workshops management for underground mining machinery.",
       philosophy: "Suresh believes that downtime is not inevitable; it is a metric to be managed. An active preventive maintenance loop keeps our operators safe and our production lines running uninterrupted.",
       responsibilities: "He leads the surface and underground workshops, overseeing maintenance technicians, spare parts inventories, OEM warranty relationships, and diagnostic telemetry systems.",
@@ -497,7 +571,7 @@ const leaders = [
   {
     id: 12,
     name: "Toms Joseph",
-    designation: "Project Head at Mufulira",
+    designation: "Mufulira Project Head",
     department: "Mufulira Operations",
     statement: "Mining excellence lies in the details. Precise drilling, proper air flow, and disciplined operators create a world-class mine.",
     image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/toms-joseph.webp",
@@ -534,80 +608,6 @@ const leaders = [
       { department: "Engineering", connection: "Collaborates on equipment requirements and stope design changes." },
     ],
     personalMessage: "Underground mining is a team sport of high stakes. The technical precision of our team at Mufulira is what allows us to overcome daily challenges and deliver the copper that powers the global economy.",
-  },
-  {
-    id: 13,
-    name: "Willie Simpemba",
-    designation: "Accounts Manager",
-    department: "Finance",
-    statement: "Fiscal health is maintained through precise accounting and diligent management.",
-    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/willie-simpemba",
-    yearsExperience: 10,
-    overview: {
-      intro: "Willie Simpemba is the Accounts Manager, ensuring the financial integrity and fiscal health of our regional projects.",
-      expertise: "He specializes in financial accounting, budget management, and compliance.",
-      philosophy: "Accuracy and diligence in finance build the foundation for sustainable growth.",
-      responsibilities: "He oversees day-to-day accounting operations, budgeting, and financial reporting."
-    },
-    areasOfFocus: [
-      { title: "Financial Accounting", description: "Managing budgets and financial compliance" }
-    ],
-    journey: [],
-    contributions: [],
-    philosophyQuote: "Financial precision empowers operational excellence.",
-    impact: [],
-    network: [],
-    personalMessage: "Supporting our projects through strong financial management is how we secure our continued success."
-  },
-  {
-    id: 14,
-    name: "George Sakanyi",
-    designation: "HSE Manager",
-    department: "Health & Safety",
-    statement: "Protecting our workforce and our environment is the prerequisite to every operation.",
-    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/george-sakanyi",
-    yearsExperience: 15,
-    overview: {
-      intro: "George Sakanyi is the HSE Manager, championing health, safety, and environmental excellence across all operations.",
-      expertise: "He specializes in safety protocols, environmental compliance, and hazard mitigation.",
-      philosophy: "Safety is not a metric, it is a core value that must be lived every day.",
-      responsibilities: "He oversees the implementation of rigorous HSE standards and compliance programs."
-    },
-    areasOfFocus: [
-      { title: "HSE Management", description: "Ensuring health, safety, and environmental compliance" }
-    ],
-    journey: [],
-    contributions: [],
-    philosophyQuote: "A commitment to safety is a commitment to our people and our future.",
-    impact: [],
-    network: [],
-    personalMessage: "My goal is to ensure that our operations set the benchmark for safety and environmental stewardship in the region."
-  },
-  {
-    id: 15,
-    name: "Peter Ochigbo",
-    designation: "System Coordinator",
-    department: "Systems",
-    statement: "Systematic coordination ensures operational alignment and technical precision across all activities.",
-    image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/peter-ochigbo",
-    yearsExperience: 8,
-    overview: {
-      intro: "Peter Ochigbo is a System Coordinator with 8 years of professional experience supporting system coordination, HR operations, workforce administration, data management and process improvement across the mining, agribusiness and hospitality sectors.",
-      expertise: "With qualifications including CPM, PGD-HR and ACIHRM, Peter brings a structured and analytical approach to HR systems, workforce data, process coordination and operational reporting.",
-      philosophy: "He contributes to improved efficiency, accuracy and overall business performance through a structured and analytical approach.",
-      responsibilities: "He is experienced in coordinating business systems, maintaining accurate employee and operational records, monitoring data integrity, preparing management reports and ensuring timely availability of reliable information to support decision-making.",
-    },
-    areasOfFocus: [
-      { title: "Business Systems & Processes", description: "Business Systems Coordination, Process Improvement, System & Process Coordination" },
-      { title: "Data & Records Management", description: "Workforce Data Management, Employee Records Management, Data Integrity & Quality Control" },
-      { title: "HR Operations & Reporting", description: "HR Operations & Administration, HR Reporting & Analytics, Management Information & Reporting" }
-    ],
-    journey: [],
-    contributions: [],
-    philosophyQuote: "Alignment in our systems brings clarity to our actions.",
-    impact: [],
-    network: [],
-    personalMessage: "Our focus on coordinated systems enables the success of our operational teams on the ground."
   }
 ];
 

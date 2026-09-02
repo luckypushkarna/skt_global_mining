@@ -92,18 +92,7 @@ export const articles: Article[] = [
     author: "Sustainability Team",
     location: "Zambia",
   },
-  {
-    id: "6",
-    slug: "iso-45001-certification",
-    title: "SKT Receives ISO 45001:2018 Occupational Health & Safety Certification",
-    excerpt:
-      "Following a rigorous audit process, SKT Global Mining & Services Limited has been awarded the ISO 45001:2018 certification, validating our internationally compliant safety management systems.",
-    category: "announcement",
-    date: "2026-04-05",
-    readTime: "3 min read",
-    author: "Quality Assurance",
-    location: "Zambia",
-  },
+
   {
     id: "7",
     slug: "community-school-infrastructure",

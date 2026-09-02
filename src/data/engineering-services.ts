@@ -3,16 +3,16 @@ export const ENGINEERING_SERVICES = {
     eyebrow: "Operations · Engineering Services",
     title: "Engineering keeps the work moving.",
     intro:
-      "From planned maintenance to emergency repairs, our engineering teams keep 225+ underground machines operating at peak availability across Zambia's Copperbelt.",
+      "Through planned maintenance and reliability achievements, our engineering teams keep 225+ underground machines operating at peak availability across Zambia's Copperbelt.",
   },
 
   intro: {
     body: "Engineering services are not an afterthought in underground mining - they are the foundation. Every cycle of every machine depends on engineers who anticipate failure, prevent breakdowns, and respond immediately when issues arise. Our approach is structured, technical, and built around one principle: keep production moving.",
     stats: [
       { value: "118", label: "Certified Engineers" },
-      { value: "94%", label: "Fleet Availability" },
+      { value: "90%", label: "Fleet Availability" },
       { value: "4", label: "In-Shaft Workshops" },
-      { value: "<4h", label: "Critical Parts Access" },
+      { value: "24/7", label: "On-Site Support" },
     ],
   },
 

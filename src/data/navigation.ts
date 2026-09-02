@@ -9,7 +9,6 @@ import {
   HardHat,
   Wrench,
   Heart,
-  Network,
   Newspaper,
   Handshake,
   Camera,
@@ -97,11 +96,6 @@ export const operationsSection: NavSection = {
       title: "Engineering Services",
       href: "/operations/engineering-services",
       icon: Wrench,
-    },
-    {
-      title: "Logistics Network",
-      href: "/operations/logistics-network",
-      icon: Network,
     },
   ],
 };

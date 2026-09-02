@@ -24,7 +24,7 @@ export function LiveCounter() {
             </h2>
             <p className="text-base text-slate-600 leading-relaxed font-light lg:max-w-md lg:ml-auto">
               All metrics are audited quarterly by independent third parties and
-              certified under ISO 45001 international standards.
+              certified under international safety standards.
             </p>
           </div>
         </div>
@@ -65,10 +65,7 @@ export function LiveCounter() {
           ))}
         </div>
 
-        {/* Audit footnote */}
-        <p className="mt-5 text-[11px] text-slate-400 font-mono tracking-wide">
-          Last audited: Q1 2026 · Next audit scheduled: Q2 2026 · Auditor: Bureau Veritas Zambia
-        </p>
+
       </div>
     </section>
   );

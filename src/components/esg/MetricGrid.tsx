@@ -24,7 +24,7 @@ export function MetricGrid() {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-slate-200 border border-slate-200">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-px bg-slate-200 border border-slate-200">
         {ESG_STATS.map((stat, i) => (
           <motion.div
             key={i}

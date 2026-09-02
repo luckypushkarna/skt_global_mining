@@ -86,11 +86,11 @@ export const SERVICES: ReadonlyArray<Service> = [
     id: "safety-management",
     title: "HSE Management",
     description:
-      "Comprehensive health, safety, and environment programs built on zero-harm philosophy with ISO 45001 certified systems.",
+      "Comprehensive health, safety, and environment programs built on zero-harm philosophy with international safety systems.",
     icon: "Shield",
     category: "safety",
     features: [
-      "ISO 45001 certification",
+      "International safety standards",
       "Incident investigation",
       "Safety culture training",
       "Emergency response planning",
@@ -183,8 +183,8 @@ export const TEAM_MEMBERS: ReadonlyArray<TeamMember> = [
     bio: "Directs financial strategy and capital allocation, ensuring robust risk management and sustainable funding for large-scale mining projects.",
   },
   {
-    id: "collins",
-    name: "Collins",
+    id: "collins-mwila",
+    name: "Collins Mwila",
     role: "MSV Site Manager",
     bio: "Excellence in site management is driven by rigorous standards, clear communication, and empowering teams to execute safely and efficiently.",
   },
@@ -197,7 +197,7 @@ export const TEAM_MEMBERS: ReadonlyArray<TeamMember> = [
   {
     id: "chakanga-mukonde",
     name: "Chakanga Mukonde",
-    role: "Site Manager at Mufulira",
+    role: "Mufulira Site Manager",
     bio: "Directs site activities at Mufulira with a focus on safe execution, operational efficiency, and team coordination.",
   },
   {
@@ -205,30 +205,6 @@ export const TEAM_MEMBERS: ReadonlyArray<TeamMember> = [
     name: "Mulenga Mutati",
     role: "Human Resources Manager",
     bio: "Champions workforce development, directing talent acquisition and building a high-performance culture across a 1,500+ strong workforce.",
-  },
-  {
-    id: "kiran-kumar-reddy",
-    name: "Kiran Kumar Reddy",
-    role: "Project Head at SOB",
-    bio: "Drives daily production performance, advanced mechanised extraction, and critical safety frameworks at the high-capacity SOB underground site.",
-  },
-  {
-    id: "suresh-babu-deshamalla",
-    name: "Suresh Babu Deshamalla",
-    role: "Head of Maintenance",
-    bio: "Ensures maximum operational uptime by leading preventive engineering protocols and managing the deployment of 225+ underground machines.",
-  },
-  {
-    id: "kuldeep-kulshrestha",
-    name: "Kuldeep Kulshrestha",
-    role: "Commercial Manager",
-    bio: "Optimizes supply chain integration, procures critical operational resources, and advances key strategic partnerships to support expansion.",
-  },
-  {
-    id: "toms-joseph",
-    name: "Toms Joseph",
-    role: "Project Head at Mufulira",
-    bio: "Directs deep-level mining operations and oversees the rigorous safety compliance necessary to sustain large-scale mechanised extraction.",
   },
   {
     id: "willie-simpemba",
@@ -247,6 +223,30 @@ export const TEAM_MEMBERS: ReadonlyArray<TeamMember> = [
     name: "Peter Ochigbo",
     role: "System Coordinator",
     bio: "Ensures seamless integration of systems and processes, driving operational alignment and technical coordination across projects.",
+  },
+  {
+    id: "kiran-kumar-reddy",
+    name: "Kiran Kumar Reddy",
+    role: "SOB Project Head",
+    bio: "Drives daily production performance, advanced mechanised extraction, and critical safety frameworks at the high-capacity SOB underground site.",
+  },
+  {
+    id: "suresh-babu-deshamalla",
+    name: "Suresh Babu Deshamalla",
+    role: "Maintenance Head",
+    bio: "Ensures maximum operational uptime by leading preventive engineering protocols and managing the deployment of 225+ underground machines.",
+  },
+  {
+    id: "kuldeep-kulshrestha",
+    name: "Kuldeep Kulshrestha",
+    role: "Commercial Manager",
+    bio: "Optimizes supply chain integration, procures critical operational resources, and advances key strategic partnerships to support expansion.",
+  },
+  {
+    id: "toms-joseph",
+    name: "Toms Joseph",
+    role: "Mufulira Project Head",
+    bio: "Directs deep-level mining operations and oversees the rigorous safety compliance necessary to sustain large-scale mechanised extraction.",
   }
 ] as const;
 

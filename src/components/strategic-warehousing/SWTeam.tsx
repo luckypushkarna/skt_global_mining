@@ -1,4 +1,3 @@
-import { ImagePlaceholder } from "./ImagePlaceholder";
 import { STRATEGIC_WAREHOUSING } from "@/data/strategic-warehousing";
 
 export function SWTeam() {
@@ -8,10 +7,9 @@ export function SWTeam() {
     <section className="border-b border-slate-200 bg-white">
       <div className="max-w-7xl mx-auto px-5 lg:px-12 py-20 lg:py-32">
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-
-          {/* Left: Content */}
-          <div className="lg:col-span-6">
+      <div className="max-w-3xl mx-auto">
+          {/* Content */}
+          <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-8 bg-slate-400" />
               <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-slate-500">
@@ -52,16 +50,6 @@ export function SWTeam() {
               </div>
             </div>
           </div>
-
-          {/* Right: Placeholder for team portrait */}
-          <div className="lg:col-span-6">
-            <ImagePlaceholder
-              aspectRatio="aspect-[4/5]"
-              label="Warehousing Team Portrait"
-              hint="Group photo of engineering team in workshop or PPE gear. Mix of senior and junior engineers, diverse, candid not posed. Portrait orientation, 800×1000px minimum."
-            />
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -1,14 +1,10 @@
 export const ESG_STATS = [
   {
-    label: "Total Investment",
+    label: "Total Investment Planned",
     value: "$200M+",
     sub: "In sustainable infrastructure across Zambian operations",
   },
-  {
-    label: "Water Recycled",
-    value: "90%",
-    sub: "Closed-loop processing circuits - zero discharge",
-  },
+
   {
     label: "Local Workforce",
     value: "94%",
@@ -26,8 +22,8 @@ export const PRINCIPLES = [
     id: "environment",
     title: "Environment",
     subtitle: "Stewardship of the land",
-    desc: "We operate with a 'zero-harm' philosophy toward the environment. Our closed-loop water systems recycle 90% of process water, while our rehabilitation programs ensure that mined land returns to its natural state or becomes productive agricultural land for surrounding communities.",
-    metric: "90% Water Recycling Rate",
+    desc: "We operate with a 'zero-harm' philosophy toward the environment. We implement sustainable resource management practices, while our rehabilitation programs ensure that mined land returns to its natural state or becomes productive agricultural land for surrounding communities.",
+    metric: "Zero-Harm Environmental Philosophy",
     image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125466/skt_global_mining/Underground%20Workshop.webp",
     accent: "from-emerald-600 to-green-700",
     tag: "Environmental",
@@ -46,8 +42,8 @@ export const PRINCIPLES = [
     id: "governance",
     title: "Governance",
     subtitle: "Integrity in every action",
-    desc: "Transparency drives every decision at SKT Global. From board diversity to anti-bribery protocols, we adhere to international standards including ICMM and EITI. Our annual reports are independently audited to ensure absolute accountability to all stakeholders.",
-    metric: "ISO 45001:2018 Certified",
+    desc: "Transparency drives every decision at SKT Global. From board diversity to anti-bribery protocols, we adhere to strict international governance standards. Our annual reports are independently audited to ensure absolute accountability to all stakeholders.",
+    metric: "Independent Audits",
     image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt_global_mining/operational-command-new.webp",
     accent: "from-skt-blue to-skt-navy",
     tag: "Governance",
@@ -55,8 +51,9 @@ export const PRINCIPLES = [
 ];
 
 export const CERTIFICATIONS = [
-  { name: "ISO 45001:2018", desc: "Occupational Health & Safety" },
-  { name: "ICMM Member", desc: "International Council on Mining & Metals" },
-  { name: "EITI Aligned", desc: "Extractive Industries Transparency Initiative" },
-  { name: "ZEMA Compliant", desc: "Zambia Environmental Management Agency" },
+
+
+  { name: "EIZ", desc: "Engineers Institute of Zambia" },
+  { name: "ZIHRM", desc: "Zambia Institute of Human Resource Management" },
+  { name: "ZDA", desc: "Zambia Development Agency" },
 ];

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { ESHero } from "@/components/engineering/ESHero";
 import { ESIntro } from "@/components/engineering/ESIntro";
 import { ESCapabilities } from "@/components/engineering/ESCapabilities";
-import { ESVideo } from "@/components/engineering/ESVideo";
+
 import { ESWorkshops } from "@/components/engineering/ESWorkshops";
 import { ESGallery } from "@/components/engineering/ESGallery";
 import { ESTeam } from "@/components/engineering/ESTeam";
@@ -21,7 +21,7 @@ export default function EngineeringServicesPage(): JSX.Element {
       <ESHero />
       <ESIntro />
       <ESCapabilities />
-      <ESVideo />
+
       <ESWorkshops />
       <ESGallery />
       <ESTeam />

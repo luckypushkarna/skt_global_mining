@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const LIVE_METRICS = [
-  { id: "water", label: "Water Recycled", value: "90", unit: "%", color: "emerald" },
+  { id: "compliance", label: "Compliance Rate", value: "100", unit: "%", color: "emerald" },
   { id: "emissions", label: "Emissions Reduction", value: "47", unit: "%", color: "sky" },
   { id: "trees", label: "Trees Planted", value: "1,200", unit: "", color: "emerald" },
   { id: "spills", label: "Spill Incidents", value: "0", unit: "", color: "emerald" },
@@ -51,7 +51,7 @@ export function DashboardHero() {
           </motion.h1>
 
           <p className="text-slate-400 text-base leading-relaxed max-w-md mb-8 font-light">
-            All metrics below are independently verified under ISO 45001 and 
+            All metrics below are independently verified under international safety standards and 
             ZEMA compliance frameworks. Data refreshed quarterly.
           </p>
 

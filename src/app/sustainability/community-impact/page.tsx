@@ -7,7 +7,7 @@ import { CommunityInitiatives } from "@/components/community/CommunityInitiative
 export const metadata = {
   title: "Community Impact | SKT Global Mining & Services Limited",
   description:
-    "Twenty percent of SKT Global's net profits return directly to Zambia's mining communities - schools, clinics, and clean water for thousands.",
+    "A percentage of SKT Global's future net profits is earmarked for Zambia's mining communities - developing plans for schools, clinics, and clean water.",
 };
 
 export default function CommunityImpactPage(): JSX.Element {

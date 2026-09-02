@@ -32,7 +32,7 @@ export function ESIntro() {
         {/* Stats */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           {intro.stats.map((stat, i) => {
-            const hasNumber = /\d+/.test(stat.value);
+            const hasNumber = /\d+/.test(stat.value) && !stat.value.includes("/");
             const valueNum = hasNumber ? parseInt(stat.value.replace(/\D/g, "")) : 0;
             const suffix = stat.value.replace(/\d/g, "");
 

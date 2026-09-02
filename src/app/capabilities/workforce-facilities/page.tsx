@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { FacilitiesHero } from "@/components/workforce-facilities/FacilitiesHero";
 import { FacilitiesIntro } from "@/components/workforce-facilities/FacilitiesIntro";
 import { FacilitiesPillars } from "@/components/workforce-facilities/FacilitiesPillars";
-import { FacilitiesGallery } from "@/components/workforce-facilities/FacilitiesGallery";
+
 import { FacilitiesTeam } from "@/components/workforce-facilities/FacilitiesTeam";
 import { FacilitiesCTA } from "@/components/workforce-facilities/FacilitiesCTA";
 
@@ -19,7 +19,7 @@ export default function WorkforceFacilitiesPage(): JSX.Element {
       <FacilitiesHero />
       <FacilitiesIntro />
       <FacilitiesPillars />
-      <FacilitiesGallery />
+
       <FacilitiesTeam />
       <FacilitiesCTA />
     </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { LiveCounter } from "@/components/ui/live-counter";
 
 export function CommunityIntro() {
   return (
@@ -37,11 +36,11 @@ export function CommunityIntro() {
                 contract.
               </p>
               <p>
-                Twenty percent of net profits. That&apos;s the commitment enshrined in SKT
-                Global&apos;s founding charter—not as a PR target, but as a legally binding
-                community reinvestment obligation. Schools get built. Clinics get staffed.
-                Boreholes go down. And the company stays accountable to the very people
-                beneath whose land they work.
+                A percentage of our future net profits is earmarked for community reinvestment. 
+                That&apos;s the commitment enshrined in SKT Global&apos;s founding charter—not 
+                as a PR target, but as an integral part of our business model. We are developing 
+                plans for schools, clinics, and water networks. And the company stays accountable to the very people
+                beneath whose land we work.
               </p>
               <p className="font-medium text-slate-900">
                 This is not charity. This is partnership. The distinction matters.
@@ -64,17 +63,16 @@ export function CommunityIntro() {
 
               <div className="space-y-8">
                 {[
-                  { value: "2", suffix: ".4M", prefix: "$", label: "Community investment to date" },
-                  { value: "1800", suffix: "+", label: "Students in SKT-built schools" },
-                  { value: "12", label: "Health clinics supported" },
-                  { value: "5000", suffix: "+", label: "Residents with clean water access" },
+                  { value: "Planning Stage", label: "Community investment frameworks" },
+                  { value: "In Development", label: "Support models for local students" },
+                  { value: "Targeting", label: "Health clinic partnerships" },
+                  { value: "Designing", label: "Clean water access networks" },
                 ].map((s) => (
                   <div key={s.label} className="border-b border-slate-200 pb-6 last:border-0 last:pb-0">
-                    <p className="font-mono text-4xl font-medium text-skt-blue tabular-nums tracking-tight mb-2">
-                      {s.prefix}
-                      <LiveCounter from={0} to={parseInt(s.value)} suffix={s.suffix || ""} duration={2.5} />
+                    <p className="font-mono text-3xl font-medium text-skt-blue tracking-tight mb-2">
+                      {s.value}
                     </p>
-                    <p className="text-sm font-medium tracking-wide text-slate-600">
+                    <p className="text-xs text-slate-500 font-medium tracking-wide uppercase">
                       {s.label}
                     </p>
                   </div>

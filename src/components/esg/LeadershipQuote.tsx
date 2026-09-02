@@ -6,17 +6,19 @@ export function LeadershipQuote() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left: Portrait */}
         <div className="lg:col-span-4 flex lg:justify-end">
-          <div className="relative">
-            {/* Decorative frame */}
-            <div className="absolute -top-3 -left-3 w-full h-full border border-emerald-200" />
-            <div className="relative w-48 h-56 lg:w-56 lg:h-64 overflow-hidden bg-slate-100">
-              <Image
-                src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125409/skt_global_mining/Raj%20Sir%20Photo.webp"
-                alt="Raj Talreja - Chairman, SKT Global Mining"
-                fill
-                className="object-cover object-top"
-                sizes="(max-width: 1024px) 200px, 224px"
-              />
+          <div>
+            <div className="relative inline-block">
+              {/* Decorative frame */}
+              <div className="absolute -top-3 -left-3 w-full h-full border border-emerald-200" />
+              <div className="relative w-48 h-56 lg:w-56 lg:h-64 overflow-hidden bg-slate-100">
+                <Image
+                  src="https://res.cloudinary.com/dxhwcq1eg/image/upload/v1782125409/skt_global_mining/Raj%20Sir%20Photo.webp"
+                  alt="Raj Talreja - Chairman, SKT Global Mining"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 200px, 224px"
+                />
+              </div>
             </div>
             {/* Name tag */}
             <div className="mt-4">

@@ -30,14 +30,14 @@ const COMPARISON_DATA: MetricChart[] = [
     ],
   },
   {
-    id: "water",
-    name: "Water Recycled",
-    unit: "Million Litres",
-    description: "Total water recycled and reused in our closed-loop process. Aiming for 95% total cycle retention.",
+    id: "compliance",
+    name: "Environmental Compliance",
+    unit: "Compliance Score",
+    description: "Average quarterly compliance score across all active sites, verified by independent environmental auditors.",
     data: [
-      { year: "2024", value: 850, label: "850 ML (72%)" },
-      { year: "2025", value: 1240, label: "1,240 ML (86%)" },
-      { year: "2026 (YTD)", value: 1480, label: "1,480 ML (90%)" },
+      { year: "2024", value: 92, label: "92%" },
+      { year: "2025", value: 96, label: "96%" },
+      { year: "2026 (YTD)", value: 100, label: "100%" },
     ],
   },
   {
@@ -153,7 +153,7 @@ export function ComparisonChart() {
       </div>
 
       <div className="flex justify-between items-center mt-6 text-[9px] font-mono text-slate-600">
-        <span>ISO 14001:2015 Reporting Frame</span>
+        <span>ZEMA Reporting Frame</span>
         <span>Unit: {selectedMetric.unit}</span>
       </div>
     </div>

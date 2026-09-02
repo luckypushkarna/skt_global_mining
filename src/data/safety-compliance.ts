@@ -54,9 +54,9 @@ export const SAFETY_COMPLIANCE = {
       {
         title: "Certifications",
         items: [
-          { label: "Occupational Health & Safety", value: "ISO 45001" },
-          { label: "Environmental Management", value: "ISO 14001" },
-          { label: "Quality Management", value: "ISO 9001" },
+          { label: "Engineering Standards", value: "EIZ" },
+          { label: "Human Resources", value: "ZIHRM" },
+          { label: "Business Operations", value: "ZDA" },
         ],
       },
       {
