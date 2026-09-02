@@ -120,6 +120,7 @@ export function BlankSection(): JSX.Element {
   return (
     <section
       ref={containerRef}
+      id="operations-map"
       className="relative w-full"
     >
       <div
