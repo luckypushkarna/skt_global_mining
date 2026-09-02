@@ -19,7 +19,9 @@ import { PagePreloader } from "@/components/PagePreloader";
 import { SectionHeaderSkeleton, TextBlockSkeleton } from "@/components/ui/skeleton";
 
 export const metadata = generateMetadata({
-  description: "SKT Global: Powering Zambia's Copper Future Today",
+  title: "Powering Zambia's Copper Future Today",
+  description:
+    "Zambia's premier mechanised mining contractor, delivering world-class underground mining solutions, strategic warehousing, and engineering services. Committed to Zero Harm.",
 });
 
 export default function HomePage(): JSX.Element {

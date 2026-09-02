@@ -5,7 +5,7 @@ export const SITE_CONFIG = {
   name: "SKT Global Mining & Services Limited",
   shortName: "SKT Global",
   description:
-    "SKT Global: Powering Zambia's Copper Future Today",
+    "Zambia's premier mechanised mining contractor, delivering world-class underground mining solutions, strategic warehousing, and engineering services. Committed to Zero Harm.",
   url: getSiteUrlString(),
   ogImage: "/og-image.webp",
   twitterHandle: "@sktglobal",
