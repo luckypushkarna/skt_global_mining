@@ -5,12 +5,14 @@ import { SafetyPillars } from "@/components/safety/SafetyPillars";
 import { IncidentTimeline } from "@/components/safety/IncidentTimeline";
 import { ProtocolSection } from "@/components/safety/ProtocolSection";
 import { CertificationBar } from "@/components/safety/CertificationBar";
+import { generateMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Safety First | SKT Global Mining & Services Limited",
+export const metadata = generateMetadata({
+  title: "Mine Safety and HSE Services Zambia",
   description:
     "Zero harm is not a target - it is a daily commitment built into every shift, every protocol, and every meter underground at SKT Global.",
-};
+  path: "/sustainability/safety-first",
+});
 
 export default function SafetyFirstPage(): JSX.Element {
   return (

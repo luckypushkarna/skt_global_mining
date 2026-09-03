@@ -1,5 +1,5 @@
 import type { JSX } from "react";
-import type { Metadata } from "next";
+import { generateMetadata } from "@/lib/seo";
 import { SWHero } from "@/components/strategic-warehousing/SWHero";
 import { SWIntro } from "@/components/strategic-warehousing/SWIntro";
 import { SWCapabilities } from "@/components/strategic-warehousing/SWCapabilities";
@@ -9,11 +9,12 @@ import { SWGallery } from "@/components/strategic-warehousing/SWGallery";
 import { SWTeam } from "@/components/strategic-warehousing/SWTeam";
 import { SWCTA } from "@/components/strategic-warehousing/SWCTA";
 
-export const metadata: Metadata = {
-  title: "Strategic Warehousing - SKT Global Mining & Services",
+export const metadata = generateMetadata({
+  title: "Strategic Mining Warehousing Zambia",
   description:
     "A robust active inventory and an agile logistics network ensure that critical components and consumables are always exactly where they need to be.",
-};
+  path: "/capabilities/strategic-warehousing",
+});
 
 export default function StrategicWarehousingPage(): JSX.Element {
   return (

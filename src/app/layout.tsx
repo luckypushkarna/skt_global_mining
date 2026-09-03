@@ -26,7 +26,7 @@ const gloock = Gloock({
 });
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
-export const metadata: Metadata = genMeta();
+export const metadata: Metadata = genMeta({ includeCanonical: false });
 
 export const viewport: Viewport = {
   width: "device-width",

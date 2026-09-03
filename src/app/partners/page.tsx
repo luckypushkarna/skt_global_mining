@@ -1,10 +1,12 @@
 import { PartnersSection } from "@/components/organisms/PartnersSection";
 import Image from "next/image";
+import { generateMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Partners | SKT Global Mining",
-  description: "Strategic Partnership Ecosystem at SKT Global Mining.",
-};
+export const metadata = generateMetadata({
+  title: "Mining Industry Partners",
+  description: "Discover the strategic partnership ecosystem supporting SKT Global Mining operations and services in Zambia.",
+  path: "/partners",
+});
 
 export default function PartnersPage() {
   return (

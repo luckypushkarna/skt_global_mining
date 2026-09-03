@@ -7,11 +7,13 @@ import { UMLocalInsights } from "@/components/underground/UMLocalInsights";
 import { UMSafety } from "@/components/underground/UMSafety";
 import { UMEnvironment } from "@/components/underground/UMEnvironment";
 import { UMInnovation } from "@/components/underground/UMInnovation";
-export const metadata = {
-  title: "Underground Mining - SKT Global Mining & Services",
+import { generateMetadata } from "@/lib/seo";
+export const metadata = generateMetadata({
+  title: "Underground Mining Contractor Zambia",
   description:
     "Mechanised underground mining operations across Zambia's Copperbelt. Independently verified reserves, engineered safety controls, and transparent operational reporting.",
-};
+  path: "/operations/underground-mining",
+});
 
 export default function UndergroundMiningPage(): JSX.Element {
   return (

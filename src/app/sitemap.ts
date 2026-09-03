@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getSiteUrlString } from "@/lib/site-url";
+import { CARDS } from "@/lib/servicesData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const BASE_URL = getSiteUrlString();
@@ -15,8 +16,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/operations/underground-mining`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/operations/mechanised-fleet`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/operations/engineering-services`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE_URL}/operations/logistics-network`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/capabilities/logistics-network`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/operations/infrastructure-facilities`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/capabilities/production-development`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/capabilities/future-expansion`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/capabilities/infrastructure-systems`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/capabilities/operational-command`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
@@ -41,7 +43,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE_URL}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE_URL}/cookies`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${BASE_URL}/accessibility`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${BASE_URL}/anti-bribery`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
   ];
 
-  return staticRoutes;
+  return [
+    ...staticRoutes,
+    ...CARDS.map(({ slug }) => ({
+      url: `${BASE_URL}/services/${slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+  ];
 }

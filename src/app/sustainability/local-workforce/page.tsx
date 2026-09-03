@@ -5,11 +5,13 @@ import { ImpactGrid } from "@/components/sustainability/ImpactGrid";
 import { StoryBlock } from "@/components/sustainability/StoryBlock";
 import { CallToAction } from "@/components/sustainability/CallToAction";
 import { localWorkforce } from "@/data/sustainability-pages";
+import { generateMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Local Workforce | SKT Global Mining & Services Limited",
+export const metadata = generateMetadata({
+  title: "Local Mining Workforce in Zambia",
   description: localWorkforce.intro,
-};
+  path: "/sustainability/local-workforce",
+});
 
 export default function LocalWorkforcePage(): JSX.Element {
   return (

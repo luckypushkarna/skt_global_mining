@@ -9,24 +9,18 @@ interface GenerateMetadataOptions {
   readonly ogImage?: string;
   readonly noIndex?: boolean;
   readonly keywords?: ReadonlyArray<string>;
+  readonly includeCanonical?: boolean;
 }
 
 const DEFAULT_KEYWORDS = [
-  "mining company India",
-  "global mining services",
-  "open cast mining",
-  "underground mining",
-  "mineral processing",
-  "mining logistics",
-  "HSE management",
+  "mining services company in Zambia",
+  "underground mining contractor Zambia",
+  "Copperbelt mining services",
+  "mining engineering services Zambia",
+  "mining logistics services Zambia",
+  "mine safety and HSE services Zambia",
   "SKT Global",
-  "mining contractor",
-  "industrial services",
-  "coal mining",
-  "iron ore mining",
-  "environmental mining services",
-  "mining safety",
-  "sustainable mining",
+  "SKT Global Mining and Services",
 ];
 
 export function generateMetadata(
@@ -39,6 +33,7 @@ export function generateMetadata(
     ogImage = SITE_CONFIG.ogImage,
     noIndex = false,
     keywords = [],
+    includeCanonical = true,
   } = options;
 
   const pageTitle = title
@@ -59,9 +54,7 @@ export function generateMetadata(
     creator: SITE_CONFIG.name,
     publisher: SITE_CONFIG.name,
     metadataBase: siteUrl,
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    ...(includeCanonical ? { alternates: { canonical: canonicalUrl } } : {}),
     robots: {
       index: !noIndex,
       follow: !noIndex,
@@ -75,8 +68,8 @@ export function generateMetadata(
     },
     openGraph: {
       type: "website",
-      locale: "en_IN",
-      url: canonicalUrl,
+      locale: "en_ZM",
+      ...(includeCanonical ? { url: canonicalUrl } : {}),
       title: pageTitle,
       description,
       siteName: SITE_CONFIG.name,

@@ -72,7 +72,6 @@ export const CAPABILITIES: Capability[] = [
   {
     num: "05",
     slug: "logistics-network",
-    href: "/operations/logistics-network",
     icon: Network,
     title: "Logistics Network",
     tagline: "Workforce, equipment, material - moving without interruption.",

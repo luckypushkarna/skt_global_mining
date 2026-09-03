@@ -5,11 +5,13 @@ import { ImpactGrid } from "@/components/sustainability/ImpactGrid";
 import { StoryBlock } from "@/components/sustainability/StoryBlock";
 import { CallToAction } from "@/components/sustainability/CallToAction";
 import { environmentalCare } from "@/data/sustainability-pages";
+import { generateMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Environmental Care | SKT Global Mining & Services Limited",
+export const metadata = generateMetadata({
+  title: "Environmental Care in Mining",
   description: environmentalCare.intro,
-};
+  path: "/sustainability/environmental-care",
+});
 
 export default function EnvironmentalCarePage(): JSX.Element {
   return (

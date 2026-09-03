@@ -1,5 +1,7 @@
 import { CAPABILITIES, getCapabilityBySlug } from "@/data/capabilities";
-import { notFound, redirect } from "next/navigation";
+import type { Metadata } from "next";
+import { notFound, permanentRedirect } from "next/navigation";
+import { generateMetadata as generateSeoMetadata } from "@/lib/seo";
 import { CapabilityDetailClient } from "./CapabilityDetailClient";
 
 interface PageProps {
@@ -26,6 +28,20 @@ export async function generateStaticParams() {
     }));
 }
 
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const capability = getCapabilityBySlug(slug);
+
+  if (!capability) return { robots: { index: false, follow: false } };
+
+  return generateSeoMetadata({
+    title: `${capability.title} Mining Services Zambia`,
+    description: capability.desc,
+    path: capability.href ?? `/capabilities/${slug}`,
+    keywords: [capability.title, `${capability.title} Zambia`],
+  });
+}
+
 // ── Server Component ──────────────────────────────────────────────
 export default async function CapabilityDetailPage({ params }: PageProps) {
   const { slug } = await params;
@@ -37,7 +53,7 @@ export default async function CapabilityDetailPage({ params }: PageProps) {
 
   // Redirect if this capability has been moved to an operations page
   if (capability.href) {
-    redirect(capability.href);
+    permanentRedirect(capability.href);
   }
 
   // Pass only the slug - client component looks up all data including icon

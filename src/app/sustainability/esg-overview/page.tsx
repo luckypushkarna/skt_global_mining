@@ -4,12 +4,14 @@ import { ESGBanner } from "@/components/esg/ESGBanner";
 import { MetricGrid } from "@/components/esg/MetricGrid";
 import { PrincipleSection } from "@/components/esg/PrincipleSection";
 import { LeadershipQuote } from "@/components/esg/LeadershipQuote";
+import { generateMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "ESG Overview | SKT Global Mining & Services Limited",
+export const metadata = generateMetadata({
+  title: "Mining ESG and Sustainability Zambia",
   description:
     "Discover SKT Global's Environmental, Social and Governance commitments - from 90% water recycling and 1.2M+ safe man-hours to 94% local workforce in Zambia.",
-};
+  path: "/sustainability/esg-overview",
+});
 
 export default function ESGOverviewPage(): JSX.Element {
   return (

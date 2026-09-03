@@ -2,6 +2,7 @@
 
 import { type JSX, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   Warehouse,
@@ -279,12 +280,12 @@ export default function InfrastructurePage(): JSX.Element {
           <p className="text-[13px] md:text-[15px] text-neutral-500">
             Want to learn more about our operations?
           </p>
-          <a
-            href="/operations/logistics-network"
+          <Link
+            href="/capabilities/logistics-network"
             className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-900 hover:gap-3 transition-all"
           >
             Explore our logistics network →
-          </a>
+          </Link>
         </div>
       </section>
     </div>

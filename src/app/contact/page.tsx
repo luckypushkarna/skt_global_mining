@@ -10,6 +10,7 @@ export const metadata = generateMetadata({
 export default function ContactPage() {
   return (
     <div className="pt-20">
+      <h1 className="sr-only">Contact SKT Global Mining and Services</h1>
       <ContactSection />
     </div>
   );
