@@ -488,17 +488,17 @@ const leaders = [
   },
   {
     id: 10,
-    name: "Suresh Babu Deshamalla",
+    name: "D. Suresh Babu",
     designation: "Maintenance Head",
     department: "Asset Readiness",
     statement: "Operational readiness is the product of preventive maintenance, robust supply chains, and technical pride in our fleet.",
     image: "https://res.cloudinary.com/dxhwcq1eg/image/upload/f_auto,q_auto/v1/skt/leaders/suresh-babu-deshamalla.webp",
-    yearsExperience: 18,
+    yearsExperience: 28,
     overview: {
-      intro: "Suresh Babu Deshamalla is the Maintenance Head at SKT Global, managing the lifecycle, availability, and preventive servicing of our 225+ underground mechanized mining vehicle fleet. He holds 18 years of asset engineering experience across large-scale industrial projects.",
-      expertise: "He specializes in preventive maintenance systems, spare parts supply chain logistics, diagnostics telemetry, and rebuild workshops management for underground mining machinery.",
-      philosophy: "Suresh believes that downtime is not inevitable; it is a metric to be managed. An active preventive maintenance loop keeps our operators safe and our production lines running uninterrupted.",
-      responsibilities: "He leads the surface and underground workshops, overseeing maintenance technicians, spare parts inventories, OEM warranty relationships, and diagnostic telemetry systems.",
+      intro: "D. Suresh Babu is a seasoned Automobile and Mechanical Engineering professional with 28+ years of proven leadership experience across the Construction, Mining Equipment, and Automobile industries. His career spans India, Indonesia, Nigeria, and Zambia, with extensive expertise in equipment management, mining operations, project execution, service management, product support, and business operations.",
+      expertise: "He possesses strong technical and operational expertise in leading global equipment brands, including Volvo, Komatsu, Caterpillar, and DALI, with extensive hands-on knowledge of HEMM and Underground Mining Equipment, Fleet & Asset Management, Equipment Reliability, MTBF/MTTR improvement, Preventive Maintenance, Parts & Inventory Management, Cost Optimization, Project Management, Safety, and Operational Excellence.",
+      philosophy: "With experience managing 250+ equipment and 250+ personnel, he has consistently driven higher equipment availability, productivity, reliability, cost efficiency, safety performance, and customer satisfaction. Throughout his career, he has successfully delivered projects and supported leading clients including Aditya Cements, Vikram Cement, Binani Cement, JK Lakshmi Cement, Shree Cement, Singareni Collieries Company Limited (SCCL), and Hindustan Zinc Limited – Agucha and SK Mines.",
+      responsibilities: "He has held senior leadership positions with reputed organizations including African Natural Resources & Mines Ltd, PT. Darma Henwa, Gainwell, Caterpillar India, Larsen & Toubro, and Volvo India, managing large-scale mining fleets and multidisciplinary teams.",
     },
     areasOfFocus: [
       { title: "Asset Management", description: "Maximizing the availability and life of our 225+ vehicle fleet" },

@@ -231,8 +231,8 @@ export const TEAM_MEMBERS: ReadonlyArray<TeamMember> = [
     bio: "Drives daily production performance, advanced mechanised extraction, and critical safety frameworks at the high-capacity SOB underground site.",
   },
   {
-    id: "suresh-babu-deshamalla",
-    name: "Suresh Babu Deshamalla",
+    id: "d-suresh-babu",
+    name: "D. Suresh Babu",
     role: "Maintenance Head",
     bio: "Ensures maximum operational uptime by leading preventive engineering protocols and managing the deployment of 225+ underground machines.",
   },

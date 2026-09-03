@@ -19,20 +19,20 @@ const LOCATIONS = [
   {
     id: 1,
     name: "Chingola",
-    role: "Mining Operations Hub",
-    description: "Primary operational headquarters supporting Mopani Copper Mines. Coordinates the deployment of 225+ mechanised underground machines and core engineering services.",
+    role: "Logistics & Support",
+    description: "Strategic supply chain and workforce centre. Manages the deployment of 1,500+ personnel and a $3M+ active spare parts inventory.",
     lng: 27.8635,
     lat: -12.5295,
-    type: "primary" as const,
+    type: "major" as const,
   },
   {
     id: 2,
     name: "Kitwe",
-    role: "Logistics & Support",
-    description: "Strategic supply chain and workforce centre. Manages the deployment of 1,500+ personnel and a $3M+ active spare parts inventory.",
+    role: "Mining Operations Hub",
+    description: "Primary operational headquarters supporting Mopani Copper Mines. Coordinates the deployment of 225+ mechanised underground machines and core engineering services.",
     lng: 28.2132,
     lat: -12.8024,
-    type: "major" as const,
+    type: "primary" as const,
   },
   {
     id: 3,
@@ -189,11 +189,11 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
             />
 
             {LOCATIONS.map((location) => {
-              const isChingola = location.name === "Chingola";
-              const markerColor = isChingola ? "#FFA000" : "#E63027";
-              const pulseBg = isChingola ? "bg-[#FFA000]/30" : "bg-[#E63027]/30";
-              const glowBg = isChingola ? "bg-[#FFA000]/20" : "bg-[#E63027]/20";
-              const shadowClass = isChingola ? "shadow-[#FFA000]/30" : "shadow-[#E63027]/30";
+              const isKitwe = location.name === "Kitwe";
+              const markerColor = isKitwe ? "#FFA000" : "#E63027";
+              const pulseBg = isKitwe ? "bg-[#FFA000]/30" : "bg-[#E63027]/30";
+              const glowBg = isKitwe ? "bg-[#FFA000]/20" : "bg-[#E63027]/20";
+              const shadowClass = isKitwe ? "shadow-[#FFA000]/30" : "shadow-[#E63027]/30";
 
               return (
                 <MapMarker
@@ -320,9 +320,9 @@ export function ZambiaOperationsMap({ clean = false }: { clean?: boolean }): JSX
             </p>
             <div className="space-y-1 sm:space-y-1.5 pr-1">
               {LOCATIONS.map((loc) => {
-                const isChingola = loc.name === "Chingola";
+                const isKitwe = loc.name === "Kitwe";
                 const isSelected = activeLocationId === loc.id;
-                const markerColorClass = isChingola ? "bg-[#FFA000]" : "bg-[#E63027]";
+                const markerColorClass = isKitwe ? "bg-[#FFA000]" : "bg-[#E63027]";
 
                 return (
                   <button
